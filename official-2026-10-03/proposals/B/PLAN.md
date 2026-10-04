@@ -13,7 +13,7 @@ To plan implementacji, nie opis już działającego produktu. Nie wykonano infer
 
 ## 2. Podstawa i warunki odbioru
 
-Przeczytane wejścia: [TASK.json](TASK.json), [MATERIALS.md](MATERIALS.md), [kryteria zadania](materials/786a9bb4a858f98d.pdf.txt), [regulamin](materials/31a3fb1537ac1d02.pdf.txt), [manifest](materials/manifest.json), lokalny [SERVICES.md](SERVICES.md) oraz wskazany w nim wspólny katalog `C:\Users\defoz\Documents\Projects\hackyeah2026-coordinator\SERVICES.md`..
+Przeczytane wejścia: [TASK.json](TASK.json), [MATERIALS.md](MATERIALS.md), [kryteria zadania](materials/786a9bb4a858f98d.pdf.txt), [regulamin](materials/31a3fb1537ac1d02.pdf.txt), [manifest](materials/manifest.json), lokalny [SERVICES.md](SERVICES.md).
 
 Manifest z 3 października 2026 zawiera dwa różne dokumenty. Dwa adresy regulaminu prowadzą do pliku o tym samym SHA-256. Źródłem zakresu jest szczegółowy brief, nie ogólna nazwa konkursu.
 
