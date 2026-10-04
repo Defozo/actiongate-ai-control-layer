@@ -1,5 +1,8 @@
 # FlowLock: plan warstwy kontroli przepływu danych agentów
 
+> Archiwalna propozycja z 3 października 2026. Aktualne polecenia instalacji i działanie produktu opisuje [README](../../../README.md).
+
+
 Plan rozwiązania zadania **AI Control Layer**. Data opracowania: 3 października 2026. Dokument opisuje projekt do wykonania, a nie działającą implementację ani wyniki pomiarów. Zakres obejmuje wszystkie wymagane mechanizmy, testy, raportowanie i materiały zgłoszeniowe.
 
 ## 1. Koncepcja i różnica względem wcześniejszych kierunków
@@ -18,7 +21,7 @@ Autoryzacja, rachunek kosztów i audyt pozostają koniecznymi elementami wspóln
 
 ## 2. Materiały i warunki zadania
 
-Podstawą są [TASK.json](TASK.json), [MATERIALS.md](MATERIALS.md), [szczegółowe wymagania](materials/786a9bb4a858f98d.pdf.txt), [regulamin](materials/31a3fb1537ac1d02.pdf.txt) i [SUMMARIES.md](SUMMARIES.md). Przed doborem integracji przeczytano lokalny [SERVICES.md](SERVICES.md), wskazany w nim wspólny katalog `C:\Users\defoz\Documents\Projects\hackyeah2026-coordinator\SERVICES.md`, `Use-Service.ps1` oraz `.state/services/readiness.json`.
+Podstawą są [TASK.json](TASK.json), [MATERIALS.md](MATERIALS.md), [szczegółowe wymagania](materials/786a9bb4a858f98d.pdf.txt), [regulamin](materials/31a3fb1537ac1d02.pdf.txt) i [SUMMARIES.md](SUMMARIES.md)..
 
 | Wymaganie | Realizacja i dowód odbioru |
 | --- | --- |

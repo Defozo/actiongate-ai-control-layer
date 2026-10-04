@@ -1,5 +1,8 @@
 # Plan rozwiązania AI Control Layer
 
+> Archiwalna propozycja z 3 października 2026. Aktualne polecenia instalacji i działanie produktu opisuje [README](../../../README.md).
+
+
 ## 1. Cel i podstawa planu
 
 Zbudować warstwę kontroli komunikacji agentów, modeli, narzędzi MCP i API, która przed wykonaniem operacji egzekwuje uprawnienia, chroni dane i rezerwuje zasoby, a po wykonaniu sprawdza odpowiedź oraz zapisuje rozliczenie i audyt. Rezultatem będzie działający gateway, centralna konfiguracja, interaktywny panel i wykonywalny pakiet testów. Demonstracja ma pokazać zarówno legalną pracę agenta, jak i rzeczywiste zatrzymanie niedozwolonych skutków.
@@ -10,7 +13,7 @@ Przeczytane materiały:
 
 - [TASK.json](TASK.json) i [MATERIALS.md](MATERIALS.md).
 - [Regulamin](materials/31a3fb1537ac1d02.pdf.txt), trzy strony, oraz [opis i kryteria](materials/786a9bb4a858f98d.pdf.txt), cztery strony. Manifest wskazuje dwa różne dokumenty; dwa odnośniki do regulaminu prowadzą do tego samego pliku.
-- [SERVICES.md](SERVICES.md), wskazany wspólny katalog `C:\Users\defoz\Documents\Projects\hackyeah2026-coordinator\SERVICES.md`, plik `.state\services\readiness.json` i helper `Use-Service.ps1` z tego katalogu. Dobór integracji poniżej nastąpił po ich przeczytaniu.
+- [SERVICES.md](SERVICES.md), opis integracji i zarządzania sekretami.
 - Oficjalna dokumentacja wybranych komponentów i źródła bezpieczeństwa podlinkowane przy decyzjach projektowych. Stan odczytu: 3 października 2026.
 
 ## 2. Wymagania i sposób wykazania ich realizacji
@@ -89,7 +92,7 @@ Chronimy operacje przechodzące przez gateway oraz dostarczony kontrolowany load
 | Telemetria i testy | OpenTelemetry, `prometheus-client`, pytest, Hypothesis, respx, Playwright, Locust, `opa test` | Gotowe ślady, metryki i testy kontraktów, własności, interfejsu oraz obciążenia |
 | Uruchomienie | Docker Compose, `uv.lock`, lockfile npm, przypięte obrazy i modele | Powtarzalne środowisko jury i wdrożenie w organizacji; profil CPU oraz opcjonalne GPU |
 
-Wspólny `readiness.json` z 3 października potwierdza uwierzytelniony odczyt Groq, ale ma `inference_verified: false`. To nie jest dowód działania wybranego modelu. Pierwszy etap implementacji obejmuje rzeczywisty test generacji, narzędzi i pola usage. Helper `Use-Service.ps1` pomaga sprawdzić katalog i prosty chat; streaming, narzędzia i kontrolę błędów integrujemy przez SDK.
+Historyczna propozycja wymagała osobnego testu generacji, obsługi narzędzi i pola usage. Aktualny wynik integracji oraz jej ograniczenia opisuje [weryfikacja chmury](../../../docs/cloud.md). Odczyt katalogu modeli sam nie potwierdza działania inferencji.
 
 Hugging Face z katalogu może służyć do pobrania przypiętych tokenizerów lub dodatkowego klasyfikatora; publiczne pliki nie wymagają sekretu, a opcjonalny `HF_TOKEN_READ_ONLY` przekazujemy tylko procesowi pobierania. Nie potrzebujemy RAG jako usługi, wyszukiwarki, głosu, mediów ani CopilotKit. Convex ma gotowy stan reaktywny, lecz tutaj wspólne transakcje salda i audytu oraz instalacja offline uzasadniają PostgreSQL. LiteLLM może później rozszerzyć katalog dostawców, ale dwa jawne adaptery na początku dają prostszy audyt przepływu i rozliczeń.
 

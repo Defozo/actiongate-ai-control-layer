@@ -1,5 +1,8 @@
 # Plan rozwiązania AI Control Layer
 
+> Archiwalna propozycja z 3 października 2026. Aktualne polecenia instalacji i działanie produktu opisuje [README](../../../README.md).
+
+
 Data opracowania: 3 października 2026. Nazwa robocza produktu: **ActionGate**.
 
 Zbudować warstwę egzekwowania zasad pomiędzy aplikacją lub agentem a modelami, narzędziami MCP, API i pamięcią. Każde wywołanie ma otrzymać sprawdzalną decyzję, rezerwację zasobów i zapis audytowy. Połączyć szybkie kontrole deterministyczne z rzeczywistą analizą semantyczną, zapewniając lokalne uruchomienie, dashboard, aktualizację polityk i feedów bez restartu oraz wykonywalny zestaw testów.
@@ -15,7 +18,7 @@ Przeczytane wejścia:
 - [TASK.json](TASK.json), [MATERIALS.md](MATERIALS.md), manifest i opis zadania w `materials`.
 - [Szczegółowy brief](materials/786a9bb4a858f98d.pdf.txt), w szczególności rozdziały 2-8.
 - [Regulamin](materials/31a3fb1537ac1d02.pdf.txt), w szczególności punkty 5, 11 i 13.
-- [Lokalny SERVICES.md](SERVICES.md), następnie wskazany wspólny katalog `C:\Users\defoz\Documents\Projects\hackyeah2026-coordinator\SERVICES.md`, jego `Use-Service.ps1` i `.state\services\readiness.json`.
+- [Lokalny SERVICES.md](SERVICES.md), opis integracji i zarządzania sekretami.
 
 Wspólny katalog jest zaktualizowany 3 października 2026. Odczytany raport gotowości ma datę `2026-10-03T09:54:53.603995+00:00`: dla Groq i Hugging Face potwierdza uwierzytelniony odczyt, lecz **nie potwierdza inferencji**, przepustowości ani dostępu do każdego modelu. Przygotowanie planu nie wymaga pobierania wartości sekretów ani płatnych wywołań.
 
@@ -390,7 +393,7 @@ psst GROQ_API_KEY -- pwsh -File .\scripts\verify.ps1 -Suite live-provider
 
 Skrypt startowy przekazuje nazwane sekrety jedynie odpowiednim kontenerom. Nie zapisuje pełnego środowiska, komendy `docker compose config` z sekretami ani kluczy do repozytorium. `.env.example` dokumentuje nazwy i publiczne wartości. Klucze testowego issuera i publishera powstają lokalnie w ignorowanym katalogu z ograniczonym dostępem; produkcyjne sekrety pochodzą z psst. Paczka dla jury nie zawiera danych z psst ani działającego dostępu do kont autora.
 
-`/health/live` sprawdza proces. `/health/ready` sprawdza migracje, aktywną politykę, akceptowany feed, bazę, rejestr narzędzi i dostępność wymaganego reviewera. Oddzielna kontrolowana próba inferencji podczas przygotowania potwierdza, że model faktycznie odpowiada. Raport health nie zastępuje testu poprawnej decyzji i stanu narzędzia. Gotowy wspólny `Use-Service.ps1` służy pomocniczo do sprawdzenia konta/listy modeli, nie implementuje ochrony aplikacji.
+`/health/live` sprawdza proces. `/health/ready` sprawdza migracje, aktywną politykę, akceptowany feed, bazę, rejestr narzędzi i dostępność wymaganego reviewera. Oddzielna kontrolowana próba inferencji podczas przygotowania potwierdza, że model faktycznie odpowiada. Raport health nie zastępuje testu poprawnej decyzji i stanu narzędzia.
 
 ### 12.2 Docelowy układ projektu
 

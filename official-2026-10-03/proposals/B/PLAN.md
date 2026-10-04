@@ -1,5 +1,8 @@
 # Plan rozwiązania AI Control Layer
 
+> Archiwalna propozycja z 3 października 2026. Aktualne polecenia instalacji i działanie produktu opisuje [README](../../../README.md).
+
+
 ## 1. Decyzja projektowa
 
 Zbudować **ActionGate**, warstwę kontroli pomiędzy agentem a modelami, narzędziami MCP, pamięcią i API. Jej podstawową jednostką bezpieczeństwa będzie konkretna akcja: kto, w czyim imieniu, na jakim zasobie, z jakimi argumentami i za jaką maksymalną cenę może ją wykonać. Kontrole deterministyczne i lokalny kontroler AI wspólnie ocenią żądanie, ale uprawnienia oraz budżet wyegzekwuje broker wykonujący akcję.
@@ -10,7 +13,7 @@ To plan implementacji, nie opis już działającego produktu. Nie wykonano infer
 
 ## 2. Podstawa i warunki odbioru
 
-Przeczytane wejścia: [TASK.json](TASK.json), [MATERIALS.md](MATERIALS.md), [kryteria zadania](materials/786a9bb4a858f98d.pdf.txt), [regulamin](materials/31a3fb1537ac1d02.pdf.txt), [manifest](materials/manifest.json), lokalny [SERVICES.md](SERVICES.md) oraz wskazany w nim wspólny katalog `C:\Users\defoz\Documents\Projects\hackyeah2026-coordinator\SERVICES.md`. Przed doborem integracji sprawdzono także wskazany plik `.state/services/readiness.json` i helper `Use-Service.ps1`. W tym workspace nie ma `proposals` ani `SUMMARIES.md`.
+Przeczytane wejścia: [TASK.json](TASK.json), [MATERIALS.md](MATERIALS.md), [kryteria zadania](materials/786a9bb4a858f98d.pdf.txt), [regulamin](materials/31a3fb1537ac1d02.pdf.txt), [manifest](materials/manifest.json), lokalny [SERVICES.md](SERVICES.md) oraz wskazany w nim wspólny katalog `C:\Users\defoz\Documents\Projects\hackyeah2026-coordinator\SERVICES.md`..
 
 Manifest z 3 października 2026 zawiera dwa różne dokumenty. Dwa adresy regulaminu prowadzą do pliku o tym samym SHA-256. Źródłem zakresu jest szczegółowy brief, nie ogólna nazwa konkursu.
 
@@ -403,8 +406,8 @@ Planowane komendy PowerShell:
 .\scripts\benchmark.ps1 -Profile local
 
 # Opcjonalne sprawdzenie dostępu do modelu komercyjnego.
-$serviceHelper = 'C:\Users\defoz\Documents\Projects\hackyeah2026-coordinator\Use-Service.ps1'
-& $serviceHelper models groq --contains 'gpt-oss' --refresh
+# Aktualne polecenia i konfiguracja dostawcy: ../../../docs/cloud.md
+
 
 # Start profilu cloud, z GROQ_API_KEY przekazanym wyłącznie konektorowi.
 # start.ps1 dołącza sekrety lokalnych usług i mapuje je do Compose.
