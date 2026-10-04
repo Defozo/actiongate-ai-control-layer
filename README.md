@@ -13,11 +13,14 @@ report. Confidential publication to a controlled internal sink requires approval
 of the exact payload. A separate trusted public projection copies approved fields
 from the authoritative supplier registry before confidential work begins.
 
-[Watch the demonstration and open the presentation](https://defozo.github.io/actiongate-ai-control-layer/),
-then follow the [jury runbook](docs/jury-runbook.md) to try your own input.
-The material page also links to the hosted dashboard; request its jury access
-details from Michał Kiełtyka. The [downloadable release](https://github.com/Defozo/actiongate-ai-control-layer/releases/latest)
-contains the complete source and verification package.
+[Try the public live demo](https://743b-83-10-76-158.ngrok-free.app/) with
+four fixed examples on synthetic data, then
+[watch the demonstration and open the presentation](https://defozo.github.io/actiongate-ai-control-layer/).
+The full operator dashboard at `/operator` requires separate access from Michał
+Kiełtyka. The [jury runbook](docs/jury-runbook.md) covers editable operator scenarios.
+The [downloadable release](https://github.com/Defozo/actiongate-ai-control-layer/releases/latest)
+contains the source distribution and recorded verification evidence. Its manifest
+identifies the tested base release and later public-entry and documentation changes.
 
 ## Run locally
 
@@ -52,8 +55,9 @@ On Linux, install Chromium system libraries with
 `(cd ui && npx playwright install --with-deps chromium)` during preparation.
 Open **http://127.0.0.1:8080** and choose an Acme demo identity. The loopback demo
 issuer intentionally permits role selection. Keep direct edge access on loopback.
-The hosted jury demo adds a separate authenticated HTTPS gateway; its selectable
-demo roles do not represent enterprise identities.
+The hosted demo exposes only fixed visitor examples without an account. Its full
+operator interface has a separate authenticated HTTPS gateway; selectable demo
+roles do not represent enterprise identities. See [public access](demo/public/visitor.md).
 `ACTIONGATE_PORT` selects an alternative loopback port when 8080 is occupied.
 The API contract is available at `/api/docs`. See the [jury runbook](docs/jury-runbook.md)
 for independent, editable scenarios and expected evidence.
@@ -88,8 +92,8 @@ upstreams. `all-local` adds actual local inference and end-to-end acceptance.
 `live-provider` separately verifies the commercial connector and is reported as
 not run when a provider key is absent. Missing required dependencies fail local
 acceptance rather than becoming successful skips. Dated reports under `artifacts/`
-are the source of measured results. A created report, a passed contract suite and
-a passed complete release are different claims.
+are the source of measured results. Contract tests and
+a complete release use different verification scopes; see the [verification guide](docs/acceptance.md).
 
 Semantic evaluation separates [16 calibration cases, a 40-case v1 regression set,
 and a newly frozen 40-case v2 holdout](tests/corpus/). Each 40-case set has ten
@@ -104,8 +108,9 @@ Read [architecture](docs/architecture.md), [configuration](docs/configuration.md
 [coverage map](docs/requirements.md) and the [submission text](docs/submission.md).
 The [dashboard evidence contract](docs/dashboard-contract.md) explains each view's
 data source, measurement scope and unavailable states.
-The selected specification is [official-2026-10-03/PLAN.md](official-2026-10-03/PLAN.md).
-Any root-level historical plan is superseded by that document.
+The [product guide](docs/product.md) describes integration, operating responsibilities and deployment limits.
+The dated [design specification](official-2026-10-03/PLAN.md) records original requirements;
+current operation and measurements are documented in the guides above.
 
 ## Repository
 
@@ -116,6 +121,7 @@ Any root-level historical plan is superseded by that document.
 verification and lifecycle tools. Compose defines the isolated reference runtime.
 Model licensing is recorded separately from the runner and application libraries.
 
-Prepared submission materials do not constitute a HackTribe submission. The
-organizer's supplied brief requires English deliverables and a PDF of at most ten
-slides. Team identity is sourced from [TEAM.json](TEAM.json).
+Presentation, videos and source downloads are available from the linked material
+page and GitHub release. Credits and dependency licenses are recorded in
+[TEAM.json](TEAM.json), [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and
+[media provenance](docs/media-provenance.md).

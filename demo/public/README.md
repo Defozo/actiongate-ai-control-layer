@@ -4,7 +4,11 @@ The hosted demonstration uses a separate synthetic-data GPU installation. The
 CPU installation remains the reference for local acceptance. Neither the model
 workers nor the database receive a public port.
 
-An additional Nginx gateway authenticates the jury, validates the exact browser
+The optional [visitor entry](visitor.md) exposes four fixed synthetic examples at
+`/`, with a forced analyst identity and a separate cookie under `/public-api/`.
+The operator dashboard remains protected at `/operator`.
+
+The base Nginx gateway authenticates the operator, validates the exact browser
 Origin and forwards to the demo's operator edge. It removes the HTTP Basic
 credential before forwarding. The application still issues its own role-scoped
 session cookie and enforces all action, approval, budget and release controls.
@@ -24,7 +28,8 @@ a successful browser test.
 
 `configure.py` reads `ACTIONGATE_JURY_PASSWORD` from the environment and writes
 only below the ignored `.state` directory. The generated credential is stored
-in psst. Supply it to judges separately. The Published HackTribe project, public
+in psst. Supply it only to reviewers who need the operator dashboard. The visitor
+examples need no password. The Published HackTribe project, public
 repository, static site, video and query strings contain no private access code.
 
 The proxy runs as UID 101 with a read-only root, no Linux capabilities, bounded
@@ -40,13 +45,16 @@ container, image, network, mounted configuration and producer hashes. Repeat
 with `--public` to verify the HTTPS route. A synthetic echo probe is explicitly
 labelled `echo`; it is not evidence of a working ActionGate application.
 
-`start-tunnel.ps1` checks this proof before starting the single named ngrok
+`start-tunnel.ps1` checks the operator-only baseline proof before starting the single named ngrok
 endpoint with a selectively injected `ACTIONGATE_NGROK_AUTHTOKEN`. Traffic
 inspection and remote management are disabled. It consumes the private
 `.state/public-demo/ngrok.yaml` configuration, which contains no token or other
 application endpoint. The tunnel must remain running during jury evaluation.
 After a tunnel restart, verify its assigned URL and repeat public/browser checks
-before updating the project page. Do not reuse stale access evidence.
+before updating the project page. Do not reuse stale access evidence. The optional
+visitor configuration changes the rendered hash and route contract; validate it
+with `verify_visitor.cjs` and preserve its own configuration binding before a
+tunnel restart. Do not use the baseline proof as evidence for the changed routes.
 
 `index.html` and `styles.css` form the public material page. The build helper
 copies the final film, captions, cover, PDF and editable deck from the same

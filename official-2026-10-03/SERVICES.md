@@ -1,10 +1,10 @@
-<!-- hackyeah-managed-services-v1 -->
-# Dostępne usługi HackYeah
+# Deployment services
 
-Wspólny katalog: `C:\Users\defoz\Documents\Projects\hackyeah2026-coordinator\SERVICES.md`.
+The reference stack uses PostgreSQL, OPA, separate local model workers, a signed
+policy publisher, controlled connectors and the ActionGate gateway/dashboard.
+The optional Groq connector is disabled by default.
 
-Wyniki sprawdzeń z datą: `C:\Users\defoz\Documents\Projects\hackyeah2026-coordinator\.state\services\readiness.json`.
-
-Gotowy helper PowerShell: `C:\Users\defoz\Documents\Projects\hackyeah2026-coordinator\Use-Service.ps1`.
-
-Katalog zawiera dobór usług do zadania, aktualne modele, integracje SDK i nazwy wpisów w psst.
+Install and configure the stack using the [project README](../README.md)
+and [configuration guide](../docs/configuration.md). Store deployment
+credentials in your own psst vault; repository examples contain variable names
+only. No organizer or author service account is needed for the local profile.

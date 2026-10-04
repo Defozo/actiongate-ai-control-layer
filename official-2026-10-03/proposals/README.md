@@ -1,5 +1,10 @@
-# Propozycje
+# Design references
 
-Czytaj pełne plany w katalogach propozycji: [A/PLAN.md](A/PLAN.md), [B/PLAN.md](B/PLAN.md), [C/PLAN.md](C/PLAN.md), [D/PLAN.md](D/PLAN.md). Katalogi zachowują względne odnośniki do dokumentów i diagramów.
+These dated proposals document the design inputs to the selected
+[ActionGate specification](../PLAN.md): [A](A/PLAN.md), [B](B/PLAN.md),
+[C](C/PLAN.md) and [D](D/PLAN.md). They describe alternatives considered before
+implementation, rather than current deployment instructions or test results.
 
-Odnośniki absolutne do istniejących plików i katalogów pozostają w pierwotnych lokalizacjach. Ich zawartość nie jest kopiowana.
+Use the [product guide](../../docs/product.md),
+[installation guide](../../README.md#run-locally) and
+[verification guide](../../docs/acceptance.md) for the delivered system.

@@ -2,9 +2,9 @@
 
 Team: DEFOZO SOFTWARE HOUSE. Author: Michał Kiełtyka.
 
-This map identifies implementation and verification locations. It does not assert
-that every acceptance check has passed. Read the generated report for status,
-time, model/version, execution mode and any unresolved failures.
+This map links supported controls to their implementation and verification.
+The [acceptance report](../artifacts/acceptance-report.json) records execution
+status, time, source/model version and measurement scope.
 
 | Official requirement | Implementation | Positive / negative evidence |
 | --- | --- | --- |

@@ -25,17 +25,11 @@ Implementability and Scalability. The rules assign 20% and 10%. No confirmed
 resolution appears in the supplied briefing. The package therefore presents
 evidence for both tests and deployment without choosing one weighting as final.
 
-The user authorized updating and saving the existing ActionGate HackTribe
-project, retaining New Idea and its existing visibility, with no separate
-irreversible finalization. `HACKTRIBE_UPDATE_RESULT.json` records the actual
-post-save read-back when that update is executed. Local material generation
-alone does not establish the state of the external form.
-
 Archived sources: [task metadata](../official-2026-10-03/materials/task.json),
 [rules](../official-2026-10-03/materials/31a3fb1537ac1d02.pdf.txt),
 [criteria](../official-2026-10-03/materials/786a9bb4a858f98d.pdf.txt),
 the [selected plan](../official-2026-10-03/PLAN.md) and the
 [organizer briefing](organizer-clarifications.md).
-The user's additional delivery brief requires the editable deck, clear narration,
-quiet music, verified public access and saving the existing HackTribe form under
-the constraints stated above.
+
+The [material page](https://defozo.github.io/actiongate-ai-control-layer/) provides
+the presentation, narrated demonstration and supplementary media.
