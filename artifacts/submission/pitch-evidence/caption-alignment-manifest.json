@@ -1,0 +1,426 @@
+{
+  "method": "Actual original ElevenLabs character timing plus1.000s delivery offset, no estimated reading-time cues",
+  "language": "en",
+  "cue_count": 48,
+  "word_count": 333,
+  "duration_seconds": 154.0,
+  "first_cue_seconds": 1.0,
+  "last_cue_seconds": 151.77100000000002,
+  "monotonic_nonoverlap": true,
+  "maximum_lines": 2,
+  "alignment_sha256": "62efa1b810b88e367ba8ceb82f017025a15a4126c4cec3c37c1b9750849c8e75",
+  "vtt_sha256": "3d6e547f217d92c42188543e3c8ccc19886e272f29b4de1a9bbb3f86d9117050",
+  "cues": [
+    {
+      "id": 1,
+      "start": 1.0,
+      "end": 3.744,
+      "lines": [
+        "An AI agent opens a supplier document."
+      ]
+    },
+    {
+      "id": 2,
+      "start": 4.402,
+      "end": 6.3100000000000005,
+      "lines": [
+        "It should review delivery terms."
+      ]
+    },
+    {
+      "id": 3,
+      "start": 6.677,
+      "end": 8.886,
+      "lines": [
+        "But that same document can tell it to"
+      ]
+    },
+    {
+      "id": 4,
+      "start": 8.905999999999999,
+      "end": 12.091,
+      "lines": [
+        "reveal confidential data or change its",
+        "task."
+      ]
+    },
+    {
+      "id": 5,
+      "start": 12.645,
+      "end": 16.016000000000002,
+      "lines": [
+        "The next tool call is where an instruction",
+        "becomes an incident."
+      ]
+    },
+    {
+      "id": 6,
+      "start": 16.673000000000002,
+      "end": 19.313000000000002,
+      "lines": [
+        "ActionGate checks that action before it",
+        "runs."
+      ]
+    },
+    {
+      "id": 7,
+      "start": 19.506,
+      "end": 23.179000000000002,
+      "lines": [
+        "It connects agents to models, APIs and MCP",
+        "services"
+      ]
+    },
+    {
+      "id": 8,
+      "start": 23.326,
+      "end": 26.337,
+      "lines": [
+        "through a gateway that enforces the",
+        "organization's rules."
+      ]
+    },
+    {
+      "id": 9,
+      "start": 26.995,
+      "end": 30.737000000000002,
+      "lines": [
+        "Here is a real supplier review using",
+        "synthetic business data."
+      ]
+    },
+    {
+      "id": 10,
+      "start": 31.395,
+      "end": 34.196,
+      "lines": [
+        "We start the interactive checks in the",
+        "dashboard."
+      ]
+    },
+    {
+      "id": 11,
+      "start": 34.75,
+      "end": 37.818999999999996,
+      "lines": [
+        "The agent reads its approved document",
+        "through MCP,"
+      ]
+    },
+    {
+      "id": 12,
+      "start": 37.931,
+      "end": 40.489,
+      "lines": [
+        "asks the local business model for a",
+        "summary,"
+      ]
+    },
+    {
+      "id": 13,
+      "start": 40.601,
+      "end": 43.763,
+      "lines": [
+        "saves protected memory and creates an",
+        "internal report."
+      ]
+    },
+    {
+      "id": 14,
+      "start": 44.316,
+      "end": 46.583999999999996,
+      "lines": [
+        "Open the document operation and you can",
+        "see"
+      ]
+    },
+    {
+      "id": 15,
+      "start": 46.604,
+      "end": 50.067,
+      "lines": [
+        "the actual connector receipt alongside the",
+        "decision."
+      ]
+    },
+    {
+      "id": 16,
+      "start": 50.528,
+      "end": 52.784,
+      "lines": [
+        "Now compare three other outcomes."
+      ]
+    },
+    {
+      "id": 17,
+      "start": 53.244,
+      "end": 56.162,
+      "lines": [
+        "Personal data is redacted before the",
+        "report is saved."
+      ]
+    },
+    {
+      "id": 18,
+      "start": 56.414,
+      "end": 58.541999999999994,
+      "lines": [
+        "An instruction that tries to redirect"
+      ]
+    },
+    {
+      "id": 19,
+      "start": 58.562,
+      "end": 61.213,
+      "lines": [
+        "the workflow is blocked before dispatch."
+      ]
+    },
+    {
+      "id": 20,
+      "start": 61.581,
+      "end": 65.99600000000001,
+      "lines": [
+        "And a request for another tenant's",
+        "document is rejected by access policy."
+      ]
+    },
+    {
+      "id": 21,
+      "start": 66.457,
+      "end": 71.337,
+      "lines": [
+        "That access boundary remains in force",
+        "independently of the semantic model."
+      ]
+    },
+    {
+      "id": 22,
+      "start": 71.588,
+      "end": 73.821,
+      "lines": [
+        "The same controls follow the workflow."
+      ]
+    },
+    {
+      "id": 23,
+      "start": 74.282,
+      "end": 77.432,
+      "lines": [
+        "Reading confidential information restricts",
+        "later actions,"
+      ]
+    },
+    {
+      "id": 24,
+      "start": 77.545,
+      "end": 79.96300000000001,
+      "lines": [
+        "including delegated work and memory."
+      ]
+    },
+    {
+      "id": 25,
+      "start": 80.621,
+      "end": 83.074,
+      "lines": [
+        "Publishing a protected report requires",
+        "approval of"
+      ]
+    },
+    {
+      "id": 26,
+      "start": 83.094,
+      "end": 86.105,
+      "lines": [
+        "its exact content and permitted recipient."
+      ]
+    },
+    {
+      "id": 27,
+      "start": 86.902,
+      "end": 89.57600000000001,
+      "lines": [
+        "Operators manage a signed control catalog."
+      ]
+    },
+    {
+      "id": 28,
+      "start": 89.886,
+      "end": 92.885,
+      "lines": [
+        "Change the profile, adjust a threshold or",
+        "publish"
+      ]
+    },
+    {
+      "id": 29,
+      "start": 92.905,
+      "end": 96.403,
+      "lines": [
+        "a threat rule, then inspect the active",
+        "generation."
+      ]
+    },
+    {
+      "id": 30,
+      "start": 96.957,
+      "end": 98.888,
+      "lines": [
+        "Strict can block personal data."
+      ]
+    },
+    {
+      "id": 31,
+      "start": 99.256,
+      "end": 100.873,
+      "lines": [
+        "Balanced can redact it."
+      ]
+    },
+    {
+      "id": 32,
+      "start": 101.427,
+      "end": 103.671,
+      "lines": [
+        "Policy comparison shows how a candidate"
+      ]
+    },
+    {
+      "id": 33,
+      "start": 103.691,
+      "end": 107.08500000000001,
+      "lines": [
+        "changes decisions without repeating",
+        "business effects."
+      ]
+    },
+    {
+      "id": 34,
+      "start": 107.742,
+      "end": 110.092,
+      "lines": [
+        "Budgets are checked before execution."
+      ]
+    },
+    {
+      "id": 35,
+      "start": 110.552,
+      "end": 113.4,
+      "lines": [
+        "The dashboard separates token usage, local"
+      ]
+    },
+    {
+      "id": 36,
+      "start": 113.42,
+      "end": 116.465,
+      "lines": [
+        "worker occupancy and commercial API",
+        "commitments."
+      ]
+    },
+    {
+      "id": 37,
+      "start": 117.123,
+      "end": 119.774,
+      "lines": [
+        "Delegating work shares the original",
+        "allowance."
+      ]
+    },
+    {
+      "id": 38,
+      "start": 120.328,
+      "end": 123.315,
+      "lines": [
+        "Security teams can trace an operation",
+        "through dispatch and"
+      ]
+    },
+    {
+      "id": 39,
+      "start": 123.335,
+      "end": 128.80700000000002,
+      "lines": [
+        "settlement, while management sees resource",
+        "totals without protected payloads."
+      ]
+    },
+    {
+      "id": 40,
+      "start": 129.058,
+      "end": 131.767,
+      "lines": [
+        "Developers can connect through HTTP, a"
+      ]
+    },
+    {
+      "id": 41,
+      "start": 131.787,
+      "end": 134.763,
+      "lines": [
+        "Chat Completions interface or MCP."
+      ]
+    },
+    {
+      "id": 42,
+      "start": 135.223,
+      "end": 138.744,
+      "lines": [
+        "Python and TypeScript examples, executable",
+        "tests and a"
+      ]
+    },
+    {
+      "id": 43,
+      "start": 138.764,
+      "end": 142.53,
+      "lines": [
+        "runbook make the system available for",
+        "independent evaluation."
+      ]
+    },
+    {
+      "id": 44,
+      "start": 142.677,
+      "end": 143.644,
+      "lines": [
+        "Change a rule."
+      ]
+    },
+    {
+      "id": 45,
+      "start": 143.896,
+      "end": 145.223,
+      "lines": [
+        "Try your own input."
+      ]
+    },
+    {
+      "id": 46,
+      "start": 145.591,
+      "end": 147.127,
+      "lines": [
+        "Follow the resulting action."
+      ]
+    },
+    {
+      "id": 47,
+      "start": 147.17,
+      "end": 149.71599999999998,
+      "lines": [
+        "ActionGate gives teams the controls and",
+        "evidence"
+      ]
+    },
+    {
+      "id": 48,
+      "start": 149.736,
+      "end": 151.77100000000002,
+      "lines": [
+        "to put useful agents to work."
+      ]
+    }
+  ]
+}

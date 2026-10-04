@@ -1,0 +1,47 @@
+[Intro]
+ActionGate, sprawdź ten ruch.
+Zanim agent zrobi krok.
+
+[Verse 1]
+Dokument od dostawcy, terminy i szczegóły.
+W tekście obcy rozkaz chce nam zmienić reguły.
+Zanim ruszy narzędzie, bramka sprawdza: po co, kto?
+Jakie dane, jaki odbiorca, czy pozwolić mu na to?
+Dokument przez em ce pe, model robi krótki opis.
+Pamięć, wewnętrzny raport, każda akcja zostawia zapis.
+Przy decyzji widać ślad wykonanej operacji.
+Masz przebieg tej pracy, bez zgadywania po fakcie.
+
+[Chorus]
+ActionGate, sprawdź ten ruch,
+kto ma dostęp, jaki cel.
+Zanim wynik pójdzie dalej,
+sprawdź odbiorcę, zgodę, treść.
+
+[Verse 2]
+W demo dane osobowe maskujemy w treści raportu.
+Próba zmiany celu dostaje stop przed startem.
+Po cudzy dokument nie sięgniesz bez uprawnień,
+nawet gdy model oceni polecenie łagodnie.
+Poufności nie stracą przez pamięć i delegację.
+Wysyłka chronionych treści czeka na akceptację.
+Dokładnie ta zawartość, dokładnie ten odbiorca.
+Zgoda ma jasny zakres, operator trzyma kontrolę.
+
+[Bridge]
+Tokeny, czas modelu, koszt zewnętrznych wywołań.
+Limit sprawdza się przed akcją, nim pojawi się nowy koszt.
+Gdy zadanie się rozdziela, budżet dalej jest wspólny.
+Każdy widzi swój zakres, a decyzje mają powód.
+Zmieniasz regułę i porównujesz jej skutki.
+Bez powtarzania działań, bez zgadywania różnic.
+
+[Final Chorus and Outro]
+ActionGate, sprawdź ten ruch,
+kto ma dostęp, jaki cel.
+Zanim wynik pójdzie dalej,
+sprawdź odbiorcę, zgodę, treść.
+Wypróbuj własny dokument,
+prześledź drogę, sprawdź wynik.
+Agent kończy swoją pracę,
+ty widzisz jej przebieg.

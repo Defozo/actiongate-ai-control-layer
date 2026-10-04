@@ -1,0 +1,197 @@
+{
+  "status": "passed",
+  "created_at": "2026-10-04T05:27:13.758484+00:00",
+  "v1_mp4_sha256": "c04e19e82e1edbd19044743fb8b0b42ec7c94d40dc62e6769c53e106072c7f01",
+  "v2_mp4_sha256": "43d6626bc6fb3809b0c363f3ca8d83df36dba712b4078faba113aa22ee933cb4",
+  "changed_video_segments": [
+    17
+  ],
+  "segments": [
+    {
+      "index": 0,
+      "start_seconds": 0.0,
+      "end_seconds": 4.0,
+      "v1_segment_sha256": "d42a31a28aa152f4a168d2f2bea80b7c72e8b886c36a30a93c93860324261651",
+      "v2_segment_sha256": "d42a31a28aa152f4a168d2f2bea80b7c72e8b886c36a30a93c93860324261651",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 1,
+      "start_seconds": 4.0,
+      "end_seconds": 16.666666666666668,
+      "v1_segment_sha256": "d44197fed6cd8cabbd5e0c9d5801f4596126359d51efdba20e80169301264c92",
+      "v2_segment_sha256": "d44197fed6cd8cabbd5e0c9d5801f4596126359d51efdba20e80169301264c92",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 2,
+      "start_seconds": 16.666666666666668,
+      "end_seconds": 26.966666666666665,
+      "v1_segment_sha256": "e05ce2edf645c0cfc9f7140b75f03b44dbe838e5130d59fde1a3001d4a1fe593",
+      "v2_segment_sha256": "e05ce2edf645c0cfc9f7140b75f03b44dbe838e5130d59fde1a3001d4a1fe593",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 3,
+      "start_seconds": 26.966666666666665,
+      "end_seconds": 30.0,
+      "v1_segment_sha256": "c9ef04667af3d1d544d2320d47bc4a7322e33a767e323b3a1e568d18c7c6f09e",
+      "v2_segment_sha256": "c9ef04667af3d1d544d2320d47bc4a7322e33a767e323b3a1e568d18c7c6f09e",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 4,
+      "start_seconds": 30.0,
+      "end_seconds": 34.5,
+      "v1_segment_sha256": "7ead764260c0bb36db6e020aa2f83c2e92e1c689d728e17a2a55a35a8d540cf5",
+      "v2_segment_sha256": "7ead764260c0bb36db6e020aa2f83c2e92e1c689d728e17a2a55a35a8d540cf5",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 5,
+      "start_seconds": 34.5,
+      "end_seconds": 39.5,
+      "v1_segment_sha256": "a603d3d3c0a67d7dc7d2d26117f79364c58f65ef8dee54e9a2a2290be9b20a1f",
+      "v2_segment_sha256": "a603d3d3c0a67d7dc7d2d26117f79364c58f65ef8dee54e9a2a2290be9b20a1f",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 6,
+      "start_seconds": 39.5,
+      "end_seconds": 43.63333333333333,
+      "v1_segment_sha256": "4915786bbb7f1142179cbd8432e37cd7a6481dc07814b08a63e57f5f29abb07d",
+      "v2_segment_sha256": "4915786bbb7f1142179cbd8432e37cd7a6481dc07814b08a63e57f5f29abb07d",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 7,
+      "start_seconds": 43.63333333333333,
+      "end_seconds": 50.53333333333333,
+      "v1_segment_sha256": "1be8699f018d6247de739b98fd47de551215cb74e55f61b13ac4856e3051eb1a",
+      "v2_segment_sha256": "1be8699f018d6247de739b98fd47de551215cb74e55f61b13ac4856e3051eb1a",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 8,
+      "start_seconds": 50.53333333333333,
+      "end_seconds": 56.03333333333333,
+      "v1_segment_sha256": "597f763f0de00b2e68f2ced654d21a83b1af032f1b3437318b8cc669a90f23c5",
+      "v2_segment_sha256": "597f763f0de00b2e68f2ced654d21a83b1af032f1b3437318b8cc669a90f23c5",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 9,
+      "start_seconds": 56.03333333333333,
+      "end_seconds": 61.1,
+      "v1_segment_sha256": "83bcb0d2ccbffd1cac53b534147f899c1a09f0f79ed1d58f17a1085c23165471",
+      "v2_segment_sha256": "83bcb0d2ccbffd1cac53b534147f899c1a09f0f79ed1d58f17a1085c23165471",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 10,
+      "start_seconds": 61.1,
+      "end_seconds": 71.2,
+      "v1_segment_sha256": "d235e83cfd01a32b5804e7ad67639b6c946dab76eb42e1b59b4b66cbbb8e4793",
+      "v2_segment_sha256": "d235e83cfd01a32b5804e7ad67639b6c946dab76eb42e1b59b4b66cbbb8e4793",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 11,
+      "start_seconds": 71.2,
+      "end_seconds": 79.7,
+      "v1_segment_sha256": "a0d79a6157b80b1f00b5f8e1a1df5812ec55ab9caf3333e19069a79f90392cb6",
+      "v2_segment_sha256": "a0d79a6157b80b1f00b5f8e1a1df5812ec55ab9caf3333e19069a79f90392cb6",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 12,
+      "start_seconds": 79.7,
+      "end_seconds": 86.0,
+      "v1_segment_sha256": "3542fec86c17e3e9ae7deab31e5c34b9228ca878d9edbc4a82ec6ae26e9f2d1e",
+      "v2_segment_sha256": "3542fec86c17e3e9ae7deab31e5c34b9228ca878d9edbc4a82ec6ae26e9f2d1e",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 13,
+      "start_seconds": 86.0,
+      "end_seconds": 96.2,
+      "v1_segment_sha256": "e091409bdf76fb7451e76ba5d1758e145ee55f04ba045938481738f19b75ab24",
+      "v2_segment_sha256": "e091409bdf76fb7451e76ba5d1758e145ee55f04ba045938481738f19b75ab24",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 14,
+      "start_seconds": 96.2,
+      "end_seconds": 106.96666666666667,
+      "v1_segment_sha256": "a14c70cffc8aacf5612e02072de97ff50af166dffe337f4982c0e4e24acbdbc7",
+      "v2_segment_sha256": "a14c70cffc8aacf5612e02072de97ff50af166dffe337f4982c0e4e24acbdbc7",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 15,
+      "start_seconds": 106.96666666666667,
+      "end_seconds": 119.66666666666667,
+      "v1_segment_sha256": "1be7a39e1e9c4912aaa1d295087eff0cd1f14b5b5af3cb2f4a06b93ff40dc653",
+      "v2_segment_sha256": "1be7a39e1e9c4912aaa1d295087eff0cd1f14b5b5af3cb2f4a06b93ff40dc653",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 16,
+      "start_seconds": 119.66666666666667,
+      "end_seconds": 128.7,
+      "v1_segment_sha256": "b0931123bc6d06e78a524776f08ab823a7661a951fae6856b864a9163e61c1a0",
+      "v2_segment_sha256": "b0931123bc6d06e78a524776f08ab823a7661a951fae6856b864a9163e61c1a0",
+      "byte_identical": true,
+      "source_byte_identical": true
+    },
+    {
+      "index": 17,
+      "start_seconds": 128.7,
+      "end_seconds": 142.4,
+      "v1_segment_sha256": "b63988296ace58135a66bedc6ba379cdbc2a71bfb1a898911883e1981accd42b",
+      "v2_segment_sha256": "8ced3b17df8aaaa6d5c15d79f85e0f4bbc87fab67c0d94f6efffb742b0500fb0",
+      "byte_identical": false,
+      "source_byte_identical": false
+    },
+    {
+      "index": 18,
+      "start_seconds": 142.4,
+      "end_seconds": 154.0,
+      "v1_segment_sha256": "62a918120a8f7aafe5942daf8c6666bf651a6f133af4372ad8d4d06cce8375f1",
+      "v2_segment_sha256": "62a918120a8f7aafe5942daf8c6666bf651a6f133af4372ad8d4d06cce8375f1",
+      "byte_identical": true,
+      "source_byte_identical": true
+    }
+  ],
+  "duration_seconds": 154,
+  "timeline_unchanged": true,
+  "aac_payload_identical": true,
+  "decoded_pcm_identical": true,
+  "review_scope": "The complete v1 MP4 has an actual audiovisual model assessment. Version2 changes only the static integration slide for13.7seconds; eighteen encoded video segments, narration, music, timing and captions are identical. Version2 requires the bound correction inspection and full technical decode, not a claim that its bytes were submitted to the v1 audiovisual reviewer.",
+  "sampled_frame_comparison": {
+    "total": 75,
+    "changed_timestamps_seconds": [
+      128.7,
+      128.73333333333332,
+      135.53333333333333,
+      142.36666666666667
+    ],
+    "outside_revised_segment_byte_identical": true
+  }
+}

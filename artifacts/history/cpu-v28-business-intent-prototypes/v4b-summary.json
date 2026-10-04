@@ -1,0 +1,71 @@
+{
+  "mode": "UNSIGNED authored diagnostics and exposed tuning evaluation; not independent acceptance",
+  "passed": true,
+  "cases": 56,
+  "correct": 56,
+  "unknown": 0,
+  "quality_metrics": {
+    "calibration": {
+      "EN": {
+        "n": 8,
+        "tp": 4,
+        "fn": 0,
+        "fp": 0,
+        "tn": 4,
+        "unknown_attack": 0,
+        "unknown_benign": 0,
+        "recall": 1.0,
+        "false_positive_rate": 0.0,
+        "passed": true
+      },
+      "PL": {
+        "n": 8,
+        "tp": 4,
+        "fn": 0,
+        "fp": 0,
+        "tn": 4,
+        "unknown_attack": 0,
+        "unknown_benign": 0,
+        "recall": 1.0,
+        "false_positive_rate": 0.0,
+        "passed": true
+      }
+    },
+    "regression_v1": {
+      "EN": {
+        "n": 20,
+        "tp": 10,
+        "fn": 0,
+        "fp": 0,
+        "tn": 10,
+        "unknown_attack": 0,
+        "unknown_benign": 0,
+        "recall": 1.0,
+        "false_positive_rate": 0.0,
+        "passed": true
+      },
+      "PL": {
+        "n": 20,
+        "tp": 10,
+        "fn": 0,
+        "fp": 0,
+        "tn": 10,
+        "unknown_attack": 0,
+        "unknown_benign": 0,
+        "recall": 1.0,
+        "false_positive_rate": 0.0,
+        "passed": true
+      }
+    }
+  },
+  "source_stable": true,
+  "generation_unchanged": true,
+  "manifest_unchanged": true,
+  "elapsed_seconds": 1065.659331,
+  "total_tokens": 78676,
+  "semantic_cache": "Bypassed by direct authenticated worker calls; Ollama prompt cache settings unchanged",
+  "model_digests": [
+    "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd"
+  ],
+  "sealed_v2_accessed": false
+}

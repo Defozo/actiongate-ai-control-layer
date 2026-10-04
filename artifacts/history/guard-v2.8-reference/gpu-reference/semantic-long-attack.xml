@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="18.897" timestamp="2026-10-03T22:38:32.584716+00:00" hostname="24b39c252b8c"><testcase classname="tests.test_local" name="test_real_hidden_goal_drift_in_middle_of_64kib_never_reaches_sink" time="15.969" /></testsuite></testsuites>

@@ -1,0 +1,148 @@
+{
+  "schema_version": "actiongate-independent-pdf-review.v2",
+  "reviewed_at": "2026-10-04T05:26:27.737048+00:00",
+  "result": "passed",
+  "scope": "Narrow incremental review after authorized copy correction on slide 9 and its speaker note.",
+  "files_sha256": {
+    "artifacts\\submission\\ActionGate.pdf": "cd8a68746c42104d3489b91c85b3ea3fcaa279703ef6da1575f20e105d995691",
+    "artifacts\\submission\\ActionGate.pptx": "b70351f69ad3eacd71cfe7d725118fa9336b2efa80bcf01695154894dc0119b8"
+  },
+  "previous_review": {
+    "path": "docs\\.build\\pitch-final-v1\\pdf-review.json",
+    "sha256": "7627f15cf8685a385af3d8a5754ae656b10c75c70cd8490816177b5eb4e31889",
+    "scope": "Previous reviewer independently rendered and visually inspected all 10 pages. Other page coverage is carried forward using unchanged slide PNG hashes, unchanged PDF native text, unchanged PPTX slide text, and unchanged note text.",
+    "reviewed_v1_pdf_sha256": "76231f8826af2099eaf692a35c3be226444cc8bef8ab46e0b5919724cfd4dbed",
+    "reviewed_v1_pptx_sha256": "d7d6264dea5f898ef9e3d7c47b16fb81803fba051371c20ec75a70ff53fd3ddb"
+  },
+  "method": {
+    "new_visual_review": "Rendered actual canonical PDF page 9 using Poppler pdftoppm -f 9 -l 9 -r 110 -png; independently viewed the resulting image.",
+    "comparison": "SHA-256 comparison of v1/v2 slide PNGs; pypdf comparison of all PDF page text; ZIP/XML comparison of all slide text and all notes; checked note relationships and counts.",
+    "not_repeated": [
+      "Full visual review of unchanged pages",
+      "Factual test report validation",
+      "Live URL availability",
+      "Backend or UI source inspection"
+    ]
+  },
+  "structure": {
+    "pdf_pages": 10,
+    "pptx_slides": 10,
+    "nonempty_notes": 10,
+    "unique_note_links": 10
+  },
+  "page_9": {
+    "heading": "Run the supplied tests",
+    "body": "Reproduce allowed, redacted and blocked workflows with the supplied test suite.",
+    "exact_test_numbers_removed_from_slide_and_note": true,
+    "note_refers_to_acceptance_and_reports": true,
+    "pdf_text_matches_pptx": true,
+    "render": "docs/.build/pitch-final-v2/pdf-page-09.png",
+    "render_sha256": "8799ac54bc8bf3c5dee9bd96d931b066d0ab3b399e0b196d350c87f50587397b",
+    "visual_status": "passed",
+    "clipping_observed": false,
+    "overlap_observed": false,
+    "missing_glyphs_observed": false
+  },
+  "comparisons": [
+    {
+      "slide": 1,
+      "v1_png_sha256": "ca1ca167996b486b46b320b3c5a96693522fa6796ce03494ffaa4560aa639def",
+      "v2_png_sha256": "ca1ca167996b486b46b320b3c5a96693522fa6796ce03494ffaa4560aa639def",
+      "png_unchanged": true,
+      "slide_text_unchanged": true,
+      "note_text_unchanged": true,
+      "pdf_native_text_unchanged": true
+    },
+    {
+      "slide": 2,
+      "v1_png_sha256": "44661726665b006214edb6422a3ce4f014ad3943f7f5d8edb30517421feef391",
+      "v2_png_sha256": "44661726665b006214edb6422a3ce4f014ad3943f7f5d8edb30517421feef391",
+      "png_unchanged": true,
+      "slide_text_unchanged": true,
+      "note_text_unchanged": true,
+      "pdf_native_text_unchanged": true
+    },
+    {
+      "slide": 3,
+      "v1_png_sha256": "4cf3961864a2396bc0bc85b2898df4eb9208e239f0fa55b98bd90a4f2b33b13f",
+      "v2_png_sha256": "4cf3961864a2396bc0bc85b2898df4eb9208e239f0fa55b98bd90a4f2b33b13f",
+      "png_unchanged": true,
+      "slide_text_unchanged": true,
+      "note_text_unchanged": true,
+      "pdf_native_text_unchanged": true
+    },
+    {
+      "slide": 4,
+      "v1_png_sha256": "b11bfa674ae1e68a4d2f9904973927c0e631b552c7946983eebf4ac94bc07a92",
+      "v2_png_sha256": "b11bfa674ae1e68a4d2f9904973927c0e631b552c7946983eebf4ac94bc07a92",
+      "png_unchanged": true,
+      "slide_text_unchanged": true,
+      "note_text_unchanged": true,
+      "pdf_native_text_unchanged": true
+    },
+    {
+      "slide": 5,
+      "v1_png_sha256": "46c512d190ed6f3ca6dc5a06fa2a7fc9888112f155ae938bec0710f8e1869d76",
+      "v2_png_sha256": "46c512d190ed6f3ca6dc5a06fa2a7fc9888112f155ae938bec0710f8e1869d76",
+      "png_unchanged": true,
+      "slide_text_unchanged": true,
+      "note_text_unchanged": true,
+      "pdf_native_text_unchanged": true
+    },
+    {
+      "slide": 6,
+      "v1_png_sha256": "06677a4258fb86f4488ba2223064ab543c3de49c4e59ac46961ac9ae95638efe",
+      "v2_png_sha256": "06677a4258fb86f4488ba2223064ab543c3de49c4e59ac46961ac9ae95638efe",
+      "png_unchanged": true,
+      "slide_text_unchanged": true,
+      "note_text_unchanged": true,
+      "pdf_native_text_unchanged": true
+    },
+    {
+      "slide": 7,
+      "v1_png_sha256": "dfab95a5c9bf2d2771f93937b6ae072c943567410099de6890630970202dbb6e",
+      "v2_png_sha256": "dfab95a5c9bf2d2771f93937b6ae072c943567410099de6890630970202dbb6e",
+      "png_unchanged": true,
+      "slide_text_unchanged": true,
+      "note_text_unchanged": true,
+      "pdf_native_text_unchanged": true
+    },
+    {
+      "slide": 8,
+      "v1_png_sha256": "5d5b1d9f6fcf5bd87b26fc53d8d3fd98da625ad8b5f8c90eaccdd24e4a9c4dc3",
+      "v2_png_sha256": "5d5b1d9f6fcf5bd87b26fc53d8d3fd98da625ad8b5f8c90eaccdd24e4a9c4dc3",
+      "png_unchanged": true,
+      "slide_text_unchanged": true,
+      "note_text_unchanged": true,
+      "pdf_native_text_unchanged": true
+    },
+    {
+      "slide": 9,
+      "v1_png_sha256": "4b2226d8f06a463a0f940b44b0b7b8d53f6b2f3664090b2966b78fee22faac36",
+      "v2_png_sha256": "c4f3235a3e5d928fc37262778ac012844e334ef7a9948643c475e6d48621e600",
+      "png_unchanged": false,
+      "slide_text_unchanged": false,
+      "note_text_unchanged": false,
+      "pdf_native_text_unchanged": false
+    },
+    {
+      "slide": 10,
+      "v1_png_sha256": "09ec601cad0718330786943536af858609e106af6bf6b58de703bbbde8e463a2",
+      "v2_png_sha256": "09ec601cad0718330786943536af858609e106af6bf6b58de703bbbde8e463a2",
+      "png_unchanged": true,
+      "slide_text_unchanged": true,
+      "note_text_unchanged": true,
+      "pdf_native_text_unchanged": true
+    }
+  ],
+  "public_urls": {
+    "unchanged": true,
+    "values": [
+      "743b-83-10-76-158.ngrok-free.app",
+      "github.com/Defozo/actiongate-ai-control-layer"
+    ],
+    "live_reachability": "not_rechecked",
+    "previous_observation": "URLs remain visible plain text without clickable hyperlink annotations."
+  },
+  "blocking_findings": []
+}

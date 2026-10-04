@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "plan_id": "english-pitch-v1",
+  "status": "approved_for_render",
+  "authorization": "User requested final narrated English pitch and audio/video review. Parent authorized final render after required acceptance21/21 and public browser29/29 passed.",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "duration_frames": 4620,
+  "audio": "docs/.build/_video_work/audio/delivery/pitch-v1/mix.m4a",
+  "audio_sha256": "6d6ed96361068d33e711e55d7617cf519bd56f28f9c81017c3371bd37b49b326",
+  "source_review": {
+    "passed": true,
+    "reviewed_by": "/root/frontend_resume",
+    "reviewed_at": "2026-10-04T05:13:02.922808+00:00",
+    "method": "All ten actual final slide renders and current workflow PNGs inspected visually. Recorded start clip inspected at1second intervals; source1.6–6.1 seconds includes the actual button click and Running state. Cut times aligned with ElevenLabs word timing. Technical and final actual-film review still follow rendering.",
+    "workflow_sha256": "593bb4d1330b3f4d761cd048f61789a9f6e97e6c152bfe4667f5da4dc4157eef",
+    "source_hashes": {
+      "artifacts/submission/ActionGate-poster.png": "b2e4f41550379bcf4179874f43a072da04ac79a9e41e9d531047add3688d5581",
+      "docs/.build/pitch-final/slide-2.png": "44661726665b006214edb6422a3ce4f014ad3943f7f5d8edb30517421feef391",
+      "docs/.build/pitch-final/slide-4.png": "b11bfa674ae1e68a4d2f9904973927c0e631b552c7946983eebf4ac94bc07a92",
+      "docs/.build/pitch-final/slide-3.png": "4cf3961864a2396bc0bc85b2898df4eb9208e239f0fa55b98bd90a4f2b33b13f",
+      "artifacts/submission/ui-workflow-start.webm": "ecbeeddb37b93793a11d961e0cfcbfa9c6570bbb045705305a7a39b4a906b487",
+      "artifacts/submission/ui-workflow-result.png": "3c2bf5fdedfc948919dcee60aca586db6b61c645263ab16ece4b60a2e9cbac69",
+      "artifacts/submission/ui-workflow-model-result.png": "e85b16880951ef09bda5f3a48370ea311e7c6c1a5ed71b7620b5f5ad085442c7",
+      "docs/.build/pitch-final/slide-8.png": "5d5b1d9f6fcf5bd87b26fc53d8d3fd98da625ad8b5f8c90eaccdd24e4a9c4dc3",
+      "artifacts/submission/ui-workflow-pii.png": "b5f7d96c7b0108917a577ea7ca234716e994430448e65165c2cf2086f83161fb",
+      "artifacts/submission/ui-workflow-injection.png": "58209e29d1820f16bbd9a54571e401284dfebe556b5246f268fcb4ceedba9ee5",
+      "artifacts/submission/ui-workflow-foreign-tenant.png": "7918f309f0a41159c7666b7aad35620b477193e0314412f7f6cda6a3ce0186d3",
+      "docs/images/live-policies.png": "32759c556a2878df9a1c01d72f5334fa2d33f9112bf9d4ff6f285d29d22394a3",
+      "docs/.build/pitch-final/slide-6.png": "06677a4258fb86f4488ba2223064ab543c3de49c4e59ac46961ac9ae95638efe",
+      "docs/images/live-budgets.png": "227eda536f80a90c8f0801627d56b7fd1e1a81026f42d4182da8c9229030f121",
+      "docs/.build/pitch-final/slide-9.png": "4b2226d8f06a463a0f940b44b0b7b8d53f6b2f3664090b2966b78fee22faac36",
+      "docs/.build/pitch-final/slide-10.png": "09ec601cad0718330786943536af858609e106af6bf6b58de703bbbde8e463a2"
+    }
+  },
+  "editorial_rationale": "Actual UI-triggered supplier workflow and its outcomes at the corresponding spoken moments. Reviewed original poster and editable diagrams explain the product. Processing-wait omission explicit. Preserve complete reviewed AAC without re-encoding. Counts on slide9 are calculated from final reports and labelled samples.",
+  "shots": [
+    {
+      "start_frame": 0,
+      "end_frame": 120,
+      "kind": "image",
+      "source": "artifacts/submission/ActionGate-poster.png",
+      "label": "",
+      "provenance": "Reviewed conceptual product illustration, not an application capture"
+    },
+    {
+      "start_frame": 120,
+      "end_frame": 500,
+      "kind": "image",
+      "source": "docs/.build/pitch-final/slide-2.png",
+      "label": "",
+      "provenance": "Product problem explanation"
+    },
+    {
+      "start_frame": 500,
+      "end_frame": 809,
+      "kind": "image",
+      "source": "docs/.build/pitch-final/slide-4.png",
+      "label": "",
+      "provenance": "Editable architecture explanation"
+    },
+    {
+      "start_frame": 809,
+      "end_frame": 900,
+      "kind": "image",
+      "source": "docs/.build/pitch-final/slide-3.png",
+      "label": "",
+      "provenance": "The actual four-step workflow, explained before the recorded click"
+    },
+    {
+      "start_frame": 900,
+      "end_frame": 1035,
+      "kind": "video",
+      "source": "artifacts/submission/ui-workflow-start.webm",
+      "source_start_seconds": 1.6,
+      "label": "Supplier review / synthetic business data",
+      "provenance": "Actual current browser button click, exact source range selected after capture"
+    },
+    {
+      "start_frame": 1035,
+      "end_frame": 1185,
+      "kind": "image",
+      "source": "artifacts/submission/ui-workflow-result.png",
+      "label": "$actual_wait_omitted",
+      "provenance": "The same persisted UI job after real processing"
+    },
+    {
+      "start_frame": 1185,
+      "end_frame": 1309,
+      "kind": "image",
+      "source": "artifacts/submission/ui-workflow-model-result.png",
+      "label": "Local business model",
+      "provenance": "Actual completed model operation from the recorded supplier workflow"
+    },
+    {
+      "start_frame": 1309,
+      "end_frame": 1516,
+      "kind": "image",
+      "source": "docs/.build/pitch-final/slide-8.png",
+      "label": "",
+      "provenance": "Actual admitted document operation and connector effect"
+    },
+    {
+      "start_frame": 1516,
+      "end_frame": 1681,
+      "kind": "image",
+      "source": "artifacts/submission/ui-workflow-pii.png",
+      "label": "Personal data redacted",
+      "provenance": "Actual current real workflow"
+    },
+    {
+      "start_frame": 1681,
+      "end_frame": 1833,
+      "kind": "image",
+      "source": "artifacts/submission/ui-workflow-injection.png",
+      "label": "Prompt injection blocked before dispatch",
+      "provenance": "Actual current semantic detection, no connector effect"
+    },
+    {
+      "start_frame": 1833,
+      "end_frame": 2136,
+      "kind": "image",
+      "source": "artifacts/submission/ui-workflow-foreign-tenant.png",
+      "label": "Another tenant’s document denied",
+      "provenance": "Actual current deterministic access rejection"
+    },
+    {
+      "start_frame": 2136,
+      "end_frame": 2391,
+      "kind": "image",
+      "source": "docs/.build/pitch-final/slide-3.png",
+      "label": "",
+      "provenance": "Workflow explanation while narration describes inherited restrictions"
+    },
+    {
+      "start_frame": 2391,
+      "end_frame": 2580,
+      "kind": "image",
+      "source": "docs/.build/pitch-final/slide-4.png",
+      "label": "",
+      "provenance": "Architecture explanation while narration describes approval requirements"
+    },
+    {
+      "start_frame": 2580,
+      "end_frame": 2886,
+      "kind": "image",
+      "source": "docs/images/live-policies.png",
+      "label": "Policy configuration and feeds",
+      "provenance": "Fresh current configuration capture after loaded data"
+    },
+    {
+      "start_frame": 2886,
+      "end_frame": 3209,
+      "kind": "image",
+      "source": "docs/.build/pitch-final/slide-6.png",
+      "label": "",
+      "provenance": "Control catalog and comparison explanation, actual replay has a separate report"
+    },
+    {
+      "start_frame": 3209,
+      "end_frame": 3590,
+      "kind": "image",
+      "source": "docs/images/live-budgets.png",
+      "label": "Costs, reservations and compute",
+      "provenance": "Fresh current resource records"
+    },
+    {
+      "start_frame": 3590,
+      "end_frame": 3861,
+      "kind": "image",
+      "source": "docs/.build/pitch-final/slide-8.png",
+      "label": "",
+      "provenance": "Exact operation evidence and role-scoped reporting"
+    },
+    {
+      "start_frame": 3861,
+      "end_frame": 4272,
+      "kind": "image",
+      "source": "docs/.build/pitch-final/slide-9.png",
+      "label": "",
+      "provenance": "Existing integrations and independent installation materials"
+    },
+    {
+      "start_frame": 4272,
+      "end_frame": 4620,
+      "kind": "image",
+      "source": "docs/.build/pitch-final/slide-10.png",
+      "label": "",
+      "provenance": "Verified public demo and repository links, complete soundtrack ending"
+    }
+  ]
+}

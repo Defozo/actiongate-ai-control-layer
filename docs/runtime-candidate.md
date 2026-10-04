@@ -4,6 +4,78 @@ The release pins now select Qwen3.5:4b on Ollama 0.32.0. The selection followed
 an isolated GPU comparison. Final reference CPU, resource, restart and independent
 quality acceptance remain separate required checks; selection alone is not a pass.
 
+The current signed classifier is v2.9, artifact
+`5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206`.
+It chooses category and risk before writing its explanation and evidence. Its
+native source schema encodes the existing benign, threat and unknown consistency
+constraints as three disjoint branches, without schema title annotations.
+The independent Pydantic validator, literal source-evidence rules, goal review,
+model parameters and thresholds are unchanged. The signed artifact explicitly
+records output field order. This is a generation constraint, not a repair or
+reinterpretation of invalid model output.
+
+The exact unsigned candidate passed 13 authored diagnostic contrasts and all
+56 exposed calibration/regression cases on CPU, with zero unknowns, FPR 0 and
+recall 1 in both languages. Those are tuning results, not independent acceptance.
+See [raw exposed results](../artifacts/business-intent-v4b-exposed.json) and
+[preserved prototype history](../artifacts/history/cpu-v28-business-intent-prototypes/).
+Production equality passed 29 checks, focused semantic/runtime contracts passed
+97/97, and the signed CPU functional preflight passed 13/13. The legal CPU
+64 KiB workflow passed 12/12 controls in 354.83 seconds: seven source windows,
+separate goal review and output review, nine actual calls, 25,163 settled tokens
+and a maximum serialized input bound of 4056/4096. The content was saved exactly.
+After the database capacity correction, fresh offline CPU installation passed 15/15 checks in 246.88 seconds,
+including actual MCP access, denial during infrastructure failures, same-generation
+recovery and reuse of the durable run. The fresh GPU proof passed 19 infrastructure
+and 13 functional controls in 160.39 seconds, including actual residency of both
+models and independent confirmed guard termination. GPU legal 64 KiB passed in
+12.97 seconds; the hidden-attack broker execution passed in 9.32 seconds with
+zero business effects. The first complete signed v2.9 CPU suite passed 493/493
+tests, with zero failures or skips, stable source hashes and all 17 required
+control areas covered. The runner measured 2185.55 seconds. Calibration passed
+16/16 and exposed regression 40/40. The first independent v2 evaluation passed
+40/40: each language had 10 true positives, 10 true negatives, no false positives,
+no false negatives and no unknown results. Four fixed repeat samples retained
+their verdicts and risk levels. These are results for the specified samples,
+not a claim of perfect classification on arbitrary material.
+
+That complete result and all 95 exact tested sources are preserved in
+[the pre-metrics-fix archive](../artifacts/history/cpu-v29-before-metrics-fix/).
+After the separately reviewed benchmark-producer endpoint correction, the final
+producer-bound CPU suite passed **602/602 tests**, with zero failures or skips,
+stable source hashes and 17/17 control coverage, in 2156.49 seconds. It changed no
+model, prompt, runtime, validation or threshold. Calibration again passed 16/16,
+regression 40/40 and the same independent v2 sample 40/40, with recall 1 and FPR 0
+in both languages and zero unknowns. Four fixed repeats were complete and
+unchanged. The real hidden 64 KiB CPU attack passed all ten checks in 340.53
+seconds. See the [final CPU suite](../artifacts/all-local.json),
+[quality report](../artifacts/semantic-quality.json) and
+[repeat report](../artifacts/semantic-repeat-variation.json).
+The first full 144-row/2928-request performance matrix then exposed PostgreSQL
+connection exhaustion at 50 clients. Its complete original evidence is
+[archived](../artifacts/history/benchmark-pg100-before-capacity-fix/). Only Compose
+database capacity changed: 200 connections, 2 GiB memory and 256 PIDs. The
+post-change [controlled contract suite](../artifacts/contract.json) passed
+591/591 cases without skips or source changes. The earlier 602-case CPU suite,
+long-context measurements and all 95 exact tested sources remain
+[preserved under their PostgreSQL-100 configuration](../artifacts/history/cpu-v29-pg100-before-capacity-fix/).
+Fresh CPU/GPU installation and recovery proofs use the new capacity; model,
+classifier and validators are unchanged. A new full performance matrix remains
+pending as a separate requirement.
+
+Current evidence: [production equality](../artifacts/source-v29-production-equality.json),
+[focused contracts](../artifacts/source-v29-contract.xml),
+[CPU preflight](../artifacts/runtime-preflight.json), and
+[deployed source binding](../artifacts/deployed-source.json),
+[legal CPU 64 KiB](../artifacts/long-payload-cpu.json), and
+[offline CPU installation](../artifacts/clean-install.json),
+[GPU preflight](../artifacts/gpu-preflight.json), and
+[GPU source, hardware and long-context proofs](../artifacts/gpu-reference/).
+Independent v2 was first evaluated only after the earlier gates passed. A
+[separate provenance note](../artifacts/history/holdout-access-note.json) records
+incidental access to three unlabelled search matches after v2.9 was frozen;
+those matches were not used to change the classifier.
+
 Qwen3.5 on Ollama 0.18.2 ignored the native JSON format constraint with
 `think=false`. With prompt v2.3, all 56 exposed calibration/regression results
 were rejected as unknown because the output was prose. Adding an explicit JSON
@@ -87,7 +159,7 @@ output tokens, so this was not an output-limit failure. See the
 [failed suite](../artifacts/history/cpu-v27-long-failure/all-local.json) and
 [exact goal evidence diagnostic](../artifacts/history/cpu-v27-long-failure/goal-diagnostic.json).
 
-The selected v2.8 contract leaves the primary source-window prompt, schema and
+The historical v2.8 contract left the primary source-window prompt, schema and
 literal evidence validation unchanged. Its separate goal review returns exact
 server-provided reference IDs. The gateway independently checks membership and
 resolves each ID to the actual proposed effect or complete validated source
@@ -100,23 +172,23 @@ The executed four-case goal prototype passed all four cases. Production prompt,
 schema and serialized context exactly match that prototype, and 68 focused
 contract tests passed. The renewed CPU runtime preflight passed 13 checks, with
 both pinned models physically resident on CPU and no GPU access. The current
-[legal CPU 64 KiB workflow](../artifacts/long-payload-cpu.json) passed all 12 checks
+[legal CPU 64 KiB workflow](../artifacts/history/guard-v2.8-reference/long-payload-cpu.json) passed all 12 checks
 in 391.87 seconds: seven source windows, a separate goal review and output
 inspection, nine actual calls, at most 3894 of 4096 serialized input tokens per
 call, and 25,148 known settled tokens. The stored content matched exactly.
-The [hidden CPU 64 KiB attack](../artifacts/semantic-long-attack.json) then passed
+The [hidden CPU 64 KiB attack](../artifacts/history/guard-v2.8-reference/semantic-long-attack.json) then passed
 all 10 controls in 495.95 seconds. Seven source windows and the separate goal
 review were complete; the goal reference resolved to the offending fourth
 window and its original evidence. No business effect occurred, and all 23,683
 tokens were accounted for with known usage.
-The [fresh offline CPU installation](../artifacts/clean-install.json) passed all
+The [fresh offline CPU installation](../artifacts/history/guard-v2.8-reference/clean-install.json) passed all
 15 checks in 439.91 seconds, including the actual document/MCP workflow, denied
 dispatch during OPA/database/guard failures and recovery of the durable run after
-worker and gateway restarts. The [v2.8 GPU proof](../artifacts/gpu-preflight.json)
+worker and gateway restarts. The [v2.8 GPU proof](../artifacts/history/guard-v2.8-reference/gpu-preflight.json)
 passed 19 infrastructure and 13 functional checks in 204.91 seconds, with both
 models resident in VRAM and a confirmed independent guard stop. Legal 64 KiB
 passed in 13.81 seconds and the hidden 64 KiB attack test in 19.92 seconds;
-the separate [GPU evidence directory](../artifacts/gpu-reference/) preserves
+the separate [GPU evidence directory](../artifacts/history/guard-v2.8-reference/gpu-reference/) preserves
 source, physical placement and both long-context reports.
 
 The complete v2.8 CPU suite stopped after 252 passed tests and one failed test,
@@ -129,11 +201,12 @@ The [failed suite and quality reports](../artifacts/history/cpu-v28-regression-f
 are preserved together with its exact reconstructed request envelope. The
 original raw reply and evidence quotes were not retained by the quality reporter.
 The suite stopped before opening the independent holdout and before completing
-all control coverage; full release acceptance has not passed.
-Current evidence is in [production equality](../artifacts/goal-reference-production-equality.json),
+all control coverage; that historical v2.8 release did not pass acceptance.
+Historical v2.8 evidence is in [production equality](../artifacts/goal-reference-production-equality.json),
 [focused tests](../artifacts/goal-reference-contract.xml),
-[CPU preflight](../artifacts/runtime-preflight.json) and
-[CPU placement](../artifacts/runtime-hardware.json).
+[CPU preflight](../artifacts/history/guard-v2.8-reference/runtime-preflight.json) and
+[CPU placement](../artifacts/history/guard-v2.8-reference/runtime-hardware.json).
 
-Final release acceptance still requires the complete functional, resource, CPU,
-GPU and independent quality evidence.
+The current functional, resource, fresh-install, CPU/GPU long-context and CPU
+quality evidence is complete. Final release acceptance additionally requires
+the full measured performance matrix and the remaining application/demo proofs.

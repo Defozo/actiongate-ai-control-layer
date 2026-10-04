@@ -11,10 +11,21 @@ session cookie and enforces all action, approval, budget and release controls.
 The public cookie is Secure, HttpOnly and SameSite=Strict. The hosted installation
 has no enabled commercial-provider connector.
 
+A retained offline clean installation has only internal Docker networks, which
+do not publish host ports. After its offline and performance checks, use
+`start-local-relay.ps1 -Project actiongate-gpu-<id>` for the local browser and
+SDK checks on `http://127.0.0.1:18089`. This separate, unprivileged Nginx relay
+joins the selected edge and the existing jury transit network. It binds only
+loopback, preserves workload authorization and browser Origin, and forwards
+to the original operator edge. The application retains its session and CSRF
+checks. No model worker or database joins the transit network. Verify the relay
+and actual client flows before using their reports; starting it alone is not
+a successful browser test.
+
 `configure.py` reads `ACTIONGATE_JURY_PASSWORD` from the environment and writes
 only below the ignored `.state` directory. The generated credential is stored
-in psst. Supply it to judges through the existing private submission, never
-through the public repository, static site, video or query string.
+in psst. Supply it to judges separately. The Published HackTribe project, public
+repository, static site, video and query strings contain no private access code.
 
 The proxy runs as UID 101 with a read-only root, no Linux capabilities, bounded
 memory and PIDs, and a loopback-only host port. It joins exactly two networks:

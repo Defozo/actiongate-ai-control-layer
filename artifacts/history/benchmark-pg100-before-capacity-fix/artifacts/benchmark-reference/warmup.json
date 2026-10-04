@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "generation": 1,
+  "roles": [
+    {
+      "role": "guard",
+      "seconds": 5.590827131003607,
+      "usage": {
+        "inference_slot_seconds": 5.417979,
+        "cpu_seconds": 4.960000000000003,
+        "usage_unknown": false,
+        "prompt_tokens": 15,
+        "completion_tokens": 1,
+        "total_tokens": 16,
+        "upstream_timings": {
+          "total_seconds": 5.404231,
+          "load_seconds": 5.322031,
+          "prefill_seconds": 0.079506,
+          "decode_seconds": 1e-06,
+          "prefill_tokens_per_second": 188.665,
+          "decode_tokens_per_second": 1000000.0
+        }
+      },
+      "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+      "model_manifest_sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b"
+    },
+    {
+      "role": "business",
+      "seconds": 5.300922847993206,
+      "usage": {
+        "inference_slot_seconds": 5.286378,
+        "cpu_seconds": 4.8100000000000005,
+        "usage_unknown": false,
+        "prompt_tokens": 15,
+        "completion_tokens": 1,
+        "total_tokens": 16,
+        "upstream_timings": {
+          "total_seconds": 5.273701,
+          "load_seconds": 5.19086,
+          "prefill_seconds": 0.080173,
+          "decode_seconds": 1e-06,
+          "prefill_tokens_per_second": 187.095,
+          "decode_tokens_per_second": 1000000.0
+        }
+      },
+      "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+      "model_manifest_sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b"
+    }
+  ],
+  "max_output_tokens_per_role": 1,
+  "deadline_seconds_per_role": 45,
+  "generation_unchanged": true,
+  "scope": "model-residency warmup, not a guarded business workflow",
+  "project": "actiongate-gpu-29b4b2ed"
+}

@@ -1,0 +1,11 @@
+{
+  "status": "superseded_verifier_contract_error",
+  "diagnosis": "The original browser assertion treated effect.recorded as a generic effect flag. The API defines that field as ConnectorReceipt presence. reports.save persists a DataObject and returns a local storage receipt. Independent operation readback confirmed the original completed write.",
+  "correction": "The new browser verification independently reads the operation and checks its saved local receipt, exact report key, label, dispatched/completed audit order and settlement. A blocked sample must have no result or dispatch and the semantic.risk block event. No backend, model, policy or frozen acceptance source was changed.",
+  "evidence_scope": "The public API proof reads the persisted local storage receipt and audit; it does not claim a separate direct DataObject table read.",
+  "files": {
+    "operation-readback.json": "2f7bc84c93d4497347cdcff305b9cf6889797c811c4ea32ca299da06d37e1d7f",
+    "verification.json": "cb266d52b6d63322ae71619ae90af2c83320123f93dbf876ed11ff095a4bd111",
+    "verify_browser.cjs": "524f47f41b92600fb87b84590205a1f030e52cf3f69bd983d4f91035a3c171c0"
+  }
+}

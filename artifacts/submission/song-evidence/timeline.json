@@ -1,0 +1,530 @@
+[
+  {
+    "start": 0.0,
+    "end": 8.0,
+    "kind": "graphic",
+    "diagram": "gateway",
+    "title": "Zanim agent\nzrobi krok.",
+    "subtitle": "Kontrola działania przed jego wykonaniem.",
+    "eyebrow": "01 / ACTIONGATE",
+    "tag": "ACTIONGATE / SCHEMAT",
+    "id": "scene-01"
+  },
+  {
+    "start": 8.0,
+    "end": 14.0,
+    "kind": "graphic",
+    "diagram": "opening",
+    "title": "Dokument to dane.",
+    "subtitle": "Instrukcja w dokumencie może próbować zmienić zadanie.",
+    "eyebrow": "02 / PROBLEM",
+    "tag": "ACTIONGATE / SCHEMAT",
+    "id": "scene-02"
+  },
+  {
+    "start": 14.0,
+    "end": 19.4,
+    "kind": "graphic",
+    "diagram": "checks",
+    "title": "Kto? Po co?\nNa jakich danych?",
+    "subtitle": "Warunki akcji są sprawdzane w naszej bramce.",
+    "eyebrow": "03 / WARSTWA KONTROLI",
+    "tag": "ACTIONGATE / SCHEMAT",
+    "nodes": [
+      "TOŻSAMOŚĆ",
+      "CEL",
+      "DANE",
+      "ODBIORCA"
+    ],
+    "id": "scene-03"
+  },
+  {
+    "start": 19.4,
+    "end": 21.866666666666667,
+    "kind": "screen",
+    "title": "Dokument\nprzez MCP.",
+    "subtitle": "Zakończony odczyt dokumentu dostawcy.",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\ActionGate-readonly-song-sources.webm",
+    "crop": [
+      925,
+      130,
+      660,
+      610
+    ],
+    "source_start": 8.7,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · ZAPIS APLIKACJI",
+    "chips": [
+      "documents.read",
+      "LOCAL · COMPLETED"
+    ],
+    "id": "scene-04",
+    "source_sha256": "fd6fe8e58d1d9e3b106d255f28e4d69d4723c4382ed1ac5f5be9aa70edc2d20d",
+    "source_type": "recorded-video",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 21.866666666666667,
+    "end": 23.866666666666667,
+    "kind": "screen",
+    "title": "Pamięć\nz ograniczeniami.",
+    "subtitle": "Dane pozostają w kontrolowanym przebiegu.",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\legal-memory-top.png",
+    "crop": [
+      926,
+      140,
+      650,
+      630
+    ],
+    "source_start": 0,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · ZAPIS APLIKACJI",
+    "chips": [
+      "memory.write",
+      "CONFIDENTIAL"
+    ],
+    "id": "scene-05",
+    "source_sha256": "53f4638a667cbd6c48c0dc0c37875f310c1506ffb0ba5380505ba4e349b785bb",
+    "source_type": "captured-still",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 23.866666666666667,
+    "end": 26.0,
+    "kind": "screen",
+    "title": "Wewnętrzny\nraport.",
+    "subtitle": "Legalna praca przechodzi przez kontrolę.",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\legal-report-top.png",
+    "crop": [
+      926,
+      140,
+      650,
+      630
+    ],
+    "source_start": 0,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · ZAPIS APLIKACJI",
+    "chips": [
+      "reports.save",
+      "LOCAL · COMPLETED"
+    ],
+    "id": "scene-06",
+    "source_sha256": "ccc0c502dcd778b0651a68fd83107d193516fab382ec230c41f06cdd6da44f9e",
+    "source_type": "captured-still",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 26.0,
+    "end": 32.0,
+    "kind": "screen",
+    "title": "Jest wynik.\nJest dowód.",
+    "subtitle": "Odczyt dokumentu ma zapis potwierdzenia konektora.",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\legal-document-receipt.png",
+    "crop": [
+      929,
+      315,
+      656,
+      398
+    ],
+    "source_start": 0,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · ZAPIS APLIKACJI",
+    "chips": [
+      "MCP",
+      "RECEIPT · RECORDED"
+    ],
+    "id": "scene-07",
+    "source_sha256": "0f06eea5dc5fe23eb05c80349f49cdd92737896f3f93398163fc7a96d7a5dd15",
+    "source_type": "captured-still",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 32.0,
+    "end": 43.8,
+    "kind": "graphic",
+    "diagram": "gateway",
+    "title": "Sprawdź\nten ruch.",
+    "subtitle": "Agent proponuje. Warstwa kontroli sprawdza warunki wykonania.",
+    "eyebrow": "04 / AGENT → ACTIONGATE → NARZĘDZIA",
+    "tag": "ACTIONGATE / SCHEMAT",
+    "id": "scene-08"
+  },
+  {
+    "start": 43.8,
+    "end": 50.0,
+    "kind": "graphic",
+    "diagram": "checks",
+    "title": "Zanim wynik\npójdzie dalej.",
+    "subtitle": "Dostęp, cel, odbiorca i zgoda mają konkretny zakres.",
+    "eyebrow": "05 / WARUNKI WYDANIA WYNIKU",
+    "tag": "ACTIONGATE / SCHEMAT",
+    "nodes": [
+      "DOSTĘP",
+      "CEL",
+      "ODBIORCA",
+      "ZGODA"
+    ],
+    "id": "scene-09"
+  },
+  {
+    "start": 50.0,
+    "end": 55.0,
+    "kind": "screen",
+    "title": "Lokalny model.\nKontrolowany wynik.",
+    "subtitle": "Zakończone wywołanie modelu w legalnym procesie.",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\legal-model-top.png",
+    "crop": [
+      925,
+      145,
+      660,
+      613
+    ],
+    "source_start": 0,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · ZAPIS APLIKACJI",
+    "chips": [
+      "models.chat",
+      "LOCAL · COMPLETED"
+    ],
+    "id": "scene-10",
+    "source_sha256": "f67abfcd15b7116946d284fe1cea3419dbab17547433d4e5c40ec0acbfe4c922",
+    "source_type": "captured-still",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 55.0,
+    "end": 60.666666666666664,
+    "kind": "screen",
+    "title": "Od zadania\ndo decyzji.",
+    "subtitle": "Zapisane działania w panelu operatora.",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\fresh-overview.png",
+    "crop": [
+      220,
+      75,
+      1360,
+      770
+    ],
+    "source_start": 0,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · ZAPIS APLIKACJI",
+    "chips": [],
+    "id": "scene-11",
+    "source_sha256": "3e06be28b54e58f46d41a4a4e10f350f78b106cf4883443a739840c3939248b5",
+    "source_type": "captured-still",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 60.666666666666664,
+    "end": 63.4,
+    "kind": "screen",
+    "title": "Dane osobowe\npod kontrolą.",
+    "subtitle": "Redakcja przy zapisie raportu.",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\demo-redact-email-top.png",
+    "crop": [
+      930,
+      135,
+      650,
+      650
+    ],
+    "source_start": 0,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · TEST KONTROLOWANY",
+    "chips": [
+      "REDACT",
+      "reports.save"
+    ],
+    "id": "scene-12",
+    "source_sha256": "1c520bacc886c61af81d52dd34ad53be4bb3c73e97529298728f87f3b84594ed",
+    "source_type": "captured-still",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 63.4,
+    "end": 65.63333333333334,
+    "kind": "screen",
+    "title": "Zmiana celu?\nStop przed akcją.",
+    "subtitle": "Odmowa wykonania zapisuje powód decyzji.",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\demo-semantic-risk-top.png",
+    "crop": [
+      925,
+      132,
+      660,
+      650
+    ],
+    "source_start": 0,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · TEST KONTROLOWANY",
+    "chips": [
+      "BLOCK",
+      "BEFORE DISPATCH"
+    ],
+    "id": "scene-13",
+    "source_sha256": "3df9f4eb73a6fccc9a69f9bb2e9bcb5a477aaf5ab8a50eb0a2c95aeba4163160",
+    "source_type": "captured-still",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 65.63333333333334,
+    "end": 69.66666666666667,
+    "kind": "screen",
+    "title": "Cudzy dokument\nwymaga dostępu.",
+    "subtitle": "Ocena modelu nie rozszerza uprawnień. ",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\demo-document-access-top.png",
+    "crop": [
+      925,
+      135,
+      660,
+      650
+    ],
+    "source_start": 0,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · TEST KONTROLOWANY",
+    "chips": [
+      "ACCESS POLICY",
+      "BLOCK"
+    ],
+    "id": "scene-14",
+    "source_sha256": "b8acd9f00c1500248df0aa103304d87b3ef34fb9183f97988cbf9cb1322bb083",
+    "source_type": "captured-still",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 69.66666666666667,
+    "end": 71.86666666666666,
+    "kind": "graphic",
+    "diagram": "confidential",
+    "title": "Poufność idzie\nz zadaniem.",
+    "subtitle": "Ograniczenia pozostają przy pamięci i delegacji.",
+    "eyebrow": "07 / PRZEPŁYW DANYCH",
+    "tag": "ACTIONGATE / SCHEMAT",
+    "nodes": [
+      "DOKUMENT",
+      "PAMIĘĆ",
+      "DELEGACJA",
+      "RAPORT"
+    ],
+    "id": "scene-15"
+  },
+  {
+    "start": 71.86666666666666,
+    "end": 79.8,
+    "kind": "screen",
+    "title": "Zgoda na\nkonkretną akcję.",
+    "subtitle": "Dokładna zawartość. Wskazany odbiorca.",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\demo-exact-approval-top.png",
+    "crop": [
+      926,
+      135,
+      650,
+      650
+    ],
+    "source_start": 0,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · TEST KONTROLOWANY",
+    "chips": [
+      "REQUIRE APPROVAL"
+    ],
+    "id": "scene-16",
+    "source_sha256": "4d66073f540d030b791e4f0b21374af8009ba16d904d5613a97a81c1726198c2",
+    "source_type": "captured-still",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 79.8,
+    "end": 82.66666666666667,
+    "kind": "graphic",
+    "diagram": "approval",
+    "title": "Operator zna\nzakres zgody.",
+    "subtitle": "Decyzja odnosi się do konkretnego działania.",
+    "eyebrow": "08 / AKCEPTACJA",
+    "tag": "ACTIONGATE / SCHEMAT",
+    "nodes": [
+      "ZAWARTOŚĆ",
+      "ODBIORCA",
+      "ZAKRES",
+      "DECYZJA"
+    ],
+    "id": "scene-17"
+  },
+  {
+    "start": 82.66666666666667,
+    "end": 87.03333333333333,
+    "kind": "screen",
+    "title": "Budżet przed\nwykonaniem.",
+    "subtitle": "Tokeny, zajęcie modelu i koszty zewnętrznych wywołań.",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\fresh-budgets.png",
+    "crop": [
+      223,
+      80,
+      1350,
+      775
+    ],
+    "source_start": 0,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · ZAPIS APLIKACJI",
+    "chips": [
+      "SPENT / RESERVED"
+    ],
+    "id": "scene-18",
+    "source_sha256": "cf3e610becc264d368bed2c37338fae1345bd55ee6adf424be7e5f5582931a2c",
+    "source_type": "captured-still",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 87.03333333333333,
+    "end": 89.2,
+    "kind": "graphic",
+    "diagram": "budget",
+    "title": "Podział pracy.\nWspólny limit.",
+    "subtitle": "Delegacja nie tworzy nowego budżetu zadania.",
+    "eyebrow": "09 / KONTROLA ZASOBÓW",
+    "tag": "ACTIONGATE / SCHEMAT",
+    "nodes": [
+      "ZADANIE",
+      "DELEGACJA",
+      "REZERWACJA",
+      "ROZLICZENIE"
+    ],
+    "id": "scene-19"
+  },
+  {
+    "start": 89.2,
+    "end": 91.63333333333334,
+    "kind": "screen",
+    "title": "Każda decyzja\nma powód.",
+    "subtitle": "Wynik i ślad działania w jednym miejscu.",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\legal-document-receipt.png",
+    "crop": [
+      932,
+      522,
+      646,
+      465
+    ],
+    "source_start": 0,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · ZAPIS APLIKACJI",
+    "chips": [
+      "AUDIT TRAIL"
+    ],
+    "id": "scene-20",
+    "source_sha256": "0f06eea5dc5fe23eb05c80349f49cdd92737896f3f93398163fc7a96d7a5dd15",
+    "source_type": "captured-still",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 91.63333333333334,
+    "end": 98.2,
+    "kind": "screen",
+    "title": "Zmień regułę.\nPorównaj decyzje.",
+    "subtitle": "Ocena wpływu bez powtarzania działań biznesowych.",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\fresh-policies.png",
+    "crop": [
+      250,
+      320,
+      1322,
+      680
+    ],
+    "source_start": 0,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · ZAPIS APLIKACJI",
+    "chips": [
+      "COMPARE DECISIONS"
+    ],
+    "id": "scene-21",
+    "source_sha256": "3ebce25cab85633ce2f318570007f51b0039951721b23516fc1b4b1d0a32597f",
+    "source_type": "captured-still",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 98.2,
+    "end": 104.2,
+    "kind": "screen",
+    "title": "Praca pod\nkontrolą.",
+    "subtitle": "Przegląd działań i aktywnych reguł.",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\fresh-overview.png",
+    "crop": [
+      220,
+      75,
+      1360,
+      770
+    ],
+    "source_start": 0,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · ZAPIS APLIKACJI",
+    "chips": [],
+    "id": "scene-22",
+    "source_sha256": "3e06be28b54e58f46d41a4a4e10f350f78b106cf4883443a739840c3939248b5",
+    "source_type": "captured-still",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 104.2,
+    "end": 112.9,
+    "kind": "graphic",
+    "diagram": "gateway",
+    "title": "Sprawdź\nten ruch.",
+    "subtitle": "Modele, API i MCP przez własną warstwę kontroli.",
+    "eyebrow": "10 / ACTIONGATE",
+    "tag": "ACTIONGATE / SCHEMAT",
+    "id": "scene-23"
+  },
+  {
+    "start": 112.9,
+    "end": 117.4,
+    "kind": "screen",
+    "title": "Sprawdź\nwłasne wejście.",
+    "subtitle": "Test Lab pokazuje decyzję i jej uzasadnienie.",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\fresh-test-lab.png",
+    "crop": [
+      224,
+      82,
+      1348,
+      805
+    ],
+    "source_start": 0,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · ZAPIS APLIKACJI",
+    "chips": [
+      "TEST LAB"
+    ],
+    "id": "scene-24",
+    "source_sha256": "e6f18c387b9118c21012c4bdc8125a0ead14270374c1f5a9ee6ef470e90fe462",
+    "source_type": "captured-still",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 117.4,
+    "end": 122.73333333333333,
+    "kind": "screen",
+    "title": "Praca wykonana.\nPrzebieg widoczny.",
+    "subtitle": "Wewnętrzny raport z zakończonego legalnego procesu.",
+    "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\evidence\\legal-report-top.png",
+    "crop": [
+      926,
+      135,
+      650,
+      640
+    ],
+    "source_start": 0,
+    "eyebrow": "KONTROLA W PRAKTYCE",
+    "tag": "DEMO · ZAPIS APLIKACJI",
+    "chips": [
+      "REPORT · COMPLETED"
+    ],
+    "id": "scene-25",
+    "source_sha256": "ccc0c502dcd778b0651a68fd83107d193516fab382ec230c41f06cdd6da44f9e",
+    "source_type": "captured-still",
+    "hold_policy": "still capture intentionally held; video may hold final frame to complete selected shot"
+  },
+  {
+    "start": 122.73333333333333,
+    "end": 129.0,
+    "kind": "graphic",
+    "diagram": "end",
+    "title": "Kontroluj\ndziałania\nagentów.",
+    "subtitle": "",
+    "eyebrow": "ACTIONGATE / SPRAWDŹ TEN RUCH",
+    "tag": "ACTIONGATE / SCHEMAT",
+    "id": "scene-26"
+  }
+]

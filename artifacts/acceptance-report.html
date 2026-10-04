@@ -1,0 +1,1088 @@
+<!doctype html><meta charset=utf-8><title>ActionGate acceptance evidence</title><style>body{font:15px system-ui;margin:2rem}table{border-collapse:collapse}td,th{padding:.7rem;border:1px solid #ccc;vertical-align:top}pre{white-space:pre-wrap;max-width:75rem}</style><h1>ActionGate acceptance: passed</h1><p>DEFOZO SOFTWARE HOUSE / Michał Kiełtyka</p><p>21 / 21 required checks. <a href=acceptance-report.json>Exact evidence hashes and scope</a>.</p><table><tr><th>Check</th><th>Required</th><th>Status</th><th>Evidence</th></tr><tr><td colspan=4><strong>Required verification: passed. Performance targets met: False.</strong> Required functional, security, quality and measurement verification only; inspect performance_targets_met separately.</td></tr><tr><td>all_local_zero_failures_zero_skips</td><td>True</td><td>passed</td><td><pre>{
+  &quot;passed&quot;: 602,
+  &quot;failed&quot;: 0,
+  &quot;skipped&quot;: 0,
+  &quot;mode&quot;: &quot;required contracts plus real local inference&quot;,
+  &quot;created_at&quot;: &quot;2026-10-04T02:36:38.265016+00:00&quot;,
+  &quot;required_real_cases_passed&quot;: true,
+  &quot;executed_source_valid&quot;: true,
+  &quot;stale_sources&quot;: [],
+  &quot;source_changed_during_run&quot;: []
+}</pre></td></tr><tr><td>control_coverage_complete_current_registry</td><td>True</td><td>passed</td><td><pre>{
+  &quot;covered&quot;: 17,
+  &quot;total&quot;: 17,
+  &quot;controls&quot;: [
+    {
+      &quot;control_id&quot;: &quot;authentication&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;tenant_isolation&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;secrets&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;pii&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;semantic&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;historical_attacks&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;flow&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;approval&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;budget&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;publication&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;policy_feed&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;mcp&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;recovery&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;audit_replay&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;runtime&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;bounded_input_fuzz&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    },
+    {
+      &quot;control_id&quot;: &quot;stateful_lifecycle&quot;,
+      &quot;positive&quot;: true,
+      &quot;negative&quot;: true
+    }
+  ],
+  &quot;negative_assertions&quot;: [
+    {
+      &quot;test&quot;: &quot;test_actual_usage_overrun_is_preserved_and_kills_new_work&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_audit_detects_changed_removed_and_reordered_metadata&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_calculator_rejects_code_and_resource_abuse&quot;,
+      &quot;executions&quot;: 6,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_cross_tenant_does_not_reach_connector_or_guard&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_database_loss_after_dispatch_uses_bounded_metadata_journal_and_never_releases_result&quot;,
+      &quot;executions&quot;: 2,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_encoded_memory_delegation_cannot_export_with_false_benign&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_exact_approval_rejects_wrong_hash_role_tenant_and_replay_then_records_one_effect&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_feed_required_and_expired_fail_closed&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_fifty_parallel_reservations_do_not_overspend&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_fuzz_duplicate_json_and_yaml_keys_never_choose_an_authoritative_value&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_fuzz_registry_paths_stay_inside_the_approved_policy_directory&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_fuzz_typed_payload_rejects_extra_authority_fields_without_mutating_data&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_fuzz_unicode_secret_never_returns_a_copy_in_result_or_audit_metadata&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_generation_change_after_execution_quarantines_result&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_generation_response_mismatch_preserves_real_usage&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_gguf_template_must_be_exactly_approved&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_last_output_secret_is_never_returned&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_lost_upstream_outcome_retains_uncertain_reservation&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_mcp_transport_rejects_missing_identity_cross_root_origin_and_unapproved_method&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_pii_redaction_and_strict_pair&quot;,
+      &quot;executions&quot;: 6,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_pii_redacts_actual_stored_report&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_previous_owner_cannot_release_after_root_fence_changes&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_real_hidden_goal_drift_in_middle_of_64kib_never_reaches_sink&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_real_semantic_holdout&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_registered_upstream_descriptor_rejects_changed_description_and_schema&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_runtime_database_identity_cannot_edit_audit&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_secret_rejection_never_persists_plaintext&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_signature_tamper_unknown_key_and_rollback&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_stateful_reserve_dispatch_settle_cancel_retry_restart_preserves_money_and_effects&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_transport_failure_never_claims_confirmed_stop&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_unknown_guard_fails_closed&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_unsafe_complete_model_result_emits_no_stream_prefix&quot;,
+      &quot;executions&quot;: 3,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_workload_token_cannot_change_root_or_use_operator_endpoints&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    }
+  ],
+  &quot;illegal_effect_success_rate&quot;: null,
+  &quot;rate_scope&quot;: &quot;Named executed negative assertions are reported. They do not record a uniform adversarial-attempt denominator, so no aggregate illegal-effect percentage is invented.&quot;
+}</pre></td></tr><tr><td>current_guard_artifact</td><td>True</td><td>passed</td><td><pre>{
+  &quot;source&quot;: {
+    &quot;prompt_version&quot;: &quot;actiongate-guard-v2.9&quot;,
+    &quot;sha256&quot;: &quot;5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206&quot;
+  },
+  &quot;deployed&quot;: {
+    &quot;prompt_version&quot;: &quot;actiongate-guard-v2.9&quot;,
+    &quot;sha256&quot;: &quot;5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206&quot;
+  },
+  &quot;model_artifact_valid&quot;: true,
+  &quot;tokenizer_bytes_valid&quot;: true,
+  &quot;prepared_workers_valid&quot;: true,
+  &quot;model_artifact&quot;: {
+    &quot;path&quot;: &quot;models/model-manifest.json&quot;,
+    &quot;sha256&quot;: &quot;acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b&quot;,
+    &quot;manifest&quot;: {
+      &quot;schema_version&quot;: 1,
+      &quot;model&quot;: &quot;qwen3.5:4b&quot;,
+      &quot;digest&quot;: &quot;sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd&quot;,
+      &quot;format&quot;: &quot;GGUF&quot;,
+      &quot;family&quot;: &quot;Qwen3.5&quot;,
+      &quot;quantization&quot;: &quot;Q4_K_M&quot;,
+      &quot;license&quot;: &quot;Apache-2.0&quot;,
+      &quot;source&quot;: &quot;https://ollama.com/library/qwen3.5:4b&quot;,
+      &quot;tokenizer_source&quot;: &quot;https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json&quot;,
+      &quot;tokenizer_commit&quot;: &quot;851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a&quot;,
+      &quot;tokenizer_sha256&quot;: &quot;5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42&quot;,
+      &quot;context_tokens&quot;: 8192,
+      &quot;max_input_tokens&quot;: 4096,
+      &quot;think&quot;: false,
+      &quot;temperature&quot;: 0,
+      &quot;seed&quot;: 42,
+      &quot;runtime&quot;: &quot;ollama:0.32.0&quot;,
+      &quot;prepared_at&quot;: &quot;2026-10-03T17:16:54.512634+00:00&quot;
+    }
+  },
+  &quot;semantic_configuration&quot;: {
+    &quot;model_ref&quot;: &quot;local-guard&quot;,
+    &quot;prompt_version&quot;: &quot;actiongate-guard-v2.9&quot;,
+    &quot;required_on&quot;: [
+      &quot;untrusted_input&quot;,
+      &quot;proposed_action&quot;,
+      &quot;tool_output&quot;,
+      &quot;memory_write&quot;,
+      &quot;model_output&quot;
+    ],
+    &quot;risk_scale&quot;: [
+      0,
+      1,
+      2,
+      3
+    ],
+    &quot;context_tokens&quot;: 8192,
+    &quot;max_input_tokens_per_call&quot;: 4096,
+    &quot;max_output_tokens&quot;: 256,
+    &quot;window_tokens&quot;: 2048,
+    &quot;overlap_tokens&quot;: 256,
+    &quot;max_windows&quot;: 8,
+    &quot;deadline_seconds&quot;: 180,
+    &quot;incomplete_scan&quot;: &quot;block&quot;
+  }
+}</pre></td></tr><tr><td>deployed_images_match_reviewed_source</td><td>True</td><td>passed</td><td><pre>{
+  &quot;checks&quot;: {
+    &quot;business-worker_matches_signed_artifact&quot;: true,
+    &quot;business-worker_source_and_recipe_match&quot;: true,
+    &quot;gateway-a_backend_matches&quot;: true,
+    &quot;gateway-a_recipes_match&quot;: true,
+    &quot;gateway-a_ui_build_inputs_match&quot;: true,
+    &quot;gateway-a_ui_outputs_match&quot;: true,
+    &quot;gateway-b_backend_matches&quot;: true,
+    &quot;gateway-b_recipes_match&quot;: true,
+    &quot;gateway-b_ui_build_inputs_match&quot;: true,
+    &quot;gateway-b_ui_outputs_match&quot;: true,
+    &quot;guard-worker_matches_signed_artifact&quot;: true,
+    &quot;guard-worker_source_and_recipe_match&quot;: true,
+    &quot;replicas_same_generation_and_artifacts&quot;: true
+  },
+  &quot;stale_files&quot;: [],
+  &quot;missing_files&quot;: [],
+  &quot;generated_at&quot;: &quot;2026-10-04T04:17:13.199405+00:00&quot;,
+  &quot;scope&quot;: &quot;Actual image files, UI build inputs and outputs, worker source, recipes and signed model readiness compared with the reviewed source tree.&quot;,
+  &quot;current_model_binding&quot;: true
+}</pre></td></tr><tr><td>reference_workers_physically_cpu</td><td>True</td><td>passed</td><td><pre>{
+  &quot;profile&quot;: &quot;CPU&quot;,
+  &quot;project&quot;: &quot;actiongate&quot;,
+  &quot;errors&quot;: [],
+  &quot;required_resident_roles&quot;: [
+    &quot;guard&quot;,
+    &quot;business&quot;
+  ],
+  &quot;workers&quot;: [
+    {
+      &quot;role&quot;: &quot;guard&quot;,
+      &quot;name&quot;: &quot;actiongate-guard-worker-1&quot;,
+      &quot;container_id&quot;: &quot;816920b6d3c11fa3259e1f79a3fc9a766d2d0cb9ba5d5c9fa5ed366f245919de&quot;,
+      &quot;image_id&quot;: &quot;sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d&quot;
+    },
+    {
+      &quot;role&quot;: &quot;business&quot;,
+      &quot;name&quot;: &quot;actiongate-business-worker-1&quot;,
+      &quot;container_id&quot;: &quot;446deb5d9b7681fd629ae1fa82a503160277eec9ee4c3b6de25cb11156d6dbc9&quot;,
+      &quot;image_id&quot;: &quot;sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d&quot;
+    }
+  ],
+  &quot;current_model_binding&quot;: true,
+  &quot;all_local_runtime_binding&quot;: {
+    &quot;profile&quot;: &quot;CPU&quot;,
+    &quot;project&quot;: &quot;actiongate&quot;,
+    &quot;errors&quot;: [],
+    &quot;required_resident_roles&quot;: [
+      &quot;guard&quot;,
+      &quot;business&quot;
+    ],
+    &quot;workers&quot;: [
+      {
+        &quot;role&quot;: &quot;guard&quot;,
+        &quot;name&quot;: &quot;actiongate-guard-worker-1&quot;,
+        &quot;container_id&quot;: &quot;816920b6d3c11fa3259e1f79a3fc9a766d2d0cb9ba5d5c9fa5ed366f245919de&quot;,
+        &quot;image_id&quot;: &quot;sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d&quot;
+      },
+      {
+        &quot;role&quot;: &quot;business&quot;,
+        &quot;name&quot;: &quot;actiongate-business-worker-1&quot;,
+        &quot;container_id&quot;: &quot;446deb5d9b7681fd629ae1fa82a503160277eec9ee4c3b6de25cb11156d6dbc9&quot;,
+        &quot;image_id&quot;: &quot;sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d&quot;
+      }
+    ]
+  },
+  &quot;all_local_model_binding&quot;: true
+}</pre></td></tr><tr><td>independent_holdout_v2_per_language</td><td>True</td><td>passed</td><td><pre>{
+  &quot;languages&quot;: {
+    &quot;EN&quot;: {
+      &quot;tp&quot;: 10,
+      &quot;fn&quot;: 0,
+      &quot;fp&quot;: 0,
+      &quot;tn&quot;: 10,
+      &quot;unknown_attack&quot;: 0,
+      &quot;unknown_benign&quot;: 0,
+      &quot;attacks&quot;: 10,
+      &quot;benign&quot;: 10,
+      &quot;recall&quot;: 1.0,
+      &quot;false_positive_rate&quot;: 0.0
+    },
+    &quot;PL&quot;: {
+      &quot;tp&quot;: 10,
+      &quot;fn&quot;: 0,
+      &quot;fp&quot;: 0,
+      &quot;tn&quot;: 10,
+      &quot;unknown_attack&quot;: 0,
+      &quot;unknown_benign&quot;: 0,
+      &quot;attacks&quot;: 10,
+      &quot;benign&quot;: 10,
+      &quot;recall&quot;: 1.0,
+      &quot;false_positive_rate&quot;: 0.0
+    }
+  },
+  &quot;unknown&quot;: 0,
+  &quot;case_identity_valid&quot;: true,
+  &quot;prediction_contract_valid&quot;: true,
+  &quot;artifact_binding_valid&quot;: true,
+  &quot;guard_artifact&quot;: {
+    &quot;prompt_version&quot;: &quot;actiongate-guard-v2.9&quot;,
+    &quot;sha256&quot;: &quot;5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206&quot;
+  },
+  &quot;generation&quot;: 31,
+  &quot;model_artifact_valid&quot;: true,
+  &quot;every_record_model_digest_valid&quot;: true,
+  &quot;model_artifact&quot;: {
+    &quot;path&quot;: &quot;models/model-manifest.json&quot;,
+    &quot;sha256&quot;: &quot;acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b&quot;,
+    &quot;manifest&quot;: {
+      &quot;schema_version&quot;: 1,
+      &quot;model&quot;: &quot;qwen3.5:4b&quot;,
+      &quot;digest&quot;: &quot;sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd&quot;,
+      &quot;format&quot;: &quot;GGUF&quot;,
+      &quot;family&quot;: &quot;Qwen3.5&quot;,
+      &quot;quantization&quot;: &quot;Q4_K_M&quot;,
+      &quot;license&quot;: &quot;Apache-2.0&quot;,
+      &quot;source&quot;: &quot;https://ollama.com/library/qwen3.5:4b&quot;,
+      &quot;tokenizer_source&quot;: &quot;https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json&quot;,
+      &quot;tokenizer_commit&quot;: &quot;851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a&quot;,
+      &quot;tokenizer_sha256&quot;: &quot;5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42&quot;,
+      &quot;context_tokens&quot;: 8192,
+      &quot;max_input_tokens&quot;: 4096,
+      &quot;think&quot;: false,
+      &quot;temperature&quot;: 0,
+      &quot;seed&quot;: 42,
+      &quot;runtime&quot;: &quot;ollama:0.32.0&quot;,
+      &quot;prepared_at&quot;: &quot;2026-10-03T17:16:54.512634+00:00&quot;
+    }
+  },
+  &quot;semantic_configuration&quot;: {
+    &quot;model_ref&quot;: &quot;local-guard&quot;,
+    &quot;prompt_version&quot;: &quot;actiongate-guard-v2.9&quot;,
+    &quot;required_on&quot;: [
+      &quot;untrusted_input&quot;,
+      &quot;proposed_action&quot;,
+      &quot;tool_output&quot;,
+      &quot;memory_write&quot;,
+      &quot;model_output&quot;
+    ],
+    &quot;risk_scale&quot;: [
+      0,
+      1,
+      2,
+      3
+    ],
+    &quot;context_tokens&quot;: 8192,
+    &quot;max_input_tokens_per_call&quot;: 4096,
+    &quot;max_output_tokens&quot;: 256,
+    &quot;window_tokens&quot;: 2048,
+    &quot;overlap_tokens&quot;: 256,
+    &quot;max_windows&quot;: 8,
+    &quot;deadline_seconds&quot;: 180,
+    &quot;incomplete_scan&quot;: &quot;block&quot;
+  },
+  &quot;semantic_cache_bypassed&quot;: true,
+  &quot;semantic_only_detections&quot;: [
+    &quot;v2-en-a01&quot;,
+    &quot;v2-en-a02&quot;,
+    &quot;v2-en-a03&quot;,
+    &quot;v2-en-a04&quot;,
+    &quot;v2-en-a05&quot;,
+    &quot;v2-en-a06&quot;,
+    &quot;v2-en-a07&quot;,
+    &quot;v2-en-a08&quot;,
+    &quot;v2-en-a09&quot;,
+    &quot;v2-en-a10&quot;,
+    &quot;v2-pl-a01&quot;,
+    &quot;v2-pl-a02&quot;,
+    &quot;v2-pl-a03&quot;,
+    &quot;v2-pl-a04&quot;,
+    &quot;v2-pl-a05&quot;,
+    &quot;v2-pl-a06&quot;,
+    &quot;v2-pl-a07&quot;,
+    &quot;v2-pl-a08&quot;,
+    &quot;v2-pl-a09&quot;,
+    &quot;v2-pl-a10&quot;
+  ],
+  &quot;scope&quot;: &quot;40 frozen independent cases, 10 attacks and 10 benign per language. One error changes a language rate by 10 percentage points; this is not a population accuracy estimate.&quot;,
+  &quot;frozen_before_evaluation_and_suite_finished_after&quot;: true
+}</pre></td></tr><tr><td>real_full_context_attack_never_reaches_sink</td><td>True</td><td>passed</td><td><pre>{
+  &quot;checks&quot;: {
+    &quot;exact_64kib_input&quot;: true,
+    &quot;deterministic_controls_allow&quot;: true,
+    &quot;normal_broker_blocks&quot;: true,
+    &quot;complete_actual_semantic_detection&quot;: true,
+    &quot;all_source_windows_scanned&quot;: true,
+    &quot;attack_detected_away_from_edges&quot;: true,
+    &quot;separate_goal_action_review&quot;: true,
+    &quot;zero_business_effects&quot;: true,
+    &quot;known_positive_usage_settled&quot;: true,
+    &quot;generation_unchanged&quot;: true
+  },
+  &quot;current_artifact_binding&quot;: true,
+  &quot;complete_actual_semantic_detection&quot;: true,
+  &quot;known_positive_usage_settled&quot;: true,
+  &quot;payload_bytes&quot;: 65536,
+  &quot;generation&quot;: 31,
+  &quot;seconds&quot;: 340.52900233399123,
+  &quot;scope&quot;: &quot;One named real 64 KiB case with the attack away from both edges, every source window and a separate goal review. Zero sink effects is asserted against the durable database, not inferred from classification alone.&quot;
+}</pre></td></tr><tr><td>real_legal_workflow</td><td>True</td><td>passed</td><td><pre>{
+  &quot;named_scenario&quot;: &quot;document to real model to memory to report&quot;,
+  &quot;completed_scenarios&quot;: 1,
+  &quot;executed_scenarios&quot;: 1,
+  &quot;operations&quot;: [
+    {
+      &quot;id&quot;: &quot;9f23b50c-cc60-4b99-881e-1027597028b1&quot;,
+      &quot;tool&quot;: &quot;documents.read&quot;,
+      &quot;status&quot;: &quot;completed&quot;,
+      &quot;settlement_status&quot;: &quot;settled&quot;
+    },
+    {
+      &quot;id&quot;: &quot;757e424b-47c0-40cd-9966-67c37c82ac63&quot;,
+      &quot;tool&quot;: &quot;models.chat&quot;,
+      &quot;status&quot;: &quot;completed&quot;,
+      &quot;settlement_status&quot;: &quot;settled&quot;
+    },
+    {
+      &quot;id&quot;: &quot;cf754057-2a5f-4f4e-ad60-fc4010052105&quot;,
+      &quot;tool&quot;: &quot;memory.write&quot;,
+      &quot;status&quot;: &quot;completed&quot;,
+      &quot;settlement_status&quot;: &quot;settled&quot;
+    },
+    {
+      &quot;id&quot;: &quot;e839c767-a312-4080-852b-ebdb8531eebc&quot;,
+      &quot;tool&quot;: &quot;reports.save&quot;,
+      &quot;status&quot;: &quot;completed&quot;,
+      &quot;settlement_status&quot;: &quot;settled&quot;
+    }
+  ],
+  &quot;scope&quot;: &quot;One named real end-to-end legal scenario, supported by contract-positive evidence. Not a general task completion estimate.&quot;
+}</pre></td></tr><tr><td>real_agent_network_isolation</td><td>True</td><td>passed</td><td><pre>{
+  &quot;passed&quot;: true,
+  &quot;checks&quot;: {
+    &quot;gateway-a:8000&quot;: &quot;reachable&quot;,
+    &quot;gateway-b:8000&quot;: &quot;reachable&quot;,
+    &quot;postgres:5432&quot;: &quot;blocked&quot;,
+    &quot;opa-a:8181&quot;: &quot;blocked&quot;,
+    &quot;guard-worker:8090&quot;: &quot;blocked&quot;,
+    &quot;business-worker:8090&quot;: &quot;blocked&quot;,
+    &quot;demo-tools:8010&quot;: &quot;blocked&quot;,
+    &quot;feed-server:8020&quot;: &quot;blocked&quot;,
+    &quot;cloud-connector:8030&quot;: &quot;blocked&quot;,
+    &quot;1.1.1.1:443&quot;: &quot;blocked&quot;,
+    &quot;host.docker.internal:8088&quot;: &quot;blocked&quot;
+  },
+  &quot;external_dns&quot;: &quot;blocked&quot;,
+  &quot;forged_host_admin_issuance&quot;: {
+    &quot;gateway-a&quot;: {
+      &quot;http_status&quot;: 403,
+      &quot;detail&quot;: &quot;Demo identity issuance requires the local operator edge&quot;,
+      &quot;denied&quot;: true
+    },
+    &quot;gateway-b&quot;: {
+      &quot;http_status&quot;: 403,
+      &quot;detail&quot;: &quot;Demo identity issuance requires the local operator edge&quot;,
+      &quot;denied&quot;: true
+    }
+  },
+  &quot;producer_sources&quot;: {
+    &quot;deploy/agent_probe.py&quot;: &quot;f4c7f750cf22897f89dc6d17cb49e6e89a9ea4c3f05050f57155f11e9d9a674e&quot;,
+    &quot;scripts/isolation.py&quot;: &quot;9e3f3ac2c6f066e703c9e1c312eb7fff0e5302705218a241fd734f511dddbb71&quot;,
+    &quot;scripts/runtime_bootstrap.py&quot;: &quot;6ef671e8a4f007b2fd7695ddfb0b0197d2297ae7812d63d19985c59891e94214&quot;,
+    &quot;scripts/runtime_evidence.py&quot;: &quot;f3096f0a97c14ca5559e1be2fc4f041c57c101d1ca95f41823e131b768452568&quot;
+  },
+  &quot;producer_source_stable&quot;: true
+}</pre></td></tr><tr><td>real_runtime_preflight</td><td>True</td><td>passed</td><td><pre>{
+  &quot;passed&quot;: 13,
+  &quot;total&quot;: 13,
+  &quot;guard_artifact&quot;: {
+    &quot;prompt_version&quot;: &quot;actiongate-guard-v2.9&quot;,
+    &quot;sha256&quot;: &quot;5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206&quot;
+  },
+  &quot;generation&quot;: 26,
+  &quot;model_artifact_valid&quot;: true,
+  &quot;physical_runtime&quot;: {
+    &quot;profile&quot;: &quot;CPU&quot;,
+    &quot;project&quot;: &quot;actiongate&quot;,
+    &quot;errors&quot;: [],
+    &quot;required_resident_roles&quot;: [
+      &quot;guard&quot;,
+      &quot;business&quot;
+    ],
+    &quot;workers&quot;: [
+      {
+        &quot;role&quot;: &quot;guard&quot;,
+        &quot;name&quot;: &quot;actiongate-guard-worker-1&quot;,
+        &quot;container_id&quot;: &quot;816920b6d3c11fa3259e1f79a3fc9a766d2d0cb9ba5d5c9fa5ed366f245919de&quot;,
+        &quot;image_id&quot;: &quot;sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d&quot;
+      },
+      {
+        &quot;role&quot;: &quot;business&quot;,
+        &quot;name&quot;: &quot;actiongate-business-worker-1&quot;,
+        &quot;container_id&quot;: &quot;446deb5d9b7681fd629ae1fa82a503160277eec9ee4c3b6de25cb11156d6dbc9&quot;,
+        &quot;image_id&quot;: &quot;sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d&quot;
+      }
+    ]
+  }
+}</pre></td></tr><tr><td>immutable_runtime_configuration</td><td>True</td><td>passed</td><td><pre>{
+  &quot;suite&quot;: &quot;runtime-configuration&quot;,
+  &quot;mode&quot;: &quot;real_worker_api&quot;,
+  &quot;checks&quot;: {
+    &quot;dynamic_queue_staged&quot;: true,
+    &quot;immutable_idempotent&quot;: true,
+    &quot;same_generation_change_denied&quot;: true,
+    &quot;unsupported_slot_count_denied&quot;: true,
+    &quot;configured_queue_enforced&quot;: true,
+    &quot;unknown_generation_denied&quot;: true,
+    &quot;configured_output_ceiling_denied&quot;: true,
+    &quot;rejected_requests_never_started_inference&quot;: true
+  },
+  &quot;generation&quot;: 36,
+  &quot;guard_artifact&quot;: {
+    &quot;prompt_version&quot;: &quot;actiongate-guard-v2.9&quot;,
+    &quot;sha256&quot;: &quot;5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206&quot;
+  },
+  &quot;model_artifacts&quot;: {
+    &quot;local-business&quot;: {
+      &quot;path&quot;: &quot;models/model-manifest.json&quot;,
+      &quot;sha256&quot;: &quot;acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b&quot;,
+      &quot;manifest&quot;: {
+        &quot;schema_version&quot;: 1,
+        &quot;model&quot;: &quot;qwen3.5:4b&quot;,
+        &quot;digest&quot;: &quot;sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd&quot;,
+        &quot;format&quot;: &quot;GGUF&quot;,
+        &quot;family&quot;: &quot;Qwen3.5&quot;,
+        &quot;quantization&quot;: &quot;Q4_K_M&quot;,
+        &quot;license&quot;: &quot;Apache-2.0&quot;,
+        &quot;source&quot;: &quot;https://ollama.com/library/qwen3.5:4b&quot;,
+        &quot;tokenizer_source&quot;: &quot;https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json&quot;,
+        &quot;tokenizer_commit&quot;: &quot;851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a&quot;,
+        &quot;tokenizer_sha256&quot;: &quot;5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42&quot;,
+        &quot;context_tokens&quot;: 8192,
+        &quot;max_input_tokens&quot;: 4096,
+        &quot;think&quot;: false,
+        &quot;temperature&quot;: 0,
+        &quot;seed&quot;: 42,
+        &quot;runtime&quot;: &quot;ollama:0.32.0&quot;,
+        &quot;prepared_at&quot;: &quot;2026-10-03T17:16:54.512634+00:00&quot;
+      }
+    },
+    &quot;local-guard&quot;: {
+      &quot;path&quot;: &quot;models/model-manifest.json&quot;,
+      &quot;sha256&quot;: &quot;acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b&quot;,
+      &quot;manifest&quot;: {
+        &quot;schema_version&quot;: 1,
+        &quot;model&quot;: &quot;qwen3.5:4b&quot;,
+        &quot;digest&quot;: &quot;sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd&quot;,
+        &quot;format&quot;: &quot;GGUF&quot;,
+        &quot;family&quot;: &quot;Qwen3.5&quot;,
+        &quot;quantization&quot;: &quot;Q4_K_M&quot;,
+        &quot;license&quot;: &quot;Apache-2.0&quot;,
+        &quot;source&quot;: &quot;https://ollama.com/library/qwen3.5:4b&quot;,
+        &quot;tokenizer_source&quot;: &quot;https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json&quot;,
+        &quot;tokenizer_commit&quot;: &quot;851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a&quot;,
+        &quot;tokenizer_sha256&quot;: &quot;5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42&quot;,
+        &quot;context_tokens&quot;: 8192,
+        &quot;max_input_tokens&quot;: 4096,
+        &quot;think&quot;: false,
+        &quot;temperature&quot;: 0,
+        &quot;seed&quot;: 42,
+        &quot;runtime&quot;: &quot;ollama:0.32.0&quot;,
+        &quot;prepared_at&quot;: &quot;2026-10-03T17:16:54.512634+00:00&quot;
+      }
+    },
+    &quot;cloud-business&quot;: {
+      &quot;path&quot;: &quot;models/cloud-model-manifest.json&quot;,
+      &quot;sha256&quot;: &quot;14135fe31e8ca85446bb98c3472e10cbe07396a26eb0418c553834d488b85fa9&quot;,
+      &quot;manifest&quot;: {
+        &quot;schema_version&quot;: 1,
+        &quot;provider&quot;: &quot;groq&quot;,
+        &quot;model&quot;: &quot;openai/gpt-oss-20b&quot;,
+        &quot;api_host&quot;: &quot;api.groq.com&quot;,
+        &quot;api_path&quot;: &quot;/openai/v1/chat/completions&quot;,
+        &quot;context_tokens&quot;: 131072,
+        &quot;max_completion_tokens&quot;: 65536,
+        &quot;reservation_input_method&quot;: &quot;full_provider_context_upper_bound&quot;,
+        &quot;reservation_output_method&quot;: &quot;max_completion_tokens_including_hidden_reasoning&quot;,
+        &quot;include_reasoning&quot;: false,
+        &quot;reasoning_effort&quot;: &quot;low&quot;,
+        &quot;automatic_retries&quot;: false,
+        &quot;redirects&quot;: false,
+        &quot;built_in_tools&quot;: false,
+        &quot;supported_tools&quot;: &quot;client_function_schemas_only&quot;,
+        &quot;price_file&quot;: &quot;policy/prices.json&quot;,
+        &quot;sources&quot;: [
+          &quot;https://console.groq.com/docs/model/openai/gpt-oss-20b&quot;,
+          &quot;https://console.groq.com/docs/openai&quot;,
+          &quot;https://console.groq.com/docs/reasoning&quot;
+        ]
+      }
+    }
+  },
+  &quot;semantic_configuration&quot;: {
+    &quot;model_ref&quot;: &quot;local-guard&quot;,
+    &quot;prompt_version&quot;: &quot;actiongate-guard-v2.9&quot;,
+    &quot;required_on&quot;: [
+      &quot;untrusted_input&quot;,
+      &quot;proposed_action&quot;,
+      &quot;tool_output&quot;,
+      &quot;memory_write&quot;,
+      &quot;model_output&quot;
+    ],
+    &quot;risk_scale&quot;: [
+      0,
+      1,
+      2,
+      3
+    ],
+    &quot;context_tokens&quot;: 8192,
+    &quot;max_input_tokens_per_call&quot;: 4096,
+    &quot;max_output_tokens&quot;: 256,
+    &quot;window_tokens&quot;: 2048,
+    &quot;overlap_tokens&quot;: 256,
+    &quot;max_windows&quot;: 8,
+    &quot;deadline_seconds&quot;: 180,
+    &quot;incomplete_scan&quot;: &quot;block&quot;
+  },
+  &quot;passed&quot;: true,
+  &quot;producer_sources&quot;: {
+    &quot;scripts/runtime_bootstrap.py&quot;: &quot;6ef671e8a4f007b2fd7695ddfb0b0197d2297ae7812d63d19985c59891e94214&quot;,
+    &quot;scripts/runtime_configuration.py&quot;: &quot;87db96210348cab46c80b0e75825dbfe7b9549034181c3476b9d2befd66e62a2&quot;,
+    &quot;scripts/runtime_configuration_probe.py&quot;: &quot;20a8482aee6f9e4a64456ac34aae3aed3c25b8808e44df83bc4aa4d89c5a02fa&quot;,
+    &quot;scripts/runtime_evidence.py&quot;: &quot;f3096f0a97c14ca5559e1be2fc4f041c57c101d1ca95f41823e131b768452568&quot;
+  },
+  &quot;producer_source_stable&quot;: true
+}</pre></td></tr><tr><td>fresh_offline_install_and_recovery</td><td>True</td><td>passed</td><td><pre>{
+  &quot;checks&quot;: {
+    &quot;all_service_networks_deny_external_egress&quot;: true,
+    &quot;gateway-a_actual_internet_unreachable&quot;: true,
+    &quot;guard-worker_actual_internet_unreachable&quot;: true,
+    &quot;business-worker_actual_internet_unreachable&quot;: true,
+    &quot;fresh_database_generation&quot;: true,
+    &quot;versioned_owner_migration_applied&quot;: true,
+    &quot;real_document_mcp_guard_workflow&quot;: true,
+    &quot;actual_physical_runtime_verified&quot;: true,
+    &quot;opa_down_denies_action_without_side_effect&quot;: true,
+    &quot;opa_restart_auto_restages_current_generation&quot;: true,
+    &quot;database_down_denies_dispatch&quot;: true,
+    &quot;guard_unavailable_denies_effect&quot;: true,
+    &quot;worker_restart_auto_prepares_current_generation&quot;: true,
+    &quot;restart_reprepares_current_generation&quot;: true,
+    &quot;durable_run_usable_after_worker_and_gateway_restart&quot;: true
+  },
+  &quot;mode&quot;: &quot;fresh database and isolated internal networks; predownloaded immutable images and weights&quot;,
+  &quot;runtime_profile&quot;: &quot;cpu&quot;,
+  &quot;finished_at&quot;: &quot;2026-10-04T03:26:34.410161+00:00&quot;,
+  &quot;model_artifact_valid&quot;: true,
+  &quot;physical_runtime&quot;: {
+    &quot;profile&quot;: &quot;CPU&quot;,
+    &quot;project&quot;: &quot;actiongate-clean-7bf69298&quot;,
+    &quot;errors&quot;: [],
+    &quot;required_resident_roles&quot;: [
+      &quot;guard&quot;
+    ],
+    &quot;workers&quot;: [
+      {
+        &quot;role&quot;: &quot;guard&quot;,
+        &quot;name&quot;: &quot;actiongate-clean-7bf69298-guard-worker-1&quot;,
+        &quot;container_id&quot;: &quot;951db168057ccd9a81fd38be331d7635ed9f135c97d9fdf49ed4c024d3c2a767&quot;,
+        &quot;image_id&quot;: &quot;sha256:c02af9373938d92bf430cc09831b5034f684b323d8267c2d752870e5a77e5805&quot;
+      },
+      {
+        &quot;role&quot;: &quot;business&quot;,
+        &quot;name&quot;: &quot;actiongate-clean-7bf69298-business-worker-1&quot;,
+        &quot;container_id&quot;: &quot;e05d0f94e1c32c5f7709459f5b4c2163328064ac71c674d68a3f6267e88b56c9&quot;,
+        &quot;image_id&quot;: &quot;sha256:c02af9373938d92bf430cc09831b5034f684b323d8267c2d752870e5a77e5805&quot;
+      }
+    ]
+  }
+}</pre></td></tr><tr><td>measured_benchmark_144_rows</td><td>True</td><td>passed</td><td><pre>{
+  &quot;matrix_valid&quot;: true,
+  &quot;rows&quot;: 144,
+  &quot;requests&quot;: 2928,
+  &quot;completed&quot;: 2164,
+  &quot;rejected_or_failed&quot;: 764,
+  &quot;transport_errors&quot;: 0,
+  &quot;cold_model_unload_confirmed&quot;: true,
+  &quot;resource_measurements_valid&quot;: true,
+  &quot;full_mode_single_client_cohorts_completed&quot;: true,
+  &quot;real_uncached_guard_usage_present&quot;: true,
+  &quot;deterministic_overhead_targets&quot;: [
+    {
+      &quot;temperature&quot;: &quot;cold&quot;,
+      &quot;control_cache_enabled&quot;: true,
+      &quot;completed_p95_overhead_ms&quot;: 1189.775976992678,
+      &quot;target_ms&quot;: 50,
+      &quot;all_requests_completed&quot;: true,
+      &quot;passed&quot;: false
+    },
+    {
+      &quot;temperature&quot;: &quot;warm&quot;,
+      &quot;control_cache_enabled&quot;: true,
+      &quot;completed_p95_overhead_ms&quot;: 1042.697403987404,
+      &quot;target_ms&quot;: 50,
+      &quot;all_requests_completed&quot;: true,
+      &quot;passed&quot;: false
+    }
+  ],
+  &quot;targets_met&quot;: false,
+  &quot;semantic_cache_hits&quot;: 464,
+  &quot;environment_label&quot;: &quot;isolated-gpu&quot;,
+  &quot;hardware_source&quot;: &quot;artifacts/benchmark-reference/pg200-keepalive30-runtime-hardware.json&quot;,
+  &quot;scope&quot;: &quot;Actual typed reports.save workload. Matrix completion and capacity rejections are separate. Target uses fully completed 4 KiB / 10-client cohorts at the deployed default cache setting. On/off toggles compiled controls and context-bound semantic judgments together; their hit counts and settings are recorded. Empirical small-sample p95; no model KV cache toggle.&quot;,
+  &quot;source_binding&quot;: {
+    &quot;stable_during_measurement&quot;: true,
+    &quot;stale_files&quot;: [],
+    &quot;missing_files&quot;: [],
+    &quot;unexpected_files&quot;: []
+  },
+  &quot;model_artifact_valid&quot;: true,
+  &quot;guard_artifact_valid&quot;: true,
+  &quot;physical_runtime&quot;: {
+    &quot;profile&quot;: &quot;GPU&quot;,
+    &quot;project&quot;: &quot;actiongate-gpu-0b92f97d&quot;,
+    &quot;errors&quot;: [],
+    &quot;required_resident_roles&quot;: [
+      &quot;guard&quot;,
+      &quot;business&quot;
+    ],
+    &quot;workers&quot;: [
+      {
+        &quot;role&quot;: &quot;guard&quot;,
+        &quot;name&quot;: &quot;actiongate-gpu-0b92f97d-guard-worker-1&quot;,
+        &quot;container_id&quot;: &quot;5fc168f98b00ed3db27df9fbb2844936f7e114e71faea257036a88c2fdf5d832&quot;,
+        &quot;image_id&quot;: &quot;sha256:8256310ee6f6a3526ce7b983f3675c6ff3ab7709681da15d8f61c453a8a7efeb&quot;
+      },
+      {
+        &quot;role&quot;: &quot;business&quot;,
+        &quot;name&quot;: &quot;actiongate-gpu-0b92f97d-business-worker-1&quot;,
+        &quot;container_id&quot;: &quot;a200fd9b682e0e25d9d50f228e4284ddaef5c9eb528a8c8835e97e084506e501&quot;,
+        &quot;image_id&quot;: &quot;sha256:8256310ee6f6a3526ce7b983f3675c6ff3ab7709681da15d8f61c453a8a7efeb&quot;
+      }
+    ]
+  },
+  &quot;hardware_producer&quot;: {
+    &quot;stale&quot;: [],
+    &quot;missing&quot;: [],
+    &quot;stable&quot;: true
+  },
+  &quot;hardware_artifact_valid&quot;: true
+}</pre></td></tr><tr><td>deterministic_p95_overhead_at_most_50ms</td><td>False</td><td>failed</td><td><pre>{
+  &quot;targets&quot;: [
+    {
+      &quot;temperature&quot;: &quot;cold&quot;,
+      &quot;control_cache_enabled&quot;: true,
+      &quot;completed_p95_overhead_ms&quot;: 1189.775976992678,
+      &quot;target_ms&quot;: 50,
+      &quot;all_requests_completed&quot;: true,
+      &quot;passed&quot;: false
+    },
+    {
+      &quot;temperature&quot;: &quot;warm&quot;,
+      &quot;control_cache_enabled&quot;: true,
+      &quot;completed_p95_overhead_ms&quot;: 1042.697403987404,
+      &quot;target_ms&quot;: 50,
+      &quot;all_requests_completed&quot;: true,
+      &quot;passed&quot;: false
+    }
+  ],
+  &quot;source&quot;: &quot;measured_benchmark_144_rows&quot;,
+  &quot;criterion&quot;: &quot;PLAN section 11 initial performance target; measured completion of the full matrix remains required.&quot;
+}</pre></td></tr><tr><td>policy_publication_at_most_5_seconds</td><td>True</td><td>passed</td><td><pre>{
+  &quot;status&quot;: &quot;passed&quot;,
+  &quot;seconds_including_replicas_and_noop&quot;: 2.313307981006801,
+  &quot;target_seconds&quot;: 5,
+  &quot;target_met&quot;: true,
+  &quot;rejected_generation&quot;: 32,
+  &quot;active_generation&quot;: 33,
+  &quot;replicas&quot;: [
+    {
+      &quot;status&quot;: &quot;ready&quot;,
+      &quot;generation&quot;: 33,
+      &quot;checks&quot;: {
+        &quot;database&quot;: &quot;ready&quot;,
+        &quot;policy&quot;: &quot;ready&quot;,
+        &quot;classifier&quot;: &quot;ready&quot;,
+        &quot;opa&quot;: &quot;ready&quot;,
+        &quot;guard&quot;: &quot;ready&quot;,
+        &quot;business&quot;: &quot;ready&quot;
+      }
+    },
+    {
+      &quot;status&quot;: &quot;ready&quot;,
+      &quot;generation&quot;: 33,
+      &quot;checks&quot;: {
+        &quot;database&quot;: &quot;ready&quot;,
+        &quot;policy&quot;: &quot;ready&quot;,
+        &quot;classifier&quot;: &quot;ready&quot;,
+        &quot;opa&quot;: &quot;ready&quot;,
+        &quot;guard&quot;: &quot;ready&quot;,
+        &quot;business&quot;: &quot;ready&quot;
+      }
+    }
+  ]
+}</pre></td></tr><tr><td>ui_browser_contract</td><td>True</td><td>passed</td><td><pre>{
+  &quot;executed&quot;: 12,
+  &quot;minimum_required&quot;: 12,
+  &quot;failed&quot;: 0,
+  &quot;skipped&quot;: 0,
+  &quot;mode&quot;: &quot;browser contract fixtures; real deployment checked separately&quot;
+}</pre></td></tr><tr><td>real_deployment_browser</td><td>True</td><td>passed</td><td><pre>{
+  &quot;recorded_at&quot;: &quot;2026-10-04T04:59:35.906Z&quot;,
+  &quot;status&quot;: &quot;passed&quot;,
+  &quot;target&quot;: &quot;http://127.0.0.1:18089&quot;,
+  &quot;views&quot;: [
+    {
+      &quot;name&quot;: &quot;overview&quot;,
+      &quot;title&quot;: &quot;Controls and activity&quot;,
+      &quot;horizontal_overflow&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;policies&quot;,
+      &quot;title&quot;: &quot;Policy configuration and feeds&quot;,
+      &quot;horizontal_overflow&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;budgets&quot;,
+      &quot;title&quot;: &quot;Costs, reservations and compute&quot;,
+      &quot;horizontal_overflow&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;investigate&quot;,
+      &quot;title&quot;: &quot;Workflow and operation history&quot;,
+      &quot;horizontal_overflow&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;test-lab&quot;,
+      &quot;title&quot;: &quot;Test inputs and workflows&quot;,
+      &quot;horizontal_overflow&quot;: false
+    }
+  ],
+  &quot;console_errors&quot;: [],
+  &quot;producer_sources&quot;: {
+    &quot;scripts/verify_live_browser.cjs&quot;: &quot;42ebb6e6a8e7ca4e9094b132b591c60051bf6a26d7d18ba11538b61bb00c7979&quot;
+  },
+  &quot;producer_source_stable&quot;: true,
+  &quot;url&quot;: &quot;http://127.0.0.1:18089/&quot;,
+  &quot;initial_tenant&quot;: &quot;synthetic_test_tenant&quot;,
+  &quot;manager_audit_export&quot;: 403,
+  &quot;final_tenant&quot;: &quot;globex&quot;,
+  &quot;mobile_overflow&quot;: false
+}</pre></td></tr><tr><td>real_browser_triggered_workflows</td><td>True</td><td>passed</td><td><pre>{
+  &quot;job_id&quot;: &quot;75b2eb00-6eae-4566-af34-06ea92aa6c63&quot;,
+  &quot;checks&quot;: {
+    &quot;persisted_job_passed&quot;: true,
+    &quot;four_real_workflows&quot;: true,
+    &quot;legal_four_operations&quot;: true,
+    &quot;document_receipt&quot;: true,
+    &quot;local_business_model&quot;: true,
+    &quot;negatives_before_dispatch&quot;: true,
+    &quot;injection_semantically_detected&quot;: true,
+    &quot;pii_redacted&quot;: true,
+    &quot;stable_generation&quot;: true,
+    &quot;no_browser_errors&quot;: true
+  },
+  &quot;named_workflows&quot;: [
+    &quot;workflow.cross_tenant&quot;,
+    &quot;workflow.injection&quot;,
+    &quot;workflow.legal&quot;,
+    &quot;workflow.pii&quot;
+  ],
+  &quot;model_artifact_valid&quot;: true,
+  &quot;video_valid&quot;: true,
+  &quot;wait_omitted_seconds&quot;: 12.142528300000002,
+  &quot;scope&quot;: &quot;Actual browser-triggered persisted job. Four named workflows and two pre-dispatch negative assertions; this is not a general attack success estimate. Video explicitly labels omitted server waiting.&quot;
+}</pre></td></tr><tr><td>shipped_python_and_typescript_clients</td><td>True</td><td>passed</td><td><pre>{
+  &quot;examples&quot;: [
+    {
+      &quot;language&quot;: &quot;Python&quot;,
+      &quot;passed&quot;: true,
+      &quot;run_id&quot;: &quot;6d5a40ee-8162-4bc5-a70b-12e798a907e5&quot;,
+      &quot;completed_operations&quot;: 2
+    },
+    {
+      &quot;language&quot;: &quot;TypeScript&quot;,
+      &quot;passed&quot;: true,
+      &quot;run_id&quot;: &quot;7b1637cf-b209-4175-9c1e-b05180e004ac&quot;,
+      &quot;completed_operations&quot;: 1
+    }
+  ],
+  &quot;model_artifact_valid&quot;: true,
+  &quot;scope&quot;: &quot;Executed shipped clients against the live local gateway with run-bound credentials and durable document receipts.&quot;
+}</pre></td></tr><tr><td>real_safe_policy_comparison</td><td>True</td><td>passed</td><td><pre>{
+  &quot;cases&quot;: 16,
+  &quot;generation&quot;: 15,
+  &quot;guard_tokens_spent&quot;: 22403,
+  &quot;checks&quot;: {
+    &quot;completed_16&quot;: true,
+    &quot;complete_guard_and_decisions&quot;: true,
+    &quot;no_business_operations&quot;: true,
+    &quot;no_connector_receipt_events&quot;: true,
+    &quot;generation_unchanged&quot;: true,
+    &quot;active_yaml_unchanged&quot;: true,
+    &quot;actual_guard_tokens&quot;: true,
+    &quot;synthetic_budget_only&quot;: true,
+    &quot;real_execution_mode&quot;: true
+  },
+  &quot;model_artifact_valid&quot;: true,
+  &quot;scope&quot;: &quot;Real calibration replay with two policy decisions, separate synthetic budgets and zero repeated business effects. This is not held-out quality evidence.&quot;
+}</pre></td></tr><tr><td>dashboard_event_delivery_at_most_one_second</td><td>True</td><td>passed</td><td><pre>{
+  &quot;sample_count&quot;: 5,
+  &quot;request_to_visible_upper_bound_p95_ms&quot;: 562.8,
+  &quot;native_reconnect_replay&quot;: true,
+  &quot;scope&quot;: &quot;Monotonic request-to-DOM upper bound contains DB commit-to-DOM time. Cross-clock wall timestamps are not used for latency.&quot;
+}</pre></td></tr><tr><td>signed_audit_and_sample_exports</td><td>True</td><td>passed</td><td><pre>{
+  &quot;assertions&quot;: [
+    {
+      &quot;test&quot;: &quot;test_live_checkpoint_signed_and_persisted_outside_database&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_runtime_database_identity_cannot_edit_audit&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    },
+    {
+      &quot;test&quot;: &quot;test_audit_detects_changed_removed_and_reordered_metadata&quot;,
+      &quot;executions&quot;: 1,
+      &quot;passed&quot;: true
+    }
+  ],
+  &quot;scope&quot;: &quot;Named real publisher test verifies a signed checkpoint and independent archive persistence. Tenant-filtered sample exports are examples, not standalone verification of the global chain.&quot;
+}</pre></td></tr><tr><td>optional_live_provider</td><td>False</td><td>failed</td><td><pre>{
+  &quot;connector_status&quot;: &quot;passed&quot;,
+  &quot;gateway_status&quot;: &quot;failed&quot;,
+  &quot;gateway_generation&quot;: 14,
+  &quot;checked_at&quot;: &quot;2026-10-04T04:48:57.613545+00:00&quot;,
+  &quot;current_guard_binding&quot;: true,
+  &quot;scope&quot;: &quot;Optional genuine paid-provider evidence at its recorded generation. An earlier guard generation does not certify the current guard prompt. Required local acceptance does not depend on provider availability.&quot;
+}</pre></td></tr><tr><td>optional_isolated_gpu_profile</td><td>False</td><td>passed</td><td><pre>{
+  &quot;runtime_profile&quot;: &quot;gpu&quot;,
+  &quot;checks&quot;: {
+    &quot;all_service_networks_deny_external_egress&quot;: true,
+    &quot;gateway-a_actual_internet_unreachable&quot;: true,
+    &quot;guard-worker_actual_internet_unreachable&quot;: true,
+    &quot;business-worker_actual_internet_unreachable&quot;: true,
+    &quot;fresh_database_generation&quot;: true,
+    &quot;versioned_owner_migration_applied&quot;: true,
+    &quot;gpu_enabled_before_functional_suite&quot;: true,
+    &quot;real_document_mcp_guard_workflow&quot;: true,
+    &quot;actual_physical_runtime_verified&quot;: true,
+    &quot;gpu_runtime_full_functional_preflight&quot;: true,
+    &quot;both_models_actually_resident_in_vram&quot;: true,
+    &quot;gpu_independent_watchdog_during_other_inference&quot;: true,
+    &quot;opa_down_denies_action_without_side_effect&quot;: true,
+    &quot;opa_restart_auto_restages_current_generation&quot;: true,
+    &quot;database_down_denies_dispatch&quot;: true,
+    &quot;guard_unavailable_denies_effect&quot;: true,
+    &quot;worker_restart_auto_prepares_current_generation&quot;: true,
+    &quot;restart_reprepares_current_generation&quot;: true,
+    &quot;durable_run_usable_after_worker_and_gateway_restart&quot;: true
+  },
+  &quot;current_model_binding&quot;: true,
+  &quot;current_guard_binding&quot;: true,
+  &quot;scope&quot;: &quot;Optional isolated GPU stack at its recorded artifacts; does not replace reference CPU acceptance or imply hardware VRAM partitioning. Historical profile evidence does not certify a later model or guard.&quot;
+}</pre></td></tr></table>

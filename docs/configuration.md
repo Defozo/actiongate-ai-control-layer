@@ -56,8 +56,9 @@ Compose mapping is the inventory of which secret each runtime can receive.
 
 ## Semantic classification contract
 
-The local model returns exactly four JSON keys: `reason`, `category`, `evidence`
-and `risk_level`. It chooses one category, with a fixed public verdict projection:
+For source windows, the local model returns exactly four JSON keys in this order:
+`category`, `risk_level`, `reason`, `evidence`. It chooses one category, with a
+fixed public verdict projection:
 
 | Model category | Public verdict | Required consistency |
 | --- | --- | --- |
@@ -99,6 +100,16 @@ or incomplete inspection separately, never as a true-positive threat detection.
 No post-hoc keyword rule converts a mistaken or unknown model result into a
 claimed semantic success. Deterministic ACL, DLP and policy decisions remain
 separate evidence.
+
+The source-window native schema encodes these same consistency rules in three
+disjoint alternatives: benign, suspicious and unknown. Classification precedes
+the short reason and literal evidence. The independent application validator and
+source matching still validate every response. Only nonvalidating `title`
+annotations are omitted from this native schema to conserve serialized context;
+no input, output or evidence limits change. The actual schema and an explicit
+field-order array are signed, so canonical JSON hashing cannot hide an order
+change. The goal/action prompt and its separate schema retain their existing
+contract.
 
 ## Bounded semantic reuse
 

@@ -1,0 +1,184 @@
+{
+  "schema_version": "actiongate-independent-pdf-review.v1",
+  "reviewed_at": "2026-10-04T05:15:06.025746+00:00",
+  "result": "passed",
+  "scope": "Read-only review of canonical final PDF and PPTX; only review report and rendered images written.",
+  "files_sha256": {
+    "artifacts/submission/ActionGate.pdf": "76231f8826af2099eaf692a35c3be226444cc8bef8ab46e0b5919724cfd4dbed",
+    "artifacts/submission/ActionGate.pptx": "d7d6264dea5f898ef9e3d7c47b16fb81803fba051371c20ec75a70ff53fd3ddb",
+    "artifacts/all-local.json": "3efe4278e533c2a5c42622db84c9445980960e50b02544e9a0e780c3c67359c4",
+    "artifacts/semantic-quality.json": "95fc1802efb0ccab1c4dfddbd356745bb65107e1110574b0f924888a615d078c",
+    "TEAM.json": "732bad41bd3c4563673c92c211f77c91c1219ecf5bd22580bc8f48329299a6be"
+  },
+  "method": {
+    "visual": "Rendered every actual canonical PDF page using system Poppler pdftoppm -r 110 -png and independently viewed all 10 full-page images. Main slide text, diagrams, screenshots, labels, page numbers and margins inspected.",
+    "structural": "pypdf page count, metadata, native text and annotation inspection; direct ZIP/XML inspection of all PPTX slides, all speaker notes and slide-note relationships.",
+    "factual": "Compared displayed counts to current artifacts/all-local.json and artifacts/semantic-quality.json and identity to TEAM.json. No test suite rerun.",
+    "not_performed": [
+      "Native PowerPoint rendering by this reviewer",
+      "Live gateway or public URL availability test",
+      "Independent backend or UI code audit",
+      "OCR of every tiny screenshot label"
+    ]
+  },
+  "pdf": {
+    "pages": 10,
+    "page_size_points": [
+      960,
+      540
+    ],
+    "native_text_on_all_pages": true,
+    "annotation_count": 0,
+    "producer": "Microsoft® PowerPoint® dla Microsoft 365"
+  },
+  "pptx": {
+    "slides": 10,
+    "nonempty_speaker_notes": 10,
+    "unique_slide_note_links": 10,
+    "all_notes_read": true,
+    "external_relationships": 0
+  },
+  "checks": {
+    "suite_counts": {
+      "passed": 602,
+      "failed": 0,
+      "skipped": 0,
+      "display_matches": true
+    },
+    "semantic_sample": {
+      "n": 40,
+      "EN_correct": 20,
+      "PL_correct": 20,
+      "unknown": 0,
+      "display_matches": true,
+      "sample_limit_explained_in_notes": true
+    },
+    "team": {
+      "team_name": "DEFOZO SOFTWARE HOUSE",
+      "member": "Michał Kiełtyka",
+      "cover_and_final_match": true
+    },
+    "tenant_wording": {
+      "exact_visible_phrase": "Another tenant’s document denied",
+      "match": true
+    },
+    "public_url_strings": {
+      "values": [
+        "https://743b-83-10-76-158.ngrok-free.app",
+        "https://github.com/Defozo/actiongate-ai-control-layer"
+      ],
+      "username_password_query_fragment_absent": true,
+      "credential_pattern_hits_in_slide_and_note_text": 0,
+      "visual_credentials_observed": false,
+      "live_reachability": "not_checked",
+      "clickable_hyperlinks": "not_present; URLs are visible text"
+    },
+    "text_consistency": {
+      "all_pdf_pages_match_pptx_text_ignoring_whitespace": true
+    },
+    "visual": {
+      "pages_independently_viewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clipped_primary_text_observed": false,
+      "unintended_overlaps_observed": false,
+      "missing_glyphs_observed": false,
+      "notes": "Screenshots are illustrative at presentation scale; their smallest UI labels require zoom. No material layout defect observed."
+    }
+  },
+  "page_reviews": [
+    {
+      "page": 1,
+      "normalized_text_matches_pptx": true,
+      "visual_status": "passed",
+      "clipped_primary_text_observed": false,
+      "overlaps_or_missing_glyphs_observed": false,
+      "render": "docs/.build/pitch-final/pdf-page-01.png"
+    },
+    {
+      "page": 2,
+      "normalized_text_matches_pptx": true,
+      "visual_status": "passed",
+      "clipped_primary_text_observed": false,
+      "overlaps_or_missing_glyphs_observed": false,
+      "render": "docs/.build/pitch-final/pdf-page-02.png"
+    },
+    {
+      "page": 3,
+      "normalized_text_matches_pptx": true,
+      "visual_status": "passed",
+      "clipped_primary_text_observed": false,
+      "overlaps_or_missing_glyphs_observed": false,
+      "render": "docs/.build/pitch-final/pdf-page-03.png"
+    },
+    {
+      "page": 4,
+      "normalized_text_matches_pptx": true,
+      "visual_status": "passed",
+      "clipped_primary_text_observed": false,
+      "overlaps_or_missing_glyphs_observed": false,
+      "render": "docs/.build/pitch-final/pdf-page-04.png"
+    },
+    {
+      "page": 5,
+      "normalized_text_matches_pptx": true,
+      "visual_status": "passed",
+      "clipped_primary_text_observed": false,
+      "overlaps_or_missing_glyphs_observed": false,
+      "render": "docs/.build/pitch-final/pdf-page-05.png"
+    },
+    {
+      "page": 6,
+      "normalized_text_matches_pptx": true,
+      "visual_status": "passed",
+      "clipped_primary_text_observed": false,
+      "overlaps_or_missing_glyphs_observed": false,
+      "render": "docs/.build/pitch-final/pdf-page-06.png"
+    },
+    {
+      "page": 7,
+      "normalized_text_matches_pptx": true,
+      "visual_status": "passed",
+      "clipped_primary_text_observed": false,
+      "overlaps_or_missing_glyphs_observed": false,
+      "render": "docs/.build/pitch-final/pdf-page-07.png"
+    },
+    {
+      "page": 8,
+      "normalized_text_matches_pptx": true,
+      "visual_status": "passed",
+      "clipped_primary_text_observed": false,
+      "overlaps_or_missing_glyphs_observed": false,
+      "render": "docs/.build/pitch-final/pdf-page-08.png"
+    },
+    {
+      "page": 9,
+      "normalized_text_matches_pptx": true,
+      "visual_status": "passed",
+      "clipped_primary_text_observed": false,
+      "overlaps_or_missing_glyphs_observed": false,
+      "render": "docs/.build/pitch-final/pdf-page-09.png"
+    },
+    {
+      "page": 10,
+      "normalized_text_matches_pptx": true,
+      "visual_status": "passed",
+      "clipped_primary_text_observed": false,
+      "overlaps_or_missing_glyphs_observed": false,
+      "render": "docs/.build/pitch-final/pdf-page-10.png"
+    }
+  ],
+  "blocking_findings": [],
+  "nonblocking_observations": [
+    "Public URL strings are visible plain text without hyperlink annotations in the PDF or external hyperlink relationships in the PPTX."
+  ]
+}

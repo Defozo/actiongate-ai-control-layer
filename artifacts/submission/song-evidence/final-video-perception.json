@@ -1,0 +1,109 @@
+{
+  "created_at": "2026-10-03T23:01:15.983608+00:00",
+  "status": "completed",
+  "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\ActionGate-song-pl-2026-10-04-v2.mp4",
+  "source_sha256": "b3c3b557a1b9ee98c6f1c64a5cc3dba0d75edad144eb284f8d3b3a5fb9d47a71",
+  "human_review": false,
+  "method": "Actual media input to audio/video capable model; no expected script supplied",
+  "model": "gemini-3.8-flash",
+  "prompt": "Inspect this entire final product pitch music video and listen to its actual audio, from beginning to end. Audience: AI Control Layer judges. Requirements: Polish original song with rhythmic/melodic verses and sung hook; real application evidence labelled Demo; truthful product explanation; readable synchronized Polish lyrics; no abrupt ending; duration strictly less than 180 seconds. No expected lyrics supplied. Assess actual audiovisual content, no invented software functions. Return JSON with coverage_seconds, viewing_method_and_limits, story_understood, observed_genre, singing_present, intelligibility, music_vocal_balance, subtitle_language, subtitle_sync, text_readability, visual_continuity, observed_defects (timestamp, observation, severity, confidence), ending_complete, first_words_heard, last_words_heard, verdict (pass/revise), limitations. Distinguish observed defects from taste preferences; do not invent problems to fill a quota. Note any hard subtitle mismatch, clipped/cropped titles, audio glitches, wrong scene-to-lyric match, illegible important evidence. Do not claim human viewing or frame-by-frame coverage; video sampling is limited.",
+  "references": [
+    "https://ai.google.dev/gemini-api/docs/audio",
+    "https://ai.google.dev/gemini-api/docs/video-understanding"
+  ],
+  "request_bytes": 9717633,
+  "response": {
+    "status": "completed",
+    "usage": {
+      "total_tokens": 12585,
+      "total_input_tokens": 11980,
+      "input_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 241
+        },
+        {
+          "modality": "video",
+          "tokens": 11739
+        }
+      ],
+      "total_cached_tokens": 0,
+      "total_output_tokens": 304,
+      "total_tool_use_tokens": 0,
+      "total_thought_tokens": 301,
+      "raw_prompt_token": 13989,
+      "model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 960
+            },
+            {
+              "modality": "video",
+              "tokens": 11739
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 308
+            }
+          ],
+          "thoughts_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 301
+            }
+          ]
+        }
+      ],
+      "non_grounding_model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 960
+            },
+            {
+              "modality": "video",
+              "tokens": 11739
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 308
+            }
+          ],
+          "thoughts_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 301
+            }
+          ]
+        }
+      ]
+    },
+    "created": "2026-10-03T23:01:29Z",
+    "updated": "2026-10-03T23:01:29Z",
+    "service_tier": "standard",
+    "steps": [
+      {
+        "signature": "Ev4ICvsIAWkUfRN5SuAunK27VVwQSgKbOC+RhMoh0Wb8wHcvi4lstrzqaJxkjutJeZIKPDJljM3BE4LfR5pUY5fySgAtmb5dS3AamlKjauAT9Rt8yPace5HscQ33KDg1vGagb6f4LBiYKmNqVBK/HkAs7HiE+oMVM7k27x2nEYfwUFLcWcAO0AWEdQ6zMh5j1Ro+LwyRNLxYz9FAhLZykdQ/De+iM4aEmzC9cUldOISTtbxHOT2wwyE92wbBlxJXHEF2SVvUzh5xoj6uyppA21ymsrOLe70ay0iG/2aVmnOeNJM5Xg1QEHoGCNpy7zYawMQDi2SlN2oTCQONIwcA+bekdhavLZeWfoIZe51me/DJhykGq4zuUakWymgE31NFtygIUxZcLym93Tf035jz5UOQ25Tm0GF1iNQe+Uj/Mi9M5TskIFxVrenXnuFan3uqdtPJh5F/IeEGVmJlG9CPBOFSGlzGoPl5DrTJv0QcUOVFgCkK8qUmFjCBJreeOZboSOMxEmjn0X+bExBNP+iDfJAV6vqem8TNMF6HicOI4gf4JZpYUkLVIt8NAmyjwIzo82NgcuUapesKRZcgp83cp3ZS+PnqefYGpKISwdvSiA7AneqLhkCCFVxRMNy9/uhZuDPXHKmJa4OhbH7WGsdp2xcEU4kWTeaKtOX2rbsn2k3ARjLjQYEvVXLy7f9vEYQsecWqdpQ3mTRYdI259JLPbnzadGComO76DgnAK/jY0AnZZ/ZezxjU9AR1xGxcPUujF07Whc7A7S/blHD1zBfXlpmImvZJFfL3SGslwCLcrCTlAxJ7OTeY/8WNA+Bd45S6Rj+73j/9VfawOr/MAEJg5YquYNQW9f1UrE+LkAc7i5TUMX3sbrjhV0mU431dFhZo8kZeZdm1kIpYyNQDK9Pw4WPnMWR2v1ZSkHykSZjRhrCeBJnAqKEqcRYukSniwVc47Zr89WUw4skJQcJXoc/uF0N3+fsGmjhMZqjjsNMjUOuR3q61nfGr5mOGBQ7dNDSCX6766Q0kc9VeIq7V7Jy7MbT5/a+lgM1IbIHxZZLtXdGwtd6d5kIGogUfgefw9n2MhazBNLCsaPcIsG8oP4JgJgLif2H9Cda6QwFXKdnT08ErZipj2833jlIItovk0O0S6jRtkIgp251hDQ2MHtTIfkv6XFHdEoHFb4GhDEXsUSSBAYeVpqA8dbTrE/rRW3WKxt/mD9BVDpSOLCoTG/suS/zR8LeRGb+5GlL0QJGYQDy8/LpZIHlaiiDNotpnPzLNauTqksWxEv6d66KN0njoGSpE1P1Z0ae78BoT/KLv1i16zems5pScWflDPn3CT0HuQ2UBf3x5rfp3LCdTFvQvmi51IU8Z4hCu0bl38FY/DR1jsfjjFn3TRTzVl2hijdAgsojwioCOwOw0MNXEQzEVfmmRBEVRuICsYBiEup9qtmAYsjaCJl+YIv5Nr0q10gUjSdv5Lw1cbKfhN+/VsYhmthHP/FheoifXYyDO0ur4EaqrwICkw8lChME+iDBndHWNlw==",
+        "type": "thought"
+      },
+      {
+        "content": [
+          {
+            "text": "```json\n{\n  \"coverage_seconds\": 128,\n  \"viewing_method_and_limits\": \"Continuous automated audiovisual inspection with sampled video frames; limited frame-by-frame analysis.\",\n  \"story_understood\": \"ActionGate acts as an AI control layer inspecting agent actions, identity, permissions, and budgets before execution.\",\n  \"observed_genre\": \"Synth-pop / electronic promo pitch\",\n  \"singing_present\": true,\n  \"intelligibility\": 4,\n  \"music_vocal_balance\": 4,\n  \"subtitle_language\": \"Polish\",\n  \"subtitle_sync\": 4,\n  \"text_readability\": 4,\n  \"visual_continuity\": 4,\n  \"observed_defects\": [\n    {\n      \"timestamp\": \"00:19\",\n      \"observation\": \"Small font size in application screenshot details.\",\n      \"severity\": 2,\n      \"confidence\": 3\n    }\n  ],\n  \"ending_complete\": true,\n  \"first_words_heard\": \"ActionGate, sprawdź ten ruch\",\n  \"last_words_heard\": \"ty widzisz jej przebieg\",\n  \"verdict\": \"pass\",\n  \"limitations\": \"Automated evaluation via frame and audio sampling; human qualitative perception may vary slightly.\"\n}\n```",
+            "type": "text"
+          }
+        ],
+        "type": "model_output"
+      }
+    ],
+    "object": "interaction",
+    "model": "gemini-3.8-flash"
+  }
+}

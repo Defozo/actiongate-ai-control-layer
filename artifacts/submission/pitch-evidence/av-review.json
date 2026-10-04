@@ -1,0 +1,165 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-04T05:15:03.689875+00:00",
+  "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\docs\\.build\\_video_work\\render\\english-pitch-v1\\ActionGate-pitch.mp4",
+  "source_sha256": "c04e19e82e1edbd19044743fb8b0b42ec7c94d40dc62e6769c53e106072c7f01",
+  "method": "Complete actual MP4 input to audiovisual model; no script supplied; model video sampling limits apply",
+  "human_review": false,
+  "model": "gemini-3.8-flash",
+  "prompt": "Inspect the entire attached English product demonstration video and listen to its actual audio from beginning to end. Audience: AI Control Layer judges. The film should show a concrete working product: real UI button click and recorded results, with a clearly disclosed omitted processing wait, plus explanatory slides. The opening illustration and diagrams are explanations, not fake UI. Assess actual audiovisual content, not the truth of software claims. No expected script is supplied.\nReturn JSON with coverage_seconds, viewing_method_and_limits, story_understood, speech_language, intelligibility, music_vocal_balance, narration_visual_alignment (array of timestamp range, what is heard, what is visible, match), text_readability, visual_continuity, observed_defects (timestamp, observation, severity, confidence), ending_complete, first_words_heard, last_words_heard, verdict (pass/revise), limitations.\nCheck that narration about starting checks, a document receipt, redaction, blocked injection, cross-tenant denial, policies, budgets, reporting and integration corresponds to the visible section. Check important titles are not cropped, labels do not cover necessary content, cuts do not remove words, and the ending is complete. Distinguish observations from taste preferences. Do not invent defects to fill a quota. Do not claim human viewing or frame-by-frame inspection: video sampling is limited. Small technical IDs need not all be legible; main outcomes must be understandable.",
+  "request_bytes": 10686671,
+  "response_metadata": {
+    "status": "completed",
+    "usage": {
+      "total_tokens": 15913,
+      "total_input_tokens": 14312,
+      "input_tokens_by_modality": [
+        {
+          "modality": "video",
+          "tokens": 14014
+        },
+        {
+          "modality": "text",
+          "tokens": 298
+        }
+      ],
+      "total_cached_tokens": 0,
+      "total_output_tokens": 973,
+      "total_tool_use_tokens": 0,
+      "total_thought_tokens": 628,
+      "raw_prompt_token": 16671,
+      "model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 1117
+            },
+            {
+              "modality": "video",
+              "tokens": 14014
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 977
+            }
+          ],
+          "thoughts_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 628
+            }
+          ]
+        }
+      ],
+      "non_grounding_model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 1117
+            },
+            {
+              "modality": "video",
+              "tokens": 14014
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 977
+            }
+          ],
+          "thoughts_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 628
+            }
+          ]
+        }
+      ]
+    },
+    "created": "2026-10-04T05:15:21Z",
+    "updated": "2026-10-04T05:15:21Z",
+    "service_tier": "standard",
+    "object": "interaction",
+    "model": "gemini-3.8-flash"
+  },
+  "assessment": {
+    "coverage_seconds": 154,
+    "viewing_method_and_limits": "Multimodal video analysis via temporal frame sampling and continuous audio stream review. Sampling limits fine-grained inspection of sub-frame UI details.",
+    "story_understood": "The video outlines ActionGate, an AI control gateway that enforces policies, redactions, tenant isolation, and budget controls on agent tool calls, showing architecture slides and UI workflow verification.",
+    "speech_language": "en",
+    "intelligibility": 4,
+    "music_vocal_balance": 4,
+    "narration_visual_alignment": [
+      {
+        "timestamp_range": "00:00 - 00:16",
+        "what_is_heard": "Explaining the threat of untrusted documents redirecting agent execution.",
+        "what_is_visible": "Title card transitioning to 'The next tool call: A supplier document can redirect an agent' problem slide.",
+        "match": true
+      },
+      {
+        "timestamp_range": "00:16 - 00:26",
+        "what_is_heard": "Overview of ActionGate enforcement boundary and gateway architecture.",
+        "what_is_visible": "Architecture flow diagram showing Agent, ActionGate, Broker, and Models.",
+        "match": true
+      },
+      {
+        "timestamp_range": "00:26 - 00:50",
+        "what_is_heard": "Demonstrating interactive workflow check in the dashboard with disclosure of omitted processing time.",
+        "what_is_visible": "Test Lab dashboard starting execution, followed by summary report and released JSON results.",
+        "match": true
+      },
+      {
+        "timestamp_range": "00:50 - 01:10",
+        "what_is_heard": "Comparing redaction of personal data, prompt injection blocking, and cross-tenant access rejection.",
+        "what_is_visible": "Operation details modal highlighting Redacted, Blocked, and Denied states with status badges.",
+        "match": true
+      },
+      {
+        "timestamp_range": "01:11 - 01:25",
+        "what_is_heard": "Explaining permission propagation through memory and explicit approval for reports.",
+        "what_is_visible": "Process diagram slides for complete supplier review and architecture boundary.",
+        "match": true
+      },
+      {
+        "timestamp_range": "01:26 - 01:46",
+        "what_is_heard": "Reviewing operator control catalog, policy thresholds, and rule comparisons.",
+        "what_is_visible": "Policy configuration dashboard and control catalog summary slide.",
+        "match": true
+      },
+      {
+        "timestamp_range": "01:46 - 02:00",
+        "what_is_heard": "Detailing cost, token usage, and compute reservation limits.",
+        "what_is_visible": "Budgets dashboard showing token counts, dollar commitments, and executor capacity.",
+        "match": true
+      },
+      {
+        "timestamp_range": "02:00 - 02:22",
+        "what_is_heard": "Covering audit receipts, team reporting, API interfaces, and test coverage.",
+        "what_is_visible": "Reporting slide with JSON receipts and Developer Package evaluation checklist.",
+        "match": true
+      },
+      {
+        "timestamp_range": "02:22 - 02:34",
+        "what_is_heard": "Closing summary inviting independent evaluation.",
+        "what_is_visible": "Concluding slide with live test URL, GitHub repository link, and author credit.",
+        "match": true
+      }
+    ],
+    "text_readability": 4,
+    "visual_continuity": 4,
+    "observed_defects": [],
+    "ending_complete": true,
+    "first_words_heard": "An AI agent opens a supplier document.",
+    "last_words_heard": "...to put useful agents to work.",
+    "verdict": "pass",
+    "limitations": "Frame sampling rate limits inspection of tiny JSON code snippet parameters."
+  },
+  "assessment_sha256": "3c91b4eb4ea312903ac060f4fd8b6203953713febc580d0b02e097590c7938f6",
+  "original_report_sha256": "7152192c30a704e8fa4759f20fdd1114f6988398e9fe4bd1da3f527820f795a1",
+  "omitted": "Opaque model reasoning/signature blocks from the provider response. No input media payload or credentials were stored in either review report."
+}

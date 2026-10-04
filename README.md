@@ -13,35 +13,11 @@ report. Confidential publication to a controlled internal sink requires approval
 of the exact payload. A separate trusted public projection copies approved fields
 from the authoritative supplier registry before confidential work begins.
 
-## Published source snapshot
-
-This repository publishes the ActionGate source as of 4 October 2026, with pinned
-dependency files, setup scripts, synthetic test cases and third-party notices.
-Product development and full acceptance are still in progress.
-
-The latest available complete local run, recorded at 23:23 UTC on 3 October,
-passed **252 of 253 tests**, with **one failure and zero skips**. The exposed
-semantic regression set had one English false positive; its 10% false-positive
-rate exceeded the required 5%. The independent v2 holdout had not yet run.
-An earlier contract run passed 347 of 347 tests. These are dated results from the
-development workspace, not a claim that this source snapshot passed complete
-acceptance. See the [measurement summary](artifacts/publication-test-summary.json)
-and [operational limits](docs/threat-model.md).
-
-Publication checks on this exported snapshot passed: the production dashboard
-build, locked Python dependency resolution, syntax checks for 121 Python files,
-and 50 tests covering release packaging, model artifacts and runtime contracts.
-These checks use controlled fixtures and do not replace full local inference
-acceptance.
-
-The GitHub source distribution excludes private runtime state, raw logs,
-credentials, dependency caches, model weights and large presentation renders.
-Links to generated reports or media elsewhere in the documentation describe
-artifacts produced by the verification and presentation workflows; those files
-are not included in this source snapshot.
-
-- [HackTribe project](https://hackyeah2026.hacktribe.co/actiongate-ai-control-layer/)
-- [Repository](https://github.com/Defozo/actiongate-ai-control-layer)
+[Watch the demonstration and open the presentation](https://defozo.github.io/actiongate-ai-control-layer/),
+then follow the [jury runbook](docs/jury-runbook.md) to try your own input.
+The material page also links to the hosted dashboard; request its jury access
+details from Michał Kiełtyka. The [downloadable release](https://github.com/Defozo/actiongate-ai-control-layer/releases/tag/v0.1.0)
+contains the complete source and verification package.
 
 ## Run locally
 
@@ -59,19 +35,25 @@ the bootstrap helper creates this installation's application keys.
 ```powershell
 pwsh -File scripts/bootstrap.ps1 -Profile local
 pwsh -File scripts/start.ps1 -Profile local
-pwsh -File scripts/doctor.ps1
 npm --prefix ui ci
 Push-Location ui
 npx playwright install chromium
 Pop-Location
+pwsh -File scripts/doctor.ps1
+uv run python scripts/deployed_source.py
+uv run python scripts/runtime_hardware.py
 pwsh -File scripts/verify.ps1 -Suite all-local
 ```
 
 Shell entrypoints are `scripts/bootstrap.sh`, `start.sh`, `doctor.sh` and `verify.sh`.
+The two Python commands record the deployed source and actual model placement
+on your machine. Run them after the model preflight, before local acceptance.
 On Linux, install Chromium system libraries with
 `(cd ui && npx playwright install --with-deps chromium)` during preparation.
 Open **http://127.0.0.1:8080** and choose an Acme demo identity. The loopback demo
-issuer intentionally permits role selection; do not expose this profile publicly.
+issuer intentionally permits role selection. Keep direct edge access on loopback.
+The hosted jury demo adds a separate authenticated HTTPS gateway; its selectable
+demo roles do not represent enterprise identities.
 `ACTIONGATE_PORT` selects an alternative loopback port when 8080 is occupied.
 The API contract is available at `/api/docs`. See the [jury runbook](docs/jury-runbook.md)
 for independent, editable scenarios and expected evidence.
@@ -105,9 +87,8 @@ changing an SDK URL alone does not isolate an otherwise unrestricted agent.
 upstreams. `all-local` adds actual local inference and end-to-end acceptance.
 `live-provider` separately verifies the commercial connector and is reported as
 not run when a provider key is absent. Missing required dependencies fail local
-acceptance rather than becoming successful skips. Locally generated dated reports under `artifacts/`
-are the source of measured results; this source snapshot includes only the
-credential-free publication summary linked above. A created report, a passed contract suite and
+acceptance rather than becoming successful skips. Dated reports under `artifacts/`
+are the source of measured results. A created report, a passed contract suite and
 a passed complete release are different claims.
 
 Semantic evaluation separates [16 calibration cases, a 40-case v1 regression set,

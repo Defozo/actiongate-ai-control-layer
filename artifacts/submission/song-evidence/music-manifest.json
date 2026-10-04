@@ -1,0 +1,47 @@
+{
+  "created_at": "2026-10-03T22:43:20.415177+00:00",
+  "status": "ready_for_video",
+  "title": "ActionGate: sprawdź ten ruch",
+  "language": "pl",
+  "genre_requested": "Polish funk-pop with melodic rap verses and sung chorus",
+  "genre_observed": "Electro-pop / synthwave with melodic rap verses and sung hooks",
+  "audio_path": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\music\\song-delivery.wav",
+  "audio_sha256": "23d73afbedb782a40f1a9952d521eea7f6b3144c89287bc9f3d4da357e54918c",
+  "duration_seconds": 128.04,
+  "loudness_lufs": -16.0,
+  "true_peak_dbtp": -3.7,
+  "original_provider_audio": "raw.mp3",
+  "original_provider_audio_sha256": "563219745aecb91de53d3e677d69ecc264bc558f4e8fc812a28901268dd1eadf",
+  "music_model": "music_v2_5",
+  "provider_song_id": "eOB94L4xQRmCmKxtQofg",
+  "generation_requests": 1,
+  "regenerations": 0,
+  "generation_journal": "generate-journal.json",
+  "account_evidence": "account.json",
+  "rights_evidence": "rights-and-provenance.md",
+  "requested_lyrics": "lyrics.pl.txt",
+  "performed_lyrics": "lyrics-performed.pl.txt",
+  "subtitle_path": "lyrics-performed.pl.srt",
+  "timing_path": "lyrics-performed-timed.json",
+  "section_timing": "measured-sections.json",
+  "qc_evidence": "music-qc.json",
+  "perceptual_review": "../review/song-perception.assessment.json",
+  "targeted_perceptual_review": "phrase-review.json",
+  "human_listening": false,
+  "caption_variation": {
+    "source_range_seconds": [
+      69.72,
+      71.84
+    ],
+    "intended_text": "Poufność idzie z pracą, przez pamięć i delegację.",
+    "subtitle_text": "Poufności nie stracą przez pamięć i delegację.",
+    "evidence": {
+      "full_track_perceptual_review": "../review/song-perception.assessment.json",
+      "targeted_no_script_perceptual_review": "phrase-review.json",
+      "independent_scribe": "transcribe.json"
+    },
+    "uncertainty": "Scribe recognizes the intended words, while two no-script audio-model reviews consistently hear the subtitle variant. The phrases are phonetically close. Caption follows perceived performance; equivalent factual meaning. No regenerated music.",
+    "human_listening": false
+  },
+  "scope": "Music assets only. Parent agent owns final audiovisual edit, final decoded AAC review, public upload and delivery.json."
+}

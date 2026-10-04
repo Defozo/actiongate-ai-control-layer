@@ -1,0 +1,74 @@
+{
+  "created_at": "2026-10-03T23:05:09.999423+00:00",
+  "candidate": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\ActionGate-song-pl-2026-10-04-v2.mp4",
+  "sha256": "b3c3b557a1b9ee98c6f1c64a5cc3dba0d75edad144eb284f8d3b3a5fb9d47a71",
+  "duration_seconds": 129.0235,
+  "checks": {
+    "strict_duration_below_180": true,
+    "expected_129_seconds": true,
+    "full_decode_no_errors": true,
+    "decoded_frames_3870": true,
+    "video_1080p30_h264": true,
+    "aac_stereo_48k": true,
+    "av_delta_under_frame": true,
+    "no_overlapping_embedded_subtitles": true,
+    "english_translation_sidecar_present": true,
+    "audio_matches_reviewed_song": true,
+    "no_clipped_samples": true,
+    "true_peak_below_minus_1": true,
+    "loudness_expected": true,
+    "no_accidental_black": true
+  },
+  "passed": true,
+  "audio_provenance": [
+    {
+      "range_seconds": [
+        0,
+        12
+      ],
+      "lag_samples_48k": 1024,
+      "lag_ms": 21.333333333333332,
+      "zero_lag_correlation": -0.04082934833199413,
+      "aligned_correlation": 0.9995036603367281,
+      "video_start_seconds": 0.021,
+      "audio_stream_start_seconds": 0.0,
+      "residual_against_video_ms": 0.3333333333333313,
+      "pass": true
+    },
+    {
+      "range_seconds": [
+        40,
+        52
+      ],
+      "lag_samples_48k": 1024,
+      "lag_ms": 21.333333333333332,
+      "zero_lag_correlation": -0.05912467378219241,
+      "aligned_correlation": 0.999521934060387,
+      "video_start_seconds": 0.021,
+      "audio_stream_start_seconds": 0.0,
+      "residual_against_video_ms": 0.3333333333333313,
+      "pass": true
+    },
+    {
+      "range_seconds": [
+        105,
+        122
+      ],
+      "lag_samples_48k": 1024,
+      "lag_ms": 21.333333333333332,
+      "zero_lag_correlation": -0.06653234082230727,
+      "aligned_correlation": 0.9994489975143773,
+      "video_start_seconds": 0.021,
+      "audio_stream_start_seconds": 0.0,
+      "residual_against_video_ms": 0.3333333333333313,
+      "pass": true
+    }
+  ],
+  "loudness_lufs": -16.05,
+  "true_peak_dbtp": -3.73,
+  "sample_peak": 0.6485980153083801,
+  "audio_samples_decoded": 6193152,
+  "black_events": [],
+  "intentional_still_frames": "Application screenshots are intentionally held. Continuous waveform accents, diagram signal markers and source video are part of the musical montage. Generic freeze detection is not a defect criterion.",
+  "perceptual_review": "Separate actual audio/video review required; this report is technical only."
+}

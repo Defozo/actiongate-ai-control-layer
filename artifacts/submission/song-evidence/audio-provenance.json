@@ -1,0 +1,49 @@
+{
+  "method": "Full-rate waveform cross-correlation across beginning, middle and ending windows. Compare measured PCM offset with actual video PTS start; AAC encoder priming is not a different soundtrack. Original overly strict zero-lag check retained separately.",
+  "windows": [
+    {
+      "range_seconds": [
+        0,
+        12
+      ],
+      "lag_samples_48k": 1024,
+      "lag_ms": 21.333333333333332,
+      "zero_lag_correlation": -0.04082934833199413,
+      "aligned_correlation": 0.9995036603367281,
+      "video_start_seconds": 0.021,
+      "audio_stream_start_seconds": 0.0,
+      "residual_against_video_ms": 0.3333333333333313,
+      "pass": true
+    },
+    {
+      "range_seconds": [
+        40,
+        52
+      ],
+      "lag_samples_48k": 1024,
+      "lag_ms": 21.333333333333332,
+      "zero_lag_correlation": -0.05912467378219241,
+      "aligned_correlation": 0.999521934060387,
+      "video_start_seconds": 0.021,
+      "audio_stream_start_seconds": 0.0,
+      "residual_against_video_ms": 0.3333333333333313,
+      "pass": true
+    },
+    {
+      "range_seconds": [
+        105,
+        122
+      ],
+      "lag_samples_48k": 1024,
+      "lag_ms": 21.333333333333332,
+      "zero_lag_correlation": -0.06653234082230727,
+      "aligned_correlation": 0.9994489975143773,
+      "video_start_seconds": 0.021,
+      "audio_stream_start_seconds": 0.0,
+      "residual_against_video_ms": 0.3333333333333313,
+      "pass": true
+    }
+  ],
+  "lag_drift_samples": 0,
+  "pass": true
+}

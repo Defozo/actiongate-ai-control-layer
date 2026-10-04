@@ -1,0 +1,234 @@
+[
+  {
+    "id": "55e315b2-78ca-4954-ae90-4778b25ec339",
+    "tenant": "synthetic_test_tenant",
+    "run_id": "2ffd316c-de83-4df8-9319-7d870c113faa",
+    "root_id": "2ffd316c-de83-4df8-9319-7d870c113faa",
+    "tool": "reports.save",
+    "payload_hash": "9368cb7263f2b73e337021326a3e3a94fd0a9e7000e9d151a99465a2bc4e94b8",
+    "decision": "allow",
+    "status": "completed",
+    "settlement_status": "settled",
+    "rule_ids": [],
+    "reason": "All required controls completed",
+    "stage": "release",
+    "label": "CONFIDENTIAL",
+    "label_version": 3,
+    "policy_generation": 15,
+    "created_at": "2026-10-04T04:56:34.913608+00:00",
+    "metadata": {
+      "semantic": {
+        "verdict": "benign",
+        "risk_level": 0,
+        "category": "none",
+        "complete": true,
+        "generation": 15,
+        "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "cache_hit": false,
+        "cache_source": null
+      },
+      "feed_revision": 1,
+      "execution_mode": "local",
+      "owner_fence": 1,
+      "upstream_attempts": 1,
+      "unsettled_attempts": [],
+      "latency_ms": 2318.47,
+      "phase_timings_ms": {
+        "dlp_ms": 2.277,
+        "ledger_reserve_ms": 55.481,
+        "guard_ms": 2064.891,
+        "ledger_settle_ms": 40.343,
+        "opa_ms": 6.041,
+        "upstream_ms": 13.646
+      },
+      "semantic_output": {
+        "cache_hit": false,
+        "cache_source": null
+      },
+      "semantic_cache_hits": 0
+    },
+    "arguments": {
+      "content": "Summarize the supplier delivery schedule and flag unresolved service risks for the internal analyst."
+    },
+    "result": {
+      "id": "f75deb59-68bd-487c-b868-9bf653c0a9ef",
+      "key": "report-55e315b2-78ca-4954-ae90-4778b25ec339",
+      "label": "CONFIDENTIAL",
+      "saved": true
+    },
+    "purpose": "supplier_review",
+    "feed_version": 1,
+    "events": [
+      {
+        "id": 27381,
+        "tenant": "synthetic_test_tenant",
+        "run_id": "2ffd316c-de83-4df8-9319-7d870c113faa",
+        "operation_id": "55e315b2-78ca-4954-ae90-4778b25ec339",
+        "event": "operation.screening",
+        "evidence": {
+          "label": "CONFIDENTIAL",
+          "label_version": 2,
+          "tool": "reports.save",
+          "generation": 15
+        },
+        "previous_hash": "43cc19032aa8c669a7c06d9401922651c2d3fb1d86be2e74954083b82551b6d3",
+        "hash": "895fe587a8427408f5086571a4ca6b51a09171cc0d2e5fdf0466c36dd6f7cded",
+        "created_at": "2026-10-04T04:56:34.926383+00:00"
+      },
+      {
+        "id": 27382,
+        "tenant": "synthetic_test_tenant",
+        "run_id": "2ffd316c-de83-4df8-9319-7d870c113faa",
+        "operation_id": "55e315b2-78ca-4954-ae90-4778b25ec339",
+        "event": "budget.reserved",
+        "evidence": {
+          "reservation_id": "b84e88c7-f206-4e6d-b0f9-fbbd82757466",
+          "kind": "guard.input",
+          "amounts": {
+            "tokens": 4352,
+            "usd_micros": 0,
+            "slot_millis": 185000
+          }
+        },
+        "previous_hash": "895fe587a8427408f5086571a4ca6b51a09171cc0d2e5fdf0466c36dd6f7cded",
+        "hash": "9b42a2f47ba25d704389500f3aa1452514a6597ee5065c3b2a3ba3a4aadfd3f0",
+        "created_at": "2026-10-04T04:56:34.968721+00:00"
+      },
+      {
+        "id": 27383,
+        "tenant": "synthetic_test_tenant",
+        "run_id": null,
+        "operation_id": "55e315b2-78ca-4954-ae90-4778b25ec339",
+        "event": "budget.settled",
+        "evidence": {
+          "reservation_id": "b84e88c7-f206-4e6d-b0f9-fbbd82757466",
+          "status": "settled",
+          "usage": {
+            "tokens": 1414,
+            "usd_micros": 0,
+            "slot_millis": 1063
+          }
+        },
+        "previous_hash": "9b42a2f47ba25d704389500f3aa1452514a6597ee5065c3b2a3ba3a4aadfd3f0",
+        "hash": "c0fee799b1dcb6dec6af7c672303af6b3fc02b4007d14e504351e8e51ef119ca",
+        "created_at": "2026-10-04T04:56:36.063646+00:00"
+      },
+      {
+        "id": 27384,
+        "tenant": "synthetic_test_tenant",
+        "run_id": "2ffd316c-de83-4df8-9319-7d870c113faa",
+        "operation_id": "55e315b2-78ca-4954-ae90-4778b25ec339",
+        "event": "budget.reserved",
+        "evidence": {
+          "reservation_id": "00bb4d5c-dbad-4684-9cc5-b37991851e9f",
+          "kind": "guard.output",
+          "amounts": {
+            "tokens": 4352,
+            "usd_micros": 0,
+            "slot_millis": 185000
+          }
+        },
+        "previous_hash": "c0fee799b1dcb6dec6af7c672303af6b3fc02b4007d14e504351e8e51ef119ca",
+        "hash": "23173e09110d0a08f6f3b53ef3d663b23f1d56a2de0ae89488acf458f6060129",
+        "created_at": "2026-10-04T04:56:36.104739+00:00"
+      },
+      {
+        "id": 27385,
+        "tenant": "synthetic_test_tenant",
+        "run_id": "2ffd316c-de83-4df8-9319-7d870c113faa",
+        "operation_id": "55e315b2-78ca-4954-ae90-4778b25ec339",
+        "event": "budget.reserved",
+        "evidence": {
+          "reservation_id": "8ece37ae-3fae-463b-99fd-1a885a505233",
+          "kind": "execution",
+          "amounts": {
+            "tokens": 0,
+            "usd_micros": 0,
+            "slot_millis": 0
+          }
+        },
+        "previous_hash": "23173e09110d0a08f6f3b53ef3d663b23f1d56a2de0ae89488acf458f6060129",
+        "hash": "2d46d1ef0d2874be6598e63c85eb3570a0853e382be946e95f14272c72981284",
+        "created_at": "2026-10-04T04:56:36.133879+00:00"
+      },
+      {
+        "id": 27386,
+        "tenant": "synthetic_test_tenant",
+        "run_id": "2ffd316c-de83-4df8-9319-7d870c113faa",
+        "operation_id": "55e315b2-78ca-4954-ae90-4778b25ec339",
+        "event": "operation.dispatched",
+        "evidence": {
+          "grant_id": "6c00bdbd-a11d-4ea3-ba78-f830d69e4f74",
+          "payload_hash": "9368cb7263f2b73e337021326a3e3a94fd0a9e7000e9d151a99465a2bc4e94b8",
+          "generation": 15,
+          "label_version": 2,
+          "attempt": 1,
+          "reservation_id": "8ece37ae-3fae-463b-99fd-1a885a505233"
+        },
+        "previous_hash": "2d46d1ef0d2874be6598e63c85eb3570a0853e382be946e95f14272c72981284",
+        "hash": "b51c5d7b6dd85004acf9e32cf864b77dfe69e6411e8e2ace56c86cdf5969b3af",
+        "created_at": "2026-10-04T04:56:36.151035+00:00"
+      },
+      {
+        "id": 27387,
+        "tenant": "synthetic_test_tenant",
+        "run_id": null,
+        "operation_id": "55e315b2-78ca-4954-ae90-4778b25ec339",
+        "event": "budget.settled",
+        "evidence": {
+          "reservation_id": "8ece37ae-3fae-463b-99fd-1a885a505233",
+          "status": "settled",
+          "usage": {
+            "tokens": 0,
+            "usd_micros": 0,
+            "slot_millis": 0
+          }
+        },
+        "previous_hash": "b51c5d7b6dd85004acf9e32cf864b77dfe69e6411e8e2ace56c86cdf5969b3af",
+        "hash": "8f127c60de8db54982afe7fc9414ff118ac4a3fa04d0e54f0a421356983affd4",
+        "created_at": "2026-10-04T04:56:36.175704+00:00"
+      },
+      {
+        "id": 27388,
+        "tenant": "synthetic_test_tenant",
+        "run_id": null,
+        "operation_id": "55e315b2-78ca-4954-ae90-4778b25ec339",
+        "event": "budget.settled",
+        "evidence": {
+          "reservation_id": "00bb4d5c-dbad-4684-9cc5-b37991851e9f",
+          "status": "settled",
+          "usage": {
+            "tokens": 1482,
+            "usd_micros": 0,
+            "slot_millis": 964
+          }
+        },
+        "previous_hash": "8f127c60de8db54982afe7fc9414ff118ac4a3fa04d0e54f0a421356983affd4",
+        "hash": "f2adf4ca2e9c5dc0094b11d9c0b21b591db5b75c5818ace35acd6a409b6bbef5",
+        "created_at": "2026-10-04T04:56:37.205672+00:00"
+      },
+      {
+        "id": 27389,
+        "tenant": "synthetic_test_tenant",
+        "run_id": "2ffd316c-de83-4df8-9319-7d870c113faa",
+        "operation_id": "55e315b2-78ca-4954-ae90-4778b25ec339",
+        "event": "operation.completed",
+        "evidence": {
+          "decision": "allow",
+          "tool": "reports.save",
+          "label": "CONFIDENTIAL",
+          "generation": 15,
+          "settlement": "settled",
+          "latency_ms": 2318.47
+        },
+        "previous_hash": "f2adf4ca2e9c5dc0094b11d9c0b21b591db5b75c5818ace35acd6a409b6bbef5",
+        "hash": "296b75648f6bcdebb4003635abaa2f3930a891750fdac53eb16c5fe95bcefc4e",
+        "created_at": "2026-10-04T04:56:37.224996+00:00"
+      }
+    ],
+    "effect": {
+      "recorded": false,
+      "receipt_id": null
+    }
+  }
+]

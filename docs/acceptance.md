@@ -1,5 +1,9 @@
 # Executed acceptance evidence
 
+Open the recorded [acceptance report](../artifacts/acceptance-report.json),
+its [HTML view](../artifacts/acceptance-report.html), and the
+[complete benchmark](../artifacts/benchmark.json) for exact results and evidence hashes.
+
 After the local verification, real runtime and clean-install checks, browser checks and full benchmark finish, run:
 
 ```sh
@@ -16,11 +20,41 @@ Model-dependent evidence must match the current guard prompt artifact, complete 
 
 The verification runner hashes the application Python sources, selected tests and suite entrypoints before and after execution. A code change during the suite makes the report fail. Aggregation also compares those hashes with the current source files, so a later implementation change cannot reuse an earlier green all-local report. Mutable policy publications exercised by the suite and generated reports are excluded from this code fingerprint.
 
+The [602-test all-local run](../artifacts/all-local.json) passed before the
+PostgreSQL capacity correction, with the original 100-connection database.
+After increasing that allocation to 200 connections, 2 GiB and 256 processes,
+the complete [591-test controlled contract suite](../artifacts/contract.json)
+passed again with zero failures or skips. Application, model, classifier and
+test-source hashes did not change. The original configuration and full load
+measurement are preserved in
+[the incident record](../artifacts/history/benchmark-pg100-before-capacity-fix/diagnostic-summary.json).
+The [actual API recovery check](../artifacts/benchmark-recovery.json) then
+closed both orphaned operations without effects and completed their successor
+actions, each with exactly one matching receipt and settled usage. Existing
+workflow deadlines were preserved. Fresh installation, deployment and final
+load measurements remain separately dated evidence for the revised allocation.
+The [database capacity verification](../artifacts/pg-capacity-verification.json)
+binds the revised Compose file to actual limits, fresh CPU/GPU installations,
+current deployment reports and the unchanged application and model sources.
+
+The subsequent gateway keepalive adjustment is recorded separately in
+[the runtime verification](../artifacts/keepalive-runtime-verification.json):
+28 checks passed, including the same TCP connection surviving 6.05 seconds of
+idle time on both replicas of both installations. Only the gateway environment
+changed, from the server's five-second default to thirty seconds; application,
+model, worker and test sources remained identical. The earlier matrix with one
+transport error and the 300-request diagnostic are retained in
+[the transport investigation](../artifacts/history/benchmark-pg200-readerror/ANALYSIS.json).
+The original TCP failure was not reproduced. The final full benchmark evaluates
+the revised deployment without weakening its zero-transport-error condition.
+
 The source freeze includes the mandatory external evidence producers, including CPU/GPU preparation, deployment verification, clients, policy replay and browser/SSE scripts. Their reports also record producer file hashes before execution and confirm unchanged hashes afterward; aggregation rejects a later producer edit. `scripts/verify_live_browser.cjs` writes directly to the canonical `artifacts/reports/live-browser.json`, without promoting an older temporary browser report.
 
 Reference CPU acceptance requires both signed models actually resident with zero VRAM allocation and no Docker GPU device requests. Hardware and functional preflight bind the same container IDs and images as the source-verified deployment; all-local retains its initial physical-runtime evidence. The separate clean install verifies real CPU guard residency and the absence of GPU access on both roles, without claiming that its business model was invoked. An explicitly labelled GPU benchmark instead requires its own measured hardware report, matching model, producer hashes and worker epochs. GPU measurements never substitute for the reference CPU checks.
 
 Both required suites include bounded Hypothesis properties in `tests/test_boundary_fuzz.py` and `tests/test_ledger_stateful.py`. Parser properties generate duplicate keys, malformed Unicode, numeric overflow, nested reconstruction markers, typed authority fields, resource paths and signed feed variants, with explicit acceptance or rejection assertions. Valid data round trips and legal arithmetic remain positive controls. Unicode email redaction must preserve the recipient and remove the complete sensitive span; rejected secrets must never appear in the returned copy or audit metadata.
+
+Reset and retention contracts use real PostgreSQL with session-local temporary tables created from the actual ORM definitions, under the restricted runtime database identity. They preserve foreign-tenant data, signed policies and financial obligations, reject unauthorized resets, and exercise unavailable or unconfirmed archive acknowledgements. Retention deletes only an archived, old prefix of the audit sequence: replica timestamps need not increase with event IDs. Tests cover an old/new/old timestamp sequence and an event appended after the archive boundary. These cases control the archive acknowledgement; a separate live checkpoint test verifies the actual signature and independently persisted publisher file. The tests neither grant the runtime role permission to delete the shared audit nor reset shared demo data.
 
 The state machine is configured for twelve generated examples with up to twenty-eight additional transitions; Hypothesis may also replay or discard generated traces. Every trace first exercises reservation, cancellation before dispatch, a separately reserved retry, actual authenticated HTTP publication, unknown usage, recovery in a fresh client process, settlement and the exact budget boundary. Generated transitions interleave root and child reservations across token, monetary and slot accounts. An independent model checks every scope's spent and reserved balance, one terminal usage entry per reservation, preserved unknown obligations and one real receipt per logical effect. Admission and metered amounts are explicitly controlled fixtures, not model inference or provider charges. Full server/offline restart proof remains a separate required check. Hypothesis's database is disabled for these bounded properties; a missing PostgreSQL or connector fails instead of skipping.
 

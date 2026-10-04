@@ -1,0 +1,26 @@
+{
+  "mode": "actual-read-only-DOM-section-capture",
+  "generation": 15,
+  "job_id": "75b2eb00-6eae-4566-af34-06ea92aa6c63",
+  "new_inference": false,
+  "captures": [
+    {
+      "path": "artifacts/submission/ui-workflow-document-receipt.png",
+      "operation_id": "afa14b6d-a26a-4e53-b05c-53a104596e71",
+      "section": "Connector receipt",
+      "sha256": "7bc56b226b9debb7f56676c0441d75ff01354fd6a02af7d01be07b70c350aeff"
+    },
+    {
+      "path": "artifacts/submission/ui-workflow-document-result.png",
+      "operation_id": "afa14b6d-a26a-4e53-b05c-53a104596e71",
+      "section": "Released result",
+      "sha256": "1c66f5cde0d776a7f8e37b5a296db951eada43c1a78fd244cde5a60ff09539ae"
+    },
+    {
+      "path": "artifacts/submission/ui-workflow-model-result.png",
+      "operation_id": "4b60932c-90dd-4493-b64e-ba005d47ca58",
+      "section": "Released result",
+      "sha256": "e85b16880951ef09bda5f3a48370ea311e7c6c1a5ed71b7620b5f5ad085442c7"
+    }
+  ]
+}

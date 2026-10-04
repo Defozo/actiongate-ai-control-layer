@@ -26,7 +26,7 @@ Operators can edit a signed control catalog, choose a stricter profile, publish
 threat rules and compare policy decisions without repeating business effects.
 Budgets cover local inference resources and commercial API commitments. Delegated
 agents share the original allowance. Each operation links its decision to the
-recorded connector effect and settlement, giving security teams a traceable audit
+recorded effect and settlement, giving security teams a traceable audit
 and management a clear view of resource use.
 
 HTTP, a Chat Completions interface and MCP support existing agent clients. The
@@ -44,10 +44,13 @@ can change a rule, try their own input and inspect the resulting action.
 - `artifacts/submission/ActionGate-cover.png`: presentation cover for the project page.
 - `artifacts/submission/ActionGate-demo.en.vtt`: English captions timed from the
   actual narration alignment, accompanied by `ActionGate-transcript.txt`.
-- `artifacts/submission/ActionGate-UI-workflows.mp4`: the longer browser walkthrough,
+- `artifacts/submission/ActionGate-UI-workflows.mp4`: the dedicated browser walkthrough,
   accompanied by the persisted workflow records in `ui-workflow.json`.
 - `artifacts/submission/audio-verification.json`: audio provenance, measurements
   and the documented perceptual review of the delivered soundtrack.
+- [Pitch review evidence](../artifacts/submission/pitch-evidence/manifest.json):
+  the exact audio assessments, audiovisual review, slide review, shot plan and
+  render hashes referenced by the final verification report.
 - `artifacts/submission/ActionGate-song-pl-2026-10-04-v2.mp4`: additional 129-second
   music video with Polish vocals and an optional English translation track.
   The English narrated film remains the main demonstration.

@@ -1,0 +1,460 @@
+{
+  "method": "Independent absolute-time seek for every frame; no global filter counter across concatenated segments",
+  "movie": "docs/.build/_video_work/render/english-pitch-v2/ActionGate-pitch.mp4",
+  "frames": [
+    {
+      "frame": 0,
+      "seconds": 0.0,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-001.jpg"
+    },
+    {
+      "frame": 60,
+      "seconds": 2.0,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-002.jpg"
+    },
+    {
+      "frame": 119,
+      "seconds": 3.966666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-003.jpg"
+    },
+    {
+      "frame": 120,
+      "seconds": 4.0,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-004.jpg"
+    },
+    {
+      "frame": 121,
+      "seconds": 4.033333333333333,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-005.jpg"
+    },
+    {
+      "frame": 310,
+      "seconds": 10.333333333333334,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-006.jpg"
+    },
+    {
+      "frame": 499,
+      "seconds": 16.633333333333333,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-007.jpg"
+    },
+    {
+      "frame": 500,
+      "seconds": 16.666666666666668,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-008.jpg"
+    },
+    {
+      "frame": 501,
+      "seconds": 16.7,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-009.jpg"
+    },
+    {
+      "frame": 654,
+      "seconds": 21.8,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-010.jpg"
+    },
+    {
+      "frame": 808,
+      "seconds": 26.933333333333334,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-011.jpg"
+    },
+    {
+      "frame": 809,
+      "seconds": 26.966666666666665,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-012.jpg"
+    },
+    {
+      "frame": 810,
+      "seconds": 27.0,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-013.jpg"
+    },
+    {
+      "frame": 854,
+      "seconds": 28.466666666666665,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-014.jpg"
+    },
+    {
+      "frame": 899,
+      "seconds": 29.966666666666665,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-015.jpg"
+    },
+    {
+      "frame": 900,
+      "seconds": 30.0,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-016.jpg"
+    },
+    {
+      "frame": 901,
+      "seconds": 30.033333333333335,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-017.jpg"
+    },
+    {
+      "frame": 967,
+      "seconds": 32.233333333333334,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-018.jpg"
+    },
+    {
+      "frame": 1034,
+      "seconds": 34.46666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-019.jpg"
+    },
+    {
+      "frame": 1035,
+      "seconds": 34.5,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-020.jpg"
+    },
+    {
+      "frame": 1036,
+      "seconds": 34.53333333333333,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-021.jpg"
+    },
+    {
+      "frame": 1110,
+      "seconds": 37.0,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-022.jpg"
+    },
+    {
+      "frame": 1184,
+      "seconds": 39.46666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-023.jpg"
+    },
+    {
+      "frame": 1185,
+      "seconds": 39.5,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-024.jpg"
+    },
+    {
+      "frame": 1186,
+      "seconds": 39.53333333333333,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-025.jpg"
+    },
+    {
+      "frame": 1247,
+      "seconds": 41.56666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-026.jpg"
+    },
+    {
+      "frame": 1308,
+      "seconds": 43.6,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-027.jpg"
+    },
+    {
+      "frame": 1309,
+      "seconds": 43.63333333333333,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-028.jpg"
+    },
+    {
+      "frame": 1310,
+      "seconds": 43.666666666666664,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-029.jpg"
+    },
+    {
+      "frame": 1412,
+      "seconds": 47.06666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-030.jpg"
+    },
+    {
+      "frame": 1515,
+      "seconds": 50.5,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-031.jpg"
+    },
+    {
+      "frame": 1516,
+      "seconds": 50.53333333333333,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-032.jpg"
+    },
+    {
+      "frame": 1517,
+      "seconds": 50.56666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-033.jpg"
+    },
+    {
+      "frame": 1598,
+      "seconds": 53.266666666666666,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-034.jpg"
+    },
+    {
+      "frame": 1680,
+      "seconds": 56.0,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-035.jpg"
+    },
+    {
+      "frame": 1681,
+      "seconds": 56.03333333333333,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-036.jpg"
+    },
+    {
+      "frame": 1682,
+      "seconds": 56.06666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-037.jpg"
+    },
+    {
+      "frame": 1757,
+      "seconds": 58.56666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-038.jpg"
+    },
+    {
+      "frame": 1832,
+      "seconds": 61.06666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-039.jpg"
+    },
+    {
+      "frame": 1833,
+      "seconds": 61.1,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-040.jpg"
+    },
+    {
+      "frame": 1834,
+      "seconds": 61.13333333333333,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-041.jpg"
+    },
+    {
+      "frame": 1984,
+      "seconds": 66.13333333333334,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-042.jpg"
+    },
+    {
+      "frame": 2135,
+      "seconds": 71.16666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-043.jpg"
+    },
+    {
+      "frame": 2136,
+      "seconds": 71.2,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-044.jpg"
+    },
+    {
+      "frame": 2137,
+      "seconds": 71.23333333333333,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-045.jpg"
+    },
+    {
+      "frame": 2263,
+      "seconds": 75.43333333333334,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-046.jpg"
+    },
+    {
+      "frame": 2390,
+      "seconds": 79.66666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-047.jpg"
+    },
+    {
+      "frame": 2391,
+      "seconds": 79.7,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-048.jpg"
+    },
+    {
+      "frame": 2392,
+      "seconds": 79.73333333333333,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-049.jpg"
+    },
+    {
+      "frame": 2485,
+      "seconds": 82.83333333333333,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-050.jpg"
+    },
+    {
+      "frame": 2579,
+      "seconds": 85.96666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-051.jpg"
+    },
+    {
+      "frame": 2580,
+      "seconds": 86.0,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-052.jpg"
+    },
+    {
+      "frame": 2581,
+      "seconds": 86.03333333333333,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-053.jpg"
+    },
+    {
+      "frame": 2733,
+      "seconds": 91.1,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-054.jpg"
+    },
+    {
+      "frame": 2885,
+      "seconds": 96.16666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-055.jpg"
+    },
+    {
+      "frame": 2886,
+      "seconds": 96.2,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-056.jpg"
+    },
+    {
+      "frame": 2887,
+      "seconds": 96.23333333333333,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-057.jpg"
+    },
+    {
+      "frame": 3047,
+      "seconds": 101.56666666666666,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-058.jpg"
+    },
+    {
+      "frame": 3208,
+      "seconds": 106.93333333333334,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-059.jpg"
+    },
+    {
+      "frame": 3209,
+      "seconds": 106.96666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-060.jpg"
+    },
+    {
+      "frame": 3210,
+      "seconds": 107.0,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-061.jpg"
+    },
+    {
+      "frame": 3399,
+      "seconds": 113.3,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-062.jpg"
+    },
+    {
+      "frame": 3589,
+      "seconds": 119.63333333333334,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-063.jpg"
+    },
+    {
+      "frame": 3590,
+      "seconds": 119.66666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-064.jpg"
+    },
+    {
+      "frame": 3591,
+      "seconds": 119.7,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-065.jpg"
+    },
+    {
+      "frame": 3725,
+      "seconds": 124.16666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-066.jpg"
+    },
+    {
+      "frame": 3860,
+      "seconds": 128.66666666666666,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-067.jpg"
+    },
+    {
+      "frame": 3861,
+      "seconds": 128.7,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-068.jpg"
+    },
+    {
+      "frame": 3862,
+      "seconds": 128.73333333333332,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-069.jpg"
+    },
+    {
+      "frame": 4066,
+      "seconds": 135.53333333333333,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-070.jpg"
+    },
+    {
+      "frame": 4271,
+      "seconds": 142.36666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-071.jpg"
+    },
+    {
+      "frame": 4272,
+      "seconds": 142.4,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-072.jpg"
+    },
+    {
+      "frame": 4273,
+      "seconds": 142.43333333333334,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-073.jpg"
+    },
+    {
+      "frame": 4446,
+      "seconds": 148.2,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-074.jpg"
+    },
+    {
+      "frame": 4619,
+      "seconds": 153.96666666666667,
+      "path": "docs/.build/_video_work/review/visual-v2-absolute/frame-075.jpg"
+    }
+  ],
+  "midpoints": [
+    60,
+    310,
+    654,
+    854,
+    967,
+    1110,
+    1247,
+    1412,
+    1598,
+    1757,
+    1984,
+    2263,
+    2485,
+    2733,
+    3047,
+    3399,
+    3725,
+    4066,
+    4446
+  ],
+  "boundaries": [
+    0,
+    119,
+    120,
+    121,
+    499,
+    500,
+    501,
+    808,
+    809,
+    810,
+    899,
+    900,
+    901,
+    1034,
+    1035,
+    1036,
+    1184,
+    1185,
+    1186,
+    1308,
+    1309,
+    1310,
+    1515,
+    1516,
+    1517,
+    1680,
+    1681,
+    1682,
+    1832,
+    1833,
+    1834,
+    2135,
+    2136,
+    2137,
+    2390,
+    2391,
+    2392,
+    2579,
+    2580,
+    2581,
+    2885,
+    2886,
+    2887,
+    3208,
+    3209,
+    3210,
+    3589,
+    3590,
+    3591,
+    3860,
+    3861,
+    3862,
+    4271,
+    4272,
+    4273,
+    4619
+  ]
+}

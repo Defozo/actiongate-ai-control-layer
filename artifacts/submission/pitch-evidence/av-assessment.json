@@ -1,0 +1,72 @@
+{
+  "coverage_seconds": 154,
+  "viewing_method_and_limits": "Multimodal video analysis via temporal frame sampling and continuous audio stream review. Sampling limits fine-grained inspection of sub-frame UI details.",
+  "story_understood": "The video outlines ActionGate, an AI control gateway that enforces policies, redactions, tenant isolation, and budget controls on agent tool calls, showing architecture slides and UI workflow verification.",
+  "speech_language": "en",
+  "intelligibility": 4,
+  "music_vocal_balance": 4,
+  "narration_visual_alignment": [
+    {
+      "timestamp_range": "00:00 - 00:16",
+      "what_is_heard": "Explaining the threat of untrusted documents redirecting agent execution.",
+      "what_is_visible": "Title card transitioning to 'The next tool call: A supplier document can redirect an agent' problem slide.",
+      "match": true
+    },
+    {
+      "timestamp_range": "00:16 - 00:26",
+      "what_is_heard": "Overview of ActionGate enforcement boundary and gateway architecture.",
+      "what_is_visible": "Architecture flow diagram showing Agent, ActionGate, Broker, and Models.",
+      "match": true
+    },
+    {
+      "timestamp_range": "00:26 - 00:50",
+      "what_is_heard": "Demonstrating interactive workflow check in the dashboard with disclosure of omitted processing time.",
+      "what_is_visible": "Test Lab dashboard starting execution, followed by summary report and released JSON results.",
+      "match": true
+    },
+    {
+      "timestamp_range": "00:50 - 01:10",
+      "what_is_heard": "Comparing redaction of personal data, prompt injection blocking, and cross-tenant access rejection.",
+      "what_is_visible": "Operation details modal highlighting Redacted, Blocked, and Denied states with status badges.",
+      "match": true
+    },
+    {
+      "timestamp_range": "01:11 - 01:25",
+      "what_is_heard": "Explaining permission propagation through memory and explicit approval for reports.",
+      "what_is_visible": "Process diagram slides for complete supplier review and architecture boundary.",
+      "match": true
+    },
+    {
+      "timestamp_range": "01:26 - 01:46",
+      "what_is_heard": "Reviewing operator control catalog, policy thresholds, and rule comparisons.",
+      "what_is_visible": "Policy configuration dashboard and control catalog summary slide.",
+      "match": true
+    },
+    {
+      "timestamp_range": "01:46 - 02:00",
+      "what_is_heard": "Detailing cost, token usage, and compute reservation limits.",
+      "what_is_visible": "Budgets dashboard showing token counts, dollar commitments, and executor capacity.",
+      "match": true
+    },
+    {
+      "timestamp_range": "02:00 - 02:22",
+      "what_is_heard": "Covering audit receipts, team reporting, API interfaces, and test coverage.",
+      "what_is_visible": "Reporting slide with JSON receipts and Developer Package evaluation checklist.",
+      "match": true
+    },
+    {
+      "timestamp_range": "02:22 - 02:34",
+      "what_is_heard": "Closing summary inviting independent evaluation.",
+      "what_is_visible": "Concluding slide with live test URL, GitHub repository link, and author credit.",
+      "match": true
+    }
+  ],
+  "text_readability": 4,
+  "visual_continuity": 4,
+  "observed_defects": [],
+  "ending_complete": true,
+  "first_words_heard": "An AI agent opens a supplier document.",
+  "last_words_heard": "...to put useful agents to work.",
+  "verdict": "pass",
+  "limitations": "Frame sampling rate limits inspection of tiny JSON code snippet parameters."
+}

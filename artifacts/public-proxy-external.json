@@ -1,0 +1,106 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-04T04:54:45.090346+00:00",
+  "mode": "application",
+  "transport": "external HTTPS",
+  "url": "https://743b-83-10-76-158.ngrok-free.app",
+  "checks": [
+    {
+      "name": "exact_upstream_networks",
+      "passed": true
+    },
+    {
+      "name": "live_configuration_matches_rendered",
+      "passed": true
+    },
+    {
+      "name": "unprivileged_readonly_proxy",
+      "passed": true
+    },
+    {
+      "name": "loopback_binding_only",
+      "passed": true
+    },
+    {
+      "name": "unauthenticated_denied",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_denied",
+      "passed": true
+    },
+    {
+      "name": "foreign_origin_denied",
+      "passed": true
+    },
+    {
+      "name": "missing_mutation_origin_denied",
+      "passed": true
+    },
+    {
+      "name": "authenticated_same_origin_forwarded",
+      "passed": true
+    },
+    {
+      "name": "session_cookie_hardened",
+      "passed": true
+    },
+    {
+      "name": "fresh_application_session",
+      "passed": true
+    },
+    {
+      "name": "basic_credential_removed_upstream",
+      "passed": true
+    },
+    {
+      "name": "runtime_unchanged_during_probe",
+      "passed": true
+    },
+    {
+      "name": "producer_unchanged_during_probe",
+      "passed": true
+    }
+  ],
+  "template_sha256": "d2e664c380aa5c42fdafa0300e62b208b50ffd8112ebc0cfbee8852a39ce4fd7",
+  "producer_sources": {
+    "demo/public/configure.py": "124a13d71171ad5f183e7b7e5f6639aaece17a6bd173c832f84eb8b616f8f1f7",
+    "demo/public/nginx.conf.template": "d2e664c380aa5c42fdafa0300e62b208b50ffd8112ebc0cfbee8852a39ce4fd7",
+    "demo/public/verify_proxy.py": "3a9afefbb5df6b5b91762e3f742fdeabd0b824b39239b48e95a74468c1295100"
+  },
+  "rendered_configuration_sha256": "4ca4306a2776bf0dafd3858a44fc5759a50de572f6cf703a1474451d87e748b1",
+  "runtime_binding": {
+    "container_id": "c53d323ebc865ce7914e43fe389c7522f6bc47c455467ada0b7634387f3df6e9",
+    "image_id": "sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94",
+    "user": "101:101",
+    "read_only": true,
+    "cap_drop": [
+      "ALL"
+    ],
+    "networks": [
+      "actiongate-gpu-0b92f97d_edge",
+      "actiongate-jury-transit"
+    ],
+    "live_configuration_sha256": "4ca4306a2776bf0dafd3858a44fc5759a50de572f6cf703a1474451d87e748b1",
+    "mounts": [
+      {
+        "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\.state\\public-demo/jury.htpasswd",
+        "destination": "/etc/nginx/jury.htpasswd",
+        "rw": false
+      },
+      {
+        "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\.state\\public-demo/nginx.conf",
+        "destination": "/etc/nginx/nginx.conf",
+        "rw": false
+      }
+    ],
+    "ports": {
+      "8080/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "18088"
+        }
+      ]
+    }
+  }
+}

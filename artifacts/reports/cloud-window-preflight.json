@@ -1,0 +1,21 @@
+{
+  "hashes": {
+    "backend/actiongate/cloud.py": "5e6d67b55fd5fe8ef0e61f91c4c009a19ebba127bbbd5372aaab3371c1cd8e95",
+    "policy/prices.json": "0a763b7ea8046bd9f755c91bf4fa7d09efa69ca1b36ab2263853bd429eb41ace",
+    "models/cloud-model-manifest.json": "e31c51b8ff1974815f229382b98eb7bf9f29e42bdd1f25127cc9a40ebec956f7"
+  },
+  "ready": {
+    "status": "ready",
+    "provider": "groq",
+    "configured": true,
+    "price_ready": true
+  },
+  "container_id": "66b4a50d26aa16cacc56917957cb0d2a55855140121feabeb42512eec4c667b2",
+  "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+  "networks": [
+    "actiongate-gpu-0b92f97d_cloud",
+    "actiongate-gpu-0b92f97d_provider-window"
+  ],
+  "source_match": true,
+  "provider_secret_present": true
+}

@@ -1,0 +1,425 @@
+{
+  "operations": [
+    {
+      "id": "0e2061d9-2160-4b4f-b40c-bbe91397bcca",
+      "status": "screening",
+      "created_at": "2026-10-04T02:50:46.249142+00:00",
+      "updated_at": "2026-10-04T02:50:46.249146+00:00",
+      "run_created_at": "2026-10-04T02:50:42.556891+00:00",
+      "root_fence": 1,
+      "advisory_owners_now": 0,
+      "metadata": {
+        "execution_mode": "local"
+      },
+      "events": [
+        {
+          "event": "operation.screening",
+          "at": "2026-10-04T02:50:47.050155+00:00"
+        }
+      ]
+    },
+    {
+      "id": "3868758d-1b28-4265-b03c-5db4294b8d76",
+      "status": "output_blocked",
+      "created_at": "2026-10-04T03:04:05.608349+00:00",
+      "updated_at": "2026-10-04T03:04:19.776453+00:00",
+      "run_created_at": "2026-10-04T03:04:05.097730+00:00",
+      "root_fence": 1,
+      "advisory_owners_now": 0,
+      "metadata": {
+        "semantic": {
+          "verdict": "benign",
+          "risk_level": 0,
+          "category": "none",
+          "complete": true,
+          "generation": 5,
+          "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+          "cache_hit": true,
+          "cache_source": {
+            "evaluated_at": "2026-10-04T03:04:02.005321+00:00",
+            "generation": 5,
+            "guard_artifact": {
+              "prompt_version": "actiongate-guard-v2.9",
+              "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+            },
+            "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+            "operation_id": "ad62645f-01be-40e4-bd69-9f3cdb3a54e9",
+            "scope": "Prior complete model judgment; no inference was started by this cache hit"
+          }
+        },
+        "feed_revision": 1,
+        "execution_mode": "local",
+        "owner_fence": 1,
+        "upstream_attempts": 1,
+        "unsettled_attempts": [],
+        "phase_timings_ms": {
+          "dlp_ms": 6.608,
+          "opa_ms": 9.141,
+          "ledger_reserve_ms": 146.502,
+          "upstream_ms": 46.598,
+          "ledger_settle_ms": 69.895,
+          "guard_ms": 10050.029
+        }
+      },
+      "events": [
+        {
+          "event": "operation.screening",
+          "at": "2026-10-04T03:04:05.766885+00:00"
+        },
+        {
+          "event": "budget.reserved",
+          "at": "2026-10-04T03:04:06.015405+00:00"
+        },
+        {
+          "event": "budget.reserved",
+          "at": "2026-10-04T03:04:06.121519+00:00"
+        },
+        {
+          "event": "operation.dispatched",
+          "at": "2026-10-04T03:04:06.206298+00:00"
+        },
+        {
+          "event": "budget.settled",
+          "at": "2026-10-04T03:04:06.298823+00:00"
+        },
+        {
+          "event": "budget.settled",
+          "at": "2026-10-04T03:04:19.760608+00:00"
+        },
+        {
+          "event": "operation.output_blocked",
+          "at": "2026-10-04T03:04:19.776863+00:00"
+        }
+      ]
+    },
+    {
+      "id": "24b126ce-0e15-498e-a910-0b2962fe5976",
+      "status": "output_blocked",
+      "created_at": "2026-10-04T03:05:12.007033+00:00",
+      "updated_at": "2026-10-04T03:05:26.185888+00:00",
+      "run_created_at": "2026-10-04T03:05:11.425442+00:00",
+      "root_fence": 1,
+      "advisory_owners_now": 0,
+      "metadata": {
+        "semantic": {
+          "verdict": "benign",
+          "risk_level": 0,
+          "category": "none",
+          "complete": true,
+          "generation": 5,
+          "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+          "cache_hit": true,
+          "cache_source": {
+            "evaluated_at": "2026-10-04T03:05:08.572126+00:00",
+            "generation": 5,
+            "guard_artifact": {
+              "prompt_version": "actiongate-guard-v2.9",
+              "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+            },
+            "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+            "operation_id": "7b6abc4e-757b-4068-a7e1-d6e6db69e937",
+            "scope": "Prior complete model judgment; no inference was started by this cache hit"
+          }
+        },
+        "feed_revision": 1,
+        "execution_mode": "local",
+        "owner_fence": 1,
+        "upstream_attempts": 1,
+        "unsettled_attempts": [],
+        "phase_timings_ms": {
+          "dlp_ms": 8.617,
+          "opa_ms": 13.651,
+          "ledger_reserve_ms": 136.281,
+          "upstream_ms": 51.651,
+          "ledger_settle_ms": 58.608,
+          "guard_ms": 10027.144
+        }
+      },
+      "events": [
+        {
+          "event": "operation.screening",
+          "at": "2026-10-04T03:05:12.238250+00:00"
+        },
+        {
+          "event": "budget.reserved",
+          "at": "2026-10-04T03:05:12.449618+00:00"
+        },
+        {
+          "event": "budget.reserved",
+          "at": "2026-10-04T03:05:12.570108+00:00"
+        },
+        {
+          "event": "operation.dispatched",
+          "at": "2026-10-04T03:05:12.647958+00:00"
+        },
+        {
+          "event": "budget.settled",
+          "at": "2026-10-04T03:05:12.739191+00:00"
+        },
+        {
+          "event": "budget.settled",
+          "at": "2026-10-04T03:05:26.169330+00:00"
+        },
+        {
+          "event": "operation.output_blocked",
+          "at": "2026-10-04T03:05:26.186457+00:00"
+        }
+      ]
+    },
+    {
+      "id": "27439f31-dfc2-4399-8dce-44507b08329a",
+      "status": "output_blocked",
+      "created_at": "2026-10-04T03:06:19.929918+00:00",
+      "updated_at": "2026-10-04T03:06:34.358044+00:00",
+      "run_created_at": "2026-10-04T03:06:19.544567+00:00",
+      "root_fence": 1,
+      "advisory_owners_now": 0,
+      "metadata": {
+        "semantic": {
+          "verdict": "benign",
+          "risk_level": 0,
+          "category": "none",
+          "complete": true,
+          "generation": 5,
+          "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+          "cache_hit": true,
+          "cache_source": {
+            "evaluated_at": "2026-10-04T03:06:16.301174+00:00",
+            "generation": 5,
+            "guard_artifact": {
+              "prompt_version": "actiongate-guard-v2.9",
+              "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+            },
+            "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+            "operation_id": "61b5abf7-e733-428e-93b9-37609837a00e",
+            "scope": "Prior complete model judgment; no inference was started by this cache hit"
+          }
+        },
+        "feed_revision": 1,
+        "execution_mode": "local",
+        "owner_fence": 1,
+        "upstream_attempts": 1,
+        "unsettled_attempts": [],
+        "phase_timings_ms": {
+          "dlp_ms": 22.473,
+          "opa_ms": 6.092,
+          "ledger_reserve_ms": 289.354,
+          "upstream_ms": 114.534,
+          "ledger_settle_ms": 55.969,
+          "guard_ms": 10019.613
+        }
+      },
+      "events": [
+        {
+          "event": "operation.screening",
+          "at": "2026-10-04T03:06:20.133726+00:00"
+        },
+        {
+          "event": "budget.reserved",
+          "at": "2026-10-04T03:06:20.564509+00:00"
+        },
+        {
+          "event": "budget.reserved",
+          "at": "2026-10-04T03:06:20.695265+00:00"
+        },
+        {
+          "event": "operation.dispatched",
+          "at": "2026-10-04T03:06:20.773034+00:00"
+        },
+        {
+          "event": "budget.settled",
+          "at": "2026-10-04T03:06:20.921956+00:00"
+        },
+        {
+          "event": "budget.settled",
+          "at": "2026-10-04T03:06:34.342096+00:00"
+        },
+        {
+          "event": "operation.output_blocked",
+          "at": "2026-10-04T03:06:34.358503+00:00"
+        }
+      ]
+    },
+    {
+      "id": "1462279f-f1e0-4d35-b20a-7c6cfc03dc7e",
+      "status": "screening",
+      "created_at": "2026-10-04T03:03:37.795058+00:00",
+      "updated_at": "2026-10-04T03:03:37.795064+00:00",
+      "run_created_at": "2026-10-04T03:03:35.861173+00:00",
+      "root_fence": 1,
+      "advisory_owners_now": 0,
+      "metadata": {
+        "execution_mode": "local"
+      },
+      "events": []
+    },
+    {
+      "id": "c2c5eac3-dcb0-43b6-8604-28f0bf51d4af",
+      "status": "output_blocked",
+      "created_at": "2026-10-04T03:07:41.079716+00:00",
+      "updated_at": "2026-10-04T03:07:52.252821+00:00",
+      "run_created_at": "2026-10-04T03:07:40.234819+00:00",
+      "root_fence": 1,
+      "advisory_owners_now": 0,
+      "metadata": {
+        "semantic": {
+          "verdict": "benign",
+          "risk_level": 0,
+          "category": "none",
+          "complete": true,
+          "generation": 5,
+          "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+          "cache_hit": true,
+          "cache_source": {
+            "evaluated_at": "2026-10-04T03:07:33.268950+00:00",
+            "generation": 5,
+            "guard_artifact": {
+              "prompt_version": "actiongate-guard-v2.9",
+              "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+            },
+            "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+            "operation_id": "c860d30c-68b0-4f90-872c-613892f1c48f",
+            "scope": "Prior complete model judgment; no inference was started by this cache hit"
+          }
+        },
+        "feed_revision": 1,
+        "execution_mode": "local",
+        "owner_fence": 1,
+        "upstream_attempts": 1,
+        "unsettled_attempts": [],
+        "phase_timings_ms": {
+          "dlp_ms": 79.023,
+          "opa_ms": 63.781,
+          "ledger_reserve_ms": 176.292,
+          "upstream_ms": 65.335,
+          "ledger_settle_ms": 63.153,
+          "guard_ms": 10020.002
+        }
+      },
+      "events": [
+        {
+          "event": "operation.screening",
+          "at": "2026-10-04T03:07:41.429535+00:00"
+        },
+        {
+          "event": "budget.reserved",
+          "at": "2026-10-04T03:07:41.849670+00:00"
+        },
+        {
+          "event": "budget.reserved",
+          "at": "2026-10-04T03:07:41.943307+00:00"
+        },
+        {
+          "event": "operation.dispatched",
+          "at": "2026-10-04T03:07:42.031242+00:00"
+        },
+        {
+          "event": "budget.settled",
+          "at": "2026-10-04T03:07:42.132681+00:00"
+        },
+        {
+          "event": "budget.settled",
+          "at": "2026-10-04T03:07:52.238518+00:00"
+        },
+        {
+          "event": "operation.output_blocked",
+          "at": "2026-10-04T03:07:52.253244+00:00"
+        }
+      ]
+    },
+    {
+      "id": "41318ad9-d95f-4dcc-8f21-c5003c97a28a",
+      "status": "output_blocked",
+      "created_at": "2026-10-04T03:08:17.646896+00:00",
+      "updated_at": "2026-10-04T03:08:32.748538+00:00",
+      "run_created_at": "2026-10-04T03:08:15.170064+00:00",
+      "root_fence": 1,
+      "advisory_owners_now": 0,
+      "metadata": {
+        "semantic": {
+          "verdict": "benign",
+          "risk_level": 0,
+          "category": "none",
+          "complete": true,
+          "generation": 5,
+          "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+          "cache_hit": true,
+          "cache_source": {
+            "evaluated_at": "2026-10-04T03:07:59.359330+00:00",
+            "generation": 5,
+            "guard_artifact": {
+              "prompt_version": "actiongate-guard-v2.9",
+              "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+            },
+            "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+            "operation_id": "b805c0bd-e3bf-49ed-bd7d-98d9fd20cb32",
+            "scope": "Prior complete model judgment; no inference was started by this cache hit"
+          }
+        },
+        "feed_revision": 1,
+        "execution_mode": "local",
+        "owner_fence": 1,
+        "upstream_attempts": 1,
+        "unsettled_attempts": [],
+        "phase_timings_ms": {
+          "dlp_ms": 117.096,
+          "opa_ms": 78.561,
+          "ledger_reserve_ms": 2275.088,
+          "upstream_ms": 316.481,
+          "ledger_settle_ms": 301.725,
+          "guard_ms": 10021.62
+        }
+      },
+      "events": [
+        {
+          "event": "operation.screening",
+          "at": "2026-10-04T03:08:18.590878+00:00"
+        },
+        {
+          "event": "budget.reserved",
+          "at": "2026-10-04T03:08:20.779701+00:00"
+        },
+        {
+          "event": "budget.reserved",
+          "at": "2026-10-04T03:08:21.384042+00:00"
+        },
+        {
+          "event": "operation.dispatched",
+          "at": "2026-10-04T03:08:22.014799+00:00"
+        },
+        {
+          "event": "budget.settled",
+          "at": "2026-10-04T03:08:22.599280+00:00"
+        },
+        {
+          "event": "budget.settled",
+          "at": "2026-10-04T03:08:32.731511+00:00"
+        },
+        {
+          "event": "operation.output_blocked",
+          "at": "2026-10-04T03:08:32.748996+00:00"
+        }
+      ]
+    }
+  ],
+  "pg_stat_activity_counts": [
+    {
+      "application_name": "",
+      "state": "active",
+      "connections": 1
+    },
+    {
+      "application_name": "",
+      "state": "idle",
+      "connections": 41
+    },
+    {
+      "application_name": "",
+      "state": null,
+      "connections": 6
+    }
+  ],
+  "checked_at": "2026-10-04T03:11:40.341166+00:00",
+  "guard_http_rejections": {},
+  "guard_http_rejection_logs": []
+}

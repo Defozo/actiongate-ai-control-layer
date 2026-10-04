@@ -1,0 +1,334 @@
+name: actiongate
+
+x-gateway-env: &gateway-env
+  DATABASE_URL: postgresql+psycopg://actiongate:${ACTIONGATE_DB_PASSWORD:?Run scripts/start.ps1}/actiongate
+  DB_HOST: postgres
+  ACTIONGATE_DB_PASSWORD: ${ACTIONGATE_DB_PASSWORD}
+  ACTIONGATE_AUTH_KEY: ${ACTIONGATE_AUTH_KEY}
+  ACTIONGATE_DEMO_AUTH: 'true'
+  ACTIONGATE_ENCRYPTION_KEY: ${ACTIONGATE_ENCRYPTION_KEY}
+  ACTIONGATE_SPOOL_KEY: ${ACTIONGATE_SPOOL_KEY}
+  ACTIONGATE_AUDIT_KEY: ${ACTIONGATE_AUDIT_KEY}
+  ACTIONGATE_CONNECTOR_KEY: ${ACTIONGATE_CONNECTOR_KEY}
+  ACTIONGATE_GUARD_KEY: ${ACTIONGATE_GUARD_KEY}
+  ACTIONGATE_BUSINESS_KEY: ${ACTIONGATE_BUSINESS_KEY}
+  ACTIONGATE_POLICY_PUBLIC_KEY: ${ACTIONGATE_POLICY_PUBLIC_KEY}
+  ACTIONGATE_FEED_PUBLIC_KEY: ${ACTIONGATE_FEED_PUBLIC_KEY}
+  OLLAMA_GUARD_URL: http://guard-worker:8090
+  OLLAMA_AGENT_URL: http://business-worker:8090
+  DEMO_TOOLS_URL: http://demo-tools:8010
+  CLOUD_CONNECTOR_URL: http://cloud-connector:8030
+  FEED_URL: http://feed-server:8020/feed
+  PUBLISHER_URL: http://feed-server:8020
+  OPA_REPLICA_URLS: http://opa-a:8181,http://opa-b:8181
+  AUTH_ISSUER: actiongate-local
+  AUTH_AUDIENCE: actiongate
+  PUBLIC_BASE_URL: http://127.0.0.1:${ACTIONGATE_PORT:-8080}
+  ALLOWED_ORIGINS: http://127.0.0.1:${ACTIONGATE_PORT:-8080},http://localhost:${ACTIONGATE_PORT:-8080}
+  POLICY_PATH: /app/policy/control.yaml
+  MODEL_MANIFEST_PATH: /app/models/model-manifest.json
+  TOOL_REGISTRY_PATH: /app/policy/tool-registry.json
+
+x-gateway: &gateway
+  build: {context: ., target: backend}
+  image: actiongate-gateway:0.1.0
+  init: true
+  restart: unless-stopped
+  read_only: true
+  tmpfs: [/tmp:size=64m]
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  pids_limit: 256
+  mem_limit: 2g
+  networks: [agent, data, guard, business, tools, opa, feed, edge, cloud]
+  volumes:
+    - ./policy:/app/policy:ro
+    - ./feeds:/app/feeds:ro
+    - artifacts:/app/artifacts
+  depends_on:
+    postgres: {condition: service_healthy}
+    migrate: {condition: service_completed_successfully}
+    guard-worker: {condition: service_healthy}
+    business-worker: {condition: service_healthy}
+  healthcheck:
+    test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready',timeout=8)"]
+    interval: 15s
+    timeout: 10s
+    retries: 20
+    start_period: 60s
+
+x-worker: &worker
+  build: {context: ., dockerfile: runtime/Dockerfile}
+  image: actiongate-worker:0.1.0
+  init: true
+  restart: unless-stopped
+  read_only: true
+  tmpfs: [/tmp:size=256m]
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  pids_limit: 256
+  mem_limit: 8g
+  cpus: 10
+  volumes: [models:/models:ro]
+  healthcheck:
+    test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8090/health/ready',timeout=3)"]
+    interval: 10s
+    timeout: 5s
+    retries: 12
+    start_period: 30s
+
+services:
+  postgres:
+    image: postgres@sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24
+    environment:
+      POSTGRES_DB: actiongate
+      POSTGRES_USER: actiongate_owner
+      POSTGRES_PASSWORD: ${ACTIONGATE_DB_OWNER_PASSWORD}
+      ACTIONGATE_DB_PASSWORD: ${ACTIONGATE_DB_PASSWORD}
+    volumes: [database:/var/lib/postgresql/data, ./deploy/init-db.sh:/docker-entrypoint-initdb.d/10-actiongate.sh:ro]
+    networks: [data]
+    restart: unless-stopped
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U actiongate_owner -d actiongate]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    mem_limit: 1g
+    pids_limit: 128
+
+  migrate:
+    image: actiongate-gateway:0.1.0
+    command: [python, -m, actiongate.migrate]
+    environment:
+      DATABASE_URL: postgresql+psycopg://actiongate_owner:${ACTIONGATE_DB_OWNER_PASSWORD}@postgres:5432/actiongate
+    networks: [data]
+    read_only: true
+    tmpfs: [/tmp:size=32m]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    depends_on:
+      postgres: {condition: service_healthy}
+
+  maintenance:
+    image: actiongate-gateway:0.1.0
+    command: [python, -m, actiongate.maintenance]
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+psycopg://actiongate_owner:${ACTIONGATE_DB_OWNER_PASSWORD}@postgres:5432/actiongate
+      ACTIONGATE_CONNECTOR_KEY: ${ACTIONGATE_CONNECTOR_KEY}
+      ACTIONGATE_POLICY_PUBLIC_KEY: ${ACTIONGATE_POLICY_PUBLIC_KEY}
+      PUBLISHER_URL: http://feed-server:8020
+    networks: [data, feed]
+    read_only: true
+    tmpfs: [/tmp:size=32m]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 64
+    mem_limit: 256m
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+      gateway-a: {condition: service_healthy}
+      gateway-b: {condition: service_healthy}
+
+  opa-a:
+    image: openpolicyagent/opa@sha256:3913aa7982d7c096c1996eca99d3360930723668fd62ccc3f6ebd37257d1fc84
+    restart: unless-stopped
+    command: [run, --server, --addr=0.0.0.0:8181, /policy/control.rego]
+    volumes: [./policy:/policy:ro]
+    networks: [opa]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+  opa-b:
+    image: openpolicyagent/opa@sha256:3913aa7982d7c096c1996eca99d3360930723668fd62ccc3f6ebd37257d1fc84
+    restart: unless-stopped
+    command: [run, --server, --addr=0.0.0.0:8181, /policy/control.rego]
+    volumes: [./policy:/policy:ro]
+    networks: [opa]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+
+  guard-worker:
+    <<: *worker
+    networks: [guard]
+    environment:
+      WORKER_ROLE: guard
+      WORKER_TOKEN: ${ACTIONGATE_GUARD_KEY}
+      MODEL_THREADS: 8
+      MODEL_GPU_LAYERS: 0
+  business-worker:
+    <<: *worker
+    networks: [business]
+    environment:
+      WORKER_ROLE: business
+      WORKER_TOKEN: ${ACTIONGATE_BUSINESS_KEY}
+      MODEL_THREADS: 8
+      MODEL_GPU_LAYERS: 0
+
+  gateway-a:
+    <<: *gateway
+    volumes:
+      - ./policy:/app/policy:ro
+      - ./feeds:/app/feeds:ro
+      - artifacts:/app/artifacts
+      - spool-a:/app/spool
+    environment:
+      <<: *gateway-env
+      DATABASE_URL: postgresql+psycopg://actiongate:${ACTIONGATE_DB_PASSWORD}@postgres:5432/actiongate
+      OPA_URL: http://opa-a:8181
+      REPLICA_ID: gateway-a
+  gateway-b:
+    <<: *gateway
+    volumes:
+      - ./policy:/app/policy:ro
+      - ./feeds:/app/feeds:ro
+      - artifacts:/app/artifacts
+      - spool-b:/app/spool
+    environment:
+      <<: *gateway-env
+      DATABASE_URL: postgresql+psycopg://actiongate:${ACTIONGATE_DB_PASSWORD}@postgres:5432/actiongate
+      OPA_URL: http://opa-b:8181
+      REPLICA_ID: gateway-b
+
+  demo-tools:
+    image: actiongate-gateway:0.1.0
+    restart: unless-stopped
+    command: [uvicorn, actiongate.demo_tools:app, --host, 0.0.0.0, --port, '8010', --no-access-log]
+    environment:
+      DATABASE_URL: postgresql+psycopg://actiongate:${ACTIONGATE_DB_PASSWORD}@postgres:5432/actiongate
+      ACTIONGATE_CONNECTOR_KEY: ${ACTIONGATE_CONNECTOR_KEY}
+      ACTIONGATE_AUTH_KEY: ${ACTIONGATE_AUTH_KEY}
+      ACTIONGATE_ENCRYPTION_KEY: ${ACTIONGATE_ENCRYPTION_KEY}
+      ACTIONGATE_AUDIT_KEY: ${ACTIONGATE_AUDIT_KEY}
+    networks: [tools, data]
+    read_only: true
+    tmpfs: [/tmp:size=32m]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    depends_on:
+      postgres: {condition: service_healthy}
+
+  feed-server:
+    image: actiongate-gateway:0.1.0
+    restart: unless-stopped
+    command: [uvicorn, actiongate.publisher:app, --host, 0.0.0.0, --port, '8020', --no-access-log]
+    environment:
+      ACTIONGATE_POLICY_SIGNING_KEY: ${ACTIONGATE_POLICY_SIGNING_KEY}
+      ACTIONGATE_FEED_SIGNING_KEY: ${ACTIONGATE_FEED_SIGNING_KEY}
+      ACTIONGATE_CONNECTOR_KEY: ${ACTIONGATE_CONNECTOR_KEY}
+      ACTIONGATE_PUBLISHER_DATA: /app/artifacts/publisher
+    volumes: [publisher:/app/artifacts, ./policy:/app/policy]
+    networks: [feed]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  cloud-connector:
+    image: actiongate-gateway:0.1.0
+    restart: unless-stopped
+    command: [uvicorn, actiongate.cloud:app, --host, 0.0.0.0, --port, '8030', --no-access-log]
+    environment:
+      ACTIONGATE_CONNECTOR_KEY: ${ACTIONGATE_CONNECTOR_KEY}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+    networks: [cloud, cloud-egress]
+    volumes: [./policy:/app/policy:ro]
+    profiles: [cloud]
+    read_only: true
+    tmpfs: [/tmp:size=32m]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 512m
+    pids_limit: 128
+
+  edge:
+    image: nginx@sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94
+    restart: unless-stopped
+    ports: ['127.0.0.1:${ACTIONGATE_PORT:-8080}:8080']
+    volumes: [./deploy/nginx.conf:/etc/nginx/nginx.conf:ro]
+    networks: [edge]
+    depends_on: [gateway-a, gateway-b]
+    read_only: true
+    tmpfs: [/var/cache/nginx, /var/run]
+    security_opt: [no-new-privileges:true]
+
+  agent-probe:
+    build: {context: ., target: agent-probe}
+    image: actiongate-agent-probe:0.1.0
+    command: [python, /agent_probe.py]
+    environment:
+      PUBLIC_GATEWAY_PORT: ${ACTIONGATE_PORT:-8080}
+    networks: [agent]
+    profiles: [test]
+    read_only: true
+    user: '10004'
+    tmpfs: [/tmp:size=16m]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 128m
+    pids_limit: 32
+
+  test-runner:
+    build: {context: ., target: tests}
+    image: actiongate-tests:0.1.0
+    command: [python, scripts/verify_container.py, --suite, all-local]
+    environment:
+      <<: *gateway-env
+      DATABASE_URL: postgresql+psycopg://actiongate:${ACTIONGATE_DB_PASSWORD}@postgres:5432/actiongate
+      OPA_URL: http://opa-a:8181
+      SERVICE_BASE_URL: http://gateway-a:8000
+      SECONDARY_BASE_URL: http://gateway-b:8000
+    networks: [agent, data, guard, business, tools, opa, feed, cloud]
+    profiles: [test]
+    volumes:
+      - ./tests:/app/tests:ro
+      - ./scripts:/app/scripts:ro
+      - ./artifacts:/app/artifacts
+      - ./policy:/app/policy:ro
+      - ./backend:/app/backend:ro
+      - ./packages:/app/packages:ro
+      - ./runtime:/app/runtime:ro
+      - ./deploy:/app/deploy:ro
+    read_only: true
+    tmpfs: [/tmp:size=64m]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 256
+    mem_limit: 2g
+
+  model-prepare:
+    image: ollama/ollama@sha256:57f573b47f1f71ebb445789f279fe3e596a8beab182f7cf486db9205bad87c5a
+    profiles: [prepare]
+    volumes: [models:/root/.ollama/models]
+    environment:
+      OLLAMA_MODEL: ${ACTIONGATE_LOCAL_MODEL:-qwen3.5:4b}
+    networks: [download]
+    entrypoint: [/bin/sh, -c]
+    command: ['ollama serve >/dev/null 2>&1 & p=$$!; sleep 2; ollama pull "$$OLLAMA_MODEL" >/dev/null 2>&1; result=$$?; kill $$p; exit $$result']
+
+volumes:
+  database:
+  models:
+  artifacts:
+  publisher:
+  spool-a:
+  spool-b:
+networks:
+  agent: {internal: true}
+  data: {internal: true}
+  guard: {internal: true}
+  business: {internal: true}
+  tools: {internal: true}
+  opa: {internal: true}
+  feed: {internal: true}
+  cloud:
+    internal: true
+    ipam:
+      config: [{subnet: '${ACTIONGATE_CLOUD_SUBNET:-10.253.84.0/28}'}]
+  cloud-egress:
+    ipam:
+      config: [{subnet: '${ACTIONGATE_CLOUD_EGRESS_SUBNET:-10.253.84.16/28}'}]
+  edge: {}
+  download: {}

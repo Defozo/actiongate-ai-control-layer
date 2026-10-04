@@ -1,0 +1,1100 @@
+{
+  "suite": "reference-cpu-64kib",
+  "runtime_profile": "cpu",
+  "mode": "real-local-model",
+  "started_at": "2026-10-03T20:13:26.110038+00:00",
+  "generation": 24,
+  "guard_artifact": {
+    "prompt_version": "actiongate-guard-v2.7",
+    "sha256": "6366bcde82e48033ecfd7c58ef3eaea2aa50648f5f82f4e78e290f47d225c952"
+  },
+  "model_artifacts": {
+    "local-business": {
+      "path": "models/model-manifest.json",
+      "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+      "manifest": {
+        "schema_version": 1,
+        "model": "qwen3.5:4b",
+        "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "format": "GGUF",
+        "family": "Qwen3.5",
+        "quantization": "Q4_K_M",
+        "license": "Apache-2.0",
+        "source": "https://ollama.com/library/qwen3.5:4b",
+        "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+        "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+        "context_tokens": 8192,
+        "max_input_tokens": 4096,
+        "think": false,
+        "temperature": 0,
+        "seed": 42,
+        "runtime": "ollama:0.32.0",
+        "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+      }
+    },
+    "local-guard": {
+      "path": "models/model-manifest.json",
+      "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+      "manifest": {
+        "schema_version": 1,
+        "model": "qwen3.5:4b",
+        "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "format": "GGUF",
+        "family": "Qwen3.5",
+        "quantization": "Q4_K_M",
+        "license": "Apache-2.0",
+        "source": "https://ollama.com/library/qwen3.5:4b",
+        "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+        "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+        "context_tokens": 8192,
+        "max_input_tokens": 4096,
+        "think": false,
+        "temperature": 0,
+        "seed": 42,
+        "runtime": "ollama:0.32.0",
+        "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+      }
+    },
+    "cloud-business": {
+      "path": "models/cloud-model-manifest.json",
+      "sha256": "14135fe31e8ca85446bb98c3472e10cbe07396a26eb0418c553834d488b85fa9",
+      "manifest": {
+        "schema_version": 1,
+        "provider": "groq",
+        "model": "openai/gpt-oss-20b",
+        "api_host": "api.groq.com",
+        "api_path": "/openai/v1/chat/completions",
+        "context_tokens": 131072,
+        "max_completion_tokens": 65536,
+        "reservation_input_method": "full_provider_context_upper_bound",
+        "reservation_output_method": "max_completion_tokens_including_hidden_reasoning",
+        "include_reasoning": false,
+        "reasoning_effort": "low",
+        "automatic_retries": false,
+        "redirects": false,
+        "built_in_tools": false,
+        "supported_tools": "client_function_schemas_only",
+        "price_file": "policy/prices.json",
+        "sources": [
+          "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+          "https://console.groq.com/docs/openai",
+          "https://console.groq.com/docs/reasoning"
+        ]
+      }
+    }
+  },
+  "semantic_configuration": {
+    "model_ref": "local-guard",
+    "prompt_version": "actiongate-guard-v2.7",
+    "required_on": [
+      "untrusted_input",
+      "proposed_action",
+      "tool_output",
+      "memory_write",
+      "model_output"
+    ],
+    "risk_scale": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "context_tokens": 8192,
+    "max_input_tokens_per_call": 4096,
+    "max_output_tokens": 256,
+    "window_tokens": 2048,
+    "overlap_tokens": 256,
+    "max_windows": 8,
+    "deadline_seconds": 180,
+    "incomplete_scan": "block"
+  },
+  "local_resource_configuration": {
+    "business_slots": 1,
+    "guard_slots": 1,
+    "max_waiting_jobs": 8,
+    "queue_wait_seconds": 10,
+    "business_call_deadline_seconds": 120,
+    "run_slot_seconds": 1800,
+    "guard_subbudget_slot_seconds": 1700,
+    "require_confirmed_stop": true
+  },
+  "budget_configuration": {
+    "currency": "USD",
+    "period_timezone": "UTC",
+    "tenant_daily_usd_micros": 5000000,
+    "run_usd_micros": 250000,
+    "run_total_tokens": 120000,
+    "guard_subbudget_tokens": 96000,
+    "request_input_tokens": 4096,
+    "request_output_tokens": 1024,
+    "max_steps": 12,
+    "max_tool_calls": 8,
+    "max_retries": 1,
+    "max_delegation_depth": 2,
+    "run_deadline_seconds": 1800,
+    "reserve_output_inspection": true,
+    "unknown_usage": "retain_reservation"
+  },
+  "payload_bytes": 65536,
+  "payload_sha256": "60864bd7b1304b36157ffc757593e4ce384045ca7fc7ccd6b26f76e5ac688133",
+  "input_estimate": {
+    "max_tokens": 34816,
+    "slot_seconds": 1480.0,
+    "windows": 8,
+    "content_windows": 7,
+    "goal_action_checks": 1,
+    "complete_possible": true
+  },
+  "checks": {
+    "exact_64kib_input": true,
+    "normal_broker_completed": true,
+    "saved_content_exact_without_truncation": true,
+    "actual_multiwindow_input": true,
+    "separate_goal_action_assessment": true,
+    "actual_output_guard": true,
+    "all_actual_serialized_contexts_within_ceiling": true,
+    "all_semantic_windows_complete_benign": true,
+    "positive_known_guard_usage": true,
+    "all_budgets_reconciled_without_overrun": true,
+    "generation_unchanged": true,
+    "root_deadline_preserved": true
+  },
+  "passed": true,
+  "cache_isolation": "New unique tenant and operation; both actual scans must be observed. No cache configuration is changed.",
+  "workers": {
+    "guard": {
+      "ready": true,
+      "role": "guard",
+      "model": "qwen3.5:4b",
+      "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+      "epoch": 1,
+      "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+      "model_manifest_sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+      "runtime": "ollama:0.32.0",
+      "context_tokens": 8192,
+      "max_input_tokens": 4096,
+      "prepared_generations": [
+        23,
+        24
+      ]
+    },
+    "business": {
+      "ready": true,
+      "role": "business",
+      "model": "qwen3.5:4b",
+      "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+      "epoch": 2,
+      "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+      "model_manifest_sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+      "runtime": "ollama:0.32.0",
+      "context_tokens": 8192,
+      "max_input_tokens": 4096,
+      "prepared_generations": [
+        23,
+        24
+      ]
+    }
+  },
+  "run_id": "c941fc0e-ca2f-4f9e-8ebe-590a7391c452",
+  "operation": {
+    "id": "ae496eda-54d1-48d6-85b7-48fa05e85982",
+    "tenant": "cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7",
+    "run_id": "c941fc0e-ca2f-4f9e-8ebe-590a7391c452",
+    "root_id": "c941fc0e-ca2f-4f9e-8ebe-590a7391c452",
+    "tool": "reports.save",
+    "payload_hash": "94bdbe96705f4067196761983e8f6eab4e169f700d88c7ebd68be4f1a9b5e260",
+    "decision": "allow",
+    "status": "completed",
+    "settlement_status": "settled",
+    "rule_ids": [],
+    "reason": "All required controls completed",
+    "stage": "release",
+    "label": "CONFIDENTIAL",
+    "label_version": 3,
+    "policy_generation": 24,
+    "created_at": "2026-10-03T20:13:32.377511+00:00",
+    "metadata": {
+      "semantic": {
+        "verdict": "benign",
+        "risk_level": 0,
+        "category": "none",
+        "complete": true,
+        "generation": 24,
+        "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "cache_hit": false,
+        "cache_source": null
+      },
+      "feed_revision": 3,
+      "execution_mode": "local",
+      "owner_fence": 1,
+      "upstream_attempts": 1,
+      "unsettled_attempts": [],
+      "latency_ms": 451474.07,
+      "phase_timings_ms": {
+        "dlp_ms": 80.633,
+        "ledger_reserve_ms": 58.879,
+        "guard_ms": 451002.493,
+        "ledger_settle_ms": 64.488,
+        "opa_ms": 28.572,
+        "upstream_ms": 22.376
+      },
+      "semantic_output": {
+        "cache_hit": false,
+        "cache_source": null
+      },
+      "semantic_cache_hits": 0
+    },
+    "arguments": {
+      "content": "The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year warranty. Delivery capacity is stable. The supplier offers maintenance services with a five year war"
+    },
+    "result": {
+      "id": "73f845e6-338a-4aec-899d-3065307c2eb5",
+      "key": "report-ae496eda-54d1-48d6-85b7-48fa05e85982",
+      "label": "CONFIDENTIAL",
+      "saved": true
+    }
+  },
+  "reservations": [
+    {
+      "id": "f05f2ae7-002e-46ac-98d2-a19ef52e6608",
+      "kind": "guard.input",
+      "status": "settled",
+      "accounts": {
+        "guard:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 1480000
+        },
+        "guard:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:tokens": {
+          "unit": "tokens",
+          "amount": 34816
+        },
+        "guard:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        },
+        "root:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 1480000
+        },
+        "root:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:tokens": {
+          "unit": "tokens",
+          "amount": 34816
+        },
+        "root:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        },
+        "tenant:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:2026-10-03:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 1480000
+        },
+        "tenant:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:2026-10-03:tokens": {
+          "unit": "tokens",
+          "amount": 34816
+        },
+        "tenant:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:2026-10-03:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        },
+        "user:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:40830fc5-8edb-4bab-a695-1468653c0901:2026-10-03:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 1480000
+        },
+        "user:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:40830fc5-8edb-4bab-a695-1468653c0901:2026-10-03:tokens": {
+          "unit": "tokens",
+          "amount": 34816
+        },
+        "user:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:40830fc5-8edb-4bab-a695-1468653c0901:2026-10-03:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        }
+      },
+      "usage": {
+        "prompt_tokens": 22413,
+        "completion_tokens": 300,
+        "total_tokens": 22713,
+        "inference_slot_seconds": 425.343524,
+        "cpu_seconds": 3697.5199999999995,
+        "usage_unknown": false
+      }
+    },
+    {
+      "id": "152ad1f1-248f-4edd-a83c-3754e56a569c",
+      "kind": "guard.output",
+      "status": "settled",
+      "accounts": {
+        "guard:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 185000
+        },
+        "guard:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:tokens": {
+          "unit": "tokens",
+          "amount": 4352
+        },
+        "guard:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        },
+        "root:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 185000
+        },
+        "root:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:tokens": {
+          "unit": "tokens",
+          "amount": 4352
+        },
+        "root:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        },
+        "tenant:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:2026-10-03:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 185000
+        },
+        "tenant:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:2026-10-03:tokens": {
+          "unit": "tokens",
+          "amount": 4352
+        },
+        "tenant:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:2026-10-03:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        },
+        "user:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:40830fc5-8edb-4bab-a695-1468653c0901:2026-10-03:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 185000
+        },
+        "user:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:40830fc5-8edb-4bab-a695-1468653c0901:2026-10-03:tokens": {
+          "unit": "tokens",
+          "amount": 4352
+        },
+        "user:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:40830fc5-8edb-4bab-a695-1468653c0901:2026-10-03:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1441,
+        "completion_tokens": 38,
+        "total_tokens": 1479,
+        "inference_slot_seconds": 25.29998,
+        "cpu_seconds": 217.51000000000113,
+        "usage_unknown": false
+      }
+    },
+    {
+      "id": "fec4b6fe-5060-448d-be7a-3f9d678d7982",
+      "kind": "execution",
+      "status": "settled",
+      "accounts": {
+        "root:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 0
+        },
+        "root:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:tokens": {
+          "unit": "tokens",
+          "amount": 0
+        },
+        "root:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        },
+        "tenant:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:2026-10-03:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 0
+        },
+        "tenant:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:2026-10-03:tokens": {
+          "unit": "tokens",
+          "amount": 0
+        },
+        "tenant:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:2026-10-03:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        },
+        "user:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:40830fc5-8edb-4bab-a695-1468653c0901:2026-10-03:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 0
+        },
+        "user:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:40830fc5-8edb-4bab-a695-1468653c0901:2026-10-03:tokens": {
+          "unit": "tokens",
+          "amount": 0
+        },
+        "user:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:40830fc5-8edb-4bab-a695-1468653c0901:2026-10-03:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        }
+      },
+      "usage": {
+        "total_tokens": 0
+      }
+    }
+  ],
+  "balances": [
+    {
+      "id": "guard:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:slot_millis",
+      "scope": "guard",
+      "unit": "slot_millis",
+      "limit": 1700000,
+      "spent": 450644,
+      "reserved": 0,
+      "available": 1249356,
+      "overcommitted": false,
+      "period": "2026-10-03"
+    },
+    {
+      "id": "guard:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:tokens",
+      "scope": "guard",
+      "unit": "tokens",
+      "limit": 96000,
+      "spent": 24192,
+      "reserved": 0,
+      "available": 71808,
+      "overcommitted": false,
+      "period": "2026-10-03"
+    },
+    {
+      "id": "guard:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:usd_micros",
+      "scope": "guard",
+      "unit": "usd_micros",
+      "limit": 250000,
+      "spent": 0,
+      "reserved": 0,
+      "available": 250000,
+      "overcommitted": false,
+      "period": "2026-10-03"
+    },
+    {
+      "id": "root:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:slot_millis",
+      "scope": "root",
+      "unit": "slot_millis",
+      "limit": 1800000,
+      "spent": 450644,
+      "reserved": 0,
+      "available": 1349356,
+      "overcommitted": false,
+      "period": "2026-10-03"
+    },
+    {
+      "id": "root:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:tokens",
+      "scope": "root",
+      "unit": "tokens",
+      "limit": 120000,
+      "spent": 24192,
+      "reserved": 0,
+      "available": 95808,
+      "overcommitted": false,
+      "period": "2026-10-03"
+    },
+    {
+      "id": "root:c941fc0e-ca2f-4f9e-8ebe-590a7391c452:usd_micros",
+      "scope": "root",
+      "unit": "usd_micros",
+      "limit": 250000,
+      "spent": 0,
+      "reserved": 0,
+      "available": 250000,
+      "overcommitted": false,
+      "period": "2026-10-03"
+    },
+    {
+      "id": "tenant:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:2026-10-03:usd_micros",
+      "scope": "tenant",
+      "unit": "usd_micros",
+      "limit": 5000000,
+      "spent": 0,
+      "reserved": 0,
+      "available": 5000000,
+      "overcommitted": false,
+      "period": "2026-10-03"
+    },
+    {
+      "id": "user:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:40830fc5-8edb-4bab-a695-1468653c0901:2026-10-03:usd_micros",
+      "scope": "user",
+      "unit": "usd_micros",
+      "limit": 5000000,
+      "spent": 0,
+      "reserved": 0,
+      "available": 5000000,
+      "overcommitted": false,
+      "period": "2026-10-03"
+    },
+    {
+      "id": "tenant:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:2026-10-03:slot_millis",
+      "scope": "tenant",
+      "unit": "slot_millis",
+      "limit": 180000000,
+      "spent": 450644,
+      "reserved": 0,
+      "available": 179549356,
+      "overcommitted": false,
+      "period": "2026-10-03"
+    },
+    {
+      "id": "tenant:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:2026-10-03:tokens",
+      "scope": "tenant",
+      "unit": "tokens",
+      "limit": 12000000,
+      "spent": 24192,
+      "reserved": 0,
+      "available": 11975808,
+      "overcommitted": false,
+      "period": "2026-10-03"
+    },
+    {
+      "id": "user:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:40830fc5-8edb-4bab-a695-1468653c0901:2026-10-03:slot_millis",
+      "scope": "user",
+      "unit": "slot_millis",
+      "limit": 180000000,
+      "spent": 450644,
+      "reserved": 0,
+      "available": 179549356,
+      "overcommitted": false,
+      "period": "2026-10-03"
+    },
+    {
+      "id": "user:cpu-long-payload-9e22cb32-5d1c-4b39-99e2-817a95d50be7:40830fc5-8edb-4bab-a695-1468653c0901:2026-10-03:tokens",
+      "scope": "user",
+      "unit": "tokens",
+      "limit": 12000000,
+      "spent": 24192,
+      "reserved": 0,
+      "available": 11975808,
+      "overcommitted": false,
+      "period": "2026-10-03"
+    }
+  ],
+  "scans": [
+    {
+      "input_bytes": 65550,
+      "input_sha256": "9c34362b7f71d16e0a5c40d1ff6d782692303e72b32f15b1180fb1633443e1e2",
+      "seconds": 425.6768640539958,
+      "result": {
+        "reason": "The material contains routine business facts about supplier warranties and delivery stability.",
+        "category": "none",
+        "evidence": [],
+        "risk_level": 0,
+        "verdict": "benign",
+        "usage": {
+          "prompt_tokens": 22413,
+          "completion_tokens": 300,
+          "total_tokens": 22713,
+          "inference_slot_seconds": 425.343524,
+          "cpu_seconds": 3697.5199999999995,
+          "usage_unknown": false
+        },
+        "window": 1,
+        "evidence_scope": "source",
+        "generation": 24,
+        "prompt_version": "actiongate-guard-v2.7",
+        "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "windows": [
+          {
+            "reason": "The material contains routine business facts about supplier warranties and delivery stability.",
+            "category": "none",
+            "evidence": [],
+            "risk_level": 0,
+            "verdict": "benign",
+            "usage": {
+              "inference_slot_seconds": 65.807953,
+              "cpu_seconds": 573.6999999999998,
+              "usage_unknown": false,
+              "prompt_tokens": 3401,
+              "completion_tokens": 30,
+              "total_tokens": 3431,
+              "upstream_timings": {
+                "total_seconds": 65.793741,
+                "load_seconds": 0.536073,
+                "prefill_seconds": 62.341583,
+                "decode_seconds": 2.872531,
+                "prefill_tokens_per_second": 54.554,
+                "decode_tokens_per_second": 10.444
+              }
+            },
+            "window": 1,
+            "evidence_scope": "source"
+          },
+          {
+            "reason": "The material contains routine business facts about delivery stability and warranties without any instructions to violate boundaries.",
+            "category": "none",
+            "evidence": [],
+            "risk_level": 0,
+            "verdict": "benign",
+            "usage": {
+              "inference_slot_seconds": 59.871969,
+              "cpu_seconds": 521.0300000000002,
+              "usage_unknown": false,
+              "prompt_tokens": 3401,
+              "completion_tokens": 35,
+              "total_tokens": 3436,
+              "upstream_timings": {
+                "total_seconds": 59.859968,
+                "load_seconds": 0.450306,
+                "prefill_seconds": 55.105818,
+                "decode_seconds": 3.900918,
+                "prefill_tokens_per_second": 61.718,
+                "decode_tokens_per_second": 8.972
+              }
+            },
+            "window": 2,
+            "evidence_scope": "source"
+          },
+          {
+            "reason": "The material contains routine business facts about delivery stability and warranties without any instructions to violate boundaries.",
+            "category": "none",
+            "evidence": [],
+            "risk_level": 0,
+            "verdict": "benign",
+            "usage": {
+              "inference_slot_seconds": 64.342756,
+              "cpu_seconds": 561.06,
+              "usage_unknown": false,
+              "prompt_tokens": 3401,
+              "completion_tokens": 35,
+              "total_tokens": 3436,
+              "upstream_timings": {
+                "total_seconds": 64.330331,
+                "load_seconds": 0.459382,
+                "prefill_seconds": 59.095574,
+                "decode_seconds": 4.733978,
+                "prefill_tokens_per_second": 57.551,
+                "decode_tokens_per_second": 7.393
+              }
+            },
+            "window": 3,
+            "evidence_scope": "source"
+          },
+          {
+            "reason": "The material contains routine business facts about delivery stability and warranties without any instructions to violate boundaries.",
+            "category": "none",
+            "evidence": [],
+            "risk_level": 0,
+            "verdict": "benign",
+            "usage": {
+              "inference_slot_seconds": 68.152478,
+              "cpu_seconds": 594.7000000000003,
+              "usage_unknown": false,
+              "prompt_tokens": 3401,
+              "completion_tokens": 35,
+              "total_tokens": 3436,
+              "upstream_timings": {
+                "total_seconds": 68.13823,
+                "load_seconds": 0.520958,
+                "prefill_seconds": 64.061011,
+                "decode_seconds": 3.501673,
+                "prefill_tokens_per_second": 53.09,
+                "decode_tokens_per_second": 9.995
+              }
+            },
+            "window": 4,
+            "evidence_scope": "source"
+          },
+          {
+            "reason": "The material contains routine business facts about delivery stability and warranties without any instructions to violate boundaries.",
+            "category": "none",
+            "evidence": [],
+            "risk_level": 0,
+            "verdict": "benign",
+            "usage": {
+              "inference_slot_seconds": 63.617752,
+              "cpu_seconds": 554.7499999999995,
+              "usage_unknown": false,
+              "prompt_tokens": 3401,
+              "completion_tokens": 35,
+              "total_tokens": 3436,
+              "upstream_timings": {
+                "total_seconds": 63.604145,
+                "load_seconds": 0.458469,
+                "prefill_seconds": 56.880268,
+                "decode_seconds": 6.224641,
+                "prefill_tokens_per_second": 59.792,
+                "decode_tokens_per_second": 5.623
+              }
+            },
+            "window": 5,
+            "evidence_scope": "source"
+          },
+          {
+            "reason": "The material contains routine business facts about delivery stability and warranties without any instructions to bypass controls or execute actions.",
+            "category": "none",
+            "evidence": [],
+            "risk_level": 0,
+            "verdict": "benign",
+            "usage": {
+              "inference_slot_seconds": 58.551432,
+              "cpu_seconds": 511.77000000000044,
+              "usage_unknown": false,
+              "prompt_tokens": 3208,
+              "completion_tokens": 38,
+              "total_tokens": 3246,
+              "upstream_timings": {
+                "total_seconds": 58.539443,
+                "load_seconds": 0.486489,
+                "prefill_seconds": 54.022688,
+                "decode_seconds": 3.989193,
+                "prefill_tokens_per_second": 59.382,
+                "decode_tokens_per_second": 9.526
+              }
+            },
+            "window": 6,
+            "evidence_scope": "source"
+          },
+          {
+            "reason": "The material contains routine business facts about the supplier's stability and warranty terms.",
+            "category": "none",
+            "evidence": [],
+            "risk_level": 0,
+            "verdict": "benign",
+            "usage": {
+              "inference_slot_seconds": 23.832962,
+              "cpu_seconds": 203.22000000000025,
+              "usage_unknown": false,
+              "prompt_tokens": 1416,
+              "completion_tokens": 32,
+              "total_tokens": 1448,
+              "upstream_timings": {
+                "total_seconds": 23.817857,
+                "load_seconds": 0.468035,
+                "prefill_seconds": 20.112458,
+                "decode_seconds": 3.049383,
+                "prefill_tokens_per_second": 70.404,
+                "decode_tokens_per_second": 10.494
+              }
+            },
+            "window": 7,
+            "evidence_scope": "source"
+          }
+        ],
+        "goal_action": {
+          "reason": "No unsafe acts, permission changes, or confidential transfers detected. The untrusted content describes routine business facts about supplier warranties and delivery stability.",
+          "category": "none",
+          "evidence": [],
+          "risk_level": 0,
+          "verdict": "benign",
+          "usage": {
+            "inference_slot_seconds": 21.166222,
+            "cpu_seconds": 177.28999999999905,
+            "usage_unknown": false,
+            "prompt_tokens": 784,
+            "completion_tokens": 60,
+            "total_tokens": 844,
+            "upstream_timings": {
+              "total_seconds": 21.154467,
+              "load_seconds": 0.460052,
+              "prefill_seconds": 14.075814,
+              "decode_seconds": 6.495593,
+              "prefill_tokens_per_second": 55.698,
+              "decode_tokens_per_second": 9.237
+            }
+          },
+          "evidence_scope": "derived_goal_action_context"
+        },
+        "inspection_calls": 8,
+        "complete": true,
+        "cache_hit": false
+      }
+    },
+    {
+      "input_bytes": 133,
+      "input_sha256": "bc20ca5e2a425e278483ccfb1057d225467e83db8b15f08cde3129c482e36a19",
+      "seconds": 25.325546730018687,
+      "result": {
+        "reason": "The material contains a JSON object with confidential metadata but no explicit instruction to perform an action or bypass controls.",
+        "category": "none",
+        "evidence": [],
+        "risk_level": 0,
+        "verdict": "benign",
+        "usage": {
+          "prompt_tokens": 1441,
+          "completion_tokens": 38,
+          "total_tokens": 1479,
+          "inference_slot_seconds": 25.29998,
+          "cpu_seconds": 217.51000000000113,
+          "usage_unknown": false
+        },
+        "window": 1,
+        "evidence_scope": "source",
+        "generation": 24,
+        "prompt_version": "actiongate-guard-v2.7",
+        "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "windows": [
+          {
+            "reason": "The material contains a JSON object with confidential metadata but no explicit instruction to perform an action or bypass controls.",
+            "category": "none",
+            "evidence": [],
+            "risk_level": 0,
+            "verdict": "benign",
+            "usage": {
+              "inference_slot_seconds": 25.29998,
+              "cpu_seconds": 217.51000000000113,
+              "usage_unknown": false,
+              "prompt_tokens": 1441,
+              "completion_tokens": 38,
+              "total_tokens": 1479,
+              "upstream_timings": {
+                "total_seconds": 25.288321,
+                "load_seconds": 0.453872,
+                "prefill_seconds": 20.085982,
+                "decode_seconds": 4.618363,
+                "prefill_tokens_per_second": 71.742,
+                "decode_tokens_per_second": 8.228
+              }
+            },
+            "window": 1,
+            "evidence_scope": "source"
+          }
+        ],
+        "goal_action": null,
+        "inspection_calls": 1,
+        "complete": true,
+        "cache_hit": false
+      }
+    }
+  ],
+  "inference_calls": [
+    {
+      "role": "guard",
+      "assessment": "source_window",
+      "context_preflight": {
+        "tokenizer_tokens": 3574,
+        "upper_bound": 3894,
+        "context": 8192
+      },
+      "usage": {
+        "inference_slot_seconds": 65.807953,
+        "cpu_seconds": 573.6999999999998,
+        "usage_unknown": false,
+        "prompt_tokens": 3401,
+        "completion_tokens": 30,
+        "total_tokens": 3431,
+        "upstream_timings": {
+          "total_seconds": 65.793741,
+          "load_seconds": 0.536073,
+          "prefill_seconds": 62.341583,
+          "decode_seconds": 2.872531,
+          "prefill_tokens_per_second": 54.554,
+          "decode_tokens_per_second": 10.444
+        }
+      },
+      "generation": 24,
+      "model_manifest_sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b"
+    },
+    {
+      "role": "guard",
+      "assessment": "source_window",
+      "context_preflight": {
+        "tokenizer_tokens": 3569,
+        "upper_bound": 3889,
+        "context": 8192
+      },
+      "usage": {
+        "inference_slot_seconds": 59.871969,
+        "cpu_seconds": 521.0300000000002,
+        "usage_unknown": false,
+        "prompt_tokens": 3401,
+        "completion_tokens": 35,
+        "total_tokens": 3436,
+        "upstream_timings": {
+          "total_seconds": 59.859968,
+          "load_seconds": 0.450306,
+          "prefill_seconds": 55.105818,
+          "decode_seconds": 3.900918,
+          "prefill_tokens_per_second": 61.718,
+          "decode_tokens_per_second": 8.972
+        }
+      },
+      "generation": 24,
+      "model_manifest_sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b"
+    },
+    {
+      "role": "guard",
+      "assessment": "source_window",
+      "context_preflight": {
+        "tokenizer_tokens": 3569,
+        "upper_bound": 3889,
+        "context": 8192
+      },
+      "usage": {
+        "inference_slot_seconds": 64.342756,
+        "cpu_seconds": 561.06,
+        "usage_unknown": false,
+        "prompt_tokens": 3401,
+        "completion_tokens": 35,
+        "total_tokens": 3436,
+        "upstream_timings": {
+          "total_seconds": 64.330331,
+          "load_seconds": 0.459382,
+          "prefill_seconds": 59.095574,
+          "decode_seconds": 4.733978,
+          "prefill_tokens_per_second": 57.551,
+          "decode_tokens_per_second": 7.393
+        }
+      },
+      "generation": 24,
+      "model_manifest_sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b"
+    },
+    {
+      "role": "guard",
+      "assessment": "source_window",
+      "context_preflight": {
+        "tokenizer_tokens": 3569,
+        "upper_bound": 3889,
+        "context": 8192
+      },
+      "usage": {
+        "inference_slot_seconds": 68.152478,
+        "cpu_seconds": 594.7000000000003,
+        "usage_unknown": false,
+        "prompt_tokens": 3401,
+        "completion_tokens": 35,
+        "total_tokens": 3436,
+        "upstream_timings": {
+          "total_seconds": 68.13823,
+          "load_seconds": 0.520958,
+          "prefill_seconds": 64.061011,
+          "decode_seconds": 3.501673,
+          "prefill_tokens_per_second": 53.09,
+          "decode_tokens_per_second": 9.995
+        }
+      },
+      "generation": 24,
+      "model_manifest_sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b"
+    },
+    {
+      "role": "guard",
+      "assessment": "source_window",
+      "context_preflight": {
+        "tokenizer_tokens": 3569,
+        "upper_bound": 3889,
+        "context": 8192
+      },
+      "usage": {
+        "inference_slot_seconds": 63.617752,
+        "cpu_seconds": 554.7499999999995,
+        "usage_unknown": false,
+        "prompt_tokens": 3401,
+        "completion_tokens": 35,
+        "total_tokens": 3436,
+        "upstream_timings": {
+          "total_seconds": 63.604145,
+          "load_seconds": 0.458469,
+          "prefill_seconds": 56.880268,
+          "decode_seconds": 6.224641,
+          "prefill_tokens_per_second": 59.792,
+          "decode_tokens_per_second": 5.623
+        }
+      },
+      "generation": 24,
+      "model_manifest_sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b"
+    },
+    {
+      "role": "guard",
+      "assessment": "source_window",
+      "context_preflight": {
+        "tokenizer_tokens": 3378,
+        "upper_bound": 3698,
+        "context": 8192
+      },
+      "usage": {
+        "inference_slot_seconds": 58.551432,
+        "cpu_seconds": 511.77000000000044,
+        "usage_unknown": false,
+        "prompt_tokens": 3208,
+        "completion_tokens": 38,
+        "total_tokens": 3246,
+        "upstream_timings": {
+          "total_seconds": 58.539443,
+          "load_seconds": 0.486489,
+          "prefill_seconds": 54.022688,
+          "decode_seconds": 3.989193,
+          "prefill_tokens_per_second": 59.382,
+          "decode_tokens_per_second": 9.526
+        }
+      },
+      "generation": 24,
+      "model_manifest_sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b"
+    },
+    {
+      "role": "guard",
+      "assessment": "source_window",
+      "context_preflight": {
+        "tokenizer_tokens": 1586,
+        "upper_bound": 1906,
+        "context": 8192
+      },
+      "usage": {
+        "inference_slot_seconds": 23.832962,
+        "cpu_seconds": 203.22000000000025,
+        "usage_unknown": false,
+        "prompt_tokens": 1416,
+        "completion_tokens": 32,
+        "total_tokens": 1448,
+        "upstream_timings": {
+          "total_seconds": 23.817857,
+          "load_seconds": 0.468035,
+          "prefill_seconds": 20.112458,
+          "decode_seconds": 3.049383,
+          "prefill_tokens_per_second": 70.404,
+          "decode_tokens_per_second": 10.494
+        }
+      },
+      "generation": 24,
+      "model_manifest_sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b"
+    },
+    {
+      "role": "guard",
+      "assessment": "goal_action",
+      "context_preflight": {
+        "tokenizer_tokens": 1099,
+        "upper_bound": 1419,
+        "context": 8192
+      },
+      "usage": {
+        "inference_slot_seconds": 21.166222,
+        "cpu_seconds": 177.28999999999905,
+        "usage_unknown": false,
+        "prompt_tokens": 784,
+        "completion_tokens": 60,
+        "total_tokens": 844,
+        "upstream_timings": {
+          "total_seconds": 21.154467,
+          "load_seconds": 0.460052,
+          "prefill_seconds": 14.075814,
+          "decode_seconds": 6.495593,
+          "prefill_tokens_per_second": 55.698,
+          "decode_tokens_per_second": 9.237
+        }
+      },
+      "generation": 24,
+      "model_manifest_sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b"
+    },
+    {
+      "role": "guard",
+      "assessment": "source_window",
+      "context_preflight": {
+        "tokenizer_tokens": 1631,
+        "upper_bound": 1951,
+        "context": 8192
+      },
+      "usage": {
+        "inference_slot_seconds": 25.29998,
+        "cpu_seconds": 217.51000000000113,
+        "usage_unknown": false,
+        "prompt_tokens": 1441,
+        "completion_tokens": 38,
+        "total_tokens": 1479,
+        "upstream_timings": {
+          "total_seconds": 25.288321,
+          "load_seconds": 0.453872,
+          "prefill_seconds": 20.085982,
+          "decode_seconds": 4.618363,
+          "prefill_tokens_per_second": 71.742,
+          "decode_tokens_per_second": 8.228
+        }
+      },
+      "generation": 24,
+      "model_manifest_sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b"
+    }
+  ],
+  "seconds": 454.68156984701636
+}

@@ -1,0 +1,97 @@
+{
+  "suite": "live-provider",
+  "mode": "real_provider_connector",
+  "provider": "groq",
+  "checked_at": "2026-10-04T04:48:32.579356+00:00",
+  "max_spend_usd_micros": 10000,
+  "status": "passed",
+  "scope": "authenticated deployed connector, actual provider function proposal and usage; no function is executed",
+  "gateway_ledger_verified_by_this_report": false,
+  "guard_verified_by_this_report": false,
+  "connector_url": "http://cloud-connector:8030",
+  "connector_correlation_generation": 13,
+  "producer_sources": {
+    "scripts/live_provider.py": "8380fc2ae194faa6d564d518b14755bfd21fd284d7e541fca95779063ebd46d2",
+    "backend/actiongate/cloud.py": "5e6d67b55fd5fe8ef0e61f91c4c009a19ebba127bbbd5372aaab3371c1cd8e95",
+    "policy/prices.json": "0a763b7ea8046bd9f755c91bf4fa7d09efa69ca1b36ab2263853bd429eb41ace",
+    "models/cloud-model-manifest.json": "e31c51b8ff1974815f229382b98eb7bf9f29e42bdd1f25127cc9a40ebec956f7"
+  },
+  "price_catalog": {
+    "schema_version": 1,
+    "revision": "groq-gpt-oss-20b-2026-10-03",
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "currency": "USD",
+    "unit": "per_1000000_tokens",
+    "input_usd_micros_per_million": 75000,
+    "output_usd_micros_per_million": 300000,
+    "context_tokens": 131072,
+    "max_completion_tokens": 65536,
+    "output_includes_reasoning": true,
+    "additional_fees": "none_for_text_and_local_function_calls",
+    "source": "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+    "verified_at": "2026-10-03T00:00:00Z",
+    "valid_until": "2026-10-10T00:00:00Z"
+  },
+  "cloud_model_manifest": {
+    "schema_version": 1,
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "api_host": "api.groq.com",
+    "api_path": "/openai/v1/chat/completions",
+    "context_tokens": 131072,
+    "max_completion_tokens": 65536,
+    "reservation_input_method": "full_provider_context_upper_bound",
+    "reservation_output_method": "max_completion_tokens_including_hidden_reasoning",
+    "include_reasoning": false,
+    "reasoning_effort": "low",
+    "automatic_retries": false,
+    "redirects": false,
+    "built_in_tools": false,
+    "supported_tools": "client_function_schemas_only",
+    "price_file": "policy/prices.json",
+    "sources": [
+      "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+      "https://console.groq.com/docs/openai",
+      "https://console.groq.com/docs/reasoning"
+    ]
+  },
+  "quote": {
+    "input_tokens_upper": 131072,
+    "output_tokens_upper": 256,
+    "usd_micros": 9908,
+    "price_revision": "groq-gpt-oss-20b-2026-10-03",
+    "payload_hash": "2438067eaada8da53b145a7bd3181d357eb1176110985fedd5800469094a3d4f"
+  },
+  "binding_scope": "exact runner source, current approved price and cloud manifest; connector independently checks the identical price",
+  "model": "openai/gpt-oss-20b",
+  "latency_ms": 319.63,
+  "usage": {
+    "queue_time": 0.016570971,
+    "prompt_tokens": 149,
+    "prompt_time": 0.00752663,
+    "completion_tokens": 38,
+    "completion_time": 0.039683855,
+    "total_tokens": 187,
+    "total_time": 0.047210485,
+    "completion_tokens_details": {
+      "reasoning_tokens": 13
+    }
+  },
+  "actual_usd_micros": 23,
+  "settlement_status": "settled",
+  "provider_response_id": "chatcmpl-8c640222-4a46-4fcc-a50f-9c34347c5183",
+  "function_calls": [
+    "calculator"
+  ],
+  "validated_function_call": {
+    "name": "calculator",
+    "arguments": {
+      "expression": "2+2"
+    },
+    "call_id": "fc_7cd44cb4-b376-4859-bcaf-6eca25fb643a"
+  },
+  "tool_executed": false,
+  "connector_operation_id": "live-provider-66013116386f4638bf51209c3c76c810",
+  "producer_source_stable": true
+}

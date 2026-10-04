@@ -1,0 +1,164 @@
+{
+  "mode": "actual-full-matrix-post-run-audit",
+  "status": "passed",
+  "checked_at": "2026-10-04T04:46:12.587622+00:00",
+  "project": "actiongate-gpu-0b92f97d",
+  "checks": {
+    "complete_valid_matrix": true,
+    "current_unchanged_source": true,
+    "all_fresh_roots_and_operations_accounted": true,
+    "exact_completed_effects_and_receipts": true,
+    "no_unsettled_or_uncertain_cost": true,
+    "budget_invariants": true,
+    "capacity_failures_before_dispatch": true,
+    "output_blocks_have_known_zero_inspection_and_one_legal_effect": true,
+    "no_runtime_restart_oom_or_filtered_errors": true,
+    "postgres_observer_complete": true
+  },
+  "measurement": {
+    "matrix_valid": true,
+    "rows": 144,
+    "requests": 2928,
+    "completed": 2164,
+    "rejected_or_failed": 764,
+    "transport_errors": 0,
+    "cold_model_unload_confirmed": true,
+    "resource_measurements_valid": true,
+    "full_mode_single_client_cohorts_completed": true,
+    "real_uncached_guard_usage_present": true,
+    "deterministic_overhead_targets": [
+      {
+        "temperature": "cold",
+        "control_cache_enabled": true,
+        "completed_p95_overhead_ms": 1189.775976992678,
+        "target_ms": 50,
+        "all_requests_completed": true,
+        "passed": false
+      },
+      {
+        "temperature": "warm",
+        "control_cache_enabled": true,
+        "completed_p95_overhead_ms": 1042.697403987404,
+        "target_ms": 50,
+        "all_requests_completed": true,
+        "passed": false
+      }
+    ],
+    "targets_met": false,
+    "semantic_cache_hits": 464,
+    "environment_label": "isolated-gpu",
+    "hardware_source": "artifacts/benchmark-reference/pg200-keepalive30-runtime-hardware.json",
+    "scope": "Actual typed reports.save workload. Matrix completion and capacity rejections are separate. Target uses fully completed 4 KiB / 10-client cohorts at the deployed default cache setting. On/off toggles compiled controls and context-bound semantic judgments together; their hit counts and settings are recorded. Empirical small-sample p95; no model KV cache toggle."
+  },
+  "source": {
+    "stable_during_measurement": true,
+    "stale_files": [],
+    "missing_files": [],
+    "unexpected_files": []
+  },
+  "operation_statuses": {
+    "completed": 2164,
+    "blocked": 342,
+    "failed": 419,
+    "output_blocked": 3
+  },
+  "effect_count": 2167,
+  "capacity_before_dispatch": {
+    "failed_operations": 419,
+    "error_types": {
+      "HTTPStatusError": 419
+    },
+    "all_have_released_guard_output": true,
+    "none_have_execution_reservation": true
+  },
+  "input_incomplete": {
+    "count": 342,
+    "known_zero_input_inference": 323,
+    "partial_known_inference": 19,
+    "scope": "All persisted input verdicts are incomplete unknown, not completed malicious classifications. No effect or execution reservation exists for these blocked operations. The stored metadata does not preserve each RuntimeFailure reason, so the 19 partial inspections are not assigned an unobserved exact failure cause."
+  },
+  "output_incomplete": {
+    "count": 3,
+    "guard_phase_ms": [
+      10026.993,
+      10045.001,
+      10020.289
+    ],
+    "scope": "All three input judgments were complete benign cache hits. After the legal write, the reserved output inspection consumed zero tokens and waited approximately the configured 10-second queue deadline. The result was withheld; these are not model false positives or duplicate effects."
+  },
+  "resources": {
+    "status": "passed",
+    "project": "actiongate-gpu-0b92f97d",
+    "started_at": "2026-10-04T04:17:50.380771+00:00",
+    "producer_source_sha256": "444d5f54f22bbe0e2c049d9941a18a7585ae83435bf29a3ada946f3efc0a421f",
+    "sampling_interval_seconds": 5,
+    "errors": [],
+    "ended_at": "2026-10-04T04:42:20.999782+00:00",
+    "producer_source_stable": true,
+    "sampled_max_connections_total": 130,
+    "sampled_max_client_connections": 125,
+    "observed_max_memory_current_bytes": 1103339520,
+    "observed_max_memory_lifetime_peak_bytes": 1109102592,
+    "observed_max_pids_current": 135
+  },
+  "performance_targets_met": false,
+  "limitations": [
+    "The initial 50 ms target is not met; it remains separately failed.",
+    "One cohort per matrix point yields empirical percentiles, not population confidence intervals.",
+    "The earlier ReadError was not reproduced in this run; its exact original TCP cause remains unproven."
+  ],
+  "evidence": {
+    "artifacts/benchmark.json": {
+      "sha256": "c5372fbf77226ff6204313ab14e8bdbdfdbf1b06db2522735eff8e3c0ad19aec",
+      "bytes": 6976243
+    },
+    "artifacts/benchmark.html": {
+      "sha256": "02c36bccc805f02d9cdf238206e1bd83ab8a5660488329deb6a2c752f806a2a1",
+      "bytes": 21523
+    },
+    "artifacts/benchmark-pg200-keepalive30-diagnostics.json": {
+      "sha256": "814e4c61f417091be72b1e3d0ff87ddb16e37dd6dea6a12f5a26923280c985f1",
+      "bytes": 1278391
+    },
+    "artifacts/benchmark-pg200-keepalive30-runtime-audit.json": {
+      "sha256": "5cee89358b6ac2e69903d1bcc9a2ca94bd8e0ec7bc0c4ffcefaa0d65a2645c7c",
+      "bytes": 4560
+    },
+    "artifacts/benchmark-pg200-keepalive30-semantic-capacity.json": {
+      "sha256": "47ab1e2f7d09ff96e48b62b4ea29931d68f5fac00ce3b34f891fa3cf348a5c13",
+      "bytes": 6290
+    },
+    "artifacts/benchmark-pg200-keepalive30-resources.json": {
+      "sha256": "bf4a20d6e25799a1c57cdf8c47e0d7673a45fba2b99c1c860c0cff0dcb43558b",
+      "bytes": 201991
+    },
+    "artifacts/benchmark-reference/pg200-keepalive30-runtime-hardware.json": {
+      "sha256": "5542f170cf150c8db19ab18bf8417a73c44d52b22408d2c008ab72bdd0d0487a",
+      "bytes": 10028
+    },
+    "compose.yaml": {
+      "sha256": "5cb04ce33fef6f2f813ba3759133769ca2b76cb1c92a3356648b6b74a1d6f781",
+      "bytes": 11635
+    },
+    "artifacts/benchmark-reference/producers/observe_pg.py": {
+      "sha256": "444d5f54f22bbe0e2c049d9941a18a7585ae83435bf29a3ada946f3efc0a421f",
+      "bytes": 4088
+    },
+    "artifacts/benchmark-reference/producers/diagnose_pg200_keepalive30.py": {
+      "sha256": "d721fbc9f3a0dbe4096379b95d9c8ecd2dc01cd0eefaa996f0fb534c9db515d0",
+      "bytes": 7014
+    },
+    "artifacts/benchmark-reference/producers/runtime_audit_pg200_keepalive30.py": {
+      "sha256": "3d2af476537c213626f40b2a92ff0b3870f34c9059334ceebeb4f508947ed26f",
+      "bytes": 3939
+    },
+    "artifacts/benchmark-reference/producers/semantic_capacity_pg200_keepalive30.py": {
+      "sha256": "b2195716e0ba093f3ca9e816f77b23fc81fe41c524535f1f68b3e906e7f53d35",
+      "bytes": 2417
+    },
+    "artifacts/benchmark-reference/producers/final_benchmark_audit.py": {
+      "sha256": "b8bd4a0e9b4a7e97bdfe4bfa78f5fd0b426e22e16539d4ce8ae8401890e1b942",
+      "bytes": 5868
+    }
+  }
+}

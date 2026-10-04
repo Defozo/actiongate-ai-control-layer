@@ -107,14 +107,35 @@ async function persist(){
       const r=await fetch('/api/operations/'+encodeURIComponent(id));
       if(!r.ok)throw new Error('Operation readback failed');return r.json();
     },operation.id);
-    check('actual_effect_'+expected,detail.effect.recorded===(expected==='completed'));
+    check('persisted_operation_'+expected,detail.id===operation.id&&detail.run_id===operation.run_id&&
+      detail.tool==='reports.save'&&detail.status===expected&&detail.policy_generation===policy.generation);
+    const dispatched=detail.events.filter(event=>event.event==='operation.dispatched');
+    const completedEvents=detail.events.filter(event=>event.event==='operation.completed');
+    // reports.save writes the local DataObject store. ConnectorReceipt belongs
+    // to documents.read / reports.publish_demo, not this local storage path.
+    const storageReceipt=detail.result;
+    const saved=storageReceipt?.saved===true&&typeof storageReceipt.id==='string'&&
+      /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(storageReceipt.id)&&
+      storageReceipt.key==='report-'+operation.id&&storageReceipt.label===detail.label&&
+      isDeepStrictEqual(storageReceipt,operation.result);
+    check('local_storage_receipt_'+expected,expected==='completed'
+      ? saved&&detail.stage==='release'&&detail.settlement_status==='settled'&&
+        dispatched.length===1&&completedEvents.length===1&&dispatched[0].id<completedEvents[0].id&&
+        [dispatched[0],completedEvents[0]].every(event=>event.operation_id===operation.id&&event.run_id===operation.run_id)
+      : !detail.result&&detail.decision==='block'&&dispatched.length===0&&completedEvents.length===0&&
+        detail.rule_ids.includes('semantic.risk')&&detail.events.some(event=>
+          event.event==='operation.blocked'&&event.operation_id===operation.id&&event.run_id===operation.run_id));
+    check('no_external_connector_receipt_'+expected,detail.effect.recorded===false&&detail.effect.receipt_id===null);
     await page.getByRole('button',{name:'Inspect input',exact:true}).waitFor();
     await page.screenshot({path:path.join(output,'playground-'+expected+'.png')});
     report.workflows.push({sample,status:operation.status,operation_id:operation.id,run_id:operation.run_id,
       generation:operation.policy_generation,semantic:operation.metadata?.semantic?.verdict,
       semantic_complete:semantic.complete,model_digest:semantic.model_digest,
       semantic_cache_hit:semantic.cache_hit===true,
-      effect_recorded:detail.effect.recorded,duration_ms:Date.now()-started});
+      effect_recorded:expected==='completed'&&saved,
+      effect_evidence:{kind:'persisted_local_storage_receipt',receipt:storageReceipt??null,
+        dispatched_events:dispatched.length,completed_events:completedEvents.length,
+        external_connector_receipt_recorded:detail.effect.recorded},duration_ms:Date.now()-started});
   }
   await page.getByText('Stream connected',{exact:true}).waitFor();
   const completed=report.workflows[0];

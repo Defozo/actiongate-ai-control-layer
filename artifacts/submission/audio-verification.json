@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "checked_at": "2026-10-04T05:30:40.076608+00:00",
+  "mp4_path": "artifacts/submission/ActionGate-pitch.mp4",
+  "source_render_path": "docs/.build/_video_work/render/english-pitch-v2/ActionGate-pitch.mp4",
+  "mp4_sha256": "43d6626bc6fb3809b0c363f3ca8d83df36dba712b4078faba113aa22ee933cb4",
+  "duration_seconds": 154.0,
+  "checks": {
+    "one_av_program": true,
+    "delivery_format": true,
+    "expected_duration": true,
+    "expected_resolution": true,
+    "expected_decoded_frames": true,
+    "av_delta_within_one_frame": true,
+    "zero_clipped_decoded_samples": true,
+    "aac_stream_preserved": true,
+    "decoded_audio_matches_reviewed": true,
+    "actual_acoustic_input_unchanged": true,
+    "acoustic_review_passed": true,
+    "movie_unchanged_during_qc": true,
+    "actual_visual_review_bound": true
+  },
+  "scope": "Actual final movie and exact previously reviewed AAC, plus bound final visual synchronization review",
+  "audio": {
+    "source_m4a_path": "docs/.build/_video_work/audio/delivery/pitch-v1/mix.m4a",
+    "source_m4a_sha256": "6d6ed96361068d33e711e55d7617cf519bd56f28f9c81017c3371bd37b49b326",
+    "source_aac_payload_sha256": "93bb54b9c0abd29e929b52271d14545b991ae2a5488f568bcd5b545b08bca906",
+    "muxed_aac_payload_sha256": "93bb54b9c0abd29e929b52271d14545b991ae2a5488f568bcd5b545b08bca906",
+    "stream_copy_verified": true,
+    "decoded_audio_matches_reviewed": true,
+    "decoded_pcm_sha256": "6123b6fad9198c74085e259e1f7948ac0fead81b7cf6f77c98d62b3fec3b3cb0",
+    "sample_rate": 24000,
+    "sample_count": 3696128
+  },
+  "perceptual_review": {
+    "method": "full_actual_audio_multimodal_review",
+    "reviewed_audio_sha256": "38fec5df113d031a622fd8d50fc1fcdc52529f3325bdbf133b0af37f70e311c6",
+    "coverage_seconds": 154.5,
+    "intelligibility": "clear",
+    "music_balance": "quiet_under_speech",
+    "ending_complete": true,
+    "observed_audio_defects": [],
+    "assessment_sha256": "07ca05cfd9923929064ef1d34a4916f6c5296aa086af318caf61d5102c0cf8ad",
+    "model": "gemini-3.8-flash",
+    "human_listening_claimed": false,
+    "scope": "Complete actual decoded AAC, without the script in the review request. Exact decoded samples are compared with the final film. Visual timing has its separate review."
+  },
+  "qc": {
+    "full_decode_passed": true,
+    "video_frames": 4620,
+    "expected_video_frames": 4620,
+    "audio_video_delta_seconds": 0.0,
+    "clipped_samples": 0
+  },
+  "visual_review": {
+    "status": "passed",
+    "mp4_sha256": "43d6626bc6fb3809b0c363f3ca8d83df36dba712b4078faba113aa22ee933cb4",
+    "reviewer": "/root/frontend_resume, with independent /root/frontend_resume/final_cut_review and actual audiovisual Gemini3.8Flash assessment",
+    "reviewed_at": "2026-10-04T05:30:37.672254+00:00",
+    "reviewed_entire_timeline": true,
+    "reviewed_timestamps_seconds": [
+      0.0,
+      2.0,
+      3.966666666666667,
+      4.0,
+      4.033333333333333,
+      10.333333333333334,
+      16.633333333333333,
+      16.666666666666668,
+      16.7,
+      21.8,
+      26.933333333333334,
+      26.966666666666665,
+      27.0,
+      28.466666666666665,
+      29.966666666666665,
+      30.0,
+      30.033333333333335,
+      32.233333333333334,
+      34.46666666666667,
+      34.5,
+      34.53333333333333,
+      37.0,
+      39.46666666666667,
+      39.5,
+      39.53333333333333,
+      41.56666666666667,
+      43.6,
+      43.63333333333333,
+      43.666666666666664,
+      47.06666666666667,
+      50.5,
+      50.53333333333333,
+      50.56666666666667,
+      53.266666666666666,
+      56.0,
+      56.03333333333333,
+      56.06666666666667,
+      58.56666666666667,
+      61.06666666666667,
+      61.1,
+      61.13333333333333,
+      66.13333333333334,
+      71.16666666666667,
+      71.2,
+      71.23333333333333,
+      75.43333333333334,
+      79.66666666666667,
+      79.7,
+      79.73333333333333,
+      82.83333333333333,
+      85.96666666666667,
+      86.0,
+      86.03333333333333,
+      91.1,
+      96.16666666666667,
+      96.2,
+      96.23333333333333,
+      101.56666666666666,
+      106.93333333333334,
+      106.96666666666667,
+      107.0,
+      113.3,
+      119.63333333333334,
+      119.66666666666667,
+      119.7,
+      124.16666666666667,
+      128.66666666666666,
+      128.7,
+      128.73333333333332,
+      135.53333333333333,
+      142.36666666666667,
+      142.4,
+      142.43333333333334,
+      148.2,
+      153.96666666666667
+    ],
+    "findings": [],
+    "scope": "Coverage of the complete timeline through a complete actual-MP4 audiovisual model review of v1, visual samples across every shot and cut, exact v1-to-v2 segment/audio binding, and independent review of the only changed static slide in v2. This does not claim human continuous playback, every-frame inspection or a new model request with v2 bytes.",
+    "human_listening_claimed": false,
+    "frame_by_frame_claimed": false,
+    "final_samples": {
+      "count": 75,
+      "method": "Independent absolute-time seek, shotmidpoints,cutandadjacentframes,endpoints",
+      "unchanged_samples_bound_to_v1": {
+        "total": 75,
+        "changed_timestamps_seconds": [
+          128.7,
+          128.73333333333332,
+          135.53333333333333,
+          142.36666666666667
+        ],
+        "outside_revised_segment_byte_identical": true
+      },
+      "parent_native_changed_and_boundary_frames": [
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
+      ]
+    },
+    "actual_audiovisual_assessment": {
+      "reviewed_mp4_sha256": "c04e19e82e1edbd19044743fb8b0b42ec7c94d40dc62e6769c53e106072c7f01",
+      "assessment_sha256": "3c91b4eb4ea312903ac060f4fd8b6203953713febc580d0b02e097590c7938f6",
+      "coverage_seconds": 154,
+      "verdict": "pass",
+      "alignment_ranges": [
+        {
+          "timestamp_range": "00:00 - 00:16",
+          "what_is_heard": "Explaining the threat of untrusted documents redirecting agent execution.",
+          "what_is_visible": "Title card transitioning to 'The next tool call: A supplier document can redirect an agent' problem slide.",
+          "match": true
+        },
+        {
+          "timestamp_range": "00:16 - 00:26",
+          "what_is_heard": "Overview of ActionGate enforcement boundary and gateway architecture.",
+          "what_is_visible": "Architecture flow diagram showing Agent, ActionGate, Broker, and Models.",
+          "match": true
+        },
+        {
+          "timestamp_range": "00:26 - 00:50",
+          "what_is_heard": "Demonstrating interactive workflow check in the dashboard with disclosure of omitted processing time.",
+          "what_is_visible": "Test Lab dashboard starting execution, followed by summary report and released JSON results.",
+          "match": true
+        },
+        {
+          "timestamp_range": "00:50 - 01:10",
+          "what_is_heard": "Comparing redaction of personal data, prompt injection blocking, and cross-tenant access rejection.",
+          "what_is_visible": "Operation details modal highlighting Redacted, Blocked, and Denied states with status badges.",
+          "match": true
+        },
+        {
+          "timestamp_range": "01:11 - 01:25",
+          "what_is_heard": "Explaining permission propagation through memory and explicit approval for reports.",
+          "what_is_visible": "Process diagram slides for complete supplier review and architecture boundary.",
+          "match": true
+        },
+        {
+          "timestamp_range": "01:26 - 01:46",
+          "what_is_heard": "Reviewing operator control catalog, policy thresholds, and rule comparisons.",
+          "what_is_visible": "Policy configuration dashboard and control catalog summary slide.",
+          "match": true
+        },
+        {
+          "timestamp_range": "01:46 - 02:00",
+          "what_is_heard": "Detailing cost, token usage, and compute reservation limits.",
+          "what_is_visible": "Budgets dashboard showing token counts, dollar commitments, and executor capacity.",
+          "match": true
+        },
+        {
+          "timestamp_range": "02:00 - 02:22",
+          "what_is_heard": "Covering audit receipts, team reporting, API interfaces, and test coverage.",
+          "what_is_visible": "Reporting slide with JSON receipts and Developer Package evaluation checklist.",
+          "match": true
+        },
+        {
+          "timestamp_range": "02:22 - 02:34",
+          "what_is_heard": "Closing summary inviting independent evaluation.",
+          "what_is_visible": "Concluding slide with live test URL, GitHub repository link, and author credit.",
+          "match": true
+        }
+      ],
+      "limitations": "Frame sampling rate limits inspection of tiny JSON code snippet parameters.",
+      "public_assessment": "artifacts/submission/pitch-evidence/av-assessment.json"
+    },
+    "change_binding": {
+      "sha256": "7317a9941f834424d5991f188a755e298eefb08911047afa1c4b741c8b20e8c3",
+      "public_path": "artifacts/submission/pitch-evidence/change-binding.json"
+    },
+    "independent_correction_review": {
+      "sha256": "34471cfbf29c7a8d1d302fe235c8d4daba36a29294f8d9a51bdb0e89cc9ff2f4",
+      "public_path": "artifacts/submission/pitch-evidence/independent-cut-review.json"
+    },
+    "review_ledger_sha256": "dab0aa3335e88bcd4bd41c3a1ef6b156fe5d0f4daa90d4b0b88dea9b7a3c2131"
+  }
+}

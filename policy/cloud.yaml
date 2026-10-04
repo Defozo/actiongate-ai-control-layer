@@ -42,7 +42,7 @@ models:
   allowed: [local-business, cloud-business]
   cloud_enabled: true
 semantic:
-  prompt_version: actiongate-guard-v2.8
+  prompt_version: actiongate-guard-v2.9
   model_ref: local-guard
   required_on: [untrusted_input, proposed_action, tool_output, memory_write, model_output]
   risk_scale: [0, 1, 2, 3]

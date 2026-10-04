@@ -1,0 +1,42 @@
+{
+  "mode": "production/source equality to executed unsigned v4b, not inference acceptance",
+  "guard_artifact": {
+    "prompt_version": "actiongate-guard-v2.9",
+    "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+  },
+  "prototype_manifest_sha256": "100579a85c54806ebadda4da350dd7f560cafe42c6828b070ae839c15128b0f6",
+  "production_source_sha256": "ad6230f3368ae099b1263f8acaaf58761d06b210d309cc808196e5bc08a3d7ad",
+  "producer_sha256": "333b6c97ffffc88c841bec98b673cc7d42c007dc4360e8fe7ce5e8a4becd2160",
+  "checks": {
+    "production_bytes_equal_reviewed_private_candidate": true,
+    "primary_system_byte_exact_prototype": true,
+    "native_source_schema_byte_and_order_exact_prototype": true,
+    "source_output_order_exact_prototype": true,
+    "independent_validator_schema_unchanged": true,
+    "independent_validator_class_ast_unchanged": true,
+    "literal_source_evidence_ast_unchanged": true,
+    "goal_schema_function_ast_unchanged": true,
+    "expected_signed_guard_artifact": true,
+    "matches_private_equality_artifact": true,
+    "private_equality_all_eight_checks_passed": true,
+    "generated_schema_copies_identical": true,
+    "legal_64kib_goal_prompt_exact": true,
+    "legal_64kib_goal_schema_byte_order_exact": true,
+    "hidden_attack_64kib_goal_prompt_exact": true,
+    "hidden_attack_64kib_goal_schema_byte_order_exact": true,
+    "holdout-v1-EN-benign-09_messages_exact": true,
+    "holdout-v1-PL-benign-09_messages_exact": true,
+    "independent-contrast-01-EN_messages_exact": true,
+    "independent-contrast-02-PL_messages_exact": true,
+    "independent-contrast-03-EN_messages_exact": true,
+    "independent-contrast-04-PL_messages_exact": true,
+    "independent-contrast-05-EN_messages_exact": true,
+    "independent-contrast-06-PL_messages_exact": true,
+    "independent-contrast-07-EN_messages_exact": true,
+    "independent-contrast-08-PL_messages_exact": true,
+    "independent-contrast-09-EN_messages_exact": true,
+    "independent-contrast-10-PL_messages_exact": true,
+    "independent-negative-fabrication-EN_messages_exact": true
+  },
+  "passed": true
+}

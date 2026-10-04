@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "created_at": "2026-10-04T05:30:40.848684+00:00",
+  "scope": "Public copies of exact media assessments and evidence. Contact sheets sample every shot midpoint, each cut and adjacent frames, and both endpoints. This is not a claim of every-frame or human continuous audiovisual review. The actual complete MP4 was separately assessed by an audiovisual model.",
+  "mp4_sha256": "43d6626bc6fb3809b0c363f3ca8d83df36dba712b4078faba113aa22ee933cb4",
+  "audio_verification_sha256": "26b690bce41a8b0888f6886c4fb44aa2e47d2a30ed18f96cb271ba3667a0502c",
+  "aliases": [
+    {
+      "original_path": "docs/.build/_video_work/review/audio-v1/assessment.json",
+      "public_path": "artifacts/submission/pitch-evidence/audio-assessment.json",
+      "original_sha256": "07ca05cfd9923929064ef1d34a4916f6c5296aa086af318caf61d5102c0cf8ad",
+      "public_sha256": "07ca05cfd9923929064ef1d34a4916f6c5296aa086af318caf61d5102c0cf8ad",
+      "bytes": 2990,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/audio-v1/review.json",
+      "public_path": "artifacts/submission/pitch-evidence/audio-review.json",
+      "original_sha256": "a4027ab72a786d0d4664bbe92b75b2981c7e7266b6c917713626f09aba711293",
+      "public_sha256": "9c5b32063da1a19e48dd40a577fc68ce03284ce4ae9de1951b88e75788f4c638",
+      "bytes": 6643,
+      "transformation": "Provider opaque blocks excluded; review metadata and exact assessment retained"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/av-v1/assessment.json",
+      "public_path": "artifacts/submission/pitch-evidence/av-assessment.json",
+      "original_sha256": "3c91b4eb4ea312903ac060f4fd8b6203953713febc580d0b02e097590c7938f6",
+      "public_sha256": "3c91b4eb4ea312903ac060f4fd8b6203953713febc580d0b02e097590c7938f6",
+      "bytes": 3589,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/av-v1/review.json",
+      "public_path": "artifacts/submission/pitch-evidence/av-review.json",
+      "original_sha256": "7152192c30a704e8fa4759f20fdd1114f6988398e9fe4bd1da3f527820f795a1",
+      "public_sha256": "7917e965989bb64e4c55701b323ac5f49e7792423bedba650031fe2764b9c600",
+      "bytes": 8106,
+      "transformation": "Provider opaque blocks excluded; review metadata and exact assessment retained"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v2-absolute/final-visual-review.json",
+      "public_path": "artifacts/submission/pitch-evidence/visual-review.json",
+      "original_sha256": "70f3c8459427e3497d6f3219785cf4f4904270350ea1d1369649362f95a1e525",
+      "public_sha256": "70f3c8459427e3497d6f3219785cf4f4904270350ea1d1369649362f95a1e525",
+      "bytes": 6698,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v1/independent-cut-review.json",
+      "public_path": "artifacts/submission/pitch-evidence/independent-cut-review-v1.json",
+      "original_sha256": "e2e85013d07574d15fc9eb4594b422a6e5dfb65638308f7e80cf8cf2a97e96f9",
+      "public_sha256": "e2e85013d07574d15fc9eb4594b422a6e5dfb65638308f7e80cf8cf2a97e96f9",
+      "bytes": 8823,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v2-absolute/independent-cut-review.json",
+      "public_path": "artifacts/submission/pitch-evidence/independent-cut-review.json",
+      "original_sha256": "34471cfbf29c7a8d1d302fe235c8d4daba36a29294f8d9a51bdb0e89cc9ff2f4",
+      "public_sha256": "34471cfbf29c7a8d1d302fe235c8d4daba36a29294f8d9a51bdb0e89cc9ff2f4",
+      "bytes": 4514,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v2-absolute/change-binding.json",
+      "public_path": "artifacts/submission/pitch-evidence/change-binding.json",
+      "original_sha256": "7317a9941f834424d5991f188a755e298eefb08911047afa1c4b741c8b20e8c3",
+      "public_sha256": "7317a9941f834424d5991f188a755e298eefb08911047afa1c4b741c8b20e8c3",
+      "bytes": 7978,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/render/english-pitch-v1/render-manifest.json",
+      "public_path": "artifacts/submission/pitch-evidence/v1-render-manifest.json",
+      "original_sha256": "87730f905270a5520bb95ddd0fbcd08e327b9ee6d7cebd3002b64b8bfa015fda",
+      "public_sha256": "87730f905270a5520bb95ddd0fbcd08e327b9ee6d7cebd3002b64b8bfa015fda",
+      "bytes": 10004,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/plans/english-pitch-v1.json",
+      "public_path": "artifacts/submission/pitch-evidence/v1-shot-plan.json",
+      "original_sha256": "ee1c2a6bb1040a23a8eea26eb1d3fef9ef3342c799285db22831296be484455f",
+      "public_sha256": "ee1c2a6bb1040a23a8eea26eb1d3fef9ef3342c799285db22831296be484455f",
+      "bytes": 8423,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/pitch-final-v1/pdf-review.json",
+      "public_path": "artifacts/submission/pitch-evidence/pdf-review-v1.json",
+      "original_sha256": "7627f15cf8685a385af3d8a5754ae656b10c75c70cd8490816177b5eb4e31889",
+      "public_sha256": "7627f15cf8685a385af3d8a5754ae656b10c75c70cd8490816177b5eb4e31889",
+      "bytes": 6615,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v2-absolute/review-ledger.json",
+      "public_path": "artifacts/submission/pitch-evidence/review-ledger.json",
+      "original_sha256": "dab0aa3335e88bcd4bd41c3a1ef6b156fe5d0f4daa90d4b0b88dea9b7a3c2131",
+      "public_sha256": "dab0aa3335e88bcd4bd41c3a1ef6b156fe5d0f4daa90d4b0b88dea9b7a3c2131",
+      "bytes": 1183,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v2-absolute/frames.json",
+      "public_path": "artifacts/submission/pitch-evidence/sampled-frames.json",
+      "original_sha256": "733f7fed7098841198a35628fdf816ce839fc81b5fafa11b4c0a919b2fb9ac68",
+      "public_sha256": "733f7fed7098841198a35628fdf816ce839fc81b5fafa11b4c0a919b2fb9ac68",
+      "bytes": 12381,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/render/english-pitch-v2/render-manifest.json",
+      "public_path": "artifacts/submission/pitch-evidence/render-manifest.json",
+      "original_sha256": "7ee1ff8f0639915787aac53463c2e11d56ae07b1ed2c82661ff92b8949680074",
+      "public_sha256": "7ee1ff8f0639915787aac53463c2e11d56ae07b1ed2c82661ff92b8949680074",
+      "bytes": 11924,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/plans/english-pitch-v2.json",
+      "public_path": "artifacts/submission/pitch-evidence/shot-plan.json",
+      "original_sha256": "b6d808fc1b6a2e4b7906e64edf0286e445a427930ac9b2366b7edd2f80c302d5",
+      "public_sha256": "b6d808fc1b6a2e4b7906e64edf0286e445a427930ac9b2366b7edd2f80c302d5",
+      "bytes": 8671,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/render/english-pitch-v2/qc/technical-verification.json",
+      "public_path": "artifacts/submission/pitch-evidence/technical-verification.json",
+      "original_sha256": "84435ad1460ab14da75168cc02816764a3592b53b824b36177c7a2b708c62835",
+      "public_sha256": "84435ad1460ab14da75168cc02816764a3592b53b824b36177c7a2b708c62835",
+      "bytes": 2624,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/render/english-pitch-v2/qc/ffprobe.json",
+      "public_path": "artifacts/submission/pitch-evidence/ffprobe.json",
+      "original_sha256": "c0e763d389106ecd582366b0445bcdc00af3c50f651ba02f054c3695d6026a98",
+      "public_sha256": "c0e763d389106ecd582366b0445bcdc00af3c50f651ba02f054c3695d6026a98",
+      "bytes": 3906,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/render/english-pitch-v2/qc/full-decode.log",
+      "public_path": "artifacts/submission/pitch-evidence/full-decode.log",
+      "original_sha256": "c1b2c55c9f2d5809dd0be744ea30485591fc343a1e7d25c9e38840c8e166b43f",
+      "public_sha256": "c1b2c55c9f2d5809dd0be744ea30485591fc343a1e7d25c9e38840c8e166b43f",
+      "bytes": 608,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/audio/delivery/pitch-v1/manifest.json",
+      "public_path": "artifacts/submission/pitch-evidence/audio-mix-manifest.json",
+      "original_sha256": "053e8a453fb7dd3b412b97276d62501d6029b6af972aa7a5a33e1b65280e0b02",
+      "public_sha256": "053e8a453fb7dd3b412b97276d62501d6029b6af972aa7a5a33e1b65280e0b02",
+      "bytes": 1376,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/manifests/captions.json",
+      "public_path": "artifacts/submission/pitch-evidence/caption-alignment-manifest.json",
+      "original_sha256": "b6d43f0bba24c67bd15774f94d97062cffe3df7f86179bc14db32aef0bb4f9dc",
+      "public_sha256": "b6d43f0bba24c67bd15774f94d97062cffe3df7f86179bc14db32aef0bb4f9dc",
+      "bytes": 8859,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/pitch-final-v2/pdf-review.json",
+      "public_path": "artifacts/submission/pitch-evidence/pdf-review.json",
+      "original_sha256": "5b3f36972ba2173a40f9c98ca4099e010276dc6541cd76c61906fe0d9d235b7c",
+      "public_sha256": "5b3f36972ba2173a40f9c98ca4099e010276dc6541cd76c61906fe0d9d235b7c",
+      "bytes": 6401,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/pitch-final-v2/validation.json",
+      "public_path": "artifacts/submission/pitch-evidence/deck-validation.json",
+      "original_sha256": "ec6d824dc58c68ad30f209d46b1b812fff47dde50184d48d4da590202cb23a0b",
+      "public_sha256": "ec6d824dc58c68ad30f209d46b1b812fff47dde50184d48d4da590202cb23a0b",
+      "bytes": 3654,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/final-detail-captures.json",
+      "public_path": "artifacts/submission/pitch-evidence/detail-capture-manifest.json",
+      "original_sha256": "6ab6fafc3b288c9162efb42a9b523c73da34585468f5e69afcbf66bbdeb7230d",
+      "public_sha256": "6ab6fafc3b288c9162efb42a9b523c73da34585468f5e69afcbf66bbdeb7230d",
+      "bytes": 962,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v2-absolute/midpoints-01.jpg",
+      "public_path": "artifacts/submission/pitch-evidence/contact-sheets/midpoints-01.jpg",
+      "original_sha256": "f86ee266f9e9f481790d708206f8e1ea20e476978e73d3725f7723b9c491a9d6",
+      "public_sha256": "f86ee266f9e9f481790d708206f8e1ea20e476978e73d3725f7723b9c491a9d6",
+      "bytes": 197906,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v2-absolute/midpoints-02.jpg",
+      "public_path": "artifacts/submission/pitch-evidence/contact-sheets/midpoints-02.jpg",
+      "original_sha256": "c7f164cb7d120bfe44a91f9483b1fa33cb68df841d4ace5bb35fed6480724bb0",
+      "public_sha256": "c7f164cb7d120bfe44a91f9483b1fa33cb68df841d4ace5bb35fed6480724bb0",
+      "bytes": 183998,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v2-absolute/midpoints-03.jpg",
+      "public_path": "artifacts/submission/pitch-evidence/contact-sheets/midpoints-03.jpg",
+      "original_sha256": "017ffde24384e7c88387460a88d67951a21fd7ae8dadb3fcf5d99a28fac1d0a9",
+      "public_sha256": "017ffde24384e7c88387460a88d67951a21fd7ae8dadb3fcf5d99a28fac1d0a9",
+      "bytes": 42885,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v2-absolute/boundaries-01.jpg",
+      "public_path": "artifacts/submission/pitch-evidence/contact-sheets/boundaries-01.jpg",
+      "original_sha256": "fc22f906ccb7ec9d0beaedf557b963158eff78d82918ef737ac84be06648705c",
+      "public_sha256": "fc22f906ccb7ec9d0beaedf557b963158eff78d82918ef737ac84be06648705c",
+      "bytes": 226801,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v2-absolute/boundaries-02.jpg",
+      "public_path": "artifacts/submission/pitch-evidence/contact-sheets/boundaries-02.jpg",
+      "original_sha256": "f76524ed92ba89e645e29f1b49bb96de599c4e5b467c80b1c34b4170f85aa70d",
+      "public_sha256": "f76524ed92ba89e645e29f1b49bb96de599c4e5b467c80b1c34b4170f85aa70d",
+      "bytes": 191019,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v2-absolute/boundaries-03.jpg",
+      "public_path": "artifacts/submission/pitch-evidence/contact-sheets/boundaries-03.jpg",
+      "original_sha256": "05d797b11373de9154af4b57a3d3a0415916d090888b3a9dc4f3b1afc40b4b1b",
+      "public_sha256": "05d797b11373de9154af4b57a3d3a0415916d090888b3a9dc4f3b1afc40b4b1b",
+      "bytes": 153804,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v2-absolute/boundaries-04.jpg",
+      "public_path": "artifacts/submission/pitch-evidence/contact-sheets/boundaries-04.jpg",
+      "original_sha256": "08903eeae2abfd23150d700e4330d07cb761382cab11940f326e25a23c3c9110",
+      "public_sha256": "08903eeae2abfd23150d700e4330d07cb761382cab11940f326e25a23c3c9110",
+      "bytes": 171770,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v2-absolute/boundaries-05.jpg",
+      "public_path": "artifacts/submission/pitch-evidence/contact-sheets/boundaries-05.jpg",
+      "original_sha256": "6fa49141660e6dad5ba6437dcb661e2b210fadbba55a1436a6a5a08cfbc3f084",
+      "public_sha256": "6fa49141660e6dad5ba6437dcb661e2b210fadbba55a1436a6a5a08cfbc3f084",
+      "bytes": 185451,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v2-absolute/boundaries-06.jpg",
+      "public_path": "artifacts/submission/pitch-evidence/contact-sheets/boundaries-06.jpg",
+      "original_sha256": "df5d632b160a6325cc910a122c08c4e99cd5b5d0619f7e72848170048b8de41b",
+      "public_sha256": "df5d632b160a6325cc910a122c08c4e99cd5b5d0619f7e72848170048b8de41b",
+      "bytes": 200144,
+      "transformation": "byte_for_byte"
+    },
+    {
+      "original_path": "docs/.build/_video_work/review/visual-v2-absolute/boundaries-07.jpg",
+      "public_path": "artifacts/submission/pitch-evidence/contact-sheets/boundaries-07.jpg",
+      "original_sha256": "892becdebbecb4e36a0bf0591284a9373d27c099c0010bf4be633a6440036c68",
+      "public_sha256": "892becdebbecb4e36a0bf0591284a9373d27c099c0010bf4be633a6440036c68",
+      "bytes": 65288,
+      "transformation": "byte_for_byte"
+    }
+  ],
+  "verification": {
+    "all_public_hashes_match": true,
+    "audio_assessment_exact": true,
+    "visual_review_bound_to_movie": true
+  },
+  "private_sources": "Original large media, encoder segments and opaque provider blocks remain local. The AAC payload can be demuxed from the delivered MP4 and checked against audio-verification.json.",
+  "audiovisual_review_lineage": {
+    "full_movie_review": "av-review.json binds the complete version1 MP4 actually submitted to the audiovisual model",
+    "final_version": "change-binding.json proves eighteen unchanged encoded segments and identical audio; independent-cut-review.json checks the revised static slide and cuts in version2",
+    "no_false_claim": "The version1 audiovisual assessment is not presented as an API assessment of version2 bytes. The final review combines that evidence with exact change binding and the version2 correction inspection."
+  }
+}

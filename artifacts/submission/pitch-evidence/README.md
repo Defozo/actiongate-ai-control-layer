@@ -1,0 +1,7 @@
+# Pitch review evidence
+
+Start with `manifest.json`: every public evidence file maps to its original path and SHA-256. Byte copies preserve the exact assessment hashes referenced by `../audio-verification.json`. Provider review journals omit opaque reasoning/signature blocks and all media payloads; the exact assessments remain separate, unchanged files.
+
+`audio-assessment.json` describes the actual complete decoded soundtrack. The delivered MP4 preserves its original AAC payload and all reviewed decoded samples. `av-assessment.json` comes from actual version1 MP4 input, with video sampling limitations. The final version2 changes only one static slide: `change-binding.json` identifies that 13.7-second segment and proves the remaining eighteen segments and soundtrack are identical. `independent-cut-review.json` records the subsequent correction review. This is combined coverage of the full timeline, not a claim of human continuous playback or inspection of every frame.
+
+`shot-plan.json` and `render-manifest.json` bind current sources and output. `sampled-frames.json` identifies exact output timestamps; contact sheets include each shot midpoint, each cut and its adjacent frames, plus the ending. The original sequential-filter counter extraction was rejected; only independent absolute-time extractions are published here. `pdf-review.json` links the original complete ten-page inspection with the final corrected page9 inspection.

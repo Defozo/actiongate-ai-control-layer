@@ -1,0 +1,109 @@
+{
+  "created_at": "2026-10-03T22:37:48.146988+00:00",
+  "status": "completed",
+  "source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\_video_work\\song-pitch-2026-10-04\\music\\raw.mp3",
+  "source_sha256": "563219745aecb91de53d3e677d69ecc264bc558f4e8fc812a28901268dd1eadf",
+  "human_review": false,
+  "method": "Actual media input to audio/video capable model; no expected script supplied",
+  "model": "gemini-3.8-flash",
+  "prompt": "Listen to the entire actual attached audio. This should be an original Polish song for a product pitch, with melodic rap verses and a clearly sung hook, not monotonous TTS over music. No lyrics or script supplied. Assess actual sound. Return JSON: coverage_seconds, language, musical_genre_observed, singing_present, rap_present, tts_like_delivery, intelligibility, product_name_heard, pronunciation_notes, complete_verbatim_transcript, music_vocal_balance, clipping_or_distortion, observed_defects (timestamp, observation, severity), ending_complete, ending_observation, verdict (pass/revise), limitations. Detect missing/clipped words, unnatural syllables, masking and abrupt ending. Do not treat marketing claims as proven software features. Do not claim human listening or visual review.",
+  "references": [
+    "https://ai.google.dev/gemini-api/docs/audio",
+    "https://ai.google.dev/gemini-api/docs/video-understanding"
+  ],
+  "request_bytes": 4098274,
+  "response": {
+    "status": "completed",
+    "usage": {
+      "total_tokens": 5131,
+      "total_input_tokens": 3371,
+      "input_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 170
+        },
+        {
+          "modality": "audio",
+          "tokens": 3201
+        }
+      ],
+      "total_cached_tokens": 0,
+      "total_output_tokens": 751,
+      "total_tool_use_tokens": 0,
+      "total_thought_tokens": 1009,
+      "raw_prompt_token": 4305,
+      "model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 459
+            },
+            {
+              "modality": "audio",
+              "tokens": 3201
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 755
+            }
+          ],
+          "thoughts_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 1009
+            }
+          ]
+        }
+      ],
+      "non_grounding_model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 459
+            },
+            {
+              "modality": "audio",
+              "tokens": 3201
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 755
+            }
+          ],
+          "thoughts_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 1009
+            }
+          ]
+        }
+      ]
+    },
+    "created": "2026-10-03T22:37:58Z",
+    "updated": "2026-10-03T22:37:58Z",
+    "service_tier": "standard",
+    "steps": [
+      {
+        "signature": "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",
+        "type": "thought"
+      },
+      {
+        "content": [
+          {
+            "text": "```json\n{\n  \"coverage_seconds\": 128.57,\n  \"language\": \"pl\",\n  \"musical_genre_observed\": \"Electro-pop / Synthwave with melodic rap verses and sung hooks\",\n  \"singing_present\": true,\n  \"rap_present\": true,\n  \"tts_like_delivery\": false,\n  \"intelligibility\": \"high\",\n  \"product_name_heard\": \"ActionGate\",\n  \"pronunciation_notes\": \"Clear, natural Polish pronunciation with rhythmic cadence. The English brand name 'ActionGate' is pronounced naturally as a loanword ('Ekszyn Gejt').\",\n  \"complete_verbatim_transcript\": \"ActionGate, sprawdź ten ruch\\nZanim agent zrobi krok\\n\\nDokument od dostawcy, terminy i szczegóły\\nW tekście obcy rozkaz, chce nam zmienić reguły\\nZanim ruszy narzędzie, bramka sprawdza po co, kto\\nJakie dane, jaki odbiorca, czy pozwolić mu na to\\nDokument przez MCP, model robi krótki opis\\nPamięć, wewnętrzny raport, każda akcja zostawia zapis\\nPrzy decyzji widać ślad wykonanej operacji\\nMasz przebieg tej pracy bez zgadywania po fakcie\\n\\nActionGate, sprawdź ten ruch\\nKto ma dostęp, jaki cel\\nZanim wynik pójdzie dalej\\nSprawdź odbiorcę, zgodę, treść\\n\\nW demo dane osobowe maskujemy w treści raportu\\nPróba zmiany celu dostaje stop przed startem\\nPo cudzy dokument nie sięgniesz bez uprawnień\\nNawet gdy model oceni polecenie łagodnie\\nPoufności nie stracą przez pamięć i delegacje\\nWysyłka chronionych treści czeka na akceptację\\nDokładnie ta zawartość, dokładnie ten odbiorca\\nZgoda ma jasny zakres, operator trzyma kontrolę\\nTokeny, czas modelu, koszt zewnętrznych wywołań\\nLimit sprawdza się przed akcją, nim pojawi się nowy koszt\\nGdy zadanie się rozdziela, budżet dalej jest wspólny\\nKażdy widzi swój zakres, a decyzje mają powód\\nZmieniasz regułę i porównujesz jej skutki\\nBez powtarzania działań, bez zgadywania różnic\\n\\nActionGate, sprawdź ten ruch\\nKto ma dostęp, jaki cel\\nZanim wynik pójdzie dalej\\nSprawdź odbiorcę, zgodę, treść\\nWypróbuj własny dokument, prześledź drogę, sprawdź wynik\\nAgent kończy swoją pracę, ty widzisz jej przebieg\",\n  \"music_vocal_balance\": \"Well-balanced; vocals remain prominent, clear, and unmasked throughout the synth instrumental arrangement.\",\n  \"clipping_or_distortion\": \"none\",\n  \"observed_defects\": [],\n  \"ending_complete\": true,\n  \"ending_observation\": \"The track finishes completely, ending on a clean instrumental outro that naturally fades out without abrupt truncation.\",\n  \"verdict\": \"pass\",\n  \"limitations\": \"Audio-based analysis evaluating phonetic and musical production qualities; marketing or architectural claims regarding software functionality are not evaluated as verified features.\"\n}\n```",
+            "type": "text"
+          }
+        ],
+        "type": "model_output"
+      }
+    ],
+    "object": "interaction",
+    "model": "gemini-3.8-flash"
+  }
+}

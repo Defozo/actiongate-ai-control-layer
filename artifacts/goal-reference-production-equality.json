@@ -1,0 +1,62 @@
+{
+  "mode": "source-to-executed-prototype equality, no inference",
+  "guard_artifact": {
+    "prompt_version": "actiongate-guard-v2.8",
+    "sha256": "8a6bce1feff9ccd4edd3ade5763c626bc222b4fbf8b4567beea47e4ec7b9ad0f"
+  },
+  "checks": {
+    "primary_system_unchanged": true,
+    "primary_schema_unchanged": true,
+    "observed_attack_prompt_exact": true,
+    "observed_attack_schema_exact": true,
+    "observed_attack_context_exact": true,
+    "observed_attack_all_messages_exact": true,
+    "benign_supplier_facts_prompt_exact": true,
+    "benign_supplier_facts_schema_exact": true,
+    "benign_supplier_facts_context_exact": true,
+    "benign_supplier_facts_all_messages_exact": true,
+    "unsafe_proposed_effect_prompt_exact": true,
+    "unsafe_proposed_effect_schema_exact": true,
+    "unsafe_proposed_effect_context_exact": true,
+    "unsafe_proposed_effect_all_messages_exact": true,
+    "defensive_analysis_prompt_exact": true,
+    "defensive_analysis_schema_exact": true,
+    "defensive_analysis_context_exact": true,
+    "defensive_analysis_all_messages_exact": true
+  },
+  "rows": [
+    {
+      "case": "observed_attack",
+      "prompt_exact": true,
+      "schema_exact": true,
+      "context_exact": true,
+      "all_messages_exact": true,
+      "full_serialized_upper_bound": 2767
+    },
+    {
+      "case": "benign_supplier_facts",
+      "prompt_exact": true,
+      "schema_exact": true,
+      "context_exact": true,
+      "all_messages_exact": true,
+      "full_serialized_upper_bound": 2745
+    },
+    {
+      "case": "unsafe_proposed_effect",
+      "prompt_exact": true,
+      "schema_exact": true,
+      "context_exact": true,
+      "all_messages_exact": true,
+      "full_serialized_upper_bound": 2756
+    },
+    {
+      "case": "defensive_analysis",
+      "prompt_exact": true,
+      "schema_exact": true,
+      "context_exact": true,
+      "all_messages_exact": true,
+      "full_serialized_upper_bound": 2748
+    }
+  ],
+  "passed": true
+}

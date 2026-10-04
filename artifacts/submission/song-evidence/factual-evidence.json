@@ -1,0 +1,366 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-03T22:48:45.895255+00:00",
+  "scope": "Song-video evidence research only; no product changes, inference, tests, approvals, deployment or external messages. Read-only browser sessions used only POST /api/demo/session.",
+  "core_story": [
+    "Risk in supplier document",
+    "ActionGate before next action",
+    "Legal document/model/memory/report",
+    "Data redaction and denied actions",
+    "Confidentiality and exact approval",
+    "Policies and budgets",
+    "Audit and developer integration"
+  ],
+  "claims": [
+    {
+      "id": "gateway",
+      "claim_pl": "ActionGate sprawdza działania agenta przed wykonaniem przez modele, API i MCP.",
+      "evidence": [
+        "README.md",
+        "backend/actiongate/broker.py",
+        "backend/actiongate/mcp_gateway.py",
+        "backend/actiongate/mcp_upstream.py"
+      ],
+      "strength": "implemented interfaces plus recorded local workflow",
+      "avoid": "Full compatibility with every provider or arbitrary unrestricted agent isolation."
+    },
+    {
+      "id": "legal-work",
+      "claim_pl": "Agent czyta przyznany dokument, tworzy podsumowanie, zapisuje pamięć i wewnętrzny raport.",
+      "evidence": [
+        "artifacts/legal-workflow.json",
+        "_video_work/song-pitch-2026-10-04/evidence/readonly-capture.json"
+      ],
+      "operation_ids": [
+        "eba68ea7-2967-4fd3-bedf-76a037dc2946",
+        "c997ae42-71e8-41a2-ad62-8e1266800482",
+        "d14134aa-510d-4601-a441-6f571b0f1b45",
+        "69b9284d-ba8b-4f69-b031-0f9dc4ddff2a"
+      ],
+      "strength": "all four completed local operations with settled status and released results, read back in current UI",
+      "avoid": "Instant processing; the original operations took minutes. Only documents.read has connector receipt recorded=true."
+    },
+    {
+      "id": "pii",
+      "claim_pl": "Dane osobowe są redagowane albo blokowane zgodnie z profilem.",
+      "evidence": [
+        "tests/test_controls.py",
+        "tests/test_broker.py",
+        "artifacts/contract.json",
+        "_video_work/song-pitch-2026-10-04/evidence/demo-redact-email-top.png"
+      ],
+      "strength": "contract test assertions and recorded real report-save operation using controlled model upstream",
+      "required_visual_label": "Demo / test kontrolowany",
+      "avoid": "This screenshot proves a new live local semantic inference or universal PII detection."
+    },
+    {
+      "id": "access",
+      "claim_pl": "Uprawnienia ograniczają dostęp do dokumentów.",
+      "evidence": [
+        "tests/test_broker.py",
+        "artifacts/contract.json",
+        "_video_work/song-pitch-2026-10-04/evidence/current-operations.json"
+      ],
+      "operation_ids": [
+        "200f6e07-bd76-461c-b0dc-24e6bd874f68"
+      ],
+      "strength": "recorded block acl.document plus test_cross_tenant_does_not_reach_connector_or_guard",
+      "required_visual_label": "Demo / test kontrolowany",
+      "avoid": "Do not label an arbitrary acl.document record foreign tenant without arguments establishing that origin."
+    },
+    {
+      "id": "semantic",
+      "claim_pl": "Lokalny guard ocenia ryzyko zmiany celu; twarde reguły dostępu działają niezależnie.",
+      "evidence": [
+        "backend/actiongate/semantic.py",
+        "tests/test_broker.py",
+        "artifacts/semantic-quality.json",
+        "_video_work/song-pitch-2026-10-04/evidence/demo-semantic-risk-top.png"
+      ],
+      "strength": "real local semantic reports plus deterministic invariant tests. Selected screenshot is a controlled-model semantic-risk block, not live detection proof.",
+      "required_visual_label": "Demo / test kontrolowany",
+      "avoid": "100 percent detection, all attacks blocked, claimed recall target, or semantic unknown presented as correct detection."
+    },
+    {
+      "id": "confidentiality",
+      "claim_pl": "Poufność pozostaje z danymi w pamięci i przy delegowaniu pracy.",
+      "evidence": [
+        "README.md",
+        "tests/test_broker.py",
+        "tests/test_api.py",
+        "artifacts/contract.json",
+        "_video_work/song-pitch-2026-10-04/evidence/legal-memory-top.png"
+      ],
+      "strength": "CONFIDENTIAL local memory result plus encoded-memory/delegation contract assertions",
+      "avoid": "Public declassification just because a human approves."
+    },
+    {
+      "id": "approval",
+      "claim_pl": "Zgoda dotyczy dokładnej treści i dozwolonego odbiorcy.",
+      "evidence": [
+        "tests/test_api.py",
+        "tests/test_broker.py",
+        "artifacts/contract.json",
+        "_video_work/song-pitch-2026-10-04/evidence/demo-exact-approval-top.png"
+      ],
+      "strength": "recorded require_approval and wrong-hash/recipient/replay invariant tests",
+      "required_visual_label": "Demo / test kontrolowany",
+      "avoid": "The waiting approval was approved during our recording. It was not."
+    },
+    {
+      "id": "policy",
+      "claim_pl": "Operator zmienia reguły i porównuje decyzje bez powtarzania skutków biznesowych.",
+      "evidence": [
+        "README.md",
+        "tests/test_replay.py",
+        "tests/test_controls.py",
+        "artifacts/contract.json",
+        "_video_work/song-pitch-2026-10-04/evidence/fresh-policies.png"
+      ],
+      "strength": "current UI configuration controls, signed publication evidence, read-only replay tests",
+      "avoid": "A new policy was changed during this read-only capture."
+    },
+    {
+      "id": "budgets",
+      "claim_pl": "Budżet jest sprawdzany przed wykonaniem, a delegowane zadania korzystają ze wspólnego limitu.",
+      "evidence": [
+        "backend/actiongate/ledger.py",
+        "tests/test_ledger.py",
+        "tests/test_api.py",
+        "artifacts/contract.json",
+        "_video_work/song-pitch-2026-10-04/evidence/fresh-budgets.png"
+      ],
+      "strength": "implemented shared ledger, passed selected contract assertions, actual current budget state",
+      "avoid": "Cost savings percentage, universal provider spend protection, or synthetic contract ledger amounts presented as commercial invoices."
+    },
+    {
+      "id": "audit",
+      "claim_pl": "Panel pokazuje decyzję, wykonanie, rozliczenie i ślad operacji.",
+      "evidence": [
+        "artifacts/submission/dashboard-events.json",
+        "_video_work/song-pitch-2026-10-04/evidence/readonly-capture.json",
+        "_video_work/song-pitch-2026-10-04/evidence/legal-document-receipt.png"
+      ],
+      "strength": "read-back of persisted operation, connector receipt, event trail and resource dashboard",
+      "avoid": "All operations have connector receipts. They do not."
+    },
+    {
+      "id": "integration",
+      "claim_pl": "Integracja przez HTTP, Chat Completions i MCP; przykłady dla Pythona i TypeScriptu.",
+      "evidence": [
+        "README.md",
+        "packages/clients/README.md",
+        "backend/actiongate/app.py",
+        "backend/actiongate/mcp_gateway.py"
+      ],
+      "strength": "shipped endpoints and client examples",
+      "avoid": "Full OpenAI API feature parity, customer adoption, production deployments or complete release acceptance."
+    }
+  ],
+  "captured_operations": [
+    {
+      "name": "legal-document",
+      "id": "eba68ea7-2967-4fd3-bedf-76a037dc2946",
+      "tool": "documents.read",
+      "decision": "allow",
+      "status": "completed",
+      "effect": {
+        "recorded": true,
+        "receipt_id": "eba68ea7-2967-4fd3-bedf-76a037dc2946"
+      },
+      "execution_mode": "local"
+    },
+    {
+      "name": "legal-model",
+      "id": "c997ae42-71e8-41a2-ad62-8e1266800482",
+      "tool": "models.chat",
+      "decision": "allow",
+      "status": "completed",
+      "effect": {
+        "recorded": false,
+        "receipt_id": null
+      },
+      "execution_mode": "local"
+    },
+    {
+      "name": "legal-memory",
+      "id": "d14134aa-510d-4601-a441-6f571b0f1b45",
+      "tool": "memory.write",
+      "decision": "allow",
+      "status": "completed",
+      "effect": {
+        "recorded": false,
+        "receipt_id": null
+      },
+      "execution_mode": "local"
+    },
+    {
+      "name": "legal-report",
+      "id": "69b9284d-ba8b-4f69-b031-0f9dc4ddff2a",
+      "tool": "reports.save",
+      "decision": "allow",
+      "status": "completed",
+      "effect": {
+        "recorded": false,
+        "receipt_id": null
+      },
+      "execution_mode": "local"
+    },
+    {
+      "name": "demo-redact-email",
+      "id": "4bc93f0f-e115-440a-891f-859a7135913b",
+      "tool": "reports.save",
+      "decision": "redact",
+      "status": "completed",
+      "effect": {
+        "recorded": false,
+        "receipt_id": null
+      },
+      "execution_mode": "contract-controlled-models"
+    },
+    {
+      "name": "demo-semantic-risk",
+      "id": "d522ff20-0f29-4f6a-b67c-d32040f64340",
+      "tool": "reports.save",
+      "decision": "block",
+      "status": "blocked",
+      "effect": {
+        "recorded": false,
+        "receipt_id": null
+      },
+      "execution_mode": "contract-controlled-models"
+    },
+    {
+      "name": "demo-exact-approval",
+      "id": "cc4fa36b-3da4-4a02-b51d-a99073649911",
+      "tool": "reports.publish_demo",
+      "decision": "require_approval",
+      "status": "waiting_approval",
+      "effect": {
+        "recorded": false,
+        "receipt_id": null
+      },
+      "execution_mode": "contract-controlled-models"
+    }
+  ],
+  "reports_snapshot": {
+    "all-local": {
+      "path": "artifacts/all-local.json",
+      "sha256": "9a70532e6226fdf2caa96751950e83af0893ab3780b47267df58e80be0153de3",
+      "summary": {
+        "suite": "all-local",
+        "status": "failed",
+        "created_at": "2026-10-03T21:28:39.310326+00:00",
+        "total": 251,
+        "passed": 250,
+        "failed": 1,
+        "skipped": 0,
+        "mode": "real PostgreSQL/OPA/HTTP; controlled inference in contract; real models in local cases"
+      }
+    },
+    "contract": {
+      "path": "artifacts/contract.json",
+      "sha256": "9ca433a45fe2485e8db7998e38c7635765b1c06d5925af54c948f57662c8ba7d",
+      "summary": {
+        "suite": "contract",
+        "status": "passed",
+        "created_at": "2026-10-03T19:24:06.390231+00:00",
+        "total": 347,
+        "passed": 347,
+        "failed": 0,
+        "skipped": 0,
+        "mode": "real PostgreSQL/OPA/HTTP; controlled inference in contract; real models in local cases"
+      }
+    },
+    "clean-install": {
+      "path": "artifacts/clean-install.json",
+      "sha256": "8133408751bf81168a2e4e44e63f78267f38530386353b805327e242dde89b39",
+      "summary": {
+        "suite": "clean-install-offline",
+        "mode": "fresh database and isolated internal networks; predownloaded immutable images and weights",
+        "passed": true,
+        "status": "passed",
+        "finished_at": "2026-10-03T22:32:22.757058+00:00"
+      }
+    },
+    "semantic-quality": {
+      "path": "artifacts/semantic-quality.json",
+      "sha256": "115b06b2fc778d3c04bc6a627beb5c83d747108899f112ed4381e81a61ebade0",
+      "summary": {
+        "mode": "real-local-model-frozen-holdout",
+        "created_at": "2026-10-03T15:24:51.122743+00:00",
+        "n": 40,
+        "languages": {
+          "EN": {
+            "tp": 6,
+            "fn": 4,
+            "fp": 0,
+            "tn": 10,
+            "recall": 0.6,
+            "false_positive_rate": 0.0
+          },
+          "PL": {
+            "tp": 7,
+            "fn": 3,
+            "fp": 0,
+            "tn": 10,
+            "recall": 0.7,
+            "false_positive_rate": 0.0
+          }
+        }
+      }
+    },
+    "semantic-regression-v1": {
+      "path": "artifacts/semantic-regression-v1.json",
+      "sha256": "47b9997519eb73e5c16d108d83706c8dde9b9bbb3e8bb33a413b298d09471a83",
+      "summary": {
+        "mode": "real-local-model",
+        "split": "holdout",
+        "created_at": "2026-10-03T17:00:06.560492+00:00",
+        "n": 40,
+        "languages": {
+          "EN": {
+            "tp": 10,
+            "fn": 0,
+            "fp": 1,
+            "tn": 9,
+            "unknown_attack": 0,
+            "unknown_benign": 0,
+            "recall": 1.0,
+            "false_positive_rate": 0.1
+          },
+          "PL": {
+            "tp": 9,
+            "fn": 0,
+            "fp": 2,
+            "tn": 8,
+            "unknown_attack": 1,
+            "unknown_benign": 0,
+            "recall": 0.9,
+            "false_positive_rate": 0.2
+          }
+        }
+      }
+    }
+  },
+  "metrics_policy": "Keep numerical test/quality/performance metrics out of the song. Current all-local artifact is failed; contract is passed but is not full release acceptance. These files are actively changing.",
+  "language": "User explicitly requests this additional musical variant in Polish; canonical English material remains separate.",
+  "footage_label_policy": "Use Demo for synthetic local workflow. Use Demo / test kontrolowany for controlled-model redaction, semantic block and approval. Describe all screen captures as recorded, not live execution.",
+  "palette": {
+    "recommendation": "keep",
+    "observed": "Near-black/charcoal background, lime primary action and status accent, white main text, muted secondary copy.",
+    "fit": "The palette matches a technical control console and links allowed states, navigation and the product mark. Existing video benefits from high contrast.",
+    "concrete_improvement": "For the film, crop detail dialogs to the right panel and use large high-contrast lyrics. Do not color-grade UI heavily or recolor the shared app.",
+    "application_change_performed": false
+  },
+  "source_constraints": [
+    "PLAN is specification, not proof.",
+    "No claims of customer adoption, savings, certification, perfect detection, instant local inference or passed complete release.",
+    "Old final-walkthrough-01, -03 and -05 show loading states and should not be selected.",
+    "Read-only capture does not initiate a supplier review; use its completed persisted records honestly."
+  ],
+  "memory_context_used": [
+    "MEMORY.md:70-78",
+    "rollout_summaries/2026-10-03T10-39-03-N2Jx-hackyeah_ai_control_layer_actiongate_plan_selection.md:22-38"
+  ]
+}

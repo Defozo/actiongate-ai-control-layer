@@ -52,6 +52,19 @@ def main():
     tracked = git('ls-tree', '-rz', '--name-only', commit).decode('utf-8').split('\0')
     for name in filter(None, tracked):
         inspect(name, git('show', commit + ':' + name), 'committed_source')
+    # A fast-forward preserves the earlier public source export. Inspect its
+    # reachable historical bytes too, even when a file was later replaced.
+    history = git('rev-list', commit).decode('ascii').splitlines()[1:]
+    inspected_blobs = set()
+    for revision in history:
+        for entry in filter(None, git('ls-tree', '-rz', revision).split(b'\0')):
+            metadata, name = entry.split(b'\t', 1)
+            _, kind, object_id = metadata.split()
+            if kind != b'blob' or object_id in inspected_blobs:
+                continue
+            inspected_blobs.add(object_id)
+            inspect(revision + ':' + name.decode('utf-8'),
+                    git('cat-file', 'blob', object_id.decode('ascii')), 'committed_history')
     archive_path = ROOT / 'artifacts/actiongate-submission.zip'
     archive_before = hashlib.sha256(archive_path.read_bytes()).hexdigest()
     inspect(archive_path.name, archive_path.read_bytes(), 'release_zip_raw')
@@ -76,6 +89,7 @@ def main():
     result = {'status': 'passed' if not offending and stable else 'failed',
               'checked_at': datetime.now(timezone.utc).isoformat(), 'git_commit': commit,
               'archive_sha256': archive_before, 'secret_names': list(NAMES), 'stable': stable,
+              'historical_commits': history,
               'entries': entries, 'offending': offending}
     (ROOT / '.state/publication-secret-scan.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
     print(json.dumps({'status': result['status'], 'git_commit': commit, 'checked_files': len(entries),

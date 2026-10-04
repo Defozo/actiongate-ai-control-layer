@@ -1,0 +1,18 @@
+{
+  "distribution": "pywin32",
+  "version": "312",
+  "release_tag": "b312",
+  "source_commit": "2a277cb5552756c2b4d42b524dc36d25e0bb6354",
+  "source_url": "https://raw.githubusercontent.com/mhammond/pywin32/2a277cb5552756c2b4d42b524dc36d25e0bb6354/com/License.txt",
+  "upstream_sha256": "6ad44d8d785d93773a1d0430a17187337841e34f01e7f289c92bd9d8be6156c4",
+  "upstream_bytes_identical": false,
+  "upstream_text_matches_after_lf_normalization": true,
+  "wheel_record_path": "win32comext/License.txt",
+  "wheel_record_sha256_verified": true,
+  "preserved_source": "artifacts/licenses/python/pywin32-312/881f648e-License.txt",
+  "notice": "artifacts/licenses/python/pywin32-312/6fbb090f-NOTICE.md",
+  "notice_unchanged": true,
+  "alias": "artifacts/licenses/License.txt",
+  "alias_sha256": "fad39c18fc3825fa278db1c86fd52cf88d7c525b3c2fbf7817fa383cbae4d423",
+  "scope": "Exact installed pywin32 312 license bytes. Alias resolves the unchanged upstream NOTICE relative link; all other component licenses remain preserved."
+}

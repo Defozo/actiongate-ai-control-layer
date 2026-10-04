@@ -1,0 +1,32 @@
+{
+  "created_at": "2026-10-03T21:07:14.148878+00:00",
+  "status": "ready_for_perceptual_review",
+  "duration_seconds": 154.0,
+  "speech_offset_seconds": 1.0,
+  "last_character_seconds": 151.651,
+  "sample_rate": 48000,
+  "channels": 2,
+  "voice_active_rms_dbfs": -17.63401539284142,
+  "music_under_speech_rms_dbfs": -34.11323537685934,
+  "speech_to_music_rms_db": 16.479219984017924,
+  "peak_dbfs": -1.3914147281935632,
+  "clipped_samples": 0,
+  "music_fade_seconds": [
+    151,
+    154
+  ],
+  "final_audio_copy_mux": true,
+  "perceptual_review_complete": false,
+  "sources": {
+    "assets\\narration-v1\\narration.wav": "3abb445108d5c77ee78028c321d4e2d00a1d78934ed2dede475f0ce569876913",
+    "assets\\original-score-v1\\score.wav": "93a2b3eb25a7422f66431050cd0b4023cb13bccdbebaf35d8d5cc947f334afd0"
+  },
+  "outputs": {
+    "chapters.json": "92708d7111cf448033f1ac6616b97183a5313a6a90da9e741ca29f5dafa0613d",
+    "mix.m4a": "6d6ed96361068d33e711e55d7617cf519bd56f28f9c81017c3371bd37b49b326",
+    "mix.wav": "7a40a778715a3fe5be842ea8e1905aa53488d61caeaef3462397a7823cf5377f",
+    "music.wav": "be09f77b8500417f30fabb9c3c86309ea8eebee2bc14145520fc3b1a2646a80a",
+    "review-final-aac.wav": "38fec5df113d031a622fd8d50fc1fcdc52529f3325bdbf133b0af37f70e311c6",
+    "voice.wav": "dc96a80eebf2e68d6d2b7be9219a10ee6ee593477905d31521d8380580ba7e67"
+  }
+}

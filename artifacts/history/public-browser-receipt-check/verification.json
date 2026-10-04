@@ -1,0 +1,169 @@
+{
+  "status": "failed",
+  "recorded_at": "2026-10-04T04:56:26.451Z",
+  "url": "https://743b-83-10-76-158.ngrok-free.app",
+  "mode": "fresh isolated browser over public HTTPS; current local-model judgments with cache status recorded",
+  "model_manifest_sha256": "664b1bc511d0f34ed441a05d6c8ed996f66c03a2c1b40994c982d62283e2ba67",
+  "reused_owner_session": false,
+  "mocks": false,
+  "checks": {
+    "verified_public_application_origin": true,
+    "source_verified_gpu_deployment": true,
+    "public_dashboard_loaded": true,
+    "fresh_login_completed": true,
+    "signed_policy_binding_consistent": true,
+    "current_guard_and_configuration_gateway-a": true,
+    "current_guard_and_configuration_gateway-b": true,
+    "five_views_rendered_without_overflow": true,
+    "public_playground_http_completed": true,
+    "public_playground_result_completed": true,
+    "public_playground_generation_completed": true,
+    "complete_model_judgment_completed": true,
+    "actual_effect_completed": false
+  },
+  "views": [
+    {
+      "view": "overview",
+      "title": "Controls and activity",
+      "overflow": false
+    },
+    {
+      "view": "policies",
+      "title": "Policy configuration and feeds",
+      "overflow": false
+    },
+    {
+      "view": "budgets",
+      "title": "Costs, reservations and compute",
+      "overflow": false
+    },
+    {
+      "view": "investigate",
+      "title": "Workflow and operation history",
+      "overflow": false
+    },
+    {
+      "view": "test-lab",
+      "title": "Test inputs and workflows",
+      "overflow": false
+    }
+  ],
+  "workflows": [],
+  "console_errors": [],
+  "public_proxy_proof_sha256": "844500e5ac439e895e4cb0f4431cc9a20874237c3ee34149790db6c072cb5919",
+  "gpu_deployment_proof_sha256": "991c637c9295d429c9acb9ed77ba28c76055caab5514f7c7387ec9fe8cf41480",
+  "producer_sources": {
+    "demo/public/verify_browser.cjs": "524f47f41b92600fb87b84590205a1f030e52cf3f69bd983d4f91035a3c171c0"
+  },
+  "producer_source_stable": true,
+  "generation": 15,
+  "policy_digest": "0d9132ca2b3d1a383b198f6d7b7206f9b426166cdc6475bea0cfe51388fac84a",
+  "guard_artifact": {
+    "prompt_version": "actiongate-guard-v2.9",
+    "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+  },
+  "model_artifacts": {
+    "local-business": {
+      "path": "models/model-manifest.json",
+      "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+      "manifest": {
+        "schema_version": 1,
+        "model": "qwen3.5:4b",
+        "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "format": "GGUF",
+        "family": "Qwen3.5",
+        "quantization": "Q4_K_M",
+        "license": "Apache-2.0",
+        "source": "https://ollama.com/library/qwen3.5:4b",
+        "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+        "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+        "context_tokens": 8192,
+        "max_input_tokens": 4096,
+        "think": false,
+        "temperature": 0,
+        "seed": 42,
+        "runtime": "ollama:0.32.0",
+        "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+      }
+    },
+    "local-guard": {
+      "path": "models/model-manifest.json",
+      "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+      "manifest": {
+        "schema_version": 1,
+        "model": "qwen3.5:4b",
+        "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "format": "GGUF",
+        "family": "Qwen3.5",
+        "quantization": "Q4_K_M",
+        "license": "Apache-2.0",
+        "source": "https://ollama.com/library/qwen3.5:4b",
+        "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+        "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+        "context_tokens": 8192,
+        "max_input_tokens": 4096,
+        "think": false,
+        "temperature": 0,
+        "seed": 42,
+        "runtime": "ollama:0.32.0",
+        "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+      }
+    },
+    "cloud-business": {
+      "path": "models/cloud-model-manifest.json",
+      "sha256": "14135fe31e8ca85446bb98c3472e10cbe07396a26eb0418c553834d488b85fa9",
+      "manifest": {
+        "schema_version": 1,
+        "provider": "groq",
+        "model": "openai/gpt-oss-20b",
+        "api_host": "api.groq.com",
+        "api_path": "/openai/v1/chat/completions",
+        "context_tokens": 131072,
+        "max_completion_tokens": 65536,
+        "reservation_input_method": "full_provider_context_upper_bound",
+        "reservation_output_method": "max_completion_tokens_including_hidden_reasoning",
+        "include_reasoning": false,
+        "reasoning_effort": "low",
+        "automatic_retries": false,
+        "redirects": false,
+        "built_in_tools": false,
+        "supported_tools": "client_function_schemas_only",
+        "price_file": "policy/prices.json",
+        "sources": [
+          "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+          "https://console.groq.com/docs/openai",
+          "https://console.groq.com/docs/reasoning"
+        ]
+      }
+    }
+  },
+  "semantic_configuration": {
+    "model_ref": "local-guard",
+    "prompt_version": "actiongate-guard-v2.9",
+    "required_on": [
+      "untrusted_input",
+      "proposed_action",
+      "tool_output",
+      "memory_write",
+      "model_output"
+    ],
+    "risk_scale": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "context_tokens": 8192,
+    "max_input_tokens_per_call": 4096,
+    "max_output_tokens": 256,
+    "window_tokens": 2048,
+    "overlap_tokens": 256,
+    "max_windows": 8,
+    "deadline_seconds": 180,
+    "incomplete_scan": "block"
+  },
+  "signed_envelope_sha256": "c6541e55586bbe0289d07839bd9ccea714d5ee6d1f2c9cf545421907a027bcfe",
+  "failure": "actual_effect_completed"
+}

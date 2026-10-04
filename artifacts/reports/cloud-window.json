@@ -1,0 +1,55 @@
+{
+  "mode": "actual-isolated-cloud-window",
+  "checked_at": "2026-10-04T04:51:06.615366+00:00",
+  "project": "actiongate-gpu-0b92f97d",
+  "functional_status": "failed",
+  "scope": "The actual connector tool-call passed; the gateway paid generation was settled but its output was blocked by semantic.risk. This is not reported as successful end-to-end cloud completion.",
+  "shared_budget_usd_micros": 10000,
+  "first_actual_usd_micros": 23,
+  "second_max_reservation_usd_micros": 9977,
+  "second_actual_usd_micros": 20,
+  "total_known_actual_usd_micros": 43,
+  "remaining_after_calls": 9957,
+  "checks": {
+    "first_actual_settled": true,
+    "second_actual_settled": true,
+    "within_cap": true,
+    "original_policy_restored": true,
+    "cloud_disabled": true,
+    "cloud_not_allowed": true,
+    "connector_removed": true,
+    "temporary_egress_removed": true,
+    "immutable_benchmark_hardware_unchanged": true
+  },
+  "current_policy": {
+    "generation": 15,
+    "cloud_enabled": false,
+    "cloud_allowed": false
+  },
+  "observed_limitation": "The gateway intentionally retains no rejected output. The report therefore cannot establish whether the output block was a false positive; neither the provider content nor the guard rationale is available in persisted operation metadata. No retry was performed.",
+  "network_preparation": {
+    "first_attempt": "Docker automatic address-pool exhausted; no connector or provider dispatch",
+    "corrected_private_override": "Explicit non-overlapping 10.253.104.0/28 after Docker IPAM and host route inspection; only connector joined; removed afterward"
+  },
+  "evidence": {
+    "artifacts/reports/live-provider.json": {
+      "sha256": "42c5e77510e990b5b23c6589491218e943c355e945901157ecf63a4ce29a6b44"
+    },
+    "artifacts/reports/live-provider-gateway.json": {
+      "sha256": "18ccf893a7ea553eb287dab63d8efd59fae1d69f0d213ffc3cc136f03a4c7783"
+    },
+    "artifacts/reports/cloud-window-preflight.json": {
+      "sha256": "f07bf4a7757257259384f8395a3eb20ac3a1ee7d37cd830eed28bfb7808a4f46"
+    },
+    "artifacts/gpu-reference/deployed-source.json": {
+      "sha256": "991c637c9295d429c9acb9ed77ba28c76055caab5514f7c7387ec9fe8cf41480"
+    },
+    "artifacts/gpu-reference/deployed-configuration.json": {
+      "sha256": "dc721479fce1ad3b6f37ff04af8a70b20b289a8a7a981bb93bd471f7426a1bb0"
+    },
+    "artifacts/gpu-reference/runtime-hardware.json": {
+      "sha256": "099cd43810fca749d29fde5cf46b88187cd18b4cc653c97a878ba3421de59bba"
+    }
+  },
+  "containment_and_settlement_status": "passed"
+}

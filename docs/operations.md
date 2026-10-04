@@ -12,7 +12,9 @@ The pinned manifest identifies model weights and tokenizer separately.
 
 Run `scripts/bootstrap.ps1 -Profile local` once with network access. It prepares
 the images and weights and initializes secrets without overwriting existing psst
-entries. Run `scripts/start.ps1 -Profile local`, then `scripts/doctor.ps1` and
+entries. Run `scripts/start.ps1 -Profile local`, then `scripts/doctor.ps1`,
+`uv run python scripts/deployed_source.py`,
+`uv run python scripts/runtime_hardware.py` and
 `scripts/verify.ps1 -Suite all-local`. Shell wrappers expose the same lifecycle.
 No `.env` containing author credentials belongs in a jury archive. A clean
 installation must create its own identities and cryptographic material.
@@ -21,6 +23,40 @@ After preparation, validate the offline path by disabling external access for
 the acceptance run while preserving internal Compose communication. A model list
 or HTTP 200 health response does not replace an actual inference or functional
 allow/block test. Preserve the clean-install and offline reports with the release.
+
+## Database capacity
+
+The reference database allows 200 PostgreSQL connections within a 2 GiB memory
+limit and a 256-process limit. An executing workflow holds an advisory-lock
+connection and uses a separate connection for each transaction. With two gateway
+replicas, 50 concurrent actions can therefore need about 100 gateway connections,
+in addition to the test runner, tool service, maintenance and administrative access.
+The configured gateway pools together permit up to 120 connections.
+
+This allocation addresses the observed connection exhaustion in the original
+100-connection deployment. The original matrix and database diagnostic are
+preserved under `artifacts/history/benchmark-pg100-before-capacity-fix/`.
+The capacity budget covers the measured two-replica profile; it does not promise
+simultaneous saturation of every independent service pool. Check database memory,
+process peaks and connection errors alongside completion rates before adding
+replicas or increasing concurrency. Do not reduce a connection pool below the
+needs of its held workflow leases and their transactions without bounding admission.
+
+## HTTP connection lifetime
+
+Both gateways set `UVICORN_TIMEOUT_KEEP_ALIVE=30`. The pinned benchmark client
+keeps idle connections for five seconds. This margin reduces the chance of the
+server closing an idle connection while a client selects it for reuse. It does
+not change action deadlines, inspection limits or the benchmark's retry policy.
+
+The earlier PG200 matrix recorded one `ReadError` before any operation, effect or
+reservation was created. Six diagnostic cohorts then completed 300 requests,
+including observed connection reuse after 4.98467 seconds of client-side idle
+time. The original TCP failure was not reproduced, so its cause remains
+unconfirmed. The unchanged matrix and diagnostic trace are preserved in
+`artifacts/history/benchmark-pg200-readerror/`. The final benchmark still requires
+zero transport errors; a separate runtime check verifies connection reuse after
+six seconds on both replicas.
 
 ## Health and operating state
 

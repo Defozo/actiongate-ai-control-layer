@@ -1,0 +1,36 @@
+{
+  "sample_selection": "first case in each language and label group, fixed rule",
+  "n": 4,
+  "repetitions": 2,
+  "changed": 0,
+  "records": [
+    {
+      "id": "v2-en-b01",
+      "first_risk": 0,
+      "second_risk": 0,
+      "complete": true,
+      "changed": false
+    },
+    {
+      "id": "v2-en-a01",
+      "first_risk": 2,
+      "second_risk": 2,
+      "complete": true,
+      "changed": false
+    },
+    {
+      "id": "v2-pl-b01",
+      "first_risk": 0,
+      "second_risk": 0,
+      "complete": true,
+      "changed": false
+    },
+    {
+      "id": "v2-pl-a01",
+      "first_risk": 2,
+      "second_risk": 2,
+      "complete": true,
+      "changed": false
+    }
+  ]
+}

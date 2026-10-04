@@ -1,0 +1,122 @@
+{
+  "mode": "actual-post-matrix-runtime-audit",
+  "checked_at": "2026-10-04T04:43:01.811401+00:00",
+  "project": "actiongate-gpu-0b92f97d",
+  "benchmark_sha256": "c5372fbf77226ff6204313ab14e8bdbdfdbf1b06db2522735eff8e3c0ad19aec",
+  "containers": {
+    "gateway-a": {
+      "container_id": "60eab2fc2356b8bf4e996c347eb74b152d97913693215d1c09dc31e8ef3ce40d",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "restart_count": 0,
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "OOMKilled": false,
+        "Dead": false,
+        "StartedAt": "2026-10-04T04:12:57.657880981Z",
+        "FinishedAt": "0001-01-01T00:00:00Z",
+        "Error": ""
+      },
+      "memory_limit_bytes": 2147483648,
+      "pids_limit": 256,
+      "cgroup": {
+        "memory/memory.oom_control": "oom_kill_disable 0;under_oom 0;oom_kill 0;",
+        "memory/memory.failcnt": "0;",
+        "memory/memory.max_usage_in_bytes": "837386240;",
+        "memory/memory.limit_in_bytes": "2147483648;",
+        "pids/pids.current": "65;",
+        "pids/pids.max": "256;"
+      }
+    },
+    "gateway-b": {
+      "container_id": "7c5b37880c0503f04165dcef361c3e5f2a139536b1cc1ce823f559916f202192",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "restart_count": 0,
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "OOMKilled": false,
+        "Dead": false,
+        "StartedAt": "2026-10-04T04:12:57.656003952Z",
+        "FinishedAt": "0001-01-01T00:00:00Z",
+        "Error": ""
+      },
+      "memory_limit_bytes": 2147483648,
+      "pids_limit": 256,
+      "cgroup": {
+        "memory/memory.oom_control": "oom_kill_disable 0;under_oom 0;oom_kill 0;",
+        "memory/memory.failcnt": "0;",
+        "memory/memory.max_usage_in_bytes": "391397376;",
+        "memory/memory.limit_in_bytes": "2147483648;",
+        "pids/pids.current": "65;",
+        "pids/pids.max": "256;"
+      }
+    },
+    "postgres": {
+      "container_id": "0f59a3e323afe4fed84c97d4507eac336c3139ca4a32eaea67d81716a35db9f8",
+      "image_id": "sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+      "restart_count": 0,
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "OOMKilled": false,
+        "Dead": false,
+        "StartedAt": "2026-10-04T03:30:29.503810486Z",
+        "FinishedAt": "2026-10-04T03:30:27.78259398Z",
+        "Error": ""
+      },
+      "memory_limit_bytes": 2147483648,
+      "pids_limit": 256,
+      "cgroup": {
+        "memory/memory.oom_control": "oom_kill_disable 0;under_oom 0;oom_kill 0;",
+        "memory/memory.failcnt": "0;",
+        "memory/memory.max_usage_in_bytes": "1109102592;",
+        "memory/memory.limit_in_bytes": "2147483648;",
+        "pids/pids.current": "50;",
+        "pids/pids.max": "256;"
+      }
+    }
+  },
+  "gateway_error_log_counts": {
+    "gateway-a": 0,
+    "gateway-b": 0,
+    "postgres": 0
+  },
+  "capacity_failure_audit": {
+    "failed_operations": 419,
+    "error_types": {
+      "HTTPStatusError": 419
+    },
+    "all_have_released_guard_output": true,
+    "none_have_execution_reservation": true
+  },
+  "output_blocked": {
+    "count": 3,
+    "all_output_inference_known_zero": true,
+    "all_local_effect_exact_one": true
+  },
+  "read_error": {
+    "sample_count": 0,
+    "root_without_operation": [],
+    "correlation_scope": "All fresh roots and persisted operations are compared against returned HTTP operation IDs. Missing roots and unreported operations remain listed explicitly. No claim about a TCP cause is made by this database audit.",
+    "gateway_restarts_zero": true,
+    "gateway_oom_kills_zero": true
+  },
+  "postgres_resources": {
+    "status": "passed",
+    "project": "actiongate-gpu-0b92f97d",
+    "started_at": "2026-10-04T04:17:50.380771+00:00",
+    "producer_source_sha256": "444d5f54f22bbe0e2c049d9941a18a7585ae83435bf29a3ada946f3efc0a421f",
+    "sampling_interval_seconds": 5,
+    "errors": [],
+    "ended_at": "2026-10-04T04:42:20.999782+00:00",
+    "producer_source_stable": true,
+    "sampled_max_connections_total": 130,
+    "sampled_max_client_connections": 125,
+    "observed_max_memory_current_bytes": 1103339520,
+    "observed_max_memory_lifetime_peak_bytes": 1109102592,
+    "observed_max_pids_current": 135
+  },
+  "postgres_memory_failcnt_all_zero": true,
+  "postgres_oom_kill_all_zero": true
+}

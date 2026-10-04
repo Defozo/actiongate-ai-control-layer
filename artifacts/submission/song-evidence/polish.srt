@@ -1,0 +1,160 @@
+1
+00:00:00,300 --> 00:00:02,480
+ActionGate, sprawdź ten ruch.
+
+2
+00:00:04,660 --> 00:00:06,900
+Zanim agent zrobi krok.
+
+3
+00:00:09,180 --> 00:00:11,910
+Dokument od dostawcy, terminy i szczegóły.
+
+4
+00:00:11,940 --> 00:00:13,930
+W tekście obcy rozkaz chce nam zmienić
+reguły.
+
+5
+00:00:13,960 --> 00:00:16,090
+Zanim ruszy narzędzie, bramka sprawdza: po
+co, kto?
+
+6
+00:00:16,120 --> 00:00:19,330
+Jakie dane, jaki odbiorca, czy pozwolić mu
+na to?
+
+7
+00:00:19,360 --> 00:00:21,830
+Dokument przez MCP, model robi krótki opis.
+
+8
+00:00:21,860 --> 00:00:25,860
+Pamięć, wewnętrzny raport, każda akcja
+zostawia zapis.
+
+9
+00:00:25,900 --> 00:00:28,070
+Przy decyzji widać ślad wykonanej operacji.
+
+10
+00:00:28,100 --> 00:00:31,040
+Masz przebieg tej pracy, bez zgadywania po
+fakcie.
+
+11
+00:00:34,460 --> 00:00:38,120
+ActionGate, sprawdź ten ruch,
+
+12
+00:00:38,660 --> 00:00:42,500
+kto ma dostęp, jaki cel.
+
+13
+00:00:43,080 --> 00:00:47,140
+Zanim wynik pójdzie dalej,
+
+14
+00:00:47,420 --> 00:00:51,500
+sprawdź odbiorcę, zgodę, treść.
+
+15
+00:01:00,780 --> 00:01:03,390
+W demo dane osobowe maskujemy w treści
+raportu.
+
+16
+00:01:03,420 --> 00:01:05,610
+Próba zmiany celu dostaje stop przed
+startem.
+
+17
+00:01:05,640 --> 00:01:07,510
+Po cudzy dokument nie sięgniesz bez
+uprawnień,
+
+18
+00:01:07,540 --> 00:01:09,690
+nawet gdy model oceni polecenie łagodnie.
+
+19
+00:01:09,720 --> 00:01:11,850
+Poufności nie stracą przez pamięć i
+delegację.
+
+20
+00:01:11,880 --> 00:01:14,030
+Wysyłka chronionych treści czeka na
+akceptację.
+
+21
+00:01:14,060 --> 00:01:16,190
+Dokładnie ta zawartość, dokładnie ten
+odbiorca.
+
+22
+00:01:16,220 --> 00:01:19,320
+Zgoda ma jasny zakres, operator trzyma
+kontrolę.
+
+23
+00:01:22,800 --> 00:01:24,830
+Tokeny, czas modelu, koszt zewnętrznych
+wywołań.
+
+24
+00:01:24,860 --> 00:01:27,010
+Limit sprawdza się przed akcją, nim pojawi
+się nowy koszt.
+
+25
+00:01:27,040 --> 00:01:29,170
+Gdy zadanie się rozdziela, budżet dalej jest
+wspólny.
+
+26
+00:01:29,200 --> 00:01:31,610
+Każdy widzi swój zakres, a decyzje mają
+powód.
+
+27
+00:01:31,640 --> 00:01:33,650
+Zmieniasz regułę i porównujesz jej skutki.
+
+28
+00:01:33,680 --> 00:01:36,500
+Bez powtarzania działań, bez zgadywania
+różnic.
+
+29
+00:01:44,300 --> 00:01:46,290
+ActionGate, sprawdź ten ruch,
+
+30
+00:01:46,320 --> 00:01:48,530
+kto ma dostęp, jaki cel.
+
+31
+00:01:48,560 --> 00:01:50,690
+Zanim wynik pójdzie dalej,
+
+32
+00:01:50,720 --> 00:01:52,910
+sprawdź odbiorcę, zgodę, treść.
+
+33
+00:01:52,940 --> 00:01:55,030
+Wypróbuj własny dokument,
+
+34
+00:01:55,060 --> 00:01:57,450
+prześledź drogę, sprawdź wynik.
+
+35
+00:01:57,480 --> 00:01:59,430
+Agent kończy swoją pracę,
+
+36
+00:01:59,460 --> 00:02:02,680
+ty widzisz jej przebieg.

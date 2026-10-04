@@ -6,6 +6,7 @@ The script never receives the provider key and always restores the prior policy.
 from __future__ import annotations
 
 import argparse
+from dataclasses import asdict
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -47,10 +48,13 @@ def main():
     source_start = producer_sources()
     parser = argparse.ArgumentParser()
     parser.add_argument("--url", default="http://127.0.0.1:8080")
+    parser.add_argument("--max-spend-usd-micros", type=int, default=10000)
     args = parser.parse_args()
+    if not 1 <= args.max_spend_usd_micros <= 10000:
+        parser.error("Smoke budget must be between 1 and 10000 micro-USD")
     report = {"suite": "live-provider-gateway", "mode": "real_provider_and_real_local_guard",
               "checked_at": datetime.now(timezone.utc).isoformat(), "status": "failed",
-              "max_spend_usd_micros": 10000}
+              "max_spend_usd_micros": args.max_spend_usd_micros}
     artifact = ROOT / "artifacts/reports/live-provider-gateway.json"
     artifact.parent.mkdir(parents=True, exist_ok=True)
     original = None
@@ -81,7 +85,7 @@ def main():
             if "cloud-business" not in config["models"]["allowed"]:
                 config["models"]["allowed"].append("cloud-business")
             config["budgets"]["run_total_tokens"] = max(config["budgets"]["run_total_tokens"], 300000)
-            config["budgets"]["run_usd_micros"] = 10000
+            config["budgets"]["run_usd_micros"] = args.max_spend_usd_micros
             candidate = yaml.safe_dump(config, sort_keys=False)
             validation = checked("POST", "/api/policies/validate", json={"yaml": candidate})
             if not validation["valid"]:
@@ -109,6 +113,11 @@ def main():
             report["run_id"] = run["id"]
             if not run.get("public_messages"):
                 raise RuntimeError("Trusted application did not provide a public model task")
+            from actiongate.cloud import quote
+            quoted = quote("cloud-business", run["public_messages"], 256, price=binding["price_catalog"])
+            report["preflight_quote"] = asdict(quoted)
+            if quoted.usd_micros > args.max_spend_usd_micros:
+                raise RuntimeError("Remaining shared smoke budget cannot cover the full gateway reservation")
             start = time.perf_counter()
             response = client.post("/v1/chat/completions", headers={"Authorization": "Bearer " + run["workload_token"],
                 "Idempotency-Key": "live-cloud-"+uuid.uuid4().hex},
@@ -137,7 +146,7 @@ def main():
             report["actual_usd_micros"] = actual
             if (response.status_code != 200 or not report["operation_binding_valid"] or
                 any(item["status"] != "completed" for item in detail["operations"]) or
-                any(item["status"] != "settled" for item in reservations) or not 0 < actual <= 10000):
+                any(item["status"] != "settled" for item in reservations) or not 0 < actual <= args.max_spend_usd_micros):
                 raise RuntimeError("Guarded cloud operation or durable settlement did not pass")
             # Arbitrary changes to the approved public context must block before any paid dispatch.
             blocked_run = checked("POST", "/runs", json={"document_ids": [], "public_model_task": "supplier_directory_summary"})

@@ -21,17 +21,16 @@ state and controlled test examples. Its preserved delivery record describes the
 source operations, exact file hash, technical QC and independent review.
 
 Audio and video review used actual media input to an audio/video-capable model,
-plus an independent reviewer inspecting sampled frames and full evidence. This
-is not a claim of human listening or continuous human playback. The review
-records its sampled coverage and the separately inspected final frame. The
-coordinator retained that review and checked the delivered hash and selected
-opening, middle and final contact sheets before importing the unchanged file.
+plus an independent review of sampled frames and the supporting evidence. The
+records specify the sampled coverage and the separately inspected final frame.
+The imported song matches the reviewed file's SHA-256. Its opening, middle and
+ending contact sheets were also checked.
 
 Music permissions, generation provenance and the scope of the reviewed provider
 terms are retained in `artifacts/submission/song-evidence/rights-and-provenance.md`.
 The material is an online product demonstration, with no named artist or
-existing song requested. The source record preserves its account-tier mapping
-qualification and makes no claim of exclusive rights.
+existing song requested. The rights record documents the provider terms for
+online promotion and the account-tier qualification used in that review.
 
 The cover is an original generated conceptual illustration of a report action
 passing an approval gate. It is not an application screenshot. The chosen 4:3
@@ -39,7 +38,7 @@ image and separate wide poster retain the generator's exact bytes; the recorded
 review checks the product claim, spelling, framing and 320-pixel readability.
 The cover delivery is in `artifacts/cover-20261004/delivery.json`.
 
-`artifacts/submission/media-delivery.json` records the coordinator's imported
+`artifacts/submission/media-delivery.json` records the imported
 files and their source hashes. Public verification downloads the two films,
 captions, poster and presentation anonymously and compares the delivered bytes
 with the accepted release archive. The post-save HackTribe record separately

@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "review_id": "independent-cut-review-english-pitch-v1",
+  "reviewed_at_utc": "2026-10-04T05:20:57.2977377Z",
+  "reviewer": "/root/frontend_resume/final_cut_review",
+  "context_mode": "fresh independent reviewer task; no other final visual reviewer verdict consulted",
+  "status": "partial_perceptual_coverage",
+  "candidate": {
+    "path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/docs/.build/_video_work/render/english-pitch-v1/ActionGate-pitch.mp4",
+    "sha256": "c04e19e82e1edbd19044743fb8b0b42ec7c94d40dc62e6769c53e106072c7f01",
+    "sha256_independently_verified": true,
+    "duration_seconds": 154,
+    "fps": 30,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "plan_path": "docs/.build/_video_work/plans/english-pitch-v1.json",
+    "plan_sha256": "ee1c2a6bb1040a23a8eea26eb1d3fef9ef3342c799285db22831296be484455f"
+  },
+  "coverage": {
+    "method": "Sampled actual movie frames plus complete output-timed VTT and technical QC. Not continuous human or model audiovisual playback.",
+    "frame_manifest": "docs/.build/_video_work/review/visual-v1-absolute/frames.json",
+    "frame_manifest_sha256": "400b5f956dfdcbadbd84cadea4f383c97681d79f1ca32553a100375cd9211aaa",
+    "samples_reviewed": 75,
+    "sample_time_span_seconds": [
+      0,
+      153.96666666666667
+    ],
+    "contact_sheets_reviewed": [
+      "midpoints-01.jpg",
+      "midpoints-02.jpg",
+      "midpoints-03.jpg",
+      "boundaries-01.jpg",
+      "boundaries-02.jpg",
+      "boundaries-03.jpg",
+      "boundaries-04.jpg",
+      "boundaries-05.jpg",
+      "boundaries-06.jpg",
+      "boundaries-07.jpg"
+    ],
+    "native_resolution_frames_reviewed": [
+      "frame-018.jpg",
+      "frame-022.jpg",
+      "frame-026.jpg",
+      "frame-030.jpg",
+      "frame-034.jpg",
+      "frame-038.jpg",
+      "frame-042.jpg",
+      "frame-054.jpg",
+      "frame-062.jpg",
+      "frame-070.jpg",
+      "frame-075.jpg"
+    ],
+    "full_vtt_read": true,
+    "vtt_path": "artifacts/submission/ActionGate-demo.en.vtt",
+    "vtt_sha256": "3d6e547f217d92c42188543e3c8ccc19886e272f29b4de1a9bbb3f86d9117050",
+    "last_vtt_cue_end_seconds": 151.771,
+    "audio_independently_heard": false,
+    "subtitle_player_layout_reviewed": false,
+    "technical_qc_read": "docs/.build/_video_work/render/english-pitch-v1/qc/technical-verification.json",
+    "technical_qc_status": "passed",
+    "limitations": [
+      "Cannot establish cursor click timing, continuous motion or temporal glitches between samples.",
+      "Cannot establish narrator intelligibility, musical energy, voice/music balance, acoustic synchronization or complete audio tails independently.",
+      "The QC file contains an earlier separate audio model assessment. It was read as supplied QC, not adopted as this reviewer's perceptual observation.",
+      "No independent source-code audit or rerun of stated tests; visible decisions/receipts were checked against captions.",
+      "Old visual-v1 frame and contact-sheet timing was invalid because of extraction counter resets. Those timing labels were discarded. Findings use only visual-v1-absolute."
+    ]
+  },
+  "observations": [
+    {
+      "output_seconds": [
+        0,
+        26.966666666666665
+      ],
+      "observation": "Chosen cover is preserved. The supplier-document problem and gateway architecture are concrete, legible and consistent with the English captions. No visible accidental boundary frame in the inspected samples."
+    },
+    {
+      "output_seconds": [
+        30,
+        39.5
+      ],
+      "observation": "Actual UI is visible, including Running verification at32.233s and Passed at37s for the same displayed verification ID. The result includes the explicit label 'Processing wait omitted: 12 seconds. Same recorded job.' Exact click motion was not directly reviewed."
+    },
+    {
+      "output_seconds": [
+        39.5,
+        71.2
+      ],
+      "observation": "The local-business model result, real connector receipt, redaction/completed status, semantic block with null released result, and cross-tenant documents.read block with acl.document reason align with the narrated sequence. The redaction shot supports the operation decision; it does not show a before/after personal-data comparison."
+    },
+    {
+      "output_seconds": [
+        71.2,
+        106.96666666666667
+      ],
+      "observation": "Workflow and approval explanations use diagrams; policy narration uses the current policy screen and explanatory control-catalog slide. These are product explanations rather than footage of a live policy change. No contrary claim was found in the captions."
+    },
+    {
+      "output_seconds": [
+        106.96666666666667,
+        128.7
+      ],
+      "observation": "Budget shot visibly separates API spend/reserved exposure, business/guard tokens and worker capacity. The reporting slide shows released content and connector receipt alongside the listed evidence fields."
+    },
+    {
+      "output_seconds": [
+        142.4,
+        154
+      ],
+      "observation": "Final card is present and legible through the last sampled frame at153.967s. Complete final VTT sentence ends at151.771s, leaving about2.23s to video end. This supports complete text and visual ending only, not an independently heard audio tail."
+    }
+  ],
+  "observed_findings": [
+    {
+      "id": "FC-BRIEF-001",
+      "type": "brief_conflict",
+      "severity": "low",
+      "output_seconds": [
+        128.7,
+        142.4
+      ],
+      "evidence": "Native frame-070.jpg at135.533s displays '602 local checks passed. Failures: 0. Skips: 0. Sample correct: EN 20/20, PL 20/20.' USER_REQUEST_PITCH_AUDIO_2026-10-03.md says: 'Pozostaw dokładne wyniki testów i ograniczenia w dokumentacji technicznej'.",
+      "impact": "This numerical technical-results block departs from the supplied instruction to leave precise test results in technical documentation.",
+      "confidence": "high for visible text and quoted brief; latest-direction resolution belongs to parent",
+      "relevant_requirement": "Natural concrete sales pitch; precise test results remain technical documentation.",
+      "smallest_useful_correction": "If the supplied user brief is still authoritative, replace only the numerical block with 'Executable tests and evaluation reports are included for independent verification.' Retain exact counts in technical reports. Preserve narration, soundtrack, chosen cover and timing.",
+      "possible_downside": "Would remove visible numerical evidence if a later authoritative user instruction expressly requires these counts.",
+      "verification_criterion": "Review revised128.7-142.4s frames and corresponding slide; confirm numerical details remain available in technical reports and audio is unchanged.",
+      "disposition": "needs_parent_resolution",
+      "later_context": "After independent initial assessment, parent reported that root explicitly requested and approved dynamic current-report counts before movie GO, and escalated this brief conflict to root for the review ledger. This reviewer did not inspect the underlying later instruction and has not ordered an asset change."
+    }
+  ],
+  "subjective_opportunities": [
+    {
+      "id": "FC-OPTION-001",
+      "severity": "optional",
+      "output_seconds": [
+        50.53333333333333,
+        71.2
+      ],
+      "evidence": "Outcome captures dedicate much of the frame to dimmed background and metadata while the decision and reason occupy a smaller right-side panel.",
+      "opportunity": "A tighter crop around operation outcome, reason and released result could improve reading on smaller screens.",
+      "confidence": "medium; viewing-context preference, not an observed native-resolution legibility failure",
+      "smallest_useful_correction": "Only if another visual revision is already justified, crop the existing capture while keeping operation identity, outcome and reason together.",
+      "possible_downside": "Less surrounding application context and potential loss of provenance fields.",
+      "disposition": "no_automatic_change_recommended"
+    }
+  ],
+  "keep_unchanged": [
+    "Chosen cover and original soundtrack.",
+    "English narration, concrete supplier example and existing ending.",
+    "Explicit synthetic-business-data and processing-wait disclosures.",
+    "Distinct completed/redacted/semantic-block/access-policy outcomes.",
+    "Use of original UI evidence instead of invented performance or deployment claims."
+  ],
+  "conclusion": "No critical visual or caption-content defect was found in the sampled actual movie. One low-severity brief conflict is recorded for parent resolution. This is not full audiovisual approval; exact click motion, audible quality/tails and intended subtitle-player layout remain outside this review's direct coverage."
+}

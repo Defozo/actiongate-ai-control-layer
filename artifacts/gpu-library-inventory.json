@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-10-04T01:10:29.426278+00:00",
+  "scope": "Actual CUDA backend files in the final optional GPU image. CPU image contains no CUDA backend.",
+  "source_image": "ollama/ollama@sha256:57f573b47f1f71ebb445789f279fe3e596a8beab182f7cf486db9205bad87c5a",
+  "observed_image_id": "sha256:8256310ee6f6a3526ce7b983f3675c6ff3ab7709681da15d8f61c453a8a7efeb",
+  "image": "actiongate-worker-gpu:0.1.0",
+  "runtime_backend": "cuda_v12",
+  "libraries": [
+    {
+      "path": "/usr/lib/ollama/cuda_v12/libcublas.so.12.8.5.5",
+      "name": "libcublas.so.12.8.5.5",
+      "size_bytes": 116388640,
+      "sha256": "18a5df540d156e9aff0363776fefab7884b614f122847b51c3eb1da772048e5c"
+    },
+    {
+      "path": "/usr/lib/ollama/cuda_v12/libcublasLt.so.12.8.5.5",
+      "name": "libcublasLt.so.12.8.5.5",
+      "size_bytes": 751775824,
+      "sha256": "974927b9af78cadc0412ea3ab296da791af02c2dd0de5a35b5f0fbb8dc5d0a4d"
+    },
+    {
+      "path": "/usr/lib/ollama/cuda_v12/libcudart.so.12.8.90",
+      "name": "libcudart.so.12.8.90",
+      "size_bytes": 728800,
+      "sha256": "c3a75b33af334a3486d197dbd1584a2985183ba4688d237a2be5f2f679329920"
+    },
+    {
+      "path": "/usr/lib/ollama/cuda_v12/libggml-cuda.so",
+      "name": "libggml-cuda.so",
+      "size_bytes": 404471808,
+      "sha256": "c897d7325f8e652dc07642783a87e377c7b071abed879398b99d478afa5540f9"
+    }
+  ],
+  "backend_directories": [
+    "cuda_v12"
+  ],
+  "license_files": [
+    "/usr/share/licenses/actiongate-gpu/ollama-0.32.0.txt",
+    "/usr/share/licenses/actiongate-gpu/NVIDIA-CUDA-Toolkit-13.0.2.html",
+    "/usr/share/licenses/actiongate-gpu/NVIDIA-CUDA-Toolkit-12.8.2.html",
+    "/usr/share/licenses/actiongate-gpu/NVIDIA-CUDA-Toolkit-12.8.1.html",
+    "/usr/share/licenses/actiongate-gpu/ollama-0.18.2.txt"
+  ]
+}

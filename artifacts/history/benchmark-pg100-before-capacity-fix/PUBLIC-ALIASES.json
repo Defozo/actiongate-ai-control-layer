@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-04T03:56:34.371244+00:00",
+  "purpose": "Resolve original historical manifest paths excluded by the unchanged global .state packaging rule.",
+  "original_manifest": "MANIFEST.json",
+  "original_manifest_sha256": "2c539408514ce0d59dfe6578397ba21a096a89b7ed2278f102e905ba2b2f4666",
+  "mapping": [
+    {
+      "original_archive_path": "source/.state/clean-install/29b4b2ed/compose.override.yaml",
+      "original_source_path": ".state/clean-install/29b4b2ed/compose.override.yaml",
+      "public_alias_path": "public-source/clean-install/29b4b2ed/compose.override.yaml",
+      "release_path": "artifacts/history/benchmark-pg100-before-capacity-fix/public-source/clean-install/29b4b2ed/compose.override.yaml",
+      "sha256": "f3c1822d2b773cdfae93ddbb1ed823c2a46129c0e886734450f482bc096e7bb6",
+      "bytes": 2340
+    },
+    {
+      "original_archive_path": "source/.state/clean-install/29b4b2ed/policy/control.yaml",
+      "original_source_path": ".state/clean-install/29b4b2ed/policy/control.yaml",
+      "public_alias_path": "public-source/clean-install/29b4b2ed/policy/control.yaml",
+      "release_path": "artifacts/history/benchmark-pg100-before-capacity-fix/public-source/clean-install/29b4b2ed/policy/control.yaml",
+      "sha256": "193c6fbcd470b3c83142450ffd5705ce77ffbec35c1eb5cd3b9cb63654839af0",
+      "bytes": 3193
+    }
+  ],
+  "original_manifest_unchanged": true,
+  "original_recorded_files_unchanged": true,
+  "byte_identical_aliases": true,
+  "secret_verification": {
+    "mode": "actual-selective-vault-value-scan",
+    "scanned_files": 2,
+    "secret_names": [
+      "ACTIONGATE_AUTH_KEY",
+      "ACTIONGATE_ENCRYPTION_KEY",
+      "ACTIONGATE_SPOOL_KEY",
+      "ACTIONGATE_AUDIT_KEY",
+      "ACTIONGATE_DB_PASSWORD",
+      "ACTIONGATE_DB_OWNER_PASSWORD",
+      "ACTIONGATE_CONNECTOR_KEY",
+      "ACTIONGATE_GUARD_KEY",
+      "ACTIONGATE_BUSINESS_KEY",
+      "ACTIONGATE_POLICY_SIGNING_KEY",
+      "ACTIONGATE_FEED_SIGNING_KEY",
+      "GROQ_API_KEY"
+    ],
+    "secret_count": 12,
+    "findings": 0,
+    "scope": "Exact values and scanner encodings; no values, value hashes or snippets retained."
+  }
+}

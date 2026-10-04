@@ -1,0 +1,483 @@
+{
+  "suite": "live-provider-gateway",
+  "mode": "real_provider_and_real_local_guard",
+  "checked_at": "2026-10-04T04:48:57.613545+00:00",
+  "status": "failed",
+  "max_spend_usd_micros": 9977,
+  "original_generation": 13,
+  "activated_generation": 14,
+  "dispatch_generation": 14,
+  "generation": 14,
+  "policy_digest": "32524a9df742035317fbed7377092eaabe3654790590634d08890a20c986ea01",
+  "guard_artifact": {
+    "prompt_version": "actiongate-guard-v2.9",
+    "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+  },
+  "model_artifacts": {
+    "local-business": {
+      "path": "models/model-manifest.json",
+      "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+      "manifest": {
+        "schema_version": 1,
+        "model": "qwen3.5:4b",
+        "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "format": "GGUF",
+        "family": "Qwen3.5",
+        "quantization": "Q4_K_M",
+        "license": "Apache-2.0",
+        "source": "https://ollama.com/library/qwen3.5:4b",
+        "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+        "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+        "context_tokens": 8192,
+        "max_input_tokens": 4096,
+        "think": false,
+        "temperature": 0,
+        "seed": 42,
+        "runtime": "ollama:0.32.0",
+        "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+      }
+    },
+    "local-guard": {
+      "path": "models/model-manifest.json",
+      "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+      "manifest": {
+        "schema_version": 1,
+        "model": "qwen3.5:4b",
+        "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "format": "GGUF",
+        "family": "Qwen3.5",
+        "quantization": "Q4_K_M",
+        "license": "Apache-2.0",
+        "source": "https://ollama.com/library/qwen3.5:4b",
+        "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+        "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+        "context_tokens": 8192,
+        "max_input_tokens": 4096,
+        "think": false,
+        "temperature": 0,
+        "seed": 42,
+        "runtime": "ollama:0.32.0",
+        "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+      }
+    },
+    "cloud-business": {
+      "path": "models/cloud-model-manifest.json",
+      "sha256": "14135fe31e8ca85446bb98c3472e10cbe07396a26eb0418c553834d488b85fa9",
+      "manifest": {
+        "schema_version": 1,
+        "provider": "groq",
+        "model": "openai/gpt-oss-20b",
+        "api_host": "api.groq.com",
+        "api_path": "/openai/v1/chat/completions",
+        "context_tokens": 131072,
+        "max_completion_tokens": 65536,
+        "reservation_input_method": "full_provider_context_upper_bound",
+        "reservation_output_method": "max_completion_tokens_including_hidden_reasoning",
+        "include_reasoning": false,
+        "reasoning_effort": "low",
+        "automatic_retries": false,
+        "redirects": false,
+        "built_in_tools": false,
+        "supported_tools": "client_function_schemas_only",
+        "price_file": "policy/prices.json",
+        "sources": [
+          "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+          "https://console.groq.com/docs/openai",
+          "https://console.groq.com/docs/reasoning"
+        ]
+      }
+    }
+  },
+  "semantic_configuration": {
+    "model_ref": "local-guard",
+    "prompt_version": "actiongate-guard-v2.9",
+    "required_on": [
+      "untrusted_input",
+      "proposed_action",
+      "tool_output",
+      "memory_write",
+      "model_output"
+    ],
+    "risk_scale": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "context_tokens": 8192,
+    "max_input_tokens_per_call": 4096,
+    "max_output_tokens": 256,
+    "window_tokens": 2048,
+    "overlap_tokens": 256,
+    "max_windows": 8,
+    "deadline_seconds": 180,
+    "incomplete_scan": "block"
+  },
+  "price_catalog": {
+    "schema_version": 1,
+    "revision": "groq-gpt-oss-20b-2026-10-03",
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "currency": "USD",
+    "unit": "per_1000000_tokens",
+    "input_usd_micros_per_million": 75000,
+    "output_usd_micros_per_million": 300000,
+    "context_tokens": 131072,
+    "max_completion_tokens": 65536,
+    "output_includes_reasoning": true,
+    "additional_fees": "none_for_text_and_local_function_calls",
+    "source": "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+    "verified_at": "2026-10-03T00:00:00Z",
+    "valid_until": "2026-10-10T00:00:00Z"
+  },
+  "signed_envelope_sha256": "70ddc43b8de6e42da48d3512124af0b2f5e02f2316d3c6a4e5ed8c34f9fd1320",
+  "artifact_binding_source": "active signed envelope returned by authenticated gateway; signature acceptance enforced by gateway",
+  "run_id": "51c98b92-f583-474f-b9a9-4b5555ca0890",
+  "preflight_quote": {
+    "input_tokens_upper": 131072,
+    "output_tokens_upper": 256,
+    "usd_micros": 9908,
+    "price_revision": "groq-gpt-oss-20b-2026-10-03",
+    "payload_hash": "9b4b695bd5a78f3b9d5059ed5a30bec3771221867d915a4df0ccc2f4328b6a2c"
+  },
+  "latency_ms": 2526.22,
+  "http_status": 403,
+  "operations": [
+    {
+      "id": "2f98e3cd-6dd0-4d3c-b2ff-b051553626b3",
+      "tool": "models.chat",
+      "status": "output_blocked",
+      "decision": "block",
+      "settlement_status": "settled",
+      "label": "PUBLIC",
+      "policy_generation": 14,
+      "metadata": {
+        "semantic": {
+          "verdict": "benign",
+          "risk_level": 0,
+          "category": "none",
+          "complete": true,
+          "generation": 14,
+          "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+          "cache_hit": false,
+          "cache_source": null
+        },
+        "feed_revision": 1,
+        "execution_mode": "live-provider",
+        "owner_fence": 1,
+        "upstream_attempts": 1,
+        "unsettled_attempts": [],
+        "price_revision": "groq-gpt-oss-20b-2026-10-03",
+        "reserved_usd_micros": 9908,
+        "phase_timings_ms": {
+          "dlp_ms": 49.595,
+          "ledger_reserve_ms": 57.867,
+          "guard_ms": 2051.664,
+          "ledger_settle_ms": 43.934,
+          "opa_ms": 6.17,
+          "upstream_ms": 149.563
+        }
+      },
+      "rule_ids": [
+        "semantic.risk"
+      ],
+      "reason": "Result failed semantic inspection"
+    }
+  ],
+  "operation_binding_valid": true,
+  "reservations": [
+    {
+      "id": "3f9cc6b1-ba17-4ec7-aa37-6aaf15596eaf",
+      "operation_id": "2f98e3cd-6dd0-4d3c-b2ff-b051553626b3",
+      "kind": "execution",
+      "status": "settled",
+      "accounts": {
+        "root:51c98b92-f583-474f-b9a9-4b5555ca0890:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 0
+        },
+        "root:51c98b92-f583-474f-b9a9-4b5555ca0890:tokens": {
+          "unit": "tokens",
+          "amount": 131328
+        },
+        "root:51c98b92-f583-474f-b9a9-4b5555ca0890:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 9908
+        },
+        "tenant:acme:2026-10-04:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 0
+        },
+        "tenant:acme:2026-10-04:tokens": {
+          "unit": "tokens",
+          "amount": 131328
+        },
+        "tenant:acme:2026-10-04:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 9908
+        },
+        "user:acme:live-provider-admin:8b1c5486-89b2-43eb-9164-dd9f48cade42:2026-10-04:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 0
+        },
+        "user:acme:live-provider-admin:8b1c5486-89b2-43eb-9164-dd9f48cade42:2026-10-04:tokens": {
+          "unit": "tokens",
+          "amount": 131328
+        },
+        "user:acme:live-provider-admin:8b1c5486-89b2-43eb-9164-dd9f48cade42:2026-10-04:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 9908
+        }
+      },
+      "usage": {
+        "queue_time": 0.017946053,
+        "prompt_tokens": 107,
+        "prompt_time": 0.005175559,
+        "completion_tokens": 39,
+        "completion_time": 0.041306527,
+        "total_tokens": 146,
+        "total_time": 0.046482086,
+        "completion_tokens_details": {
+          "reasoning_tokens": 6
+        },
+        "usd_micros": 20,
+        "usage_unknown": false,
+        "contract_violation": false
+      },
+      "created_at": "2026-10-04T04:49:06.909024+00:00",
+      "price_revision": "groq-gpt-oss-20b-2026-10-03",
+      "policy_generation": 14,
+      "execution_mode": "live-provider"
+    },
+    {
+      "id": "5505f6ce-bd47-4fc2-81cf-40084b65c601",
+      "operation_id": "2f98e3cd-6dd0-4d3c-b2ff-b051553626b3",
+      "kind": "guard.output",
+      "status": "settled",
+      "accounts": {
+        "guard:51c98b92-f583-474f-b9a9-4b5555ca0890:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 185000
+        },
+        "guard:51c98b92-f583-474f-b9a9-4b5555ca0890:tokens": {
+          "unit": "tokens",
+          "amount": 4352
+        },
+        "guard:51c98b92-f583-474f-b9a9-4b5555ca0890:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        },
+        "root:51c98b92-f583-474f-b9a9-4b5555ca0890:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 185000
+        },
+        "root:51c98b92-f583-474f-b9a9-4b5555ca0890:tokens": {
+          "unit": "tokens",
+          "amount": 4352
+        },
+        "root:51c98b92-f583-474f-b9a9-4b5555ca0890:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        },
+        "tenant:acme:2026-10-04:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 185000
+        },
+        "tenant:acme:2026-10-04:tokens": {
+          "unit": "tokens",
+          "amount": 4352
+        },
+        "tenant:acme:2026-10-04:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        },
+        "user:acme:live-provider-admin:8b1c5486-89b2-43eb-9164-dd9f48cade42:2026-10-04:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 185000
+        },
+        "user:acme:live-provider-admin:8b1c5486-89b2-43eb-9164-dd9f48cade42:2026-10-04:tokens": {
+          "unit": "tokens",
+          "amount": 4352
+        },
+        "user:acme:live-provider-admin:8b1c5486-89b2-43eb-9164-dd9f48cade42:2026-10-04:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1657,
+        "completion_tokens": 39,
+        "total_tokens": 1696,
+        "inference_slot_seconds": 0.879602,
+        "cpu_seconds": 1.1100000000001273,
+        "usage_unknown": false
+      },
+      "created_at": "2026-10-04T04:49:06.871102+00:00",
+      "price_revision": null,
+      "policy_generation": 14,
+      "execution_mode": "live-provider"
+    },
+    {
+      "id": "ec3380dc-4041-47f5-81bc-8a513771027a",
+      "operation_id": "2f98e3cd-6dd0-4d3c-b2ff-b051553626b3",
+      "kind": "guard.input",
+      "status": "settled",
+      "accounts": {
+        "guard:51c98b92-f583-474f-b9a9-4b5555ca0890:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 185000
+        },
+        "guard:51c98b92-f583-474f-b9a9-4b5555ca0890:tokens": {
+          "unit": "tokens",
+          "amount": 4352
+        },
+        "guard:51c98b92-f583-474f-b9a9-4b5555ca0890:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        },
+        "root:51c98b92-f583-474f-b9a9-4b5555ca0890:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 185000
+        },
+        "root:51c98b92-f583-474f-b9a9-4b5555ca0890:tokens": {
+          "unit": "tokens",
+          "amount": 4352
+        },
+        "root:51c98b92-f583-474f-b9a9-4b5555ca0890:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        },
+        "tenant:acme:2026-10-04:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 185000
+        },
+        "tenant:acme:2026-10-04:tokens": {
+          "unit": "tokens",
+          "amount": 4352
+        },
+        "tenant:acme:2026-10-04:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        },
+        "user:acme:live-provider-admin:8b1c5486-89b2-43eb-9164-dd9f48cade42:2026-10-04:slot_millis": {
+          "unit": "slot_millis",
+          "amount": 185000
+        },
+        "user:acme:live-provider-admin:8b1c5486-89b2-43eb-9164-dd9f48cade42:2026-10-04:tokens": {
+          "unit": "tokens",
+          "amount": 4352
+        },
+        "user:acme:live-provider-admin:8b1c5486-89b2-43eb-9164-dd9f48cade42:2026-10-04:usd_micros": {
+          "unit": "usd_micros",
+          "amount": 0
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1453,
+        "completion_tokens": 36,
+        "total_tokens": 1489,
+        "inference_slot_seconds": 1.131182,
+        "cpu_seconds": 1.3700000000000045,
+        "usage_unknown": false
+      },
+      "created_at": "2026-10-04T04:49:05.661583+00:00",
+      "price_revision": null,
+      "policy_generation": 14,
+      "execution_mode": "live-provider"
+    }
+  ],
+  "usage": null,
+  "provider_response_id": null,
+  "events": [
+    {
+      "event": "run.created",
+      "evidence": {
+        "purpose": "supplier_review",
+        "depth": 0,
+        "root_id": "51c98b92-f583-474f-b9a9-4b5555ca0890",
+        "actor": "6570e7b3bc4f2d22df07404c648f3ec254a48cc5e432ea037a0630b1f4def99d"
+      }
+    },
+    {
+      "event": "operation.screening",
+      "evidence": {
+        "label": "PUBLIC",
+        "label_version": 1,
+        "tool": "models.chat",
+        "generation": 14
+      }
+    },
+    {
+      "event": "budget.reserved",
+      "evidence": {
+        "reservation_id": "ec3380dc-4041-47f5-81bc-8a513771027a",
+        "kind": "guard.input",
+        "amounts": {
+          "tokens": 4352,
+          "usd_micros": 0,
+          "slot_millis": 185000
+        }
+      }
+    },
+    {
+      "event": "budget.reserved",
+      "evidence": {
+        "reservation_id": "5505f6ce-bd47-4fc2-81cf-40084b65c601",
+        "kind": "guard.output",
+        "amounts": {
+          "tokens": 4352,
+          "usd_micros": 0,
+          "slot_millis": 185000
+        }
+      }
+    },
+    {
+      "event": "budget.reserved",
+      "evidence": {
+        "reservation_id": "3f9cc6b1-ba17-4ec7-aa37-6aaf15596eaf",
+        "kind": "execution",
+        "amounts": {
+          "tokens": 131328,
+          "usd_micros": 9908,
+          "slot_millis": 0
+        }
+      }
+    },
+    {
+      "event": "operation.dispatched",
+      "evidence": {
+        "grant_id": "8a9ee2ee-f535-4284-b78b-2b4104fe50fd",
+        "payload_hash": "ec9e04f867954ce0247078b07e538cdae674f82352ab64ee4677f7422de16dd9",
+        "generation": 14,
+        "label_version": 1,
+        "attempt": 1,
+        "reservation_id": "3f9cc6b1-ba17-4ec7-aa37-6aaf15596eaf"
+      }
+    },
+    {
+      "event": "operation.output_blocked",
+      "evidence": {
+        "decision": "block",
+        "rule_ids": [
+          "semantic.risk"
+        ],
+        "stage": "output",
+        "label": "PUBLIC",
+        "generation": 14
+      }
+    }
+  ],
+  "actual_usd_micros": 20,
+  "failure": "RuntimeError: Guarded cloud operation or durable settlement did not pass",
+  "restored_generation": 15,
+  "original_policy_restored": true,
+  "cloud_disabled_after_restore": true,
+  "producer_sources": {
+    "scripts/live_gateway.py": "30bf9055c3839702099e71b815d9d0a653e8b1c616a0ab361844664444ea9745",
+    "backend/actiongate/cloud.py": "5e6d67b55fd5fe8ef0e61f91c4c009a19ebba127bbbd5372aaab3371c1cd8e95",
+    "backend/actiongate/semantic.py": "0e71fa69e130d2c0767f994ac500ca8262e412cc42b73b1258d0c53bf7a1a3e1"
+  },
+  "producer_source_stable": true
+}

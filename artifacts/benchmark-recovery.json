@@ -1,0 +1,332 @@
+{
+  "mode": "actual-API-recovery-after-PostgreSQL-capacity-fix",
+  "checks": {
+    "postgres_200": true,
+    "generation_unchanged": true,
+    "both_roots_verified": true,
+    "actual_limits": true
+  },
+  "roots": [
+    {
+      "old_before": {
+        "id": "0e2061d9-2160-4b4f-b40c-bbe91397bcca",
+        "run_id": "8abf6316-0e8d-45e1-b126-38987ec31f8b",
+        "status": "screening",
+        "stage": "identity",
+        "rule_ids": [],
+        "settlement_status": "released",
+        "effect_count": 0,
+        "receipt_matches": false,
+        "reservations": [],
+        "audit_events": [
+          {
+            "id": 3022,
+            "event": "operation.screening",
+            "evidence": {}
+          }
+        ]
+      },
+      "old_after": {
+        "id": "0e2061d9-2160-4b4f-b40c-bbe91397bcca",
+        "run_id": "8abf6316-0e8d-45e1-b126-38987ec31f8b",
+        "status": "failed",
+        "stage": "recovery",
+        "rule_ids": [],
+        "settlement_status": "released",
+        "effect_count": 0,
+        "receipt_matches": false,
+        "reservations": [],
+        "audit_events": [
+          {
+            "id": 3022,
+            "event": "operation.screening",
+            "evidence": {}
+          },
+          {
+            "id": 10359,
+            "event": "operation.owner_lost",
+            "evidence": {
+              "previous_status": "screening",
+              "possible_business_effect": false,
+              "retained_uncertain_usage": false
+            }
+          }
+        ]
+      },
+      "successor": {
+        "http_status": 200,
+        "operation": {
+          "id": "3564cd27-efd8-43d0-a6cd-75bbfa236fcc",
+          "run_id": "8abf6316-0e8d-45e1-b126-38987ec31f8b",
+          "status": "completed",
+          "stage": "release",
+          "rule_ids": [],
+          "settlement_status": "settled",
+          "effect_count": 1,
+          "receipt_matches": true,
+          "reservations": [
+            {
+              "kind": "guard.input",
+              "status": "settled",
+              "usage": {
+                "prompt_tokens": 1372,
+                "completion_tokens": 32,
+                "total_tokens": 1404,
+                "inference_slot_seconds": 0.901929,
+                "cpu_seconds": 1.1199999999999477,
+                "usage_unknown": false
+              }
+            },
+            {
+              "kind": "execution",
+              "status": "settled",
+              "usage": {
+                "total_tokens": 0
+              }
+            },
+            {
+              "kind": "guard.output",
+              "status": "settled",
+              "usage": {
+                "prompt_tokens": 1440,
+                "completion_tokens": 35,
+                "total_tokens": 1475,
+                "inference_slot_seconds": 0.922527,
+                "cpu_seconds": 1.150000000000034,
+                "usage_unknown": false
+              }
+            }
+          ],
+          "audit_events": [
+            {
+              "id": 10360,
+              "event": "operation.screening",
+              "evidence": {}
+            },
+            {
+              "id": 10361,
+              "event": "budget.reserved",
+              "evidence": {}
+            },
+            {
+              "id": 10362,
+              "event": "budget.settled",
+              "evidence": {}
+            },
+            {
+              "id": 10363,
+              "event": "budget.reserved",
+              "evidence": {}
+            },
+            {
+              "id": 10364,
+              "event": "budget.reserved",
+              "evidence": {}
+            },
+            {
+              "id": 10365,
+              "event": "operation.dispatched",
+              "evidence": {}
+            },
+            {
+              "id": 10366,
+              "event": "budget.settled",
+              "evidence": {}
+            },
+            {
+              "id": 10367,
+              "event": "budget.settled",
+              "evidence": {}
+            },
+            {
+              "id": 10368,
+              "event": "operation.completed",
+              "evidence": {}
+            }
+          ]
+        }
+      },
+      "deadline_expired": false,
+      "fresh_root_action_if_expired": null,
+      "checks": {
+        "previous_screening": true,
+        "old_recovered_failed": true,
+        "old_zero_effects": true,
+        "owner_lost_audited": true,
+        "successor_completed_or_deadline_blocked": true,
+        "actual_legal_action_completed": true,
+        "exact_one_effect_and_receipt": true,
+        "settled": true
+      }
+    },
+    {
+      "old_before": {
+        "id": "1462279f-f1e0-4d35-b20a-7c6cfc03dc7e",
+        "run_id": "eec6ddce-221d-4428-9d05-99ec6cbc3116",
+        "status": "screening",
+        "stage": "identity",
+        "rule_ids": [],
+        "settlement_status": "released",
+        "effect_count": 0,
+        "receipt_matches": false,
+        "reservations": [],
+        "audit_events": []
+      },
+      "old_after": {
+        "id": "1462279f-f1e0-4d35-b20a-7c6cfc03dc7e",
+        "run_id": "eec6ddce-221d-4428-9d05-99ec6cbc3116",
+        "status": "failed",
+        "stage": "recovery",
+        "rule_ids": [],
+        "settlement_status": "released",
+        "effect_count": 0,
+        "receipt_matches": false,
+        "reservations": [],
+        "audit_events": [
+          {
+            "id": 10369,
+            "event": "operation.owner_lost",
+            "evidence": {
+              "previous_status": "screening",
+              "possible_business_effect": false,
+              "retained_uncertain_usage": false
+            }
+          }
+        ]
+      },
+      "successor": {
+        "http_status": 200,
+        "operation": {
+          "id": "213bc703-381a-42c4-99ef-7a1e67acfa56",
+          "run_id": "eec6ddce-221d-4428-9d05-99ec6cbc3116",
+          "status": "completed",
+          "stage": "release",
+          "rule_ids": [],
+          "settlement_status": "settled",
+          "effect_count": 1,
+          "receipt_matches": true,
+          "reservations": [
+            {
+              "kind": "guard.input",
+              "status": "settled",
+              "usage": {
+                "prompt_tokens": 1372,
+                "completion_tokens": 32,
+                "total_tokens": 1404,
+                "inference_slot_seconds": 0.87304,
+                "cpu_seconds": 1.1000000000000227,
+                "usage_unknown": false
+              }
+            },
+            {
+              "kind": "execution",
+              "status": "settled",
+              "usage": {
+                "total_tokens": 0
+              }
+            },
+            {
+              "kind": "guard.output",
+              "status": "settled",
+              "usage": {
+                "prompt_tokens": 1447,
+                "completion_tokens": 42,
+                "total_tokens": 1489,
+                "inference_slot_seconds": 0.994203,
+                "cpu_seconds": 1.240000000000009,
+                "usage_unknown": false
+              }
+            }
+          ],
+          "audit_events": [
+            {
+              "id": 10370,
+              "event": "operation.screening",
+              "evidence": {}
+            },
+            {
+              "id": 10371,
+              "event": "budget.reserved",
+              "evidence": {}
+            },
+            {
+              "id": 10372,
+              "event": "budget.settled",
+              "evidence": {}
+            },
+            {
+              "id": 10373,
+              "event": "budget.reserved",
+              "evidence": {}
+            },
+            {
+              "id": 10374,
+              "event": "budget.reserved",
+              "evidence": {}
+            },
+            {
+              "id": 10375,
+              "event": "operation.dispatched",
+              "evidence": {}
+            },
+            {
+              "id": 10376,
+              "event": "budget.settled",
+              "evidence": {}
+            },
+            {
+              "id": 10377,
+              "event": "budget.settled",
+              "evidence": {}
+            },
+            {
+              "id": 10378,
+              "event": "operation.completed",
+              "evidence": {}
+            }
+          ]
+        }
+      },
+      "deadline_expired": false,
+      "fresh_root_action_if_expired": null,
+      "checks": {
+        "previous_screening": true,
+        "old_recovered_failed": true,
+        "old_zero_effects": true,
+        "owner_lost_audited": true,
+        "successor_completed_or_deadline_blocked": true,
+        "actual_legal_action_completed": true,
+        "exact_one_effect_and_receipt": true,
+        "settled": true
+      }
+    }
+  ],
+  "generation": 6,
+  "configuration_unchanged_expected_generation_6": true,
+  "max_connections": 200,
+  "readiness": {
+    "status": "ready",
+    "generation": 6,
+    "checks": {
+      "database": "ready",
+      "policy": "ready",
+      "classifier": "ready",
+      "opa": "ready",
+      "guard": "ready",
+      "business": "ready"
+    }
+  },
+  "status": "passed",
+  "checked_at": "2026-10-04T03:17:47.963971+00:00",
+  "compose_sha256": "4e6df137b97a57c5e92824bcb28969f8471e55f42cc9876df9a1ce3480383094",
+  "postgres_container": {
+    "id": "d9a2546320eadc8cb1af07c66d77c9a14396b396f07f461e8ba057a742c175e9",
+    "memory_limit_bytes": 2147483648,
+    "pids_limit": 256,
+    "command": [
+      "postgres",
+      "-c",
+      "max_connections=200"
+    ]
+  }
+}

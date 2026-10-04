@@ -1,0 +1,77 @@
+networks:
+  agent:
+    internal: true
+    ipam:
+      config: !override
+      - subnet: 10.253.101.0/28
+  data:
+    internal: true
+    ipam:
+      config: !override
+      - subnet: 10.253.101.16/28
+  guard:
+    internal: true
+    ipam:
+      config: !override
+      - subnet: 10.253.101.32/28
+  business:
+    internal: true
+    ipam:
+      config: !override
+      - subnet: 10.253.101.48/28
+  tools:
+    internal: true
+    ipam:
+      config: !override
+      - subnet: 10.253.101.64/28
+  opa:
+    internal: true
+    ipam:
+      config: !override
+      - subnet: 10.253.101.80/28
+  feed:
+    internal: true
+    ipam:
+      config: !override
+      - subnet: 10.253.101.96/28
+  edge:
+    internal: true
+    ipam:
+      config: !override
+      - subnet: 10.253.101.112/28
+  cloud:
+    internal: true
+    ipam:
+      config: !override
+      - subnet: 10.253.101.128/28
+  cloud-egress:
+    internal: true
+    ipam:
+      config: !override
+      - subnet: 10.253.101.144/28
+  download:
+    internal: true
+    ipam:
+      config: !override
+      - subnet: 10.253.101.160/28
+volumes:
+  models:
+    external: true
+    name: actiongate_models
+services:
+  gateway-a:
+    volumes:
+    - C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/29b4b2ed/policy:/app/policy:ro
+    - C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/29b4b2ed/feeds:/app/feeds:ro
+  gateway-b:
+    volumes:
+    - C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/29b4b2ed/policy:/app/policy:ro
+    - C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/29b4b2ed/feeds:/app/feeds:ro
+  test-runner:
+    volumes:
+    - C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/29b4b2ed/policy:/app/policy:ro
+    - C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/29b4b2ed/feeds:/app/feeds:ro
+  feed-server:
+    volumes:
+    - C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/29b4b2ed/policy:/app/policy
+    - C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/29b4b2ed/feeds:/app/feeds:ro

@@ -1,0 +1,173 @@
+{
+  "mode": "actual-post-benchmark-metadata-only",
+  "benchmark_sha256": "c5372fbf77226ff6204313ab14e8bdbdfdbf1b06db2522735eff8e3c0ad19aec",
+  "producer_sha256": "b2195716e0ba093f3ca9e816f77b23fc81fe41c524535f1f68b3e906e7f53d35",
+  "input_blocked_count": 342,
+  "input_verdict_counts": {
+    "{'verdict': 'unknown', 'risk_level': 3, 'category': 'uncertain', 'complete': False, 'generation': 10, 'model_digest': None, 'cache_hit': False, 'cache_source': None}": 323,
+    "{'verdict': 'unknown', 'risk_level': 3, 'category': 'uncertain', 'complete': False, 'generation': 10, 'model_digest': 'sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd', 'cache_hit': False, 'cache_source': None}": 11,
+    "{'verdict': 'unknown', 'risk_level': 3, 'category': 'uncertain', 'complete': False, 'generation': 12, 'model_digest': 'sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd', 'cache_hit': False, 'cache_source': None}": 8
+  },
+  "input_reservations_known_zero": false,
+  "output_blocked": [
+    {
+      "operation_id": "8c112721-3859-48e3-ae78-d3373b6872b6",
+      "generation": 12,
+      "phase_timings_ms": {
+        "dlp_ms": 25.729,
+        "opa_ms": 11.658,
+        "ledger_reserve_ms": 166.032,
+        "upstream_ms": 52.683,
+        "ledger_settle_ms": 62.203,
+        "guard_ms": 10026.993
+      },
+      "input_semantic": {
+        "verdict": "benign",
+        "risk_level": 0,
+        "category": "none",
+        "complete": true,
+        "generation": 12,
+        "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "cache_hit": true,
+        "cache_source": {
+          "evaluated_at": "2026-10-04T04:39:15.001195+00:00",
+          "generation": 12,
+          "guard_artifact": {
+            "prompt_version": "actiongate-guard-v2.9",
+            "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+          },
+          "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+          "operation_id": "24fd8e18-926b-4fac-94b8-cdcba8798ebe",
+          "scope": "Prior complete model judgment; no inference was started by this cache hit"
+        }
+      },
+      "reservations": [
+        {
+          "kind": "execution",
+          "status": "settled",
+          "usage": {
+            "total_tokens": 0
+          }
+        },
+        {
+          "kind": "guard.output",
+          "status": "settled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0,
+            "inference_slot_seconds": 0.0,
+            "cpu_seconds": 0.0,
+            "usage_unknown": false
+          }
+        }
+      ]
+    },
+    {
+      "operation_id": "026296b2-f58f-4ff9-bdde-7eabe85a4e47",
+      "generation": 12,
+      "phase_timings_ms": {
+        "dlp_ms": 3.522,
+        "opa_ms": 5.903,
+        "ledger_reserve_ms": 218.351,
+        "upstream_ms": 46.6,
+        "ledger_settle_ms": 70.047,
+        "guard_ms": 10045.001
+      },
+      "input_semantic": {
+        "verdict": "benign",
+        "risk_level": 0,
+        "category": "none",
+        "complete": true,
+        "generation": 12,
+        "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "cache_hit": true,
+        "cache_source": {
+          "evaluated_at": "2026-10-04T04:36:56.294227+00:00",
+          "generation": 12,
+          "guard_artifact": {
+            "prompt_version": "actiongate-guard-v2.9",
+            "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+          },
+          "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+          "operation_id": "2c0cb9ac-a09f-4c8d-b3fc-dfb980f29224",
+          "scope": "Prior complete model judgment; no inference was started by this cache hit"
+        }
+      },
+      "reservations": [
+        {
+          "kind": "execution",
+          "status": "settled",
+          "usage": {
+            "total_tokens": 0
+          }
+        },
+        {
+          "kind": "guard.output",
+          "status": "settled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0,
+            "inference_slot_seconds": 0.0,
+            "cpu_seconds": 0.0,
+            "usage_unknown": false
+          }
+        }
+      ]
+    },
+    {
+      "operation_id": "8b5bcbc3-ff13-4bdc-8037-9dcfa8b7ffd5",
+      "generation": 12,
+      "phase_timings_ms": {
+        "dlp_ms": 8.067,
+        "opa_ms": 6.123,
+        "ledger_reserve_ms": 193.973,
+        "upstream_ms": 75.15,
+        "ledger_settle_ms": 40.343,
+        "guard_ms": 10020.289
+      },
+      "input_semantic": {
+        "verdict": "benign",
+        "risk_level": 0,
+        "category": "none",
+        "complete": true,
+        "generation": 12,
+        "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "cache_hit": true,
+        "cache_source": {
+          "evaluated_at": "2026-10-04T04:38:05.014046+00:00",
+          "generation": 12,
+          "guard_artifact": {
+            "prompt_version": "actiongate-guard-v2.9",
+            "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+          },
+          "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+          "operation_id": "0683bc71-5ee5-4a25-9305-39fa415e3d95",
+          "scope": "Prior complete model judgment; no inference was started by this cache hit"
+        }
+      },
+      "reservations": [
+        {
+          "kind": "execution",
+          "status": "settled",
+          "usage": {
+            "total_tokens": 0
+          }
+        },
+        {
+          "kind": "guard.output",
+          "status": "settled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0,
+            "inference_slot_seconds": 0.0,
+            "cpu_seconds": 0.0,
+            "usage_unknown": false
+          }
+        }
+      ]
+    }
+  ]
+}

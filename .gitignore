@@ -18,15 +18,3 @@ test-results/
 playwright-report/
 docs/.build/
 artifacts/actiongate-submission.zip
-
-# Local working and publication state
-artifacts/github-publication-*/
-USER_REQUEST*.md
-_video_work/
-*.tsbuildinfo
-*.log
-*.sqlite*
-*.db
-artifacts/*
-!artifacts/licenses/
-!artifacts/publication-test-summary.json

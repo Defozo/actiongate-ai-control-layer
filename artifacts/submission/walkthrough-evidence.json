@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-10-03T16:31:21.802Z",
+  "team": "DEFOZO SOFTWARE HOUSE",
+  "member": "Michał Kiełtyka",
+  "target": "http://127.0.0.1:8088",
+  "mode": "read-only walkthrough of actual persisted synthetic operations",
+  "new_inference": false,
+  "views": [
+    {
+      "view": "policies",
+      "title": "One source of control."
+    },
+    {
+      "view": "budgets",
+      "title": "Keep every commitment visible."
+    },
+    {
+      "view": "test-lab",
+      "title": "Challenge the boundary."
+    }
+  ],
+  "errors": [],
+  "operations": [
+    {
+      "id": "c0f6e66e-f31a-467d-b1cf-06e803169934",
+      "status": "completed",
+      "tool": "models.chat",
+      "execution_mode": "local",
+      "policy_generation": 8
+    }
+  ],
+  "horizontal_overflow": false
+}

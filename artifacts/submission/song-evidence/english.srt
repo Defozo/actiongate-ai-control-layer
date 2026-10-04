@@ -1,0 +1,164 @@
+1
+00:00:00,300 --> 00:00:02,480
+ActionGate, check that action.
+
+2
+00:00:04,660 --> 00:00:06,900
+Before the agent takes a step.
+
+3
+00:00:09,180 --> 00:00:11,910
+A supplier document, deadlines and details.
+
+4
+00:00:11,940 --> 00:00:13,930
+An embedded command tries
+to change our rules.
+
+5
+00:00:13,960 --> 00:00:16,090
+Before a tool runs:
+who is asking, and why?
+
+6
+00:00:16,120 --> 00:00:19,330
+What data, which recipient?
+Is it allowed?
+
+7
+00:00:19,360 --> 00:00:21,830
+Document via MCP.
+The model summarizes it.
+
+8
+00:00:21,860 --> 00:00:25,860
+Memory, an internal report.
+Every action is logged.
+
+9
+00:00:25,900 --> 00:00:28,070
+The decision shows a record
+of what ran.
+
+10
+00:00:28,100 --> 00:00:31,040
+Follow the workflow.
+No guessing after the fact.
+
+11
+00:00:34,460 --> 00:00:38,120
+ActionGate, check that action.
+
+12
+00:00:38,660 --> 00:00:42,500
+Who has access,
+and for what purpose?
+
+13
+00:00:43,080 --> 00:00:47,140
+Before the result moves on,
+
+14
+00:00:47,420 --> 00:00:51,500
+check recipient, approval and content.
+
+15
+00:01:00,780 --> 00:01:03,390
+In this demo, personal data
+is redacted from the report.
+
+16
+00:01:03,420 --> 00:01:05,610
+A change of goal is blocked
+before it runs.
+
+17
+00:01:05,640 --> 00:01:07,510
+No access to others' documents
+without permission,
+
+18
+00:01:07,540 --> 00:01:09,690
+even if the model considers it safe.
+
+19
+00:01:09,720 --> 00:01:11,850
+Data stays confidential
+through memory and delegation.
+
+20
+00:01:11,880 --> 00:01:14,030
+Protected content needs approval
+before sending.
+
+21
+00:01:14,060 --> 00:01:16,190
+This exact content.
+This exact recipient.
+
+22
+00:01:16,220 --> 00:01:19,320
+Approval is scoped.
+The operator stays in control.
+
+23
+00:01:22,800 --> 00:01:24,830
+Tokens, model time,
+external call costs.
+
+24
+00:01:24,860 --> 00:01:27,010
+Limits are checked
+before actions incur costs.
+
+25
+00:01:27,040 --> 00:01:29,170
+Delegated work still shares one budget.
+
+26
+00:01:29,200 --> 00:01:31,610
+Scoped views.
+A reason for every decision.
+
+27
+00:01:31,640 --> 00:01:33,650
+Change a rule and compare its effects.
+
+28
+00:01:33,680 --> 00:01:36,500
+No repeated actions.
+No guessing the difference.
+
+29
+00:01:44,300 --> 00:01:46,290
+ActionGate, check that action.
+
+30
+00:01:46,320 --> 00:01:48,530
+Who has access,
+and for what purpose?
+
+31
+00:01:48,560 --> 00:01:50,690
+Before the result moves on,
+
+32
+00:01:50,720 --> 00:01:52,910
+check recipient, approval and content.
+
+33
+00:01:52,940 --> 00:01:55,030
+Try your own document.
+
+34
+00:01:55,060 --> 00:01:57,450
+Trace the path. Check the result.
+
+35
+00:01:57,480 --> 00:01:59,430
+The agent finishes its task.
+
+36
+00:01:59,460 --> 00:02:02,680
+You can follow how it happened.
+

@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "candidate_v1_sha256": "c04e19e82e1edbd19044743fb8b0b42ec7c94d40dc62e6769c53e106072c7f01",
+  "candidate_v2_sha256": "43d6626bc6fb3809b0c363f3ca8d83df36dba712b4078faba113aa22ee933cb4",
+  "findings": [
+    {
+      "id": "FC-BRIEF-001",
+      "decision": "accepted",
+      "authority": "Root confirmed actual user brief takes priority over root working instruction to display exact testcounts",
+      "action": "Replace only slide9 numerical block and its note with test-suite instructions and technical report references. Same154secondtimeline and exactoriginalaudio.",
+      "verification": "Existing independent reviewer confirms FC-BRIEF-001 resolved in v2, with neighboring cuts and ending inspected. No new observed defect."
+    },
+    {
+      "id": "FC-OPTION-001",
+      "decision": "no_change",
+      "reason": "Subjective UI crop opportunity, no native-resolution readability defect observed. Keep actual context and scope; not required to correct brief conflict."
+    }
+  ],
+  "correction_round": 1,
+  "audio_regenerated": false,
+  "correction_review_sha256": "34471cfbf29c7a8d1d302fe235c8d4daba36a29294f8d9a51bdb0e89cc9ff2f4"
+}

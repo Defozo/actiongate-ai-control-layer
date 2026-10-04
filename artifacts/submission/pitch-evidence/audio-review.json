@@ -1,0 +1,110 @@
+{
+  "created_at": "2026-10-03T21:07:37.919942+00:00",
+  "status": "completed",
+  "source": "audio\\delivery\\pitch-v1\\review-final-aac.wav",
+  "source_sha256": "38fec5df113d031a622fd8d50fc1fcdc52529f3325bdbf133b0af37f70e311c6",
+  "method": "Actual delivery AAC decoded to mono24kHz PCM and listened to by audio-capable Gemini; no script in prompt",
+  "human_listening": false,
+  "model": "gemini-3.8-flash",
+  "request_bytes": 9857435,
+  "prompt": "Listen to the entire attached audio, a product demonstration soundtrack.\nReview actual sound, not hypothetical properties. No script is supplied.\nGive JSON with: coverage_seconds; speech_language; speakers; first_sentence;\nlast_sentence; intelligibility (clear/partly_unclear/unclear); music_present;\nmusic_balance (quiet_under_speech/masking/too_loud/inaudible); pacing;\nobserved_audio_defects (array of exact timestamp, observation, severity);\nending_complete (boolean); ending_observation; transcript (complete verbatim\nspoken words); verdict (pass/revise); limitations. Check natural pronunciation,\nmissing words, clipped consonants, distortion, abrupt cuts and whether the music\nmasks speech. Do not invent problems. Do not claim to have watched visuals.\nDo not treat a spoken marketing claim as verified implementation evidence.",
+  "response_metadata": {
+    "status": "completed",
+    "usage": {
+      "total_tokens": 5924,
+      "total_input_tokens": 4037,
+      "input_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 186
+        },
+        {
+          "modality": "audio",
+          "tokens": 3851
+        }
+      ],
+      "total_cached_tokens": 0,
+      "total_output_tokens": 603,
+      "total_tool_use_tokens": 0,
+      "total_thought_tokens": 1284,
+      "raw_prompt_token": 5153,
+      "model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 527
+            },
+            {
+              "modality": "audio",
+              "tokens": 3851
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 607
+            }
+          ],
+          "thoughts_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 1284
+            }
+          ]
+        }
+      ],
+      "non_grounding_model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 527
+            },
+            {
+              "modality": "audio",
+              "tokens": 3851
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 607
+            }
+          ],
+          "thoughts_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 1284
+            }
+          ]
+        }
+      ]
+    },
+    "created": "2026-10-03T21:07:48Z",
+    "updated": "2026-10-03T21:07:48Z",
+    "service_tier": "standard",
+    "object": "interaction",
+    "model": "gemini-3.8-flash"
+  },
+  "assessment": {
+    "coverage_seconds": 154.5,
+    "speech_language": "en",
+    "speakers": 1,
+    "first_sentence": "An AI agent opens a supplier document.",
+    "last_sentence": "ActionGate gives teams the controls and evidence to put useful agents to work.",
+    "intelligibility": "clear",
+    "music_present": true,
+    "music_balance": "quiet_under_speech",
+    "pacing": "steady and well-measured professional narration pace",
+    "observed_audio_defects": [],
+    "ending_complete": true,
+    "ending_observation": "The speech concludes naturally and the background music cleanly fades out to silence.",
+    "transcript": "An AI agent opens a supplier document. It should review delivery terms. But that same document can tell it to reveal confidential data or change its task. The next tool call is where an instruction becomes an incident. ActionGate checks that action before it runs. It connects agents to models, APIs, and MCP services through a gateway that enforces the organization's rules. Here's a real supplier review using synthetic business data. We start the interactive checks in the dashboard. The agent reads its approved document through MCP, asks the local business model for a summary, saves protected memory, and creates an internal report. Open the document operation, and you can see the actual connector receipt alongside the decision. Now compare three other outcomes. Personal data is redacted before the report is saved. An instruction that tries to redirect the workflow is blocked before dispatch. And a request for another tenant's document is rejected by access policy. That access boundary remains in force independently of the semantic model. The same controls follow the workflow. Reading confidential information restricts later actions, including delegated work and memory. Publishing a protected report requires approval of its exact content and permitted recipient. Operators manage a signed control catalog. Change the profile, adjust a threshold, or publish a threat rule, then inspect the active generation. Strict can block personal data. Balanced can redact it. Policy comparison shows how a candidate changes decisions without repeating business effects. Budgets are checked before execution. The dashboard separates token usage, local worker occupancy, and commercial API commitments. Delegating work shares the original allowance. Security teams can trace an operation through dispatch and settlement, while management sees resource totals without protected payloads. Developers can connect through HTTP, a chat completions interface, or MCP. Python and TypeScript examples, executable tests, and a runbook make the system available for independent evaluation. Change a rule, try your own input, follow the resulting action. ActionGate gives teams the controls and evidence to put useful agents to work.",
+    "verdict": "pass",
+    "limitations": "Audio-only assessment; claims regarding software functionality or visual UI elements were not visually verified."
+  },
+  "assessment_sha256": "07ca05cfd9923929064ef1d34a4916f6c5296aa086af318caf61d5102c0cf8ad",
+  "original_report_sha256": "a4027ab72a786d0d4664bbe92b75b2981c7e7266b6c917713626f09aba711293",
+  "omitted": "Opaque model reasoning/signature blocks from the provider response. No input media payload or credentials were stored in either review report."
+}

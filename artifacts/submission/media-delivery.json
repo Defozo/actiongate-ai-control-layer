@@ -1,0 +1,125 @@
+{
+  "status": "imported_reviewed_media",
+  "imported_at": "2026-10-03T23:15:21.695287+00:00",
+  "source_delivery_sha256": {
+    "cover": "58fef046556c4b86be25cef2065cc266cb192adb413e8169ed2217840f789942",
+    "song": "9d465bc618864701fb675247fd1f50bcf8d96831ec4276c5273a4f709ff96da6"
+  },
+  "files": [
+    {
+      "path": "artifacts/submission/ActionGate-cover.png",
+      "source": "artifacts/cover-20261004/actiongate-cover-4x3.png",
+      "sha256": "fe6fd8b244c28cb7fbbffbbf9c5c4d45c366c8a3d7b3c74e999544a48e8b5aa3",
+      "size_bytes": 1519455
+    },
+    {
+      "path": "artifacts/submission/ActionGate-poster.png",
+      "source": "artifacts/cover-20261004/actiongate-youtube-16x9.png",
+      "sha256": "b2e4f41550379bcf4179874f43a072da04ac79a9e41e9d531047add3688d5581",
+      "size_bytes": 1573514
+    },
+    {
+      "path": "artifacts/submission/ActionGate-song-pl-2026-10-04-v2.mp4",
+      "source": "_video_work/song-pitch-2026-10-04/ActionGate-song-pl-2026-10-04-v2.mp4",
+      "sha256": "b3c3b557a1b9ee98c6f1c64a5cc3dba0d75edad144eb284f8d3b3a5fb9d47a71",
+      "size_bytes": 7287243
+    },
+    {
+      "path": "artifacts/submission/ActionGate-song-pl-2026-10-04-v2.en.vtt",
+      "source": "_video_work/song-pitch-2026-10-04/music/lyrics-performed.en.vtt",
+      "sha256": "509a755f303c96003e49b73813bf2b706dfe7f2580fdcde1f832756b0cd221c5",
+      "size_bytes": 2849
+    },
+    {
+      "path": "artifacts/submission/ActionGate-song-pl-2026-10-04-v2-transcript.txt",
+      "source": "_video_work/song-pitch-2026-10-04/music/lyrics-performed.pl.txt",
+      "sha256": "cdf4127809ee60dbb03d4c4410f228f37cb1b0c41c333e70c6f4634d4184b850",
+      "size_bytes": 1658
+    },
+    {
+      "path": "artifacts/submission/song-evidence/delivery.json",
+      "source": "_video_work/song-pitch-2026-10-04/delivery.json",
+      "sha256": "9d465bc618864701fb675247fd1f50bcf8d96831ec4276c5273a4f709ff96da6",
+      "size_bytes": 13318
+    },
+    {
+      "path": "artifacts/submission/song-evidence/independent-review.md",
+      "source": "_video_work/song-pitch-2026-10-04/review/independent-final-review.md",
+      "sha256": "77ac4aef6a511bdff7ed4f4ae2b1591cac414f3f81e26fa674f25911741046db",
+      "size_bytes": 5398
+    },
+    {
+      "path": "artifacts/submission/song-evidence/final-video-perception.json",
+      "source": "_video_work/song-pitch-2026-10-04/review/final-video-perception.json",
+      "sha256": "5850627066b89f63c028389ce9b9f1e774939c9448baa59969cb7735a1cbb6bb",
+      "size_bytes": 6693
+    },
+    {
+      "path": "artifacts/submission/song-evidence/song-perception.json",
+      "source": "_video_work/song-pitch-2026-10-04/review/song-perception.json",
+      "sha256": "667b81508d5c8d965a484ee4fd50b3adf6dbc212e9f21ba18beb8321891484bb",
+      "size_bytes": 11186
+    },
+    {
+      "path": "artifacts/submission/song-evidence/qc-summary.json",
+      "source": "_video_work/song-pitch-2026-10-04/review/final-qc/summary.json",
+      "sha256": "d5e184622c98743d6d1efdd9fa7a2bb69faac520e8f33954fab073fe322234cf",
+      "size_bytes": 2629
+    },
+    {
+      "path": "artifacts/submission/song-evidence/ffprobe.json",
+      "source": "_video_work/song-pitch-2026-10-04/review/final-qc/ffprobe.json",
+      "sha256": "f87ca7a510651fa80a4bbd2cefdb9d5c5ba4db973fc9a791ab1af9830300176a",
+      "size_bytes": 3852
+    },
+    {
+      "path": "artifacts/submission/song-evidence/audio-provenance.json",
+      "source": "_video_work/song-pitch-2026-10-04/review/final-qc/audio-provenance-corrected.json",
+      "sha256": "7855a8fbcdc6d443662ed71ab6d79187bf3ff93ccc756e6579548223be4413c7",
+      "size_bytes": 1542
+    },
+    {
+      "path": "artifacts/submission/song-evidence/rights-and-provenance.md",
+      "source": "_video_work/song-pitch-2026-10-04/music/rights-and-provenance.md",
+      "sha256": "e5c3f4d348dc4b08f66c8b06d4a945e0bcc150f2ba77929f3a0eef1277298dc3",
+      "size_bytes": 5533
+    },
+    {
+      "path": "artifacts/submission/song-evidence/music-manifest.json",
+      "source": "_video_work/song-pitch-2026-10-04/music/music-manifest.json",
+      "sha256": "d81b1bb20a82f3e7df9010fba7ca32df686b1c41654c18568cca38ea3c985e34",
+      "size_bytes": 2405
+    },
+    {
+      "path": "artifacts/submission/song-evidence/factual-evidence.json",
+      "source": "_video_work/song-pitch-2026-10-04/evidence/factual-evidence.json",
+      "sha256": "c49ff2fcd420522b7d39e8ddbd34eef907f7eb9ad87e47655a7222d4d24a7e51",
+      "size_bytes": 14485
+    },
+    {
+      "path": "artifacts/submission/song-evidence/timeline.json",
+      "source": "_video_work/song-pitch-2026-10-04/timeline.json",
+      "sha256": "561118bcb4182e7160835582a116050716e5a544df944fbf57310f0b9295dda9",
+      "size_bytes": 17211
+    },
+    {
+      "path": "artifacts/submission/song-evidence/english.srt",
+      "source": "_video_work/song-pitch-2026-10-04/music/lyrics-performed.en.srt",
+      "sha256": "79eda82ba459d402f2564dc06682bbd47e3cbe36f7bfc36d532eaba893584163",
+      "size_bytes": 2675
+    },
+    {
+      "path": "artifacts/submission/song-evidence/polish.srt",
+      "source": "_video_work/song-pitch-2026-10-04/music/lyrics-performed.pl.srt",
+      "sha256": "f6194295c7be43243f2f141726d1dd931ddd2ab194c8be08eee6754494c8f59b",
+      "size_bytes": 2904
+    }
+  ],
+  "root_review": {
+    "cover": "Full image and 320px review sheet inspected; accepted",
+    "song": "Existing independent full evidence review received; opening, middle and ending contact sheets additionally inspected",
+    "human_audio_listening_claimed": false,
+    "perceptual_audio_evidence": "Actual audio/video model review retained with its stated coverage limits"
+  },
+  "public_status": "not_yet_published"
+}

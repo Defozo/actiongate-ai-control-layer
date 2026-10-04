@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "review_id": "independent-cut-review-english-pitch-v2-correction",
+  "reviewed_at_utc": "2026-10-04T05:27:25.6448217Z",
+  "reviewer": "/root/frontend_resume/final_cut_review",
+  "context_mode": "continuing independent correction review",
+  "scope": "Only revised segment17 at128.7-142.4s, neighboring cut samples, ending and corresponding captions.",
+  "status": "correction_verified_partial_perceptual_coverage",
+  "candidate": {
+    "path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/docs/.build/_video_work/render/english-pitch-v2/ActionGate-pitch.mp4",
+    "sha256": "43d6626bc6fb3809b0c363f3ca8d83df36dba712b4078faba113aa22ee933cb4",
+    "sha256_independently_verified": true,
+    "duration_seconds": 154,
+    "plan_path": "docs/.build/_video_work/plans/english-pitch-v2.json",
+    "plan_sha256": "b6d808fc1b6a2e4b7906e64edf0286e445a427930ac9b2366b7edd2f80c302d5"
+  },
+  "previous_candidate": {
+    "sha256": "c04e19e82e1edbd19044743fb8b0b42ec7c94d40dc62e6769c53e106072c7f01",
+    "report_path": "docs/.build/_video_work/review/visual-v1/independent-cut-review.json",
+    "report_preserved": true
+  },
+  "coverage": {
+    "frame_directory": "docs/.build/_video_work/review/visual-v2-absolute",
+    "frame_manifest_sha256": "733f7fed7098841198a35628fdf816ce839fc81b5fafa11b4c0a919b2fb9ac68",
+    "native_resolution_frames_reviewed": [
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      75
+    ],
+    "sampled_output_seconds": [
+      124.16666666666667,
+      128.66666666666666,
+      128.7,
+      128.73333333333332,
+      135.53333333333333,
+      142.36666666666667,
+      142.4,
+      142.43333333333334,
+      153.96666666666667
+    ],
+    "vtt_path": "artifacts/submission/ActionGate-demo.en.vtt",
+    "vtt_sha256": "3d6e547f217d92c42188543e3c8ccc19886e272f29b4de1a9bbb3f86d9117050",
+    "captions_reviewed_this_round": "Cues35-48, including all changed-segment narration and the ending.",
+    "vtt_unchanged_from_v1": true,
+    "continuous_playback_claimed": false,
+    "audio_independently_heard": false,
+    "slide_notes_reviewed": false,
+    "subtitle_player_layout_reviewed": false
+  },
+  "corrected_findings": [
+    {
+      "id": "FC-BRIEF-001",
+      "disposition": "resolved_in_v2",
+      "output_seconds": [
+        128.7,
+        142.4
+      ],
+      "evidence": "Revised slide9 reads 'Run the supplied tests' and 'Reproduce allowed, redacted and blocked workflows with the supplied test suite.' Exact602/0/0 and EN20/20/PL20/20 figures are absent from every inspected frame in this segment.",
+      "assessment": "The correction satisfies the reviewed visible-text requirement and keeps the pitch concrete. It aligns with unchanged captions describing Python/TypeScript examples, executable tests, a runbook and independent evaluation.",
+      "new_defect_observed": false
+    }
+  ],
+  "boundary_and_ending_checks": {
+    "incoming_cut_seconds": 128.7,
+    "incoming_cut": "Reporting slide remains present at128.6667s; corrected integration slide is present at128.7s and128.7333s.",
+    "outgoing_cut_seconds": 142.4,
+    "outgoing_cut": "Corrected integration slide remains present at142.3667s; unchanged final card is present at142.4s and142.4333s.",
+    "last_frame": "Final card is legible and complete at153.9667s.",
+    "caption_ending": "Complete last sentence ends at151.771s, leaving approximately2.23s to154s. Audio tail not independently heard.",
+    "observed_regressions": []
+  },
+  "technical_evidence_read": {
+    "path": "docs/.build/_video_work/render/english-pitch-v2/qc/technical-verification.json",
+    "status": "passed",
+    "checks_passed": 12,
+    "decoded_video_frames": 4620,
+    "audio_video_delta_seconds": 0,
+    "muxed_aac_payload_sha256": "93bb54b9c0abd29e929b52271d14545b991ae2a5488f568bcd5b545b08bca906",
+    "decoded_pcm_sha256": "6123b6fad9198c74085e259e1f7948ac0fead81b7cf6f77c98d62b3fec3b3cb0",
+    "audio_binding_assessment": "Supplied v2 QC reports the same AAC payload and decoded PCM hashes as v1. No new audio review was performed or claimed by this reviewer."
+  },
+  "observed_findings": [],
+  "recommendation": "Accept FC-BRIEF-001 as resolved. No further correction is justified by this narrow review.",
+  "limitations": "Sampled frame correction review only. This report does not replace the retained v1 review or claim new whole-film audiovisual playback, exact click observation, audio listening, source-code verification or subtitle-player coverage."
+}

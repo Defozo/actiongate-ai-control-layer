@@ -1,0 +1,17 @@
+{
+  "coverage_seconds": 154.5,
+  "speech_language": "en",
+  "speakers": 1,
+  "first_sentence": "An AI agent opens a supplier document.",
+  "last_sentence": "ActionGate gives teams the controls and evidence to put useful agents to work.",
+  "intelligibility": "clear",
+  "music_present": true,
+  "music_balance": "quiet_under_speech",
+  "pacing": "steady and well-measured professional narration pace",
+  "observed_audio_defects": [],
+  "ending_complete": true,
+  "ending_observation": "The speech concludes naturally and the background music cleanly fades out to silence.",
+  "transcript": "An AI agent opens a supplier document. It should review delivery terms. But that same document can tell it to reveal confidential data or change its task. The next tool call is where an instruction becomes an incident. ActionGate checks that action before it runs. It connects agents to models, APIs, and MCP services through a gateway that enforces the organization's rules. Here's a real supplier review using synthetic business data. We start the interactive checks in the dashboard. The agent reads its approved document through MCP, asks the local business model for a summary, saves protected memory, and creates an internal report. Open the document operation, and you can see the actual connector receipt alongside the decision. Now compare three other outcomes. Personal data is redacted before the report is saved. An instruction that tries to redirect the workflow is blocked before dispatch. And a request for another tenant's document is rejected by access policy. That access boundary remains in force independently of the semantic model. The same controls follow the workflow. Reading confidential information restricts later actions, including delegated work and memory. Publishing a protected report requires approval of its exact content and permitted recipient. Operators manage a signed control catalog. Change the profile, adjust a threshold, or publish a threat rule, then inspect the active generation. Strict can block personal data. Balanced can redact it. Policy comparison shows how a candidate changes decisions without repeating business effects. Budgets are checked before execution. The dashboard separates token usage, local worker occupancy, and commercial API commitments. Delegating work shares the original allowance. Security teams can trace an operation through dispatch and settlement, while management sees resource totals without protected payloads. Developers can connect through HTTP, a chat completions interface, or MCP. Python and TypeScript examples, executable tests, and a runbook make the system available for independent evaluation. Change a rule, try your own input, follow the resulting action. ActionGate gives teams the controls and evidence to put useful agents to work.",
+  "verdict": "pass",
+  "limitations": "Audio-only assessment; claims regarding software functionality or visual UI elements were not visually verified."
+}

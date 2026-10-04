@@ -1,0 +1,104 @@
+{
+  "created_at": "2026-10-04T03:14:34.188775+00:00",
+  "files": {
+    "artifacts/benchmark.json": {
+      "source": "artifacts/benchmark.json",
+      "sha256": "2e6016bff66e32a11d70173c9034b5c6a24d5071386aec625dc2f6560a6af937",
+      "bytes": 5584330
+    },
+    "artifacts/benchmark.html": {
+      "source": "artifacts/benchmark.html",
+      "sha256": "86f8686f27b989d2eca6362b89dbd546414eb42a371c23c8d434ee99348d9631",
+      "bytes": 21482
+    },
+    "artifacts/benchmark-diagnostics.json": {
+      "source": "artifacts/benchmark-diagnostics.json",
+      "sha256": "2843a6188bb240237cb23dc2bcd0211e37f142b1355f2d45f7ce4e2e9f81335b",
+      "bytes": 986329
+    },
+    "artifacts/benchmark-diagnostics-detail.json": {
+      "source": "artifacts/benchmark-diagnostics-detail.json",
+      "sha256": "9bd94d2826ed53fba8c5db1ddadd1cd7efa9ca59b5909fbeea573054d5f22fec",
+      "bytes": 14107
+    },
+    "artifacts/benchmark-reference/runtime-hardware.json": {
+      "source": "artifacts/benchmark-reference/runtime-hardware.json",
+      "sha256": "b692a0895ece81570a6c2917d2f2c6a895af0c520918b6e140bd44f5d346c30e",
+      "bytes": 9773
+    },
+    "artifacts/benchmark-reference/warmup.json": {
+      "source": "artifacts/benchmark-reference/warmup.json",
+      "sha256": "72f58d132b66f15bf618ad962e5f232bf82f4bcf5df0d77efae89b2976083c97",
+      "bytes": 1897
+    },
+    "artifacts/gpu-reference/deployed-source.json": {
+      "source": "artifacts/gpu-reference/deployed-source.json",
+      "sha256": "913f40ae49ac10ef731c19c77ce5eb16897fc0f7ad110cdadac722df7fbcd150",
+      "bytes": 41261
+    },
+    "artifacts/gpu-reference/deployed-configuration.json": {
+      "source": "artifacts/gpu-reference/deployed-configuration.json",
+      "sha256": "e724bf0b1134003920101511438ea30b60daa8542085e16fde2f6a3d67356013",
+      "bytes": 5686
+    },
+    "source/compose.yaml": {
+      "source": "compose.yaml",
+      "sha256": "d9bccef0a85df3893aa0a5cbf7bb2c863d165c64d0f60774790c20a74645c087",
+      "bytes": 11516
+    },
+    "source/deploy/compose.gpu.yaml": {
+      "source": "deploy/compose.gpu.yaml",
+      "sha256": "971033e7cd90398db145e4bd6cab320aa72c0471240bf280aa0669fe97604303",
+      "bytes": 839
+    },
+    "source/scripts/benchmark.py": {
+      "source": "scripts/benchmark.py",
+      "sha256": "b5eb1e8da9aae3d3eb43a57833a7e7e307a689ba2ef274593d21c856611c423c",
+      "bytes": 37275
+    },
+    "source/scripts/acceptance_report.py": {
+      "source": "scripts/acceptance_report.py",
+      "sha256": "12a4c2c4d5e919824dca4a70fb20063dc58473d9af598b8d62ff6cf66287d362",
+      "bytes": 53662
+    },
+    "source/backend/actiongate/db.py": {
+      "source": "backend/actiongate/db.py",
+      "sha256": "d210a52f2e5c9d7828216991df834815e6caacce166a5106d1afca5f4ed69ad5",
+      "bytes": 13482
+    },
+    "source/backend/actiongate/broker.py": {
+      "source": "backend/actiongate/broker.py",
+      "sha256": "b9d5dacc69bd79cd449e78eca257dd32a9d87ae7d85e2128fe94b0f64b4eb77e",
+      "bytes": 61398
+    },
+    "source/backend/actiongate/runtime.py": {
+      "source": "backend/actiongate/runtime.py",
+      "sha256": "32e3a5a4065455815ab190b76d3df0b9589c5b4f37bf3e005566bd438198868c",
+      "bytes": 8758
+    },
+    "source/runtime/worker.py": {
+      "source": "runtime/worker.py",
+      "sha256": "b006d2bef913c77d3dabef09c982c06f56d155c4c881d8d05dfad64fac7ca29c",
+      "bytes": 25424
+    },
+    "source/runtime/Dockerfile": {
+      "source": "runtime/Dockerfile",
+      "sha256": "5ff4a86f7afbb4eb59f25c2d46534daa9762b77b9e32ebc994dd17974fdd0ad1",
+      "bytes": 1521
+    },
+    "source/.state/clean-install/29b4b2ed/compose.override.yaml": {
+      "source": ".state/clean-install/29b4b2ed/compose.override.yaml",
+      "sha256": "f3c1822d2b773cdfae93ddbb1ed823c2a46129c0e886734450f482bc096e7bb6",
+      "bytes": 2340
+    },
+    "source/.state/clean-install/29b4b2ed/policy/control.yaml": {
+      "source": ".state/clean-install/29b4b2ed/policy/control.yaml",
+      "sha256": "193c6fbcd470b3c83142450ffd5705ce77ffbec35c1eb5cd3b9cb63654839af0",
+      "bytes": 3193
+    },
+    "diagnostic-summary.json": {
+      "sha256": "2331b2630a305088f22f271707f1dead35507816aea63129d36224ebcab157e3",
+      "bytes": 2610
+    }
+  }
+}

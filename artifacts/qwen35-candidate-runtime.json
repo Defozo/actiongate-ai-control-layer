@@ -1,0 +1,212 @@
+{
+  "suite": "gpu-preflight",
+  "runtime_profile": "gpu",
+  "project": "actiongate-candidate-8a7aaeee",
+  "started_at": "2026-10-03T17:24:45.707385+00:00",
+  "mode": "fresh database and isolated internal networks; predownloaded immutable images and weights",
+  "credentials": "existing scoped psst credentials, never exported",
+  "checks": {
+    "all_service_networks_deny_external_egress": true,
+    "gateway-a_actual_internet_unreachable": true,
+    "guard-worker_actual_internet_unreachable": true,
+    "business-worker_actual_internet_unreachable": true,
+    "fresh_database_generation": true,
+    "versioned_owner_migration_applied": true,
+    "gpu_enabled_before_functional_suite": true
+  },
+  "passed": false,
+  "status": "prepared_only",
+  "candidate_model": "qwen35",
+  "prepare_only": true,
+  "gpu_host_before_start": {
+    "returncode": 0,
+    "csv": "NVIDIA GeForce RTX 4090, 617.14, 24564 MiB, 6637 MiB, 20 %",
+    "scope": "whole physical device, including unrelated workloads"
+  },
+  "operator_client": "isolated acceptance process through the real internal edge; host UI verified separately",
+  "initial_generation": 1,
+  "model_artifacts": {
+    "local-business": {
+      "path": "models/model-manifest.json",
+      "sha256": "83a289a830800361b8ad4e270b66bfdffaf3cc87a811571782054a599d69ab7a",
+      "manifest": {
+        "schema_version": 1,
+        "model": "qwen3.5:4b",
+        "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "format": "GGUF",
+        "family": "Qwen3.5",
+        "quantization": "Q4_K_M",
+        "license": "Apache-2.0",
+        "source": "https://ollama.com/library/qwen3.5:4b",
+        "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+        "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+        "context_tokens": 8192,
+        "max_input_tokens": 4096,
+        "think": false,
+        "temperature": 0,
+        "seed": 42,
+        "runtime": "ollama:0.18.2",
+        "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+      }
+    },
+    "local-guard": {
+      "path": "models/model-manifest.json",
+      "sha256": "83a289a830800361b8ad4e270b66bfdffaf3cc87a811571782054a599d69ab7a",
+      "manifest": {
+        "schema_version": 1,
+        "model": "qwen3.5:4b",
+        "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "format": "GGUF",
+        "family": "Qwen3.5",
+        "quantization": "Q4_K_M",
+        "license": "Apache-2.0",
+        "source": "https://ollama.com/library/qwen3.5:4b",
+        "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+        "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+        "context_tokens": 8192,
+        "max_input_tokens": 4096,
+        "think": false,
+        "temperature": 0,
+        "seed": 42,
+        "runtime": "ollama:0.18.2",
+        "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+      }
+    },
+    "cloud-business": {
+      "path": "models/cloud-model-manifest.json",
+      "sha256": "14135fe31e8ca85446bb98c3472e10cbe07396a26eb0418c553834d488b85fa9",
+      "manifest": {
+        "schema_version": 1,
+        "provider": "groq",
+        "model": "openai/gpt-oss-20b",
+        "api_host": "api.groq.com",
+        "api_path": "/openai/v1/chat/completions",
+        "context_tokens": 131072,
+        "max_completion_tokens": 65536,
+        "reservation_input_method": "full_provider_context_upper_bound",
+        "reservation_output_method": "max_completion_tokens_including_hidden_reasoning",
+        "include_reasoning": false,
+        "reasoning_effort": "low",
+        "automatic_retries": false,
+        "redirects": false,
+        "built_in_tools": false,
+        "supported_tools": "client_function_schemas_only",
+        "price_file": "policy/prices.json",
+        "sources": [
+          "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+          "https://console.groq.com/docs/openai",
+          "https://console.groq.com/docs/reasoning"
+        ]
+      }
+    }
+  },
+  "guard_artifact": {
+    "prompt_version": "actiongate-guard-v2.3",
+    "sha256": "26492d405e99c7393a0ecfd1dfacde8b61158db2d768faba24dab31e50f681aa"
+  },
+  "semantic_configuration": {
+    "model_ref": "local-guard",
+    "prompt_version": "actiongate-guard-v2.3",
+    "required_on": [
+      "untrusted_input",
+      "proposed_action",
+      "tool_output",
+      "memory_write",
+      "model_output"
+    ],
+    "risk_scale": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "context_tokens": 8192,
+    "max_input_tokens_per_call": 4096,
+    "max_output_tokens": 256,
+    "window_tokens": 2048,
+    "overlap_tokens": 256,
+    "max_windows": 8,
+    "deadline_seconds": 180,
+    "incomplete_scan": "block"
+  },
+  "alembic_revision": "0002_test_job_leases",
+  "expected_alembic_head": "0002_test_job_leases",
+  "gpu_residency_warmup_usage": {
+    "guard": {
+      "inference_slot_seconds": 8.594841,
+      "cpu_seconds": 20.53,
+      "usage_unknown": false,
+      "prompt_tokens": 15,
+      "completion_tokens": 1,
+      "total_tokens": 16,
+      "upstream_timings": {
+        "total_seconds": 8.56831,
+        "load_seconds": 8.361777,
+        "prefill_seconds": 0.0901,
+        "prefill_tokens_per_second": 166.482
+      }
+    },
+    "business": {
+      "inference_slot_seconds": 10.677205,
+      "cpu_seconds": 14.440000000000001,
+      "usage_unknown": false,
+      "prompt_tokens": 15,
+      "completion_tokens": 1,
+      "total_tokens": 16,
+      "upstream_timings": {
+        "total_seconds": 10.655716,
+        "load_seconds": 10.314965,
+        "prefill_seconds": 0.197561,
+        "prefill_tokens_per_second": 75.926
+      }
+    }
+  },
+  "gpu_startup_residency": {
+    "guard-worker": [
+      {
+        "name": "qwen3.5:4b",
+        "model": "qwen3.5:4b",
+        "size": 6140729344,
+        "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen35",
+          "families": [
+            "qwen35"
+          ],
+          "parameter_size": "4.7B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-10-03T17:58:07.090131003Z",
+        "size_vram": 6140729344,
+        "context_length": 8192
+      }
+    ],
+    "business-worker": [
+      {
+        "name": "qwen3.5:4b",
+        "model": "qwen3.5:4b",
+        "size": 6140729344,
+        "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen35",
+          "families": [
+            "qwen35"
+          ],
+          "parameter_size": "4.7B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-10-03T17:58:17.790105991Z",
+        "size_vram": 6140729344,
+        "context_length": 8192
+      }
+    ]
+  },
+  "ready_prepared": true,
+  "finished_at": "2026-10-03T17:28:20.059717+00:00"
+}

@@ -188,8 +188,14 @@ results from different policies.
 The command-line acceptance entrypoint is:
 
 ```powershell
+pwsh -File scripts/doctor.ps1
+uv run python scripts/deployed_source.py
+uv run python scripts/runtime_hardware.py
 pwsh -File scripts/verify.ps1 -Suite all-local
 ```
+
+These steps refresh the model preflight, deployed-source proof and actual
+hardware measurement for your installation before running the suite.
 
 `contract` uses controlled upstreams. `all-local` also requires real local models,
 the database, policy engine, memory, MCP, two replicas and isolation checks. Missing

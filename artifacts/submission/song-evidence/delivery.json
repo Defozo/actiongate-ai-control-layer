@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "status": "ready_local",
+  "project": "ActionGate",
+  "variant": "Polish original vocal song pitch, separate from narrated base video",
+  "completed_at": "2026-10-04T01:11:18.300189+02:00",
+  "coordinator_deadline": "2026-10-04T09:00:00+02:00",
+  "completed_before_deadline": true,
+  "mp4_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/ActionGate-song-pl-2026-10-04-v2.mp4",
+  "mp4_relative_path": "ActionGate-song-pl-2026-10-04-v2.mp4",
+  "sha256": "b3c3b557a1b9ee98c6f1c64a5cc3dba0d75edad144eb284f8d3b3a5fb9d47a71",
+  "size_bytes": 7287243,
+  "duration_seconds": 129.0235,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "decoded_frames": 3870,
+    "pixel_format": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 2,
+    "integrated_lufs": -16.05,
+    "true_peak_dbtp": -3.73,
+    "song_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/music/song-delivery.wav",
+    "song_duration_seconds": 128.04,
+    "full_musical_ending": true,
+    "generated_music_requests": 1,
+    "regenerations": 0,
+    "tts_narration": false
+  },
+  "genre": "Electro-pop / synthwave, melodic Polish rap verses and sung hooks",
+  "lyrics_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/music/lyrics-performed.pl.txt",
+  "original_requested_lyrics_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/music/lyrics.pl.txt",
+  "captions": {
+    "polish": "burned into video",
+    "polish_srt": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/music/lyrics-performed.pl.srt",
+    "english_srt": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/music/lyrics-performed.en.srt",
+    "english_vtt": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/music/lyrics-performed.en.vtt",
+    "cue_count": 36,
+    "english_embedded": false,
+    "phonetic_uncertainty_evidence": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/music/performed-lyric-review.json"
+  },
+  "source_shots": [
+    {
+      "path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/ActionGate-readonly-song-sources.webm",
+      "sha256": "fd6fe8e58d1d9e3b106d255f28e4d69d4723c4382ed1ac5f5be9aa70edc2d20d",
+      "type": "recorded-video"
+    },
+    {
+      "path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/legal-memory-top.png",
+      "sha256": "53f4638a667cbd6c48c0dc0c37875f310c1506ffb0ba5380505ba4e349b785bb",
+      "type": "captured-still"
+    },
+    {
+      "path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/legal-report-top.png",
+      "sha256": "ccc0c502dcd778b0651a68fd83107d193516fab382ec230c41f06cdd6da44f9e",
+      "type": "captured-still"
+    },
+    {
+      "path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/legal-document-receipt.png",
+      "sha256": "0f06eea5dc5fe23eb05c80349f49cdd92737896f3f93398163fc7a96d7a5dd15",
+      "type": "captured-still"
+    },
+    {
+      "path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/legal-model-top.png",
+      "sha256": "f67abfcd15b7116946d284fe1cea3419dbab17547433d4e5c40ec0acbfe4c922",
+      "type": "captured-still"
+    },
+    {
+      "path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/fresh-overview.png",
+      "sha256": "3e06be28b54e58f46d41a4a4e10f350f78b106cf4883443a739840c3939248b5",
+      "type": "captured-still"
+    },
+    {
+      "path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/demo-redact-email-top.png",
+      "sha256": "1c520bacc886c61af81d52dd34ad53be4bb3c73e97529298728f87f3b84594ed",
+      "type": "captured-still"
+    },
+    {
+      "path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/demo-semantic-risk-top.png",
+      "sha256": "3df9f4eb73a6fccc9a69f9bb2e9bcb5a477aaf5ab8a50eb0a2c95aeba4163160",
+      "type": "captured-still"
+    },
+    {
+      "path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/demo-document-access-top.png",
+      "sha256": "b8acd9f00c1500248df0aa103304d87b3ef34fb9183f97988cbf9cb1322bb083",
+      "type": "captured-still"
+    },
+    {
+      "path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/demo-exact-approval-top.png",
+      "sha256": "4d66073f540d030b791e4f0b21374af8009ba16d904d5613a97a81c1726198c2",
+      "type": "captured-still"
+    },
+    {
+      "path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/fresh-budgets.png",
+      "sha256": "cf3e610becc264d368bed2c37338fae1345bd55ee6adf424be7e5f5582931a2c",
+      "type": "captured-still"
+    },
+    {
+      "path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/fresh-policies.png",
+      "sha256": "3ebce25cab85633ce2f318570007f51b0039951721b23516fc1b4b1d0a32597f",
+      "type": "captured-still"
+    },
+    {
+      "path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/fresh-test-lab.png",
+      "sha256": "e6f18c387b9118c21012c4bdc8125a0ead14270374c1f5a9ee6ef470e90fe462",
+      "type": "captured-still"
+    }
+  ],
+  "shot_timeline_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/timeline.json",
+  "full_footage_inventory_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/footage-inventory.json",
+  "claims_evidence_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/factual-evidence.json",
+  "source_mode": "Read-only capture of recorded synthetic operations; real local model for the legal workflow. Controlled-model redaction, block and approval examples visibly labelled Demo / test kontrolowany. No new inference, policy update or application change for these captures.",
+  "qc": {
+    "status": "passed",
+    "strict_report_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/render/qc/ActionGate-song-pl-2026-10-04-v2/report.md",
+    "ffprobe_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/review/final-qc/ffprobe.json",
+    "technical_summary_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/review/final-qc/summary.json",
+    "full_decode_log": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/review/final-qc/full-decode.log",
+    "full_decode_error_count": 0,
+    "audio_provenance_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/review/final-qc/audio-provenance-corrected.json",
+    "audio_video_residual_ms": 0.3333333333333313,
+    "audio_drift_samples": 0,
+    "frame_evidence_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/review/final-qc/frames.json"
+  },
+  "perceptual_review": {
+    "status": "passed_with_stated_limits",
+    "song_review_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/review/song-perception.json",
+    "final_actual_mp4_review_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/review/final-video-perception.json",
+    "independent_review_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/review/independent-final-review.md",
+    "independent_agent": "/root/independent_final_review",
+    "fresh_context": true,
+    "sampled_frames": 112,
+    "full_resolution_checks": 9,
+    "all_26_scenes_sampled": true,
+    "actual_audio_evaluated": true,
+    "method": "Audio/video-capable model received actual original song and actual final MP4 without the expected script. Fresh independent agent visually inspected contact sheets and full-resolution frames and reviewed the complete evidence packet.",
+    "human_listening": false,
+    "human_continuous_playback": false,
+    "limitations": [
+      "Final AV model reports approximately128 seconds of sampled audiovisual coverage for the129.0235-second input; the final still was separately inspected to128.967 seconds.",
+      "Independent agent reviewed sampled frames, not continuous playback or personally heard audio.",
+      "Small application detail text can require full-screen or pause.",
+      "One phonetically ambiguous phrase at69.72-71.85seconds retains equivalent meaning and has documented evidence."
+    ]
+  },
+  "correction_rounds": 1,
+  "correction_ledger_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/review/corrections.json",
+  "selected_plan_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/plans/song-pitch-v2.json",
+  "selected_plan_hash": "9637416ca3f1c4ce094289ecf708bde56cff3e0ad0efff9692c2ac71dad2f7dd",
+  "local_review_page": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/review/ActionGate-song-pl-2026-10-04-v2/review.html",
+  "local_review_server_started": false,
+  "review_active_pointer_verified": true,
+  "rights_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/music/rights-and-provenance.md",
+  "music_manifest_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/music/music-manifest.json",
+  "public_url": null,
+  "public_url_verification": {
+    "status": "not_published",
+    "anonymous_access_verified": false,
+    "reason": "No verified existing asset-only publishing route. No remote repository and intended project repository unavailable at the read-only hosting check. Full stale-site deployment prohibited by scope.",
+    "evidence_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/evidence/publication-handoff.json"
+  },
+  "publication_handoff_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/PUBLICATION_HANDOFF.md",
+  "youtube": {
+    "status": "metadata_prepared_not_uploaded",
+    "title": "ActionGate: sprawdź ten ruch | HackYeah 2026 | Muzyczny pitch",
+    "description": "Agent czyta dokument, wywołuje model i zapisuje raport. ActionGate sprawdza, kto może wykonać działanie, w jakim celu, na jakich danych i w jakim budżecie.\n\nMuzyczny pitch pokazuje legalny proces przez MCP i lokalny model, zapis pamięci i raportu, kontrolę dostępu, redakcję danych, akceptację konkretnej akcji, polityki oraz budżety. Ujęcia przedstawiają zapisane operacje na syntetycznych danych. Przypadki z kontrolowanym modelem oznaczono w filmie jako Demo / test kontrolowany.\n\nProjekt: ActionGate, AI Control Layer, HackYeah 2026.\nZespół: DEFOZO SOFTWARE HOUSE.\nAutor: Michał Kiełtyka.\n\nAutorski tekst przygotowany dla ActionGate. Muzyka i wokal wygenerowane z ElevenLabs Music. Polski tekst w obrazie; dostępne osobne napisy z angielskim tłumaczeniem.\n\nWariant muzyczny stanowi osobny materiał projektu.",
+    "metadata_path": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/_video_work/song-pitch-2026-10-04/youtube.txt"
+  },
+  "hacktribe_status": "Not edited by this song-video agent; coordinator owns submission and YouTube publication.",
+  "palette_assessment": "Retain charcoal, white and lime: suitable for a control console. Large high-contrast film captions add concrete value. No application color change was made.",
+  "base_variant_preserved": true,
+  "requested_agent_settings": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "ultra",
+    "service_tier": "default",
+    "verification_note": "Model and effort explicitly selected for evidence and fresh final-review subagents. Tool does not expose a service-tier setting or root-model reconfiguration."
+  }
+}

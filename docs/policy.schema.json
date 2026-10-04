@@ -638,9 +638,10 @@
           "type": "string"
         },
         "prompt_version": {
-          "default": "actiongate-guard-v2.8",
+          "default": "actiongate-guard-v2.9",
           "description": "Pinned trusted guard instructions, long-context goal-action review and evidence validation. Earlier versions remain readable in historical signatures but cannot be activated by this deployment.",
           "enum": [
+            "actiongate-guard-v2.9",
             "actiongate-guard-v2.8",
             "actiongate-guard-v2.7",
             "actiongate-guard-v2.6",

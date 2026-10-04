@@ -1,0 +1,523 @@
+{
+  "operation": {
+    "id": "2f98e3cd-6dd0-4d3c-b2ff-b051553626b3",
+    "run_id": "51c98b92-f583-474f-b9a9-4b5555ca0890",
+    "status": "output_blocked",
+    "stage": "output",
+    "decision": "block",
+    "reason": "Result failed semantic inspection",
+    "rule_ids": [
+      "semantic.risk"
+    ],
+    "generation": 14,
+    "settlement_status": "settled",
+    "metadata": {
+      "semantic": {
+        "verdict": "benign",
+        "risk_level": 0,
+        "category": "none",
+        "complete": true,
+        "generation": 14,
+        "model_digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "cache_hit": false,
+        "cache_source": null
+      },
+      "feed_revision": 1,
+      "execution_mode": "live-provider",
+      "owner_fence": 1,
+      "upstream_attempts": 1,
+      "unsettled_attempts": [],
+      "price_revision": "groq-gpt-oss-20b-2026-10-03",
+      "reserved_usd_micros": 9908,
+      "phase_timings_ms": {
+        "dlp_ms": 49.595,
+        "ledger_reserve_ms": 57.867,
+        "guard_ms": 2051.664,
+        "ledger_settle_ms": 43.934,
+        "opa_ms": 6.17,
+        "upstream_ms": 149.563
+      }
+    },
+    "encrypted_result_present": false,
+    "retained_provider_output": null,
+    "retained_request": {
+      "max_tokens": 256,
+      "messages": [
+        {
+          "content": "Summarize this approved public supplier directory in one sentence.",
+          "role": "system"
+        },
+        {
+          "content": "{\"country\":\"Poland\",\"name\":\"Northstar Components\",\"service\":\"Industrial components\",\"status\":\"Reviewed\"}",
+          "role": "user"
+        }
+      ],
+      "model": "cloud-business"
+    }
+  },
+  "run": {
+    "purpose": "supplier_review",
+    "public_messages": [
+      {
+        "role": "system",
+        "content": "Summarize this approved public supplier directory in one sentence."
+      },
+      {
+        "role": "user",
+        "content": "{\"country\":\"Poland\",\"name\":\"Northstar Components\",\"service\":\"Industrial components\",\"status\":\"Reviewed\"}"
+      }
+    ],
+    "tools": [
+      "models.chat"
+    ],
+    "document_ids": [],
+    "allow_publish": false
+  },
+  "policy": {
+    "active_profile": "balanced",
+    "profile": {
+      "pii_action": "redact",
+      "semantic_block_level": 2,
+      "semantic_review_level": 1,
+      "semantic_unknown": "block",
+      "restrict_to": null,
+      "effects": null,
+      "advisory_controls": [],
+      "enforce_identity_labels_budgets": true
+    },
+    "semantic_enabled": true,
+    "semantic": {
+      "model_ref": "local-guard",
+      "prompt_version": "actiongate-guard-v2.9",
+      "required_on": [
+        "untrusted_input",
+        "proposed_action",
+        "tool_output",
+        "memory_write",
+        "model_output"
+      ],
+      "risk_scale": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "context_tokens": 8192,
+      "max_input_tokens_per_call": 4096,
+      "max_output_tokens": 256,
+      "window_tokens": 2048,
+      "overlap_tokens": 256,
+      "max_windows": 8,
+      "deadline_seconds": 180,
+      "incomplete_scan": "block"
+    }
+  },
+  "connector_receipt_count": 0,
+  "connector_receipts": [],
+  "events": [
+    {
+      "id": 27236,
+      "event": "operation.screening",
+      "evidence": {
+        "label": "PUBLIC",
+        "label_version": 1,
+        "tool": "models.chat",
+        "generation": 14
+      }
+    },
+    {
+      "id": 27237,
+      "event": "budget.reserved",
+      "evidence": {
+        "reservation_id": "ec3380dc-4041-47f5-81bc-8a513771027a",
+        "kind": "guard.input",
+        "amounts": {
+          "tokens": 4352,
+          "usd_micros": 0,
+          "slot_millis": 185000
+        }
+      }
+    },
+    {
+      "id": 27238,
+      "event": "budget.settled",
+      "evidence": {
+        "reservation_id": "ec3380dc-4041-47f5-81bc-8a513771027a",
+        "status": "settled",
+        "usage": {
+          "tokens": 1489,
+          "usd_micros": 0,
+          "slot_millis": 1132
+        }
+      }
+    },
+    {
+      "id": 27239,
+      "event": "budget.reserved",
+      "evidence": {
+        "reservation_id": "5505f6ce-bd47-4fc2-81cf-40084b65c601",
+        "kind": "guard.output",
+        "amounts": {
+          "tokens": 4352,
+          "usd_micros": 0,
+          "slot_millis": 185000
+        }
+      }
+    },
+    {
+      "id": 27240,
+      "event": "budget.reserved",
+      "evidence": {
+        "reservation_id": "3f9cc6b1-ba17-4ec7-aa37-6aaf15596eaf",
+        "kind": "execution",
+        "amounts": {
+          "tokens": 131328,
+          "usd_micros": 9908,
+          "slot_millis": 0
+        }
+      }
+    },
+    {
+      "id": 27241,
+      "event": "operation.dispatched",
+      "evidence": {
+        "grant_id": "8a9ee2ee-f535-4284-b78b-2b4104fe50fd",
+        "payload_hash": "ec9e04f867954ce0247078b07e538cdae674f82352ab64ee4677f7422de16dd9",
+        "generation": 14,
+        "label_version": 1,
+        "attempt": 1,
+        "reservation_id": "3f9cc6b1-ba17-4ec7-aa37-6aaf15596eaf"
+      }
+    },
+    {
+      "id": 27242,
+      "event": "budget.settled",
+      "evidence": {
+        "reservation_id": "3f9cc6b1-ba17-4ec7-aa37-6aaf15596eaf",
+        "status": "settled",
+        "usage": {
+          "tokens": 146,
+          "usd_micros": 20,
+          "slot_millis": 0
+        }
+      }
+    },
+    {
+      "id": 27243,
+      "event": "budget.settled",
+      "evidence": {
+        "reservation_id": "5505f6ce-bd47-4fc2-81cf-40084b65c601",
+        "status": "settled",
+        "usage": {
+          "tokens": 1696,
+          "usd_micros": 0,
+          "slot_millis": 880
+        }
+      }
+    },
+    {
+      "id": 27244,
+      "event": "operation.output_blocked",
+      "evidence": {
+        "decision": "block",
+        "rule_ids": [
+          "semantic.risk"
+        ],
+        "stage": "output",
+        "label": "PUBLIC",
+        "generation": 14
+      }
+    }
+  ],
+  "outbox": [
+    {
+      "event_id": 27236,
+      "payload": {
+        "id": 27236,
+        "tenant": "acme",
+        "event": "operation.screening",
+        "run_id": "51c98b92-f583-474f-b9a9-4b5555ca0890",
+        "operation_id": "2f98e3cd-6dd0-4d3c-b2ff-b051553626b3",
+        "evidence": {
+          "label": "PUBLIC",
+          "label_version": 1,
+          "tool": "models.chat",
+          "generation": 14
+        },
+        "previous_hash": "e6cf1e9acb4a179ac25791bb0cdab9f451746a360a55d9964069f1f3b73e111d",
+        "hash": "e765b8a78734582a454ea805fe100ffc4c08f9ff49f7f32b41ea85fb96348c5d",
+        "_outbox_clock": "database"
+      }
+    },
+    {
+      "event_id": 27237,
+      "payload": {
+        "id": 27237,
+        "tenant": "acme",
+        "event": "budget.reserved",
+        "run_id": "51c98b92-f583-474f-b9a9-4b5555ca0890",
+        "operation_id": "2f98e3cd-6dd0-4d3c-b2ff-b051553626b3",
+        "evidence": {
+          "reservation_id": "ec3380dc-4041-47f5-81bc-8a513771027a",
+          "kind": "guard.input",
+          "amounts": {
+            "tokens": 4352,
+            "usd_micros": 0,
+            "slot_millis": 185000
+          }
+        },
+        "previous_hash": "e765b8a78734582a454ea805fe100ffc4c08f9ff49f7f32b41ea85fb96348c5d",
+        "hash": "e9bd4ff60b4f510a0c408bbc67a89fccb0592d865d69d32c2784024853bb4d2f",
+        "_outbox_clock": "database"
+      }
+    },
+    {
+      "event_id": 27238,
+      "payload": {
+        "id": 27238,
+        "tenant": "acme",
+        "event": "budget.settled",
+        "run_id": null,
+        "operation_id": "2f98e3cd-6dd0-4d3c-b2ff-b051553626b3",
+        "evidence": {
+          "reservation_id": "ec3380dc-4041-47f5-81bc-8a513771027a",
+          "status": "settled",
+          "usage": {
+            "tokens": 1489,
+            "usd_micros": 0,
+            "slot_millis": 1132
+          }
+        },
+        "previous_hash": "e9bd4ff60b4f510a0c408bbc67a89fccb0592d865d69d32c2784024853bb4d2f",
+        "hash": "24b4811412e07548c3c857c806aba2d9b7444b8fb3aa892e9fd35a67b276282d",
+        "_outbox_clock": "database"
+      }
+    },
+    {
+      "event_id": 27239,
+      "payload": {
+        "id": 27239,
+        "tenant": "acme",
+        "event": "budget.reserved",
+        "run_id": "51c98b92-f583-474f-b9a9-4b5555ca0890",
+        "operation_id": "2f98e3cd-6dd0-4d3c-b2ff-b051553626b3",
+        "evidence": {
+          "reservation_id": "5505f6ce-bd47-4fc2-81cf-40084b65c601",
+          "kind": "guard.output",
+          "amounts": {
+            "tokens": 4352,
+            "usd_micros": 0,
+            "slot_millis": 185000
+          }
+        },
+        "previous_hash": "24b4811412e07548c3c857c806aba2d9b7444b8fb3aa892e9fd35a67b276282d",
+        "hash": "b991d06678556fc54d584eb5576d13222577a3f915eab9bf19765c9c15f616b2",
+        "_outbox_clock": "database"
+      }
+    },
+    {
+      "event_id": 27240,
+      "payload": {
+        "id": 27240,
+        "tenant": "acme",
+        "event": "budget.reserved",
+        "run_id": "51c98b92-f583-474f-b9a9-4b5555ca0890",
+        "operation_id": "2f98e3cd-6dd0-4d3c-b2ff-b051553626b3",
+        "evidence": {
+          "reservation_id": "3f9cc6b1-ba17-4ec7-aa37-6aaf15596eaf",
+          "kind": "execution",
+          "amounts": {
+            "tokens": 131328,
+            "usd_micros": 9908,
+            "slot_millis": 0
+          }
+        },
+        "previous_hash": "b991d06678556fc54d584eb5576d13222577a3f915eab9bf19765c9c15f616b2",
+        "hash": "7e34650267468c441caf7ef0bda9a471871899eaa5c03b44bff66dee3ec5a947",
+        "_outbox_clock": "database"
+      }
+    },
+    {
+      "event_id": 27241,
+      "payload": {
+        "id": 27241,
+        "tenant": "acme",
+        "event": "operation.dispatched",
+        "run_id": "51c98b92-f583-474f-b9a9-4b5555ca0890",
+        "operation_id": "2f98e3cd-6dd0-4d3c-b2ff-b051553626b3",
+        "evidence": {
+          "grant_id": "8a9ee2ee-f535-4284-b78b-2b4104fe50fd",
+          "payload_hash": "ec9e04f867954ce0247078b07e538cdae674f82352ab64ee4677f7422de16dd9",
+          "generation": 14,
+          "label_version": 1,
+          "attempt": 1,
+          "reservation_id": "3f9cc6b1-ba17-4ec7-aa37-6aaf15596eaf"
+        },
+        "previous_hash": "7e34650267468c441caf7ef0bda9a471871899eaa5c03b44bff66dee3ec5a947",
+        "hash": "89249d9bd4d727c56fd87319ba9e04fb183dd045ea73c9e4d586ffac1abd3b45",
+        "_outbox_clock": "database"
+      }
+    },
+    {
+      "event_id": 27242,
+      "payload": {
+        "id": 27242,
+        "tenant": "acme",
+        "event": "budget.settled",
+        "run_id": null,
+        "operation_id": "2f98e3cd-6dd0-4d3c-b2ff-b051553626b3",
+        "evidence": {
+          "reservation_id": "3f9cc6b1-ba17-4ec7-aa37-6aaf15596eaf",
+          "status": "settled",
+          "usage": {
+            "tokens": 146,
+            "usd_micros": 20,
+            "slot_millis": 0
+          }
+        },
+        "previous_hash": "89249d9bd4d727c56fd87319ba9e04fb183dd045ea73c9e4d586ffac1abd3b45",
+        "hash": "cfd69271a2f3fe01cd3a126ea7bac0d36a708718db4dc7477a9e1b72e9735968",
+        "_outbox_clock": "database"
+      }
+    },
+    {
+      "event_id": 27243,
+      "payload": {
+        "id": 27243,
+        "tenant": "acme",
+        "event": "budget.settled",
+        "run_id": null,
+        "operation_id": "2f98e3cd-6dd0-4d3c-b2ff-b051553626b3",
+        "evidence": {
+          "reservation_id": "5505f6ce-bd47-4fc2-81cf-40084b65c601",
+          "status": "settled",
+          "usage": {
+            "tokens": 1696,
+            "usd_micros": 0,
+            "slot_millis": 880
+          }
+        },
+        "previous_hash": "cfd69271a2f3fe01cd3a126ea7bac0d36a708718db4dc7477a9e1b72e9735968",
+        "hash": "a7fedf1c5cf36b264c44bdb48248258066f8c806a309760ad05602ad69242c8f",
+        "_outbox_clock": "database"
+      }
+    },
+    {
+      "event_id": 27244,
+      "payload": {
+        "id": 27244,
+        "tenant": "acme",
+        "event": "operation.output_blocked",
+        "run_id": "51c98b92-f583-474f-b9a9-4b5555ca0890",
+        "operation_id": "2f98e3cd-6dd0-4d3c-b2ff-b051553626b3",
+        "evidence": {
+          "decision": "block",
+          "rule_ids": [
+            "semantic.risk"
+          ],
+          "stage": "output",
+          "label": "PUBLIC",
+          "generation": 14
+        },
+        "previous_hash": "a7fedf1c5cf36b264c44bdb48248258066f8c806a309760ad05602ad69242c8f",
+        "hash": "e88a5bc99c1bd2291625126a07d68a75e233afd3683586b1409bb609cac956b8",
+        "_outbox_clock": "database"
+      }
+    }
+  ],
+  "reservations": [
+    {
+      "kind": "execution",
+      "status": "settled",
+      "usage": {
+        "queue_time": 0.017946053,
+        "prompt_tokens": 107,
+        "prompt_time": 0.005175559,
+        "completion_tokens": 39,
+        "completion_time": 0.041306527,
+        "total_tokens": 146,
+        "total_time": 0.046482086,
+        "completion_tokens_details": {
+          "reasoning_tokens": 6
+        },
+        "usd_micros": 20,
+        "usage_unknown": false,
+        "contract_violation": false
+      }
+    },
+    {
+      "kind": "guard.input",
+      "status": "settled",
+      "usage": {
+        "prompt_tokens": 1453,
+        "completion_tokens": 36,
+        "total_tokens": 1489,
+        "inference_slot_seconds": 1.131182,
+        "cpu_seconds": 1.3700000000000045,
+        "usage_unknown": false
+      }
+    },
+    {
+      "kind": "guard.output",
+      "status": "settled",
+      "usage": {
+        "prompt_tokens": 1657,
+        "completion_tokens": 39,
+        "total_tokens": 1696,
+        "inference_slot_seconds": 0.879602,
+        "cpu_seconds": 1.1100000000001273,
+        "usage_unknown": false
+      }
+    }
+  ],
+  "current_generation": 15,
+  "mode": "actual-read-only-post-smoke-diagnosis",
+  "checked_at": "2026-10-04T04:55:18.411476+00:00",
+  "inference_started": false,
+  "database_mutations": false,
+  "analysis": {
+    "mechanical_trigger": {
+      "observed_rule": "semantic.risk",
+      "observed_profile_threshold": 2,
+      "stage": "output",
+      "derived_guard_state": "Given the unchanged signed OPA rules and strict verdict schema, the lone semantic.risk rule implies a complete suspicious judgment at risk 2 or 3. The exact numeric level and category were not persisted.",
+      "derivation_not_raw_verdict": true
+    },
+    "retention": {
+      "operation_result_present": false,
+      "connector_receipt_count": 0,
+      "audit_and_outbox_contain_output_reason_or_evidence": false,
+      "provider_connector_persistence": "None; connector returned a transient response and the temporary container was removed after settlement.",
+      "worker_status_persistence": "Recent inference records contain request/generation/epoch/outcome/usage metadata only, no model message."
+    },
+    "semantic_cache": {
+      "implementation_can_store_output_reason_evidence": true,
+      "scope": "Same gateway process only; complete benign or suspicious judgment, HMAC key over exact output, trusted purpose/effect, tenant and full artifact/generation constraints. cache_source records operation_id/generation. No cache API or database storage exists.",
+      "ttl_seconds": 120,
+      "diagnosed_at_utc": "2026-10-04T04:56:20Z",
+      "original_evaluation_approximately_utc": "2026-10-04T04:49:07Z",
+      "logical_ttl_expired": true,
+      "original_process_memory_inspected": false,
+      "limitation": "Physical memory was not dumped or attached to. A separate docker exec Python process would create a different empty cache and cannot recover the original process entry."
+    },
+    "smoke_contract": {
+      "request_matches_trusted_public_grant": true,
+      "expected_legal_content": "One faithful sentence summarizing the approved public supplier name, country, service and Reviewed status. No fabricated assessment, instruction override, disclosure, tools or external publication is requested.",
+      "request_is_minimal_and_authorized": true,
+      "expected_200_scope": "A successful end-to-end smoke requires this real provider answer to pass current output controls and settle. A benign request alone does not prove that every generated answer must be allowed.",
+      "negative_altered_public_context_executed": false,
+      "negative_not_run_reason": "Producer stops before that assertion after positive completion fails."
+    },
+    "conclusion": "End-to-end smoke remains failed. Known paid usage and intentional withholding are established. No retained output or guard reason/evidence identifies the semantic trigger text, so a false positive, harmful provider answer or specific model defect cannot be determined from this record.",
+    "actions": "Read-only database/source inspection only. No provider retry, local inference, policy change, source change or memory dump."
+  },
+  "source_sha256": {
+    "backend/actiongate/broker.py": "b9d5dacc69bd79cd449e78eca257dd32a9d87ae7d85e2128fe94b0f64b4eb77e",
+    "backend/actiongate/semantic.py": "0e71fa69e130d2c0767f994ac500ca8262e412cc42b73b1258d0c53bf7a1a3e1",
+    "backend/actiongate/semantic_cache.py": "857cdbf3f5813265f4d0290540169ab400d53997fd247809a29872006a851d40",
+    "backend/actiongate/cloud.py": "5e6d67b55fd5fe8ef0e61f91c4c009a19ebba127bbbd5372aaab3371c1cd8e95",
+    "runtime/worker.py": "b006d2bef913c77d3dabef09c982c06f56d155c4c881d8d05dfad64fac7ca29c",
+    "policy/control.rego": "092fdaab5707781a0398de75bf94eb7458d2ba12465f93b3bc4d94bf1f399bc8",
+    "scripts/live_gateway.py": "30bf9055c3839702099e71b815d9d0a653e8b1c616a0ab361844664444ea9745"
+  }
+}

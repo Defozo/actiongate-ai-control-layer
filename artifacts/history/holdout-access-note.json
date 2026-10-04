@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-10-04T00:46:12.101162+00:00",
+  "event": "accidental search matches",
+  "scope": "Three short matching lines from the frozen v2 corpus were returned by a broad test-name search after the v2.9 source had been frozen. No labels or outcomes were inspected.",
+  "used_for_prompt_corpus_or_classification_changes": false,
+  "model_or_prompt_changed_on_this_basis": false,
+  "raw_content_retained": false,
+  "prevention": "Subsequent test searches are restricted to test_*.py."
+}

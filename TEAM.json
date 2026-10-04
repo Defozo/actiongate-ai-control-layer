@@ -3,5 +3,9 @@
   "members": [
     "Michał Kiełtyka"
   ],
-  "human_member_count": 1
+  "human_member_count": 1,
+  "confirmed_by": "user",
+  "table_number": "Nie dotyczy",
+  "table_number_source": "Użytkownik potwierdził brak przydzielonego stolika i polecił uzupełnić wymagane pole. Nie pytaj ponownie; wartość została już przyjęta przez HackTribe w innych zgłoszeniach.",
+  "confirmed_at": "2026-10-03T13:25:07.108700+00:00"
 }

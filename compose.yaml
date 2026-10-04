@@ -80,6 +80,7 @@ x-worker: &worker
 services:
   postgres:
     image: postgres@sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24
+    command: [postgres, -c, max_connections=200]
     environment:
       POSTGRES_DB: actiongate
       POSTGRES_USER: actiongate_owner
@@ -93,8 +94,8 @@ services:
       interval: 5s
       timeout: 3s
       retries: 20
-    mem_limit: 1g
-    pids_limit: 128
+    mem_limit: 2g
+    pids_limit: 256
 
   migrate:
     image: actiongate-gateway:0.1.0
@@ -180,6 +181,7 @@ services:
       DATABASE_URL: postgresql+psycopg://actiongate:${ACTIONGATE_DB_PASSWORD}@postgres:5432/actiongate
       OPA_URL: http://opa-a:8181
       REPLICA_ID: gateway-a
+      UVICORN_TIMEOUT_KEEP_ALIVE: '30'
   gateway-b:
     <<: *gateway
     volumes:
@@ -192,6 +194,7 @@ services:
       DATABASE_URL: postgresql+psycopg://actiongate:${ACTIONGATE_DB_PASSWORD}@postgres:5432/actiongate
       OPA_URL: http://opa-b:8181
       REPLICA_ID: gateway-b
+      UVICORN_TIMEOUT_KEEP_ALIVE: '30'
 
   demo-tools:
     image: actiongate-gateway:0.1.0

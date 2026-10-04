@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-10-04T04:08:19.140805+00:00",
+  "scope": "Completed full144/2928 measurement. Required acceptance rejects its single transport_error; the failure remains unchanged. Subsequent bounded diagnostic does not replace the required matrix.",
+  "transport_failure": {
+    "count": 1,
+    "type": "ReadError",
+    "root_without_operation": "14a53f1a-b070-4297-beb0-b8b1edf15182",
+    "no_effect_or_reservation": true,
+    "original_tcp_cause": "not established",
+    "gateway_restarts_and_oom": 0
+  },
+  "before_dispatch_failures": {
+    "count": 417,
+    "type": "HTTPStatusError during output-ticket reservation",
+    "effect_count": 0,
+    "guard_output_reservation": "released"
+  },
+  "after_legal_effect_output_blocks": {
+    "count": 5,
+    "output_inference_usage": "known zero; inspection did not start",
+    "result_released": false,
+    "effect_scope": "Previously admitted local reports.save writes, each exactly once. These are distinct from the417 pre-dispatch ticket failures."
+  },
+  "transport_diagnostic": {
+    "cohorts": 6,
+    "requests": 300,
+    "completed": 300,
+    "transport_errors": 0,
+    "native_trace_without_new_connection": 185,
+    "maximum_observed_client_idle_seconds": 4.9846718439948745,
+    "source_stable": true,
+    "original_configuration_restored": true,
+    "restored_generation": 8,
+    "limitations": [
+      "Connection object identity can be reused after garbage collection; object ID alone is not proof of reuse. Native connect_tcp events and client ports must corroborate it.",
+      "The diagnostic did not reproduce the original ReadError and does not establish its cause.",
+      "An observed idle age near the equal5s client/server limits supports separating those limits as a resilience measure; it is not a retrospective TCP diagnosis."
+    ]
+  }
+}

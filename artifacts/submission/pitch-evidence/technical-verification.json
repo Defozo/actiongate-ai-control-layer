@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "checked_at": "2026-10-04T05:25:10.893385+00:00",
+  "mp4_path": "docs/.build/_video_work/render/english-pitch-v2/ActionGate-pitch.mp4",
+  "source_render_path": "docs/.build/_video_work/render/english-pitch-v2/ActionGate-pitch.mp4",
+  "mp4_sha256": "43d6626bc6fb3809b0c363f3ca8d83df36dba712b4078faba113aa22ee933cb4",
+  "duration_seconds": 154.0,
+  "checks": {
+    "one_av_program": true,
+    "delivery_format": true,
+    "expected_duration": true,
+    "expected_resolution": true,
+    "expected_decoded_frames": true,
+    "av_delta_within_one_frame": true,
+    "zero_clipped_decoded_samples": true,
+    "aac_stream_preserved": true,
+    "decoded_audio_matches_reviewed": true,
+    "actual_acoustic_input_unchanged": true,
+    "acoustic_review_passed": true,
+    "movie_unchanged_during_qc": true
+  },
+  "scope": "Technical QC only, final visual review pending",
+  "audio": {
+    "source_m4a_path": "docs/.build/_video_work/audio/delivery/pitch-v1/mix.m4a",
+    "source_m4a_sha256": "6d6ed96361068d33e711e55d7617cf519bd56f28f9c81017c3371bd37b49b326",
+    "source_aac_payload_sha256": "93bb54b9c0abd29e929b52271d14545b991ae2a5488f568bcd5b545b08bca906",
+    "muxed_aac_payload_sha256": "93bb54b9c0abd29e929b52271d14545b991ae2a5488f568bcd5b545b08bca906",
+    "stream_copy_verified": true,
+    "decoded_audio_matches_reviewed": true,
+    "decoded_pcm_sha256": "6123b6fad9198c74085e259e1f7948ac0fead81b7cf6f77c98d62b3fec3b3cb0",
+    "sample_rate": 24000,
+    "sample_count": 3696128
+  },
+  "perceptual_review": {
+    "method": "full_actual_audio_multimodal_review",
+    "reviewed_audio_sha256": "38fec5df113d031a622fd8d50fc1fcdc52529f3325bdbf133b0af37f70e311c6",
+    "coverage_seconds": 154.5,
+    "intelligibility": "clear",
+    "music_balance": "quiet_under_speech",
+    "ending_complete": true,
+    "observed_audio_defects": [],
+    "assessment_sha256": "07ca05cfd9923929064ef1d34a4916f6c5296aa086af318caf61d5102c0cf8ad",
+    "model": "gemini-3.8-flash",
+    "human_listening_claimed": false,
+    "scope": "Complete actual decoded AAC, without the script in the review request. Exact decoded samples are compared with the final film. Visual timing has its separate review."
+  },
+  "qc": {
+    "full_decode_passed": true,
+    "video_frames": 4620,
+    "expected_video_frames": 4620,
+    "audio_video_delta_seconds": 0.0,
+    "clipped_samples": 0
+  },
+  "visual_review": {
+    "status": "pending",
+    "reviewed_entire_timeline": false,
+    "reviewed_timestamps_seconds": [],
+    "findings": [],
+    "reviewer": ""
+  }
+}
