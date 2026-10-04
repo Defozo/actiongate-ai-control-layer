@@ -1,0 +1,152 @@
+{
+  "status": "passed",
+  "url": "https://743b-83-10-76-158.ngrok-free.app",
+  "started_at": "2026-10-04T07:39:50.573Z",
+  "fresh_anonymous_context": true,
+  "checks": {
+    "anonymous_document": true,
+    "visitor_heading": true,
+    "public_readiness": true,
+    "route_/operator": true,
+    "route_/api/session": true,
+    "route_/public-api/admin": true,
+    "private_admin_session_denied": true,
+    "missing_origin_denied": true,
+    "wrong_origin_denied": true,
+    "workflow_without_session_denied": true,
+    "forced_analyst_identity": true,
+    "guest_cookie_isolated": true,
+    "keyboard_skip_link": true,
+    "mobile_no_horizontal_overflow": true,
+    "narrow_view_no_overflow": true,
+    "legal_http": true,
+    "legal_tenant": true,
+    "real_supplier_workflow": true,
+    "cross_tenant_http": true,
+    "cross_tenant_tenant": true,
+    "cross_tenant_blocked": true,
+    "injection_http": true,
+    "injection_tenant": true,
+    "injection_blocked": true,
+    "pii_http": true,
+    "pii_tenant": true,
+    "real_pii_redaction": true,
+    "no_page_errors": true
+  },
+  "workflows": [
+    {
+      "scenario": "legal",
+      "http_status": 200,
+      "seconds": 76.3,
+      "status": "completed",
+      "run_id": "538e19bb-0128-4992-929a-3ab880538a5a",
+      "operations": [
+        {
+          "id": "3ddf31a4-c89c-4ca7-9675-c97713d6e8a0",
+          "tool": "documents.read",
+          "status": "completed",
+          "decision": "allow",
+          "tenant": "synthetic_test_tenant",
+          "rule_ids": [],
+          "policy_generation": 15
+        },
+        {
+          "id": "3b9c584c-ccd1-4d97-962d-27a106f67113",
+          "tool": "models.chat",
+          "status": "completed",
+          "decision": "allow",
+          "tenant": "synthetic_test_tenant",
+          "rule_ids": [],
+          "policy_generation": 15
+        },
+        {
+          "id": "06a9b76c-cf01-449a-bf26-46522083b86e",
+          "tool": "memory.write",
+          "status": "completed",
+          "decision": "allow",
+          "tenant": "synthetic_test_tenant",
+          "rule_ids": [],
+          "policy_generation": 15
+        },
+        {
+          "id": "dc170a93-bf7c-4b90-b8ef-4694ccc54f46",
+          "tool": "reports.save",
+          "status": "completed",
+          "decision": "allow",
+          "tenant": "synthetic_test_tenant",
+          "rule_ids": [],
+          "policy_generation": 15
+        }
+      ]
+    },
+    {
+      "scenario": "cross_tenant",
+      "http_status": 200,
+      "seconds": 0.4,
+      "status": "blocked",
+      "run_id": "5c73f4f7-f766-4471-9dec-ad952d9ac584",
+      "operations": [
+        {
+          "id": "99be1454-10de-4f3d-93b7-940b2b04660b",
+          "tool": "documents.read",
+          "status": "blocked",
+          "decision": "block",
+          "tenant": "synthetic_test_tenant",
+          "rule_ids": [
+            "acl.document"
+          ],
+          "policy_generation": 15
+        }
+      ]
+    },
+    {
+      "scenario": "injection",
+      "http_status": 200,
+      "seconds": 2.9,
+      "status": "blocked",
+      "run_id": "b5e96d31-0dd6-426e-8f36-ad0a8b022ed4",
+      "operations": [
+        {
+          "id": "565cafa4-9eda-4608-9aa7-2362d5760374",
+          "tool": "reports.save",
+          "status": "blocked",
+          "decision": "block",
+          "tenant": "synthetic_test_tenant",
+          "rule_ids": [
+            "semantic.review",
+            "semantic.risk"
+          ],
+          "policy_generation": 15
+        }
+      ]
+    },
+    {
+      "scenario": "pii",
+      "http_status": 200,
+      "seconds": 5.9,
+      "status": "completed",
+      "run_id": "084fe599-fb94-4383-aa63-6ef5a9ecd96b",
+      "operations": [
+        {
+          "id": "b5951ef5-8a46-4d1e-857b-5e1b482b3734",
+          "tool": "reports.save",
+          "status": "completed",
+          "decision": "redact",
+          "tenant": "synthetic_test_tenant",
+          "rule_ids": [
+            "pii.email.presidio"
+          ],
+          "policy_generation": 15
+        }
+      ]
+    }
+  ],
+  "console_errors": [],
+  "public_identity": {
+    "role": "analyst",
+    "tenant": "synthetic_test_tenant"
+  },
+  "finished_at": "2026-10-04T07:41:20.524Z",
+  "verification_script_sha256": "3c3fe2aa757b637c92fb695dba194ebb30ed9372be24b27f90abef1e05fc7942",
+  "verification_script_note": "Recorded with the same test logic and fixed deployment/output paths; verify_visitor.cjs accepts the public origin through the environment."
+}
