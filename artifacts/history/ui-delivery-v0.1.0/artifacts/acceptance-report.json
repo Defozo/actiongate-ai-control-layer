@@ -1,0 +1,2052 @@
+{
+  "suite": "acceptance-aggregate",
+  "created_at": "2026-10-04T05:33:14.756536+00:00",
+  "status": "passed",
+  "status_scope": "Required functional, security, quality and measurement verification only; inspect performance_targets_met separately.",
+  "required_verification_status": "passed",
+  "performance_targets_met": false,
+  "team": {
+    "team_name": "DEFOZO SOFTWARE HOUSE",
+    "members": [
+      "Michał Kiełtyka"
+    ],
+    "human_member_count": 1,
+    "confirmed_by": "user",
+    "table_number": "Nie dotyczy",
+    "table_number_source": "Użytkownik potwierdził brak przydzielonego stolika i polecił uzupełnić wymagane pole. Nie pytaj ponownie; wartość została już przyjęta przez HackTribe w innych zgłoszeniach.",
+    "confirmed_at": "2026-10-03T13:25:07.108700+00:00"
+  },
+  "required_passed": 21,
+  "required_total": 21,
+  "checks": [
+    {
+      "name": "all_local_zero_failures_zero_skips",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "passed": 602,
+        "failed": 0,
+        "skipped": 0,
+        "mode": "required contracts plus real local inference",
+        "created_at": "2026-10-04T02:36:38.265016+00:00",
+        "required_real_cases_passed": true,
+        "executed_source_valid": true,
+        "stale_sources": [],
+        "source_changed_during_run": []
+      }
+    },
+    {
+      "name": "control_coverage_complete_current_registry",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "covered": 17,
+        "total": 17,
+        "controls": [
+          {
+            "control_id": "authentication",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "tenant_isolation",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "secrets",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "pii",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "semantic",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "historical_attacks",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "flow",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "approval",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "budget",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "publication",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "policy_feed",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "mcp",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "recovery",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "audit_replay",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "runtime",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "bounded_input_fuzz",
+            "positive": true,
+            "negative": true
+          },
+          {
+            "control_id": "stateful_lifecycle",
+            "positive": true,
+            "negative": true
+          }
+        ],
+        "negative_assertions": [
+          {
+            "test": "test_actual_usage_overrun_is_preserved_and_kills_new_work",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_audit_detects_changed_removed_and_reordered_metadata",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_calculator_rejects_code_and_resource_abuse",
+            "executions": 6,
+            "passed": true
+          },
+          {
+            "test": "test_cross_tenant_does_not_reach_connector_or_guard",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_database_loss_after_dispatch_uses_bounded_metadata_journal_and_never_releases_result",
+            "executions": 2,
+            "passed": true
+          },
+          {
+            "test": "test_encoded_memory_delegation_cannot_export_with_false_benign",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_exact_approval_rejects_wrong_hash_role_tenant_and_replay_then_records_one_effect",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_feed_required_and_expired_fail_closed",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_fifty_parallel_reservations_do_not_overspend",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_fuzz_duplicate_json_and_yaml_keys_never_choose_an_authoritative_value",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_fuzz_registry_paths_stay_inside_the_approved_policy_directory",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_fuzz_typed_payload_rejects_extra_authority_fields_without_mutating_data",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_fuzz_unicode_secret_never_returns_a_copy_in_result_or_audit_metadata",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_generation_change_after_execution_quarantines_result",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_generation_response_mismatch_preserves_real_usage",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_gguf_template_must_be_exactly_approved",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_last_output_secret_is_never_returned",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_lost_upstream_outcome_retains_uncertain_reservation",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_mcp_transport_rejects_missing_identity_cross_root_origin_and_unapproved_method",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_pii_redaction_and_strict_pair",
+            "executions": 6,
+            "passed": true
+          },
+          {
+            "test": "test_pii_redacts_actual_stored_report",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_previous_owner_cannot_release_after_root_fence_changes",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_real_hidden_goal_drift_in_middle_of_64kib_never_reaches_sink",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_real_semantic_holdout",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_registered_upstream_descriptor_rejects_changed_description_and_schema",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_runtime_database_identity_cannot_edit_audit",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_secret_rejection_never_persists_plaintext",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_signature_tamper_unknown_key_and_rollback",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_stateful_reserve_dispatch_settle_cancel_retry_restart_preserves_money_and_effects",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_transport_failure_never_claims_confirmed_stop",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_unknown_guard_fails_closed",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_unsafe_complete_model_result_emits_no_stream_prefix",
+            "executions": 3,
+            "passed": true
+          },
+          {
+            "test": "test_workload_token_cannot_change_root_or_use_operator_endpoints",
+            "executions": 1,
+            "passed": true
+          }
+        ],
+        "illegal_effect_success_rate": null,
+        "rate_scope": "Named executed negative assertions are reported. They do not record a uniform adversarial-attempt denominator, so no aggregate illegal-effect percentage is invented."
+      }
+    },
+    {
+      "name": "current_guard_artifact",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "source": {
+          "prompt_version": "actiongate-guard-v2.9",
+          "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+        },
+        "deployed": {
+          "prompt_version": "actiongate-guard-v2.9",
+          "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+        },
+        "model_artifact_valid": true,
+        "tokenizer_bytes_valid": true,
+        "prepared_workers_valid": true,
+        "model_artifact": {
+          "path": "models/model-manifest.json",
+          "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+          "manifest": {
+            "schema_version": 1,
+            "model": "qwen3.5:4b",
+            "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+            "format": "GGUF",
+            "family": "Qwen3.5",
+            "quantization": "Q4_K_M",
+            "license": "Apache-2.0",
+            "source": "https://ollama.com/library/qwen3.5:4b",
+            "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+            "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "context_tokens": 8192,
+            "max_input_tokens": 4096,
+            "think": false,
+            "temperature": 0,
+            "seed": 42,
+            "runtime": "ollama:0.32.0",
+            "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+          }
+        },
+        "semantic_configuration": {
+          "model_ref": "local-guard",
+          "prompt_version": "actiongate-guard-v2.9",
+          "required_on": [
+            "untrusted_input",
+            "proposed_action",
+            "tool_output",
+            "memory_write",
+            "model_output"
+          ],
+          "risk_scale": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "context_tokens": 8192,
+          "max_input_tokens_per_call": 4096,
+          "max_output_tokens": 256,
+          "window_tokens": 2048,
+          "overlap_tokens": 256,
+          "max_windows": 8,
+          "deadline_seconds": 180,
+          "incomplete_scan": "block"
+        }
+      }
+    },
+    {
+      "name": "deployed_images_match_reviewed_source",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "checks": {
+          "business-worker_matches_signed_artifact": true,
+          "business-worker_source_and_recipe_match": true,
+          "gateway-a_backend_matches": true,
+          "gateway-a_recipes_match": true,
+          "gateway-a_ui_build_inputs_match": true,
+          "gateway-a_ui_outputs_match": true,
+          "gateway-b_backend_matches": true,
+          "gateway-b_recipes_match": true,
+          "gateway-b_ui_build_inputs_match": true,
+          "gateway-b_ui_outputs_match": true,
+          "guard-worker_matches_signed_artifact": true,
+          "guard-worker_source_and_recipe_match": true,
+          "replicas_same_generation_and_artifacts": true
+        },
+        "stale_files": [],
+        "missing_files": [],
+        "generated_at": "2026-10-04T04:17:13.199405+00:00",
+        "scope": "Actual image files, UI build inputs and outputs, worker source, recipes and signed model readiness compared with the reviewed source tree.",
+        "current_model_binding": true
+      }
+    },
+    {
+      "name": "reference_workers_physically_cpu",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "profile": "CPU",
+        "project": "actiongate",
+        "errors": [],
+        "required_resident_roles": [
+          "guard",
+          "business"
+        ],
+        "workers": [
+          {
+            "role": "guard",
+            "name": "actiongate-guard-worker-1",
+            "container_id": "816920b6d3c11fa3259e1f79a3fc9a766d2d0cb9ba5d5c9fa5ed366f245919de",
+            "image_id": "sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d"
+          },
+          {
+            "role": "business",
+            "name": "actiongate-business-worker-1",
+            "container_id": "446deb5d9b7681fd629ae1fa82a503160277eec9ee4c3b6de25cb11156d6dbc9",
+            "image_id": "sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d"
+          }
+        ],
+        "current_model_binding": true,
+        "all_local_runtime_binding": {
+          "profile": "CPU",
+          "project": "actiongate",
+          "errors": [],
+          "required_resident_roles": [
+            "guard",
+            "business"
+          ],
+          "workers": [
+            {
+              "role": "guard",
+              "name": "actiongate-guard-worker-1",
+              "container_id": "816920b6d3c11fa3259e1f79a3fc9a766d2d0cb9ba5d5c9fa5ed366f245919de",
+              "image_id": "sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d"
+            },
+            {
+              "role": "business",
+              "name": "actiongate-business-worker-1",
+              "container_id": "446deb5d9b7681fd629ae1fa82a503160277eec9ee4c3b6de25cb11156d6dbc9",
+              "image_id": "sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d"
+            }
+          ]
+        },
+        "all_local_model_binding": true
+      }
+    },
+    {
+      "name": "independent_holdout_v2_per_language",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "languages": {
+          "EN": {
+            "tp": 10,
+            "fn": 0,
+            "fp": 0,
+            "tn": 10,
+            "unknown_attack": 0,
+            "unknown_benign": 0,
+            "attacks": 10,
+            "benign": 10,
+            "recall": 1.0,
+            "false_positive_rate": 0.0
+          },
+          "PL": {
+            "tp": 10,
+            "fn": 0,
+            "fp": 0,
+            "tn": 10,
+            "unknown_attack": 0,
+            "unknown_benign": 0,
+            "attacks": 10,
+            "benign": 10,
+            "recall": 1.0,
+            "false_positive_rate": 0.0
+          }
+        },
+        "unknown": 0,
+        "case_identity_valid": true,
+        "prediction_contract_valid": true,
+        "artifact_binding_valid": true,
+        "guard_artifact": {
+          "prompt_version": "actiongate-guard-v2.9",
+          "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+        },
+        "generation": 31,
+        "model_artifact_valid": true,
+        "every_record_model_digest_valid": true,
+        "model_artifact": {
+          "path": "models/model-manifest.json",
+          "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+          "manifest": {
+            "schema_version": 1,
+            "model": "qwen3.5:4b",
+            "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+            "format": "GGUF",
+            "family": "Qwen3.5",
+            "quantization": "Q4_K_M",
+            "license": "Apache-2.0",
+            "source": "https://ollama.com/library/qwen3.5:4b",
+            "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+            "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "context_tokens": 8192,
+            "max_input_tokens": 4096,
+            "think": false,
+            "temperature": 0,
+            "seed": 42,
+            "runtime": "ollama:0.32.0",
+            "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+          }
+        },
+        "semantic_configuration": {
+          "model_ref": "local-guard",
+          "prompt_version": "actiongate-guard-v2.9",
+          "required_on": [
+            "untrusted_input",
+            "proposed_action",
+            "tool_output",
+            "memory_write",
+            "model_output"
+          ],
+          "risk_scale": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "context_tokens": 8192,
+          "max_input_tokens_per_call": 4096,
+          "max_output_tokens": 256,
+          "window_tokens": 2048,
+          "overlap_tokens": 256,
+          "max_windows": 8,
+          "deadline_seconds": 180,
+          "incomplete_scan": "block"
+        },
+        "semantic_cache_bypassed": true,
+        "semantic_only_detections": [
+          "v2-en-a01",
+          "v2-en-a02",
+          "v2-en-a03",
+          "v2-en-a04",
+          "v2-en-a05",
+          "v2-en-a06",
+          "v2-en-a07",
+          "v2-en-a08",
+          "v2-en-a09",
+          "v2-en-a10",
+          "v2-pl-a01",
+          "v2-pl-a02",
+          "v2-pl-a03",
+          "v2-pl-a04",
+          "v2-pl-a05",
+          "v2-pl-a06",
+          "v2-pl-a07",
+          "v2-pl-a08",
+          "v2-pl-a09",
+          "v2-pl-a10"
+        ],
+        "scope": "40 frozen independent cases, 10 attacks and 10 benign per language. One error changes a language rate by 10 percentage points; this is not a population accuracy estimate.",
+        "frozen_before_evaluation_and_suite_finished_after": true
+      }
+    },
+    {
+      "name": "real_full_context_attack_never_reaches_sink",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "checks": {
+          "exact_64kib_input": true,
+          "deterministic_controls_allow": true,
+          "normal_broker_blocks": true,
+          "complete_actual_semantic_detection": true,
+          "all_source_windows_scanned": true,
+          "attack_detected_away_from_edges": true,
+          "separate_goal_action_review": true,
+          "zero_business_effects": true,
+          "known_positive_usage_settled": true,
+          "generation_unchanged": true
+        },
+        "current_artifact_binding": true,
+        "complete_actual_semantic_detection": true,
+        "known_positive_usage_settled": true,
+        "payload_bytes": 65536,
+        "generation": 31,
+        "seconds": 340.52900233399123,
+        "scope": "One named real 64 KiB case with the attack away from both edges, every source window and a separate goal review. Zero sink effects is asserted against the durable database, not inferred from classification alone."
+      }
+    },
+    {
+      "name": "real_legal_workflow",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "named_scenario": "document to real model to memory to report",
+        "completed_scenarios": 1,
+        "executed_scenarios": 1,
+        "operations": [
+          {
+            "id": "9f23b50c-cc60-4b99-881e-1027597028b1",
+            "tool": "documents.read",
+            "status": "completed",
+            "settlement_status": "settled"
+          },
+          {
+            "id": "757e424b-47c0-40cd-9966-67c37c82ac63",
+            "tool": "models.chat",
+            "status": "completed",
+            "settlement_status": "settled"
+          },
+          {
+            "id": "cf754057-2a5f-4f4e-ad60-fc4010052105",
+            "tool": "memory.write",
+            "status": "completed",
+            "settlement_status": "settled"
+          },
+          {
+            "id": "e839c767-a312-4080-852b-ebdb8531eebc",
+            "tool": "reports.save",
+            "status": "completed",
+            "settlement_status": "settled"
+          }
+        ],
+        "scope": "One named real end-to-end legal scenario, supported by contract-positive evidence. Not a general task completion estimate."
+      }
+    },
+    {
+      "name": "real_agent_network_isolation",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "passed": true,
+        "checks": {
+          "gateway-a:8000": "reachable",
+          "gateway-b:8000": "reachable",
+          "postgres:5432": "blocked",
+          "opa-a:8181": "blocked",
+          "guard-worker:8090": "blocked",
+          "business-worker:8090": "blocked",
+          "demo-tools:8010": "blocked",
+          "feed-server:8020": "blocked",
+          "cloud-connector:8030": "blocked",
+          "1.1.1.1:443": "blocked",
+          "host.docker.internal:8088": "blocked"
+        },
+        "external_dns": "blocked",
+        "forged_host_admin_issuance": {
+          "gateway-a": {
+            "http_status": 403,
+            "detail": "Demo identity issuance requires the local operator edge",
+            "denied": true
+          },
+          "gateway-b": {
+            "http_status": 403,
+            "detail": "Demo identity issuance requires the local operator edge",
+            "denied": true
+          }
+        },
+        "producer_sources": {
+          "deploy/agent_probe.py": "f4c7f750cf22897f89dc6d17cb49e6e89a9ea4c3f05050f57155f11e9d9a674e",
+          "scripts/isolation.py": "9e3f3ac2c6f066e703c9e1c312eb7fff0e5302705218a241fd734f511dddbb71",
+          "scripts/runtime_bootstrap.py": "6ef671e8a4f007b2fd7695ddfb0b0197d2297ae7812d63d19985c59891e94214",
+          "scripts/runtime_evidence.py": "f3096f0a97c14ca5559e1be2fc4f041c57c101d1ca95f41823e131b768452568"
+        },
+        "producer_source_stable": true
+      }
+    },
+    {
+      "name": "real_runtime_preflight",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "passed": 13,
+        "total": 13,
+        "guard_artifact": {
+          "prompt_version": "actiongate-guard-v2.9",
+          "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+        },
+        "generation": 26,
+        "model_artifact_valid": true,
+        "physical_runtime": {
+          "profile": "CPU",
+          "project": "actiongate",
+          "errors": [],
+          "required_resident_roles": [
+            "guard",
+            "business"
+          ],
+          "workers": [
+            {
+              "role": "guard",
+              "name": "actiongate-guard-worker-1",
+              "container_id": "816920b6d3c11fa3259e1f79a3fc9a766d2d0cb9ba5d5c9fa5ed366f245919de",
+              "image_id": "sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d"
+            },
+            {
+              "role": "business",
+              "name": "actiongate-business-worker-1",
+              "container_id": "446deb5d9b7681fd629ae1fa82a503160277eec9ee4c3b6de25cb11156d6dbc9",
+              "image_id": "sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "immutable_runtime_configuration",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "suite": "runtime-configuration",
+        "mode": "real_worker_api",
+        "checks": {
+          "dynamic_queue_staged": true,
+          "immutable_idempotent": true,
+          "same_generation_change_denied": true,
+          "unsupported_slot_count_denied": true,
+          "configured_queue_enforced": true,
+          "unknown_generation_denied": true,
+          "configured_output_ceiling_denied": true,
+          "rejected_requests_never_started_inference": true
+        },
+        "generation": 36,
+        "guard_artifact": {
+          "prompt_version": "actiongate-guard-v2.9",
+          "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+        },
+        "model_artifacts": {
+          "local-business": {
+            "path": "models/model-manifest.json",
+            "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+            "manifest": {
+              "schema_version": 1,
+              "model": "qwen3.5:4b",
+              "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+              "format": "GGUF",
+              "family": "Qwen3.5",
+              "quantization": "Q4_K_M",
+              "license": "Apache-2.0",
+              "source": "https://ollama.com/library/qwen3.5:4b",
+              "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+              "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+              "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+              "context_tokens": 8192,
+              "max_input_tokens": 4096,
+              "think": false,
+              "temperature": 0,
+              "seed": 42,
+              "runtime": "ollama:0.32.0",
+              "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+            }
+          },
+          "local-guard": {
+            "path": "models/model-manifest.json",
+            "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+            "manifest": {
+              "schema_version": 1,
+              "model": "qwen3.5:4b",
+              "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+              "format": "GGUF",
+              "family": "Qwen3.5",
+              "quantization": "Q4_K_M",
+              "license": "Apache-2.0",
+              "source": "https://ollama.com/library/qwen3.5:4b",
+              "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+              "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+              "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+              "context_tokens": 8192,
+              "max_input_tokens": 4096,
+              "think": false,
+              "temperature": 0,
+              "seed": 42,
+              "runtime": "ollama:0.32.0",
+              "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+            }
+          },
+          "cloud-business": {
+            "path": "models/cloud-model-manifest.json",
+            "sha256": "14135fe31e8ca85446bb98c3472e10cbe07396a26eb0418c553834d488b85fa9",
+            "manifest": {
+              "schema_version": 1,
+              "provider": "groq",
+              "model": "openai/gpt-oss-20b",
+              "api_host": "api.groq.com",
+              "api_path": "/openai/v1/chat/completions",
+              "context_tokens": 131072,
+              "max_completion_tokens": 65536,
+              "reservation_input_method": "full_provider_context_upper_bound",
+              "reservation_output_method": "max_completion_tokens_including_hidden_reasoning",
+              "include_reasoning": false,
+              "reasoning_effort": "low",
+              "automatic_retries": false,
+              "redirects": false,
+              "built_in_tools": false,
+              "supported_tools": "client_function_schemas_only",
+              "price_file": "policy/prices.json",
+              "sources": [
+                "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+                "https://console.groq.com/docs/openai",
+                "https://console.groq.com/docs/reasoning"
+              ]
+            }
+          }
+        },
+        "semantic_configuration": {
+          "model_ref": "local-guard",
+          "prompt_version": "actiongate-guard-v2.9",
+          "required_on": [
+            "untrusted_input",
+            "proposed_action",
+            "tool_output",
+            "memory_write",
+            "model_output"
+          ],
+          "risk_scale": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "context_tokens": 8192,
+          "max_input_tokens_per_call": 4096,
+          "max_output_tokens": 256,
+          "window_tokens": 2048,
+          "overlap_tokens": 256,
+          "max_windows": 8,
+          "deadline_seconds": 180,
+          "incomplete_scan": "block"
+        },
+        "passed": true,
+        "producer_sources": {
+          "scripts/runtime_bootstrap.py": "6ef671e8a4f007b2fd7695ddfb0b0197d2297ae7812d63d19985c59891e94214",
+          "scripts/runtime_configuration.py": "87db96210348cab46c80b0e75825dbfe7b9549034181c3476b9d2befd66e62a2",
+          "scripts/runtime_configuration_probe.py": "20a8482aee6f9e4a64456ac34aae3aed3c25b8808e44df83bc4aa4d89c5a02fa",
+          "scripts/runtime_evidence.py": "f3096f0a97c14ca5559e1be2fc4f041c57c101d1ca95f41823e131b768452568"
+        },
+        "producer_source_stable": true
+      }
+    },
+    {
+      "name": "fresh_offline_install_and_recovery",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "checks": {
+          "all_service_networks_deny_external_egress": true,
+          "gateway-a_actual_internet_unreachable": true,
+          "guard-worker_actual_internet_unreachable": true,
+          "business-worker_actual_internet_unreachable": true,
+          "fresh_database_generation": true,
+          "versioned_owner_migration_applied": true,
+          "real_document_mcp_guard_workflow": true,
+          "actual_physical_runtime_verified": true,
+          "opa_down_denies_action_without_side_effect": true,
+          "opa_restart_auto_restages_current_generation": true,
+          "database_down_denies_dispatch": true,
+          "guard_unavailable_denies_effect": true,
+          "worker_restart_auto_prepares_current_generation": true,
+          "restart_reprepares_current_generation": true,
+          "durable_run_usable_after_worker_and_gateway_restart": true
+        },
+        "mode": "fresh database and isolated internal networks; predownloaded immutable images and weights",
+        "runtime_profile": "cpu",
+        "finished_at": "2026-10-04T03:26:34.410161+00:00",
+        "model_artifact_valid": true,
+        "physical_runtime": {
+          "profile": "CPU",
+          "project": "actiongate-clean-7bf69298",
+          "errors": [],
+          "required_resident_roles": [
+            "guard"
+          ],
+          "workers": [
+            {
+              "role": "guard",
+              "name": "actiongate-clean-7bf69298-guard-worker-1",
+              "container_id": "951db168057ccd9a81fd38be331d7635ed9f135c97d9fdf49ed4c024d3c2a767",
+              "image_id": "sha256:c02af9373938d92bf430cc09831b5034f684b323d8267c2d752870e5a77e5805"
+            },
+            {
+              "role": "business",
+              "name": "actiongate-clean-7bf69298-business-worker-1",
+              "container_id": "e05d0f94e1c32c5f7709459f5b4c2163328064ac71c674d68a3f6267e88b56c9",
+              "image_id": "sha256:c02af9373938d92bf430cc09831b5034f684b323d8267c2d752870e5a77e5805"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "measured_benchmark_144_rows",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "matrix_valid": true,
+        "rows": 144,
+        "requests": 2928,
+        "completed": 2164,
+        "rejected_or_failed": 764,
+        "transport_errors": 0,
+        "cold_model_unload_confirmed": true,
+        "resource_measurements_valid": true,
+        "full_mode_single_client_cohorts_completed": true,
+        "real_uncached_guard_usage_present": true,
+        "deterministic_overhead_targets": [
+          {
+            "temperature": "cold",
+            "control_cache_enabled": true,
+            "completed_p95_overhead_ms": 1189.775976992678,
+            "target_ms": 50,
+            "all_requests_completed": true,
+            "passed": false
+          },
+          {
+            "temperature": "warm",
+            "control_cache_enabled": true,
+            "completed_p95_overhead_ms": 1042.697403987404,
+            "target_ms": 50,
+            "all_requests_completed": true,
+            "passed": false
+          }
+        ],
+        "targets_met": false,
+        "semantic_cache_hits": 464,
+        "environment_label": "isolated-gpu",
+        "hardware_source": "artifacts/benchmark-reference/pg200-keepalive30-runtime-hardware.json",
+        "scope": "Actual typed reports.save workload. Matrix completion and capacity rejections are separate. Target uses fully completed 4 KiB / 10-client cohorts at the deployed default cache setting. On/off toggles compiled controls and context-bound semantic judgments together; their hit counts and settings are recorded. Empirical small-sample p95; no model KV cache toggle.",
+        "source_binding": {
+          "stable_during_measurement": true,
+          "stale_files": [],
+          "missing_files": [],
+          "unexpected_files": []
+        },
+        "model_artifact_valid": true,
+        "guard_artifact_valid": true,
+        "physical_runtime": {
+          "profile": "GPU",
+          "project": "actiongate-gpu-0b92f97d",
+          "errors": [],
+          "required_resident_roles": [
+            "guard",
+            "business"
+          ],
+          "workers": [
+            {
+              "role": "guard",
+              "name": "actiongate-gpu-0b92f97d-guard-worker-1",
+              "container_id": "5fc168f98b00ed3db27df9fbb2844936f7e114e71faea257036a88c2fdf5d832",
+              "image_id": "sha256:8256310ee6f6a3526ce7b983f3675c6ff3ab7709681da15d8f61c453a8a7efeb"
+            },
+            {
+              "role": "business",
+              "name": "actiongate-gpu-0b92f97d-business-worker-1",
+              "container_id": "a200fd9b682e0e25d9d50f228e4284ddaef5c9eb528a8c8835e97e084506e501",
+              "image_id": "sha256:8256310ee6f6a3526ce7b983f3675c6ff3ab7709681da15d8f61c453a8a7efeb"
+            }
+          ]
+        },
+        "hardware_producer": {
+          "stale": [],
+          "missing": [],
+          "stable": true
+        },
+        "hardware_artifact_valid": true
+      }
+    },
+    {
+      "name": "deterministic_p95_overhead_at_most_50ms",
+      "required": false,
+      "status": "failed",
+      "detail": {
+        "targets": [
+          {
+            "temperature": "cold",
+            "control_cache_enabled": true,
+            "completed_p95_overhead_ms": 1189.775976992678,
+            "target_ms": 50,
+            "all_requests_completed": true,
+            "passed": false
+          },
+          {
+            "temperature": "warm",
+            "control_cache_enabled": true,
+            "completed_p95_overhead_ms": 1042.697403987404,
+            "target_ms": 50,
+            "all_requests_completed": true,
+            "passed": false
+          }
+        ],
+        "source": "measured_benchmark_144_rows",
+        "criterion": "PLAN section 11 initial performance target; measured completion of the full matrix remains required."
+      }
+    },
+    {
+      "name": "policy_publication_at_most_5_seconds",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "status": "passed",
+        "seconds_including_replicas_and_noop": 2.313307981006801,
+        "target_seconds": 5,
+        "target_met": true,
+        "rejected_generation": 32,
+        "active_generation": 33,
+        "replicas": [
+          {
+            "status": "ready",
+            "generation": 33,
+            "checks": {
+              "database": "ready",
+              "policy": "ready",
+              "classifier": "ready",
+              "opa": "ready",
+              "guard": "ready",
+              "business": "ready"
+            }
+          },
+          {
+            "status": "ready",
+            "generation": 33,
+            "checks": {
+              "database": "ready",
+              "policy": "ready",
+              "classifier": "ready",
+              "opa": "ready",
+              "guard": "ready",
+              "business": "ready"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ui_browser_contract",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "executed": 12,
+        "minimum_required": 12,
+        "failed": 0,
+        "skipped": 0,
+        "mode": "browser contract fixtures; real deployment checked separately"
+      }
+    },
+    {
+      "name": "real_deployment_browser",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "recorded_at": "2026-10-04T04:59:35.906Z",
+        "status": "passed",
+        "target": "http://127.0.0.1:18089",
+        "views": [
+          {
+            "name": "overview",
+            "title": "Controls and activity",
+            "horizontal_overflow": false
+          },
+          {
+            "name": "policies",
+            "title": "Policy configuration and feeds",
+            "horizontal_overflow": false
+          },
+          {
+            "name": "budgets",
+            "title": "Costs, reservations and compute",
+            "horizontal_overflow": false
+          },
+          {
+            "name": "investigate",
+            "title": "Workflow and operation history",
+            "horizontal_overflow": false
+          },
+          {
+            "name": "test-lab",
+            "title": "Test inputs and workflows",
+            "horizontal_overflow": false
+          }
+        ],
+        "console_errors": [],
+        "producer_sources": {
+          "scripts/verify_live_browser.cjs": "42ebb6e6a8e7ca4e9094b132b591c60051bf6a26d7d18ba11538b61bb00c7979"
+        },
+        "producer_source_stable": true,
+        "url": "http://127.0.0.1:18089/",
+        "initial_tenant": "synthetic_test_tenant",
+        "manager_audit_export": 403,
+        "final_tenant": "globex",
+        "mobile_overflow": false
+      }
+    },
+    {
+      "name": "real_browser_triggered_workflows",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "job_id": "75b2eb00-6eae-4566-af34-06ea92aa6c63",
+        "checks": {
+          "persisted_job_passed": true,
+          "four_real_workflows": true,
+          "legal_four_operations": true,
+          "document_receipt": true,
+          "local_business_model": true,
+          "negatives_before_dispatch": true,
+          "injection_semantically_detected": true,
+          "pii_redacted": true,
+          "stable_generation": true,
+          "no_browser_errors": true
+        },
+        "named_workflows": [
+          "workflow.cross_tenant",
+          "workflow.injection",
+          "workflow.legal",
+          "workflow.pii"
+        ],
+        "model_artifact_valid": true,
+        "video_valid": true,
+        "wait_omitted_seconds": 12.142528300000002,
+        "scope": "Actual browser-triggered persisted job. Four named workflows and two pre-dispatch negative assertions; this is not a general attack success estimate. Video explicitly labels omitted server waiting."
+      }
+    },
+    {
+      "name": "shipped_python_and_typescript_clients",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "examples": [
+          {
+            "language": "Python",
+            "passed": true,
+            "run_id": "6d5a40ee-8162-4bc5-a70b-12e798a907e5",
+            "completed_operations": 2
+          },
+          {
+            "language": "TypeScript",
+            "passed": true,
+            "run_id": "7b1637cf-b209-4175-9c1e-b05180e004ac",
+            "completed_operations": 1
+          }
+        ],
+        "model_artifact_valid": true,
+        "scope": "Executed shipped clients against the live local gateway with run-bound credentials and durable document receipts."
+      }
+    },
+    {
+      "name": "real_safe_policy_comparison",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "cases": 16,
+        "generation": 15,
+        "guard_tokens_spent": 22403,
+        "checks": {
+          "completed_16": true,
+          "complete_guard_and_decisions": true,
+          "no_business_operations": true,
+          "no_connector_receipt_events": true,
+          "generation_unchanged": true,
+          "active_yaml_unchanged": true,
+          "actual_guard_tokens": true,
+          "synthetic_budget_only": true,
+          "real_execution_mode": true
+        },
+        "model_artifact_valid": true,
+        "scope": "Real calibration replay with two policy decisions, separate synthetic budgets and zero repeated business effects. This is not held-out quality evidence."
+      }
+    },
+    {
+      "name": "dashboard_event_delivery_at_most_one_second",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "sample_count": 5,
+        "request_to_visible_upper_bound_p95_ms": 562.8,
+        "native_reconnect_replay": true,
+        "scope": "Monotonic request-to-DOM upper bound contains DB commit-to-DOM time. Cross-clock wall timestamps are not used for latency."
+      }
+    },
+    {
+      "name": "signed_audit_and_sample_exports",
+      "required": true,
+      "status": "passed",
+      "detail": {
+        "assertions": [
+          {
+            "test": "test_live_checkpoint_signed_and_persisted_outside_database",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_runtime_database_identity_cannot_edit_audit",
+            "executions": 1,
+            "passed": true
+          },
+          {
+            "test": "test_audit_detects_changed_removed_and_reordered_metadata",
+            "executions": 1,
+            "passed": true
+          }
+        ],
+        "scope": "Named real publisher test verifies a signed checkpoint and independent archive persistence. Tenant-filtered sample exports are examples, not standalone verification of the global chain."
+      }
+    },
+    {
+      "name": "optional_live_provider",
+      "required": false,
+      "status": "failed",
+      "detail": {
+        "connector_status": "passed",
+        "gateway_status": "failed",
+        "gateway_generation": 14,
+        "checked_at": "2026-10-04T04:48:57.613545+00:00",
+        "current_guard_binding": true,
+        "scope": "Optional genuine paid-provider evidence at its recorded generation. An earlier guard generation does not certify the current guard prompt. Required local acceptance does not depend on provider availability."
+      }
+    },
+    {
+      "name": "optional_isolated_gpu_profile",
+      "required": false,
+      "status": "passed",
+      "detail": {
+        "runtime_profile": "gpu",
+        "checks": {
+          "all_service_networks_deny_external_egress": true,
+          "gateway-a_actual_internet_unreachable": true,
+          "guard-worker_actual_internet_unreachable": true,
+          "business-worker_actual_internet_unreachable": true,
+          "fresh_database_generation": true,
+          "versioned_owner_migration_applied": true,
+          "gpu_enabled_before_functional_suite": true,
+          "real_document_mcp_guard_workflow": true,
+          "actual_physical_runtime_verified": true,
+          "gpu_runtime_full_functional_preflight": true,
+          "both_models_actually_resident_in_vram": true,
+          "gpu_independent_watchdog_during_other_inference": true,
+          "opa_down_denies_action_without_side_effect": true,
+          "opa_restart_auto_restages_current_generation": true,
+          "database_down_denies_dispatch": true,
+          "guard_unavailable_denies_effect": true,
+          "worker_restart_auto_prepares_current_generation": true,
+          "restart_reprepares_current_generation": true,
+          "durable_run_usable_after_worker_and_gateway_restart": true
+        },
+        "current_model_binding": true,
+        "current_guard_binding": true,
+        "scope": "Optional isolated GPU stack at its recorded artifacts; does not replace reference CPU acceptance or imply hardware VRAM partitioning. Historical profile evidence does not certify a later model or guard."
+      }
+    }
+  ],
+  "evidence": {
+    "artifacts/all-local.json": {
+      "sha256": "3efe4278e533c2a5c42622db84c9445980960e50b02544e9a0e780c3c67359c4",
+      "bytes": 134260,
+      "modified_at": "2026-10-04T02:36:36.299258+00:00"
+    },
+    "backend/actiongate/__init__.py": {
+      "sha256": "561e904567d004fbc8719f59350ae6e5c5aee131404e6580c9ba70dfe79b5740",
+      "bytes": 73,
+      "modified_at": "2026-10-03T11:55:28.377473+00:00"
+    },
+    "backend/actiongate/app.py": {
+      "sha256": "c21fb30c4dc6032cef90b9204934a663ba2a9390e400fe9492d7a3136d2f2740",
+      "bytes": 39244,
+      "modified_at": "2026-10-03T20:31:57.986007+00:00"
+    },
+    "backend/actiongate/audit_integrity.py": {
+      "sha256": "e593d10eda162cc7415728b7fb030002fbf5ae047265d0579f9b6cb742fbc7e0",
+      "bytes": 2664,
+      "modified_at": "2026-10-03T13:59:52.783905+00:00"
+    },
+    "backend/actiongate/broker.py": {
+      "sha256": "b9d5dacc69bd79cd449e78eca257dd32a9d87ae7d85e2128fe94b0f64b4eb77e",
+      "bytes": 61398,
+      "modified_at": "2026-10-03T20:46:01.346413+00:00"
+    },
+    "backend/actiongate/cloud.py": {
+      "sha256": "5e6d67b55fd5fe8ef0e61f91c4c009a19ebba127bbbd5372aaab3371c1cd8e95",
+      "bytes": 17778,
+      "modified_at": "2026-10-03T18:55:45.055513+00:00"
+    },
+    "backend/actiongate/contracts.py": {
+      "sha256": "2e40eddde525ae7204da7a952293d334829050b61ce91609aebc4c6dad561eaa",
+      "bytes": 2548,
+      "modified_at": "2026-10-03T15:53:57.811904+00:00"
+    },
+    "backend/actiongate/controls/__init__.py": {
+      "sha256": "6d7ff0ba9328353298dc07cd827b721f1bd6aa42b246400f8dce1639b25f3369",
+      "bytes": 969,
+      "modified_at": "2026-10-03T12:06:31.632641+00:00"
+    },
+    "backend/actiongate/controls/artifacts.py": {
+      "sha256": "02cb4ca7bed74d3c3c973b1575f586cc013e2f3725e1189de57b744eb248aa45",
+      "bytes": 8554,
+      "modified_at": "2026-10-03T12:06:31.629104+00:00"
+    },
+    "backend/actiongate/controls/dlp.py": {
+      "sha256": "ccec5cf3e6c0a7a87a25a43988716540b01c5d6cb893b8d25520042c1b22995e",
+      "bytes": 11580,
+      "modified_at": "2026-10-03T12:12:25.977806+00:00"
+    },
+    "backend/actiongate/controls/model_artifacts.py": {
+      "sha256": "15fd0659f2b42bd1b0b2ae8cf384f0bca1c6c17f9243fe9ed7cc5c60b0f85d82",
+      "bytes": 6875,
+      "modified_at": "2026-10-03T17:39:10.085968+00:00"
+    },
+    "backend/actiongate/controls/opa.py": {
+      "sha256": "0c0dce801057e0deb66f629109ac90021779c841f68745fc2098b5b920218861",
+      "bytes": 6186,
+      "modified_at": "2026-10-03T18:25:14.802425+00:00"
+    },
+    "backend/actiongate/controls/plane.py": {
+      "sha256": "807a21c5833c1313a55b1908203517fa17c7124ceb697962933cfd519f502b07",
+      "bytes": 8140,
+      "modified_at": "2026-10-03T15:17:15.667313+00:00"
+    },
+    "backend/actiongate/controls/registry.py": {
+      "sha256": "2af18afc9fc25b2382cd6ee34cadf665c4e0bedc94ffdbbe1b88540c870f335a",
+      "bytes": 7930,
+      "modified_at": "2026-10-03T14:09:13.717164+00:00"
+    },
+    "backend/actiongate/controls/schema.py": {
+      "sha256": "0165abd15672d93dc1bf48285b5797d4a80267c037639e21ae05db39c90b62aa",
+      "bytes": 18409,
+      "modified_at": "2026-10-04T00:28:56.311016+00:00"
+    },
+    "backend/actiongate/controls/signed.py": {
+      "sha256": "c6a833129af831a4684fafaae77993ec67d1de01bd4bfbe0672da49275a11a21",
+      "bytes": 11116,
+      "modified_at": "2026-10-03T19:05:20.471077+00:00"
+    },
+    "backend/actiongate/db.py": {
+      "sha256": "d210a52f2e5c9d7828216991df834815e6caacce166a5106d1afca5f4ed69ad5",
+      "bytes": 13482,
+      "modified_at": "2026-10-03T19:10:21.304953+00:00"
+    },
+    "backend/actiongate/demo_tools.py": {
+      "sha256": "e1df80e9cf92d4e231dc40c945a1f9fd86ee66c41a3af4b6c5b8ceb362fa712c",
+      "bytes": 8957,
+      "modified_at": "2026-10-03T15:29:21.233302+00:00"
+    },
+    "backend/actiongate/ledger.py": {
+      "sha256": "70b013ae1ff99ec70a2bd14ddaf0031c2f441f0074293cc746c9e900cae55fd4",
+      "bytes": 7075,
+      "modified_at": "2026-10-03T17:33:43.725787+00:00"
+    },
+    "backend/actiongate/maintenance.py": {
+      "sha256": "ef12cc621562e247d55f8482b3fc8afea231a64954a5d05eb83b664435531cae",
+      "bytes": 3473,
+      "modified_at": "2026-10-04T00:45:32.324533+00:00"
+    },
+    "backend/actiongate/mcp_gateway.py": {
+      "sha256": "082e7737b37f1a745230d052a187ee979779a45f3c699b2bacdd4f131034b7ac",
+      "bytes": 9422,
+      "modified_at": "2026-10-03T14:44:16.166786+00:00"
+    },
+    "backend/actiongate/mcp_stdio.py": {
+      "sha256": "f7ffa19b5a90344123f381ba250c8f9f5cd42a7f1bc7cb6cbfb4613e442bb79e",
+      "bytes": 3906,
+      "modified_at": "2026-10-03T14:26:47.192899+00:00"
+    },
+    "backend/actiongate/mcp_upstream.py": {
+      "sha256": "9e0e18371c4afa9e04aff91033939211cf5898f0c1be193472fd124a4083770b",
+      "bytes": 3025,
+      "modified_at": "2026-10-03T13:45:07.098577+00:00"
+    },
+    "backend/actiongate/migrate.py": {
+      "sha256": "d7f6d1afd432f25f76fd6fa3858e40386f3a2724c0356b3f43fd55e051f29a3d",
+      "bytes": 1517,
+      "modified_at": "2026-10-03T14:42:31.237128+00:00"
+    },
+    "backend/actiongate/policies.py": {
+      "sha256": "34fde547bfc5c2659ccb774e68c0df17f03eca77b8357ee7e0b9209551d152f7",
+      "bytes": 18601,
+      "modified_at": "2026-10-03T20:05:26.104952+00:00"
+    },
+    "backend/actiongate/publisher.py": {
+      "sha256": "817d01273f7b55361fc22be3f0a1a4e23cbd90ec5511c58e8b7739a7c1a40282",
+      "bytes": 9151,
+      "modified_at": "2026-10-03T14:02:22.093598+00:00"
+    },
+    "backend/actiongate/recovery.py": {
+      "sha256": "97614fa21e4cc5c15818ff143a04d9ed8310713d4c366f45204c184689d72abe",
+      "bytes": 4602,
+      "modified_at": "2026-10-03T14:36:05.623956+00:00"
+    },
+    "backend/actiongate/replay.py": {
+      "sha256": "5db6d6ad2f94d732c5f91dd6cd289dbf794a8b505b3c323c925e188e51185d70",
+      "bytes": 5953,
+      "modified_at": "2026-10-03T17:08:31.669209+00:00"
+    },
+    "backend/actiongate/runtime.py": {
+      "sha256": "32e3a5a4065455815ab190b76d3df0b9589c5b4f37bf3e005566bd438198868c",
+      "bytes": 8758,
+      "modified_at": "2026-10-03T15:19:48.278088+00:00"
+    },
+    "backend/actiongate/scenarios.py": {
+      "sha256": "d766385d355830372d34dc226565213bd57dfe1449ba59fe0d95b71e85de98d7",
+      "bytes": 11093,
+      "modified_at": "2026-10-03T19:46:28.673209+00:00"
+    },
+    "backend/actiongate/security.py": {
+      "sha256": "5dbec71036a6a2a056246a98ec6499c51e51f655ef1cc7748304f4ff2672accf",
+      "bytes": 4070,
+      "modified_at": "2026-10-03T20:31:57.984507+00:00"
+    },
+    "backend/actiongate/seed.py": {
+      "sha256": "931e82a1f4020336f651a281e8d15a10aa05851a9ef8e7d8980f50fb438c9495",
+      "bytes": 1446,
+      "modified_at": "2026-10-03T12:07:16.887797+00:00"
+    },
+    "backend/actiongate/semantic.py": {
+      "sha256": "0e71fa69e130d2c0767f994ac500ca8262e412cc42b73b1258d0c53bf7a1a3e1",
+      "bytes": 24965,
+      "modified_at": "2026-10-04T00:28:56.310012+00:00"
+    },
+    "backend/actiongate/semantic_cache.py": {
+      "sha256": "857cdbf3f5813265f4d0290540169ab400d53997fd247809a29872006a851d40",
+      "bytes": 5618,
+      "modified_at": "2026-10-03T17:04:34.908097+00:00"
+    },
+    "backend/actiongate/settings.py": {
+      "sha256": "81cf8930e5f9ab29049e36a17e0abc48ee2bcda367fa1082e5bfa4714ed9626c",
+      "bytes": 1338,
+      "modified_at": "2026-10-03T11:55:28.381974+00:00"
+    },
+    "backend/actiongate/telemetry.py": {
+      "sha256": "a845ad7f694942a113a64ea1d0486e0c0be835c511187d8839cdd01d5161ec4e",
+      "bytes": 3246,
+      "modified_at": "2026-10-03T14:26:39.876178+00:00"
+    },
+    "backend/actiongate/test_jobs.py": {
+      "sha256": "da19bcdf791a789580a2e132b7af64b8b410daa934f91401f4433c22a0f9d6df",
+      "bytes": 5455,
+      "modified_at": "2026-10-03T15:19:10.190249+00:00"
+    },
+    "deploy/agent_probe.py": {
+      "sha256": "f4c7f750cf22897f89dc6d17cb49e6e89a9ea4c3f05050f57155f11e9d9a674e",
+      "bytes": 2156,
+      "modified_at": "2026-10-03T14:21:32.014230+00:00"
+    },
+    "scripts/acceptance_report.py": {
+      "sha256": "12a4c2c4d5e919824dca4a70fb20063dc58473d9af598b8d62ff6cf66287d362",
+      "bytes": 53662,
+      "modified_at": "2026-10-04T01:53:56.480290+00:00"
+    },
+    "scripts/benchmark.ps1": {
+      "sha256": "77d8d99c2dac9fa5b4791e18b94f4a255d37d0e626018a7ce3dcc6e2e8516def",
+      "bytes": 403,
+      "modified_at": "2026-10-03T14:17:25.913760+00:00"
+    },
+    "scripts/benchmark.py": {
+      "sha256": "b5eb1e8da9aae3d3eb43a57833a7e7e307a689ba2ef274593d21c856611c423c",
+      "bytes": 37275,
+      "modified_at": "2026-10-04T01:53:56.477787+00:00"
+    },
+    "scripts/benchmark.sh": {
+      "sha256": "065953ced20bb201f25976b37276fb7163e497c9d93e0b9cfa6b74dd0cd1d43c",
+      "bytes": 205,
+      "modified_at": "2026-10-03T14:17:25.926422+00:00"
+    },
+    "scripts/check_release.py": {
+      "sha256": "a20d2c65081b8a53ef11b6f8b868baf20320a2bc73bdb2450eeb44fdebd6ff05",
+      "bytes": 4164,
+      "modified_at": "2026-10-04T00:36:45.734826+00:00"
+    },
+    "scripts/clean_install.py": {
+      "sha256": "658b5ed0f9a608a902e25b23270f21d05c0a6669c2b86f1f60a6d90d67988f1e",
+      "bytes": 25249,
+      "modified_at": "2026-10-03T20:45:33.779194+00:00"
+    },
+    "scripts/coverage_report.py": {
+      "sha256": "501b714b17859f7d9195f080ea6afe4eaffd0d950628eed62671c331fb0b77c8",
+      "bytes": 2218,
+      "modified_at": "2026-10-03T14:37:27.699167+00:00"
+    },
+    "scripts/deployed_source.py": {
+      "sha256": "4db61e48981e02ecb07dc1b83e2734a40e91e629af922999a4c4ffec7708d74f",
+      "bytes": 7403,
+      "modified_at": "2026-10-03T20:35:56.932583+00:00"
+    },
+    "scripts/gpu_concurrency_probe.py": {
+      "sha256": "4a4d4570abf659a11397907941dc260abec455f81e23936bc17c2967ab3978e1",
+      "bytes": 2403,
+      "modified_at": "2026-10-03T15:52:15.267998+00:00"
+    },
+    "scripts/gpu_inventory.py": {
+      "sha256": "a3f45ac9b89e63d1ced917d82b72488cedae4cec897543c41eba3263fa7f3a0a",
+      "bytes": 2827,
+      "modified_at": "2026-10-03T17:49:26.533293+00:00"
+    },
+    "scripts/gpu_preflight.py": {
+      "sha256": "535f45f669903d7a2ba454d456b33128ddfe4952b1477f8bee3e40d28b4f7d1c",
+      "bytes": 521,
+      "modified_at": "2026-10-03T15:51:00.936460+00:00"
+    },
+    "scripts/isolation.py": {
+      "sha256": "9e3f3ac2c6f066e703c9e1c312eb7fff0e5302705218a241fd734f511dddbb71",
+      "bytes": 1217,
+      "modified_at": "2026-10-03T20:37:19.255299+00:00"
+    },
+    "scripts/preflight.py": {
+      "sha256": "457a7a2a01dd1d7d2e3c36d3639148dc1622eaddedfecd10cf5824dfd01242fb",
+      "bytes": 1707,
+      "modified_at": "2026-10-03T20:35:04.395042+00:00"
+    },
+    "scripts/preflight_container.py": {
+      "sha256": "1fd8c37f1dc61c0b349745cee8bf9adbfa39fa5adb8ec16329068d7fc026c114",
+      "bytes": 9018,
+      "modified_at": "2026-10-03T17:17:10.956997+00:00"
+    },
+    "scripts/release.py": {
+      "sha256": "4b149906fb61390679a390bdbe6974e829a4c835726188068060fe1f16975b09",
+      "bytes": 28904,
+      "modified_at": "2026-10-04T00:36:45.733318+00:00"
+    },
+    "scripts/runtime_bootstrap.py": {
+      "sha256": "6ef671e8a4f007b2fd7695ddfb0b0197d2297ae7812d63d19985c59891e94214",
+      "bytes": 8465,
+      "modified_at": "2026-10-03T19:15:19.954661+00:00"
+    },
+    "scripts/runtime_configuration.py": {
+      "sha256": "87db96210348cab46c80b0e75825dbfe7b9549034181c3476b9d2befd66e62a2",
+      "bytes": 1849,
+      "modified_at": "2026-10-03T20:40:13.764319+00:00"
+    },
+    "scripts/runtime_configuration_probe.py": {
+      "sha256": "20a8482aee6f9e4a64456ac34aae3aed3c25b8808e44df83bc4aa4d89c5a02fa",
+      "bytes": 3391,
+      "modified_at": "2026-10-03T20:37:19.256807+00:00"
+    },
+    "scripts/runtime_evidence.py": {
+      "sha256": "f3096f0a97c14ca5559e1be2fc4f041c57c101d1ca95f41823e131b768452568",
+      "bytes": 2593,
+      "modified_at": "2026-10-03T20:35:04.394043+00:00"
+    },
+    "scripts/runtime_hardware.py": {
+      "sha256": "2991192ba4959c3fb8eac8c904e60d4ea0dc3033a5ce108d7c79225104e8d9d2",
+      "bytes": 4623,
+      "modified_at": "2026-10-03T20:35:04.396046+00:00"
+    },
+    "scripts/scan_release_secrets.py": {
+      "sha256": "28abdda92cfdc3d22bb0b2b2a03ed6b22536e2002c63b14e62e9ef2707ef2134",
+      "bytes": 7579,
+      "modified_at": "2026-10-03T19:46:15.716846+00:00"
+    },
+    "scripts/sse_reconnect_probe.cjs": {
+      "sha256": "9e0b8bd95d918fb5796685337bec2ed650ffd4cfb320e9891eae9057249f772c",
+      "bytes": 4498,
+      "modified_at": "2026-10-03T20:42:13.999373+00:00"
+    },
+    "scripts/verify.ps1": {
+      "sha256": "71064a15dcb0265312e450b5b16a7b8b61878bd14a2ea7490d3b4750db32cca1",
+      "bytes": 813,
+      "modified_at": "2026-10-03T13:39:30.297580+00:00"
+    },
+    "scripts/verify.sh": {
+      "sha256": "b53b5a1c8fc8eca35796242ed91adfc048259d109c0ff3fe7544ec13200e3b17",
+      "bytes": 402,
+      "modified_at": "2026-10-03T13:39:30.298583+00:00"
+    },
+    "scripts/verify_clients.py": {
+      "sha256": "74f8a4596ca6c2060187e00d79cb0ce4309a42f8d4ee70834bd399afc332569b",
+      "bytes": 6841,
+      "modified_at": "2026-10-03T20:40:34.537235+00:00"
+    },
+    "scripts/verify_container.py": {
+      "sha256": "328568ca3937276b84d943dedb6f78c129a55e16a04c5814bee9afaa0f035d17",
+      "bytes": 11411,
+      "modified_at": "2026-10-03T20:46:36.347944+00:00"
+    },
+    "scripts/verify_dashboard_events.cjs": {
+      "sha256": "3843d9835b4939da6f392b6bb08f75df34e815a3e4862042ba3c36efb8dad7bb",
+      "bytes": 7442,
+      "modified_at": "2026-10-03T21:39:12.493016+00:00"
+    },
+    "scripts/verify_live_browser.cjs": {
+      "sha256": "42ebb6e6a8e7ca4e9094b132b591c60051bf6a26d7d18ba11538b61bb00c7979",
+      "bytes": 5405,
+      "modified_at": "2026-10-03T21:39:12.490932+00:00"
+    },
+    "scripts/verify_policy_replay.py": {
+      "sha256": "feea9bcf8fd2d4009745bd84bdf9d2104a62382ea1f0d281e71f15477fbe76c5",
+      "bytes": 6470,
+      "modified_at": "2026-10-03T20:40:34.538235+00:00"
+    },
+    "scripts/verify_ui_workflow.cjs": {
+      "sha256": "cc4392a33d11b01345bfc8dec8ca3d6f98351773e8d597b8a37fb681a293e461",
+      "bytes": 12851,
+      "modified_at": "2026-10-03T21:39:12.489917+00:00"
+    },
+    "tests/conftest.py": {
+      "sha256": "254833596347eefeae43ee445e1a9a2c1d812422becfc9f6b77dc2976793620c",
+      "bytes": 2602,
+      "modified_at": "2026-10-03T14:45:04.788483+00:00"
+    },
+    "tests/control_registry.json": {
+      "sha256": "6df438b1da958ceed680ceaa90ed089c984339f25f488cb13df4e18913b913e7",
+      "bytes": 5956,
+      "modified_at": "2026-10-03T19:48:24.978244+00:00"
+    },
+    "tests/test_acceptance_report.py": {
+      "sha256": "fa719cb84e54cf016d6c76b001fd19af377948dfee5eedca7da64ad07fe17fd5",
+      "bytes": 23059,
+      "modified_at": "2026-10-04T01:53:56.481791+00:00"
+    },
+    "tests/test_api.py": {
+      "sha256": "1bc02d69da70fdf344478833f101c7ccaec0d6a7b9400060f3184087c2e91c2d",
+      "bytes": 59927,
+      "modified_at": "2026-10-03T20:31:57.987508+00:00"
+    },
+    "tests/test_audit_integrity.py": {
+      "sha256": "80e9ba2c91353389c2bd3bc6d955ac8d9953b03350b75424b08745690f526972",
+      "bytes": 14997,
+      "modified_at": "2026-10-04T00:46:09.339723+00:00"
+    },
+    "tests/test_bootstrap_artifacts.py": {
+      "sha256": "b167490ece6b0d93b5c2c94bda8bfcd27502db4c0ba442b7b6d9afa07be34ad3",
+      "bytes": 2716,
+      "modified_at": "2026-10-03T19:17:01.053533+00:00"
+    },
+    "tests/test_boundary_fuzz.py": {
+      "sha256": "cdd369059d18404a614ae6339931897f0983cbe335afb6a767dc57566dda4ded",
+      "bytes": 12895,
+      "modified_at": "2026-10-03T19:25:20.375891+00:00"
+    },
+    "tests/test_broker.py": {
+      "sha256": "235e9712bbdae72787b4c9598b15df5983dd986a77399870af38ec88a9a84293",
+      "bytes": 33289,
+      "modified_at": "2026-10-03T20:46:02.086438+00:00"
+    },
+    "tests/test_cloud.py": {
+      "sha256": "16dd32b9dc7a649085bcc83f9c09846e0642b842770b709ef4e358d1b309782c",
+      "bytes": 15346,
+      "modified_at": "2026-10-03T19:00:10.328704+00:00"
+    },
+    "tests/test_controls.py": {
+      "sha256": "e6ce99383b52b2ec74fd8d9bf4770380dbc67f2f8537a6e5fb20c75f817e58ce",
+      "bytes": 25016,
+      "modified_at": "2026-10-03T18:34:28.660933+00:00"
+    },
+    "tests/test_failure_recovery.py": {
+      "sha256": "659c742aa3ec96aa1baa72536bd06c540bd893827ceaaeace093c65f8e7acc3e",
+      "bytes": 5812,
+      "modified_at": "2026-10-03T19:11:41.857229+00:00"
+    },
+    "tests/test_interactive_lab.py": {
+      "sha256": "5565da4b7d17e29a1c0d1da1315f6f5bee48fe9da767358f57a6e43d7d793ba4",
+      "bytes": 6302,
+      "modified_at": "2026-10-03T19:46:28.675723+00:00"
+    },
+    "tests/test_job_recovery.py": {
+      "sha256": "910702050100b02a7b4ce79a665fadd2db2ae6e9b3a134071b0c097186a0e014",
+      "bytes": 3535,
+      "modified_at": "2026-10-03T15:19:10.194278+00:00"
+    },
+    "tests/test_ledger.py": {
+      "sha256": "bd94dcd549ca9ff7441e450fa961d1cde4a1df4e291bbeba9b3412e441a5708f",
+      "bytes": 7991,
+      "modified_at": "2026-10-03T14:55:44.952458+00:00"
+    },
+    "tests/test_ledger_stateful.py": {
+      "sha256": "b15c4f3468b41efbdbd3ba6717c8c8e73c6f6e47977270a3019f39da36894697",
+      "bytes": 16253,
+      "modified_at": "2026-10-03T19:02:21.510792+00:00"
+    },
+    "tests/test_local.py": {
+      "sha256": "dc3eafb2636c768532f7ca70d448e7819b6cef51936c58ffaccca3c903756978",
+      "bytes": 14716,
+      "modified_at": "2026-10-03T19:46:11.986224+00:00"
+    },
+    "tests/test_mcp_gateway_contract.py": {
+      "sha256": "46640e0b0933ea5bacd5f1bbcbcc59fa064d9c1329399b7e63af83a53297bb12",
+      "bytes": 11870,
+      "modified_at": "2026-10-03T14:23:00.152911+00:00"
+    },
+    "tests/test_model_artifacts.py": {
+      "sha256": "601d10c9282230ced6b31c33965801fd0bdb39ae8815c3d46f3d6c0295659baa",
+      "bytes": 9523,
+      "modified_at": "2026-10-03T20:05:26.906613+00:00"
+    },
+    "tests/test_policy_cache.py": {
+      "sha256": "76ddafe57e8a94b353a9f663e574c5c9e0d995c11fd23166fe028a16029d6e1d",
+      "bytes": 3882,
+      "modified_at": "2026-10-03T17:04:34.911122+00:00"
+    },
+    "tests/test_publication.py": {
+      "sha256": "0d6e052bd72b0cbc99f494ec6c2f1cd59c30a48c42d2adeac2fbc871080421d9",
+      "bytes": 4502,
+      "modified_at": "2026-10-03T14:34:35.734585+00:00"
+    },
+    "tests/test_recovery.py": {
+      "sha256": "1dd10606fcf4531b0cc6bbb5d84d2e20b6502fbbf3b38632ae2072042962f98e",
+      "bytes": 1459,
+      "modified_at": "2026-10-03T13:32:34.146813+00:00"
+    },
+    "tests/test_release.py": {
+      "sha256": "6d78c781036bbf39845c13988b354fe394d623de6488e2651c33dc16ccdffaf7",
+      "bytes": 10922,
+      "modified_at": "2026-10-04T00:36:45.736326+00:00"
+    },
+    "tests/test_replay.py": {
+      "sha256": "2bb59473dc553ec05111a007f2e64fa058e81e0ac0f547fe78cc7c34fc6bb44f",
+      "bytes": 2365,
+      "modified_at": "2026-10-03T15:15:05.732931+00:00"
+    },
+    "tests/test_runtime_contract.py": {
+      "sha256": "f252788457c79ea32a803e7527a588f4d2ff8a81733390ab0851de633fa4d15f",
+      "bytes": 8506,
+      "modified_at": "2026-10-03T19:32:15.896346+00:00"
+    },
+    "tests/test_semantic_cache.py": {
+      "sha256": "232666848adcfee518e35e4249196f6b474fcdf1c6c78a8e383aa63af01b3432",
+      "bytes": 6740,
+      "modified_at": "2026-10-03T17:04:34.909110+00:00"
+    },
+    "tests/test_semantic_evidence.py": {
+      "sha256": "502b813450e9e282aca8baeb465610dfc8dc712f2be7fc6b6280b4279bfe7c94",
+      "bytes": 19495,
+      "modified_at": "2026-10-04T00:29:36.513958+00:00"
+    },
+    "tests/test_telemetry.py": {
+      "sha256": "e9492d01c4e6aa0a132085eff3a283632d54eb016b80ac6ec7a614308093d776",
+      "bytes": 2177,
+      "modified_at": "2026-10-03T15:14:02.815866+00:00"
+    },
+    "tests/test_verify_entrypoint.py": {
+      "sha256": "4e09857085ebabf956d60c4216c9bcf669e545d3cb1cf09e0d996c58c01be22d",
+      "bytes": 4692,
+      "modified_at": "2026-10-03T20:45:30.714015+00:00"
+    },
+    "artifacts/all-local-coverage.json": {
+      "sha256": "ba6c8138ae301f832b677e46dd8d3bea7f14da33b0482a8a11d83b8afa0e2490",
+      "bytes": 18613,
+      "modified_at": "2026-10-04T02:36:36.292727+00:00"
+    },
+    "models/model-manifest.json": {
+      "sha256": "664b1bc511d0f34ed441a05d6c8ed996f66c03a2c1b40994c982d62283e2ba67",
+      "bytes": 782,
+      "modified_at": "2026-10-03T18:33:27.916191+00:00"
+    },
+    "models/tokenizer.json": {
+      "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+      "bytes": 12807982,
+      "modified_at": "2026-10-03T17:14:53.250272+00:00"
+    },
+    "policy/control.yaml": {
+      "sha256": "193c6fbcd470b3c83142450ffd5705ce77ffbec35c1eb5cd3b9cb63654839af0",
+      "bytes": 3193,
+      "modified_at": "2026-10-04T02:36:33.476570+00:00"
+    },
+    "artifacts/deployed-configuration.json": {
+      "sha256": "a0ee5aca350923317685d6e38ee7e8ced829d688e3ade2ced44011a967213bb6",
+      "bytes": 6216,
+      "modified_at": "2026-10-04T04:17:22.204310+00:00"
+    },
+    "artifacts/deployed-source.json": {
+      "sha256": "6f98ba2241fbd48aa4079b72d0c8caefa6053b2c22ee56a39e50b2678ace5535",
+      "bytes": 41577,
+      "modified_at": "2026-10-04T04:17:22.203311+00:00"
+    },
+    "Dockerfile": {
+      "sha256": "714a9786bb6caeab84e788e9412bd8312ef9400c7684a9a429cf22337a151996",
+      "bytes": 1749,
+      "modified_at": "2026-10-03T18:25:14.669026+00:00"
+    },
+    "compose.yaml": {
+      "sha256": "5cb04ce33fef6f2f813ba3759133769ca2b76cb1c92a3356648b6b74a1d6f781",
+      "bytes": 11635,
+      "modified_at": "2026-10-04T04:08:49.309639+00:00"
+    },
+    "deploy/compose.gpu.yaml": {
+      "sha256": "971033e7cd90398db145e4bd6cab320aa72c0471240bf280aa0669fe97604303",
+      "bytes": 839,
+      "modified_at": "2026-10-03T16:52:39.694453+00:00"
+    },
+    "pyproject.toml": {
+      "sha256": "2d11b22e3a52b93d634815d54f59d679bd94892799839a3d336bfd5c4667c1db",
+      "bytes": 1126,
+      "modified_at": "2026-10-03T12:16:10.334358+00:00"
+    },
+    "runtime/Dockerfile": {
+      "sha256": "5ff4a86f7afbb4eb59f25c2d46534daa9762b77b9e32ebc994dd17974fdd0ad1",
+      "bytes": 1521,
+      "modified_at": "2026-10-03T19:43:17.289287+00:00"
+    },
+    "runtime/requirements.lock": {
+      "sha256": "46109b5f0bfa894a174c9b24f5f9ce615374daa93eb2d82e7977844f1a714a8f",
+      "bytes": 27427,
+      "modified_at": "2026-10-03T14:15:58.626664+00:00"
+    },
+    "scripts/image_manifest.mjs": {
+      "sha256": "768aea96a5c942175887fab1331a025c8c651ffca983df86bff731e8b8ead711",
+      "bytes": 927,
+      "modified_at": "2026-10-03T17:20:25.620468+00:00"
+    },
+    "uv.lock": {
+      "sha256": "9fd71cc7eedcfc669fd9acc4b039c0bce0de7a3e9ddde6216d78b36c7b9e0fa0",
+      "bytes": 587548,
+      "modified_at": "2026-10-03T12:16:10.400148+00:00"
+    },
+    "ui/index.html": {
+      "sha256": "5e483891d9830c0693227f553ef76c09c5c238728f7de9e834607f4ed4042320",
+      "bytes": 565,
+      "modified_at": "2026-10-03T12:01:40.102726+00:00"
+    },
+    "ui/package-lock.json": {
+      "sha256": "c10d7299cacbcebcd9b52f25affb0684cfc0e546a861fcae2a9b4ad6ec3cfca0",
+      "bytes": 77648,
+      "modified_at": "2026-10-03T12:01:14.905334+00:00"
+    },
+    "ui/package.json": {
+      "sha256": "56d6150588964f1cf69814efb5da40d87126f623504c02c448ee32244e6b6381",
+      "bytes": 770,
+      "modified_at": "2026-10-03T12:05:36.539892+00:00"
+    },
+    "ui/public/favicon.svg": {
+      "sha256": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+      "bytes": 298,
+      "modified_at": "2026-10-03T11:52:00.149506+00:00"
+    },
+    "ui/src/App.tsx": {
+      "sha256": "f7bc0dc89b3bd4b79a9ccb7b922ff22aafefdb04a23d19e7455dd66a4e7d4df8",
+      "bytes": 15905,
+      "modified_at": "2026-10-03T21:39:12.487399+00:00"
+    },
+    "ui/src/Budgets.tsx": {
+      "sha256": "9badf166ca2817418c820c3e197fb99be685529787a2ed78f24391364d80c903",
+      "bytes": 14132,
+      "modified_at": "2026-10-03T21:39:12.484377+00:00"
+    },
+    "ui/src/Investigate.tsx": {
+      "sha256": "a1862425d59deeaec9db00928e96753e0dbb0b911e6db12ce385ea728c5c52e4",
+      "bytes": 11390,
+      "modified_at": "2026-10-03T21:39:12.485889+00:00"
+    },
+    "ui/src/Overview.tsx": {
+      "sha256": "08cfe53817fb9da560c057131d04ef4e936db9a7747fb11fe5a9b58e20528201",
+      "bytes": 15158,
+      "modified_at": "2026-10-03T21:39:12.480362+00:00"
+    },
+    "ui/src/Policies.tsx": {
+      "sha256": "0891cea0922204351656bf89f1a9802a98c4df2b1d9d7d9c20f5ed06a8323f51",
+      "bytes": 15426,
+      "modified_at": "2026-10-03T21:39:12.483377+00:00"
+    },
+    "ui/src/TestLab.tsx": {
+      "sha256": "3dc1c9e8fc401242cb7ebbd7d99077089ad2b5721455057b677421a5006745b8",
+      "bytes": 14278,
+      "modified_at": "2026-10-03T21:39:12.481867+00:00"
+    },
+    "ui/src/api.ts": {
+      "sha256": "dfe3b9099b2ee8d5695077ae9eed4a0e8820676f6c637090ed95f81c3738413e",
+      "bytes": 3130,
+      "modified_at": "2026-10-03T15:49:54.883556+00:00"
+    },
+    "ui/src/components.tsx": {
+      "sha256": "136b109533f6238cf94c997992642a3d2863304c62c45e3d06d26b05fb49f736",
+      "bytes": 18167,
+      "modified_at": "2026-10-03T20:12:38.547007+00:00"
+    },
+    "ui/src/main.tsx": {
+      "sha256": "456f14158eef1f5e666848411f9c4cddea0b0e99816abaa523e60bfcfe40847c",
+      "bytes": 521,
+      "modified_at": "2026-10-03T12:01:39.632063+00:00"
+    },
+    "ui/src/styles.css": {
+      "sha256": "0744ded47d5473e0e03c39239db637337e74afe98822a32c0a5a029a413ab1c8",
+      "bytes": 44692,
+      "modified_at": "2026-10-03T20:14:31.706485+00:00"
+    },
+    "ui/tsconfig.json": {
+      "sha256": "b18edd473ae10946e62b2f02fc2c1931950408337f9f75086ba31b7671417dcb",
+      "bytes": 527,
+      "modified_at": "2026-10-03T12:01:40.063424+00:00"
+    },
+    "ui/vite.config.ts": {
+      "sha256": "8bddcb7d68f1a1eb45b0b66501863a82d9c6cfb5e29a7cd64807479b7106c39c",
+      "bytes": 455,
+      "modified_at": "2026-10-03T12:03:06.504601+00:00"
+    },
+    "runtime/worker.py": {
+      "sha256": "b006d2bef913c77d3dabef09c982c06f56d155c4c881d8d05dfad64fac7ca29c",
+      "bytes": 25424,
+      "modified_at": "2026-10-03T19:18:56.913605+00:00"
+    },
+    "artifacts/runtime-hardware.json": {
+      "sha256": "a3377d45aee574e602042470b2d1080aee7f4261f2920c365b82dfe983937362",
+      "bytes": 9824,
+      "modified_at": "2026-10-04T03:28:27.215396+00:00"
+    },
+    "tests/corpus/semantic_holdout_v2_manifest.json": {
+      "sha256": "ebea82993216f958e5d5ab69ef7f57487d845f98313bdd84ad47851b38040579",
+      "bytes": 985,
+      "modified_at": "2026-10-03T15:24:03.944479+00:00"
+    },
+    "tests/corpus/semantic_holdout_v2.json": {
+      "sha256": "eab131541888554185a52b5b56ac7fa8374c0addbd45e643dac2c3fbfad9fb72",
+      "bytes": 23956,
+      "modified_at": "2026-10-03T15:13:22.446695+00:00"
+    },
+    "artifacts/semantic-quality.json": {
+      "sha256": "95fc1802efb0ccab1c4dfddbd356745bb65107e1110574b0f924888a615d078c",
+      "bytes": 50427,
+      "modified_at": "2026-10-04T02:34:50.609761+00:00"
+    },
+    "artifacts/semantic-long-attack.json": {
+      "sha256": "f3f756523e7157333a7895e3040153542ee24ec5b8b6e68a399ec57ba2b45782",
+      "bytes": 2820651,
+      "modified_at": "2026-10-04T02:07:59.496720+00:00"
+    },
+    "artifacts/legal-workflow.json": {
+      "sha256": "3f4b700865a5ef7be10d8a7a37c7ab89e3499ad64ec7ea90758a875589661d28",
+      "bytes": 10226,
+      "modified_at": "2026-10-04T02:01:40.493442+00:00"
+    },
+    "artifacts/isolation.json": {
+      "sha256": "b3d1b20c3cdc069d751de8fda6410865f04727027ed60481d5649f06d7687dfa",
+      "bytes": 1286,
+      "modified_at": "2026-10-04T03:28:27.375804+00:00"
+    },
+    "artifacts/runtime-preflight.json": {
+      "sha256": "62e7c6585bd667727b5f09a9ec106b2f08f602854690b038603825605c881afc",
+      "bytes": 25440,
+      "modified_at": "2026-10-04T00:42:07.957563+00:00"
+    },
+    "artifacts/runtime-configuration.json": {
+      "sha256": "2bdfaead579598cc8665fdfe7e762d53cfedfadf1156a167b88e8384bde4d828",
+      "bytes": 4997,
+      "modified_at": "2026-10-04T04:17:18.440823+00:00"
+    },
+    "artifacts/clean-install.json": {
+      "sha256": "3f39ef731a97baedcfdd25b70e6c323c83d8d650481300f6c31dc2aac506bc39",
+      "bytes": 11572,
+      "modified_at": "2026-10-04T03:26:34.410564+00:00"
+    },
+    "artifacts/benchmark.json": {
+      "sha256": "c5372fbf77226ff6204313ab14e8bdbdfdbf1b06db2522735eff8e3c0ad19aec",
+      "bytes": 6976243,
+      "modified_at": "2026-10-04T04:41:58.174288+00:00"
+    },
+    "artifacts/benchmark-reference/pg200-keepalive30-runtime-hardware.json": {
+      "sha256": "5542f170cf150c8db19ab18bf8417a73c44d52b22408d2c008ab72bdd0d0487a",
+      "bytes": 10028,
+      "modified_at": "2026-10-04T04:17:38.978721+00:00"
+    },
+    "artifacts/publication.json": {
+      "sha256": "dcee4d6cb5cba4781c538c5ecd1b4e54a005d281d05a3a34994b360969519016",
+      "bytes": 711,
+      "modified_at": "2026-10-04T02:36:25.634300+00:00"
+    },
+    "artifacts/reports/ui-contract.xml": {
+      "sha256": "9dc367d2151df95905040252acbf8af27cd8b1135fb3853b4c30f2f95fe9e4be",
+      "bytes": 2076,
+      "modified_at": "2026-10-04T05:33:05.259884+00:00"
+    },
+    "artifacts/reports/live-browser.json": {
+      "sha256": "34cd4b4d5776c5f5ec87d3c42dccf341524c98ac06521ec138ecaf6515bba0c1",
+      "bytes": 1089,
+      "modified_at": "2026-10-04T04:59:48.207575+00:00"
+    },
+    "artifacts/submission/ui-workflow.json": {
+      "sha256": "593bb4d1330b3f4d761cd048f61789a9f6e97e6c152bfe4667f5da4dc4157eef",
+      "bytes": 104521,
+      "modified_at": "2026-10-04T05:01:46.322084+00:00"
+    },
+    "TEAM.json": {
+      "sha256": "732bad41bd3c4563673c92c211f77c91c1219ecf5bd22580bc8f48329299a6be",
+      "bytes": 447,
+      "modified_at": "2026-10-03T23:28:03.554952+00:00"
+    },
+    "artifacts/submission/ActionGate-UI-workflows.mp4": {
+      "sha256": "4e27e02226ab12500d1d7b7bdc4d8b81b89f19196e118049666e6e68dc0c418a",
+      "bytes": 1964798,
+      "modified_at": "2026-10-04T05:01:46.279023+00:00"
+    },
+    "artifacts/submission/client-examples.json": {
+      "sha256": "dda5de469f147d563bc656768483ad4428bac25a533a54a92b5d52c4c9e6ecd6",
+      "bytes": 53676,
+      "modified_at": "2026-10-04T04:54:33.326517+00:00"
+    },
+    "packages/clients/python/agent_example.py": {
+      "sha256": "a1150b42123c4861828b5e8fcfc5712fb08420202c52d26bdbccb1ddbbefd881",
+      "bytes": 927,
+      "modified_at": "2026-10-03T12:15:06.289853+00:00"
+    },
+    "packages/clients/python/actiongate_client.py": {
+      "sha256": "c61df1e943f201b3d702c2b6c6e6ede5fa2e19bf92ae36d3c22eb91587b8dc46",
+      "bytes": 2924,
+      "modified_at": "2026-10-03T12:19:27.670367+00:00"
+    },
+    "packages/clients/typescript/agent-example.ts": {
+      "sha256": "3b6e55560666e72c9a864a8e80322c09e74f51c22ca95b10a35e634464315abc",
+      "bytes": 723,
+      "modified_at": "2026-10-03T12:15:06.295410+00:00"
+    },
+    "packages/clients/typescript/actiongate.ts": {
+      "sha256": "3f00d99d52553d5e5204394e460e385692e251266118494e0b1e43affb5a7f3c",
+      "bytes": 2345,
+      "modified_at": "2026-10-03T16:27:14.830241+00:00"
+    },
+    "packages/clients/typescript/package.json": {
+      "sha256": "d14610abf6f2a8f19c3bfcebffb0cf7237ab7668c64978ce36d8d962798b7c87",
+      "bytes": 81,
+      "modified_at": "2026-10-03T16:27:27.832390+00:00"
+    },
+    "artifacts/submission/policy-replay.json": {
+      "sha256": "16366f18c95aad093cf692563992007d0c842282428b6c0e9fda9531a3eee348",
+      "bytes": 86095,
+      "modified_at": "2026-10-04T04:55:08.297635+00:00"
+    },
+    "artifacts/submission/dashboard-events.json": {
+      "sha256": "82e4108d80f739c1142140015d1f96951868206e216482dbe99bb72785aebee7",
+      "bytes": 4212,
+      "modified_at": "2026-10-04T04:59:08.736663+00:00"
+    },
+    "artifacts/submission/sample-synthetic-audit.jsonl": {
+      "sha256": "7f9b9fab5bb8ab8e6c1f4448faaf686a477fd03a5c5effbb35434c394735299d",
+      "bytes": 82142,
+      "modified_at": "2026-10-04T04:59:08.649345+00:00"
+    },
+    "artifacts/submission/sample-synthetic-management.csv": {
+      "sha256": "f65c6330591f4a7eea9a4a8918df4a1b279826c7e99fa5a72b6124dc4056dccf",
+      "bytes": 7833,
+      "modified_at": "2026-10-04T04:59:08.667851+00:00"
+    },
+    "artifacts/reports/live-provider.json": {
+      "sha256": "42c5e77510e990b5b23c6589491218e943c355e945901157ecf63a4ce29a6b44",
+      "bytes": 3629,
+      "modified_at": "2026-10-04T04:48:34.046822+00:00"
+    },
+    "artifacts/reports/live-provider-gateway.json": {
+      "sha256": "18ccf893a7ea553eb287dab63d8efd59fae1d69f0d213ffc3cc136f03a4c7783",
+      "bytes": 15972,
+      "modified_at": "2026-10-04T04:49:10.701173+00:00"
+    },
+    "artifacts/gpu-preflight.json": {
+      "sha256": "54cc2ca60adbbcbd7805a73cac26b5cc1d1040e78740fbe66592dc8627e08d17",
+      "bytes": 39830,
+      "modified_at": "2026-10-04T03:31:17.067554+00:00"
+    }
+  },
+  "limitations": [
+    "Only recorded named executions are claimed. Historical guard-v1 and fixture-only reports never replace current real-model acceptance.",
+    "Hashes bind this aggregate to exact local evidence bytes; they are not a third-party attestation. Rerun aggregation before creating the final release manifest.",
+    "Quality has a small frozen sample. Concurrency rejections, cold model loading, control cache, model cache, and completed-request latency remain separate.",
+    "The initial 50 ms deterministic p95 overhead target is reported at its unchanged threshold. Required verification passing does not mean every performance target was met."
+  ]
+}

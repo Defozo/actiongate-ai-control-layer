@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "status": "partial",
+  "reason": "Obejrzano wszystkie wskazane ekrany i wykonano próbki interakcji oraz dostępności. Nie zweryfikowano końcowego wyniku inspekcji, pełnych procesów zatwierdzania i rzeczywistego powiększenia 200%.",
+  "firstImpression": {
+    "purpose": "Panel kontroli dostępu do modeli i narzędzi AI.",
+    "audience": "Osoby zarządzające uprawnieniami i budżetami.",
+    "firstAction": "Wybrać przestrzeń i rolę, następnie nacisnąć „Enter workspace”.",
+    "expectedOutcome": "Otwarcie demonstracyjnego panelu.",
+    "uncertainties": [
+      "Niejasne znaczenie „Verified effect”.",
+      "Nie wiadomo, czy widoczny od początku komunikat o wymaganej tożsamości uniemożliwi wejście."
+    ],
+    "recordedBeforeExploration": true
+  },
+  "coverage": {
+    "entryUrl": "http://127.0.0.1:18091/",
+    "routesRequested": [
+      "http://127.0.0.1:18091/#overview",
+      "http://127.0.0.1:18091/#investigate",
+      "http://127.0.0.1:18091/#policies",
+      "http://127.0.0.1:18091/#budgets",
+      "http://127.0.0.1:18091/#test-lab"
+    ],
+    "routesChecked": [
+      "http://127.0.0.1:18091/",
+      "http://127.0.0.1:18091/#overview",
+      "http://127.0.0.1:18091/#investigate",
+      "http://127.0.0.1:18091/#policies",
+      "http://127.0.0.1:18091/#budgets",
+      "http://127.0.0.1:18091/#test-lab"
+    ],
+    "checks": [
+      {
+        "area": "first-impression",
+        "result": "checked",
+        "evidence": "Zrzut ekranu i drzewo dostępności przy 1440 × 900; pierwsze wrażenie zapisano przed interakcjami.",
+        "limitations": "Pierwszy widok przedstawiał wejście demonstracyjne."
+      },
+      {
+        "area": "navigation",
+        "result": "checked",
+        "evidence": "Po wyborze Synthetic test tenant wszystkie pięć sekcji osiągnięto przez menu. Nagłówki i ścieżka w górnym pasku wskazują bieżącą sekcję.",
+        "limitations": "Nie sprawdzano niezależnego otwierania każdego adresu w nowej sesji."
+      },
+      {
+        "area": "language",
+        "result": "checked",
+        "evidence": "Cel opisano konkretnie: uprawnienia, przetwarzanie danych, budżety i decyzje. Edytory YAML oraz JSON wskazują na technicznego odbiorcę. Podsumowania zawierają też surowe wartości „[]”, „{}” i „supplier_review”.",
+        "limitations": "Nie oceniano poprawności specjalistycznych reguł biznesowych."
+      },
+      {
+        "area": "cognitive-load",
+        "result": "checked",
+        "evidence": "Stałe menu, nagłówki i grupowanie kart wspierają orientację. Puste historie wyjaśniają, kiedy pojawią się dane. Policies & feeds wymaga czytania obszernej konfiguracji.",
+        "limitations": "Ocena dotyczy pierwszej wizyty i niewielkiej liczby syntetycznych rekordów."
+      },
+      {
+        "area": "forms-and-feedback",
+        "result": "checked",
+        "evidence": "Utworzono syntetyczny workflow. W formularzu Propose action wpisano niepoprawny JSON i otrzymano „Arguments must be valid JSON.”. Uruchomiono Inspect input i zaobserwowano „Inspecting…”.",
+        "limitations": "Nie potwierdzono końcowego wyniku inspekcji. Nie aktywowano konfiguracji, nie publikowano rewizji, nie resetowano zasobów ani nie sprawdzano zatwierdzeń."
+      },
+      {
+        "area": "keyboard-and-focus",
+        "result": "checked",
+        "evidence": "Wykonano Tab, Shift+Tab i Enter w menu desktopowym. Fokus Budgets miał widoczną obwódkę 2 px. Na urządzeniu mobilnym Tab trafiał do ukrytego logo menu. Escape nie zamknął otwartego menu.",
+        "limitations": "Sprawdzono próbkę ścieżek klawiaturowych, nie wszystkie kontrolki."
+      },
+      {
+        "area": "semantics-and-names",
+        "result": "checked",
+        "evidence": "Obecne są main, navigation, nagłówki i nazwane kontrolki. Pole Action arguments po błędzie nie miało aria-invalid ani aria-describedby.",
+        "limitations": "Inspekcja drzewa dostępności i DOM, bez testu czytnikiem ekranu."
+      },
+      {
+        "area": "contrast",
+        "result": "checked",
+        "evidence": "Dla opisu „Inspect text through a controlled internal report in the current tenant” zmierzono kolory obliczone RGB(130,144,139) na RGB(25,28,30): około 5,15:1.",
+        "limitations": "Pomiar jednej próbki tekstu, bez pełnego przeglądu kontrastu i wszystkich stanów."
+      },
+      {
+        "area": "zoom-and-mobile",
+        "result": "checked",
+        "evidence": "Test Lab sprawdzono przy emulacji 390 × 844. Treść układała się w jednej kolumnie. Overview przy 720 × 450 miał szerokość dokumentu 720 px i czytelny układ po zakończeniu animacji.",
+        "limitations": "Skróty powiększenia nie zmieniły parametrów widoku. 720 × 450 było wyłącznie symulacją mniejszej przestrzeni odpowiadającej połowie wymiarów desktopu, nie rzeczywistym zoomem 200%. Nie sprawdzono mobilnie wszystkich sekcji."
+      },
+      {
+        "area": "status-announcements",
+        "result": "checked",
+        "evidence": "Ładowanie sekcji miało role=status i aria-live=polite; błąd JSON miał role=alert. Podczas „Inspecting…” nie znaleziono regionu live.",
+        "limitations": "Nie potwierdzono ogłoszenia końcowego wyniku inspekcji ani zachowania czytnika ekranu."
+      }
+    ],
+    "limitations": [
+      "Używano wyłącznie izolowanej przeglądarki, renderowanego interfejsu, drzewa dostępności i dozwolonej inspekcji DOM.",
+      "Zmiany ograniczono do syntetycznej przestrzeni testowej.",
+      "Zmiana emulacji mobilnej przeładowała widok podczas trwającej inspekcji; jej końcowego rezultatu nie oceniono.",
+      "Nie wykonywano pełnego audytu zgodności WCAG."
+    ]
+  },
+  "findings": [
+    {
+      "id": "UX-01",
+      "priority": "high",
+      "confidence": "high",
+      "area": "keyboard-and-focus",
+      "location": {
+        "url": "http://127.0.0.1:18091/#test-lab",
+        "target": "Zamknięte mobilne menu boczne"
+      },
+      "evidence": "Przy 390 × 844 pierwszy Tab pokazał „Skip to content”, a następny przeniósł fokus na logo ActionGate w schowanym panelu. Prostokąt linku miał x=-211 px i prawą krawędź około -77 px, całkowicie poza ekranem. Drzewo dostępności nadal zawierało nawigację panelu.",
+      "reproduction": [
+        "Otwórz Test Lab w syntetycznej przestrzeni przy 390 × 844.",
+        "Pozostaw menu zamknięte.",
+        "Przejdź klawiszem Tab do „Skip to content”, następnie naciśnij Tab ponownie."
+      ],
+      "impact": "Użytkownik klawiatury traci widoczny fokus i trafia do kontrolek, których nie widzi.",
+      "recommendation": "Wyłącz zamknięty panel z kolejności fokusu i drzewa dostępności, np. przez inert lub odpowiednie ukrycie. Udostępniaj jego kontrolki po otwarciu.",
+      "acceptanceCriteria": [
+        "Przy zamkniętym menu Tab i Shift+Tab pomijają wszystkie elementy panelu.",
+        "Każdy element otrzymujący fokus jest widoczny.",
+        "Po otwarciu menu jego kontrolki są dostępne z klawiatury."
+      ]
+    },
+    {
+      "id": "UX-02",
+      "priority": "medium",
+      "confidence": "high",
+      "area": "forms-and-feedback",
+      "location": {
+        "url": "http://127.0.0.1:18091/#investigate",
+        "target": "Propose action, pole Action arguments"
+      },
+      "evidence": "Po wysłaniu wartości „{” wyświetlono alert „Arguments must be valid JSON.”. Pole textarea nie miało aria-invalid ani aria-describedby; fokus pozostał na przycisku wysyłania.",
+      "reproduction": [
+        "Utwórz workflow w Synthetic test tenant.",
+        "Otwórz Propose action.",
+        "Wpisz „{” w Action arguments i zatwierdź formularz.",
+        "Sprawdź semantykę pola po błędzie."
+      ],
+      "impact": "Alert informuje o błędzie, ale po powrocie do pola użytkownik technologii asystującej nie otrzymuje programowo powiązanej informacji, co wymaga poprawy.",
+      "recommendation": "Oznacz błędne pole aria-invalid=true i powiąż je z komunikatem przez aria-describedby lub aria-errormessage. Zachowaj wpisaną treść i istniejący alert.",
+      "acceptanceCriteria": [
+        "Niepoprawny JSON ustawia programowy stan błędu pola.",
+        "Komunikat błędu jest programowo powiązany z Action arguments.",
+        "Po poprawieniu i ponownej walidacji nieaktualny stan błędu zostaje usunięty."
+      ]
+    }
+  ],
+  "overall": {
+    "understandable": true,
+    "summary": "Cel produktu i główna nawigacja są zrozumiałe, szczególnie dla technicznego administratora. Najważniejszy potwierdzony problem to fokus trafiający do ukrytego menu mobilnego. Formularz argumentów wymaga też powiązania błędu z polem. Ocena pozostaje częściowa."
+  }
+}

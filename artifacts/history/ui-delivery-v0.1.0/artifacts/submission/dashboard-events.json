@@ -1,0 +1,123 @@
+{
+  "recorded_at": "2026-10-04T04:59:08.668Z",
+  "tenant": "synthetic_test_tenant",
+  "target": "http://127.0.0.1:18089",
+  "new_inference": false,
+  "producer_sources": {
+    "scripts/verify_dashboard_events.cjs": "3843d9835b4939da6f392b6bb08f75df34e815a3e4862042ba3c36efb8dad7bb",
+    "scripts/sse_reconnect_probe.cjs": "9e0b8bd95d918fb5796685337bec2ed650ffd4cfb320e9891eae9057249f772c"
+  },
+  "producer_source_stable": true,
+  "method": "Stored audit timestamp to real DOM visibility is recorded with an explicit clock-alignment check. Acceptance uses monotonic request-to-visible, a conservative upper bound beginning before the DB commit. Timing uses the direct deployment URL; only reconnect uses a fault proxy.",
+  "target_ms": 1000,
+  "measurements": [
+    {
+      "run_id": "501aa1c9-7704-4926-b56f-5e527db5a458",
+      "event_id": 27390,
+      "event_created_at": "2026-10-04T04:58:59.919566+00:00",
+      "visible_at": "2026-10-04T04:58:58.727Z",
+      "cross_clock_timestamp_delta_ms": -1192,
+      "stored_event_to_visible_ms": null,
+      "request_to_visible_upper_bound_ms": 314.3,
+      "stored_clock_inside_request_bracket": false,
+      "target_met": true
+    },
+    {
+      "run_id": "04ea45e4-8e66-4377-a8a5-21fdd8727732",
+      "event_id": 27391,
+      "event_created_at": "2026-10-04T04:59:00.714647+00:00",
+      "visible_at": "2026-10-04T04:58:59.859Z",
+      "cross_clock_timestamp_delta_ms": -855,
+      "stored_event_to_visible_ms": null,
+      "request_to_visible_upper_bound_ms": 562.8,
+      "stored_clock_inside_request_bracket": false,
+      "target_met": true
+    },
+    {
+      "run_id": "67b5a72c-57cf-4190-a9fd-d986ed4f7591",
+      "event_id": 27392,
+      "event_created_at": "2026-10-04T04:59:01.734267+00:00",
+      "visible_at": "2026-10-04T04:59:00.975Z",
+      "cross_clock_timestamp_delta_ms": -759,
+      "stored_event_to_visible_ms": null,
+      "request_to_visible_upper_bound_ms": 544.5,
+      "stored_clock_inside_request_bracket": false,
+      "target_met": true
+    },
+    {
+      "run_id": "ffacb1fe-d7e0-4a2c-ab03-99e0aa2e98f0",
+      "event_id": 27393,
+      "event_created_at": "2026-10-04T04:59:02.769622+00:00",
+      "visible_at": "2026-10-04T04:59:02.121Z",
+      "cross_clock_timestamp_delta_ms": -648,
+      "stored_event_to_visible_ms": null,
+      "request_to_visible_upper_bound_ms": 541.2,
+      "stored_clock_inside_request_bracket": false,
+      "target_met": true
+    },
+    {
+      "run_id": "a6535aec-9fc0-4a02-90b8-3cbc97064416",
+      "event_id": 27394,
+      "event_created_at": "2026-10-04T04:59:03.769631+00:00",
+      "visible_at": "2026-10-04T04:59:03.227Z",
+      "cross_clock_timestamp_delta_ms": -542,
+      "stored_event_to_visible_ms": null,
+      "request_to_visible_upper_bound_ms": 535.5,
+      "stored_clock_inside_request_bracket": false,
+      "target_met": true
+    }
+  ],
+  "maximum_ms": 562.8,
+  "samples_count": 5,
+  "p50_ms": 541.2,
+  "p95_ms": 562.8,
+  "target_met": true,
+  "idle_read_requests_in_10_seconds": [],
+  "replay": {
+    "status": "passed",
+    "transport_fault": "Abrupt close of this browser SSE response by a byte-forwarding loopback proxy",
+    "cursor_before_disconnect": 27394,
+    "reconnect_last_event_id": 27394,
+    "first_replayed_id": 27395,
+    "disconnected_period_run_id": "9f1a0852-c776-4866-b60f-31ad65ef525e",
+    "replayed_run_event_id": 27395,
+    "visible_after_reconnect": true,
+    "cursor_preserved": true,
+    "replay_strictly_after_cursor": true,
+    "streams": [
+      {
+        "last_event_id": null,
+        "events": [
+          {
+            "id": 27394,
+            "type": "ready"
+          }
+        ]
+      },
+      {
+        "last_event_id": "27394",
+        "events": [
+          {
+            "id": 27395,
+            "type": "audit",
+            "run_id": "9f1a0852-c776-4866-b60f-31ad65ef525e"
+          }
+        ]
+      }
+    ]
+  },
+  "replay_passed": true,
+  "exports": {
+    "audit_events": 152,
+    "sample-synthetic-audit.jsonl": {
+      "bytes": 82142,
+      "source": "/api/exports/audit.jsonl"
+    },
+    "sample-synthetic-management.csv": {
+      "bytes": 7833,
+      "source": "/api/exports/management.csv"
+    }
+  },
+  "errors": [],
+  "status": "passed"
+}

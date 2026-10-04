@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-10-04T03:31:38.070432+00:00",
+  "project": "actiongate-gpu-0b92f97d",
+  "compose_sha256": "4e6df137b97a57c5e92824bcb28969f8471e55f42cc9876df9a1ce3480383094",
+  "producer_sha256": "bf181c3ef028aa35a784c808801a0cfb0a51f85c6877715da8dcf43346b6c7b3",
+  "postgres": {
+    "container_id": "0f59a3e323afe4fed84c97d4507eac336c3139ca4a32eaea67d81716a35db9f8",
+    "image_id": "sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+    "command": [
+      "postgres",
+      "-c",
+      "max_connections=200"
+    ],
+    "memory_limit": 2147483648,
+    "pids_limit": 256,
+    "mounts": [
+      {
+        "Type": "volume",
+        "Name": "actiongate-gpu-0b92f97d_database",
+        "Destination": "/var/lib/postgresql/data"
+      },
+      {
+        "Type": "bind",
+        "Name": null,
+        "Destination": "/docker-entrypoint-initdb.d/10-actiongate.sh"
+      }
+    ],
+    "settings": {
+      "server_version": "17.11",
+      "max_connections": 200,
+      "superuser_reserved_connections": 3,
+      "shared_buffers": "128MB",
+      "work_mem": "4MB",
+      "connections_now": 11,
+      "active_connections_now": 1
+    },
+    "resources": {
+      "memory/memory.usage_in_bytes": "38649856",
+      "memory/memory.max_usage_in_bytes": "41689088",
+      "memory/memory.limit_in_bytes": "2147483648",
+      "memory/memory.failcnt": "0",
+      "memory/memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 0",
+      "pids/pids.current": "12",
+      "pids/pids.max": "256"
+    }
+  },
+  "gateways": {
+    "gateway-a": {
+      "status": "ready",
+      "generation": 1,
+      "checks": {
+        "database": "ready",
+        "policy": "ready",
+        "classifier": "ready",
+        "opa": "ready",
+        "guard": "ready",
+        "business": "ready"
+      }
+    },
+    "gateway-b": {
+      "status": "ready",
+      "generation": 1,
+      "checks": {
+        "database": "ready",
+        "policy": "ready",
+        "classifier": "ready",
+        "opa": "ready",
+        "guard": "ready",
+        "business": "ready"
+      }
+    }
+  },
+  "checks": {
+    "actual_max_connections_200": true,
+    "actual_memory_2g": true,
+    "actual_pids_256": true,
+    "both_gateway_readiness_http_200": true,
+    "both_gateway_generations_match": true
+  },
+  "passed": true
+}

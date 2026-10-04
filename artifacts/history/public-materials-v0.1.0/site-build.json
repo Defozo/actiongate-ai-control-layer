@@ -1,0 +1,135 @@
+{
+  "built_at": "2026-10-04T05:42:07.657598+00:00",
+  "demo_url": "https://743b-83-10-76-158.ngrok-free.app",
+  "release_archive_sha256": "59693f3c48261724cd3bca28f0eac764443e08b62ee5739ca110b4352e40b697",
+  "public_application_proof_sha256": "844500e5ac439e895e4cb0f4431cc9a20874237c3ee34149790db6c072cb5919",
+  "assets": [
+    {
+      "source": "artifacts/submission/ActionGate.pdf",
+      "published_name": "ActionGate.pdf",
+      "sha256": "cd8a68746c42104d3489b91c85b3ea3fcaa279703ef6da1575f20e105d995691",
+      "size_bytes": 463038
+    },
+    {
+      "source": "artifacts/submission/ActionGate.pptx",
+      "published_name": "ActionGate.pptx",
+      "sha256": "b70351f69ad3eacd71cfe7d725118fa9336b2efa80bcf01695154894dc0119b8",
+      "size_bytes": 550844
+    },
+    {
+      "source": "artifacts/submission/ActionGate-pitch.mp4",
+      "published_name": "ActionGate-demo.mp4",
+      "sha256": "43d6626bc6fb3809b0c363f3ca8d83df36dba712b4078faba113aa22ee933cb4",
+      "size_bytes": 8015530
+    },
+    {
+      "source": "artifacts/submission/ActionGate-cover.png",
+      "published_name": "ActionGate-cover.png",
+      "sha256": "fe6fd8b244c28cb7fbbffbbf9c5c4d45c366c8a3d7b3c74e999544a48e8b5aa3",
+      "size_bytes": 1519455
+    },
+    {
+      "source": "artifacts/submission/ActionGate-poster.png",
+      "published_name": "ActionGate-poster.png",
+      "sha256": "b2e4f41550379bcf4179874f43a072da04ac79a9e41e9d531047add3688d5581",
+      "size_bytes": 1573514
+    },
+    {
+      "source": "artifacts/submission/ActionGate-demo.en.vtt",
+      "published_name": "ActionGate-demo.vtt",
+      "sha256": "3d6e547f217d92c42188543e3c8ccc19886e272f29b4de1a9bbb3f86d9117050",
+      "size_bytes": 4071
+    },
+    {
+      "source": "artifacts/submission/ActionGate-transcript.txt",
+      "published_name": "ActionGate-transcript.txt",
+      "sha256": "15d1d8cdff306996568e4fbbc69229b8202b07d58441b5e0a86b3304c7f83cf3",
+      "size_bytes": 2246
+    },
+    {
+      "source": "artifacts/submission/ActionGate-song-pl-2026-10-04-v2.mp4",
+      "published_name": "ActionGate-song-pl-2026-10-04-v2.mp4",
+      "sha256": "b3c3b557a1b9ee98c6f1c64a5cc3dba0d75edad144eb284f8d3b3a5fb9d47a71",
+      "size_bytes": 7287243
+    },
+    {
+      "source": "artifacts/submission/ActionGate-song-pl-2026-10-04-v2.en.vtt",
+      "published_name": "ActionGate-song-pl-2026-10-04-v2.en.vtt",
+      "sha256": "509a755f303c96003e49b73813bf2b706dfe7f2580fdcde1f832756b0cd221c5",
+      "size_bytes": 2849
+    },
+    {
+      "source": "artifacts/submission/ActionGate-song-pl-2026-10-04-v2-transcript.txt",
+      "published_name": "ActionGate-song-pl-2026-10-04-v2-transcript.txt",
+      "sha256": "cdf4127809ee60dbb03d4c4410f228f37cb1b0c41c333e70c6f4634d4184b850",
+      "size_bytes": 1658
+    }
+  ],
+  "site_files": [
+    {
+      "path": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "ActionGate-cover.png",
+      "sha256": "fe6fd8b244c28cb7fbbffbbf9c5c4d45c366c8a3d7b3c74e999544a48e8b5aa3",
+      "size_bytes": 1519455
+    },
+    {
+      "path": "ActionGate-demo.mp4",
+      "sha256": "43d6626bc6fb3809b0c363f3ca8d83df36dba712b4078faba113aa22ee933cb4",
+      "size_bytes": 8015530
+    },
+    {
+      "path": "ActionGate-demo.vtt",
+      "sha256": "3d6e547f217d92c42188543e3c8ccc19886e272f29b4de1a9bbb3f86d9117050",
+      "size_bytes": 4071
+    },
+    {
+      "path": "ActionGate-poster.png",
+      "sha256": "b2e4f41550379bcf4179874f43a072da04ac79a9e41e9d531047add3688d5581",
+      "size_bytes": 1573514
+    },
+    {
+      "path": "ActionGate-song-pl-2026-10-04-v2-transcript.txt",
+      "sha256": "cdf4127809ee60dbb03d4c4410f228f37cb1b0c41c333e70c6f4634d4184b850",
+      "size_bytes": 1658
+    },
+    {
+      "path": "ActionGate-song-pl-2026-10-04-v2.en.vtt",
+      "sha256": "509a755f303c96003e49b73813bf2b706dfe7f2580fdcde1f832756b0cd221c5",
+      "size_bytes": 2849
+    },
+    {
+      "path": "ActionGate-song-pl-2026-10-04-v2.mp4",
+      "sha256": "b3c3b557a1b9ee98c6f1c64a5cc3dba0d75edad144eb284f8d3b3a5fb9d47a71",
+      "size_bytes": 7287243
+    },
+    {
+      "path": "ActionGate-transcript.txt",
+      "sha256": "15d1d8cdff306996568e4fbbc69229b8202b07d58441b5e0a86b3304c7f83cf3",
+      "size_bytes": 2246
+    },
+    {
+      "path": "ActionGate.pdf",
+      "sha256": "cd8a68746c42104d3489b91c85b3ea3fcaa279703ef6da1575f20e105d995691",
+      "size_bytes": 463038
+    },
+    {
+      "path": "ActionGate.pptx",
+      "sha256": "b70351f69ad3eacd71cfe7d725118fa9336b2efa80bcf01695154894dc0119b8",
+      "size_bytes": 550844
+    },
+    {
+      "path": "index.html",
+      "sha256": "d13ee6fd2221b973260529b34f47f3a5512a39be090ac10ae8436de324be2ecb",
+      "size_bytes": 4938
+    },
+    {
+      "path": "styles.css",
+      "sha256": "e0fbc0db87a6bcbe3729f5a385c870616db2924f459d526ae4750d4aa5e797e7",
+      "size_bytes": 4233
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useEffect, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import {
   Activity,
@@ -18,7 +18,7 @@ import {
   Shield,
   X,
 } from "lucide-react";
-import { request, time, useApi } from "./api";
+import { ApiError, request, time, useApi } from "./api";
 import type { Data } from "./api";
 import { Badge, ErrorMessage, Loading, OperationDetail } from "./components";
 
@@ -49,6 +49,11 @@ function Workspace({
 }) {
   const [page, setPage] = useState(initialPage);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobile, setMobile] = useState(() => window.matchMedia("(max-width: 720px)").matches);
+  const sidebarRef = useRef<HTMLElement>(null);
+  const menuTriggerRef = useRef<HTMLButtonElement>(null);
+  const menuOverlayRef = useRef<HTMLButtonElement>(null);
+  const restoreDesktopFocus = useRef(false);
   const [operationId, setOperationId] = useState<string | null>(null);
   const [connection, setConnection] = useState("connecting");
   const [lastEvent, setLastEvent] = useState<number | null>(null);
@@ -62,12 +67,57 @@ function Workspace({
     session.tenant_id ??
     session.principal?.tenant ??
     "unknown";
+  const closeMenu = useCallback(() => {
+    setMenuOpen(false);
+    if (mobile) menuTriggerRef.current?.focus();
+  }, [mobile]);
   const navigate = useCallback((target: string) => {
     location.hash = target;
     setPage(target);
-    setMenuOpen(false);
-  }, []);
+    if (menuOpen) closeMenu();
+  }, [menuOpen, closeMenu]);
   const onOperation = useCallback((id: string) => setOperationId(id), []);
+  useEffect(() => {
+    const viewport = window.matchMedia("(max-width: 720px)");
+    let lastFocused = document.activeElement;
+    const rememberFocus = (event: FocusEvent) => {
+      if (event.target instanceof Element && event.target !== document.body)
+        lastFocused = event.target;
+    };
+    const update = () => {
+      // CSS can hide a focused control before the media-query event is delivered.
+      const focused = document.activeElement === document.body ? lastFocused : document.activeElement;
+      if (viewport.matches && sidebarRef.current?.contains(focused))
+        menuTriggerRef.current?.focus();
+      restoreDesktopFocus.current = !viewport.matches && (focused === menuTriggerRef.current || focused === menuOverlayRef.current);
+      setMobile(viewport.matches);
+      setMenuOpen(false);
+    };
+    document.addEventListener("focusin", rememberFocus);
+    viewport.addEventListener("change", update);
+    return () => {
+      document.removeEventListener("focusin", rememberFocus);
+      viewport.removeEventListener("change", update);
+    };
+  }, []);
+  useEffect(() => {
+    if (!mobile && restoreDesktopFocus.current) {
+      restoreDesktopFocus.current = false;
+      sidebarRef.current?.querySelector<HTMLButtonElement>('[aria-current="page"]')?.focus();
+    }
+  }, [mobile]);
+  useEffect(() => {
+    if (!mobile || !menuOpen) return;
+    sidebarRef.current?.querySelector<HTMLButtonElement>('[aria-current="page"]')?.focus();
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeMenu();
+      }
+    };
+    document.addEventListener("keydown", escape);
+    return () => document.removeEventListener("keydown", escape);
+  }, [mobile, menuOpen, closeMenu]);
   useEffect(() => {
     const update = () => setPage(initialPage());
     window.addEventListener("hashchange", update);
@@ -135,14 +185,16 @@ function Workspace({
       >
         Skip to content
       </a>
-      {menuOpen && (
+      {mobile && menuOpen && (
         <button
+          ref={menuOverlayRef}
           className="mobile-overlay"
           aria-label="Close navigation"
-          onClick={() => setMenuOpen(false)}
+          onClick={closeMenu}
         />
       )}
-      <aside className={`sidebar ${menuOpen ? "open" : ""}`}>
+      <aside id="workspace-navigation" ref={sidebarRef} className={`sidebar ${menuOpen ? "open" : ""}`}
+        inert={mobile && !menuOpen} aria-hidden={mobile && !menuOpen ? true : undefined}>
         <a
           className="brand"
           href="#overview"
@@ -216,9 +268,12 @@ function Workspace({
         <header className="topbar">
           <div className="breadcrumb">
             <button
+              ref={menuTriggerRef}
               className="icon-button menu-button"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
-              onClick={() => setMenuOpen(!menuOpen)}
+              aria-expanded={menuOpen}
+              aria-controls="workspace-navigation"
+              onClick={() => menuOpen ? closeMenu() : setMenuOpen(true)}
             >
               {menuOpen ? <X size={19} /> : <Menu size={19} />}
             </button>
@@ -450,7 +505,7 @@ export default function App() {
               {pending ? "Opening workspace…" : "Enter workspace"}
             </button>
             <ErrorMessage error={error} />
-            {session.error && !String(session.error).includes("401") && (
+            {session.error && !(session.error instanceof ApiError && session.error.status === 401) && (
               <ErrorMessage error={session.error} />
             )}
             <div className="login-notice">

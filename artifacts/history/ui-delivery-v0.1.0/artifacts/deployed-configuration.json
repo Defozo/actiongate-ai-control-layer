@@ -1,0 +1,190 @@
+{
+  "generation": 36,
+  "guard_artifact": {
+    "prompt_version": "actiongate-guard-v2.9",
+    "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+  },
+  "local_resource_configuration": {
+    "business_call_deadline_seconds": 120,
+    "business_slots": 1,
+    "guard_slots": 1,
+    "guard_subbudget_slot_seconds": 1700,
+    "max_waiting_jobs": 8,
+    "queue_wait_seconds": 10,
+    "require_confirmed_stop": true,
+    "run_slot_seconds": 1800
+  },
+  "model_artifacts": {
+    "cloud-business": {
+      "manifest": {
+        "api_host": "api.groq.com",
+        "api_path": "/openai/v1/chat/completions",
+        "automatic_retries": false,
+        "built_in_tools": false,
+        "context_tokens": 131072,
+        "include_reasoning": false,
+        "max_completion_tokens": 65536,
+        "model": "openai/gpt-oss-20b",
+        "price_file": "policy/prices.json",
+        "provider": "groq",
+        "reasoning_effort": "low",
+        "redirects": false,
+        "reservation_input_method": "full_provider_context_upper_bound",
+        "reservation_output_method": "max_completion_tokens_including_hidden_reasoning",
+        "schema_version": 1,
+        "sources": [
+          "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+          "https://console.groq.com/docs/openai",
+          "https://console.groq.com/docs/reasoning"
+        ],
+        "supported_tools": "client_function_schemas_only"
+      },
+      "path": "models/cloud-model-manifest.json",
+      "sha256": "14135fe31e8ca85446bb98c3472e10cbe07396a26eb0418c553834d488b85fa9"
+    },
+    "local-business": {
+      "manifest": {
+        "context_tokens": 8192,
+        "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "family": "Qwen3.5",
+        "format": "GGUF",
+        "license": "Apache-2.0",
+        "max_input_tokens": 4096,
+        "model": "qwen3.5:4b",
+        "prepared_at": "2026-10-03T17:16:54.512634+00:00",
+        "quantization": "Q4_K_M",
+        "runtime": "ollama:0.32.0",
+        "schema_version": 1,
+        "seed": 42,
+        "source": "https://ollama.com/library/qwen3.5:4b",
+        "temperature": 0,
+        "think": false,
+        "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+        "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json"
+      },
+      "path": "models/model-manifest.json",
+      "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b"
+    },
+    "local-guard": {
+      "manifest": {
+        "context_tokens": 8192,
+        "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "family": "Qwen3.5",
+        "format": "GGUF",
+        "license": "Apache-2.0",
+        "max_input_tokens": 4096,
+        "model": "qwen3.5:4b",
+        "prepared_at": "2026-10-03T17:16:54.512634+00:00",
+        "quantization": "Q4_K_M",
+        "runtime": "ollama:0.32.0",
+        "schema_version": 1,
+        "seed": 42,
+        "source": "https://ollama.com/library/qwen3.5:4b",
+        "temperature": 0,
+        "think": false,
+        "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+        "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json"
+      },
+      "path": "models/model-manifest.json",
+      "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b"
+    }
+  },
+  "performance": {
+    "control_cache_enabled": true,
+    "semantic_cache_enabled": true
+  },
+  "semantic_configuration": {
+    "context_tokens": 8192,
+    "deadline_seconds": 180,
+    "incomplete_scan": "block",
+    "max_input_tokens_per_call": 4096,
+    "max_output_tokens": 256,
+    "max_windows": 8,
+    "model_ref": "local-guard",
+    "overlap_tokens": 256,
+    "prompt_version": "actiongate-guard-v2.9",
+    "required_on": [
+      "untrusted_input",
+      "proposed_action",
+      "tool_output",
+      "memory_write",
+      "model_output"
+    ],
+    "risk_scale": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "window_tokens": 2048
+  },
+  "source_evidence_passed": true,
+  "verified_at": "2026-10-04T04:17:13.199405+00:00",
+  "workers": {
+    "business": {
+      "context_tokens": 8192,
+      "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+      "epoch": 5,
+      "max_input_tokens": 4096,
+      "model": "qwen3.5:4b",
+      "model_manifest_sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+      "prepared_generations": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "ready": true,
+      "role": "business",
+      "runtime": "ollama:0.32.0",
+      "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+    },
+    "guard": {
+      "context_tokens": 8192,
+      "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+      "epoch": 1,
+      "max_input_tokens": 4096,
+      "model": "qwen3.5:4b",
+      "model_manifest_sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+      "prepared_generations": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        1791060510893116,
+        1791065797085856,
+        1791074396629320,
+        1791075632250860,
+        1791081479517761,
+        1791084271668074,
+        1791087439177705
+      ],
+      "ready": true,
+      "role": "guard",
+      "runtime": "ollama:0.32.0",
+      "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+    }
+  }
+}

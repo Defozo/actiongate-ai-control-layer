@@ -1,0 +1,3999 @@
+{
+  "status": "passed",
+  "scope": "UI accessibility delivery revision v0.1.1; core application0.1.0; no inference in this verification",
+  "recorded_at": "2026-10-04T06:59:20.922029+00:00",
+  "before": {
+    "captured_at": "2026-10-04T06:54:42.108127+00:00",
+    "containers": {
+      "actiongate-gateway-b-1": {
+        "id": "c4334892e5ebf2fd3f8d70e7719f79ab5815fa805383c768d792fd85f0a57ae6",
+        "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+        "state": "running",
+        "health": "healthy",
+        "networks": [
+          "actiongate_agent",
+          "actiongate_business",
+          "actiongate_cloud",
+          "actiongate_data",
+          "actiongate_edge",
+          "actiongate_feed",
+          "actiongate_guard",
+          "actiongate_opa",
+          "actiongate_tools"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": "http://127.0.0.1:8088",
+          "UVICORN_TIMEOUT_KEEP_ALIVE": "30"
+        },
+        "limits": {
+          "Memory": 2147483648,
+          "NanoCpus": 0,
+          "PidsLimit": 256,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "volume",
+            "Name": "actiongate_spool-b",
+            "Source": "/var/lib/docker/volumes/actiongate_spool-b/_data",
+            "Destination": "/app/spool",
+            "RW": true
+          },
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\policy",
+            "Destination": "/app/policy",
+            "RW": false
+          },
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\feeds",
+            "Destination": "/app/feeds",
+            "RW": false
+          },
+          {
+            "Type": "volume",
+            "Name": "actiongate_artifacts",
+            "Source": "/var/lib/docker/volumes/actiongate_artifacts/_data",
+            "Destination": "/app/artifacts",
+            "RW": true
+          }
+        ]
+      },
+      "actiongate-gateway-a-1": {
+        "id": "2ea50bba8f4fb69606cce7e20f5bbff9724bf78fd35c453f1e85d1bd918b437c",
+        "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+        "state": "running",
+        "health": "healthy",
+        "networks": [
+          "actiongate_agent",
+          "actiongate_business",
+          "actiongate_cloud",
+          "actiongate_data",
+          "actiongate_edge",
+          "actiongate_feed",
+          "actiongate_guard",
+          "actiongate_opa",
+          "actiongate_tools"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": "http://127.0.0.1:8088",
+          "UVICORN_TIMEOUT_KEEP_ALIVE": "30"
+        },
+        "limits": {
+          "Memory": 2147483648,
+          "NanoCpus": 0,
+          "PidsLimit": 256,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "volume",
+            "Name": "actiongate_spool-a",
+            "Source": "/var/lib/docker/volumes/actiongate_spool-a/_data",
+            "Destination": "/app/spool",
+            "RW": true
+          },
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/policy",
+            "Destination": "/app/policy",
+            "RW": false
+          },
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/feeds",
+            "Destination": "/app/feeds",
+            "RW": false
+          },
+          {
+            "Type": "volume",
+            "Name": "actiongate_artifacts",
+            "Source": "/var/lib/docker/volumes/actiongate_artifacts/_data",
+            "Destination": "/app/artifacts",
+            "RW": true
+          }
+        ]
+      },
+      "actiongate-postgres-1": {
+        "id": "454e6d2faf83e779905f49b125b4b3aae5f12e6349a770fc0ff01bf6ea928136",
+        "image_id": "sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+        "state": "running",
+        "health": "healthy",
+        "networks": [
+          "actiongate_data"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 2147483648,
+          "NanoCpus": 0,
+          "PidsLimit": 256,
+          "ReadonlyRootfs": false,
+          "CapDrop": null,
+          "SecurityOpt": null
+        },
+        "mounts": [
+          {
+            "Type": "volume",
+            "Name": "actiongate_database",
+            "Source": "/var/lib/docker/volumes/actiongate_database/_data",
+            "Destination": "/var/lib/postgresql/data",
+            "RW": true
+          },
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/deploy/init-db.sh",
+            "Destination": "/docker-entrypoint-initdb.d/10-actiongate.sh",
+            "RW": false
+          }
+        ]
+      },
+      "actiongate-maintenance-1": {
+        "id": "02e102060f7d41367dffafbc4c3f39f6fd58fb15c833726975cf63e17998a0fb",
+        "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+        "state": "running",
+        "health": null,
+        "networks": [
+          "actiongate_data",
+          "actiongate_feed"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 268435456,
+          "NanoCpus": 0,
+          "PidsLimit": 64,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": []
+      },
+      "actiongate-feed-server-1": {
+        "id": "ce096a812189f995233bb479077dd829b21a6a069acdde71baa8da2a9e425753",
+        "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+        "state": "running",
+        "health": null,
+        "networks": [
+          "actiongate_feed"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 0,
+          "NanoCpus": 0,
+          "PidsLimit": null,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "volume",
+            "Name": "actiongate_publisher",
+            "Source": "/var/lib/docker/volumes/actiongate_publisher/_data",
+            "Destination": "/app/artifacts",
+            "RW": true
+          },
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/policy",
+            "Destination": "/app/policy",
+            "RW": true
+          }
+        ]
+      },
+      "actiongate-cloud-connector-1": {
+        "id": "3cb14d6296245b056ccff1c6bcaa46a7750a0d69d1aa8c76f72ce862f539956a",
+        "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+        "state": "running",
+        "health": null,
+        "networks": [
+          "actiongate_cloud",
+          "actiongate_cloud-egress"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 536870912,
+          "NanoCpus": 0,
+          "PidsLimit": 128,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\policy",
+            "Destination": "/app/policy",
+            "RW": false
+          }
+        ]
+      },
+      "actiongate-demo-tools-1": {
+        "id": "c6933290d74f3318b3e154a035424d25af1d4122b842fe9449d86eedf5a4fff9",
+        "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+        "state": "running",
+        "health": null,
+        "networks": [
+          "actiongate_data",
+          "actiongate_tools"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 0,
+          "NanoCpus": 0,
+          "PidsLimit": null,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": []
+      },
+      "actiongate-jury-probe-upstream": {
+        "id": "ff7fc8cdbd6b15907ef8841a6e8a8d5880258835c69e80f0b273a9d8b19dd68a",
+        "image_id": "sha256:9d126782428dbb0d5dc929261b47be8f68ebbe471efbd8059c2d0ddb99bd486a",
+        "state": "exited",
+        "health": null,
+        "networks": [
+          "actiongate-jury-probe"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 134217728,
+          "NanoCpus": 0,
+          "PidsLimit": 32,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\.state\\public-demo/mock.py",
+            "Destination": "/mock.py",
+            "RW": false
+          }
+        ]
+      },
+      "actiongate-business-worker-1": {
+        "id": "446deb5d9b7681fd629ae1fa82a503160277eec9ee4c3b6de25cb11156d6dbc9",
+        "image_id": "sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d",
+        "state": "running",
+        "health": "healthy",
+        "networks": [
+          "actiongate_business"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 8589934592,
+          "NanoCpus": 10000000000,
+          "PidsLimit": 256,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "volume",
+            "Name": "actiongate_models",
+            "Source": "/var/lib/docker/volumes/actiongate_models/_data",
+            "Destination": "/models",
+            "RW": false
+          }
+        ]
+      },
+      "actiongate-guard-worker-1": {
+        "id": "816920b6d3c11fa3259e1f79a3fc9a766d2d0cb9ba5d5c9fa5ed366f245919de",
+        "image_id": "sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d",
+        "state": "running",
+        "health": "healthy",
+        "networks": [
+          "actiongate_guard"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 8589934592,
+          "NanoCpus": 10000000000,
+          "PidsLimit": 256,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "volume",
+            "Name": "actiongate_models",
+            "Source": "/var/lib/docker/volumes/actiongate_models/_data",
+            "Destination": "/models",
+            "RW": false
+          }
+        ]
+      },
+      "actiongate-migrate-1": {
+        "id": "0fe9f71b32802dcbd39d9878603960316351eb3424ea9b75689021311531edf3",
+        "image_id": "sha256:9e6a261977ea829cf104871fc0015f5fe4a7d79804f66ca7b7602fe308ddf59c",
+        "state": "exited",
+        "health": null,
+        "networks": [
+          "actiongate_data"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 0,
+          "NanoCpus": 0,
+          "PidsLimit": null,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": []
+      },
+      "actiongate-edge-1": {
+        "id": "c164a3e845cf5d67fa684a2267be4cc60891be28d1097e9889384154e3156ec5",
+        "image_id": "sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94",
+        "state": "running",
+        "health": null,
+        "networks": [
+          "actiongate_edge"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 0,
+          "NanoCpus": 0,
+          "PidsLimit": null,
+          "ReadonlyRootfs": true,
+          "CapDrop": null,
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\deploy\\nginx.conf",
+            "Destination": "/etc/nginx/nginx.conf",
+            "RW": false
+          }
+        ]
+      },
+      "actiongate-opa-a-1": {
+        "id": "96cb04a816e9eee6780c03a813bdd2d163710c442d8d763b57f250cc179eaa63",
+        "image_id": "sha256:3913aa7982d7c096c1996eca99d3360930723668fd62ccc3f6ebd37257d1fc84",
+        "state": "running",
+        "health": null,
+        "networks": [
+          "actiongate_opa"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 268435456,
+          "NanoCpus": 0,
+          "PidsLimit": null,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\policy",
+            "Destination": "/policy",
+            "RW": false
+          }
+        ]
+      },
+      "actiongate-opa-b-1": {
+        "id": "bbd520ae708be866970c446658174e5bc64c0313acde3a121277968d2902c7cc",
+        "image_id": "sha256:3913aa7982d7c096c1996eca99d3360930723668fd62ccc3f6ebd37257d1fc84",
+        "state": "running",
+        "health": null,
+        "networks": [
+          "actiongate_opa"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 268435456,
+          "NanoCpus": 0,
+          "PidsLimit": null,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\policy",
+            "Destination": "/policy",
+            "RW": false
+          }
+        ]
+      },
+      "actiongate-gpu-0b92f97d-gateway-a-1": {
+        "id": "60eab2fc2356b8bf4e996c347eb74b152d97913693215d1c09dc31e8ef3ce40d",
+        "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+        "state": "running",
+        "health": "healthy",
+        "networks": [
+          "actiongate-gpu-0b92f97d_agent",
+          "actiongate-gpu-0b92f97d_business",
+          "actiongate-gpu-0b92f97d_cloud",
+          "actiongate-gpu-0b92f97d_data",
+          "actiongate-gpu-0b92f97d_edge",
+          "actiongate-gpu-0b92f97d_feed",
+          "actiongate-gpu-0b92f97d_guard",
+          "actiongate-gpu-0b92f97d_opa",
+          "actiongate-gpu-0b92f97d_tools"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": "http://127.0.0.1:18089",
+          "UVICORN_TIMEOUT_KEEP_ALIVE": "30"
+        },
+        "limits": {
+          "Memory": 2147483648,
+          "NanoCpus": 0,
+          "PidsLimit": 256,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/policy",
+            "Destination": "/app/policy",
+            "RW": false
+          },
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/feeds",
+            "Destination": "/app/feeds",
+            "RW": false
+          },
+          {
+            "Type": "volume",
+            "Name": "actiongate-gpu-0b92f97d_artifacts",
+            "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_artifacts/_data",
+            "Destination": "/app/artifacts",
+            "RW": true
+          },
+          {
+            "Type": "volume",
+            "Name": "actiongate-gpu-0b92f97d_spool-a",
+            "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_spool-a/_data",
+            "Destination": "/app/spool",
+            "RW": true
+          }
+        ]
+      },
+      "actiongate-gpu-0b92f97d-gateway-b-1": {
+        "id": "7c5b37880c0503f04165dcef361c3e5f2a139536b1cc1ce823f559916f202192",
+        "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+        "state": "running",
+        "health": "healthy",
+        "networks": [
+          "actiongate-gpu-0b92f97d_agent",
+          "actiongate-gpu-0b92f97d_business",
+          "actiongate-gpu-0b92f97d_cloud",
+          "actiongate-gpu-0b92f97d_data",
+          "actiongate-gpu-0b92f97d_edge",
+          "actiongate-gpu-0b92f97d_feed",
+          "actiongate-gpu-0b92f97d_guard",
+          "actiongate-gpu-0b92f97d_opa",
+          "actiongate-gpu-0b92f97d_tools"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": "http://127.0.0.1:18089",
+          "UVICORN_TIMEOUT_KEEP_ALIVE": "30"
+        },
+        "limits": {
+          "Memory": 2147483648,
+          "NanoCpus": 0,
+          "PidsLimit": 256,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/policy",
+            "Destination": "/app/policy",
+            "RW": false
+          },
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/feeds",
+            "Destination": "/app/feeds",
+            "RW": false
+          },
+          {
+            "Type": "volume",
+            "Name": "actiongate-gpu-0b92f97d_artifacts",
+            "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_artifacts/_data",
+            "Destination": "/app/artifacts",
+            "RW": true
+          },
+          {
+            "Type": "volume",
+            "Name": "actiongate-gpu-0b92f97d_spool-b",
+            "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_spool-b/_data",
+            "Destination": "/app/spool",
+            "RW": true
+          }
+        ]
+      },
+      "actiongate-gpu-0b92f97d-edge-1": {
+        "id": "3e57957d4b1de0ef42610fc48a296ef051dc0f3481e4a94a10304c5ba4bd8378",
+        "image_id": "sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94",
+        "state": "running",
+        "health": null,
+        "networks": [
+          "actiongate-gpu-0b92f97d_edge"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 0,
+          "NanoCpus": 0,
+          "PidsLimit": null,
+          "ReadonlyRootfs": true,
+          "CapDrop": null,
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\deploy\\nginx.conf",
+            "Destination": "/etc/nginx/nginx.conf",
+            "RW": false
+          }
+        ]
+      },
+      "actiongate-gpu-0b92f97d-maintenance-1": {
+        "id": "a878d4bfc293f96e445957a87906ed50341b27093f04545bb840df1a83c4520d",
+        "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+        "state": "running",
+        "health": null,
+        "networks": [
+          "actiongate-gpu-0b92f97d_data",
+          "actiongate-gpu-0b92f97d_feed"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 268435456,
+          "NanoCpus": 0,
+          "PidsLimit": 64,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": []
+      },
+      "actiongate-gpu-0b92f97d-demo-tools-1": {
+        "id": "afc90bb626cff00e421e68c0baab0d156358657496d9310e124243c8ea163614",
+        "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+        "state": "running",
+        "health": null,
+        "networks": [
+          "actiongate-gpu-0b92f97d_data",
+          "actiongate-gpu-0b92f97d_tools"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 0,
+          "NanoCpus": 0,
+          "PidsLimit": null,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": []
+      },
+      "actiongate-gpu-0b92f97d-migrate-1": {
+        "id": "7eb50d2119a732125f7049064e390b295d6559eba8bd9e63015d75e6c552524e",
+        "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+        "state": "exited",
+        "health": null,
+        "networks": [
+          "actiongate-gpu-0b92f97d_data"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 0,
+          "NanoCpus": 0,
+          "PidsLimit": null,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": []
+      },
+      "actiongate-gpu-0b92f97d-feed-server-1": {
+        "id": "2ab4aefdb6c7f3b2a0fd08984f82b78ce87a08ee2d33f6de2646e1c6aca6a482",
+        "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+        "state": "running",
+        "health": null,
+        "networks": [
+          "actiongate-gpu-0b92f97d_feed"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 0,
+          "NanoCpus": 0,
+          "PidsLimit": null,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "volume",
+            "Name": "actiongate-gpu-0b92f97d_publisher",
+            "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_publisher/_data",
+            "Destination": "/app/artifacts",
+            "RW": true
+          },
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/policy",
+            "Destination": "/app/policy",
+            "RW": true
+          },
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/feeds",
+            "Destination": "/app/feeds",
+            "RW": false
+          }
+        ]
+      },
+      "actiongate-gpu-0b92f97d-guard-worker-1": {
+        "id": "5fc168f98b00ed3db27df9fbb2844936f7e114e71faea257036a88c2fdf5d832",
+        "image_id": "sha256:8256310ee6f6a3526ce7b983f3675c6ff3ab7709681da15d8f61c453a8a7efeb",
+        "state": "running",
+        "health": "healthy",
+        "networks": [
+          "actiongate-gpu-0b92f97d_guard"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 8589934592,
+          "NanoCpus": 10000000000,
+          "PidsLimit": 256,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "volume",
+            "Name": "actiongate_models",
+            "Source": "/var/lib/docker/volumes/actiongate_models/_data",
+            "Destination": "/models",
+            "RW": false
+          }
+        ]
+      },
+      "actiongate-gpu-0b92f97d-opa-a-1": {
+        "id": "b72361829edec95876a7953990d53607e6fcc7b31c21ca2edc480b4157007b70",
+        "image_id": "sha256:3913aa7982d7c096c1996eca99d3360930723668fd62ccc3f6ebd37257d1fc84",
+        "state": "running",
+        "health": null,
+        "networks": [
+          "actiongate-gpu-0b92f97d_opa"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 268435456,
+          "NanoCpus": 0,
+          "PidsLimit": null,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\policy",
+            "Destination": "/policy",
+            "RW": false
+          }
+        ]
+      },
+      "actiongate-gpu-0b92f97d-opa-b-1": {
+        "id": "cdb2d5a0441ebbbf94972e603a060ab85c0b9d002ec32bb866157aae064f2c01",
+        "image_id": "sha256:3913aa7982d7c096c1996eca99d3360930723668fd62ccc3f6ebd37257d1fc84",
+        "state": "running",
+        "health": null,
+        "networks": [
+          "actiongate-gpu-0b92f97d_opa"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 268435456,
+          "NanoCpus": 0,
+          "PidsLimit": null,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\policy",
+            "Destination": "/policy",
+            "RW": false
+          }
+        ]
+      },
+      "actiongate-gpu-0b92f97d-business-worker-1": {
+        "id": "a200fd9b682e0e25d9d50f228e4284ddaef5c9eb528a8c8835e97e084506e501",
+        "image_id": "sha256:8256310ee6f6a3526ce7b983f3675c6ff3ab7709681da15d8f61c453a8a7efeb",
+        "state": "running",
+        "health": "healthy",
+        "networks": [
+          "actiongate-gpu-0b92f97d_business"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 8589934592,
+          "NanoCpus": 10000000000,
+          "PidsLimit": 256,
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ]
+        },
+        "mounts": [
+          {
+            "Type": "volume",
+            "Name": "actiongate_models",
+            "Source": "/var/lib/docker/volumes/actiongate_models/_data",
+            "Destination": "/models",
+            "RW": false
+          }
+        ]
+      },
+      "actiongate-gpu-0b92f97d-postgres-1": {
+        "id": "0f59a3e323afe4fed84c97d4507eac336c3139ca4a32eaea67d81716a35db9f8",
+        "image_id": "sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+        "state": "running",
+        "health": "healthy",
+        "networks": [
+          "actiongate-gpu-0b92f97d_data"
+        ],
+        "safe_environment": {
+          "PUBLIC_BASE_URL": null,
+          "UVICORN_TIMEOUT_KEEP_ALIVE": null
+        },
+        "limits": {
+          "Memory": 2147483648,
+          "NanoCpus": 0,
+          "PidsLimit": 256,
+          "ReadonlyRootfs": false,
+          "CapDrop": null,
+          "SecurityOpt": null
+        },
+        "mounts": [
+          {
+            "Type": "volume",
+            "Name": "actiongate-gpu-0b92f97d_database",
+            "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_database/_data",
+            "Destination": "/var/lib/postgresql/data",
+            "RW": true
+          },
+          {
+            "Type": "bind",
+            "Name": null,
+            "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/deploy/init-db.sh",
+            "Destination": "/docker-entrypoint-initdb.d/10-actiongate.sh",
+            "RW": false
+          }
+        ]
+      }
+    },
+    "signed_configuration": {
+      "actiongate": {
+        "generation": 36,
+        "digest": "673ce45cabcbff4e7d49174c0b3d9bd4d53f567be718d415998204b4ec3b6b53",
+        "guard_artifact": {
+          "prompt_version": "actiongate-guard-v2.9",
+          "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+        },
+        "model_artifacts": {
+          "local-business": {
+            "path": "models/model-manifest.json",
+            "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+            "manifest": {
+              "schema_version": 1,
+              "model": "qwen3.5:4b",
+              "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+              "format": "GGUF",
+              "family": "Qwen3.5",
+              "quantization": "Q4_K_M",
+              "license": "Apache-2.0",
+              "source": "https://ollama.com/library/qwen3.5:4b",
+              "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+              "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+              "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+              "context_tokens": 8192,
+              "max_input_tokens": 4096,
+              "think": false,
+              "temperature": 0,
+              "seed": 42,
+              "runtime": "ollama:0.32.0",
+              "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+            }
+          },
+          "local-guard": {
+            "path": "models/model-manifest.json",
+            "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+            "manifest": {
+              "schema_version": 1,
+              "model": "qwen3.5:4b",
+              "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+              "format": "GGUF",
+              "family": "Qwen3.5",
+              "quantization": "Q4_K_M",
+              "license": "Apache-2.0",
+              "source": "https://ollama.com/library/qwen3.5:4b",
+              "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+              "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+              "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+              "context_tokens": 8192,
+              "max_input_tokens": 4096,
+              "think": false,
+              "temperature": 0,
+              "seed": 42,
+              "runtime": "ollama:0.32.0",
+              "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+            }
+          },
+          "cloud-business": {
+            "path": "models/cloud-model-manifest.json",
+            "sha256": "14135fe31e8ca85446bb98c3472e10cbe07396a26eb0418c553834d488b85fa9",
+            "manifest": {
+              "schema_version": 1,
+              "provider": "groq",
+              "model": "openai/gpt-oss-20b",
+              "api_host": "api.groq.com",
+              "api_path": "/openai/v1/chat/completions",
+              "context_tokens": 131072,
+              "max_completion_tokens": 65536,
+              "reservation_input_method": "full_provider_context_upper_bound",
+              "reservation_output_method": "max_completion_tokens_including_hidden_reasoning",
+              "include_reasoning": false,
+              "reasoning_effort": "low",
+              "automatic_retries": false,
+              "redirects": false,
+              "built_in_tools": false,
+              "supported_tools": "client_function_schemas_only",
+              "price_file": "policy/prices.json",
+              "sources": [
+                "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+                "https://console.groq.com/docs/openai",
+                "https://console.groq.com/docs/reasoning"
+              ]
+            }
+          }
+        },
+        "configuration": {
+          "schema_version": 1,
+          "policy_id": "actiongate-demo",
+          "revision": 1,
+          "default_decision": "block",
+          "active_profile": "balanced",
+          "profiles": {
+            "strict": {
+              "pii_action": "block",
+              "semantic_block_level": 1,
+              "semantic_review_level": null,
+              "semantic_unknown": "block",
+              "restrict_to": null,
+              "effects": null,
+              "advisory_controls": [],
+              "enforce_identity_labels_budgets": true
+            },
+            "balanced": {
+              "pii_action": "redact",
+              "semantic_block_level": 2,
+              "semantic_review_level": 1,
+              "semantic_unknown": "block",
+              "restrict_to": null,
+              "effects": null,
+              "advisory_controls": [],
+              "enforce_identity_labels_budgets": true
+            },
+            "observe": {
+              "pii_action": "redact",
+              "semantic_block_level": 2,
+              "semantic_review_level": 1,
+              "semantic_unknown": "block",
+              "restrict_to": "synthetic_test_tenant",
+              "effects": "test_sinks_only",
+              "advisory_controls": [
+                "pii",
+                "semantic"
+              ],
+              "enforce_identity_labels_budgets": true
+            }
+          },
+          "identity": {
+            "tenant_source": "verified_identity",
+            "grants_source": "trusted_application",
+            "delegation": "intersect_parent_grant"
+          },
+          "flow": {
+            "levels": [
+              "PUBLIC",
+              "INTERNAL",
+              "CONFIDENTIAL",
+              "RESTRICTED"
+            ],
+            "unknown_source": "CONFIDENTIAL",
+            "track_untrusted_origins": true,
+            "propagate_run_and_delegation": true,
+            "label_override_by_agent": false,
+            "sinks": {
+              "local_model": {
+                "max_label": "RESTRICTED",
+                "same_tenant": true,
+                "compartments": []
+              },
+              "internal_report": {
+                "max_label": "CONFIDENTIAL",
+                "same_tenant": true,
+                "compartments": []
+              },
+              "internal_demo_sink": {
+                "max_label": "CONFIDENTIAL",
+                "same_tenant": true,
+                "compartments": []
+              },
+              "public_demo_sink": {
+                "max_label": "PUBLIC",
+                "same_tenant": false,
+                "compartments": []
+              },
+              "cloud_model": {
+                "max_label": "PUBLIC",
+                "same_tenant": false,
+                "compartments": []
+              }
+            },
+            "public_release_function": "supplier_public_view_v1"
+          },
+          "models": {
+            "default": "local-business",
+            "registry": "model-registry.json",
+            "allowed": [
+              "local-business"
+            ],
+            "cloud_enabled": false
+          },
+          "semantic": {
+            "model_ref": "local-guard",
+            "prompt_version": "actiongate-guard-v2.9",
+            "required_on": [
+              "untrusted_input",
+              "proposed_action",
+              "tool_output",
+              "memory_write",
+              "model_output"
+            ],
+            "risk_scale": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "context_tokens": 8192,
+            "max_input_tokens_per_call": 4096,
+            "max_output_tokens": 256,
+            "window_tokens": 2048,
+            "overlap_tokens": 256,
+            "max_windows": 8,
+            "deadline_seconds": 180,
+            "incomplete_scan": "block"
+          },
+          "controls": {
+            "authentication": {
+              "enabled": true
+            },
+            "tenant_isolation": {
+              "enabled": true
+            },
+            "secrets": {
+              "enabled": true,
+              "action": "block"
+            },
+            "pii": {
+              "enabled": true,
+              "entities": [
+                "EMAIL",
+                "PHONE",
+                "PESEL",
+                "IBAN"
+              ]
+            },
+            "semantic": {
+              "enabled": true
+            },
+            "historical_attacks": {
+              "enabled": true
+            }
+          },
+          "tools": {
+            "registry": "tool-registry.json",
+            "allowed": [
+              "documents.read",
+              "memory.read",
+              "memory.write",
+              "reports.save",
+              "reports.publish_demo",
+              "calculator.evaluate",
+              "models.chat",
+              "supplier_public_view_v1"
+            ],
+            "require_approval": [
+              "reports.publish_demo"
+            ],
+            "grant_ttl_seconds": 30
+          },
+          "budgets": {
+            "currency": "USD",
+            "period_timezone": "UTC",
+            "tenant_daily_usd_micros": 5000000,
+            "run_usd_micros": 250000,
+            "run_total_tokens": 120000,
+            "guard_subbudget_tokens": 96000,
+            "request_input_tokens": 4096,
+            "request_output_tokens": 1024,
+            "max_steps": 12,
+            "max_tool_calls": 8,
+            "max_retries": 1,
+            "max_delegation_depth": 2,
+            "run_deadline_seconds": 1800,
+            "reserve_output_inspection": true,
+            "unknown_usage": "retain_reservation"
+          },
+          "local_resources": {
+            "business_slots": 1,
+            "guard_slots": 1,
+            "max_waiting_jobs": 8,
+            "queue_wait_seconds": 10,
+            "business_call_deadline_seconds": 120,
+            "run_slot_seconds": 1800,
+            "guard_subbudget_slot_seconds": 1700,
+            "require_confirmed_stop": true
+          },
+          "transport": {
+            "max_request_bytes": 262144,
+            "max_response_bytes": 65536,
+            "output_release": "after_full_inspection"
+          },
+          "feed": {
+            "source_ref": "approved-threat-feed",
+            "signature_required": true,
+            "reject_rollback": true,
+            "max_age_hours": 24
+          },
+          "audit": {
+            "raw_payloads": false,
+            "retention_days": 7,
+            "required_before_dispatch_and_release": true
+          },
+          "performance": {
+            "control_cache_enabled": true,
+            "semantic_cache_enabled": true
+          }
+        }
+      },
+      "actiongate-gpu-0b92f97d": {
+        "generation": 15,
+        "digest": "0d9132ca2b3d1a383b198f6d7b7206f9b426166cdc6475bea0cfe51388fac84a",
+        "guard_artifact": {
+          "prompt_version": "actiongate-guard-v2.9",
+          "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+        },
+        "model_artifacts": {
+          "local-business": {
+            "path": "models/model-manifest.json",
+            "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+            "manifest": {
+              "schema_version": 1,
+              "model": "qwen3.5:4b",
+              "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+              "format": "GGUF",
+              "family": "Qwen3.5",
+              "quantization": "Q4_K_M",
+              "license": "Apache-2.0",
+              "source": "https://ollama.com/library/qwen3.5:4b",
+              "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+              "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+              "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+              "context_tokens": 8192,
+              "max_input_tokens": 4096,
+              "think": false,
+              "temperature": 0,
+              "seed": 42,
+              "runtime": "ollama:0.32.0",
+              "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+            }
+          },
+          "local-guard": {
+            "path": "models/model-manifest.json",
+            "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+            "manifest": {
+              "schema_version": 1,
+              "model": "qwen3.5:4b",
+              "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+              "format": "GGUF",
+              "family": "Qwen3.5",
+              "quantization": "Q4_K_M",
+              "license": "Apache-2.0",
+              "source": "https://ollama.com/library/qwen3.5:4b",
+              "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+              "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+              "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+              "context_tokens": 8192,
+              "max_input_tokens": 4096,
+              "think": false,
+              "temperature": 0,
+              "seed": 42,
+              "runtime": "ollama:0.32.0",
+              "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+            }
+          },
+          "cloud-business": {
+            "path": "models/cloud-model-manifest.json",
+            "sha256": "14135fe31e8ca85446bb98c3472e10cbe07396a26eb0418c553834d488b85fa9",
+            "manifest": {
+              "schema_version": 1,
+              "provider": "groq",
+              "model": "openai/gpt-oss-20b",
+              "api_host": "api.groq.com",
+              "api_path": "/openai/v1/chat/completions",
+              "context_tokens": 131072,
+              "max_completion_tokens": 65536,
+              "reservation_input_method": "full_provider_context_upper_bound",
+              "reservation_output_method": "max_completion_tokens_including_hidden_reasoning",
+              "include_reasoning": false,
+              "reasoning_effort": "low",
+              "automatic_retries": false,
+              "redirects": false,
+              "built_in_tools": false,
+              "supported_tools": "client_function_schemas_only",
+              "price_file": "policy/prices.json",
+              "sources": [
+                "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+                "https://console.groq.com/docs/openai",
+                "https://console.groq.com/docs/reasoning"
+              ]
+            }
+          }
+        },
+        "configuration": {
+          "schema_version": 1,
+          "policy_id": "actiongate-demo",
+          "revision": 1,
+          "default_decision": "block",
+          "active_profile": "balanced",
+          "profiles": {
+            "strict": {
+              "pii_action": "block",
+              "semantic_block_level": 1,
+              "semantic_review_level": null,
+              "semantic_unknown": "block",
+              "restrict_to": null,
+              "effects": null,
+              "advisory_controls": [],
+              "enforce_identity_labels_budgets": true
+            },
+            "balanced": {
+              "pii_action": "redact",
+              "semantic_block_level": 2,
+              "semantic_review_level": 1,
+              "semantic_unknown": "block",
+              "restrict_to": null,
+              "effects": null,
+              "advisory_controls": [],
+              "enforce_identity_labels_budgets": true
+            },
+            "observe": {
+              "pii_action": "redact",
+              "semantic_block_level": 2,
+              "semantic_review_level": 1,
+              "semantic_unknown": "block",
+              "restrict_to": "synthetic_test_tenant",
+              "effects": "test_sinks_only",
+              "advisory_controls": [
+                "pii",
+                "semantic"
+              ],
+              "enforce_identity_labels_budgets": true
+            }
+          },
+          "identity": {
+            "tenant_source": "verified_identity",
+            "grants_source": "trusted_application",
+            "delegation": "intersect_parent_grant"
+          },
+          "flow": {
+            "levels": [
+              "PUBLIC",
+              "INTERNAL",
+              "CONFIDENTIAL",
+              "RESTRICTED"
+            ],
+            "unknown_source": "CONFIDENTIAL",
+            "track_untrusted_origins": true,
+            "propagate_run_and_delegation": true,
+            "label_override_by_agent": false,
+            "sinks": {
+              "local_model": {
+                "max_label": "RESTRICTED",
+                "same_tenant": true,
+                "compartments": []
+              },
+              "internal_report": {
+                "max_label": "CONFIDENTIAL",
+                "same_tenant": true,
+                "compartments": []
+              },
+              "internal_demo_sink": {
+                "max_label": "CONFIDENTIAL",
+                "same_tenant": true,
+                "compartments": []
+              },
+              "public_demo_sink": {
+                "max_label": "PUBLIC",
+                "same_tenant": false,
+                "compartments": []
+              },
+              "cloud_model": {
+                "max_label": "PUBLIC",
+                "same_tenant": false,
+                "compartments": []
+              }
+            },
+            "public_release_function": "supplier_public_view_v1"
+          },
+          "models": {
+            "default": "local-business",
+            "registry": "model-registry.json",
+            "allowed": [
+              "local-business"
+            ],
+            "cloud_enabled": false
+          },
+          "semantic": {
+            "model_ref": "local-guard",
+            "prompt_version": "actiongate-guard-v2.9",
+            "required_on": [
+              "untrusted_input",
+              "proposed_action",
+              "tool_output",
+              "memory_write",
+              "model_output"
+            ],
+            "risk_scale": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "context_tokens": 8192,
+            "max_input_tokens_per_call": 4096,
+            "max_output_tokens": 256,
+            "window_tokens": 2048,
+            "overlap_tokens": 256,
+            "max_windows": 8,
+            "deadline_seconds": 180,
+            "incomplete_scan": "block"
+          },
+          "controls": {
+            "authentication": {
+              "enabled": true
+            },
+            "tenant_isolation": {
+              "enabled": true
+            },
+            "secrets": {
+              "enabled": true,
+              "action": "block"
+            },
+            "pii": {
+              "enabled": true,
+              "entities": [
+                "EMAIL",
+                "PHONE",
+                "PESEL",
+                "IBAN"
+              ]
+            },
+            "semantic": {
+              "enabled": true
+            },
+            "historical_attacks": {
+              "enabled": true
+            }
+          },
+          "tools": {
+            "registry": "tool-registry.json",
+            "allowed": [
+              "documents.read",
+              "memory.read",
+              "memory.write",
+              "reports.save",
+              "reports.publish_demo",
+              "calculator.evaluate",
+              "models.chat",
+              "supplier_public_view_v1"
+            ],
+            "require_approval": [
+              "reports.publish_demo"
+            ],
+            "grant_ttl_seconds": 30
+          },
+          "budgets": {
+            "currency": "USD",
+            "period_timezone": "UTC",
+            "tenant_daily_usd_micros": 5000000,
+            "run_usd_micros": 250000,
+            "run_total_tokens": 120000,
+            "guard_subbudget_tokens": 96000,
+            "request_input_tokens": 4096,
+            "request_output_tokens": 1024,
+            "max_steps": 12,
+            "max_tool_calls": 8,
+            "max_retries": 1,
+            "max_delegation_depth": 2,
+            "run_deadline_seconds": 1800,
+            "reserve_output_inspection": true,
+            "unknown_usage": "retain_reservation"
+          },
+          "local_resources": {
+            "business_slots": 1,
+            "guard_slots": 1,
+            "max_waiting_jobs": 8,
+            "queue_wait_seconds": 10,
+            "business_call_deadline_seconds": 120,
+            "run_slot_seconds": 1800,
+            "guard_subbudget_slot_seconds": 1700,
+            "require_confirmed_stop": true
+          },
+          "transport": {
+            "max_request_bytes": 262144,
+            "max_response_bytes": 65536,
+            "output_release": "after_full_inspection"
+          },
+          "feed": {
+            "source_ref": "approved-threat-feed",
+            "signature_required": true,
+            "reject_rollback": true,
+            "max_age_hours": 24
+          },
+          "audit": {
+            "raw_payloads": false,
+            "retention_days": 7,
+            "required_before_dispatch_and_release": true
+          },
+          "performance": {
+            "control_cache_enabled": true,
+            "semantic_cache_enabled": true
+          }
+        }
+      }
+    },
+    "frozen_sources": {
+      "backend/actiongate/__init__.py": "561e904567d004fbc8719f59350ae6e5c5aee131404e6580c9ba70dfe79b5740",
+      "backend/actiongate/app.py": "c21fb30c4dc6032cef90b9204934a663ba2a9390e400fe9492d7a3136d2f2740",
+      "backend/actiongate/audit_integrity.py": "e593d10eda162cc7415728b7fb030002fbf5ae047265d0579f9b6cb742fbc7e0",
+      "backend/actiongate/broker.py": "b9d5dacc69bd79cd449e78eca257dd32a9d87ae7d85e2128fe94b0f64b4eb77e",
+      "backend/actiongate/cloud.py": "5e6d67b55fd5fe8ef0e61f91c4c009a19ebba127bbbd5372aaab3371c1cd8e95",
+      "backend/actiongate/contracts.py": "2e40eddde525ae7204da7a952293d334829050b61ce91609aebc4c6dad561eaa",
+      "backend/actiongate/controls/__init__.py": "6d7ff0ba9328353298dc07cd827b721f1bd6aa42b246400f8dce1639b25f3369",
+      "backend/actiongate/controls/artifacts.py": "02cb4ca7bed74d3c3c973b1575f586cc013e2f3725e1189de57b744eb248aa45",
+      "backend/actiongate/controls/dlp.py": "ccec5cf3e6c0a7a87a25a43988716540b01c5d6cb893b8d25520042c1b22995e",
+      "backend/actiongate/controls/model_artifacts.py": "15fd0659f2b42bd1b0b2ae8cf384f0bca1c6c17f9243fe9ed7cc5c60b0f85d82",
+      "backend/actiongate/controls/opa.py": "0c0dce801057e0deb66f629109ac90021779c841f68745fc2098b5b920218861",
+      "backend/actiongate/controls/plane.py": "807a21c5833c1313a55b1908203517fa17c7124ceb697962933cfd519f502b07",
+      "backend/actiongate/controls/registry.py": "2af18afc9fc25b2382cd6ee34cadf665c4e0bedc94ffdbbe1b88540c870f335a",
+      "backend/actiongate/controls/schema.py": "0165abd15672d93dc1bf48285b5797d4a80267c037639e21ae05db39c90b62aa",
+      "backend/actiongate/controls/signed.py": "c6a833129af831a4684fafaae77993ec67d1de01bd4bfbe0672da49275a11a21",
+      "backend/actiongate/db.py": "d210a52f2e5c9d7828216991df834815e6caacce166a5106d1afca5f4ed69ad5",
+      "backend/actiongate/demo_tools.py": "e1df80e9cf92d4e231dc40c945a1f9fd86ee66c41a3af4b6c5b8ceb362fa712c",
+      "backend/actiongate/ledger.py": "70b013ae1ff99ec70a2bd14ddaf0031c2f441f0074293cc746c9e900cae55fd4",
+      "backend/actiongate/maintenance.py": "ef12cc621562e247d55f8482b3fc8afea231a64954a5d05eb83b664435531cae",
+      "backend/actiongate/mcp_gateway.py": "082e7737b37f1a745230d052a187ee979779a45f3c699b2bacdd4f131034b7ac",
+      "backend/actiongate/mcp_stdio.py": "f7ffa19b5a90344123f381ba250c8f9f5cd42a7f1bc7cb6cbfb4613e442bb79e",
+      "backend/actiongate/mcp_upstream.py": "9e0e18371c4afa9e04aff91033939211cf5898f0c1be193472fd124a4083770b",
+      "backend/actiongate/migrate.py": "d7f6d1afd432f25f76fd6fa3858e40386f3a2724c0356b3f43fd55e051f29a3d",
+      "backend/actiongate/policies.py": "34fde547bfc5c2659ccb774e68c0df17f03eca77b8357ee7e0b9209551d152f7",
+      "backend/actiongate/publisher.py": "817d01273f7b55361fc22be3f0a1a4e23cbd90ec5511c58e8b7739a7c1a40282",
+      "backend/actiongate/recovery.py": "97614fa21e4cc5c15818ff143a04d9ed8310713d4c366f45204c184689d72abe",
+      "backend/actiongate/replay.py": "5db6d6ad2f94d732c5f91dd6cd289dbf794a8b505b3c323c925e188e51185d70",
+      "backend/actiongate/runtime.py": "32e3a5a4065455815ab190b76d3df0b9589c5b4f37bf3e005566bd438198868c",
+      "backend/actiongate/scenarios.py": "d766385d355830372d34dc226565213bd57dfe1449ba59fe0d95b71e85de98d7",
+      "backend/actiongate/security.py": "5dbec71036a6a2a056246a98ec6499c51e51f655ef1cc7748304f4ff2672accf",
+      "backend/actiongate/seed.py": "931e82a1f4020336f651a281e8d15a10aa05851a9ef8e7d8980f50fb438c9495",
+      "backend/actiongate/semantic.py": "0e71fa69e130d2c0767f994ac500ca8262e412cc42b73b1258d0c53bf7a1a3e1",
+      "backend/actiongate/semantic_cache.py": "857cdbf3f5813265f4d0290540169ab400d53997fd247809a29872006a851d40",
+      "backend/actiongate/settings.py": "81cf8930e5f9ab29049e36a17e0abc48ee2bcda367fa1082e5bfa4714ed9626c",
+      "backend/actiongate/telemetry.py": "a845ad7f694942a113a64ea1d0486e0c0be835c511187d8839cdd01d5161ec4e",
+      "backend/actiongate/test_jobs.py": "da19bcdf791a789580a2e132b7af64b8b410daa934f91401f4433c22a0f9d6df",
+      "deploy/agent_probe.py": "f4c7f750cf22897f89dc6d17cb49e6e89a9ea4c3f05050f57155f11e9d9a674e",
+      "scripts/acceptance_report.py": "12a4c2c4d5e919824dca4a70fb20063dc58473d9af598b8d62ff6cf66287d362",
+      "scripts/benchmark.ps1": "77d8d99c2dac9fa5b4791e18b94f4a255d37d0e626018a7ce3dcc6e2e8516def",
+      "scripts/benchmark.py": "b5eb1e8da9aae3d3eb43a57833a7e7e307a689ba2ef274593d21c856611c423c",
+      "scripts/benchmark.sh": "065953ced20bb201f25976b37276fb7163e497c9d93e0b9cfa6b74dd0cd1d43c",
+      "scripts/check_release.py": "a20d2c65081b8a53ef11b6f8b868baf20320a2bc73bdb2450eeb44fdebd6ff05",
+      "scripts/clean_install.py": "658b5ed0f9a608a902e25b23270f21d05c0a6669c2b86f1f60a6d90d67988f1e",
+      "scripts/coverage_report.py": "501b714b17859f7d9195f080ea6afe4eaffd0d950628eed62671c331fb0b77c8",
+      "scripts/deployed_source.py": "4db61e48981e02ecb07dc1b83e2734a40e91e629af922999a4c4ffec7708d74f",
+      "scripts/gpu_concurrency_probe.py": "4a4d4570abf659a11397907941dc260abec455f81e23936bc17c2967ab3978e1",
+      "scripts/gpu_inventory.py": "a3f45ac9b89e63d1ced917d82b72488cedae4cec897543c41eba3263fa7f3a0a",
+      "scripts/gpu_preflight.py": "535f45f669903d7a2ba454d456b33128ddfe4952b1477f8bee3e40d28b4f7d1c",
+      "scripts/isolation.py": "9e3f3ac2c6f066e703c9e1c312eb7fff0e5302705218a241fd734f511dddbb71",
+      "scripts/preflight.py": "457a7a2a01dd1d7d2e3c36d3639148dc1622eaddedfecd10cf5824dfd01242fb",
+      "scripts/preflight_container.py": "1fd8c37f1dc61c0b349745cee8bf9adbfa39fa5adb8ec16329068d7fc026c114",
+      "scripts/release.py": "4b149906fb61390679a390bdbe6974e829a4c835726188068060fe1f16975b09",
+      "scripts/runtime_bootstrap.py": "6ef671e8a4f007b2fd7695ddfb0b0197d2297ae7812d63d19985c59891e94214",
+      "scripts/runtime_configuration.py": "87db96210348cab46c80b0e75825dbfe7b9549034181c3476b9d2befd66e62a2",
+      "scripts/runtime_configuration_probe.py": "20a8482aee6f9e4a64456ac34aae3aed3c25b8808e44df83bc4aa4d89c5a02fa",
+      "scripts/runtime_evidence.py": "f3096f0a97c14ca5559e1be2fc4f041c57c101d1ca95f41823e131b768452568",
+      "scripts/runtime_hardware.py": "2991192ba4959c3fb8eac8c904e60d4ea0dc3033a5ce108d7c79225104e8d9d2",
+      "scripts/scan_release_secrets.py": "28abdda92cfdc3d22bb0b2b2a03ed6b22536e2002c63b14e62e9ef2707ef2134",
+      "scripts/sse_reconnect_probe.cjs": "9e0b8bd95d918fb5796685337bec2ed650ffd4cfb320e9891eae9057249f772c",
+      "scripts/verify.ps1": "71064a15dcb0265312e450b5b16a7b8b61878bd14a2ea7490d3b4750db32cca1",
+      "scripts/verify.sh": "b53b5a1c8fc8eca35796242ed91adfc048259d109c0ff3fe7544ec13200e3b17",
+      "scripts/verify_clients.py": "74f8a4596ca6c2060187e00d79cb0ce4309a42f8d4ee70834bd399afc332569b",
+      "scripts/verify_container.py": "328568ca3937276b84d943dedb6f78c129a55e16a04c5814bee9afaa0f035d17",
+      "scripts/verify_dashboard_events.cjs": "3843d9835b4939da6f392b6bb08f75df34e815a3e4862042ba3c36efb8dad7bb",
+      "scripts/verify_live_browser.cjs": "42ebb6e6a8e7ca4e9094b132b591c60051bf6a26d7d18ba11538b61bb00c7979",
+      "scripts/verify_policy_replay.py": "feea9bcf8fd2d4009745bd84bdf9d2104a62382ea1f0d281e71f15477fbe76c5",
+      "scripts/verify_ui_workflow.cjs": "cc4392a33d11b01345bfc8dec8ca3d6f98351773e8d597b8a37fb681a293e461",
+      "tests/conftest.py": "254833596347eefeae43ee445e1a9a2c1d812422becfc9f6b77dc2976793620c",
+      "tests/control_registry.json": "6df438b1da958ceed680ceaa90ed089c984339f25f488cb13df4e18913b913e7",
+      "tests/test_acceptance_report.py": "fa719cb84e54cf016d6c76b001fd19af377948dfee5eedca7da64ad07fe17fd5",
+      "tests/test_api.py": "1bc02d69da70fdf344478833f101c7ccaec0d6a7b9400060f3184087c2e91c2d",
+      "tests/test_audit_integrity.py": "80e9ba2c91353389c2bd3bc6d955ac8d9953b03350b75424b08745690f526972",
+      "tests/test_bootstrap_artifacts.py": "b167490ece6b0d93b5c2c94bda8bfcd27502db4c0ba442b7b6d9afa07be34ad3",
+      "tests/test_boundary_fuzz.py": "cdd369059d18404a614ae6339931897f0983cbe335afb6a767dc57566dda4ded",
+      "tests/test_broker.py": "235e9712bbdae72787b4c9598b15df5983dd986a77399870af38ec88a9a84293",
+      "tests/test_cloud.py": "16dd32b9dc7a649085bcc83f9c09846e0642b842770b709ef4e358d1b309782c",
+      "tests/test_controls.py": "e6ce99383b52b2ec74fd8d9bf4770380dbc67f2f8537a6e5fb20c75f817e58ce",
+      "tests/test_failure_recovery.py": "659c742aa3ec96aa1baa72536bd06c540bd893827ceaaeace093c65f8e7acc3e",
+      "tests/test_interactive_lab.py": "5565da4b7d17e29a1c0d1da1315f6f5bee48fe9da767358f57a6e43d7d793ba4",
+      "tests/test_job_recovery.py": "910702050100b02a7b4ce79a665fadd2db2ae6e9b3a134071b0c097186a0e014",
+      "tests/test_ledger.py": "bd94dcd549ca9ff7441e450fa961d1cde4a1df4e291bbeba9b3412e441a5708f",
+      "tests/test_ledger_stateful.py": "b15c4f3468b41efbdbd3ba6717c8c8e73c6f6e47977270a3019f39da36894697",
+      "tests/test_local.py": "dc3eafb2636c768532f7ca70d448e7819b6cef51936c58ffaccca3c903756978",
+      "tests/test_mcp_gateway_contract.py": "46640e0b0933ea5bacd5f1bbcbcc59fa064d9c1329399b7e63af83a53297bb12",
+      "tests/test_model_artifacts.py": "601d10c9282230ced6b31c33965801fd0bdb39ae8815c3d46f3d6c0295659baa",
+      "tests/test_policy_cache.py": "76ddafe57e8a94b353a9f663e574c5c9e0d995c11fd23166fe028a16029d6e1d",
+      "tests/test_publication.py": "0d6e052bd72b0cbc99f494ec6c2f1cd59c30a48c42d2adeac2fbc871080421d9",
+      "tests/test_recovery.py": "1dd10606fcf4531b0cc6bbb5d84d2e20b6502fbbf3b38632ae2072042962f98e",
+      "tests/test_release.py": "6d78c781036bbf39845c13988b354fe394d623de6488e2651c33dc16ccdffaf7",
+      "tests/test_replay.py": "2bb59473dc553ec05111a007f2e64fa058e81e0ac0f547fe78cc7c34fc6bb44f",
+      "tests/test_runtime_contract.py": "f252788457c79ea32a803e7527a588f4d2ff8a81733390ab0851de633fa4d15f",
+      "tests/test_semantic_cache.py": "232666848adcfee518e35e4249196f6b474fcdf1c6c78a8e383aa63af01b3432",
+      "tests/test_semantic_evidence.py": "502b813450e9e282aca8baeb465610dfc8dc712f2be7fc6b6280b4279bfe7c94",
+      "tests/test_telemetry.py": "e9492d01c4e6aa0a132085eff3a283632d54eb016b80ac6ec7a614308093d776",
+      "tests/test_verify_entrypoint.py": "4e09857085ebabf956d60c4216c9bcf669e545d3cb1cf09e0d996c58c01be22d"
+    },
+    "ui_inputs": {
+      "ui/index.html": "5e483891d9830c0693227f553ef76c09c5c238728f7de9e834607f4ed4042320",
+      "ui/package-lock.json": "c10d7299cacbcebcd9b52f25affb0684cfc0e546a861fcae2a9b4ad6ec3cfca0",
+      "ui/package.json": "56d6150588964f1cf69814efb5da40d87126f623504c02c448ee32244e6b6381",
+      "ui/public/favicon.svg": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+      "ui/src/api.ts": "dfe3b9099b2ee8d5695077ae9eed4a0e8820676f6c637090ed95f81c3738413e",
+      "ui/src/App.tsx": "4f71bc1d48cde7c437f98ce93b1cdc8f586199f74f6022c46267250db5d1ca40",
+      "ui/src/Budgets.tsx": "dd05d1a436bc94fa436e73b9d1639a6eb2f059c22f98c5275f8e914c6a59f872",
+      "ui/src/components.tsx": "136b109533f6238cf94c997992642a3d2863304c62c45e3d06d26b05fb49f736",
+      "ui/src/Investigate.tsx": "6717e2b79f35b95c4032eef6d2ea2369e5bd014acbd82fe3970148a6441b0eab",
+      "ui/src/main.tsx": "456f14158eef1f5e666848411f9c4cddea0b0e99816abaa523e60bfcfe40847c",
+      "ui/src/Overview.tsx": "08cfe53817fb9da560c057131d04ef4e936db9a7747fb11fe5a9b58e20528201",
+      "ui/src/Policies.tsx": "0891cea0922204351656bf89f1a9802a98c4df2b1d9d7d9c20f5ed06a8323f51",
+      "ui/src/styles.css": "12ca92bda99910b754665aff93658c8d9728e12a2fdf0cd53bce7d65b622fea0",
+      "ui/src/TestLab.tsx": "d6f7a18e28bd99e70e68b9fa6b22fcefc7ad733c937798856cb4887a0c345b9b",
+      "ui/tsconfig.json": "b18edd473ae10946e62b2f02fc2c1931950408337f9f75086ba31b7671417dcb",
+      "ui/vite.config.ts": "8bddcb7d68f1a1eb45b0b66501863a82d9c6cfb5e29a7cd64807479b7106c39c"
+    },
+    "preserved_media": {
+      "artifacts/submission/ActionGate-cover.png": "fe6fd8b244c28cb7fbbffbbf9c5c4d45c366c8a3d7b3c74e999544a48e8b5aa3",
+      "artifacts/submission/ActionGate-deck-cover.png": "ca1ca167996b486b46b320b3c5a96693522fa6796ce03494ffaa4560aa639def",
+      "artifacts/submission/ActionGate-demo.en.vtt": "3d6e547f217d92c42188543e3c8ccc19886e272f29b4de1a9bbb3f86d9117050",
+      "artifacts/submission/ActionGate-pitch-final.pptx": "536d7e5f00795ff83cd17d6f382179916a99b55ca28665db29b5c2e7cbd0fbb1",
+      "artifacts/submission/ActionGate-pitch.mp4": "43d6626bc6fb3809b0c363f3ca8d83df36dba712b4078faba113aa22ee933cb4",
+      "artifacts/submission/ActionGate-poster.png": "b2e4f41550379bcf4179874f43a072da04ac79a9e41e9d531047add3688d5581",
+      "artifacts/submission/ActionGate-recorded-evidence.webm": "74337f8f7d987c1434de50939d894bbf26cbc272ffbab832dfbbc68b963ef6d4",
+      "artifacts/submission/ActionGate-song-pl-2026-10-04-v2.en.vtt": "509a755f303c96003e49b73813bf2b706dfe7f2580fdcde1f832756b0cd221c5",
+      "artifacts/submission/ActionGate-song-pl-2026-10-04-v2.mp4": "b3c3b557a1b9ee98c6f1c64a5cc3dba0d75edad144eb284f8d3b3a5fb9d47a71",
+      "artifacts/submission/ActionGate.pdf": "cd8a68746c42104d3489b91c85b3ea3fcaa279703ef6da1575f20e105d995691",
+      "artifacts/submission/ActionGate.pptx": "b70351f69ad3eacd71cfe7d725118fa9336b2efa80bcf01695154894dc0119b8",
+      "artifacts/submission/ui-workflow-document-receipt.png": "7bc56b226b9debb7f56676c0441d75ff01354fd6a02af7d01be07b70c350aeff",
+      "artifacts/submission/ui-workflow-document-result.png": "1c66f5cde0d776a7f8e37b5a296db951eada43c1a78fd244cde5a60ff09539ae",
+      "artifacts/submission/ui-workflow-document.png": "537db86b75a872714ea99a7ed64b63aaea2e952f8324fc9694516a640199eb78",
+      "artifacts/submission/ui-workflow-foreign-tenant.png": "7918f309f0a41159c7666b7aad35620b477193e0314412f7f6cda6a3ce0186d3",
+      "artifacts/submission/ui-workflow-injection.png": "58209e29d1820f16bbd9a54571e401284dfebe556b5246f268fcb4ceedba9ee5",
+      "artifacts/submission/ui-workflow-model-result.png": "e85b16880951ef09bda5f3a48370ea311e7c6c1a5ed71b7620b5f5ad085442c7",
+      "artifacts/submission/ui-workflow-model.png": "022407f11187c64683259b223051e6c2a6d5b392bbd2b5fc5f05d888da0aa785",
+      "artifacts/submission/ui-workflow-pii.png": "b5f7d96c7b0108917a577ea7ca234716e994430448e65165c2cf2086f83161fb",
+      "artifacts/submission/ui-workflow-result.png": "3c2bf5fdedfc948919dcee60aca586db6b61c645263ab16ece4b60a2e9cbac69",
+      "artifacts/submission/ui-workflow-start.png": "e899b1e7689703489437b905d1414d543b09a92870bbb9c8d530d1b78beae66c",
+      "artifacts/submission/walkthrough-completed.png": "821907b703073d5fd16bbe35b1654722639fccd6037f5736e785ef6d63770017",
+      "artifacts/submission/song-evidence/english.srt": "79eda82ba459d402f2564dc06682bbd47e3cbe36f7bfc36d532eaba893584163",
+      "artifacts/submission/song-evidence/polish.srt": "f6194295c7be43243f2f141726d1dd931ddd2ab194c8be08eee6754494c8f59b"
+    },
+    "compose_sha256": "5cb04ce33fef6f2f813ba3759133769ca2b76cb1c92a3356648b6b74a1d6f781",
+    "producer_sha256": "51535d232464f91133d071e7b01120c93819824faa870305b6bc9f74f1ae701c"
+  },
+  "after": {
+    "actiongate-gateway-a-1": {
+      "id": "05d4704bd7a5df2784c93ffd4302ac94dcf263bd99b58c215adcdcce86aa62ad",
+      "image_id": "sha256:d1d721d4b4e43ef8322261c64a90c6c71cf812d6424b83bfaaf4e0db97d6aaf0",
+      "state": "running",
+      "health": "healthy",
+      "networks": [
+        "actiongate_agent",
+        "actiongate_business",
+        "actiongate_cloud",
+        "actiongate_data",
+        "actiongate_edge",
+        "actiongate_feed",
+        "actiongate_guard",
+        "actiongate_opa",
+        "actiongate_tools"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": "http://127.0.0.1:8088",
+        "UVICORN_TIMEOUT_KEEP_ALIVE": "30"
+      },
+      "limits": {
+        "Memory": 2147483648,
+        "NanoCpus": 0,
+        "PidsLimit": 256,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/policy",
+          "Destination": "/app/policy",
+          "RW": false
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\feeds",
+          "Destination": "/app/feeds",
+          "RW": false
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate_artifacts",
+          "Source": "/var/lib/docker/volumes/actiongate_artifacts/_data",
+          "Destination": "/app/artifacts",
+          "RW": true
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate_spool-a",
+          "Source": "/var/lib/docker/volumes/actiongate_spool-a/_data",
+          "Destination": "/app/spool",
+          "RW": true
+        }
+      ]
+    },
+    "actiongate-gateway-b-1": {
+      "id": "a5bbdfd9411ae2f35ec3909c440f5ee5b8536c155089766537734bd688ff794e",
+      "image_id": "sha256:d1d721d4b4e43ef8322261c64a90c6c71cf812d6424b83bfaaf4e0db97d6aaf0",
+      "state": "running",
+      "health": "healthy",
+      "networks": [
+        "actiongate_agent",
+        "actiongate_business",
+        "actiongate_cloud",
+        "actiongate_data",
+        "actiongate_edge",
+        "actiongate_feed",
+        "actiongate_guard",
+        "actiongate_opa",
+        "actiongate_tools"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": "http://127.0.0.1:8088",
+        "UVICORN_TIMEOUT_KEEP_ALIVE": "30"
+      },
+      "limits": {
+        "Memory": 2147483648,
+        "NanoCpus": 0,
+        "PidsLimit": 256,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "actiongate_spool-b",
+          "Source": "/var/lib/docker/volumes/actiongate_spool-b/_data",
+          "Destination": "/app/spool",
+          "RW": true
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/policy",
+          "Destination": "/app/policy",
+          "RW": false
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/feeds",
+          "Destination": "/app/feeds",
+          "RW": false
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate_artifacts",
+          "Source": "/var/lib/docker/volumes/actiongate_artifacts/_data",
+          "Destination": "/app/artifacts",
+          "RW": true
+        }
+      ]
+    },
+    "actiongate-postgres-1": {
+      "id": "454e6d2faf83e779905f49b125b4b3aae5f12e6349a770fc0ff01bf6ea928136",
+      "image_id": "sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+      "state": "running",
+      "health": "healthy",
+      "networks": [
+        "actiongate_data"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 2147483648,
+        "NanoCpus": 0,
+        "PidsLimit": 256,
+        "ReadonlyRootfs": false,
+        "CapDrop": null,
+        "SecurityOpt": null
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/deploy/init-db.sh",
+          "Destination": "/docker-entrypoint-initdb.d/10-actiongate.sh",
+          "RW": false
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate_database",
+          "Source": "/var/lib/docker/volumes/actiongate_database/_data",
+          "Destination": "/var/lib/postgresql/data",
+          "RW": true
+        }
+      ]
+    },
+    "actiongate-maintenance-1": {
+      "id": "02e102060f7d41367dffafbc4c3f39f6fd58fb15c833726975cf63e17998a0fb",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "state": "running",
+      "health": null,
+      "networks": [
+        "actiongate_data",
+        "actiongate_feed"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 268435456,
+        "NanoCpus": 0,
+        "PidsLimit": 64,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": []
+    },
+    "actiongate-feed-server-1": {
+      "id": "ce096a812189f995233bb479077dd829b21a6a069acdde71baa8da2a9e425753",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "state": "running",
+      "health": null,
+      "networks": [
+        "actiongate_feed"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 0,
+        "NanoCpus": 0,
+        "PidsLimit": null,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "actiongate_publisher",
+          "Source": "/var/lib/docker/volumes/actiongate_publisher/_data",
+          "Destination": "/app/artifacts",
+          "RW": true
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/policy",
+          "Destination": "/app/policy",
+          "RW": true
+        }
+      ]
+    },
+    "actiongate-cloud-connector-1": {
+      "id": "3cb14d6296245b056ccff1c6bcaa46a7750a0d69d1aa8c76f72ce862f539956a",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "state": "running",
+      "health": null,
+      "networks": [
+        "actiongate_cloud",
+        "actiongate_cloud-egress"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 536870912,
+        "NanoCpus": 0,
+        "PidsLimit": 128,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\policy",
+          "Destination": "/app/policy",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-demo-tools-1": {
+      "id": "c6933290d74f3318b3e154a035424d25af1d4122b842fe9449d86eedf5a4fff9",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "state": "running",
+      "health": null,
+      "networks": [
+        "actiongate_data",
+        "actiongate_tools"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 0,
+        "NanoCpus": 0,
+        "PidsLimit": null,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": []
+    },
+    "actiongate-jury-probe-upstream": {
+      "id": "ff7fc8cdbd6b15907ef8841a6e8a8d5880258835c69e80f0b273a9d8b19dd68a",
+      "image_id": "sha256:9d126782428dbb0d5dc929261b47be8f68ebbe471efbd8059c2d0ddb99bd486a",
+      "state": "exited",
+      "health": null,
+      "networks": [
+        "actiongate-jury-probe"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 134217728,
+        "NanoCpus": 0,
+        "PidsLimit": 32,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\.state\\public-demo/mock.py",
+          "Destination": "/mock.py",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-business-worker-1": {
+      "id": "446deb5d9b7681fd629ae1fa82a503160277eec9ee4c3b6de25cb11156d6dbc9",
+      "image_id": "sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d",
+      "state": "running",
+      "health": "healthy",
+      "networks": [
+        "actiongate_business"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 8589934592,
+        "NanoCpus": 10000000000,
+        "PidsLimit": 256,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "actiongate_models",
+          "Source": "/var/lib/docker/volumes/actiongate_models/_data",
+          "Destination": "/models",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-guard-worker-1": {
+      "id": "816920b6d3c11fa3259e1f79a3fc9a766d2d0cb9ba5d5c9fa5ed366f245919de",
+      "image_id": "sha256:f008f3a4afefee7c8dabd045edfcbc597d621a06d7fef78d44b522871867b73d",
+      "state": "running",
+      "health": "healthy",
+      "networks": [
+        "actiongate_guard"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 8589934592,
+        "NanoCpus": 10000000000,
+        "PidsLimit": 256,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "actiongate_models",
+          "Source": "/var/lib/docker/volumes/actiongate_models/_data",
+          "Destination": "/models",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-migrate-1": {
+      "id": "0fe9f71b32802dcbd39d9878603960316351eb3424ea9b75689021311531edf3",
+      "image_id": "sha256:9e6a261977ea829cf104871fc0015f5fe4a7d79804f66ca7b7602fe308ddf59c",
+      "state": "exited",
+      "health": null,
+      "networks": [
+        "actiongate_data"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 0,
+        "NanoCpus": 0,
+        "PidsLimit": null,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": []
+    },
+    "actiongate-edge-1": {
+      "id": "c164a3e845cf5d67fa684a2267be4cc60891be28d1097e9889384154e3156ec5",
+      "image_id": "sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94",
+      "state": "running",
+      "health": null,
+      "networks": [
+        "actiongate_edge"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 0,
+        "NanoCpus": 0,
+        "PidsLimit": null,
+        "ReadonlyRootfs": true,
+        "CapDrop": null,
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\deploy\\nginx.conf",
+          "Destination": "/etc/nginx/nginx.conf",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-opa-a-1": {
+      "id": "96cb04a816e9eee6780c03a813bdd2d163710c442d8d763b57f250cc179eaa63",
+      "image_id": "sha256:3913aa7982d7c096c1996eca99d3360930723668fd62ccc3f6ebd37257d1fc84",
+      "state": "running",
+      "health": null,
+      "networks": [
+        "actiongate_opa"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 268435456,
+        "NanoCpus": 0,
+        "PidsLimit": null,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\policy",
+          "Destination": "/policy",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-opa-b-1": {
+      "id": "bbd520ae708be866970c446658174e5bc64c0313acde3a121277968d2902c7cc",
+      "image_id": "sha256:3913aa7982d7c096c1996eca99d3360930723668fd62ccc3f6ebd37257d1fc84",
+      "state": "running",
+      "health": null,
+      "networks": [
+        "actiongate_opa"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 268435456,
+        "NanoCpus": 0,
+        "PidsLimit": null,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\policy",
+          "Destination": "/policy",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-gpu-0b92f97d-gateway-a-1": {
+      "id": "8f390d8062e0c774d4714f87a36b81cd268ef59486c32d07bf901146acd2f774",
+      "image_id": "sha256:d1d721d4b4e43ef8322261c64a90c6c71cf812d6424b83bfaaf4e0db97d6aaf0",
+      "state": "running",
+      "health": "healthy",
+      "networks": [
+        "actiongate-gpu-0b92f97d_agent",
+        "actiongate-gpu-0b92f97d_business",
+        "actiongate-gpu-0b92f97d_cloud",
+        "actiongate-gpu-0b92f97d_data",
+        "actiongate-gpu-0b92f97d_edge",
+        "actiongate-gpu-0b92f97d_feed",
+        "actiongate-gpu-0b92f97d_guard",
+        "actiongate-gpu-0b92f97d_opa",
+        "actiongate-gpu-0b92f97d_tools"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": "http://127.0.0.1:18089",
+        "UVICORN_TIMEOUT_KEEP_ALIVE": "30"
+      },
+      "limits": {
+        "Memory": 2147483648,
+        "NanoCpus": 0,
+        "PidsLimit": 256,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/policy",
+          "Destination": "/app/policy",
+          "RW": false
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/feeds",
+          "Destination": "/app/feeds",
+          "RW": false
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate-gpu-0b92f97d_artifacts",
+          "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_artifacts/_data",
+          "Destination": "/app/artifacts",
+          "RW": true
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate-gpu-0b92f97d_spool-a",
+          "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_spool-a/_data",
+          "Destination": "/app/spool",
+          "RW": true
+        }
+      ]
+    },
+    "actiongate-gpu-0b92f97d-gateway-b-1": {
+      "id": "2ce89722dee9c109d02aaaf8325dc51c598ef4f3d1ed0d3917fede6e054fc264",
+      "image_id": "sha256:d1d721d4b4e43ef8322261c64a90c6c71cf812d6424b83bfaaf4e0db97d6aaf0",
+      "state": "running",
+      "health": "healthy",
+      "networks": [
+        "actiongate-gpu-0b92f97d_agent",
+        "actiongate-gpu-0b92f97d_business",
+        "actiongate-gpu-0b92f97d_cloud",
+        "actiongate-gpu-0b92f97d_data",
+        "actiongate-gpu-0b92f97d_edge",
+        "actiongate-gpu-0b92f97d_feed",
+        "actiongate-gpu-0b92f97d_guard",
+        "actiongate-gpu-0b92f97d_opa",
+        "actiongate-gpu-0b92f97d_tools"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": "http://127.0.0.1:18089",
+        "UVICORN_TIMEOUT_KEEP_ALIVE": "30"
+      },
+      "limits": {
+        "Memory": 2147483648,
+        "NanoCpus": 0,
+        "PidsLimit": 256,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "actiongate-gpu-0b92f97d_artifacts",
+          "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_artifacts/_data",
+          "Destination": "/app/artifacts",
+          "RW": true
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate-gpu-0b92f97d_spool-b",
+          "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_spool-b/_data",
+          "Destination": "/app/spool",
+          "RW": true
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/policy",
+          "Destination": "/app/policy",
+          "RW": false
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/feeds",
+          "Destination": "/app/feeds",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-gpu-0b92f97d-edge-1": {
+      "id": "3e57957d4b1de0ef42610fc48a296ef051dc0f3481e4a94a10304c5ba4bd8378",
+      "image_id": "sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94",
+      "state": "running",
+      "health": null,
+      "networks": [
+        "actiongate-gpu-0b92f97d_edge"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 0,
+        "NanoCpus": 0,
+        "PidsLimit": null,
+        "ReadonlyRootfs": true,
+        "CapDrop": null,
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\deploy\\nginx.conf",
+          "Destination": "/etc/nginx/nginx.conf",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-gpu-0b92f97d-maintenance-1": {
+      "id": "a878d4bfc293f96e445957a87906ed50341b27093f04545bb840df1a83c4520d",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "state": "running",
+      "health": null,
+      "networks": [
+        "actiongate-gpu-0b92f97d_data",
+        "actiongate-gpu-0b92f97d_feed"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 268435456,
+        "NanoCpus": 0,
+        "PidsLimit": 64,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": []
+    },
+    "actiongate-gpu-0b92f97d-demo-tools-1": {
+      "id": "afc90bb626cff00e421e68c0baab0d156358657496d9310e124243c8ea163614",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "state": "running",
+      "health": null,
+      "networks": [
+        "actiongate-gpu-0b92f97d_data",
+        "actiongate-gpu-0b92f97d_tools"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 0,
+        "NanoCpus": 0,
+        "PidsLimit": null,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": []
+    },
+    "actiongate-gpu-0b92f97d-migrate-1": {
+      "id": "7eb50d2119a732125f7049064e390b295d6559eba8bd9e63015d75e6c552524e",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "state": "exited",
+      "health": null,
+      "networks": [
+        "actiongate-gpu-0b92f97d_data"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 0,
+        "NanoCpus": 0,
+        "PidsLimit": null,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": []
+    },
+    "actiongate-gpu-0b92f97d-feed-server-1": {
+      "id": "2ab4aefdb6c7f3b2a0fd08984f82b78ce87a08ee2d33f6de2646e1c6aca6a482",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "state": "running",
+      "health": null,
+      "networks": [
+        "actiongate-gpu-0b92f97d_feed"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 0,
+        "NanoCpus": 0,
+        "PidsLimit": null,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/feeds",
+          "Destination": "/app/feeds",
+          "RW": false
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate-gpu-0b92f97d_publisher",
+          "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_publisher/_data",
+          "Destination": "/app/artifacts",
+          "RW": true
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/policy",
+          "Destination": "/app/policy",
+          "RW": true
+        }
+      ]
+    },
+    "actiongate-gpu-0b92f97d-guard-worker-1": {
+      "id": "5fc168f98b00ed3db27df9fbb2844936f7e114e71faea257036a88c2fdf5d832",
+      "image_id": "sha256:8256310ee6f6a3526ce7b983f3675c6ff3ab7709681da15d8f61c453a8a7efeb",
+      "state": "running",
+      "health": "healthy",
+      "networks": [
+        "actiongate-gpu-0b92f97d_guard"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 8589934592,
+        "NanoCpus": 10000000000,
+        "PidsLimit": 256,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "actiongate_models",
+          "Source": "/var/lib/docker/volumes/actiongate_models/_data",
+          "Destination": "/models",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-gpu-0b92f97d-opa-a-1": {
+      "id": "b72361829edec95876a7953990d53607e6fcc7b31c21ca2edc480b4157007b70",
+      "image_id": "sha256:3913aa7982d7c096c1996eca99d3360930723668fd62ccc3f6ebd37257d1fc84",
+      "state": "running",
+      "health": null,
+      "networks": [
+        "actiongate-gpu-0b92f97d_opa"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 268435456,
+        "NanoCpus": 0,
+        "PidsLimit": null,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\policy",
+          "Destination": "/policy",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-gpu-0b92f97d-opa-b-1": {
+      "id": "cdb2d5a0441ebbbf94972e603a060ab85c0b9d002ec32bb866157aae064f2c01",
+      "image_id": "sha256:3913aa7982d7c096c1996eca99d3360930723668fd62ccc3f6ebd37257d1fc84",
+      "state": "running",
+      "health": null,
+      "networks": [
+        "actiongate-gpu-0b92f97d_opa"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 268435456,
+        "NanoCpus": 0,
+        "PidsLimit": null,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\policy",
+          "Destination": "/policy",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-gpu-0b92f97d-business-worker-1": {
+      "id": "a200fd9b682e0e25d9d50f228e4284ddaef5c9eb528a8c8835e97e084506e501",
+      "image_id": "sha256:8256310ee6f6a3526ce7b983f3675c6ff3ab7709681da15d8f61c453a8a7efeb",
+      "state": "running",
+      "health": "healthy",
+      "networks": [
+        "actiongate-gpu-0b92f97d_business"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 8589934592,
+        "NanoCpus": 10000000000,
+        "PidsLimit": 256,
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ]
+      },
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "actiongate_models",
+          "Source": "/var/lib/docker/volumes/actiongate_models/_data",
+          "Destination": "/models",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-gpu-0b92f97d-postgres-1": {
+      "id": "0f59a3e323afe4fed84c97d4507eac336c3139ca4a32eaea67d81716a35db9f8",
+      "image_id": "sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+      "state": "running",
+      "health": "healthy",
+      "networks": [
+        "actiongate-gpu-0b92f97d_data"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": null,
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "limits": {
+        "Memory": 2147483648,
+        "NanoCpus": 0,
+        "PidsLimit": 256,
+        "ReadonlyRootfs": false,
+        "CapDrop": null,
+        "SecurityOpt": null
+      },
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "actiongate-gpu-0b92f97d_database",
+          "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_database/_data",
+          "Destination": "/var/lib/postgresql/data",
+          "RW": true
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/deploy/init-db.sh",
+          "Destination": "/docker-entrypoint-initdb.d/10-actiongate.sh",
+          "RW": false
+        }
+      ]
+    }
+  },
+  "checks": {
+    "same_container_names": true,
+    "all_other_containers_unchanged": true,
+    "frozen95_unchanged": true,
+    "reviewed_ui_inputs_unchanged": true,
+    "preserved_pitch_audio_song_pdf_bytes": true,
+    "compose_unchanged": true,
+    "original_capture_producer_preserved": true,
+    "generation_models_guard_policy_unchanged": true,
+    "current_mount_modes_and_private_propagation": true,
+    "actiongate-gateway-a-1_new_id_ready_pinned_image": true,
+    "actiongate-gateway-a-1_limits_networks_env_mounts_unchanged": true,
+    "actiongate-gateway-a-1_actual_tcp_after_6_seconds": true,
+    "actiongate-gateway-a-1_reviewed_image_bytes": true,
+    "actiongate-gateway-b-1_new_id_ready_pinned_image": true,
+    "actiongate-gateway-b-1_limits_networks_env_mounts_unchanged": true,
+    "actiongate-gateway-b-1_actual_tcp_after_6_seconds": true,
+    "actiongate-gateway-b-1_reviewed_image_bytes": true,
+    "actiongate-gpu-0b92f97d-gateway-a-1_new_id_ready_pinned_image": true,
+    "actiongate-gpu-0b92f97d-gateway-a-1_limits_networks_env_mounts_unchanged": true,
+    "actiongate-gpu-0b92f97d-gateway-a-1_actual_tcp_after_6_seconds": true,
+    "actiongate-gpu-0b92f97d-gateway-a-1_reviewed_image_bytes": true,
+    "actiongate-gpu-0b92f97d-gateway-b-1_new_id_ready_pinned_image": true,
+    "actiongate-gpu-0b92f97d-gateway-b-1_limits_networks_env_mounts_unchanged": true,
+    "actiongate-gpu-0b92f97d-gateway-b-1_actual_tcp_after_6_seconds": true,
+    "actiongate-gpu-0b92f97d-gateway-b-1_reviewed_image_bytes": true,
+    "producer_stable_during_verification": true
+  },
+  "producer": "artifacts/verify_ui_deployment_patch.py",
+  "producer_sha256": "e334aa0e3750629e867720dbc543dbec41e1733d8dfd9a8278fb6ca0fa6c57d9",
+  "mount_comparison": "Named fields sorted by destination. Normalize only Windows drive separators and Docker Desktop /run/desktop/mnt/host/<drive>/ mapping to the identical drive path; preserve raw observations above.",
+  "tcp_probe_producer_sha256": "470fe3d8db9d55ba376263bb54cb3fe3550536d33e316be19c2adf5c400ccccb",
+  "signed_configuration_after": {
+    "actiongate": {
+      "generation": 36,
+      "digest": "673ce45cabcbff4e7d49174c0b3d9bd4d53f567be718d415998204b4ec3b6b53",
+      "guard_artifact": {
+        "prompt_version": "actiongate-guard-v2.9",
+        "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+      },
+      "model_artifacts": {
+        "local-business": {
+          "path": "models/model-manifest.json",
+          "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+          "manifest": {
+            "schema_version": 1,
+            "model": "qwen3.5:4b",
+            "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+            "format": "GGUF",
+            "family": "Qwen3.5",
+            "quantization": "Q4_K_M",
+            "license": "Apache-2.0",
+            "source": "https://ollama.com/library/qwen3.5:4b",
+            "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+            "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "context_tokens": 8192,
+            "max_input_tokens": 4096,
+            "think": false,
+            "temperature": 0,
+            "seed": 42,
+            "runtime": "ollama:0.32.0",
+            "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+          }
+        },
+        "local-guard": {
+          "path": "models/model-manifest.json",
+          "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+          "manifest": {
+            "schema_version": 1,
+            "model": "qwen3.5:4b",
+            "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+            "format": "GGUF",
+            "family": "Qwen3.5",
+            "quantization": "Q4_K_M",
+            "license": "Apache-2.0",
+            "source": "https://ollama.com/library/qwen3.5:4b",
+            "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+            "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "context_tokens": 8192,
+            "max_input_tokens": 4096,
+            "think": false,
+            "temperature": 0,
+            "seed": 42,
+            "runtime": "ollama:0.32.0",
+            "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+          }
+        },
+        "cloud-business": {
+          "path": "models/cloud-model-manifest.json",
+          "sha256": "14135fe31e8ca85446bb98c3472e10cbe07396a26eb0418c553834d488b85fa9",
+          "manifest": {
+            "schema_version": 1,
+            "provider": "groq",
+            "model": "openai/gpt-oss-20b",
+            "api_host": "api.groq.com",
+            "api_path": "/openai/v1/chat/completions",
+            "context_tokens": 131072,
+            "max_completion_tokens": 65536,
+            "reservation_input_method": "full_provider_context_upper_bound",
+            "reservation_output_method": "max_completion_tokens_including_hidden_reasoning",
+            "include_reasoning": false,
+            "reasoning_effort": "low",
+            "automatic_retries": false,
+            "redirects": false,
+            "built_in_tools": false,
+            "supported_tools": "client_function_schemas_only",
+            "price_file": "policy/prices.json",
+            "sources": [
+              "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+              "https://console.groq.com/docs/openai",
+              "https://console.groq.com/docs/reasoning"
+            ]
+          }
+        }
+      },
+      "configuration": {
+        "schema_version": 1,
+        "policy_id": "actiongate-demo",
+        "revision": 1,
+        "default_decision": "block",
+        "active_profile": "balanced",
+        "profiles": {
+          "strict": {
+            "pii_action": "block",
+            "semantic_block_level": 1,
+            "semantic_review_level": null,
+            "semantic_unknown": "block",
+            "restrict_to": null,
+            "effects": null,
+            "advisory_controls": [],
+            "enforce_identity_labels_budgets": true
+          },
+          "balanced": {
+            "pii_action": "redact",
+            "semantic_block_level": 2,
+            "semantic_review_level": 1,
+            "semantic_unknown": "block",
+            "restrict_to": null,
+            "effects": null,
+            "advisory_controls": [],
+            "enforce_identity_labels_budgets": true
+          },
+          "observe": {
+            "pii_action": "redact",
+            "semantic_block_level": 2,
+            "semantic_review_level": 1,
+            "semantic_unknown": "block",
+            "restrict_to": "synthetic_test_tenant",
+            "effects": "test_sinks_only",
+            "advisory_controls": [
+              "pii",
+              "semantic"
+            ],
+            "enforce_identity_labels_budgets": true
+          }
+        },
+        "identity": {
+          "tenant_source": "verified_identity",
+          "grants_source": "trusted_application",
+          "delegation": "intersect_parent_grant"
+        },
+        "flow": {
+          "levels": [
+            "PUBLIC",
+            "INTERNAL",
+            "CONFIDENTIAL",
+            "RESTRICTED"
+          ],
+          "unknown_source": "CONFIDENTIAL",
+          "track_untrusted_origins": true,
+          "propagate_run_and_delegation": true,
+          "label_override_by_agent": false,
+          "sinks": {
+            "local_model": {
+              "max_label": "RESTRICTED",
+              "same_tenant": true,
+              "compartments": []
+            },
+            "internal_report": {
+              "max_label": "CONFIDENTIAL",
+              "same_tenant": true,
+              "compartments": []
+            },
+            "internal_demo_sink": {
+              "max_label": "CONFIDENTIAL",
+              "same_tenant": true,
+              "compartments": []
+            },
+            "public_demo_sink": {
+              "max_label": "PUBLIC",
+              "same_tenant": false,
+              "compartments": []
+            },
+            "cloud_model": {
+              "max_label": "PUBLIC",
+              "same_tenant": false,
+              "compartments": []
+            }
+          },
+          "public_release_function": "supplier_public_view_v1"
+        },
+        "models": {
+          "default": "local-business",
+          "registry": "model-registry.json",
+          "allowed": [
+            "local-business"
+          ],
+          "cloud_enabled": false
+        },
+        "semantic": {
+          "model_ref": "local-guard",
+          "prompt_version": "actiongate-guard-v2.9",
+          "required_on": [
+            "untrusted_input",
+            "proposed_action",
+            "tool_output",
+            "memory_write",
+            "model_output"
+          ],
+          "risk_scale": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "context_tokens": 8192,
+          "max_input_tokens_per_call": 4096,
+          "max_output_tokens": 256,
+          "window_tokens": 2048,
+          "overlap_tokens": 256,
+          "max_windows": 8,
+          "deadline_seconds": 180,
+          "incomplete_scan": "block"
+        },
+        "controls": {
+          "authentication": {
+            "enabled": true
+          },
+          "tenant_isolation": {
+            "enabled": true
+          },
+          "secrets": {
+            "enabled": true,
+            "action": "block"
+          },
+          "pii": {
+            "enabled": true,
+            "entities": [
+              "EMAIL",
+              "PHONE",
+              "PESEL",
+              "IBAN"
+            ]
+          },
+          "semantic": {
+            "enabled": true
+          },
+          "historical_attacks": {
+            "enabled": true
+          }
+        },
+        "tools": {
+          "registry": "tool-registry.json",
+          "allowed": [
+            "documents.read",
+            "memory.read",
+            "memory.write",
+            "reports.save",
+            "reports.publish_demo",
+            "calculator.evaluate",
+            "models.chat",
+            "supplier_public_view_v1"
+          ],
+          "require_approval": [
+            "reports.publish_demo"
+          ],
+          "grant_ttl_seconds": 30
+        },
+        "budgets": {
+          "currency": "USD",
+          "period_timezone": "UTC",
+          "tenant_daily_usd_micros": 5000000,
+          "run_usd_micros": 250000,
+          "run_total_tokens": 120000,
+          "guard_subbudget_tokens": 96000,
+          "request_input_tokens": 4096,
+          "request_output_tokens": 1024,
+          "max_steps": 12,
+          "max_tool_calls": 8,
+          "max_retries": 1,
+          "max_delegation_depth": 2,
+          "run_deadline_seconds": 1800,
+          "reserve_output_inspection": true,
+          "unknown_usage": "retain_reservation"
+        },
+        "local_resources": {
+          "business_slots": 1,
+          "guard_slots": 1,
+          "max_waiting_jobs": 8,
+          "queue_wait_seconds": 10,
+          "business_call_deadline_seconds": 120,
+          "run_slot_seconds": 1800,
+          "guard_subbudget_slot_seconds": 1700,
+          "require_confirmed_stop": true
+        },
+        "transport": {
+          "max_request_bytes": 262144,
+          "max_response_bytes": 65536,
+          "output_release": "after_full_inspection"
+        },
+        "feed": {
+          "source_ref": "approved-threat-feed",
+          "signature_required": true,
+          "reject_rollback": true,
+          "max_age_hours": 24
+        },
+        "audit": {
+          "raw_payloads": false,
+          "retention_days": 7,
+          "required_before_dispatch_and_release": true
+        },
+        "performance": {
+          "control_cache_enabled": true,
+          "semantic_cache_enabled": true
+        }
+      }
+    },
+    "actiongate-gpu-0b92f97d": {
+      "generation": 15,
+      "digest": "0d9132ca2b3d1a383b198f6d7b7206f9b426166cdc6475bea0cfe51388fac84a",
+      "guard_artifact": {
+        "prompt_version": "actiongate-guard-v2.9",
+        "sha256": "5bbb46d9b2ccb7c3b1b7b4e5ff9577272344a9c9f10e87b06b55871c3e6da206"
+      },
+      "model_artifacts": {
+        "local-business": {
+          "path": "models/model-manifest.json",
+          "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+          "manifest": {
+            "schema_version": 1,
+            "model": "qwen3.5:4b",
+            "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+            "format": "GGUF",
+            "family": "Qwen3.5",
+            "quantization": "Q4_K_M",
+            "license": "Apache-2.0",
+            "source": "https://ollama.com/library/qwen3.5:4b",
+            "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+            "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "context_tokens": 8192,
+            "max_input_tokens": 4096,
+            "think": false,
+            "temperature": 0,
+            "seed": 42,
+            "runtime": "ollama:0.32.0",
+            "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+          }
+        },
+        "local-guard": {
+          "path": "models/model-manifest.json",
+          "sha256": "acdc6d5e9974be0e9f7c7f2da29d43c5d024eba920becd3220d4f0cbd3a75f3b",
+          "manifest": {
+            "schema_version": 1,
+            "model": "qwen3.5:4b",
+            "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+            "format": "GGUF",
+            "family": "Qwen3.5",
+            "quantization": "Q4_K_M",
+            "license": "Apache-2.0",
+            "source": "https://ollama.com/library/qwen3.5:4b",
+            "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+            "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "context_tokens": 8192,
+            "max_input_tokens": 4096,
+            "think": false,
+            "temperature": 0,
+            "seed": 42,
+            "runtime": "ollama:0.32.0",
+            "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+          }
+        },
+        "cloud-business": {
+          "path": "models/cloud-model-manifest.json",
+          "sha256": "14135fe31e8ca85446bb98c3472e10cbe07396a26eb0418c553834d488b85fa9",
+          "manifest": {
+            "schema_version": 1,
+            "provider": "groq",
+            "model": "openai/gpt-oss-20b",
+            "api_host": "api.groq.com",
+            "api_path": "/openai/v1/chat/completions",
+            "context_tokens": 131072,
+            "max_completion_tokens": 65536,
+            "reservation_input_method": "full_provider_context_upper_bound",
+            "reservation_output_method": "max_completion_tokens_including_hidden_reasoning",
+            "include_reasoning": false,
+            "reasoning_effort": "low",
+            "automatic_retries": false,
+            "redirects": false,
+            "built_in_tools": false,
+            "supported_tools": "client_function_schemas_only",
+            "price_file": "policy/prices.json",
+            "sources": [
+              "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+              "https://console.groq.com/docs/openai",
+              "https://console.groq.com/docs/reasoning"
+            ]
+          }
+        }
+      },
+      "configuration": {
+        "schema_version": 1,
+        "policy_id": "actiongate-demo",
+        "revision": 1,
+        "default_decision": "block",
+        "active_profile": "balanced",
+        "profiles": {
+          "strict": {
+            "pii_action": "block",
+            "semantic_block_level": 1,
+            "semantic_review_level": null,
+            "semantic_unknown": "block",
+            "restrict_to": null,
+            "effects": null,
+            "advisory_controls": [],
+            "enforce_identity_labels_budgets": true
+          },
+          "balanced": {
+            "pii_action": "redact",
+            "semantic_block_level": 2,
+            "semantic_review_level": 1,
+            "semantic_unknown": "block",
+            "restrict_to": null,
+            "effects": null,
+            "advisory_controls": [],
+            "enforce_identity_labels_budgets": true
+          },
+          "observe": {
+            "pii_action": "redact",
+            "semantic_block_level": 2,
+            "semantic_review_level": 1,
+            "semantic_unknown": "block",
+            "restrict_to": "synthetic_test_tenant",
+            "effects": "test_sinks_only",
+            "advisory_controls": [
+              "pii",
+              "semantic"
+            ],
+            "enforce_identity_labels_budgets": true
+          }
+        },
+        "identity": {
+          "tenant_source": "verified_identity",
+          "grants_source": "trusted_application",
+          "delegation": "intersect_parent_grant"
+        },
+        "flow": {
+          "levels": [
+            "PUBLIC",
+            "INTERNAL",
+            "CONFIDENTIAL",
+            "RESTRICTED"
+          ],
+          "unknown_source": "CONFIDENTIAL",
+          "track_untrusted_origins": true,
+          "propagate_run_and_delegation": true,
+          "label_override_by_agent": false,
+          "sinks": {
+            "local_model": {
+              "max_label": "RESTRICTED",
+              "same_tenant": true,
+              "compartments": []
+            },
+            "internal_report": {
+              "max_label": "CONFIDENTIAL",
+              "same_tenant": true,
+              "compartments": []
+            },
+            "internal_demo_sink": {
+              "max_label": "CONFIDENTIAL",
+              "same_tenant": true,
+              "compartments": []
+            },
+            "public_demo_sink": {
+              "max_label": "PUBLIC",
+              "same_tenant": false,
+              "compartments": []
+            },
+            "cloud_model": {
+              "max_label": "PUBLIC",
+              "same_tenant": false,
+              "compartments": []
+            }
+          },
+          "public_release_function": "supplier_public_view_v1"
+        },
+        "models": {
+          "default": "local-business",
+          "registry": "model-registry.json",
+          "allowed": [
+            "local-business"
+          ],
+          "cloud_enabled": false
+        },
+        "semantic": {
+          "model_ref": "local-guard",
+          "prompt_version": "actiongate-guard-v2.9",
+          "required_on": [
+            "untrusted_input",
+            "proposed_action",
+            "tool_output",
+            "memory_write",
+            "model_output"
+          ],
+          "risk_scale": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "context_tokens": 8192,
+          "max_input_tokens_per_call": 4096,
+          "max_output_tokens": 256,
+          "window_tokens": 2048,
+          "overlap_tokens": 256,
+          "max_windows": 8,
+          "deadline_seconds": 180,
+          "incomplete_scan": "block"
+        },
+        "controls": {
+          "authentication": {
+            "enabled": true
+          },
+          "tenant_isolation": {
+            "enabled": true
+          },
+          "secrets": {
+            "enabled": true,
+            "action": "block"
+          },
+          "pii": {
+            "enabled": true,
+            "entities": [
+              "EMAIL",
+              "PHONE",
+              "PESEL",
+              "IBAN"
+            ]
+          },
+          "semantic": {
+            "enabled": true
+          },
+          "historical_attacks": {
+            "enabled": true
+          }
+        },
+        "tools": {
+          "registry": "tool-registry.json",
+          "allowed": [
+            "documents.read",
+            "memory.read",
+            "memory.write",
+            "reports.save",
+            "reports.publish_demo",
+            "calculator.evaluate",
+            "models.chat",
+            "supplier_public_view_v1"
+          ],
+          "require_approval": [
+            "reports.publish_demo"
+          ],
+          "grant_ttl_seconds": 30
+        },
+        "budgets": {
+          "currency": "USD",
+          "period_timezone": "UTC",
+          "tenant_daily_usd_micros": 5000000,
+          "run_usd_micros": 250000,
+          "run_total_tokens": 120000,
+          "guard_subbudget_tokens": 96000,
+          "request_input_tokens": 4096,
+          "request_output_tokens": 1024,
+          "max_steps": 12,
+          "max_tool_calls": 8,
+          "max_retries": 1,
+          "max_delegation_depth": 2,
+          "run_deadline_seconds": 1800,
+          "reserve_output_inspection": true,
+          "unknown_usage": "retain_reservation"
+        },
+        "local_resources": {
+          "business_slots": 1,
+          "guard_slots": 1,
+          "max_waiting_jobs": 8,
+          "queue_wait_seconds": 10,
+          "business_call_deadline_seconds": 120,
+          "run_slot_seconds": 1800,
+          "guard_subbudget_slot_seconds": 1700,
+          "require_confirmed_stop": true
+        },
+        "transport": {
+          "max_request_bytes": 262144,
+          "max_response_bytes": 65536,
+          "output_release": "after_full_inspection"
+        },
+        "feed": {
+          "source_ref": "approved-threat-feed",
+          "signature_required": true,
+          "reject_rollback": true,
+          "max_age_hours": 24
+        },
+        "audit": {
+          "raw_payloads": false,
+          "retention_days": 7,
+          "required_before_dispatch_and_release": true
+        },
+        "performance": {
+          "control_cache_enabled": true,
+          "semantic_cache_enabled": true
+        }
+      }
+    }
+  },
+  "new_gateway_image_id": "sha256:d1d721d4b4e43ef8322261c64a90c6c71cf812d6424b83bfaaf4e0db97d6aaf0",
+  "current_only_mount_mode_propagation": {
+    "actiongate-gateway-a-1": [
+      {
+        "Type": "bind",
+        "Name": null,
+        "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\feeds",
+        "Destination": "/app/feeds",
+        "RW": false,
+        "Mode": "ro",
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "volume",
+        "Name": "actiongate_artifacts",
+        "Source": "/var/lib/docker/volumes/actiongate_artifacts/_data",
+        "Destination": "/app/artifacts",
+        "RW": true,
+        "Mode": "rw",
+        "Propagation": ""
+      },
+      {
+        "Type": "volume",
+        "Name": "actiongate_spool-a",
+        "Source": "/var/lib/docker/volumes/actiongate_spool-a/_data",
+        "Destination": "/app/spool",
+        "RW": true,
+        "Mode": "rw",
+        "Propagation": ""
+      },
+      {
+        "Type": "bind",
+        "Name": null,
+        "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/policy",
+        "Destination": "/app/policy",
+        "RW": false,
+        "Mode": "ro",
+        "Propagation": "rprivate"
+      }
+    ],
+    "actiongate-gateway-b-1": [
+      {
+        "Type": "volume",
+        "Name": "actiongate_spool-b",
+        "Source": "/var/lib/docker/volumes/actiongate_spool-b/_data",
+        "Destination": "/app/spool",
+        "RW": true,
+        "Mode": "rw",
+        "Propagation": ""
+      },
+      {
+        "Type": "bind",
+        "Name": null,
+        "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/policy",
+        "Destination": "/app/policy",
+        "RW": false,
+        "Mode": "ro",
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "bind",
+        "Name": null,
+        "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/feeds",
+        "Destination": "/app/feeds",
+        "RW": false,
+        "Mode": "ro",
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "volume",
+        "Name": "actiongate_artifacts",
+        "Source": "/var/lib/docker/volumes/actiongate_artifacts/_data",
+        "Destination": "/app/artifacts",
+        "RW": true,
+        "Mode": "rw",
+        "Propagation": ""
+      }
+    ],
+    "actiongate-gpu-0b92f97d-gateway-a-1": [
+      {
+        "Type": "bind",
+        "Name": null,
+        "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/policy",
+        "Destination": "/app/policy",
+        "RW": false,
+        "Mode": "ro",
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "bind",
+        "Name": null,
+        "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/feeds",
+        "Destination": "/app/feeds",
+        "RW": false,
+        "Mode": "ro",
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "volume",
+        "Name": "actiongate-gpu-0b92f97d_artifacts",
+        "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_artifacts/_data",
+        "Destination": "/app/artifacts",
+        "RW": true,
+        "Mode": "rw",
+        "Propagation": ""
+      },
+      {
+        "Type": "volume",
+        "Name": "actiongate-gpu-0b92f97d_spool-a",
+        "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_spool-a/_data",
+        "Destination": "/app/spool",
+        "RW": true,
+        "Mode": "rw",
+        "Propagation": ""
+      }
+    ],
+    "actiongate-gpu-0b92f97d-gateway-b-1": [
+      {
+        "Type": "volume",
+        "Name": "actiongate-gpu-0b92f97d_artifacts",
+        "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_artifacts/_data",
+        "Destination": "/app/artifacts",
+        "RW": true,
+        "Mode": "rw",
+        "Propagation": ""
+      },
+      {
+        "Type": "volume",
+        "Name": "actiongate-gpu-0b92f97d_spool-b",
+        "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_spool-b/_data",
+        "Destination": "/app/spool",
+        "RW": true,
+        "Mode": "rw",
+        "Propagation": ""
+      },
+      {
+        "Type": "bind",
+        "Name": null,
+        "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/policy",
+        "Destination": "/app/policy",
+        "RW": false,
+        "Mode": "ro",
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "bind",
+        "Name": null,
+        "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/feeds",
+        "Destination": "/app/feeds",
+        "RW": false,
+        "Mode": "ro",
+        "Propagation": "rprivate"
+      }
+    ]
+  },
+  "mount_capture_limitation": "Original capture did not include Mode/Propagation. Their complete actual readback is current-only, checked against declared readonly bind and writable named-volume contracts, not claimed as historical equality.",
+  "tcp_probes": {
+    "actiongate-gateway-a-1": {
+      "uvicorn_version": "0.54.0",
+      "effective_cli_timeout_keep_alive": 30,
+      "auto_open": 0,
+      "idle_seconds": 6.050078159023542,
+      "local_address": [
+        "127.0.0.1",
+        49442
+      ],
+      "peer_address": [
+        "127.0.0.1",
+        8000
+      ],
+      "socket_fileno": 3,
+      "same_tcp_socket_after_both_responses": true,
+      "first": {
+        "status": 200,
+        "generation": 36,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      },
+      "second": {
+        "status": 200,
+        "generation": 36,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      }
+    },
+    "actiongate-gateway-b-1": {
+      "uvicorn_version": "0.54.0",
+      "effective_cli_timeout_keep_alive": 30,
+      "auto_open": 0,
+      "idle_seconds": 6.050090138975065,
+      "local_address": [
+        "127.0.0.1",
+        49436
+      ],
+      "peer_address": [
+        "127.0.0.1",
+        8000
+      ],
+      "socket_fileno": 3,
+      "same_tcp_socket_after_both_responses": true,
+      "first": {
+        "status": 200,
+        "generation": 36,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      },
+      "second": {
+        "status": 200,
+        "generation": 36,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      }
+    },
+    "actiongate-gpu-0b92f97d-gateway-a-1": {
+      "uvicorn_version": "0.54.0",
+      "effective_cli_timeout_keep_alive": 30,
+      "auto_open": 0,
+      "idle_seconds": 6.050101801985875,
+      "local_address": [
+        "127.0.0.1",
+        49448
+      ],
+      "peer_address": [
+        "127.0.0.1",
+        8000
+      ],
+      "socket_fileno": 3,
+      "same_tcp_socket_after_both_responses": true,
+      "first": {
+        "status": 200,
+        "generation": 15,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      },
+      "second": {
+        "status": 200,
+        "generation": 15,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      }
+    },
+    "actiongate-gpu-0b92f97d-gateway-b-1": {
+      "uvicorn_version": "0.54.0",
+      "effective_cli_timeout_keep_alive": 30,
+      "auto_open": 0,
+      "idle_seconds": 6.050096298975404,
+      "local_address": [
+        "127.0.0.1",
+        49422
+      ],
+      "peer_address": [
+        "127.0.0.1",
+        8000
+      ],
+      "socket_fileno": 3,
+      "same_tcp_socket_after_both_responses": true,
+      "first": {
+        "status": 200,
+        "generation": 15,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      },
+      "second": {
+        "status": 200,
+        "generation": 15,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      }
+    }
+  },
+  "gateway_files": {
+    "actiongate-gateway-a-1": {
+      "backend": {
+        "backend/actiongate/demo_tools.py": "e1df80e9cf92d4e231dc40c945a1f9fd86ee66c41a3af4b6c5b8ceb362fa712c",
+        "backend/actiongate/ledger.py": "70b013ae1ff99ec70a2bd14ddaf0031c2f441f0074293cc746c9e900cae55fd4",
+        "backend/actiongate/settings.py": "81cf8930e5f9ab29049e36a17e0abc48ee2bcda367fa1082e5bfa4714ed9626c",
+        "backend/actiongate/scenarios.py": "d766385d355830372d34dc226565213bd57dfe1449ba59fe0d95b71e85de98d7",
+        "backend/actiongate/mcp_gateway.py": "082e7737b37f1a745230d052a187ee979779a45f3c699b2bacdd4f131034b7ac",
+        "backend/actiongate/runtime.py": "32e3a5a4065455815ab190b76d3df0b9589c5b4f37bf3e005566bd438198868c",
+        "backend/actiongate/policies.py": "34fde547bfc5c2659ccb774e68c0df17f03eca77b8357ee7e0b9209551d152f7",
+        "backend/actiongate/replay.py": "5db6d6ad2f94d732c5f91dd6cd289dbf794a8b505b3c323c925e188e51185d70",
+        "backend/actiongate/app.py": "c21fb30c4dc6032cef90b9204934a663ba2a9390e400fe9492d7a3136d2f2740",
+        "backend/actiongate/seed.py": "931e82a1f4020336f651a281e8d15a10aa05851a9ef8e7d8980f50fb438c9495",
+        "backend/actiongate/test_jobs.py": "da19bcdf791a789580a2e132b7af64b8b410daa934f91401f4433c22a0f9d6df",
+        "backend/actiongate/publisher.py": "817d01273f7b55361fc22be3f0a1a4e23cbd90ec5511c58e8b7739a7c1a40282",
+        "backend/actiongate/migrate.py": "d7f6d1afd432f25f76fd6fa3858e40386f3a2724c0356b3f43fd55e051f29a3d",
+        "backend/actiongate/contracts.py": "2e40eddde525ae7204da7a952293d334829050b61ce91609aebc4c6dad561eaa",
+        "backend/actiongate/cloud.py": "5e6d67b55fd5fe8ef0e61f91c4c009a19ebba127bbbd5372aaab3371c1cd8e95",
+        "backend/actiongate/db.py": "d210a52f2e5c9d7828216991df834815e6caacce166a5106d1afca5f4ed69ad5",
+        "backend/actiongate/broker.py": "b9d5dacc69bd79cd449e78eca257dd32a9d87ae7d85e2128fe94b0f64b4eb77e",
+        "backend/actiongate/semantic_cache.py": "857cdbf3f5813265f4d0290540169ab400d53997fd247809a29872006a851d40",
+        "backend/actiongate/mcp_stdio.py": "f7ffa19b5a90344123f381ba250c8f9f5cd42a7f1bc7cb6cbfb4613e442bb79e",
+        "backend/actiongate/semantic.py": "0e71fa69e130d2c0767f994ac500ca8262e412cc42b73b1258d0c53bf7a1a3e1",
+        "backend/actiongate/__init__.py": "561e904567d004fbc8719f59350ae6e5c5aee131404e6580c9ba70dfe79b5740",
+        "backend/actiongate/recovery.py": "97614fa21e4cc5c15818ff143a04d9ed8310713d4c366f45204c184689d72abe",
+        "backend/actiongate/maintenance.py": "ef12cc621562e247d55f8482b3fc8afea231a64954a5d05eb83b664435531cae",
+        "backend/actiongate/audit_integrity.py": "e593d10eda162cc7415728b7fb030002fbf5ae047265d0579f9b6cb742fbc7e0",
+        "backend/actiongate/telemetry.py": "a845ad7f694942a113a64ea1d0486e0c0be835c511187d8839cdd01d5161ec4e",
+        "backend/actiongate/mcp_upstream.py": "9e0e18371c4afa9e04aff91033939211cf5898f0c1be193472fd124a4083770b",
+        "backend/actiongate/security.py": "5dbec71036a6a2a056246a98ec6499c51e51f655ef1cc7748304f4ff2672accf",
+        "backend/actiongate/controls/dlp.py": "ccec5cf3e6c0a7a87a25a43988716540b01c5d6cb893b8d25520042c1b22995e",
+        "backend/actiongate/controls/model_artifacts.py": "15fd0659f2b42bd1b0b2ae8cf384f0bca1c6c17f9243fe9ed7cc5c60b0f85d82",
+        "backend/actiongate/controls/opa.py": "0c0dce801057e0deb66f629109ac90021779c841f68745fc2098b5b920218861",
+        "backend/actiongate/controls/signed.py": "c6a833129af831a4684fafaae77993ec67d1de01bd4bfbe0672da49275a11a21",
+        "backend/actiongate/controls/registry.py": "2af18afc9fc25b2382cd6ee34cadf665c4e0bedc94ffdbbe1b88540c870f335a",
+        "backend/actiongate/controls/artifacts.py": "02cb4ca7bed74d3c3c973b1575f586cc013e2f3725e1189de57b744eb248aa45",
+        "backend/actiongate/controls/__init__.py": "6d7ff0ba9328353298dc07cd827b721f1bd6aa42b246400f8dce1639b25f3369",
+        "backend/actiongate/controls/plane.py": "807a21c5833c1313a55b1908203517fa17c7124ceb697962933cfd519f502b07",
+        "backend/actiongate/controls/schema.py": "0165abd15672d93dc1bf48285b5797d4a80267c037639e21ae05db39c90b62aa"
+      },
+      "ui_build": {
+        "schema_version": 1,
+        "kind": "ui-build-inputs",
+        "inputs": {
+          "ui/index.html": "5e483891d9830c0693227f553ef76c09c5c238728f7de9e834607f4ed4042320",
+          "ui/package-lock.json": "c10d7299cacbcebcd9b52f25affb0684cfc0e546a861fcae2a9b4ad6ec3cfca0",
+          "ui/package.json": "56d6150588964f1cf69814efb5da40d87126f623504c02c448ee32244e6b6381",
+          "ui/public/favicon.svg": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+          "ui/src/App.tsx": "4f71bc1d48cde7c437f98ce93b1cdc8f586199f74f6022c46267250db5d1ca40",
+          "ui/src/Budgets.tsx": "dd05d1a436bc94fa436e73b9d1639a6eb2f059c22f98c5275f8e914c6a59f872",
+          "ui/src/Investigate.tsx": "6717e2b79f35b95c4032eef6d2ea2369e5bd014acbd82fe3970148a6441b0eab",
+          "ui/src/Overview.tsx": "08cfe53817fb9da560c057131d04ef4e936db9a7747fb11fe5a9b58e20528201",
+          "ui/src/Policies.tsx": "0891cea0922204351656bf89f1a9802a98c4df2b1d9d7d9c20f5ed06a8323f51",
+          "ui/src/TestLab.tsx": "d6f7a18e28bd99e70e68b9fa6b22fcefc7ad733c937798856cb4887a0c345b9b",
+          "ui/src/api.ts": "dfe3b9099b2ee8d5695077ae9eed4a0e8820676f6c637090ed95f81c3738413e",
+          "ui/src/components.tsx": "136b109533f6238cf94c997992642a3d2863304c62c45e3d06d26b05fb49f736",
+          "ui/src/main.tsx": "456f14158eef1f5e666848411f9c4cddea0b0e99816abaa523e60bfcfe40847c",
+          "ui/src/styles.css": "12ca92bda99910b754665aff93658c8d9728e12a2fdf0cd53bce7d65b622fea0",
+          "ui/tsconfig.json": "b18edd473ae10946e62b2f02fc2c1931950408337f9f75086ba31b7671417dcb",
+          "ui/vite.config.ts": "8bddcb7d68f1a1eb45b0b66501863a82d9c6cfb5e29a7cd64807479b7106c39c"
+        },
+        "outputs": {
+          "ui/dist/assets/Budgets-D24BZHIX.js": "43a0cfc3e369067931ca2c522b487b5d1c2ff34f85d6c8bb0a2fbea14db11b65",
+          "ui/dist/assets/Investigate-DqP-MlHW.js": "a5f55508b717fbda9eb0c13bfee9d78aa5d1bfe159b8395a14badb6c13b14d16",
+          "ui/dist/assets/Overview-DyyNA5OP.js": "45548bc57154df66086a2c7c4bccc62e4869105cfa15eb5f51c4b4bc7e6e53a6",
+          "ui/dist/assets/Policies-CemQr-Vb.js": "ffaee63394661f9958f8a28944f61a67e09084b6bbce75c3375c6a859dca2bf7",
+          "ui/dist/assets/TestLab-DaCCkdOi.js": "678c7edb5dcc81cb069cb5f49905316679048d7d010767f40620503fc0f4a504",
+          "ui/dist/assets/arrow-right-DTpYTYCQ.js": "f29b6a3e264c8f47bed1c2dd3957aeb56093dd2bfea1c4e6892c900c1309b4f9",
+          "ui/dist/assets/charts-C8gSP2RW.js": "0d0db8ee236816a65dd864bd0b3e60380b3a7c8c51d01b85c22565e7cdebf275",
+          "ui/dist/assets/clock-3-Cdt3Iwfu.js": "2273bcdba17a836d27edc02e6f8fa4b3c05b3dfc82cfbeef570b4ed8b1b540f9",
+          "ui/dist/assets/index-BEjWxx_g.css": "75dc84d86c6f35fd23c506ddae9bda4aedef8965b5d10b970fb5549644258ec1",
+          "ui/dist/assets/index-B_Kq2-GE.js": "62c3dbf73b94bb9a8220be1d96b7acf70c505888ade4e9e4d5e204222d9cd84a",
+          "ui/dist/assets/play-Cnrc_YWv.js": "7573595d04aa5e05935acca479de44837ff620a76116e02042cfce4415e14386",
+          "ui/dist/assets/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+          "ui/dist/assets/shield-alert-BlxBlTGq.js": "a167f3908bdcb52aad4c9462a000ccd97651209cfeb7b0181f30890a33ca00d2",
+          "ui/dist/favicon.svg": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+          "ui/dist/index.html": "4e03bba4e2e25058cedc8c6fe3b3e30397001698511e44f38341384bf4145321"
+        }
+      },
+      "ui_outputs": {
+        "ui/dist/favicon.svg": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+        "ui/dist/index.html": "4e03bba4e2e25058cedc8c6fe3b3e30397001698511e44f38341384bf4145321",
+        "ui/dist/assets/charts-C8gSP2RW.js": "0d0db8ee236816a65dd864bd0b3e60380b3a7c8c51d01b85c22565e7cdebf275",
+        "ui/dist/assets/index-BEjWxx_g.css": "75dc84d86c6f35fd23c506ddae9bda4aedef8965b5d10b970fb5549644258ec1",
+        "ui/dist/assets/TestLab-DaCCkdOi.js": "678c7edb5dcc81cb069cb5f49905316679048d7d010767f40620503fc0f4a504",
+        "ui/dist/assets/Investigate-DqP-MlHW.js": "a5f55508b717fbda9eb0c13bfee9d78aa5d1bfe159b8395a14badb6c13b14d16",
+        "ui/dist/assets/clock-3-Cdt3Iwfu.js": "2273bcdba17a836d27edc02e6f8fa4b3c05b3dfc82cfbeef570b4ed8b1b540f9",
+        "ui/dist/assets/play-Cnrc_YWv.js": "7573595d04aa5e05935acca479de44837ff620a76116e02042cfce4415e14386",
+        "ui/dist/assets/Budgets-D24BZHIX.js": "43a0cfc3e369067931ca2c522b487b5d1c2ff34f85d6c8bb0a2fbea14db11b65",
+        "ui/dist/assets/Overview-DyyNA5OP.js": "45548bc57154df66086a2c7c4bccc62e4869105cfa15eb5f51c4b4bc7e6e53a6",
+        "ui/dist/assets/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+        "ui/dist/assets/Policies-CemQr-Vb.js": "ffaee63394661f9958f8a28944f61a67e09084b6bbce75c3375c6a859dca2bf7",
+        "ui/dist/assets/arrow-right-DTpYTYCQ.js": "f29b6a3e264c8f47bed1c2dd3957aeb56093dd2bfea1c4e6892c900c1309b4f9",
+        "ui/dist/assets/shield-alert-BlxBlTGq.js": "a167f3908bdcb52aad4c9462a000ccd97651209cfeb7b0181f30890a33ca00d2",
+        "ui/dist/assets/index-B_Kq2-GE.js": "62c3dbf73b94bb9a8220be1d96b7acf70c505888ade4e9e4d5e204222d9cd84a"
+      }
+    },
+    "actiongate-gateway-b-1": {
+      "backend": {
+        "backend/actiongate/demo_tools.py": "e1df80e9cf92d4e231dc40c945a1f9fd86ee66c41a3af4b6c5b8ceb362fa712c",
+        "backend/actiongate/ledger.py": "70b013ae1ff99ec70a2bd14ddaf0031c2f441f0074293cc746c9e900cae55fd4",
+        "backend/actiongate/settings.py": "81cf8930e5f9ab29049e36a17e0abc48ee2bcda367fa1082e5bfa4714ed9626c",
+        "backend/actiongate/scenarios.py": "d766385d355830372d34dc226565213bd57dfe1449ba59fe0d95b71e85de98d7",
+        "backend/actiongate/mcp_gateway.py": "082e7737b37f1a745230d052a187ee979779a45f3c699b2bacdd4f131034b7ac",
+        "backend/actiongate/runtime.py": "32e3a5a4065455815ab190b76d3df0b9589c5b4f37bf3e005566bd438198868c",
+        "backend/actiongate/policies.py": "34fde547bfc5c2659ccb774e68c0df17f03eca77b8357ee7e0b9209551d152f7",
+        "backend/actiongate/replay.py": "5db6d6ad2f94d732c5f91dd6cd289dbf794a8b505b3c323c925e188e51185d70",
+        "backend/actiongate/app.py": "c21fb30c4dc6032cef90b9204934a663ba2a9390e400fe9492d7a3136d2f2740",
+        "backend/actiongate/seed.py": "931e82a1f4020336f651a281e8d15a10aa05851a9ef8e7d8980f50fb438c9495",
+        "backend/actiongate/test_jobs.py": "da19bcdf791a789580a2e132b7af64b8b410daa934f91401f4433c22a0f9d6df",
+        "backend/actiongate/publisher.py": "817d01273f7b55361fc22be3f0a1a4e23cbd90ec5511c58e8b7739a7c1a40282",
+        "backend/actiongate/migrate.py": "d7f6d1afd432f25f76fd6fa3858e40386f3a2724c0356b3f43fd55e051f29a3d",
+        "backend/actiongate/contracts.py": "2e40eddde525ae7204da7a952293d334829050b61ce91609aebc4c6dad561eaa",
+        "backend/actiongate/cloud.py": "5e6d67b55fd5fe8ef0e61f91c4c009a19ebba127bbbd5372aaab3371c1cd8e95",
+        "backend/actiongate/db.py": "d210a52f2e5c9d7828216991df834815e6caacce166a5106d1afca5f4ed69ad5",
+        "backend/actiongate/broker.py": "b9d5dacc69bd79cd449e78eca257dd32a9d87ae7d85e2128fe94b0f64b4eb77e",
+        "backend/actiongate/semantic_cache.py": "857cdbf3f5813265f4d0290540169ab400d53997fd247809a29872006a851d40",
+        "backend/actiongate/mcp_stdio.py": "f7ffa19b5a90344123f381ba250c8f9f5cd42a7f1bc7cb6cbfb4613e442bb79e",
+        "backend/actiongate/semantic.py": "0e71fa69e130d2c0767f994ac500ca8262e412cc42b73b1258d0c53bf7a1a3e1",
+        "backend/actiongate/__init__.py": "561e904567d004fbc8719f59350ae6e5c5aee131404e6580c9ba70dfe79b5740",
+        "backend/actiongate/recovery.py": "97614fa21e4cc5c15818ff143a04d9ed8310713d4c366f45204c184689d72abe",
+        "backend/actiongate/maintenance.py": "ef12cc621562e247d55f8482b3fc8afea231a64954a5d05eb83b664435531cae",
+        "backend/actiongate/audit_integrity.py": "e593d10eda162cc7415728b7fb030002fbf5ae047265d0579f9b6cb742fbc7e0",
+        "backend/actiongate/telemetry.py": "a845ad7f694942a113a64ea1d0486e0c0be835c511187d8839cdd01d5161ec4e",
+        "backend/actiongate/mcp_upstream.py": "9e0e18371c4afa9e04aff91033939211cf5898f0c1be193472fd124a4083770b",
+        "backend/actiongate/security.py": "5dbec71036a6a2a056246a98ec6499c51e51f655ef1cc7748304f4ff2672accf",
+        "backend/actiongate/controls/dlp.py": "ccec5cf3e6c0a7a87a25a43988716540b01c5d6cb893b8d25520042c1b22995e",
+        "backend/actiongate/controls/model_artifacts.py": "15fd0659f2b42bd1b0b2ae8cf384f0bca1c6c17f9243fe9ed7cc5c60b0f85d82",
+        "backend/actiongate/controls/opa.py": "0c0dce801057e0deb66f629109ac90021779c841f68745fc2098b5b920218861",
+        "backend/actiongate/controls/signed.py": "c6a833129af831a4684fafaae77993ec67d1de01bd4bfbe0672da49275a11a21",
+        "backend/actiongate/controls/registry.py": "2af18afc9fc25b2382cd6ee34cadf665c4e0bedc94ffdbbe1b88540c870f335a",
+        "backend/actiongate/controls/artifacts.py": "02cb4ca7bed74d3c3c973b1575f586cc013e2f3725e1189de57b744eb248aa45",
+        "backend/actiongate/controls/__init__.py": "6d7ff0ba9328353298dc07cd827b721f1bd6aa42b246400f8dce1639b25f3369",
+        "backend/actiongate/controls/plane.py": "807a21c5833c1313a55b1908203517fa17c7124ceb697962933cfd519f502b07",
+        "backend/actiongate/controls/schema.py": "0165abd15672d93dc1bf48285b5797d4a80267c037639e21ae05db39c90b62aa"
+      },
+      "ui_build": {
+        "schema_version": 1,
+        "kind": "ui-build-inputs",
+        "inputs": {
+          "ui/index.html": "5e483891d9830c0693227f553ef76c09c5c238728f7de9e834607f4ed4042320",
+          "ui/package-lock.json": "c10d7299cacbcebcd9b52f25affb0684cfc0e546a861fcae2a9b4ad6ec3cfca0",
+          "ui/package.json": "56d6150588964f1cf69814efb5da40d87126f623504c02c448ee32244e6b6381",
+          "ui/public/favicon.svg": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+          "ui/src/App.tsx": "4f71bc1d48cde7c437f98ce93b1cdc8f586199f74f6022c46267250db5d1ca40",
+          "ui/src/Budgets.tsx": "dd05d1a436bc94fa436e73b9d1639a6eb2f059c22f98c5275f8e914c6a59f872",
+          "ui/src/Investigate.tsx": "6717e2b79f35b95c4032eef6d2ea2369e5bd014acbd82fe3970148a6441b0eab",
+          "ui/src/Overview.tsx": "08cfe53817fb9da560c057131d04ef4e936db9a7747fb11fe5a9b58e20528201",
+          "ui/src/Policies.tsx": "0891cea0922204351656bf89f1a9802a98c4df2b1d9d7d9c20f5ed06a8323f51",
+          "ui/src/TestLab.tsx": "d6f7a18e28bd99e70e68b9fa6b22fcefc7ad733c937798856cb4887a0c345b9b",
+          "ui/src/api.ts": "dfe3b9099b2ee8d5695077ae9eed4a0e8820676f6c637090ed95f81c3738413e",
+          "ui/src/components.tsx": "136b109533f6238cf94c997992642a3d2863304c62c45e3d06d26b05fb49f736",
+          "ui/src/main.tsx": "456f14158eef1f5e666848411f9c4cddea0b0e99816abaa523e60bfcfe40847c",
+          "ui/src/styles.css": "12ca92bda99910b754665aff93658c8d9728e12a2fdf0cd53bce7d65b622fea0",
+          "ui/tsconfig.json": "b18edd473ae10946e62b2f02fc2c1931950408337f9f75086ba31b7671417dcb",
+          "ui/vite.config.ts": "8bddcb7d68f1a1eb45b0b66501863a82d9c6cfb5e29a7cd64807479b7106c39c"
+        },
+        "outputs": {
+          "ui/dist/assets/Budgets-D24BZHIX.js": "43a0cfc3e369067931ca2c522b487b5d1c2ff34f85d6c8bb0a2fbea14db11b65",
+          "ui/dist/assets/Investigate-DqP-MlHW.js": "a5f55508b717fbda9eb0c13bfee9d78aa5d1bfe159b8395a14badb6c13b14d16",
+          "ui/dist/assets/Overview-DyyNA5OP.js": "45548bc57154df66086a2c7c4bccc62e4869105cfa15eb5f51c4b4bc7e6e53a6",
+          "ui/dist/assets/Policies-CemQr-Vb.js": "ffaee63394661f9958f8a28944f61a67e09084b6bbce75c3375c6a859dca2bf7",
+          "ui/dist/assets/TestLab-DaCCkdOi.js": "678c7edb5dcc81cb069cb5f49905316679048d7d010767f40620503fc0f4a504",
+          "ui/dist/assets/arrow-right-DTpYTYCQ.js": "f29b6a3e264c8f47bed1c2dd3957aeb56093dd2bfea1c4e6892c900c1309b4f9",
+          "ui/dist/assets/charts-C8gSP2RW.js": "0d0db8ee236816a65dd864bd0b3e60380b3a7c8c51d01b85c22565e7cdebf275",
+          "ui/dist/assets/clock-3-Cdt3Iwfu.js": "2273bcdba17a836d27edc02e6f8fa4b3c05b3dfc82cfbeef570b4ed8b1b540f9",
+          "ui/dist/assets/index-BEjWxx_g.css": "75dc84d86c6f35fd23c506ddae9bda4aedef8965b5d10b970fb5549644258ec1",
+          "ui/dist/assets/index-B_Kq2-GE.js": "62c3dbf73b94bb9a8220be1d96b7acf70c505888ade4e9e4d5e204222d9cd84a",
+          "ui/dist/assets/play-Cnrc_YWv.js": "7573595d04aa5e05935acca479de44837ff620a76116e02042cfce4415e14386",
+          "ui/dist/assets/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+          "ui/dist/assets/shield-alert-BlxBlTGq.js": "a167f3908bdcb52aad4c9462a000ccd97651209cfeb7b0181f30890a33ca00d2",
+          "ui/dist/favicon.svg": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+          "ui/dist/index.html": "4e03bba4e2e25058cedc8c6fe3b3e30397001698511e44f38341384bf4145321"
+        }
+      },
+      "ui_outputs": {
+        "ui/dist/favicon.svg": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+        "ui/dist/index.html": "4e03bba4e2e25058cedc8c6fe3b3e30397001698511e44f38341384bf4145321",
+        "ui/dist/assets/charts-C8gSP2RW.js": "0d0db8ee236816a65dd864bd0b3e60380b3a7c8c51d01b85c22565e7cdebf275",
+        "ui/dist/assets/index-BEjWxx_g.css": "75dc84d86c6f35fd23c506ddae9bda4aedef8965b5d10b970fb5549644258ec1",
+        "ui/dist/assets/TestLab-DaCCkdOi.js": "678c7edb5dcc81cb069cb5f49905316679048d7d010767f40620503fc0f4a504",
+        "ui/dist/assets/Investigate-DqP-MlHW.js": "a5f55508b717fbda9eb0c13bfee9d78aa5d1bfe159b8395a14badb6c13b14d16",
+        "ui/dist/assets/clock-3-Cdt3Iwfu.js": "2273bcdba17a836d27edc02e6f8fa4b3c05b3dfc82cfbeef570b4ed8b1b540f9",
+        "ui/dist/assets/play-Cnrc_YWv.js": "7573595d04aa5e05935acca479de44837ff620a76116e02042cfce4415e14386",
+        "ui/dist/assets/Budgets-D24BZHIX.js": "43a0cfc3e369067931ca2c522b487b5d1c2ff34f85d6c8bb0a2fbea14db11b65",
+        "ui/dist/assets/Overview-DyyNA5OP.js": "45548bc57154df66086a2c7c4bccc62e4869105cfa15eb5f51c4b4bc7e6e53a6",
+        "ui/dist/assets/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+        "ui/dist/assets/Policies-CemQr-Vb.js": "ffaee63394661f9958f8a28944f61a67e09084b6bbce75c3375c6a859dca2bf7",
+        "ui/dist/assets/arrow-right-DTpYTYCQ.js": "f29b6a3e264c8f47bed1c2dd3957aeb56093dd2bfea1c4e6892c900c1309b4f9",
+        "ui/dist/assets/shield-alert-BlxBlTGq.js": "a167f3908bdcb52aad4c9462a000ccd97651209cfeb7b0181f30890a33ca00d2",
+        "ui/dist/assets/index-B_Kq2-GE.js": "62c3dbf73b94bb9a8220be1d96b7acf70c505888ade4e9e4d5e204222d9cd84a"
+      }
+    },
+    "actiongate-gpu-0b92f97d-gateway-a-1": {
+      "backend": {
+        "backend/actiongate/demo_tools.py": "e1df80e9cf92d4e231dc40c945a1f9fd86ee66c41a3af4b6c5b8ceb362fa712c",
+        "backend/actiongate/ledger.py": "70b013ae1ff99ec70a2bd14ddaf0031c2f441f0074293cc746c9e900cae55fd4",
+        "backend/actiongate/settings.py": "81cf8930e5f9ab29049e36a17e0abc48ee2bcda367fa1082e5bfa4714ed9626c",
+        "backend/actiongate/scenarios.py": "d766385d355830372d34dc226565213bd57dfe1449ba59fe0d95b71e85de98d7",
+        "backend/actiongate/mcp_gateway.py": "082e7737b37f1a745230d052a187ee979779a45f3c699b2bacdd4f131034b7ac",
+        "backend/actiongate/runtime.py": "32e3a5a4065455815ab190b76d3df0b9589c5b4f37bf3e005566bd438198868c",
+        "backend/actiongate/policies.py": "34fde547bfc5c2659ccb774e68c0df17f03eca77b8357ee7e0b9209551d152f7",
+        "backend/actiongate/replay.py": "5db6d6ad2f94d732c5f91dd6cd289dbf794a8b505b3c323c925e188e51185d70",
+        "backend/actiongate/app.py": "c21fb30c4dc6032cef90b9204934a663ba2a9390e400fe9492d7a3136d2f2740",
+        "backend/actiongate/seed.py": "931e82a1f4020336f651a281e8d15a10aa05851a9ef8e7d8980f50fb438c9495",
+        "backend/actiongate/test_jobs.py": "da19bcdf791a789580a2e132b7af64b8b410daa934f91401f4433c22a0f9d6df",
+        "backend/actiongate/publisher.py": "817d01273f7b55361fc22be3f0a1a4e23cbd90ec5511c58e8b7739a7c1a40282",
+        "backend/actiongate/migrate.py": "d7f6d1afd432f25f76fd6fa3858e40386f3a2724c0356b3f43fd55e051f29a3d",
+        "backend/actiongate/contracts.py": "2e40eddde525ae7204da7a952293d334829050b61ce91609aebc4c6dad561eaa",
+        "backend/actiongate/cloud.py": "5e6d67b55fd5fe8ef0e61f91c4c009a19ebba127bbbd5372aaab3371c1cd8e95",
+        "backend/actiongate/db.py": "d210a52f2e5c9d7828216991df834815e6caacce166a5106d1afca5f4ed69ad5",
+        "backend/actiongate/broker.py": "b9d5dacc69bd79cd449e78eca257dd32a9d87ae7d85e2128fe94b0f64b4eb77e",
+        "backend/actiongate/semantic_cache.py": "857cdbf3f5813265f4d0290540169ab400d53997fd247809a29872006a851d40",
+        "backend/actiongate/mcp_stdio.py": "f7ffa19b5a90344123f381ba250c8f9f5cd42a7f1bc7cb6cbfb4613e442bb79e",
+        "backend/actiongate/semantic.py": "0e71fa69e130d2c0767f994ac500ca8262e412cc42b73b1258d0c53bf7a1a3e1",
+        "backend/actiongate/__init__.py": "561e904567d004fbc8719f59350ae6e5c5aee131404e6580c9ba70dfe79b5740",
+        "backend/actiongate/recovery.py": "97614fa21e4cc5c15818ff143a04d9ed8310713d4c366f45204c184689d72abe",
+        "backend/actiongate/maintenance.py": "ef12cc621562e247d55f8482b3fc8afea231a64954a5d05eb83b664435531cae",
+        "backend/actiongate/audit_integrity.py": "e593d10eda162cc7415728b7fb030002fbf5ae047265d0579f9b6cb742fbc7e0",
+        "backend/actiongate/telemetry.py": "a845ad7f694942a113a64ea1d0486e0c0be835c511187d8839cdd01d5161ec4e",
+        "backend/actiongate/mcp_upstream.py": "9e0e18371c4afa9e04aff91033939211cf5898f0c1be193472fd124a4083770b",
+        "backend/actiongate/security.py": "5dbec71036a6a2a056246a98ec6499c51e51f655ef1cc7748304f4ff2672accf",
+        "backend/actiongate/controls/dlp.py": "ccec5cf3e6c0a7a87a25a43988716540b01c5d6cb893b8d25520042c1b22995e",
+        "backend/actiongate/controls/model_artifacts.py": "15fd0659f2b42bd1b0b2ae8cf384f0bca1c6c17f9243fe9ed7cc5c60b0f85d82",
+        "backend/actiongate/controls/opa.py": "0c0dce801057e0deb66f629109ac90021779c841f68745fc2098b5b920218861",
+        "backend/actiongate/controls/signed.py": "c6a833129af831a4684fafaae77993ec67d1de01bd4bfbe0672da49275a11a21",
+        "backend/actiongate/controls/registry.py": "2af18afc9fc25b2382cd6ee34cadf665c4e0bedc94ffdbbe1b88540c870f335a",
+        "backend/actiongate/controls/artifacts.py": "02cb4ca7bed74d3c3c973b1575f586cc013e2f3725e1189de57b744eb248aa45",
+        "backend/actiongate/controls/__init__.py": "6d7ff0ba9328353298dc07cd827b721f1bd6aa42b246400f8dce1639b25f3369",
+        "backend/actiongate/controls/plane.py": "807a21c5833c1313a55b1908203517fa17c7124ceb697962933cfd519f502b07",
+        "backend/actiongate/controls/schema.py": "0165abd15672d93dc1bf48285b5797d4a80267c037639e21ae05db39c90b62aa"
+      },
+      "ui_build": {
+        "schema_version": 1,
+        "kind": "ui-build-inputs",
+        "inputs": {
+          "ui/index.html": "5e483891d9830c0693227f553ef76c09c5c238728f7de9e834607f4ed4042320",
+          "ui/package-lock.json": "c10d7299cacbcebcd9b52f25affb0684cfc0e546a861fcae2a9b4ad6ec3cfca0",
+          "ui/package.json": "56d6150588964f1cf69814efb5da40d87126f623504c02c448ee32244e6b6381",
+          "ui/public/favicon.svg": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+          "ui/src/App.tsx": "4f71bc1d48cde7c437f98ce93b1cdc8f586199f74f6022c46267250db5d1ca40",
+          "ui/src/Budgets.tsx": "dd05d1a436bc94fa436e73b9d1639a6eb2f059c22f98c5275f8e914c6a59f872",
+          "ui/src/Investigate.tsx": "6717e2b79f35b95c4032eef6d2ea2369e5bd014acbd82fe3970148a6441b0eab",
+          "ui/src/Overview.tsx": "08cfe53817fb9da560c057131d04ef4e936db9a7747fb11fe5a9b58e20528201",
+          "ui/src/Policies.tsx": "0891cea0922204351656bf89f1a9802a98c4df2b1d9d7d9c20f5ed06a8323f51",
+          "ui/src/TestLab.tsx": "d6f7a18e28bd99e70e68b9fa6b22fcefc7ad733c937798856cb4887a0c345b9b",
+          "ui/src/api.ts": "dfe3b9099b2ee8d5695077ae9eed4a0e8820676f6c637090ed95f81c3738413e",
+          "ui/src/components.tsx": "136b109533f6238cf94c997992642a3d2863304c62c45e3d06d26b05fb49f736",
+          "ui/src/main.tsx": "456f14158eef1f5e666848411f9c4cddea0b0e99816abaa523e60bfcfe40847c",
+          "ui/src/styles.css": "12ca92bda99910b754665aff93658c8d9728e12a2fdf0cd53bce7d65b622fea0",
+          "ui/tsconfig.json": "b18edd473ae10946e62b2f02fc2c1931950408337f9f75086ba31b7671417dcb",
+          "ui/vite.config.ts": "8bddcb7d68f1a1eb45b0b66501863a82d9c6cfb5e29a7cd64807479b7106c39c"
+        },
+        "outputs": {
+          "ui/dist/assets/Budgets-D24BZHIX.js": "43a0cfc3e369067931ca2c522b487b5d1c2ff34f85d6c8bb0a2fbea14db11b65",
+          "ui/dist/assets/Investigate-DqP-MlHW.js": "a5f55508b717fbda9eb0c13bfee9d78aa5d1bfe159b8395a14badb6c13b14d16",
+          "ui/dist/assets/Overview-DyyNA5OP.js": "45548bc57154df66086a2c7c4bccc62e4869105cfa15eb5f51c4b4bc7e6e53a6",
+          "ui/dist/assets/Policies-CemQr-Vb.js": "ffaee63394661f9958f8a28944f61a67e09084b6bbce75c3375c6a859dca2bf7",
+          "ui/dist/assets/TestLab-DaCCkdOi.js": "678c7edb5dcc81cb069cb5f49905316679048d7d010767f40620503fc0f4a504",
+          "ui/dist/assets/arrow-right-DTpYTYCQ.js": "f29b6a3e264c8f47bed1c2dd3957aeb56093dd2bfea1c4e6892c900c1309b4f9",
+          "ui/dist/assets/charts-C8gSP2RW.js": "0d0db8ee236816a65dd864bd0b3e60380b3a7c8c51d01b85c22565e7cdebf275",
+          "ui/dist/assets/clock-3-Cdt3Iwfu.js": "2273bcdba17a836d27edc02e6f8fa4b3c05b3dfc82cfbeef570b4ed8b1b540f9",
+          "ui/dist/assets/index-BEjWxx_g.css": "75dc84d86c6f35fd23c506ddae9bda4aedef8965b5d10b970fb5549644258ec1",
+          "ui/dist/assets/index-B_Kq2-GE.js": "62c3dbf73b94bb9a8220be1d96b7acf70c505888ade4e9e4d5e204222d9cd84a",
+          "ui/dist/assets/play-Cnrc_YWv.js": "7573595d04aa5e05935acca479de44837ff620a76116e02042cfce4415e14386",
+          "ui/dist/assets/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+          "ui/dist/assets/shield-alert-BlxBlTGq.js": "a167f3908bdcb52aad4c9462a000ccd97651209cfeb7b0181f30890a33ca00d2",
+          "ui/dist/favicon.svg": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+          "ui/dist/index.html": "4e03bba4e2e25058cedc8c6fe3b3e30397001698511e44f38341384bf4145321"
+        }
+      },
+      "ui_outputs": {
+        "ui/dist/favicon.svg": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+        "ui/dist/index.html": "4e03bba4e2e25058cedc8c6fe3b3e30397001698511e44f38341384bf4145321",
+        "ui/dist/assets/charts-C8gSP2RW.js": "0d0db8ee236816a65dd864bd0b3e60380b3a7c8c51d01b85c22565e7cdebf275",
+        "ui/dist/assets/index-BEjWxx_g.css": "75dc84d86c6f35fd23c506ddae9bda4aedef8965b5d10b970fb5549644258ec1",
+        "ui/dist/assets/TestLab-DaCCkdOi.js": "678c7edb5dcc81cb069cb5f49905316679048d7d010767f40620503fc0f4a504",
+        "ui/dist/assets/Investigate-DqP-MlHW.js": "a5f55508b717fbda9eb0c13bfee9d78aa5d1bfe159b8395a14badb6c13b14d16",
+        "ui/dist/assets/clock-3-Cdt3Iwfu.js": "2273bcdba17a836d27edc02e6f8fa4b3c05b3dfc82cfbeef570b4ed8b1b540f9",
+        "ui/dist/assets/play-Cnrc_YWv.js": "7573595d04aa5e05935acca479de44837ff620a76116e02042cfce4415e14386",
+        "ui/dist/assets/Budgets-D24BZHIX.js": "43a0cfc3e369067931ca2c522b487b5d1c2ff34f85d6c8bb0a2fbea14db11b65",
+        "ui/dist/assets/Overview-DyyNA5OP.js": "45548bc57154df66086a2c7c4bccc62e4869105cfa15eb5f51c4b4bc7e6e53a6",
+        "ui/dist/assets/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+        "ui/dist/assets/Policies-CemQr-Vb.js": "ffaee63394661f9958f8a28944f61a67e09084b6bbce75c3375c6a859dca2bf7",
+        "ui/dist/assets/arrow-right-DTpYTYCQ.js": "f29b6a3e264c8f47bed1c2dd3957aeb56093dd2bfea1c4e6892c900c1309b4f9",
+        "ui/dist/assets/shield-alert-BlxBlTGq.js": "a167f3908bdcb52aad4c9462a000ccd97651209cfeb7b0181f30890a33ca00d2",
+        "ui/dist/assets/index-B_Kq2-GE.js": "62c3dbf73b94bb9a8220be1d96b7acf70c505888ade4e9e4d5e204222d9cd84a"
+      }
+    },
+    "actiongate-gpu-0b92f97d-gateway-b-1": {
+      "backend": {
+        "backend/actiongate/demo_tools.py": "e1df80e9cf92d4e231dc40c945a1f9fd86ee66c41a3af4b6c5b8ceb362fa712c",
+        "backend/actiongate/ledger.py": "70b013ae1ff99ec70a2bd14ddaf0031c2f441f0074293cc746c9e900cae55fd4",
+        "backend/actiongate/settings.py": "81cf8930e5f9ab29049e36a17e0abc48ee2bcda367fa1082e5bfa4714ed9626c",
+        "backend/actiongate/scenarios.py": "d766385d355830372d34dc226565213bd57dfe1449ba59fe0d95b71e85de98d7",
+        "backend/actiongate/mcp_gateway.py": "082e7737b37f1a745230d052a187ee979779a45f3c699b2bacdd4f131034b7ac",
+        "backend/actiongate/runtime.py": "32e3a5a4065455815ab190b76d3df0b9589c5b4f37bf3e005566bd438198868c",
+        "backend/actiongate/policies.py": "34fde547bfc5c2659ccb774e68c0df17f03eca77b8357ee7e0b9209551d152f7",
+        "backend/actiongate/replay.py": "5db6d6ad2f94d732c5f91dd6cd289dbf794a8b505b3c323c925e188e51185d70",
+        "backend/actiongate/app.py": "c21fb30c4dc6032cef90b9204934a663ba2a9390e400fe9492d7a3136d2f2740",
+        "backend/actiongate/seed.py": "931e82a1f4020336f651a281e8d15a10aa05851a9ef8e7d8980f50fb438c9495",
+        "backend/actiongate/test_jobs.py": "da19bcdf791a789580a2e132b7af64b8b410daa934f91401f4433c22a0f9d6df",
+        "backend/actiongate/publisher.py": "817d01273f7b55361fc22be3f0a1a4e23cbd90ec5511c58e8b7739a7c1a40282",
+        "backend/actiongate/migrate.py": "d7f6d1afd432f25f76fd6fa3858e40386f3a2724c0356b3f43fd55e051f29a3d",
+        "backend/actiongate/contracts.py": "2e40eddde525ae7204da7a952293d334829050b61ce91609aebc4c6dad561eaa",
+        "backend/actiongate/cloud.py": "5e6d67b55fd5fe8ef0e61f91c4c009a19ebba127bbbd5372aaab3371c1cd8e95",
+        "backend/actiongate/db.py": "d210a52f2e5c9d7828216991df834815e6caacce166a5106d1afca5f4ed69ad5",
+        "backend/actiongate/broker.py": "b9d5dacc69bd79cd449e78eca257dd32a9d87ae7d85e2128fe94b0f64b4eb77e",
+        "backend/actiongate/semantic_cache.py": "857cdbf3f5813265f4d0290540169ab400d53997fd247809a29872006a851d40",
+        "backend/actiongate/mcp_stdio.py": "f7ffa19b5a90344123f381ba250c8f9f5cd42a7f1bc7cb6cbfb4613e442bb79e",
+        "backend/actiongate/semantic.py": "0e71fa69e130d2c0767f994ac500ca8262e412cc42b73b1258d0c53bf7a1a3e1",
+        "backend/actiongate/__init__.py": "561e904567d004fbc8719f59350ae6e5c5aee131404e6580c9ba70dfe79b5740",
+        "backend/actiongate/recovery.py": "97614fa21e4cc5c15818ff143a04d9ed8310713d4c366f45204c184689d72abe",
+        "backend/actiongate/maintenance.py": "ef12cc621562e247d55f8482b3fc8afea231a64954a5d05eb83b664435531cae",
+        "backend/actiongate/audit_integrity.py": "e593d10eda162cc7415728b7fb030002fbf5ae047265d0579f9b6cb742fbc7e0",
+        "backend/actiongate/telemetry.py": "a845ad7f694942a113a64ea1d0486e0c0be835c511187d8839cdd01d5161ec4e",
+        "backend/actiongate/mcp_upstream.py": "9e0e18371c4afa9e04aff91033939211cf5898f0c1be193472fd124a4083770b",
+        "backend/actiongate/security.py": "5dbec71036a6a2a056246a98ec6499c51e51f655ef1cc7748304f4ff2672accf",
+        "backend/actiongate/controls/dlp.py": "ccec5cf3e6c0a7a87a25a43988716540b01c5d6cb893b8d25520042c1b22995e",
+        "backend/actiongate/controls/model_artifacts.py": "15fd0659f2b42bd1b0b2ae8cf384f0bca1c6c17f9243fe9ed7cc5c60b0f85d82",
+        "backend/actiongate/controls/opa.py": "0c0dce801057e0deb66f629109ac90021779c841f68745fc2098b5b920218861",
+        "backend/actiongate/controls/signed.py": "c6a833129af831a4684fafaae77993ec67d1de01bd4bfbe0672da49275a11a21",
+        "backend/actiongate/controls/registry.py": "2af18afc9fc25b2382cd6ee34cadf665c4e0bedc94ffdbbe1b88540c870f335a",
+        "backend/actiongate/controls/artifacts.py": "02cb4ca7bed74d3c3c973b1575f586cc013e2f3725e1189de57b744eb248aa45",
+        "backend/actiongate/controls/__init__.py": "6d7ff0ba9328353298dc07cd827b721f1bd6aa42b246400f8dce1639b25f3369",
+        "backend/actiongate/controls/plane.py": "807a21c5833c1313a55b1908203517fa17c7124ceb697962933cfd519f502b07",
+        "backend/actiongate/controls/schema.py": "0165abd15672d93dc1bf48285b5797d4a80267c037639e21ae05db39c90b62aa"
+      },
+      "ui_build": {
+        "schema_version": 1,
+        "kind": "ui-build-inputs",
+        "inputs": {
+          "ui/index.html": "5e483891d9830c0693227f553ef76c09c5c238728f7de9e834607f4ed4042320",
+          "ui/package-lock.json": "c10d7299cacbcebcd9b52f25affb0684cfc0e546a861fcae2a9b4ad6ec3cfca0",
+          "ui/package.json": "56d6150588964f1cf69814efb5da40d87126f623504c02c448ee32244e6b6381",
+          "ui/public/favicon.svg": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+          "ui/src/App.tsx": "4f71bc1d48cde7c437f98ce93b1cdc8f586199f74f6022c46267250db5d1ca40",
+          "ui/src/Budgets.tsx": "dd05d1a436bc94fa436e73b9d1639a6eb2f059c22f98c5275f8e914c6a59f872",
+          "ui/src/Investigate.tsx": "6717e2b79f35b95c4032eef6d2ea2369e5bd014acbd82fe3970148a6441b0eab",
+          "ui/src/Overview.tsx": "08cfe53817fb9da560c057131d04ef4e936db9a7747fb11fe5a9b58e20528201",
+          "ui/src/Policies.tsx": "0891cea0922204351656bf89f1a9802a98c4df2b1d9d7d9c20f5ed06a8323f51",
+          "ui/src/TestLab.tsx": "d6f7a18e28bd99e70e68b9fa6b22fcefc7ad733c937798856cb4887a0c345b9b",
+          "ui/src/api.ts": "dfe3b9099b2ee8d5695077ae9eed4a0e8820676f6c637090ed95f81c3738413e",
+          "ui/src/components.tsx": "136b109533f6238cf94c997992642a3d2863304c62c45e3d06d26b05fb49f736",
+          "ui/src/main.tsx": "456f14158eef1f5e666848411f9c4cddea0b0e99816abaa523e60bfcfe40847c",
+          "ui/src/styles.css": "12ca92bda99910b754665aff93658c8d9728e12a2fdf0cd53bce7d65b622fea0",
+          "ui/tsconfig.json": "b18edd473ae10946e62b2f02fc2c1931950408337f9f75086ba31b7671417dcb",
+          "ui/vite.config.ts": "8bddcb7d68f1a1eb45b0b66501863a82d9c6cfb5e29a7cd64807479b7106c39c"
+        },
+        "outputs": {
+          "ui/dist/assets/Budgets-D24BZHIX.js": "43a0cfc3e369067931ca2c522b487b5d1c2ff34f85d6c8bb0a2fbea14db11b65",
+          "ui/dist/assets/Investigate-DqP-MlHW.js": "a5f55508b717fbda9eb0c13bfee9d78aa5d1bfe159b8395a14badb6c13b14d16",
+          "ui/dist/assets/Overview-DyyNA5OP.js": "45548bc57154df66086a2c7c4bccc62e4869105cfa15eb5f51c4b4bc7e6e53a6",
+          "ui/dist/assets/Policies-CemQr-Vb.js": "ffaee63394661f9958f8a28944f61a67e09084b6bbce75c3375c6a859dca2bf7",
+          "ui/dist/assets/TestLab-DaCCkdOi.js": "678c7edb5dcc81cb069cb5f49905316679048d7d010767f40620503fc0f4a504",
+          "ui/dist/assets/arrow-right-DTpYTYCQ.js": "f29b6a3e264c8f47bed1c2dd3957aeb56093dd2bfea1c4e6892c900c1309b4f9",
+          "ui/dist/assets/charts-C8gSP2RW.js": "0d0db8ee236816a65dd864bd0b3e60380b3a7c8c51d01b85c22565e7cdebf275",
+          "ui/dist/assets/clock-3-Cdt3Iwfu.js": "2273bcdba17a836d27edc02e6f8fa4b3c05b3dfc82cfbeef570b4ed8b1b540f9",
+          "ui/dist/assets/index-BEjWxx_g.css": "75dc84d86c6f35fd23c506ddae9bda4aedef8965b5d10b970fb5549644258ec1",
+          "ui/dist/assets/index-B_Kq2-GE.js": "62c3dbf73b94bb9a8220be1d96b7acf70c505888ade4e9e4d5e204222d9cd84a",
+          "ui/dist/assets/play-Cnrc_YWv.js": "7573595d04aa5e05935acca479de44837ff620a76116e02042cfce4415e14386",
+          "ui/dist/assets/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+          "ui/dist/assets/shield-alert-BlxBlTGq.js": "a167f3908bdcb52aad4c9462a000ccd97651209cfeb7b0181f30890a33ca00d2",
+          "ui/dist/favicon.svg": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+          "ui/dist/index.html": "4e03bba4e2e25058cedc8c6fe3b3e30397001698511e44f38341384bf4145321"
+        }
+      },
+      "ui_outputs": {
+        "ui/dist/favicon.svg": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+        "ui/dist/index.html": "4e03bba4e2e25058cedc8c6fe3b3e30397001698511e44f38341384bf4145321",
+        "ui/dist/assets/charts-C8gSP2RW.js": "0d0db8ee236816a65dd864bd0b3e60380b3a7c8c51d01b85c22565e7cdebf275",
+        "ui/dist/assets/index-BEjWxx_g.css": "75dc84d86c6f35fd23c506ddae9bda4aedef8965b5d10b970fb5549644258ec1",
+        "ui/dist/assets/TestLab-DaCCkdOi.js": "678c7edb5dcc81cb069cb5f49905316679048d7d010767f40620503fc0f4a504",
+        "ui/dist/assets/Investigate-DqP-MlHW.js": "a5f55508b717fbda9eb0c13bfee9d78aa5d1bfe159b8395a14badb6c13b14d16",
+        "ui/dist/assets/clock-3-Cdt3Iwfu.js": "2273bcdba17a836d27edc02e6f8fa4b3c05b3dfc82cfbeef570b4ed8b1b540f9",
+        "ui/dist/assets/play-Cnrc_YWv.js": "7573595d04aa5e05935acca479de44837ff620a76116e02042cfce4415e14386",
+        "ui/dist/assets/Budgets-D24BZHIX.js": "43a0cfc3e369067931ca2c522b487b5d1c2ff34f85d6c8bb0a2fbea14db11b65",
+        "ui/dist/assets/Overview-DyyNA5OP.js": "45548bc57154df66086a2c7c4bccc62e4869105cfa15eb5f51c4b4bc7e6e53a6",
+        "ui/dist/assets/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+        "ui/dist/assets/Policies-CemQr-Vb.js": "ffaee63394661f9958f8a28944f61a67e09084b6bbce75c3375c6a859dca2bf7",
+        "ui/dist/assets/arrow-right-DTpYTYCQ.js": "f29b6a3e264c8f47bed1c2dd3957aeb56093dd2bfea1c4e6892c900c1309b4f9",
+        "ui/dist/assets/shield-alert-BlxBlTGq.js": "a167f3908bdcb52aad4c9462a000ccd97651209cfeb7b0181f30890a33ca00d2",
+        "ui/dist/assets/index-B_Kq2-GE.js": "62c3dbf73b94bb9a8220be1d96b7acf70c505888ade4e9e4d5e204222d9cd84a"
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "status": "partial",
+  "reason": "Obejrzano wszystkie żądane ekrany i wykonano wybrane testy interakcji oraz dostępności. Nie sprawdzono wszystkich stanów, publikacji konfiguracji, resetowania danych ani rzeczywistego powiększenia 200%.",
+  "firstImpression": {
+    "purpose": "Panel kontroli dostępu do modeli i narzędzi AI oraz przeglądania uprawnień, danych, budżetów i decyzji.",
+    "audience": "Osoby zarządzające uprawnieniami, danymi i budżetami środowiska AI.",
+    "firstAction": "Wybrać przestrzeń i rolę, następnie nacisnąć „Enter workspace”.",
+    "expectedOutcome": "Otwarcie demonstracyjnego panelu dla wybranego kontekstu.",
+    "uncertainties": [
+      "Nie wiadomo jeszcze, jakie działania podlegają kontroli.",
+      "Znaczenie „Verified effect” nie jest wyjaśnione w pierwszym widoku."
+    ],
+    "recordedBeforeExploration": true
+  },
+  "coverage": {
+    "entryUrl": "http://127.0.0.1:18091/",
+    "routesRequested": [
+      "http://127.0.0.1:18091/#overview",
+      "http://127.0.0.1:18091/#investigate",
+      "http://127.0.0.1:18091/#policies",
+      "http://127.0.0.1:18091/#budgets",
+      "http://127.0.0.1:18091/#test-lab"
+    ],
+    "routesChecked": [
+      "http://127.0.0.1:18091/",
+      "http://127.0.0.1:18091/#overview",
+      "http://127.0.0.1:18091/#investigate",
+      "http://127.0.0.1:18091/#policies",
+      "http://127.0.0.1:18091/#budgets",
+      "http://127.0.0.1:18091/#test-lab"
+    ],
+    "checks": [
+      {
+        "area": "first-impression",
+        "result": "checked",
+        "evidence": "Pierwszy zrzut i drzewo dostępności przy 1440 × 900; wrażenie zapisano przed interakcją.",
+        "limitations": "Ocena dotyczy anglojęzycznego widoku demonstracyjnego."
+      },
+      {
+        "area": "navigation",
+        "result": "checked",
+        "evidence": "Wszystkie pięć sekcji osiągnięto z menu. Budgets otwarto również klawiszem Enter oraz później bezpośrednim URL.",
+        "limitations": "Nie sprawdzono bezpośredniego otwierania każdej trasy w nowej sesji."
+      },
+      {
+        "area": "language",
+        "result": "checked",
+        "evidence": "Nagłówki wyjaśniają podstawowe zadania. Ekrany konfiguracji i testów wskazują techniczną grupę odbiorców; wynik inspekcji zawiera jednak niewyjaśnione kody i niejednoznaczne podsumowanie.",
+        "limitations": "Nie oceniano dokumentacji ani poprawności reguł biznesowych."
+      },
+      {
+        "area": "cognitive-load",
+        "result": "checked",
+        "evidence": "Oceniono hierarchię podsumowań, rozbudowaną listę kont budżetowych, edytor polityk oraz rozwijane szczegóły wyniku.",
+        "limitations": "Bez badania z użytkownikami i pomiaru czasu wykonania zadań."
+      },
+      {
+        "area": "forms-and-feedback",
+        "result": "checked",
+        "evidence": "Utworzono syntetyczny workflow. Niepoprawny JSON wywołał komunikat „Arguments must be valid JSON.”, oznaczenie invalid i fokus pola. Sprawdzono pusty wynik wyszukiwania oraz oczekiwanie i zakończenie inspekcji.",
+        "limitations": "Nie aktywowano polityk, nie publikowano feedów, nie uruchamiano pełnych zestawów testów ani resetu. Nie potwierdzono udanej inspekcji zakończonej dopuszczeniem."
+      },
+      {
+        "area": "keyboard-and-focus",
+        "result": "checked",
+        "evidence": "Rzeczywiste Tab i Shift+Tab w menu, Enter otwierający Budgets oraz widoczna zielona obwódka fokusu. Escape zamknął menu mobilne i przywrócił fokus do „Open menu”.",
+        "limitations": "Test próbkowy, bez przejścia przez wszystkie kontrolki."
+      },
+      {
+        "area": "semantics-and-names",
+        "result": "checked",
+        "evidence": "Drzewo zawiera main, navigation, nagłówki, nazwane pola i przyciski. Błąd JSON jest powiązany przez aria-describedby, a aktywna pozycja menu ma aria-current=\"page\".",
+        "limitations": "Inspekcja drzewa dostępności i DOM, bez czytnika ekranu."
+      },
+      {
+        "area": "contrast",
+        "result": "checked",
+        "evidence": "Obliczenia z kolorów computed styles: opis formularza Test Lab ma 5,15:1; dwa teksty pustych stanów mają około 4,49:1.",
+        "limitations": "Próbka tekstów, bez pełnego pomiaru ikon, obramowań i wszystkich stanów."
+      },
+      {
+        "area": "zoom-and-mobile",
+        "result": "checked",
+        "evidence": "Test Lab przy emulowanym 390 × 844 mieścił się bez poziomego przewijania. Budgets przy 720 × 450 również miał scrollWidth równy szerokości widoku.",
+        "limitations": "720 × 450 symuluje przestrzeń układu dostępną po powiększeniu desktopu 1440 × 900 do 200%, ale nie jest rzeczywistym zoomem ani powiększeniem tekstu. Nie sprawdzono wszystkich tras mobilnie."
+      },
+      {
+        "area": "status-announcements",
+        "result": "checked",
+        "evidence": "Ładowanie i inspekcja używają status/live polite. Błąd JSON ma role alert. Zakończenie inspekcji aktualizuje tekst na „Inspection finished. The result is shown below.”.",
+        "limitations": "Potwierdzono semantykę, nie odsłuch komunikatów w czytniku ekranu."
+      }
+    ],
+    "limitations": [
+      "Używano wyłącznie izolowanego ux_browser i renderowanego interfejsu.",
+      "Testy wykonano jako Admin w Synthetic test tenant.",
+      "Zmiana emulacji przeładowała stronę podczas pierwszej inspekcji; inspekcję powtórzono i odczytano końcowy wynik.",
+      "Pozostawiono utworzony syntetyczny workflow i zapisy inspekcji; nie resetowano istniejących zasobów.",
+      "Wynik nie stanowi pełnej oceny zgodności z WCAG."
+    ]
+  },
+  "findings": [
+    {
+      "id": "UX-01",
+      "priority": "medium",
+      "confidence": "high",
+      "area": "forms-and-feedback",
+      "location": {
+        "url": "http://127.0.0.1:18091/#test-lab",
+        "target": "Inspection result"
+      },
+      "evidence": "Po inspekcji syntetycznego tekstu panel pokazał jednocześnie „Block”, „Result failed semantic inspection”, „Guard verdict: benign” i poziom ryzyka 0. Wyświetlił kody semantic.incomplete, semantic.risk i semantic.unknown bez wyjaśnienia relacji. Pod „Inspected output” widniał tekst wejściowy, podczas gdy rozwinięte dowody wskazywały stage: output, status: output_blocked i result: null.",
+      "reproduction": [
+        "Otwórz Test Lab w Synthetic test tenant z profilem Balanced.",
+        "Wpisz „Synthetic UX audit: summarize a fictional delivery of ten blue boxes.”.",
+        "Wybierz Inspect input i poczekaj na wynik.",
+        "Porównaj podsumowanie z Full control evidence."
+      ],
+      "impact": "Użytkownik nie wie, dlaczego bezpieczna ocena współistnieje z blokadą ani czy widoczny tekst jest rzeczywistym wynikiem operacji. Utrudnia to wybór kolejnego kroku.",
+      "recommendation": "Rozdziel ocenę wejścia, kontrolę wyjścia i końcowy stan wykonania. Wyjaśnij przyczynę blokady dostępnymi danymi, oznacz tekst wejściowy zgodnie z jego pochodzeniem i wskaż brak wyniku. Zachowaj obecną decyzję ochronną; audyt nie ustala, czy była biznesowo poprawna.",
+      "acceptanceCriteria": [
+        "Przy takim stanie panel jasno wskazuje etap blokady oraz zakres oceny benign.",
+        "Tekst wejściowy nie jest podpisany jako wynik, jeżeli result jest null.",
+        "Kody przyczyn mają zrozumiałe objaśnienia, a brak ustalonej przyczyny jest jawnie zaznaczony."
+      ]
+    },
+    {
+      "id": "A11Y-01",
+      "priority": "low",
+      "confidence": "high",
+      "area": "contrast",
+      "location": {
+        "url": "http://127.0.0.1:18091/#test-lab",
+        "target": "Opisy pustych stanów Verification history i Verification evidence"
+      },
+      "evidence": "Teksty „Run a suite to create an evidence report. No test has passed by default.” i „A historical report is shown with its original timestamp.” mają kolor rgb(120, 134, 125), tło rgb(25, 28, 30), rozmiar 11 px i obliczony kontrast około 4,49:1, poniżej 4,5:1.",
+      "reproduction": [
+        "Otwórz Test Lab bez zapisanych wyników weryfikacji.",
+        "Przejdź do Verification history i Verification evidence.",
+        "Zmierz kontrast wskazanych tekstów względem tła sekcji."
+      ],
+      "impact": "Drobny tekst instrukcyjny ma niewystarczający kontrast dla zwykłego tekstu, co utrudnia odczyt osobom słabowidzącym.",
+      "recommendation": "Rozjaśnij kolor tych opisów z zapasem ponad wymagane 4,5:1.",
+      "acceptanceCriteria": [
+        "Oba teksty osiągają kontrast co najmniej 4,5:1 względem rzeczywistego tła."
+      ]
+    }
+  ],
+  "overall": {
+    "understandable": true,
+    "summary": "Cel produktu i główne sekcje są zrozumiałe. Próby klawiatury, walidacji i układu mobilnego wypadły dobrze. Najważniejszy problem to niejednoznaczne objaśnienie wyniku blokady w Test Lab; wykryto też niewielki niedobór kontrastu opisów pustych stanów."
+  }
+}

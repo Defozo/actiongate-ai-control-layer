@@ -1,0 +1,38 @@
+{
+  "status": "historical_publication_evidence",
+  "source_commit": "5e72c4144761a19e0c8bb4c3e9148cfaed234271",
+  "release": "v0.1.0",
+  "scope": "Original anonymous material observations made after publishing v0.1.0; current observations are regenerated after v0.1.1 publication. These are not observations of the later revision.",
+  "files": [
+    {
+      "original_path": "artifacts/public-materials-verification.json",
+      "archive_path": "artifacts/history/public-materials-v0.1.0/artifacts/public-materials-verification.json",
+      "sha256": "62c6f04c377524672e38b40237a9a93d66e083057349f54aefed829da6b04379"
+    },
+    {
+      "original_path": "artifacts/public-demo/published-player.png",
+      "archive_path": "artifacts/history/public-materials-v0.1.0/artifacts/public-demo/published-player.png",
+      "sha256": "7186c54384b760fa59c7df61acc308fa7556552bbfda463279f844386a49c8f4"
+    },
+    {
+      "original_path": "artifacts/public-demo/published-music-player.png",
+      "archive_path": "artifacts/history/public-materials-v0.1.0/artifacts/public-demo/published-music-player.png",
+      "sha256": "e1343afab438720250004f81a431adb2b44ec829270f27b7f32deefd62a91de0"
+    },
+    {
+      "original_path": "artifacts/public-demo/published-mobile.png",
+      "archive_path": "artifacts/history/public-materials-v0.1.0/artifacts/public-demo/published-mobile.png",
+      "sha256": "456d4c71ec0cf359067cee1b394a1361d4ade6796b5d283fa0d48868f8b30039"
+    },
+    {
+      "original_path": ".state/public-demo/site-build.json",
+      "archive_path": "artifacts/history/public-materials-v0.1.0/site-build.json",
+      "sha256": "d7d9ee3baebb60f39101b8fa8002254620481e0e2c89227ad7bf07290d1237e0"
+    },
+    {
+      "original_path": "demo/public/verify_materials.cjs",
+      "archive_path": "artifacts/history/public-materials-v0.1.0/verify_materials.cjs",
+      "sha256": "1734be494de49feaf07f0c5d10309db6040b5fd3333d082a096275afe9d2c260"
+    }
+  ]
+}

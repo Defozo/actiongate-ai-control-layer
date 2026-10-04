@@ -1,0 +1,28 @@
+<testsuites id="" name="" tests="12" failures="0" skipped="0" errors="0" time="18.47966">
+<testsuite name="contract.spec.ts" timestamp="2026-10-03T21:39:42.476Z" hostname="chromium" tests="12" failures="0" skipped="0" time="12.528" errors="0">
+<testcase name="unavailable controls remain visibly unavailable and ledger failure is never healthy" classname="contract.spec.ts" time="1.873">
+</testcase>
+<testcase name="approval sends the exact inspected payload hash and is unavailable to analyst" classname="contract.spec.ts" time="1.001">
+</testcase>
+<testcase name="editing a validated policy invalidates activation and comparison shows coverage gaps" classname="contract.spec.ts" time="0.744">
+</testcase>
+<testcase name="arbitrary HTML is rendered as text and never executes or requests external images" classname="contract.spec.ts" time="0.725">
+</testcase>
+<testcase name="tenant switching clears previous tenant evidence from every query" classname="contract.spec.ts" time="0.619">
+</testcase>
+<testcase name="mobile navigation and console remain usable without horizontal page overflow" classname="contract.spec.ts" time="1.082">
+</testcase>
+<testcase name="budgets render worker objects and scoped resource reservations without inventing cost" classname="contract.spec.ts" time="0.763">
+</testcase>
+<testcase name="unavailable budget records never appear as zero spend or usage" classname="contract.spec.ts" time="1.782">
+</testcase>
+<testcase name="playground shows actual tenant, inspected content and the recorded model digest" classname="contract.spec.ts" time="0.678">
+</testcase>
+<testcase name="interactive advisory evidence preserves snapshot and workflow scope without a protection pass" classname="contract.spec.ts" time="0.703">
+</testcase>
+<testcase name="operational latency and server event backlog retain their exact scope" classname="contract.spec.ts" time="0.76">
+</testcase>
+<testcase name="policy history and operation details display the supplied recorded provenance" classname="contract.spec.ts" time="1.798">
+</testcase>
+</testsuite>
+</testsuites>

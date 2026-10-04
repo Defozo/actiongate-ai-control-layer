@@ -16,6 +16,8 @@ Run aggregation before the final local source commit, then `scripts/release.py -
 
 The aggregate checks all-local without failures or skips, the positive/negative assertions in `tests/control_registry.json`, the frozen v2 holdout per language, the real document/model/memory/report workflow, network isolation, real runtime and fresh offline recovery, all 144 benchmark cells, measured performance targets, UI contracts, real browser-triggered workflows and their recorded video, both shipped Python/TypeScript examples, event delivery and signed audit assertions. Browser contract fixtures and actual deployment evidence have separate entries. Curated UI reports are copied into `artifacts/reports`; temporary `docs/.build` files are excluded from the submission archive.
 
+Delivery v0.1.1 adds two rounds of UI corrections, documented in [UI verification](ux-verification.md) and its [evidence record](../artifacts/reports/ux-verification.json). The production build and 22/22 browser contracts passed without failures or skips. The 95 fingerprinted core sources remain unchanged. Core package and SBOM metadata stay at 0.1.0; v0.1.1 identifies the delivery revision. The final independent application review remains `partial`, with two unresolved findings: ambiguous input/output provenance in a blocked Test Lab result (medium), and approximately 4.49:1 contrast in two empty-state descriptions (low). Actual 200% browser zoom, screen-reader use and coverage of every operation state were not confirmed. UI contracts, isolated preview observations and actual deployment checks retain separate evidence scopes.
+
 Model-dependent evidence must match the current guard prompt artifact, complete signed model-manifest envelope and effective semantic configuration. The deployed report must also match the prepared source manifest, tokenizer bytes and both workers' model, tokenizer and prepared generation acknowledgements. Every held-out result must name that exact model digest, and quality must explicitly bypass semantic caching. Changing the model or tokenizer without changing the prompt still invalidates old quality evidence.
 
 The verification runner hashes the application Python sources, selected tests and suite entrypoints before and after execution. A code change during the suite makes the report fail. Aggregation also compares those hashes with the current source files, so a later implementation change cannot reuse an earlier green all-local report. Mutable policy publications exercised by the suite and generated reports are excluded from this code fingerprint.
@@ -33,20 +35,30 @@ closed both orphaned operations without effects and completed their successor
 actions, each with exactly one matching receipt and settled usage. Existing
 workflow deadlines were preserved. Fresh installation, deployment and final
 load measurements remain separately dated evidence for the revised allocation.
-The [database capacity verification](../artifacts/pg-capacity-verification.json)
-binds the revised Compose file to actual limits, fresh CPU/GPU installations,
-current deployment reports and the unchanged application and model sources.
+The [database capacity verification recorded for v0.1.0](../artifacts/history/ui-delivery-v0.1.0/artifacts/pg-capacity-verification.json)
+is dated evidence of the revised allocation. It binds the Compose configuration
+and observed limits to the fresh CPU/GPU installations and deployment reports
+used for that measurement. Its 13 report dependencies are preserved at their
+original relative paths under the [v0.1.0 evidence archive](../artifacts/history/ui-delivery-v0.1.0/MANIFEST.json),
+with byte hashes and an original-to-archive mapping. Those reports describe the
+earlier measured deployment. Use the separate [UI deployment patch report](../artifacts/reports/ui-deployment-patch.json)
+for the deployment-specific status and source, worker and model bindings of the
+corrected UI. A UI deployment does not constitute a fresh capacity or latency
+measurement.
 
-The subsequent gateway keepalive adjustment is recorded separately in
-[the runtime verification](../artifacts/keepalive-runtime-verification.json):
+The subsequent gateway keepalive adjustment is retained as
+[dated v0.1.0 runtime evidence](../artifacts/history/ui-delivery-v0.1.0/artifacts/keepalive-runtime-verification.json):
 28 checks passed, including the same TCP connection surviving 6.05 seconds of
-idle time on both replicas of both installations. Only the gateway environment
-changed, from the server's five-second default to thirty seconds; application,
-model, worker and test sources remained identical. The earlier matrix with one
-transport error and the 300-request diagnostic are retained in
+idle time on both replicas of both installations. The gateway setting changed
+from the server's five-second default to thirty seconds. Application, model,
+worker and test sources were identical during that measurement. The earlier
+matrix with one transport error and the 300-request diagnostic remain in
 [the transport investigation](../artifacts/history/benchmark-pg200-readerror/ANALYSIS.json).
-The original TCP failure was not reproduced. The final full benchmark evaluates
-the revised deployment without weakening its zero-transport-error condition.
+The original TCP failure was not reproduced. The completed benchmark evaluated
+the revised configuration with its unchanged zero-transport-error condition.
+This historical timing measurement does not establish the container identities
+or UI bytes of delivery v0.1.1; those require the separate UI deployment patch
+report.
 
 The source freeze includes the mandatory external evidence producers, including CPU/GPU preparation, deployment verification, clients, policy replay and browser/SSE scripts. Their reports also record producer file hashes before execution and confirm unchanged hashes afterward; aggregation rejects a later producer edit. `scripts/verify_live_browser.cjs` writes directly to the canonical `artifacts/reports/live-browser.json`, without promoting an older temporary browser report.
 

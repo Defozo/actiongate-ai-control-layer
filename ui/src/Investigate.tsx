@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ArrowRight, Plus, Search, Send } from "lucide-react";
 import { rows, short, time, useAction, useApi } from "./api";
 import {
@@ -34,6 +34,7 @@ export default function Investigate({
   const [tool, setTool] = useState("documents.read");
   const [args, setArgs] = useState(JSON.stringify({ document_id: `supplier-${tenant}-1` }, null, 2));
   const [inputError, setInputError] = useState("");
+  const argsRef = useRef<HTMLTextAreaElement>(null);
   const allRuns = rows(runs.data, "runs", "items");
   const current = run.data?.run ?? run.data;
   const runOps = runId
@@ -50,6 +51,7 @@ export default function Investigate({
       arguments_ = JSON.parse(args);
     } catch {
       setInputError("Arguments must be valid JSON.");
+      argsRef.current?.focus();
       return;
     }
     action.mutate({
@@ -268,8 +270,11 @@ export default function Investigate({
                 <label>
                   Arguments
                   <textarea
+                    ref={argsRef}
                     className="code-editor small-editor"
                     aria-label="Action arguments"
+                    aria-invalid={inputError ? true : undefined}
+                    aria-describedby={inputError ? "action-arguments-error" : undefined}
                     spellCheck={false}
                     value={args}
                     onChange={(e) => setArgs(e.target.value)}
@@ -283,7 +288,9 @@ export default function Investigate({
                   <Send size={15} />
                   {action.isPending ? "Evaluating…" : "Propose action"}
                 </button>
-                <ErrorMessage error={inputError || action.error} />
+                {inputError ? (
+                  <div id="action-arguments-error"><ErrorMessage error={inputError} /></div>
+                ) : <ErrorMessage error={action.error} />}
                 {action.data && (
                   <>
                     <div className="button-row">

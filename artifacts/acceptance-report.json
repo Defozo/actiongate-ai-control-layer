@@ -1,6 +1,6 @@
 {
   "suite": "acceptance-aggregate",
-  "created_at": "2026-10-04T05:33:14.756536+00:00",
+  "created_at": "2026-10-04T07:04:47.192016+00:00",
   "status": "passed",
   "status_scope": "Required functional, security, quality and measurement verification only; inspect performance_targets_met separately.",
   "required_verification_status": "passed",
@@ -389,7 +389,7 @@
         },
         "stale_files": [],
         "missing_files": [],
-        "generated_at": "2026-10-04T04:17:13.199405+00:00",
+        "generated_at": "2026-10-04T06:57:02.235429+00:00",
         "scope": "Actual image files, UI build inputs and outputs, worker source, recipes and signed model readiness compared with the reviewed source tree.",
         "current_model_binding": true
       }
@@ -1039,7 +1039,7 @@
       "required": true,
       "status": "passed",
       "detail": {
-        "executed": 12,
+        "executed": 22,
         "minimum_required": 12,
         "failed": 0,
         "skipped": 0,
@@ -1051,7 +1051,7 @@
       "required": true,
       "status": "passed",
       "detail": {
-        "recorded_at": "2026-10-04T04:59:35.906Z",
+        "recorded_at": "2026-10-04T06:59:28.555Z",
         "status": "passed",
         "target": "http://127.0.0.1:18089",
         "views": [
@@ -1098,7 +1098,7 @@
       "required": true,
       "status": "passed",
       "detail": {
-        "job_id": "75b2eb00-6eae-4566-af34-06ea92aa6c63",
+        "job_id": "32fb89fd-9087-4901-8b34-ebaba888e5c2",
         "checks": {
           "persisted_job_passed": true,
           "four_real_workflows": true,
@@ -1119,7 +1119,7 @@
         ],
         "model_artifact_valid": true,
         "video_valid": true,
-        "wait_omitted_seconds": 12.142528300000002,
+        "wait_omitted_seconds": 24.2552445,
         "scope": "Actual browser-triggered persisted job. Four named workflows and two pre-dispatch negative assertions; this is not a general attack success estimate. Video explicitly labels omitted server waiting."
       }
     },
@@ -1175,7 +1175,7 @@
       "status": "passed",
       "detail": {
         "sample_count": 5,
-        "request_to_visible_upper_bound_p95_ms": 562.8,
+        "request_to_visible_upper_bound_p95_ms": 551.8,
         "native_reconnect_replay": true,
         "scope": "Monotonic request-to-DOM upper bound contains DB commit-to-DOM time. Cross-clock wall timestamps are not used for latency."
       }
@@ -1753,14 +1753,14 @@
       "modified_at": "2026-10-04T02:36:33.476570+00:00"
     },
     "artifacts/deployed-configuration.json": {
-      "sha256": "a0ee5aca350923317685d6e38ee7e8ced829d688e3ade2ced44011a967213bb6",
+      "sha256": "4521f850c2509258580847ccdee677626485ec9ce26485b060424d6f0d762709",
       "bytes": 6216,
-      "modified_at": "2026-10-04T04:17:22.204310+00:00"
+      "modified_at": "2026-10-04T06:57:11.530877+00:00"
     },
     "artifacts/deployed-source.json": {
-      "sha256": "6f98ba2241fbd48aa4079b72d0c8caefa6053b2c22ee56a39e50b2678ace5535",
-      "bytes": 41577,
-      "modified_at": "2026-10-04T04:17:22.203311+00:00"
+      "sha256": "9ae55b618dba381b4f8e71e7b2beb5d1ef42ef520b210f6babd5425736f3b14c",
+      "bytes": 41583,
+      "modified_at": "2026-10-04T06:57:11.529876+00:00"
     },
     "Dockerfile": {
       "sha256": "714a9786bb6caeab84e788e9412bd8312ef9400c7684a9a429cf22337a151996",
@@ -1823,19 +1823,19 @@
       "modified_at": "2026-10-03T11:52:00.149506+00:00"
     },
     "ui/src/App.tsx": {
-      "sha256": "f7bc0dc89b3bd4b79a9ccb7b922ff22aafefdb04a23d19e7455dd66a4e7d4df8",
-      "bytes": 15905,
-      "modified_at": "2026-10-03T21:39:12.487399+00:00"
+      "sha256": "4f71bc1d48cde7c437f98ce93b1cdc8f586199f74f6022c46267250db5d1ca40",
+      "bytes": 18479,
+      "modified_at": "2026-10-04T06:16:55.799642+00:00"
     },
     "ui/src/Budgets.tsx": {
-      "sha256": "9badf166ca2817418c820c3e197fb99be685529787a2ed78f24391364d80c903",
-      "bytes": 14132,
-      "modified_at": "2026-10-03T21:39:12.484377+00:00"
+      "sha256": "dd05d1a436bc94fa436e73b9d1639a6eb2f059c22f98c5275f8e914c6a59f872",
+      "bytes": 14683,
+      "modified_at": "2026-10-04T06:36:49.140349+00:00"
     },
     "ui/src/Investigate.tsx": {
-      "sha256": "a1862425d59deeaec9db00928e96753e0dbb0b911e6db12ce385ea728c5c52e4",
-      "bytes": 11390,
-      "modified_at": "2026-10-03T21:39:12.485889+00:00"
+      "sha256": "6717e2b79f35b95c4032eef6d2ea2369e5bd014acbd82fe3970148a6441b0eab",
+      "bytes": 11787,
+      "modified_at": "2026-10-04T06:15:32.083719+00:00"
     },
     "ui/src/Overview.tsx": {
       "sha256": "08cfe53817fb9da560c057131d04ef4e936db9a7747fb11fe5a9b58e20528201",
@@ -1848,9 +1848,9 @@
       "modified_at": "2026-10-03T21:39:12.483377+00:00"
     },
     "ui/src/TestLab.tsx": {
-      "sha256": "3dc1c9e8fc401242cb7ebbd7d99077089ad2b5721455057b677421a5006745b8",
-      "bytes": 14278,
-      "modified_at": "2026-10-03T21:39:12.481867+00:00"
+      "sha256": "d6f7a18e28bd99e70e68b9fa6b22fcefc7ad733c937798856cb4887a0c345b9b",
+      "bytes": 15159,
+      "modified_at": "2026-10-04T06:36:49.141350+00:00"
     },
     "ui/src/api.ts": {
       "sha256": "dfe3b9099b2ee8d5695077ae9eed4a0e8820676f6c637090ed95f81c3738413e",
@@ -1868,9 +1868,9 @@
       "modified_at": "2026-10-03T12:01:39.632063+00:00"
     },
     "ui/src/styles.css": {
-      "sha256": "0744ded47d5473e0e03c39239db637337e74afe98822a32c0a5a029a413ab1c8",
-      "bytes": 44692,
-      "modified_at": "2026-10-03T20:14:31.706485+00:00"
+      "sha256": "12ca92bda99910b754665aff93658c8d9728e12a2fdf0cd53bce7d65b622fea0",
+      "bytes": 44887,
+      "modified_at": "2026-10-04T06:36:49.143353+00:00"
     },
     "ui/tsconfig.json": {
       "sha256": "b18edd473ae10946e62b2f02fc2c1931950408337f9f75086ba31b7671417dcb",
@@ -1953,19 +1953,19 @@
       "modified_at": "2026-10-04T02:36:25.634300+00:00"
     },
     "artifacts/reports/ui-contract.xml": {
-      "sha256": "9dc367d2151df95905040252acbf8af27cd8b1135fb3853b4c30f2f95fe9e4be",
-      "bytes": 2076,
-      "modified_at": "2026-10-04T05:33:05.259884+00:00"
+      "sha256": "9002ccceccef07fd561f4c5c8b7f78b359400c11b0b64055e6ec3830e9c5b08d",
+      "bytes": 3615,
+      "modified_at": "2026-10-04T07:04:38.664112+00:00"
     },
     "artifacts/reports/live-browser.json": {
-      "sha256": "34cd4b4d5776c5f5ec87d3c42dccf341524c98ac06521ec138ecaf6515bba0c1",
+      "sha256": "c2a894843789b309a76848cf1887b8aec50edffd8737decd15437e1b090836c8",
       "bytes": 1089,
-      "modified_at": "2026-10-04T04:59:48.207575+00:00"
+      "modified_at": "2026-10-04T06:59:40.303349+00:00"
     },
     "artifacts/submission/ui-workflow.json": {
-      "sha256": "593bb4d1330b3f4d761cd048f61789a9f6e97e6c152bfe4667f5da4dc4157eef",
-      "bytes": 104521,
-      "modified_at": "2026-10-04T05:01:46.322084+00:00"
+      "sha256": "132c0bc50870010cd3a7122d4e06281c281db6ce1712a91fee62b9410b72dd8f",
+      "bytes": 104535,
+      "modified_at": "2026-10-04T07:02:45.617772+00:00"
     },
     "TEAM.json": {
       "sha256": "732bad41bd3c4563673c92c211f77c91c1219ecf5bd22580bc8f48329299a6be",
@@ -1973,9 +1973,9 @@
       "modified_at": "2026-10-03T23:28:03.554952+00:00"
     },
     "artifacts/submission/ActionGate-UI-workflows.mp4": {
-      "sha256": "4e27e02226ab12500d1d7b7bdc4d8b81b89f19196e118049666e6e68dc0c418a",
-      "bytes": 1964798,
-      "modified_at": "2026-10-04T05:01:46.279023+00:00"
+      "sha256": "182f6a6f37aae4d3a3e01f7e3a222066f43948cc1a59499b759b581851a64539",
+      "bytes": 2026713,
+      "modified_at": "2026-10-04T07:02:45.576039+00:00"
     },
     "artifacts/submission/client-examples.json": {
       "sha256": "dda5de469f147d563bc656768483ad4428bac25a533a54a92b5d52c4c9e6ecd6",
@@ -2013,19 +2013,19 @@
       "modified_at": "2026-10-04T04:55:08.297635+00:00"
     },
     "artifacts/submission/dashboard-events.json": {
-      "sha256": "82e4108d80f739c1142140015d1f96951868206e216482dbe99bb72785aebee7",
-      "bytes": 4212,
-      "modified_at": "2026-10-04T04:59:08.736663+00:00"
+      "sha256": "23cc70c117b86071371e6aa1fd72cfd92d059c764e1580fc92eef6ef537cd27c",
+      "bytes": 4211,
+      "modified_at": "2026-10-04T07:00:19.263923+00:00"
     },
     "artifacts/submission/sample-synthetic-audit.jsonl": {
-      "sha256": "7f9b9fab5bb8ab8e6c1f4448faaf686a477fd03a5c5effbb35434c394735299d",
-      "bytes": 82142,
-      "modified_at": "2026-10-04T04:59:08.649345+00:00"
+      "sha256": "3e5331bea06d2a1ca04edf4dd4e08febd9958ff5f6c180223099a62ec08654ca",
+      "bytes": 125351,
+      "modified_at": "2026-10-04T07:00:19.178808+00:00"
     },
     "artifacts/submission/sample-synthetic-management.csv": {
-      "sha256": "f65c6330591f4a7eea9a4a8918df4a1b279826c7e99fa5a72b6124dc4056dccf",
-      "bytes": 7833,
-      "modified_at": "2026-10-04T04:59:08.667851+00:00"
+      "sha256": "dd2cab5e05608c4fff89c1a9c8442df11ec06f3096c855edb793aae0c951fa7f",
+      "bytes": 9447,
+      "modified_at": "2026-10-04T07:00:19.197330+00:00"
     },
     "artifacts/reports/live-provider.json": {
       "sha256": "42c5e77510e990b5b23c6589491218e943c355e945901157ecf63a4ce29a6b44",

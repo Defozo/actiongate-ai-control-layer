@@ -33,6 +33,10 @@ function reservationUsage(reservation: Data) {
 }
 
 function BudgetBar({ account }: { account: Data }) {
+  const scopeNames: Record<string, string> = { tenant: "Tenant", user: "User", root: "Root workflow", run: "Delegated workflow", guard: "Guard", public_projection: "Approved public request" };
+  const resourceNames: Record<string, string> = { usd_micros: "API cost", tokens: "Tokens", slot_millis: "Compute time", operations: "Publications" };
+  const scopeName = scopeNames[account.scope] ?? account.scope ?? "Budget account";
+  const resourceName = resourceNames[account.unit] ?? account.unit ?? "Resource";
   const format = (value: number) => account.unit === "tokens" ? `${number(value)} tokens` : account.unit === "slot_millis" ? `${number(value / 1000)} s` : account.unit === "operations" ? `${number(value)} ${value === 1 ? "publication" : "publications"}` : account.unit === "usd_micros" ? money(value) : `${number(value)} ${account.unit}`;
   const limit = account.limit_usd_micros ?? account.limit ?? 0;
   const spent = account.spent_usd_micros ?? account.spent ?? 0;
@@ -45,11 +49,12 @@ function BudgetBar({ account }: { account: Data }) {
       <div className="budget-heading">
         <div>
           <span className="eyebrow">
-            {account.scope ?? account.kind ?? "BUDGET ACCOUNT"}
+            BUDGET ACCOUNT
           </span>
           <h3>
-            {account.name ?? account.run_id ?? account.id ?? account.account_id}
+            {scopeName} · {resourceName}
           </h3>
+          <p className="budget-account-id mono">Account ID: {account.id ?? account.account_id ?? "Not reported"}</p>
         </div>
         <Badge
           value={

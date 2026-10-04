@@ -1,0 +1,125 @@
+{
+  "status": "partial",
+  "recorded_at": "2026-10-04T06:51:35.790951+00:00",
+  "delivery_revision": "v0.1.1",
+  "core_package_version": "0.1.0",
+  "scope": "Normal entry and five changed dashboard views, plus the public materials page. Local isolated previews only; fixture and real deployment proofs remain separate.",
+  "correction_rounds": 2,
+  "maximum_correction_rounds": 2,
+  "corrected_behavior": [
+    "Closed mobile navigation is inert; opening, Escape and responsive transitions preserve visible focus.",
+    "Malformed action JSON is associated with its field, receives focus and cannot dispatch.",
+    "Expected unauthenticated session401 is not shown as a sign-in failure; actual errors remain visible.",
+    "Budget accounts have readable scope/resource headings and retain full identifiers and exact ledger values.",
+    "Metric detail text uses measured readable contrast.",
+    "Inspection progress, completion and failure update a polite status region without showing an old result as current."
+  ],
+  "ui_contract": {
+    "passed": 22,
+    "failed": 0,
+    "skipped": 0,
+    "path": "artifacts/reports/ui-contract.xml",
+    "sha256": "9002ccceccef07fd561f4c5c8b7f78b359400c11b0b64055e6ec3830e9c5b08d"
+  },
+  "source_sha256": {
+    "ui/src/App.tsx": "4f71bc1d48cde7c437f98ce93b1cdc8f586199f74f6022c46267250db5d1ca40",
+    "ui/src/Budgets.tsx": "dd05d1a436bc94fa436e73b9d1639a6eb2f059c22f98c5275f8e914c6a59f872",
+    "ui/src/Investigate.tsx": "6717e2b79f35b95c4032eef6d2ea2369e5bd014acbd82fe3970148a6441b0eab",
+    "ui/src/TestLab.tsx": "d6f7a18e28bd99e70e68b9fa6b22fcefc7ad733c937798856cb4887a0c345b9b",
+    "ui/src/styles.css": "12ca92bda99910b754665aff93658c8d9728e12a2fdf0cd53bce7d65b622fea0",
+    "ui/tests/contract.spec.ts": "355e8061a0f422a0021ed41d06e3d868da310e682d3bcd9c6532bf853501d00e",
+    "demo/public/index.html": "f930b84d2eb8d0dc9633911ea421456d5fb762d42ee0d7039ce48bb81dfd405d",
+    "demo/public/styles.css": "e0fbc0db87a6bcbe3729f5a385c870616db2924f459d526ae4750d4aa5e797e7"
+  },
+  "independent_reviews": [
+    {
+      "path": "artifacts/reports/ux-review/application-initial.json",
+      "sha256": "af14213ed6d0372c284a2c6088a8a3353cd6d7656f0a05dad0191ff6307149f9",
+      "status": "partial",
+      "findings": 2,
+      "browser_calls": 68,
+      "first_impression_before_exploration": true,
+      "source_unchanged_during_review": true,
+      "fresh_browser_without_history_or_product_context": true
+    },
+    {
+      "path": "artifacts/reports/ux-review/application-after-round1.json",
+      "sha256": "331467c8fd32bd0d1ccb35d15df91be0f40d9748a042404709b45cbad5a02bf3",
+      "status": "partial",
+      "findings": 3,
+      "browser_calls": 66,
+      "first_impression_before_exploration": true,
+      "source_unchanged_during_review": true,
+      "fresh_browser_without_history_or_product_context": true
+    },
+    {
+      "path": "artifacts/reports/ux-review/application-final.json",
+      "sha256": "3e81ab695ce9089aa5eba90b73abf78a0c34c53165adfa4c3f805f5898be45cf",
+      "status": "partial",
+      "findings": 2,
+      "browser_calls": 56,
+      "first_impression_before_exploration": true,
+      "source_unchanged_during_review": true,
+      "fresh_browser_without_history_or_product_context": true
+    },
+    {
+      "path": "artifacts/reports/ux-review/materials-final.json",
+      "sha256": "8e76c3516971b3f23ccf9741b1a7d9647d34478fb5e0b1d75474f14f4f53539e",
+      "status": "partial",
+      "findings": 0,
+      "browser_calls": 43,
+      "first_impression_before_exploration": true,
+      "source_unchanged_during_review": true,
+      "fresh_browser_without_history_or_product_context": true
+    }
+  ],
+  "final_findings": [
+    {
+      "id": "UX-01",
+      "priority": "medium",
+      "confidence": "high",
+      "area": "forms-and-feedback",
+      "location": {
+        "url": "http://127.0.0.1:18091/#test-lab",
+        "target": "Inspection result"
+      },
+      "evidence": "Po inspekcji syntetycznego tekstu panel pokazał jednocześnie „Block”, „Result failed semantic inspection”, „Guard verdict: benign” i poziom ryzyka 0. Wyświetlił kody semantic.incomplete, semantic.risk i semantic.unknown bez wyjaśnienia relacji. Pod „Inspected output” widniał tekst wejściowy, podczas gdy rozwinięte dowody wskazywały stage: output, status: output_blocked i result: null.",
+      "reproduction": [
+        "Otwórz Test Lab w Synthetic test tenant z profilem Balanced.",
+        "Wpisz „Synthetic UX audit: summarize a fictional delivery of ten blue boxes.”.",
+        "Wybierz Inspect input i poczekaj na wynik.",
+        "Porównaj podsumowanie z Full control evidence."
+      ],
+      "impact": "Użytkownik nie wie, dlaczego bezpieczna ocena współistnieje z blokadą ani czy widoczny tekst jest rzeczywistym wynikiem operacji. Utrudnia to wybór kolejnego kroku.",
+      "recommendation": "Rozdziel ocenę wejścia, kontrolę wyjścia i końcowy stan wykonania. Wyjaśnij przyczynę blokady dostępnymi danymi, oznacz tekst wejściowy zgodnie z jego pochodzeniem i wskaż brak wyniku. Zachowaj obecną decyzję ochronną; audyt nie ustala, czy była biznesowo poprawna.",
+      "acceptanceCriteria": [
+        "Przy takim stanie panel jasno wskazuje etap blokady oraz zakres oceny benign.",
+        "Tekst wejściowy nie jest podpisany jako wynik, jeżeli result jest null.",
+        "Kody przyczyn mają zrozumiałe objaśnienia, a brak ustalonej przyczyny jest jawnie zaznaczony."
+      ]
+    },
+    {
+      "id": "A11Y-01",
+      "priority": "low",
+      "confidence": "high",
+      "area": "contrast",
+      "location": {
+        "url": "http://127.0.0.1:18091/#test-lab",
+        "target": "Opisy pustych stanów Verification history i Verification evidence"
+      },
+      "evidence": "Teksty „Run a suite to create an evidence report. No test has passed by default.” i „A historical report is shown with its original timestamp.” mają kolor rgb(120, 134, 125), tło rgb(25, 28, 30), rozmiar 11 px i obliczony kontrast około 4,49:1, poniżej 4,5:1.",
+      "reproduction": [
+        "Otwórz Test Lab bez zapisanych wyników weryfikacji.",
+        "Przejdź do Verification history i Verification evidence.",
+        "Zmierz kontrast wskazanych tekstów względem tła sekcji."
+      ],
+      "impact": "Drobny tekst instrukcyjny ma niewystarczający kontrast dla zwykłego tekstu, co utrudnia odczyt osobom słabowidzącym.",
+      "recommendation": "Rozjaśnij kolor tych opisów z zapasem ponad wymagane 4,5:1.",
+      "acceptanceCriteria": [
+        "Oba teksty osiągają kontrast co najmniej 4,5:1 względem rzeczywistego tła."
+      ]
+    }
+  ],
+  "coverage_limits": "Sampled independent review. True browser zoom at200%, real screen-reader use and every operation state were not confirmed; this is not a full WCAG conformity assessment.",
+  "historical_publication_context": "artifacts/history/public-materials-v0.1.0/MANIFEST.json"
+}

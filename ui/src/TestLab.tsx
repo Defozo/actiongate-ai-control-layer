@@ -54,7 +54,12 @@ export default function TestLab({ role, tenant }: { role: string; tenant: string
   const profile = policy.data?.configuration?.active_profile ?? policy.data?.active_profile ?? "balanced";
   const canExecute = ["admin", "analyst"].includes(role);
   const [selectedTest, setSelectedTest] = useState("");
-  const result = playground.data;
+  const result = playground.isPending || playground.isError ? undefined : playground.data;
+  const inspectionStatus = playground.isPending
+    ? "Inspecting input. Waiting for the control result."
+    : playground.isError ? "Inspection request failed. See the reported error."
+    : result ? "Inspection finished. The result is shown below."
+    : "No inspection has been run.";
   const testRuns = rows(tests.data, "runs", "tests", "items");
   const selected =
     testRuns.find((item) => item.id === (selectedTest || runTests.data?.id)) ?? runTests.data;
@@ -141,7 +146,18 @@ export default function TestLab({ role, tenant }: { role: string; tenant: string
           title="Inspection result"
           subtitle="Deterministic controls and semantic analysis remain separate"
         >
-          {result ? (
+          <div id="inspection-status" className="inspection-status muted small" role="status" aria-live="polite" aria-atomic="true">
+            {inspectionStatus}
+          </div>
+          {playground.isPending ? (
+            <Empty title="Inspection in progress">
+              Waiting for the actual control result.
+            </Empty>
+          ) : playground.isError ? (
+            <Empty title="Inspection request failed">
+              No result is available for this request. See the reported error.
+            </Empty>
+          ) : result ? (
             <div className="panel-content">
               <div className="result-head">
                 <Badge

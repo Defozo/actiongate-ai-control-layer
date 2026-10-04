@@ -16,7 +16,7 @@ from the authoritative supplier registry before confidential work begins.
 [Watch the demonstration and open the presentation](https://defozo.github.io/actiongate-ai-control-layer/),
 then follow the [jury runbook](docs/jury-runbook.md) to try your own input.
 The material page also links to the hosted dashboard; request its jury access
-details from Michał Kiełtyka. The [downloadable release](https://github.com/Defozo/actiongate-ai-control-layer/releases/tag/v0.1.0)
+details from Michał Kiełtyka. The [downloadable release](https://github.com/Defozo/actiongate-ai-control-layer/releases/latest)
 contains the complete source and verification package.
 
 ## Run locally

@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "checks": {
+    "gateway-a:8000": "reachable",
+    "gateway-b:8000": "reachable",
+    "postgres:5432": "blocked",
+    "opa-a:8181": "blocked",
+    "guard-worker:8090": "blocked",
+    "business-worker:8090": "blocked",
+    "demo-tools:8010": "blocked",
+    "feed-server:8020": "blocked",
+    "cloud-connector:8030": "blocked",
+    "1.1.1.1:443": "blocked",
+    "host.docker.internal:8088": "blocked"
+  },
+  "external_dns": "blocked",
+  "forged_host_admin_issuance": {
+    "gateway-a": {
+      "http_status": 403,
+      "detail": "Demo identity issuance requires the local operator edge",
+      "denied": true
+    },
+    "gateway-b": {
+      "http_status": 403,
+      "detail": "Demo identity issuance requires the local operator edge",
+      "denied": true
+    }
+  },
+  "producer_sources": {
+    "deploy/agent_probe.py": "f4c7f750cf22897f89dc6d17cb49e6e89a9ea4c3f05050f57155f11e9d9a674e",
+    "scripts/isolation.py": "9e3f3ac2c6f066e703c9e1c312eb7fff0e5302705218a241fd734f511dddbb71",
+    "scripts/runtime_bootstrap.py": "6ef671e8a4f007b2fd7695ddfb0b0197d2297ae7812d63d19985c59891e94214",
+    "scripts/runtime_evidence.py": "f3096f0a97c14ca5559e1be2fc4f041c57c101d1ca95f41823e131b768452568"
+  },
+  "producer_source_stable": true
+}

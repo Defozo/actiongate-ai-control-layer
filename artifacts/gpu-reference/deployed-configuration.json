@@ -121,7 +121,7 @@
     "window_tokens": 2048
   },
   "source_evidence_passed": true,
-  "verified_at": "2026-10-04T04:49:52.136339+00:00",
+  "verified_at": "2026-10-04T06:57:02.234335+00:00",
   "workers": {
     "business": {
       "context_tokens": 8192,

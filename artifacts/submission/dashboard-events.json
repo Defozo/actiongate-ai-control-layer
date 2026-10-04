@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-10-04T04:59:08.668Z",
+  "recorded_at": "2026-10-04T07:00:19.197Z",
   "tenant": "synthetic_test_tenant",
   "target": "http://127.0.0.1:18089",
   "new_inference": false,
@@ -12,75 +12,75 @@
   "target_ms": 1000,
   "measurements": [
     {
-      "run_id": "501aa1c9-7704-4926-b56f-5e527db5a458",
-      "event_id": 27390,
-      "event_created_at": "2026-10-04T04:58:59.919566+00:00",
-      "visible_at": "2026-10-04T04:58:58.727Z",
-      "cross_clock_timestamp_delta_ms": -1192,
+      "run_id": "e38e5c15-54cd-4034-9693-460fa6001ae3",
+      "event_id": 27470,
+      "event_created_at": "2026-10-04T07:00:10.397882+00:00",
+      "visible_at": "2026-10-04T07:00:09.237Z",
+      "cross_clock_timestamp_delta_ms": -1160,
       "stored_event_to_visible_ms": null,
-      "request_to_visible_upper_bound_ms": 314.3,
+      "request_to_visible_upper_bound_ms": 288.7,
       "stored_clock_inside_request_bracket": false,
       "target_met": true
     },
     {
-      "run_id": "04ea45e4-8e66-4377-a8a5-21fdd8727732",
-      "event_id": 27391,
-      "event_created_at": "2026-10-04T04:59:00.714647+00:00",
-      "visible_at": "2026-10-04T04:58:59.859Z",
-      "cross_clock_timestamp_delta_ms": -855,
+      "run_id": "5acde8ce-8db7-4e2c-9e12-d0097652d148",
+      "event_id": 27471,
+      "event_created_at": "2026-10-04T07:00:11.168718+00:00",
+      "visible_at": "2026-10-04T07:00:10.357Z",
+      "cross_clock_timestamp_delta_ms": -811,
       "stored_event_to_visible_ms": null,
-      "request_to_visible_upper_bound_ms": 562.8,
+      "request_to_visible_upper_bound_ms": 542.3,
       "stored_clock_inside_request_bracket": false,
       "target_met": true
     },
     {
-      "run_id": "67b5a72c-57cf-4190-a9fd-d986ed4f7591",
-      "event_id": 27392,
-      "event_created_at": "2026-10-04T04:59:01.734267+00:00",
-      "visible_at": "2026-10-04T04:59:00.975Z",
-      "cross_clock_timestamp_delta_ms": -759,
+      "run_id": "eba90adb-3f3a-4dca-ae5d-b3bb29dabc3a",
+      "event_id": 27472,
+      "event_created_at": "2026-10-04T07:00:12.163972+00:00",
+      "visible_at": "2026-10-04T07:00:11.482Z",
+      "cross_clock_timestamp_delta_ms": -681,
       "stored_event_to_visible_ms": null,
-      "request_to_visible_upper_bound_ms": 544.5,
+      "request_to_visible_upper_bound_ms": 551.8,
       "stored_clock_inside_request_bracket": false,
       "target_met": true
     },
     {
-      "run_id": "ffacb1fe-d7e0-4a2c-ab03-99e0aa2e98f0",
-      "event_id": 27393,
-      "event_created_at": "2026-10-04T04:59:02.769622+00:00",
-      "visible_at": "2026-10-04T04:59:02.121Z",
-      "cross_clock_timestamp_delta_ms": -648,
+      "run_id": "90424ecf-27cd-46b1-9636-dd29758d9161",
+      "event_id": 27473,
+      "event_created_at": "2026-10-04T07:00:13.176928+00:00",
+      "visible_at": "2026-10-04T07:00:12.603Z",
+      "cross_clock_timestamp_delta_ms": -573,
       "stored_event_to_visible_ms": null,
-      "request_to_visible_upper_bound_ms": 541.2,
+      "request_to_visible_upper_bound_ms": 550,
       "stored_clock_inside_request_bracket": false,
       "target_met": true
     },
     {
-      "run_id": "a6535aec-9fc0-4a02-90b8-3cbc97064416",
-      "event_id": 27394,
-      "event_created_at": "2026-10-04T04:59:03.769631+00:00",
-      "visible_at": "2026-10-04T04:59:03.227Z",
-      "cross_clock_timestamp_delta_ms": -542,
+      "run_id": "6d868b26-6d2e-4a32-98a0-6301c8cacf1c",
+      "event_id": 27474,
+      "event_created_at": "2026-10-04T07:00:14.184820+00:00",
+      "visible_at": "2026-10-04T07:00:13.722Z",
+      "cross_clock_timestamp_delta_ms": -462,
       "stored_event_to_visible_ms": null,
-      "request_to_visible_upper_bound_ms": 535.5,
+      "request_to_visible_upper_bound_ms": 548.1,
       "stored_clock_inside_request_bracket": false,
       "target_met": true
     }
   ],
-  "maximum_ms": 562.8,
+  "maximum_ms": 551.8,
   "samples_count": 5,
-  "p50_ms": 541.2,
-  "p95_ms": 562.8,
+  "p50_ms": 548.1,
+  "p95_ms": 551.8,
   "target_met": true,
   "idle_read_requests_in_10_seconds": [],
   "replay": {
     "status": "passed",
     "transport_fault": "Abrupt close of this browser SSE response by a byte-forwarding loopback proxy",
-    "cursor_before_disconnect": 27394,
-    "reconnect_last_event_id": 27394,
-    "first_replayed_id": 27395,
-    "disconnected_period_run_id": "9f1a0852-c776-4866-b60f-31ad65ef525e",
-    "replayed_run_event_id": 27395,
+    "cursor_before_disconnect": 27474,
+    "reconnect_last_event_id": 27474,
+    "first_replayed_id": 27475,
+    "disconnected_period_run_id": "69f84675-8ddf-4a67-81ed-39d10f613275",
+    "replayed_run_event_id": 27475,
     "visible_after_reconnect": true,
     "cursor_preserved": true,
     "replay_strictly_after_cursor": true,
@@ -89,18 +89,18 @@
         "last_event_id": null,
         "events": [
           {
-            "id": 27394,
+            "id": 27474,
             "type": "ready"
           }
         ]
       },
       {
-        "last_event_id": "27394",
+        "last_event_id": "27474",
         "events": [
           {
-            "id": 27395,
+            "id": 27475,
             "type": "audit",
-            "run_id": "9f1a0852-c776-4866-b60f-31ad65ef525e"
+            "run_id": "69f84675-8ddf-4a67-81ed-39d10f613275"
           }
         ]
       }
@@ -108,13 +108,13 @@
   },
   "replay_passed": true,
   "exports": {
-    "audit_events": 152,
+    "audit_events": 232,
     "sample-synthetic-audit.jsonl": {
-      "bytes": 82142,
+      "bytes": 125351,
       "source": "/api/exports/audit.jsonl"
     },
     "sample-synthetic-management.csv": {
-      "bytes": 7833,
+      "bytes": 9447,
       "source": "/api/exports/management.csv"
     }
   },

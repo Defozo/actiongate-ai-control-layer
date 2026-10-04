@@ -1,0 +1,242 @@
+{
+  "status": "passed",
+  "recorded_at": "2026-10-04T05:47:01.143Z",
+  "url": "https://defozo.github.io/actiongate-ai-control-layer/",
+  "reused_owner_session": false,
+  "checks": {
+    "asset_http_ActionGate.pdf": true,
+    "asset_bytes_ActionGate.pdf": true,
+    "asset_http_ActionGate.pptx": true,
+    "asset_bytes_ActionGate.pptx": true,
+    "asset_http_ActionGate-demo.mp4": true,
+    "asset_bytes_ActionGate-demo.mp4": true,
+    "asset_http_ActionGate-cover.png": true,
+    "asset_bytes_ActionGate-cover.png": true,
+    "asset_http_ActionGate-poster.png": true,
+    "asset_bytes_ActionGate-poster.png": true,
+    "asset_http_ActionGate-demo.vtt": true,
+    "asset_bytes_ActionGate-demo.vtt": true,
+    "asset_http_ActionGate-transcript.txt": true,
+    "asset_bytes_ActionGate-transcript.txt": true,
+    "asset_http_ActionGate-song-pl-2026-10-04-v2.mp4": true,
+    "asset_bytes_ActionGate-song-pl-2026-10-04-v2.mp4": true,
+    "asset_http_ActionGate-song-pl-2026-10-04-v2.en.vtt": true,
+    "asset_bytes_ActionGate-song-pl-2026-10-04-v2.en.vtt": true,
+    "asset_http_ActionGate-song-pl-2026-10-04-v2-transcript.txt": true,
+    "asset_bytes_ActionGate-song-pl-2026-10-04-v2-transcript.txt": true,
+    "site_bytes_ActionGate-cover.png": true,
+    "site_bytes_ActionGate-demo.mp4": true,
+    "site_bytes_ActionGate-demo.vtt": true,
+    "site_bytes_ActionGate-poster.png": true,
+    "site_bytes_ActionGate-song-pl-2026-10-04-v2-transcript.txt": true,
+    "site_bytes_ActionGate-song-pl-2026-10-04-v2.en.vtt": true,
+    "site_bytes_ActionGate-song-pl-2026-10-04-v2.mp4": true,
+    "site_bytes_ActionGate-transcript.txt": true,
+    "site_bytes_ActionGate.pdf": true,
+    "site_bytes_ActionGate.pptx": true,
+    "site_bytes_index.html": true,
+    "site_bytes_styles.css": true,
+    "landing_anonymous_http": true,
+    "correct_demo_link": true,
+    "published_link_0": true,
+    "published_link_1": true,
+    "published_link_2": true,
+    "published_link_3": true,
+    "video_decodes_and_plays": true,
+    "english_captions_loaded": true,
+    "music_video_decodes_and_plays": true,
+    "music_video_translation_loads": true,
+    "mobile_without_horizontal_overflow": true,
+    "no_uncaught_browser_errors": true,
+    "producer_unchanged": true
+  },
+  "assets": [
+    {
+      "name": "ActionGate.pdf",
+      "url": "https://defozo.github.io/actiongate-ai-control-layer/ActionGate.pdf",
+      "sha256": "cd8a68746c42104d3489b91c85b3ea3fcaa279703ef6da1575f20e105d995691",
+      "size_bytes": 463038,
+      "content_type": "application/pdf"
+    },
+    {
+      "name": "ActionGate.pptx",
+      "url": "https://defozo.github.io/actiongate-ai-control-layer/ActionGate.pptx",
+      "sha256": "b70351f69ad3eacd71cfe7d725118fa9336b2efa80bcf01695154894dc0119b8",
+      "size_bytes": 550844,
+      "content_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+    },
+    {
+      "name": "ActionGate-demo.mp4",
+      "url": "https://defozo.github.io/actiongate-ai-control-layer/ActionGate-demo.mp4",
+      "sha256": "43d6626bc6fb3809b0c363f3ca8d83df36dba712b4078faba113aa22ee933cb4",
+      "size_bytes": 8015530,
+      "content_type": "video/mp4"
+    },
+    {
+      "name": "ActionGate-cover.png",
+      "url": "https://defozo.github.io/actiongate-ai-control-layer/ActionGate-cover.png",
+      "sha256": "fe6fd8b244c28cb7fbbffbbf9c5c4d45c366c8a3d7b3c74e999544a48e8b5aa3",
+      "size_bytes": 1519455,
+      "content_type": "image/png"
+    },
+    {
+      "name": "ActionGate-poster.png",
+      "url": "https://defozo.github.io/actiongate-ai-control-layer/ActionGate-poster.png",
+      "sha256": "b2e4f41550379bcf4179874f43a072da04ac79a9e41e9d531047add3688d5581",
+      "size_bytes": 1573514,
+      "content_type": "image/png"
+    },
+    {
+      "name": "ActionGate-demo.vtt",
+      "url": "https://defozo.github.io/actiongate-ai-control-layer/ActionGate-demo.vtt",
+      "sha256": "3d6e547f217d92c42188543e3c8ccc19886e272f29b4de1a9bbb3f86d9117050",
+      "size_bytes": 4071,
+      "content_type": "text/vtt; charset=utf-8"
+    },
+    {
+      "name": "ActionGate-transcript.txt",
+      "url": "https://defozo.github.io/actiongate-ai-control-layer/ActionGate-transcript.txt",
+      "sha256": "15d1d8cdff306996568e4fbbc69229b8202b07d58441b5e0a86b3304c7f83cf3",
+      "size_bytes": 2246,
+      "content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "name": "ActionGate-song-pl-2026-10-04-v2.mp4",
+      "url": "https://defozo.github.io/actiongate-ai-control-layer/ActionGate-song-pl-2026-10-04-v2.mp4",
+      "sha256": "b3c3b557a1b9ee98c6f1c64a5cc3dba0d75edad144eb284f8d3b3a5fb9d47a71",
+      "size_bytes": 7287243,
+      "content_type": "video/mp4"
+    },
+    {
+      "name": "ActionGate-song-pl-2026-10-04-v2.en.vtt",
+      "url": "https://defozo.github.io/actiongate-ai-control-layer/ActionGate-song-pl-2026-10-04-v2.en.vtt",
+      "sha256": "509a755f303c96003e49b73813bf2b706dfe7f2580fdcde1f832756b0cd221c5",
+      "size_bytes": 2849,
+      "content_type": "text/vtt; charset=utf-8"
+    },
+    {
+      "name": "ActionGate-song-pl-2026-10-04-v2-transcript.txt",
+      "url": "https://defozo.github.io/actiongate-ai-control-layer/ActionGate-song-pl-2026-10-04-v2-transcript.txt",
+      "sha256": "cdf4127809ee60dbb03d4c4410f228f37cb1b0c41c333e70c6f4634d4184b850",
+      "size_bytes": 1658,
+      "content_type": "text/plain; charset=utf-8"
+    }
+  ],
+  "console_errors": [],
+  "producer_sources": {
+    "demo/public/verify_materials.cjs": "1734be494de49feaf07f0c5d10309db6040b5fd3333d082a096275afe9d2c260"
+  },
+  "site_manifest_sha256": "d7d9ee3baebb60f39101b8fa8002254620481e0e2c89227ad7bf07290d1237e0",
+  "site_files": [
+    {
+      "path": "ActionGate-cover.png",
+      "sha256": "fe6fd8b244c28cb7fbbffbbf9c5c4d45c366c8a3d7b3c74e999544a48e8b5aa3",
+      "size_bytes": 1519455
+    },
+    {
+      "path": "ActionGate-demo.mp4",
+      "sha256": "43d6626bc6fb3809b0c363f3ca8d83df36dba712b4078faba113aa22ee933cb4",
+      "size_bytes": 8015530
+    },
+    {
+      "path": "ActionGate-demo.vtt",
+      "sha256": "3d6e547f217d92c42188543e3c8ccc19886e272f29b4de1a9bbb3f86d9117050",
+      "size_bytes": 4071
+    },
+    {
+      "path": "ActionGate-poster.png",
+      "sha256": "b2e4f41550379bcf4179874f43a072da04ac79a9e41e9d531047add3688d5581",
+      "size_bytes": 1573514
+    },
+    {
+      "path": "ActionGate-song-pl-2026-10-04-v2-transcript.txt",
+      "sha256": "cdf4127809ee60dbb03d4c4410f228f37cb1b0c41c333e70c6f4634d4184b850",
+      "size_bytes": 1658
+    },
+    {
+      "path": "ActionGate-song-pl-2026-10-04-v2.en.vtt",
+      "sha256": "509a755f303c96003e49b73813bf2b706dfe7f2580fdcde1f832756b0cd221c5",
+      "size_bytes": 2849
+    },
+    {
+      "path": "ActionGate-song-pl-2026-10-04-v2.mp4",
+      "sha256": "b3c3b557a1b9ee98c6f1c64a5cc3dba0d75edad144eb284f8d3b3a5fb9d47a71",
+      "size_bytes": 7287243
+    },
+    {
+      "path": "ActionGate-transcript.txt",
+      "sha256": "15d1d8cdff306996568e4fbbc69229b8202b07d58441b5e0a86b3304c7f83cf3",
+      "size_bytes": 2246
+    },
+    {
+      "path": "ActionGate.pdf",
+      "sha256": "cd8a68746c42104d3489b91c85b3ea3fcaa279703ef6da1575f20e105d995691",
+      "size_bytes": 463038
+    },
+    {
+      "path": "ActionGate.pptx",
+      "sha256": "b70351f69ad3eacd71cfe7d725118fa9336b2efa80bcf01695154894dc0119b8",
+      "size_bytes": 550844
+    },
+    {
+      "path": "index.html",
+      "sha256": "d13ee6fd2221b973260529b34f47f3a5512a39be090ac10ae8436de324be2ecb",
+      "size_bytes": 4938
+    },
+    {
+      "path": "styles.css",
+      "sha256": "e0fbc0db87a6bcbe3729f5a385c870616db2924f459d526ae4750d4aa5e797e7",
+      "size_bytes": 4233
+    }
+  ],
+  "public_fetch_exclusions": [
+    {
+      "path": ".nojekyll",
+      "reason": "GitHub Pages build control file"
+    }
+  ],
+  "links": [
+    {
+      "url": "https://github.com/Defozo/actiongate-ai-control-layer",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Defozo/actiongate-ai-control-layer/releases/tag/v0.1.0",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Defozo/actiongate-ai-control-layer/blob/main/docs/jury-runbook.md",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/Defozo/actiongate-ai-control-layer/blob/main/docs/acceptance.md",
+      "status": 200
+    }
+  ],
+  "player": {
+    "duration": 154,
+    "width": 1920,
+    "height": 1080,
+    "current_time": 3.017953,
+    "captions": [
+      {
+        "language": "en",
+        "cues": 48
+      }
+    ],
+    "error": null
+  },
+  "music_player": {
+    "duration": 129.0235,
+    "width": 1920,
+    "height": 1080,
+    "current_time": 3.013787,
+    "captions": [
+      {
+        "language": "en",
+        "cues": 36
+      }
+    ],
+    "error": null
+  }
+}

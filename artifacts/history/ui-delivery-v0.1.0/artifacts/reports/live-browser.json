@@ -1,0 +1,42 @@
+{
+  "recorded_at": "2026-10-04T04:59:35.906Z",
+  "status": "passed",
+  "target": "http://127.0.0.1:18089",
+  "views": [
+    {
+      "name": "overview",
+      "title": "Controls and activity",
+      "horizontal_overflow": false
+    },
+    {
+      "name": "policies",
+      "title": "Policy configuration and feeds",
+      "horizontal_overflow": false
+    },
+    {
+      "name": "budgets",
+      "title": "Costs, reservations and compute",
+      "horizontal_overflow": false
+    },
+    {
+      "name": "investigate",
+      "title": "Workflow and operation history",
+      "horizontal_overflow": false
+    },
+    {
+      "name": "test-lab",
+      "title": "Test inputs and workflows",
+      "horizontal_overflow": false
+    }
+  ],
+  "console_errors": [],
+  "producer_sources": {
+    "scripts/verify_live_browser.cjs": "42ebb6e6a8e7ca4e9094b132b591c60051bf6a26d7d18ba11538b61bb00c7979"
+  },
+  "producer_source_stable": true,
+  "url": "http://127.0.0.1:18089/",
+  "initial_tenant": "synthetic_test_tenant",
+  "manager_audit_export": 403,
+  "final_tenant": "globex",
+  "mobile_overflow": false
+}

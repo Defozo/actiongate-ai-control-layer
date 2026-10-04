@@ -47,7 +47,7 @@ function check(name,condition){report.checks[name]=!!condition;if(!condition)thr
   check('landing_anonymous_http',response.ok());
   check('correct_demo_link',await page.getByRole('link',{name:'Open live demo'}).getAttribute('href')===manifest.demo_url);
   const expectedLinks=['https://github.com/Defozo/actiongate-ai-control-layer',
-    'https://github.com/Defozo/actiongate-ai-control-layer/releases/tag/v0.1.0',
+    'https://github.com/Defozo/actiongate-ai-control-layer/releases/latest',
     'https://github.com/Defozo/actiongate-ai-control-layer/blob/main/docs/jury-runbook.md',
     'https://github.com/Defozo/actiongate-ai-control-layer/blob/main/docs/acceptance.md'];
   report.links=[];

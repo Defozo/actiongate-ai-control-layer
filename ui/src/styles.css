@@ -755,7 +755,7 @@ main {
 .metric > span {
   display: block;
   font-size: 9px;
-  color: #76867b;
+  color: #82908b;
   margin-top: 10px;
 }
 .panel {
@@ -1515,10 +1515,22 @@ td .mono {
 .budget-heading .eyebrow {
   font-size: 8px;
 }
+.budget-heading > div {
+  min-width: 0;
+}
+.budget-account-id {
+  margin: 7px 0 0;
+  color: #82908b;
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
 .budget-heading h3 {
   margin: 7px 0 0;
   font-size: 11px;
   overflow-wrap: anywhere;
+}
+.inspection-status {
+  padding: 16px 20px 0;
 }
 .budget-numbers {
   display: grid;

@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "status": "partial",
+  "reason": "Obejrzano wszystkie wskazane ekrany i wykonano próby interakcji oraz dostępności. Nie sprawdzono wszystkich stanów końcowych, potwierdzeń i formularzy. Rzeczywiste powiększenie 200% nie zadziałało w narzędziu.",
+  "firstImpression": {
+    "purpose": "Panel kontroli dostępu do modeli i narzędzi AI.",
+    "audience": "Prawdopodobnie administratorzy i osoby nadzorujące uprawnienia oraz koszty.",
+    "firstAction": "Wybrać demonstracyjne środowisko i rolę, następnie nacisnąć „Enter workspace”.",
+    "expectedOutcome": "Przegląd uprawnień, budżetów i zapisanych decyzji.",
+    "uncertainties": [
+      "Nie wiadomo jeszcze, czym różnią się role.",
+      "Nie wiadomo jeszcze, czy demonstracja pozwala bezpiecznie sprawdzać zmiany."
+    ],
+    "recordedBeforeExploration": true
+  },
+  "coverage": {
+    "entryUrl": "http://127.0.0.1:18091/",
+    "routesRequested": [
+      "http://127.0.0.1:18091/#overview",
+      "http://127.0.0.1:18091/#investigate",
+      "http://127.0.0.1:18091/#policies",
+      "http://127.0.0.1:18091/#budgets",
+      "http://127.0.0.1:18091/#test-lab"
+    ],
+    "routesChecked": [
+      "http://127.0.0.1:18091/",
+      "http://127.0.0.1:18091/#overview",
+      "http://127.0.0.1:18091/#investigate",
+      "http://127.0.0.1:18091/#policies",
+      "http://127.0.0.1:18091/#budgets",
+      "http://127.0.0.1:18091/#test-lab"
+    ],
+    "checks": [
+      {
+        "area": "first-impression",
+        "result": "checked",
+        "evidence": "Zrzut 1440 × 900 i drzewo dostępności strony wejściowej obejrzano przed interakcjami. Zapisano FIRST_IMPRESSION.",
+        "limitations": "Ocena pierwszego widoku dotyczy demonstracyjnego ekranu wyboru środowiska."
+      },
+      {
+        "area": "navigation",
+        "result": "checked",
+        "evidence": "Wszystkie pięć sekcji było dostępnych przez główną nawigację. Nazwa sekcji pojawiała się w nagłówku. Dodatkowo otwarto bezpośrednio adresy overview, budgets i test-lab.",
+        "limitations": "Nie sprawdzono wszystkich odsyłaczy szczegółowych ani eksportów."
+      },
+      {
+        "area": "language",
+        "result": "checked",
+        "evidence": "Cel produktu jest wyrażony wprost. Ekrany techniczne zawierają YAML i JSON, co wskazuje na technicznych odbiorców. Nagłówki kont budżetowych eksponują jednak wewnętrzne identyfikatory.",
+        "limitations": "Nie oceniano jakości innych wersji językowych."
+      },
+      {
+        "area": "cognitive-load",
+        "result": "checked",
+        "evidence": "Oceniono hierarchię pięciu ekranów, rozdzielenie decyzji od wykonania i kosztów od rezerwacji. Lista kont budżetowych wymaga odczytywania długich kluczy technicznych.",
+        "limitations": "Bez badań z rzeczywistymi użytkownikami i bez dużego zbioru danych."
+      },
+      {
+        "area": "forms-and-feedback",
+        "result": "checked",
+        "evidence": "W Synthetic test tenant utworzono testowy workflow. Błędny JSON w Propose action wywołał komunikat, aria-invalid, powiązanie aria-describedby i przeniesienie fokusu do pola. Obejrzano puste stany i uruchomiono inspekcję syntetycznego tekstu.",
+        "limitations": "Nie sprawdzono końcowego wyniku inspekcji, aktywacji polityki, publikacji reguł, resetowania zasobów ani pełnych zestawów testów."
+      },
+      {
+        "area": "keyboard-and-focus",
+        "result": "checked",
+        "evidence": "Wykonano Tab, Shift+Tab i Enter w nawigacji. Fokus Budgets miał widoczny obrys 2 px. Mobilne menu otwarto klawiaturą i zamknięto Escape; fokus wrócił do Open menu.",
+        "limitations": "Próba wybranych ścieżek, bez pełnego przejścia przez wszystkie kontrolki."
+      },
+      {
+        "area": "semantics-and-names",
+        "result": "checked",
+        "evidence": "Drzewo zawiera main, navigation, nagłówki i nazwane pola. Przycisk mobilnego menu ma aria-expanded i aria-controls. Wykresy budżetowe mają tekstowe nazwy z wartościami.",
+        "limitations": "Sprawdzono drzewo dostępności i DOM, bez testu czytnikiem ekranu."
+      },
+      {
+        "area": "contrast",
+        "result": "checked",
+        "evidence": "Obliczono kontrast na podstawie stylów obliczonych: Actual ledger entries około 4,46:1, tekst pomocniczy RGB(130,144,139) na RGB(25,28,30) około 5,15:1.",
+        "limitations": "Pomiar próbkowy, bez pełnej analizy wszystkich kolorów i stanów."
+      },
+      {
+        "area": "zoom-and-mobile",
+        "result": "checked",
+        "evidence": "Test Lab i Budgets obejrzano przy emulowanym widoku 390 × 844; szerokość dokumentu wynosiła 390 px. Overview obejrzano przy 720 × 450 jako przybliżenie przestrzeni roboczej po powiększeniu 200% z 1440 × 900.",
+        "limitations": "Control++ nie zmienił szerokości CSS ani devicePixelRatio. Zmiana viewportu nie jest rzeczywistym zoomem ani testem powiększenia tekstu. Nie sprawdzono mobilnie wszystkich sekcji."
+      },
+      {
+        "area": "status-announcements",
+        "result": "checked",
+        "evidence": "Ładowanie sekcji używa role=status. Błąd JSON używa role=alert. Podczas Inspecting… nie znaleziono regionu live, status ani alert.",
+        "limitations": "Nie zweryfikowano ogłoszenia końcowego wyniku inspekcji ani rzeczywistego odczytu przez czytnik."
+      }
+    ],
+    "limitations": [
+      "Użyto wyłącznie izolowanego ux_browser i danych renderowanych przez aplikację.",
+      "Badano rolę Admin w Synthetic test tenant.",
+      "Utworzono syntetyczny workflow i uruchomiono inspekcję syntetycznego tekstu; nie usuwano istniejących rekordów.",
+      "Zmiana emulacji przeładowała widok podczas inspekcji, dlatego jej końcowego wyniku nie oceniono.",
+      "To audyt próbkowy, nie potwierdzenie pełnej zgodności z WCAG."
+    ]
+  },
+  "findings": [
+    {
+      "id": "UX-01",
+      "priority": "medium",
+      "confidence": "high",
+      "area": "language",
+      "location": {
+        "url": "http://127.0.0.1:18091/#budgets",
+        "target": "Budget accounts, nagłówki kont"
+      },
+      "evidence": "Nagłówki pokazują klucze takie jak user:synthetic_test_tenant:demo:synthetic_test_tenant:admin:2026-10-04:slot_millis oraz guard:<UUID>:usd_micros. Kwoty i czasy poniżej są już przedstawione w dolarach i sekundach.",
+      "reproduction": [
+        "Wejdź do Synthetic test tenant.",
+        "Otwórz Budgets.",
+        "Porównaj nagłówki kont w Budget accounts."
+      ],
+      "impact": "Rozpoznanie właściciela konta i rodzaju zasobu wymaga parsowania klucza oraz porównywania identyfikatorów. Utrudnia to także technicznemu użytkownikowi szybkie znalezienie właściwego limitu.",
+      "recommendation": "Zbudować czytelny nagłówek z istniejących danych: zakres konta, zasób i okres. Pełny identyfikator zachować jako informację pomocniczą, bez zmiany rozliczeń.",
+      "acceptanceCriteria": [
+        "Każde konto ma czytelnie nazwany zakres i zasób bez konieczności interpretowania slot_millis lub usd_micros.",
+        "Pełny identyfikator pozostaje dostępny.",
+        "Nagłówki i wartości pozostają czytelne przy szerokości 390 px."
+      ]
+    },
+    {
+      "id": "A11Y-01",
+      "priority": "low",
+      "confidence": "high",
+      "area": "contrast",
+      "location": {
+        "url": "http://127.0.0.1:18091/#budgets",
+        "target": "Opis Actual ledger entries pod Settled API spend"
+      },
+      "evidence": "Tekst 9 px ma kolor RGB(118,134,123) na tle RGB(25,28,30), co daje około 4,46:1, poniżej 4,5:1 dla zwykłego tekstu.",
+      "reproduction": [
+        "Otwórz Budgets.",
+        "Odczytaj style obliczone opisu Actual ledger entries i jego nieprzezroczystego tła.",
+        "Oblicz kontrast ze względnych luminancji."
+      ],
+      "impact": "Drobny tekst wyjaśniający znaczenie kwoty jest trudniejszy do odczytania dla osób słabowidzących.",
+      "recommendation": "Zwiększyć kontrast koloru tekstu pomocniczego do co najmniej 4,5:1, najlepiej z zapasem.",
+      "acceptanceCriteria": [
+        "Kontrast tego opisu względem rzeczywistego tła wynosi co najmniej 4,5:1.",
+        "Pozostałe opisy korzystające z tego samego stylu również spełniają ten próg."
+      ]
+    },
+    {
+      "id": "A11Y-02",
+      "priority": "medium",
+      "confidence": "high",
+      "area": "status-announcements",
+      "location": {
+        "url": "http://127.0.0.1:18091/#test-lab",
+        "target": "Inspect input i Inspection result podczas wykonywania"
+      },
+      "evidence": "Po uruchomieniu przycisk zmienił się na wyłączony Inspecting…, ale panel nadal pokazywał Ready for your first inspection. W tym stanie DOM nie zawierał role=status, role=alert ani aria-live.",
+      "reproduction": [
+        "W Synthetic test tenant otwórz Test Lab.",
+        "Wpisz krótki syntetyczny tekst i wybierz Inspect input.",
+        "Podczas wykonywania sprawdź treść Inspection result oraz semantykę komunikatów."
+      ],
+      "impact": "Panel sugeruje gotowość zamiast trwającej pracy. Użytkownik czytnika ekranu może nie otrzymać niezależnego komunikatu o rozpoczęciu inspekcji.",
+      "recommendation": "Pokazać aktualny stan w panelu wyniku i udostępnić go przez spokojny region statusu. Zachować blokadę ponownego uruchomienia podczas pracy.",
+      "acceptanceCriteria": [
+        "Podczas inspekcji panel nie wyświetla Ready for your first inspection.",
+        "Rozpoczęcie pracy jest przekazywane przez role=status lub aria-live=polite.",
+        "Zakończenie lub błąd aktualizuje dostępny komunikat bez wymagania ręcznego szukania wyniku."
+      ]
+    }
+  ],
+  "overall": {
+    "understandable": true,
+    "summary": "Cel produktu i główna nawigacja są zrozumiałe. Mocne strony to widoczny fokus, obsługa mobilnego menu i dostępna walidacja JSON. Najważniejsze poprawki dotyczą nazw kont budżetowych oraz informacji o trwającej inspekcji. Zakres testów pozostaje częściowy."
+  }
+}

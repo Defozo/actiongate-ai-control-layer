@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "status": "partial",
+  "reason": "Obejrzano wszystkie wskazane adresy i wykonano próbki testów dostępności. Nie potwierdzono rzeczywistego powiększenia 200% ani pełnej dostępności materiałów multimedialnych.",
+  "firstImpression": {
+    "purpose": "ActionGate kontroluje, co agenci AI czytają, wysyłają i na co wydają środki.",
+    "audience": "Osoby wdrażające agentów AI.",
+    "firstAction": "Wybrać „Watch the demo”.",
+    "expectedOutcome": "Obejrzeć film pokazujący działanie zabezpieczeń.",
+    "uncertainties": [
+      "Czy można tutaj samodzielnie wypróbować produkt?",
+      "Jak wygląda konfiguracja produktu?"
+    ],
+    "recordedBeforeExploration": true
+  },
+  "coverage": {
+    "entryUrl": "http://127.0.0.1:18090/",
+    "routesRequested": [
+      "http://127.0.0.1:18090/#watch",
+      "http://127.0.0.1:18090/#try-title"
+    ],
+    "routesChecked": [
+      "http://127.0.0.1:18090/",
+      "http://127.0.0.1:18090/#watch",
+      "http://127.0.0.1:18090/#try-title"
+    ],
+    "checks": [
+      {
+        "area": "first-impression",
+        "result": "checked",
+        "evidence": "Przed eksploracją obejrzano zrzut ekranu 1440 × 900 i drzewo dostępności. Nagłówek opisuje kontrolowanie działań agentów, a dominujący przycisk zaprasza do demonstracji.",
+        "limitations": "Ocena pierwszego widoku, bez wcześniejszej znajomości produktu."
+      },
+      {
+        "area": "navigation",
+        "result": "checked",
+        "evidence": "Tab i Enter na „Watch the demo” prowadzą do #watch oraz przewijają do filmu. Sekcję „Run a supplier review.” znaleziono przez przewijanie; następnie sprawdzono bezpośrednio #try-title. Nie znaleziono wewnętrznego odnośnika do tej drugiej kotwicy.",
+        "limitations": "Nie otwierano zewnętrznego demo, repozytorium, dokumentacji ani plików do pobrania."
+      },
+      {
+        "area": "language",
+        "result": "checked",
+        "evidence": "Strona jest anglojęzyczna i deklaruje lang=\"en\". Opis celu podaje konkretne kontrole: tożsamość, cel, odbiorcę i budżet. Dalsze sekcje używają terminów technicznych, takich jak „payload” i „policy decision”.",
+        "limitations": "Nie oceniano kompletności tłumaczeń ani całej narracji filmowej."
+      },
+      {
+        "area": "cognitive-load",
+        "result": "checked",
+        "evidence": "Układ prowadzi od celu i dwóch głównych działań do filmu, trzech krótkich opisów oraz sekcji wypróbowania produktu. Dodatkowy teledysk jest domyślnie zwinięty. Sekcja demo uprzedza o danych syntetycznych i dostępie dla jury.",
+        "limitations": "Nie oceniano obciążenia poznawczego właściwego dashboardu."
+      },
+      {
+        "area": "forms-and-feedback",
+        "result": "checked",
+        "evidence": "Na stronie nie znaleziono formularzy ani pól edycji. Sprawdzono odwracalne rozwinięcie i zwinięcie sekcji teledysku oraz uruchomienie i zatrzymanie filmu.",
+        "limitations": "Walidacja, wysyłanie, potwierdzenia oraz stany błędu i sukcesu nie były dostępne. Nie zapisywano danych."
+      },
+      {
+        "area": "keyboard-and-focus",
+        "result": "checked",
+        "evidence": "Wykonano rzeczywiste Tab, Shift+Tab, Enter i Spację. Początkowa kolejność prowadzi przez logo, „Source code” i „Watch the demo”. Fokus logo i rozwijanej sekcji jest widoczny jako zielony obrys 3 px. Spacja uruchamia i zatrzymuje film, a Enter zwija rozwiniętą sekcję.",
+        "limitations": "Nie wykonano pełnego przejścia przez wszystkie natywne kontrolki multimediów ani testu Escape w ich menu."
+      },
+      {
+        "area": "semantics-and-names",
+        "result": "checked",
+        "evidence": "Drzewo dostępności zawiera banner, main, contentinfo, jeden nagłówek h1 i nagłówki h2. Linki mają opisowe nazwy. Odtwarzacze mają nazwy dostępne, a rozwijana sekcja udostępnia stan expanded.",
+        "limitations": "Badano drzewo dostępności i semantykę DOM, bez czytnika ekranu."
+      },
+      {
+        "area": "contrast",
+        "result": "checked",
+        "evidence": "Na podstawie obliczonych kolorów CSS zmierzono kontrast tekstu #b2c8d1 na #08151c: 10,65:1; #eef6f7 na #08151c: 16,89:1; #82f5bd na #08151c: 13,88:1; tekstu drugiego przycisku #eef6f7 na #122934: 13,76:1.",
+        "limitations": "Pomiary próbkowe. Nie obejmują klatek filmu, napisów ani wszystkich stanów kontrolek."
+      },
+      {
+        "area": "zoom-and-mobile",
+        "result": "checked",
+        "evidence": "Sprawdzono emulację mobilną 390 × 844: szerokość dokumentu i widoku wynosiła 390 px, bez poziomego przepełnienia. Przyciski oraz kolumny układają się pionowo. Sprawdzono także cały układ przy 720 × 450.",
+        "limitations": "Skróty powiększenia nie zmieniły raportowanych parametrów przeglądarki. Widok 720 × 450 jest wyłącznie symulacją przestrzeni dostępnej przy powiększeniu 200% z 1440 × 900, nie testem rzeczywistego zoomu ani powiększenia tekstu."
+      },
+      {
+        "area": "status-announcements",
+        "result": "not_checked",
+        "evidence": "Nie zaobserwowano komunikatów sukcesu lub błędu. Nie znaleziono regionów aria-live, status ani alert. Stan rozwinięcia sekcji jest dostępny w drzewie dostępności.",
+        "limitations": "Brak odpowiedniego procesu z komunikatem do sprawdzenia; nie oceniano ogłaszania przez czytnik ekranu."
+      }
+    ],
+    "limitations": [
+      "Wskazane adresy pokazują sekcje jednej strony prezentacyjnej, a nie właściwy dashboard produktu.",
+      "Film demonstracyjny ma załadowaną angielską ścieżkę captions z 48 segmentami. Nie sprawdzono ich pełnej synchronizacji, poprawności ani kompletności.",
+      "Nie obejrzano całego filmu ani nie sprawdzono odtwarzania dodatkowego teledysku.",
+      "Audyt próbkowy nie stanowi potwierdzenia pełnej zgodności z WCAG."
+    ]
+  },
+  "findings": [],
+  "overall": {
+    "understandable": true,
+    "summary": "Strona jasno komunikuje cel produktu i pierwszy krok. W sprawdzonych próbkach nawigacja, fokus, kontrast i układ mobilny działały poprawnie. Nie potwierdzono konkretnych usterek; zakres testów powiększenia i multimediów pozostał niepełny."
+  }
+}

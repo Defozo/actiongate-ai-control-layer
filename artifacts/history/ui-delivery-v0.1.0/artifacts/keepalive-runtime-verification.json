@@ -1,0 +1,578 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-04T04:16:15.340802+00:00",
+  "scope": "Gateway-only keep-alive safety margin; original isolated ReadError cause remains unproven. No inference performed.",
+  "compose_sha256": "5cb04ce33fef6f2f813ba3759133769ca2b76cb1c92a3356648b6b74a1d6f781",
+  "producer": "artifacts/verify_keepalive_runtime.py",
+  "producer_sha256": "470fe3d8db9d55ba376263bb54cb3fe3550536d33e316be19c2adf5c400ccccb",
+  "previous_acceptance": "artifacts/history/cpu-v29-pg100-before-capacity-fix/all-local.json",
+  "frozen_source_count": 95,
+  "hardware_report_sha256_unchanged": {
+    "artifacts/runtime-hardware.json": "a3377d45aee574e602042470b2d1080aee7f4261f2920c365b82dfe983937362",
+    "artifacts/gpu-reference/runtime-hardware.json": "1cb26969cf7bb56b57ba4054addc56a4636fdab092772417101528f35f0410ee"
+  },
+  "workers_unchanged": {
+    "actiongate-guard-worker-1": "816920b6d3c11fa3259e1f79a3fc9a766d2d0cb9ba5d5c9fa5ed366f245919de",
+    "actiongate-business-worker-1": "446deb5d9b7681fd629ae1fa82a503160277eec9ee4c3b6de25cb11156d6dbc9",
+    "actiongate-gpu-0b92f97d-guard-worker-1": "5fc168f98b00ed3db27df9fbb2844936f7e114e71faea257036a88c2fdf5d832",
+    "actiongate-gpu-0b92f97d-business-worker-1": "a200fd9b682e0e25d9d50f228e4284ddaef5c9eb528a8c8835e97e084506e501"
+  },
+  "before": {
+    "actiongate-gateway-a-1": {
+      "container_id": "7df4e0bb33220c2b6f3b64941b5f0d454ac8964a52fc23477bd8a999336752cc",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "command": [
+        "uvicorn",
+        "actiongate.app:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--no-access-log"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": "http://127.0.0.1:8088",
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/feeds",
+          "Destination": "/app/feeds",
+          "RW": false
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate_artifacts",
+          "Source": "/var/lib/docker/volumes/actiongate_artifacts/_data",
+          "Destination": "/app/artifacts",
+          "RW": true
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate_spool-a",
+          "Source": "/var/lib/docker/volumes/actiongate_spool-a/_data",
+          "Destination": "/app/spool",
+          "RW": true
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/policy",
+          "Destination": "/app/policy",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-gateway-b-1": {
+      "container_id": "3dfa1a9a12c8628077fcfccce540cee38beda40a709cb0a24d3995d893397f90",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "command": [
+        "uvicorn",
+        "actiongate.app:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--no-access-log"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": "http://127.0.0.1:8088",
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "actiongate_artifacts",
+          "Source": "/var/lib/docker/volumes/actiongate_artifacts/_data",
+          "Destination": "/app/artifacts",
+          "RW": true
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate_spool-b",
+          "Source": "/var/lib/docker/volumes/actiongate_spool-b/_data",
+          "Destination": "/app/spool",
+          "RW": true
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\policy",
+          "Destination": "/app/policy",
+          "RW": false
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\feeds",
+          "Destination": "/app/feeds",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-gpu-0b92f97d-gateway-a-1": {
+      "container_id": "8a8b8865b60ee76bb49adf9a13de03950ef0e05755c159e0cfc3766fe6d81f6a",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "command": [
+        "uvicorn",
+        "actiongate.app:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--no-access-log"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": "http://127.0.0.1:18089",
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/feeds",
+          "Destination": "/app/feeds",
+          "RW": false
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate-gpu-0b92f97d_artifacts",
+          "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_artifacts/_data",
+          "Destination": "/app/artifacts",
+          "RW": true
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate-gpu-0b92f97d_spool-a",
+          "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_spool-a/_data",
+          "Destination": "/app/spool",
+          "RW": true
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/policy",
+          "Destination": "/app/policy",
+          "RW": false
+        }
+      ]
+    },
+    "actiongate-gpu-0b92f97d-gateway-b-1": {
+      "container_id": "bc32ab70ae1a1e43eb042d954c8ec7f8d9ea218dd07acd768e24f9dea34bd832",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "command": [
+        "uvicorn",
+        "actiongate.app:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--no-access-log"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": "http://127.0.0.1:18089",
+        "UVICORN_TIMEOUT_KEEP_ALIVE": null
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/policy",
+          "Destination": "/app/policy",
+          "RW": false
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/feeds",
+          "Destination": "/app/feeds",
+          "RW": false
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate-gpu-0b92f97d_artifacts",
+          "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_artifacts/_data",
+          "Destination": "/app/artifacts",
+          "RW": true
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate-gpu-0b92f97d_spool-b",
+          "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_spool-b/_data",
+          "Destination": "/app/spool",
+          "RW": true
+        }
+      ]
+    }
+  },
+  "after": {
+    "actiongate-gateway-a-1": {
+      "container_id": "2ea50bba8f4fb69606cce7e20f5bbff9724bf78fd35c453f1e85d1bd918b437c",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "command": [
+        "uvicorn",
+        "actiongate.app:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--no-access-log"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": "http://127.0.0.1:8088",
+        "UVICORN_TIMEOUT_KEEP_ALIVE": "30"
+      },
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "actiongate_spool-a",
+          "Source": "/var/lib/docker/volumes/actiongate_spool-a/_data",
+          "Destination": "/app/spool",
+          "RW": true
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/policy",
+          "Destination": "/app/policy",
+          "RW": false
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "/run/desktop/mnt/host/c/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/feeds",
+          "Destination": "/app/feeds",
+          "RW": false
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate_artifacts",
+          "Source": "/var/lib/docker/volumes/actiongate_artifacts/_data",
+          "Destination": "/app/artifacts",
+          "RW": true
+        }
+      ]
+    },
+    "actiongate-gateway-b-1": {
+      "container_id": "c4334892e5ebf2fd3f8d70e7719f79ab5815fa805383c768d792fd85f0a57ae6",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "command": [
+        "uvicorn",
+        "actiongate.app:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--no-access-log"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": "http://127.0.0.1:8088",
+        "UVICORN_TIMEOUT_KEEP_ALIVE": "30"
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\policy",
+          "Destination": "/app/policy",
+          "RW": false
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:\\Users\\defoz\\Documents\\Projects\\hackyeah2026-tasks\\ai-control-layer\\feeds",
+          "Destination": "/app/feeds",
+          "RW": false
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate_artifacts",
+          "Source": "/var/lib/docker/volumes/actiongate_artifacts/_data",
+          "Destination": "/app/artifacts",
+          "RW": true
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate_spool-b",
+          "Source": "/var/lib/docker/volumes/actiongate_spool-b/_data",
+          "Destination": "/app/spool",
+          "RW": true
+        }
+      ]
+    },
+    "actiongate-gpu-0b92f97d-gateway-a-1": {
+      "container_id": "60eab2fc2356b8bf4e996c347eb74b152d97913693215d1c09dc31e8ef3ce40d",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "command": [
+        "uvicorn",
+        "actiongate.app:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--no-access-log"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": "http://127.0.0.1:18089",
+        "UVICORN_TIMEOUT_KEEP_ALIVE": "30"
+      },
+      "mounts": [
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/policy",
+          "Destination": "/app/policy",
+          "RW": false
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/feeds",
+          "Destination": "/app/feeds",
+          "RW": false
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate-gpu-0b92f97d_artifacts",
+          "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_artifacts/_data",
+          "Destination": "/app/artifacts",
+          "RW": true
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate-gpu-0b92f97d_spool-a",
+          "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_spool-a/_data",
+          "Destination": "/app/spool",
+          "RW": true
+        }
+      ]
+    },
+    "actiongate-gpu-0b92f97d-gateway-b-1": {
+      "container_id": "7c5b37880c0503f04165dcef361c3e5f2a139536b1cc1ce823f559916f202192",
+      "image_id": "sha256:fccb5d436446942c3282d97c17d3841979355182b8770d139f172c112cfce860",
+      "command": [
+        "uvicorn",
+        "actiongate.app:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--no-access-log"
+      ],
+      "safe_environment": {
+        "PUBLIC_BASE_URL": "http://127.0.0.1:18089",
+        "UVICORN_TIMEOUT_KEEP_ALIVE": "30"
+      },
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "actiongate-gpu-0b92f97d_spool-b",
+          "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_spool-b/_data",
+          "Destination": "/app/spool",
+          "RW": true
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/policy",
+          "Destination": "/app/policy",
+          "RW": false
+        },
+        {
+          "Type": "bind",
+          "Name": null,
+          "Source": "C:/Users/defoz/Documents/Projects/hackyeah2026-tasks/ai-control-layer/.state/clean-install/0b92f97d/feeds",
+          "Destination": "/app/feeds",
+          "RW": false
+        },
+        {
+          "Type": "volume",
+          "Name": "actiongate-gpu-0b92f97d_artifacts",
+          "Source": "/var/lib/docker/volumes/actiongate-gpu-0b92f97d_artifacts/_data",
+          "Destination": "/app/artifacts",
+          "RW": true
+        }
+      ]
+    }
+  },
+  "tcp_probes": {
+    "actiongate-gateway-a-1": {
+      "uvicorn_version": "0.54.0",
+      "effective_cli_timeout_keep_alive": 30,
+      "auto_open": 0,
+      "idle_seconds": 6.050066530006006,
+      "local_address": [
+        "127.0.0.1",
+        39626
+      ],
+      "peer_address": [
+        "127.0.0.1",
+        8000
+      ],
+      "socket_fileno": 3,
+      "same_tcp_socket_after_both_responses": true,
+      "first": {
+        "status": 200,
+        "generation": 36,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      },
+      "second": {
+        "status": 200,
+        "generation": 36,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      }
+    },
+    "actiongate-gateway-b-1": {
+      "uvicorn_version": "0.54.0",
+      "effective_cli_timeout_keep_alive": 30,
+      "auto_open": 0,
+      "idle_seconds": 6.05005960399285,
+      "local_address": [
+        "127.0.0.1",
+        39650
+      ],
+      "peer_address": [
+        "127.0.0.1",
+        8000
+      ],
+      "socket_fileno": 3,
+      "same_tcp_socket_after_both_responses": true,
+      "first": {
+        "status": 200,
+        "generation": 36,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      },
+      "second": {
+        "status": 200,
+        "generation": 36,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      }
+    },
+    "actiongate-gpu-0b92f97d-gateway-a-1": {
+      "uvicorn_version": "0.54.0",
+      "effective_cli_timeout_keep_alive": 30,
+      "auto_open": 0,
+      "idle_seconds": 6.050089680997189,
+      "local_address": [
+        "127.0.0.1",
+        39660
+      ],
+      "peer_address": [
+        "127.0.0.1",
+        8000
+      ],
+      "socket_fileno": 3,
+      "same_tcp_socket_after_both_responses": true,
+      "first": {
+        "status": 200,
+        "generation": 8,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      },
+      "second": {
+        "status": 200,
+        "generation": 8,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      }
+    },
+    "actiongate-gpu-0b92f97d-gateway-b-1": {
+      "uvicorn_version": "0.54.0",
+      "effective_cli_timeout_keep_alive": 30,
+      "auto_open": 0,
+      "idle_seconds": 6.050076687010005,
+      "local_address": [
+        "127.0.0.1",
+        39642
+      ],
+      "peer_address": [
+        "127.0.0.1",
+        8000
+      ],
+      "socket_fileno": 3,
+      "same_tcp_socket_after_both_responses": true,
+      "first": {
+        "status": 200,
+        "generation": 8,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      },
+      "second": {
+        "status": 200,
+        "generation": 8,
+        "ready": null,
+        "same_socket": true,
+        "will_close": false
+      }
+    }
+  },
+  "checks": {
+    "all_95_frozen_sources_unchanged": true,
+    "compose_unchanged_during_verification": true,
+    "hardware_reports_not_modified": true,
+    "worker_containers_unchanged": true,
+    "actiongate-gateway-a-1_only_requested_environment_changed": true,
+    "actiongate-gateway-a-1_same_image_and_mounts": true,
+    "actiongate-gateway-a-1_recreated": true,
+    "actiongate-gateway-a-1_effective_keepalive_30": true,
+    "actiongate-gateway-a-1_same_tcp_after_idle_6_seconds": true,
+    "actiongate-gateway-b-1_only_requested_environment_changed": true,
+    "actiongate-gateway-b-1_same_image_and_mounts": true,
+    "actiongate-gateway-b-1_recreated": true,
+    "actiongate-gateway-b-1_effective_keepalive_30": true,
+    "actiongate-gateway-b-1_same_tcp_after_idle_6_seconds": true,
+    "actiongate-gpu-0b92f97d-gateway-a-1_only_requested_environment_changed": true,
+    "actiongate-gpu-0b92f97d-gateway-a-1_same_image_and_mounts": true,
+    "actiongate-gpu-0b92f97d-gateway-a-1_recreated": true,
+    "actiongate-gpu-0b92f97d-gateway-a-1_effective_keepalive_30": true,
+    "actiongate-gpu-0b92f97d-gateway-a-1_same_tcp_after_idle_6_seconds": true,
+    "actiongate-gpu-0b92f97d-gateway-b-1_only_requested_environment_changed": true,
+    "actiongate-gpu-0b92f97d-gateway-b-1_same_image_and_mounts": true,
+    "actiongate-gpu-0b92f97d-gateway-b-1_recreated": true,
+    "actiongate-gpu-0b92f97d-gateway-b-1_effective_keepalive_30": true,
+    "actiongate-gpu-0b92f97d-gateway-b-1_same_tcp_after_idle_6_seconds": true,
+    "actiongate-gateway-a-1_actual_policy_bytes_match": true,
+    "actiongate-gateway-b-1_actual_policy_bytes_match": true,
+    "actiongate-gpu-0b92f97d-gateway-a-1_actual_policy_bytes_match": true,
+    "actiongate-gpu-0b92f97d-gateway-b-1_actual_policy_bytes_match": true
+  },
+  "passed": true,
+  "policy_byte_checks": {
+    "actiongate-gateway-a-1": {
+      "host_sha256": "193c6fbcd470b3c83142450ffd5705ce77ffbec35c1eb5cd3b9cb63654839af0",
+      "container_sha256": "193c6fbcd470b3c83142450ffd5705ce77ffbec35c1eb5cd3b9cb63654839af0"
+    },
+    "actiongate-gateway-b-1": {
+      "host_sha256": "193c6fbcd470b3c83142450ffd5705ce77ffbec35c1eb5cd3b9cb63654839af0",
+      "container_sha256": "193c6fbcd470b3c83142450ffd5705ce77ffbec35c1eb5cd3b9cb63654839af0"
+    },
+    "actiongate-gpu-0b92f97d-gateway-a-1": {
+      "host_sha256": "193c6fbcd470b3c83142450ffd5705ce77ffbec35c1eb5cd3b9cb63654839af0",
+      "container_sha256": "193c6fbcd470b3c83142450ffd5705ce77ffbec35c1eb5cd3b9cb63654839af0"
+    },
+    "actiongate-gpu-0b92f97d-gateway-b-1": {
+      "host_sha256": "193c6fbcd470b3c83142450ffd5705ce77ffbec35c1eb5cd3b9cb63654839af0",
+      "container_sha256": "193c6fbcd470b3c83142450ffd5705ce77ffbec35c1eb5cd3b9cb63654839af0"
+    }
+  },
+  "initial_capture": {
+    "report": "artifacts/history/keepalive5-before-transport-margin/first-keepalive-runtime-verification.json",
+    "sha256": "15680a42d808ada55aa64e7193037817c8cf4aea480f4bd7a6ae43a306bb2ace",
+    "producer": "artifacts/history/keepalive5-before-transport-margin/first-verify_keepalive_runtime.py",
+    "producer_sha256": "e3520380b61d10cdd761e37fcc8d279e059a07562ee42d414eb59e755d59c48f"
+  },
+  "mount_comparison": "Compare named mount fields sorted by destination; normalize only documented Docker Desktop /run/desktop/mnt/host/<drive>/ paths to the identical Windows drive path. Original representations retained."
+}
