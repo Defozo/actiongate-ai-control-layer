@@ -1,0 +1,23 @@
+{
+  "evidence_scope": "Browser rendering of deterministic API fixtures; no server inference or deployment claim.",
+  "observed_at": "2026-10-04T08:31:54.720Z",
+  "viewport": {
+    "width": 390,
+    "height": 900
+  },
+  "horizontal_overflow": false,
+  "observation": [
+    {
+      "text": "Run a suite to create an evidence report. No test has passed by default.",
+      "color": "rgb(145, 162, 151)",
+      "background": "rgb(25, 28, 30)",
+      "contrast": 6.376657869014905
+    },
+    {
+      "text": "A historical report is shown with its original timestamp.",
+      "color": "rgb(145, 162, 151)",
+      "background": "rgb(25, 28, 30)",
+      "contrast": 6.376657869014905
+    }
+  ]
+}

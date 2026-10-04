@@ -1,5 +1,7 @@
 import { expect, test } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { mkdir, writeFile } from 'node:fs/promises';
+import path from 'node:path';
 
 const operation = { id: 'op-contract-001', run_id: 'run-contract-001', tenant: 'acme', tool: 'reports.publish_demo', decision: 'require_approval', status: 'waiting_approval', payload_hash: 'sha256:contract-exact-payload', policy_generation: 3, label: 'CONFIDENTIAL', arguments: { recipient: 'internal_demo_sink', report: 'Synthetic controlled report.' }, events: [] };
 const policyYaml = 'schema_version: 1\nactive_profile: balanced\n';
@@ -289,6 +291,7 @@ test('metric details retain computed text contrast on desktop and mobile dashboa
     await page.setViewportSize({ width, height: 844 });
     for (const view of ['overview', 'budgets']) {
       await page.goto(`/#${view}`);
+      await expect(page.getByRole('heading', { name: view === 'overview' ? 'Controls and activity' : 'Costs, reservations and compute', exact: true })).toBeVisible();
       await expect(page.locator('.metric > span')).toHaveCount(4);
       const samples = await page.locator('.metric > span').evaluateAll(elements => {
         const luminance = (color: string) => {
@@ -342,7 +345,7 @@ test('inspection announces delayed and repeated requests without presenting stal
   await expect.poll(() => replies.length).toBe(2);
   await expect(status).toHaveText('Inspecting input. Waiting for the control result.');
   await expect(page.getByText('First actual fixture result.', { exact: true })).toHaveCount(0);
-  await expect(page.getByRole('heading', { name: 'Inspected output', exact: true })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Output text returned by API', exact: true })).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Inspecting…', exact: true })).toBeDisabled();
   replies[1]({ json: { decision: 'block', output: 'Second actual fixture result.', execution_mode: 'contract fixture' } });
   await expect(status).toHaveText('Inspection finished. The result is shown below.');
@@ -368,7 +371,7 @@ test('inspection failure announces the error and recovery waits for a fresh resu
   await expect(status).toHaveText('Inspection request failed. See the reported error.');
   await expect(page.getByText('Inspection request failed', { exact: true })).toBeVisible();
   await expect(page.getByText('Ready for your first inspection', { exact: true })).toHaveCount(0);
-  await expect(page.getByRole('heading', { name: 'Inspected output', exact: true })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Output text returned by API', exact: true })).toHaveCount(0);
   await page.getByRole('button', { name: 'Inspect input', exact: true }).click();
   await expect.poll(() => replies.length).toBe(2);
   await expect(status).toHaveText('Inspecting input. Waiting for the control result.');
@@ -401,14 +404,163 @@ test('playground shows actual tenant, inspected content and the recorded model d
   await expect(page.getByText('PLAYGROUND TENANT: acme')).toBeVisible();
   await expect(page.getByText('Allowed input saves an internal report in acme.', { exact: false })).toBeVisible();
   await page.getByRole('button', { name: 'Inspect input' }).click();
-  await expect(page.getByRole('heading', { name: 'Inspected output' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Inspected input after controls' })).toBeVisible();
   await expect(page.locator('pre').first()).toHaveText('Contact [REDACTED:EMAIL].');
   await expect(page.getByRole('heading', { name: 'Released result' })).toBeVisible();
-  await expect(page.locator('.metadata')).toContainText(model);
-  await expect(page.locator('.metadata')).toContainText('123.4 ms');
+  await expect(page.getByRole('region', { name: 'Input assessment' })).toContainText(model);
+  await expect(page.locator('.test-lab-grid .panel-content > .metadata')).toContainText('123.4 ms');
+  await expect(page.getByRole('region', { name: 'Output control', exact: true })).toContainText('The operation reached result release.');
+  await expect(page.getByRole('region', { name: 'Output control', exact: true })).not.toContainText('benign');
+  await targetedEvidence(page, 'completed-redacted', { source: 'deterministic contract fixture' });
   await page.getByLabel('Current tenant').selectOption('synthetic_test_tenant');
   await expect(page.getByText('PLAYGROUND TENANT: synthetic_test_tenant')).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Inspected output' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Inspected input after controls' })).toHaveCount(0);
+});
+
+async function targetedEvidence(page: Page, name: string, observation: unknown) {
+  const directory = process.env.ACTIONGATE_UI_EVIDENCE_DIR ?? test.info().outputDir;
+  await mkdir(directory, { recursive: true });
+  const screenshot = path.join(directory, `${name}.png`);
+  await page.getByRole('heading', { name: 'Test inputs and workflows', exact: true }).click();
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.screenshot({ path: screenshot, fullPage: true, animations: 'disabled' });
+  await writeFile(path.join(directory, `${name}.json`), JSON.stringify({
+    evidence_scope: 'Browser rendering of deterministic API fixtures; no server inference or deployment claim.',
+    observed_at: new Date().toISOString(), viewport: page.viewportSize(),
+    horizontal_overflow: await page.evaluate(() => document.documentElement.scrollWidth > innerWidth),
+    observation,
+  }, null, 2));
+  await test.info().attach(name, { path: screenshot, contentType: 'image/png' });
+}
+
+for (const width of [1280, 390]) {
+  test(`targeted UX-01 separates benign input from withheld output at${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await fixture(page);
+    const observed = {
+      id: 'targeted-output-blocked', decision: 'block', status: 'output_blocked', stage: 'output',
+      reason: 'Result failed semantic inspection', policy_generation: 15,
+      arguments: { content: 'Synthetic UX audit: summarize a fictional delivery of ten blue boxes.' }, result: null,
+      rule_ids: ['semantic.incomplete', 'semantic.risk', 'semantic.unknown'],
+      metadata: { execution_mode: 'contract fixture', semantic: { verdict: 'benign', risk_level: 0, complete: true, model_digest: 'sha256:input-model-fixture' }, semantic_output: { cache_hit: true, cache_source: 'fixture' } },
+    };
+    await page.route('**/api/playground', route => route.fulfill({ json: observed }));
+    const errors: string[] = [];
+    page.on('pageerror', error => errors.push(error.message));
+    await page.goto('/#test-lab');
+    await page.getByLabel('Input to inspect').fill(observed.arguments.content);
+    await page.getByRole('button', { name: 'Inspect input', exact: true }).click();
+    await expect(page.locator('.inspection-outcome')).toContainText('Control decisionblock');
+    await expect(page.locator('.inspection-outcome')).toContainText('Execution statusoutput blocked');
+    const input = page.getByRole('region', { name: 'Input assessment', exact: true });
+    const output = page.getByRole('region', { name: 'Output control', exact: true });
+    await expect(input).toContainText('This assessment covers the submitted input.');
+    await expect(input).toContainText('Verdictbenign');
+    await expect(input).toContainText('Risk level0');
+    await expect(input.locator('pre')).toHaveText(observed.arguments.content);
+    await expect(input.getByRole('heading', { name: 'Inspected input after controls' })).toBeVisible();
+    await expect(output).toContainText('The result was withheld at output control.');
+    await expect(output).toContainText('Output verdict and risk were not recorded separately.');
+    await expect(output).toContainText('The cause of the incomplete assessment was not recorded.');
+    await expect(output).toContainText('No released result is available.');
+    await expect(output).not.toContainText('benign');
+    await expect(output.locator('pre')).toHaveCount(0);
+    await expect(page.getByRole('heading', { name: 'Inspected output', exact: true })).toHaveCount(0);
+    const rules = page.getByRole('region', { name: 'Recorded control rules' });
+    await expect(rules).toContainText('A complete semantic assessment was not established.');
+    await expect(rules).toContainText('The guard did not establish a semantic verdict.');
+    await expect(rules).toContainText("The reported risk met the active profile's blocking threshold.");
+    await page.getByText('Full control evidence', { exact: true }).click();
+    expect(JSON.parse(await page.locator('.raw-details pre').innerText())).toEqual(observed);
+    await page.getByText('Full control evidence', { exact: true }).click();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    expect(errors).toEqual([]);
+    await targetedEvidence(page, `output-blocked-${width}`, { response: observed, console_errors: errors });
+  });
+}
+
+test('targeted UX-01 preserves a non-output stop stage and does not invent an unknown rule explanation', async ({ page }) => {
+  await fixture(page);
+  await page.route('**/api/playground', route => route.fulfill({ json: {
+    decision: 'block', status: 'output_blocked', stage: 'reservation', result: null,
+    reason: 'Resource budget exhausted.', rule_ids: ['budget.exhausted'],
+    arguments: { content: 'Input already inspected.' }, metadata: { semantic: { verdict: 'benign', risk_level: 0 } },
+  } }));
+  await page.goto('/#test-lab');
+  await page.getByRole('button', { name: 'Inspect input', exact: true }).click();
+  const output = page.getByRole('region', { name: 'Output control', exact: true });
+  await expect(output).toContainText('The result was withheld. The recorded stop stage is reservation.');
+  await expect(output).not.toContainText('withheld at output control');
+  await expect(page.getByRole('region', { name: 'Recorded control rules' })).toContainText('No explanation is recorded for this rule.');
+  await targetedEvidence(page, 'reservation-stop', { source: 'deterministic contract fixture' });
+});
+
+test('targeted UX-01 keeps withheld input absent and identifies that output control was not reached', async ({ page }) => {
+  await fixture(page);
+  await page.route('**/api/playground', route => route.fulfill({ json: {
+    decision: 'block', status: 'blocked', stage: 'semantic', arguments: null, result: null,
+    reason: 'Active controls denied this operation', rule_ids: ['semantic.risk'],
+    metadata: { semantic: { verdict: 'suspicious', risk_level: 3, complete: true } },
+  } }));
+  await page.goto('/#test-lab');
+  await page.getByRole('button', { name: 'Inspect input', exact: true }).click();
+  await expect(page.getByRole('region', { name: 'Input assessment', exact: true })).toContainText('Verdictsuspicious');
+  await expect(page.getByRole('region', { name: 'Input assessment', exact: true }).locator('pre')).toHaveCount(0);
+  await expect(page.getByRole('region', { name: 'Output control', exact: true })).toContainText('Output control was not reached.');
+  await expect(page.getByRole('heading', { name: 'Released result', exact: true })).toHaveCount(0);
+  await targetedEvidence(page, 'input-blocked', { source: 'deterministic contract fixture' });
+});
+
+test('targeted UX-01 null result never promotes fallback text to output and absent details stay unknown', async ({ page }) => {
+  await fixture(page);
+  await page.route('**/api/playground', route => route.fulfill({ json: {
+    decision: 'block', status: 'output_blocked', result: null,
+    output: 'Unscoped fallback output.', text: 'Unscoped fallback text.', redacted_text: 'Unscoped redacted fallback.',
+    arguments: { content: 'Actual input field.' }, rule_ids: [],
+  } }));
+  await page.goto('/#test-lab');
+  await page.getByRole('button', { name: 'Inspect input', exact: true }).click();
+  const output = page.getByRole('region', { name: 'Output control', exact: true });
+  await expect(output).toContainText('The result was withheld. The stop stage was not recorded.');
+  await expect(output).toContainText('Output verdict and risk were not recorded separately.');
+  await expect(output.locator('pre')).toHaveCount(0);
+  await expect(page.getByRole('region', { name: 'Input assessment', exact: true })).toContainText('VerdictNot recorded');
+  await expect(page.getByRole('region', { name: 'Input assessment', exact: true }).locator('pre')).toHaveText('Actual input field.');
+  await targetedEvidence(page, 'missing-stage-and-null-result', { source: 'deterministic contract fixture' });
+});
+
+test('targeted A11Y-01 both verification empty descriptions exceed5to1 at desktop and mobile', async ({ page }) => {
+  await fixture(page);
+  await page.goto('/#test-lab');
+  for (const width of [1280, 390]) {
+    await page.setViewportSize({ width, height: 900 });
+    const descriptions = page.locator('.test-results-grid .empty p');
+    await expect(descriptions).toHaveCount(2);
+    const samples = await descriptions.evaluateAll(elements => {
+      const rgb = (value: string) => value.match(/[\d.]+/g)!.slice(0, 3).map(Number);
+      const luminance = (value: string) => rgb(value).map(channel => {
+        const fraction = channel / 255;
+        return fraction <= 0.04045 ? fraction / 12.92 : ((fraction + 0.055) / 1.055) ** 2.4;
+      }).reduce((sum, value, index) => sum + value * [0.2126, 0.7152, 0.0722][index], 0);
+      return elements.map(element => {
+        const color = getComputedStyle(element).color;
+        let surface: Element | null = element;
+        let background = 'rgba(0, 0, 0, 0)';
+        while (surface && (background === 'rgba(0, 0, 0, 0)' || background === 'transparent')) {
+          background = getComputedStyle(surface).backgroundColor;
+          surface = surface.parentElement;
+        }
+        const text = luminance(color), backdrop = luminance(background);
+        return { text: element.textContent, color, background, contrast: (Math.max(text, backdrop) + 0.05) / (Math.min(text, backdrop) + 0.05) };
+      });
+    });
+    for (const sample of samples) {
+      expect(sample.background).toBe('rgb(25, 28, 30)');
+      expect(sample.contrast).toBeGreaterThanOrEqual(5);
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await targetedEvidence(page, `verification-empty-${width}`, samples);
+  }
 });
 
 test('interactive advisory evidence preserves snapshot and workflow scope without a protection pass', async ({ page }) => {

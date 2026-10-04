@@ -44,6 +44,14 @@ const samples = [
     text: "Podsumuj harmonogram dostaw i wskaż nierozwiązane ryzyka. Raport jest przeznaczony dla uprawnionego analityka wewnętrznego.",
   },
 ];
+const ruleExplanations: Record<string, string> = {
+  "semantic.incomplete": "A complete semantic assessment was not established.",
+  "semantic.unknown": "The guard did not establish a semantic verdict.",
+  "semantic.risk": "The reported risk met the active profile's blocking threshold.",
+  "semantic.output": "The output failed the required semantic control.",
+  "dlp.output_structure": "Sensitive output data was found outside fields that can be redacted.",
+};
+
 export default function TestLab({ role, tenant }: { role: string; tenant: string }) {
   const tests = useApi("/tests");
   const policy = useApi("/policies");
@@ -64,7 +72,22 @@ export default function TestLab({ role, tenant }: { role: string; tenant: string
   const selected =
     testRuns.find((item) => item.id === (selectedTest || runTests.data?.id)) ?? runTests.data;
   const scope = selected?.results?.find((item: {name: string}) => item.name === "suite.scope")?.details;
-  const inspected = result?.output ?? result?.redacted_text ?? result?.text ?? result?.arguments?.content;
+  // The operation's semantic snapshot covers safe_args, not the released result.
+  const inputAssessment = result?.metadata?.semantic ?? result?.semantic ?? result?.guard;
+  const outputAssessment = result?.metadata?.semantic_output;
+  const inspectedInput = result?.arguments?.content;
+  const rules: string[] = result?.rule_ids ?? result?.decision?.rule_ids ?? [];
+  const outputStatus = result?.status === "output_blocked"
+    ? result.stage === "output"
+      ? "The result was withheld at output control."
+      : result.stage
+        ? `The result was withheld. The recorded stop stage is ${result.stage}.`
+        : "The result was withheld. The stop stage was not recorded."
+    : result?.status === "completed"
+      ? "The operation reached result release."
+      : ["blocked", "waiting_approval"].includes(result?.status)
+        ? "Output control was not reached."
+        : "Output control completion was not recorded.";
   const testing = runTests.isPending || testRuns.some(item => ["running", "pending", "queued"].includes(item.status));
   return (
     <>
@@ -159,7 +182,8 @@ export default function TestLab({ role, tenant }: { role: string; tenant: string
             </Empty>
           ) : result ? (
             <div className="panel-content">
-              <div className="result-head">
+              <div className="result-head inspection-outcome">
+                <div><span className="field-label">Control decision</span>
                 <Badge
                   value={
                     result.decision?.decision ??
@@ -169,6 +193,8 @@ export default function TestLab({ role, tenant }: { role: string; tenant: string
                     result.status
                   }
                 />
+                </div>
+                <div><span className="field-label">Execution status</span><Badge value={result.status} /></div>
                 <span className="muted small">{result.profile ?? profile}</span>
               </div>
               <p>
@@ -177,14 +203,7 @@ export default function TestLab({ role, tenant }: { role: string; tenant: string
               <Meta
                 values={{
                   Generation: result.policy_generation ?? result.generation,
-                  "Guard verdict":
-                    result.metadata?.semantic?.verdict ?? result.semantic?.verdict ?? result.guard?.verdict,
-                  "Guard risk level":
-                    result.metadata?.semantic?.risk_level ?? result.semantic?.risk_level ?? result.guard?.risk_level,
-                  Model:
-                    result.metadata?.semantic?.model_digest ?? result.semantic?.model_digest ?? result.semantic?.model ??
-                    result.guard?.model ??
-                    result.model,
+                  "Recorded stage": result.stage,
                   Runtime: result.execution_mode ?? result.mode ?? result.metadata?.execution_mode,
                   Elapsed:
                     (result.duration_ms ?? result.metadata?.latency_ms) !== undefined
@@ -192,22 +211,40 @@ export default function TestLab({ role, tenant }: { role: string; tenant: string
                       : undefined,
                 }}
               />
-              {result.rule_ids?.length > 0 && (
-                <div className="chip-list">
-                  {result.rule_ids.map((rule: string) => (
-                    <code key={rule}>{rule}</code>
+              <section className="inspection-phase" aria-labelledby="input-assessment-heading">
+                <h3 id="input-assessment-heading">Input assessment</h3>
+                <p className="muted small">This assessment covers the submitted input.</p>
+                <Meta values={{
+                  Verdict: inputAssessment?.verdict,
+                  "Risk level": inputAssessment?.risk_level,
+                  Complete: inputAssessment?.complete,
+                  Model: inputAssessment?.model_digest ?? inputAssessment?.model ?? result.model,
+                }} />
+                {inspectedInput != null && <><h4>Inspected input after controls</h4><JsonView value={inspectedInput} /></>}
+              </section>
+              <section className="inspection-phase" aria-labelledby="output-control-heading">
+                <h3 id="output-control-heading">Output control</h3>
+                <p>{outputStatus}</p>
+                {result.status === "output_blocked" && rules.includes("semantic.incomplete") && <p>The cause of the incomplete assessment was not recorded.</p>}
+                {outputAssessment?.verdict != null || outputAssessment?.risk_level != null ? (
+                  <Meta values={{ Verdict: outputAssessment?.verdict, "Risk level": outputAssessment?.risk_level, Complete: outputAssessment?.complete }} />
+                ) : <p className="muted small">Output verdict and risk were not recorded separately.</p>}
+                {result.result != null ? <><h4>Released result</h4><JsonView value={result.result} /></>
+                  : result.result === null ? <p>No released result is available.</p>
+                  : result.output != null ? <><h4>Output text returned by API</h4><JsonView value={result.output} /></>
+                  : <p>No released result was returned by the API.</p>}
+              </section>
+              {rules.length > 0 && (
+                <section className="inspection-phase" aria-labelledby="inspection-rules-heading">
+                  <h3 id="inspection-rules-heading">Recorded control rules</h3>
+                  <p className="muted small">Rules may include earlier controls. Individual rule stages are not recorded.</p>
+                  <dl className="inspection-rules">
+                  {rules.map((rule) => (
+                    <div key={rule}><dt><code>{rule}</code></dt><dd>{ruleExplanations[rule] ?? "No explanation is recorded for this rule. See the full control evidence."}</dd></div>
                   ))}
-                </div>
+                  </dl>
+                </section>
               )}
-              {inspected !== undefined && (
-                <>
-                  <h3>Inspected output</h3>
-                  <JsonView
-                    value={inspected}
-                  />
-                </>
-              )}
-              {result.result != null && <><h3>Released result</h3><JsonView value={result.result} /></>}
               <details className="raw-details">
                 <summary>Full control evidence</summary>
                 <JsonView value={result} maxHeight />

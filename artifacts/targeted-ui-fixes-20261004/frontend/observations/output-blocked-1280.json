@@ -1,0 +1,42 @@
+{
+  "evidence_scope": "Browser rendering of deterministic API fixtures; no server inference or deployment claim.",
+  "observed_at": "2026-10-04T08:31:50.722Z",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "horizontal_overflow": false,
+  "observation": {
+    "response": {
+      "id": "targeted-output-blocked",
+      "decision": "block",
+      "status": "output_blocked",
+      "stage": "output",
+      "reason": "Result failed semantic inspection",
+      "policy_generation": 15,
+      "arguments": {
+        "content": "Synthetic UX audit: summarize a fictional delivery of ten blue boxes."
+      },
+      "result": null,
+      "rule_ids": [
+        "semantic.incomplete",
+        "semantic.risk",
+        "semantic.unknown"
+      ],
+      "metadata": {
+        "execution_mode": "contract fixture",
+        "semantic": {
+          "verdict": "benign",
+          "risk_level": 0,
+          "complete": true,
+          "model_digest": "sha256:input-model-fixture"
+        },
+        "semantic_output": {
+          "cache_hit": true,
+          "cache_source": "fixture"
+        }
+      }
+    },
+    "console_errors": []
+  }
+}

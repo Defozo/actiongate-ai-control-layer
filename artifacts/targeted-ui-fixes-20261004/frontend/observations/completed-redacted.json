@@ -1,0 +1,12 @@
+{
+  "evidence_scope": "Browser rendering of deterministic API fixtures; no server inference or deployment claim.",
+  "observed_at": "2026-10-04T08:31:49.687Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "horizontal_overflow": false,
+  "observation": {
+    "source": "deterministic contract fixture"
+  }
+}

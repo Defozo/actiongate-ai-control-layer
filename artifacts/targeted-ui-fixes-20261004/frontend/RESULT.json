@@ -1,0 +1,268 @@
+{
+  "status": "passed",
+  "scope": "Targeted presentation fixes UX-01 and A11Y-01 only; browser fixtures and production UI build.",
+  "recorded_at": "2026-10-04T08:33:42.372666+00:00",
+  "checkpoint_commit": "6a9cee041e8814f4259ea21e19ca487528d130c5",
+  "historical_audit": {
+    "path": "artifacts/reports/ux-review/application-final.json",
+    "sha256": "3e81ab695ce9089aa5eba90b73abf78a0c34c53165adfa4c3f805f5898be45cf",
+    "status": "partial",
+    "unchanged": true,
+    "prior_correction_rounds": 2,
+    "new_general_audit_performed": false
+  },
+  "fixes": {
+    "UX-01": {
+      "status": "passed",
+      "criteria": [
+        "Control decision and execution status retain separate labels and exact values.",
+        "metadata.semantic is labelled Input assessment, including benign and risk level 0.",
+        "Output control uses recorded status/stage; a reservation stop is not relabelled as an output-stage stop.",
+        "result:null never promotes arguments.content, text, redacted_text or output fallback to a released result.",
+        "arguments.content appears only as Inspected input after controls; withheld arguments remain absent.",
+        "Known semantic rule codes have scoped explanations; absent output verdict/risk/cause remain explicitly unrecorded.",
+        "The Full control evidence JSON remains equal to the fixture response.",
+        "Completed, input-blocked, output-blocked, missing-stage and missing-details states were rendered in Chromium."
+      ]
+    },
+    "A11Y-01": {
+      "status": "passed",
+      "selector": ".test-results-grid .empty p",
+      "color": "rgb(145, 162, 151)",
+      "actual_background": "rgb(25, 28, 30)",
+      "minimum_contrast_ratio": 6.376657869014905,
+      "samples": 4,
+      "viewport_widths": [
+        1280,
+        390
+      ]
+    }
+  },
+  "validation": {
+    "production_build": "passed",
+    "ui_contract": {
+      "tests": 28,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/ui-contract.xml",
+      "sha256": "3929f8b5dc406ea4b93ac110873d5640b35f8d2dc974d6e64b1825e343fd8bd9",
+      "bytes": 5313,
+      "original_junit_sha256": "3bec1c3bb58c9ab2d7ec44849e1d94678484c6dc97c777785b13e74d86a1f7d2",
+      "projection": "Attachment paths shortened for portable publication; test outcomes and screenshot bytes unchanged.",
+      "attachment_aliases": [
+        {
+          "original_attachment": "contract-playground-shows--021d9-d-the-recorded-model-digest-chromium\\attachments\\completed-redacted-458986a2facfe684bce85590fe67fb0f8c3134b1.png",
+          "public_path": "browser/completed-redacted.png",
+          "sha256": "dc7e2d1475165a1d252ee24435d1bb4ebdefce3d8344a3459a47cd536e2651ad"
+        },
+        {
+          "original_attachment": "contract-targeted-A11Y-01--61ab3-d5to1-at-desktop-and-mobile-chromium\\attachments\\verification-empty-1280-761db8d36b2a48b10af159ebd17dc3d1b3dcdd16.png",
+          "public_path": "browser/verification-empty-1280.png",
+          "sha256": "2f2df43a2ed9db63cddd14bd7b04c92092ccc4c89ae930ffee91b426470a7b7e"
+        },
+        {
+          "original_attachment": "contract-targeted-A11Y-01--61ab3-d5to1-at-desktop-and-mobile-chromium\\attachments\\verification-empty-390-6a7798f8a5ee603a7584e7866f98f6d1049f1157.png",
+          "public_path": "browser/verification-empty-390.png",
+          "sha256": "1000f9bcecbbe5001038cdc502ee9be2487c4fc5ed5ed8ff2d6fe2f454c95ecf"
+        },
+        {
+          "original_attachment": "contract-targeted-UX-01-ke-32565-put-control-was-not-reached-chromium\\attachments\\input-blocked-f61c162b01c4eed6cf4dd2e44412a5a575098fd2.png",
+          "public_path": "browser/input-blocked.png",
+          "sha256": "ae91d7e4db4597c10e2f3f0a547431f3b02e2ca3fc116c2642a9fc09bdac32be"
+        },
+        {
+          "original_attachment": "contract-targeted-UX-01-nu-de885-absent-details-stay-unknown-chromium\\attachments\\missing-stage-and-null-result-e8f0add3be1d258f6789df3def0005cca3eac2e5.png",
+          "public_path": "browser/missing-stage-and-null-result.png",
+          "sha256": "1a8242eb6f11c301d1027d4d91198e59c69faf1ce3738bad58c93ebb644acbc2"
+        },
+        {
+          "original_attachment": "contract-targeted-UX-01-pr-5c927-an-unknown-rule-explanation-chromium\\attachments\\reservation-stop-cc1ebbc4690a85190ea11838562fd39840e839fd.png",
+          "public_path": "browser/reservation-stop.png",
+          "sha256": "81498c3e61743077a0594566cd87ff7ef9bdaab34d6ded488318fba6e2f13216"
+        },
+        {
+          "original_attachment": "contract-targeted-UX-01-se-45c29-rom-withheld-output-at390px-chromium\\attachments\\output-blocked-390-d3cf5677c21b559e0dc3123d72707b13baa874b6.png",
+          "public_path": "browser/output-blocked-390.png",
+          "sha256": "4ce64ee7c8cd442440892c09d394770de2b7a1309c4df01e87fbb8c9cac4d6df"
+        },
+        {
+          "original_attachment": "contract-targeted-UX-01-se-8d346-om-withheld-output-at1280px-chromium\\attachments\\output-blocked-1280-2fc8c308764fe36e0f8bd7e57816bb53f3257391.png",
+          "public_path": "browser/output-blocked-1280.png",
+          "sha256": "f2233bc0c864639b7ed0a110b74848bdfbdb6fae94ad67f0a3deff99f3a075d3"
+        }
+      ]
+    },
+    "targeted_contracts": 6,
+    "original_contracts_retained": 22,
+    "metric_navigation_stability": {
+      "passed": 5,
+      "failed": 0,
+      "retries": 0,
+      "reason": "A pre-existing metric test sampled elements during hash-route replacement. Waiting for the exact target-view heading before measuring removed the race without relaxing any color/background/contrast assertion."
+    },
+    "prior_observations_preserved": [
+      {
+        "scope": "initial targeted run",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "b5882afe267d6061f8c5ef05b43e87221326046eb259dfd2ff751bf8ecbd54d5"
+      },
+      {
+        "scope": "first full run",
+        "tests": 28,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sha256": "b88c35a79ff16990241080331d33843f70df36040ddb9f939208405ba5c849be"
+      },
+      {
+        "scope": "screenshot-stabilization full run; pre-existing metric navigation race",
+        "tests": 28,
+        "failures": 0,
+        "errors": 1,
+        "skipped": 0,
+        "sha256": "3e53c171fceeaad25ff06c093d6bd3655f861c988e092747ae165181d652bd07",
+        "error": "locator.evaluateAll: TypeError: Cannot read properties of null (reading 'slice')",
+        "original_trace_and_screenshot_preserved": true
+      }
+    ],
+    "historical_ui_contract": {
+      "path": "artifacts/reports/ui-contract.xml",
+      "sha256": "9002ccceccef07fd561f4c5c8b7f78b359400c11b0b64055e6ec3830e9c5b08d",
+      "bytes": 3615
+    },
+    "visual_review": {
+      "performed": true,
+      "method": "Real Chromium interactions, screenshots and computed CSS from deterministic API fixtures.",
+      "reviewed_states": [
+        "output withheld at1280px",
+        "output withheld at390px",
+        "completed/redacted",
+        "input blocked",
+        "reservation stop",
+        "missing stage and null result",
+        "empty verification at1280px",
+        "empty verification at390px"
+      ],
+      "horizontal_overflow": false,
+      "blocked_flow_page_errors": 0,
+      "screenshot_capture": "Finite CSS transitions completed with Playwright animations disabled; first intermediate resize captures preserved separately."
+    }
+  },
+  "evidence": [
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/browser/completed-redacted.png",
+      "sha256": "dc7e2d1475165a1d252ee24435d1bb4ebdefce3d8344a3459a47cd536e2651ad",
+      "bytes": 194871
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/browser/input-blocked.png",
+      "sha256": "ae91d7e4db4597c10e2f3f0a547431f3b02e2ca3fc116c2642a9fc09bdac32be",
+      "bytes": 197919
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/browser/missing-stage-and-null-result.png",
+      "sha256": "1a8242eb6f11c301d1027d4d91198e59c69faf1ce3738bad58c93ebb644acbc2",
+      "bytes": 189903
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/browser/output-blocked-1280.png",
+      "sha256": "f2233bc0c864639b7ed0a110b74848bdfbdb6fae94ad67f0a3deff99f3a075d3",
+      "bytes": 215686
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/browser/output-blocked-390.png",
+      "sha256": "4ce64ee7c8cd442440892c09d394770de2b7a1309c4df01e87fbb8c9cac4d6df",
+      "bytes": 185263
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/browser/reservation-stop.png",
+      "sha256": "81498c3e61743077a0594566cd87ff7ef9bdaab34d6ded488318fba6e2f13216",
+      "bytes": 203954
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/browser/verification-empty-1280.png",
+      "sha256": "2f2df43a2ed9db63cddd14bd7b04c92092ccc4c89ae930ffee91b426470a7b7e",
+      "bytes": 160837
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/browser/verification-empty-390.png",
+      "sha256": "1000f9bcecbbe5001038cdc502ee9be2487c4fc5ed5ed8ff2d6fe2f454c95ecf",
+      "bytes": 130938
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/build-manifest.json",
+      "sha256": "50efec861da637f76944a0faea02b1244b3b9e6e00e13712482551308b448165",
+      "bytes": 3209
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/observations/completed-redacted.json",
+      "sha256": "d39744922e59bd5fcb3fd11ab34496cd190bb2d579b1bb6fcfb12f03d86e7c26",
+      "bytes": 321
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/observations/input-blocked.json",
+      "sha256": "ef6af49d5e21a99bc82f77caca48675b65e60dba060611197b769012ab0983a7",
+      "bytes": 321
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/observations/missing-stage-and-null-result.json",
+      "sha256": "cbe6f9068a6d898359aaa30dcfde631b8f2632375c41dc41c5fcadfac2a660f0",
+      "bytes": 321
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/observations/output-blocked-1280.json",
+      "sha256": "b7572c52babf18be378d63f2b7bfecaa4a2a0cebbfdcf9ee23ade9d8760f80dd",
+      "bytes": 1140
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/observations/output-blocked-390.json",
+      "sha256": "5fb77bbc6a39feb55cd5b68b56ef1a35550e957e03290d8b84fa1e9586f19714",
+      "bytes": 1139
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/observations/reservation-stop.json",
+      "sha256": "da05f7a1c03bd2222ceffd081b2af3d120ad2e02f53f94976c70160d58d0bed1",
+      "bytes": 321
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/observations/verification-empty-1280.json",
+      "sha256": "bf52ac851843c46cdeae7cdf1929196cc9ffec1639cf2b4ec1fb8f2325237d57",
+      "bytes": 688
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/observations/verification-empty-390.json",
+      "sha256": "a31877f062a5b04fc046daca46a666db579eff6057296ac6326eea7f80114efa",
+      "bytes": 687
+    },
+    {
+      "path": "artifacts/targeted-ui-fixes-20261004/frontend/ui-contract.xml",
+      "sha256": "3929f8b5dc406ea4b93ac110873d5640b35f8d2dc974d6e64b1825e343fd8bd9",
+      "bytes": 5313
+    }
+  ],
+  "unchanged_application_sources": [
+    "backend",
+    "models",
+    "policy",
+    "public guest UI",
+    "proxy configuration"
+  ],
+  "deployment_and_public_server_verification": "Owned separately by the coordinator; not asserted by this frontend report.",
+  "limitations": [
+    "No real model inference in this browser contract suite.",
+    "This is not a general UX audit or a full WCAG assessment.",
+    "Actual200percent browser zoom and real screen-reader usage were not evaluated.",
+    "The backend records only cache provenance for semantic_output in the inspected current contract; missing semantic details are not reconstructed."
+  ],
+  "media_scope": {
+    "changed_views": [
+      "Test Lab / Inspection result",
+      "Test Lab / Verification history and evidence empty descriptions"
+    ],
+    "review_needed": "Existing recordings showing these states must be compared by the existing media owner; no film generated by this frontend task."
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "status": "passed",
+  "command": "npm test (npm run build && playwright test)",
+  "sources": [
+    {
+      "path": "ui/src/TestLab.tsx",
+      "sha256": "1e03f1dc850f8c27ba8c99ca2ea508a38563b3bb367177e2b8154c61de88c2fb",
+      "bytes": 18167
+    },
+    {
+      "path": "ui/src/styles.css",
+      "sha256": "5d4ddf698edd9212ea6cab5ec9dc553d7344271e0a5fc5ead6e7dbd37ed62465",
+      "bytes": 45413
+    },
+    {
+      "path": "ui/tests/contract.spec.ts",
+      "sha256": "8f0f18883d3fdda135986da81f2ed0894b74bcdafdc0fd82115061cd56a2887d",
+      "bytes": 44040
+    }
+  ],
+  "dist": [
+    {
+      "path": "ui/dist/assets/arrow-right-D4bsLQ3Q.js",
+      "sha256": "929db22023b5746fe8723b83b30ba59917c91446779ae566dd2e655bdad275db",
+      "bytes": 194
+    },
+    {
+      "path": "ui/dist/assets/Budgets-kXp3-Z7u.js",
+      "sha256": "5113a2329df2dec7466636ea4418d18df9ff15bd406994de4498f2f0f732346a",
+      "bytes": 10741
+    },
+    {
+      "path": "ui/dist/assets/charts-C8gSP2RW.js",
+      "sha256": "0d0db8ee236816a65dd864bd0b3e60380b3a7c8c51d01b85c22565e7cdebf275",
+      "bytes": 368053
+    },
+    {
+      "path": "ui/dist/assets/clock-3-CXdnBJFA.js",
+      "sha256": "a621410c3548612de7142df4774dab9c2bb11ee2911dc89b7d2899fb377d47f4",
+      "bytes": 198
+    },
+    {
+      "path": "ui/dist/assets/index-CN2Ql8fF.css",
+      "sha256": "90d7141751b6e6b364378cf85244af675f6e9d702877e130a6688d8f99b5d2d4",
+      "bytes": 35365
+    },
+    {
+      "path": "ui/dist/assets/index-wKzZY021.js",
+      "sha256": "58ac433abde07e2b53df9b09aa3f7c50b8e3a5ac92edbfea7b1b3706f5bf03c7",
+      "bytes": 363184
+    },
+    {
+      "path": "ui/dist/assets/Investigate-BuQ2mF_I.js",
+      "sha256": "f51afba22bde9350b01519b5c98bb579e0325a0cf91013dd157e4ff879f0db86",
+      "bytes": 7169
+    },
+    {
+      "path": "ui/dist/assets/Overview-4lE2tV_o.js",
+      "sha256": "d922c0b5106ed1b773cf5e0a1abd7d39585d059d4e41a8abbbadc615813ac590",
+      "bytes": 10716
+    },
+    {
+      "path": "ui/dist/assets/play-C6wwNCol.js",
+      "sha256": "acc5b973a30789ad2273f067cbfd05d11203412005216ae2750535b26865f053",
+      "bytes": 219
+    },
+    {
+      "path": "ui/dist/assets/Policies-mV4k-byH.js",
+      "sha256": "3a370d2ec7e6fb081d6ef285810a9b29dc8e1dcf13e9993e87662e8cc87458c3",
+      "bytes": 11317
+    },
+    {
+      "path": "ui/dist/assets/rolldown-runtime-hePW80VL.js",
+      "sha256": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+      "bytes": 716
+    },
+    {
+      "path": "ui/dist/assets/shield-alert-B7hpDaZd.js",
+      "sha256": "002b9d2fb154f24fd872c7f944a372c219d1bb69666bb6fa0ceeca329d191b5c",
+      "bytes": 533
+    },
+    {
+      "path": "ui/dist/assets/TestLab-CDfEOdJS.js",
+      "sha256": "3ee563e685ae764bc8938fcbc02b328c7fc60b9220a570e59cf478fc3d99c2c7",
+      "bytes": 13471
+    },
+    {
+      "path": "ui/dist/favicon.svg",
+      "sha256": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+      "bytes": 298
+    },
+    {
+      "path": "ui/dist/index.html",
+      "sha256": "2270870fca0e1d95087f148bf5dd6dfea7fc576510f814c9adeeb7723ab2fe1f",
+      "bytes": 827
+    }
+  ]
+}

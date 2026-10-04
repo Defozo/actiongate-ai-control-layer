@@ -1652,6 +1652,38 @@ td .mono {
   margin-bottom: 20px;
   gap: 10px;
 }
+.inspection-outcome {
+  flex-wrap: wrap;
+}
+.inspection-phase {
+  border-top: 1px solid #33432c;
+  padding-top: 16px;
+  margin-top: 20px;
+}
+.inspection-phase h3,
+.inspection-phase h4 {
+  margin: 0 0 10px;
+}
+.inspection-phase h4 {
+  font-size: 12px;
+}
+.inspection-rules {
+  margin: 0;
+  font-size: 12px;
+}
+.inspection-rules > div + div {
+  margin-top: 12px;
+}
+.inspection-rules dd {
+  margin: 4px 0 0;
+  line-height: 1.6;
+}
+.inspection-rules code {
+  overflow-wrap: anywhere;
+}
+.test-results-grid .empty p {
+  color: #91a297;
+}
 .suite-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

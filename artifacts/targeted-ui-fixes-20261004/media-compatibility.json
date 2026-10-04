@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-04T08:29:32.320983+00:00",
+  "scope": [
+    "UX-01: Test Lab input assessment, output control, result provenance and execution status",
+    "A11Y-01: only descriptions in empty Verification history/evidence"
+  ],
+  "conclusions": {
+    "wrong_input_as_output_state_observed_in_any_film": false,
+    "benign_plus_output_blocked_state_observed_in_any_film": false,
+    "ux01_requires_film_refresh": false,
+    "a11y01_old_description_visible_in": [
+      "pitch",
+      "workflow"
+    ],
+    "a11y01_old_description_outside_frame_in": [
+      "song",
+      "hybrid"
+    ],
+    "no_verification_history_empty_description_observed": true,
+    "release_blocker": false,
+    "release_blocker_reason": "These recordings retain truthful historical decisions and operation evidence. The two short older empty-description captures do not evidence the repaired contrast. Preserve their dates/version and do not claim them as post-fix UI proof."
+  },
+  "method": "Targeted inspection of original final MP4 frames and adjacent frame boundaries, checked against existing shot plans. No rerendering or new audio work.",
+  "media": [
+    {
+      "id": "pitch",
+      "sha256": "43d6626bc6fb3809b0c363f3ca8d83df36dba712b4078faba113aa22ee933cb4",
+      "duration_seconds": 154.0,
+      "ux01": "No affected result/provenance state shown.",
+      "a11y01": {
+        "visible": true,
+        "text": "A historical report is shown with its original timestamp.",
+        "location": "Verification evidence / No result selected",
+        "visible_span": {
+          "start_seconds": 30.333333333333332,
+          "end_seconds_exclusive": 32.2,
+          "fps": 30,
+          "first_frame": 910,
+          "last_frame_inclusive": 965
+        },
+        "observed_boundary_frames": [
+          909,
+          910,
+          965,
+          966
+        ],
+        "history_description": "History is populated with prior reports; its empty description is absent.",
+        "other_test_lab_frames": "After frame966 the selected evidence becomes Running, then the following shot shows Passed.",
+        "bound_source": "The movie uses preserved v0.1.0 capture, not the currently overwritten ui-workflow-start.webm path. Historical source hash ecbeeddb37b93793a11d961e0cfcbfa9c6570bbb045705305a7a39b4a906b487 matches render-manifest.json."
+      },
+      "compatibility": "Historical factual flow remains valid. Its 1.8667-second empty Verification evidence description retains the old color."
+    },
+    {
+      "id": "workflow",
+      "sha256": "182f6a6f37aae4d3a3e01f7e3a222066f43948cc1a59499b759b581851a64539",
+      "duration_seconds": 51.0,
+      "ux01": "No affected result/provenance state shown.",
+      "a11y01": {
+        "visible": true,
+        "text": "A historical report is shown with its original timestamp.",
+        "location": "Verification evidence / No result selected",
+        "visible_span": {
+          "start_seconds": 2.08,
+          "end_seconds_exclusive": 4.0,
+          "fps": 25,
+          "first_frame": 52,
+          "last_frame_inclusive": 99
+        },
+        "observed_boundary_frames": [
+          51,
+          52,
+          99,
+          100
+        ],
+        "history_description": "History contains recorded all-local and replay reports; its empty description is absent.",
+        "second_entry_checked": "All 25 frames from 8.000 through 8.960 seconds inspected as a contact sheet. At 8.200/8.240 Test Lab initial form appears; at8.280 selected Passed evidence appears. No empty Verification evidence description is exposed in this second entry."
+      },
+      "compatibility": "Historical 10-check server-job evidence and real operation results remain valid. A 1.92-second empty Verification evidence description retains old color."
+    },
+    {
+      "id": "song",
+      "sha256": "b3c3b557a1b9ee98c6f1c64a5cc3dba0d75edad144eb284f8d3b3a5fb9d47a71",
+      "duration_seconds": 129.0235,
+      "ux01": "No affected result/provenance state shown.",
+      "a11y01": {
+        "visible": false,
+        "reason": "The crop shows initial Ad hoc playground/Inspection result and only the upper part of Interactive verification. Both Verification history and Verification evidence are below the crop. The shared initial Inspection result Empty styling is outside this patch."
+      },
+      "compatibility": "No refresh required for either commissioned fix. Original audio, captions, crop and film bytes can remain."
+    },
+    {
+      "id": "hybrid",
+      "sha256": "664938d30bf3624ddc94836584bc3959115fabb86f4a8b899a9aa485da386880",
+      "duration_seconds": 135.9355,
+      "ux01": "No affected result/provenance state shown.",
+      "a11y01": {
+        "visible": false,
+        "reason": "Both occurrences use the same static initial Test Lab capture. Verification history and Verification evidence are below the crop. The unrun Inspection result Empty content and styling are outside this patch."
+      },
+      "compatibility": "No refresh required for either commissioned fix. Captured UI remains identified in its manifest as v0.1.1. The film does not demonstrate the newly corrected result state."
+    }
+  ],
+  "media_unchanged": true,
+  "historical_audit_unchanged": true,
+  "limits": [
+    "Historical footage does not prove the post-fix deployment.",
+    "Two short older descriptions remain in pitch 00:30.333-00:32.200 and workflow 00:02.080-00:04.000. Song and hybrid do not show the affected panels.",
+    "No full-film or audio re-audit was performed."
+  ]
+}

@@ -1,0 +1,97 @@
+<testsuites id="" name="" tests="28" failures="0" skipped="0" errors="0" time="31.608783">
+<testsuite name="contract.spec.ts" timestamp="2026-10-04T08:31:29.652Z" hostname="chromium" tests="28" failures="0" skipped="0" time="26.148" errors="0">
+<testcase name="unavailable controls remain visibly unavailable and ledger failure is never healthy" classname="contract.spec.ts" time="1.837">
+</testcase>
+<testcase name="approval sends the exact inspected payload hash and is unavailable to analyst" classname="contract.spec.ts" time="0.935">
+</testcase>
+<testcase name="editing a validated policy invalidates activation and comparison shows coverage gaps" classname="contract.spec.ts" time="0.657">
+</testcase>
+<testcase name="arbitrary HTML is rendered as text and never executes or requests external images" classname="contract.spec.ts" time="0.675">
+</testcase>
+<testcase name="tenant switching clears previous tenant evidence from every query" classname="contract.spec.ts" time="0.469">
+</testcase>
+<testcase name="mobile navigation and console remain usable without horizontal page overflow" classname="contract.spec.ts" time="0.879">
+</testcase>
+<testcase name="closed mobile navigation stays out of keyboard focus and restores focus across viewport changes" classname="contract.spec.ts" time="1.069">
+</testcase>
+<testcase name="invalid action JSON focuses its associated error and never dispatches until valid revalidation" classname="contract.spec.ts" time="0.889">
+</testcase>
+<testcase name="fresh unauthenticated session shows no false error but rejected sign-in remains visible" classname="contract.spec.ts" time="1.758">
+</testcase>
+<testcase name="session server failure remains visible even when its message contains401" classname="contract.spec.ts" time="1.686">
+</testcase>
+<testcase name="session network failure remains visible" classname="contract.spec.ts" time="1.689">
+</testcase>
+<testcase name="budgets render worker objects and scoped resource reservations without inventing cost" classname="contract.spec.ts" time="0.51">
+</testcase>
+<testcase name="unavailable budget records never appear as zero spend or usage" classname="contract.spec.ts" time="1.732">
+</testcase>
+<testcase name="budget accounts use structured scope and resource labels while retaining full identifiers and exact amounts at390px" classname="contract.spec.ts" time="1.14">
+</testcase>
+<testcase name="metric details retain computed text contrast on desktop and mobile dashboard views" classname="contract.spec.ts" time="0.706">
+</testcase>
+<testcase name="inspection announces delayed and repeated requests without presenting stale results" classname="contract.spec.ts" time="0.726">
+</testcase>
+<testcase name="inspection failure announces the error and recovery waits for a fresh result" classname="contract.spec.ts" time="0.62">
+</testcase>
+<testcase name="inspection status does not enable execution for a manager" classname="contract.spec.ts" time="0.353">
+</testcase>
+<testcase name="playground shows actual tenant, inspected content and the recorded model digest" classname="contract.spec.ts" time="0.793">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|browser/completed-redacted.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="targeted UX-01 separates benign input from withheld output at1280px" classname="contract.spec.ts" time="0.967">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|browser/output-blocked-1280.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="targeted UX-01 separates benign input from withheld output at390px" classname="contract.spec.ts" time="0.92">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|browser/output-blocked-390.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="targeted UX-01 preserves a non-output stop stage and does not invent an unknown rule explanation" classname="contract.spec.ts" time="0.805">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|browser/reservation-stop.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="targeted UX-01 keeps withheld input absent and identifies that output control was not reached" classname="contract.spec.ts" time="0.687">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|browser/input-blocked.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="targeted UX-01 null result never promotes fallback text to output and absent details stay unknown" classname="contract.spec.ts" time="0.706">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|browser/missing-stage-and-null-result.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="targeted A11Y-01 both verification empty descriptions exceed5to1 at desktop and mobile" classname="contract.spec.ts" time="0.784">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|browser/verification-empty-1280.png]]
+
+[[ATTACHMENT|browser/verification-empty-390.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="interactive advisory evidence preserves snapshot and workflow scope without a protection pass" classname="contract.spec.ts" time="0.569">
+</testcase>
+<testcase name="operational latency and server event backlog retain their exact scope" classname="contract.spec.ts" time="0.543">
+</testcase>
+<testcase name="policy history and operation details display the supplied recorded provenance" classname="contract.spec.ts" time="1.044">
+</testcase>
+</testsuite>
+</testsuites>
