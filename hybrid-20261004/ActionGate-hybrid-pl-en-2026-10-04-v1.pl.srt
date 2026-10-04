@@ -1,0 +1,191 @@
+1
+00:00:00,300 --> 00:00:02,480
+ActionGate, sprawdź ten ruch.
+
+2
+00:00:04,660 --> 00:00:06,900
+Zanim agent zrobi krok.
+
+3
+00:00:09,180 --> 00:00:11,910
+Dokument od dostawcy, terminy i szczegóły.
+
+4
+00:00:11,940 --> 00:00:13,930
+W tekście obcy rozkaz chce nam zmienić
+reguły.
+
+5
+00:00:14,273 --> 00:00:16,913
+ActionGate sprawdza działanie, zanim
+zostanie wykonane.
+
+6
+00:00:17,106 --> 00:00:20,779
+Łączy agentów z modelami, API i usługami MCP
+
+7
+00:00:20,926 --> 00:00:23,937
+przez bramkę egzekwującą zasady organizacji.
+
+8
+00:00:24,595 --> 00:00:28,337
+To rzeczywista analiza dostawcy na
+syntetycznych danych firmy.
+
+9
+00:00:28,995 --> 00:00:31,796
+Uruchamiamy interaktywne testy w panelu.
+
+10
+00:00:32,350 --> 00:00:35,419
+Agent czyta dozwolony dokument przez MCP,
+
+11
+00:00:35,531 --> 00:00:38,089
+prosi lokalny model o podsumowanie,
+
+12
+00:00:38,201 --> 00:00:41,363
+zapisuje chronioną pamięć i tworzy
+wewnętrzny raport.
+
+13
+00:00:41,916 --> 00:00:44,184
+Po otwarciu operacji dokumentu widać
+
+14
+00:00:44,204 --> 00:00:47,667
+potwierdzenie wykonania konektora obok
+decyzji.
+
+15
+00:00:48,128 --> 00:00:50,384
+Porównajmy trzy inne wyniki.
+
+16
+00:00:50,844 --> 00:00:53,762
+Dane osobowe są maskowane przed zapisaniem
+raportu.
+
+17
+00:00:54,014 --> 00:00:56,142
+Instrukcja próbująca zmienić
+
+18
+00:00:56,162 --> 00:00:58,813
+cel procesu jest blokowana przed wywołaniem
+narzędzia.
+
+19
+00:00:59,181 --> 00:01:03,596
+Żądanie dokumentu innej organizacji odrzuca
+polityka dostępu.
+
+20
+00:01:04,057 --> 00:01:08,937
+Ta granica dostępu działa niezależnie od
+modelu semantycznego.
+
+21
+00:01:09,188 --> 00:01:11,421
+Te same reguły towarzyszą całemu procesowi.
+
+22
+00:01:11,882 --> 00:01:15,032
+Odczyt poufnych informacji ogranicza
+późniejsze działania,
+
+23
+00:01:15,145 --> 00:01:17,563
+w tym delegowanie pracy i pamięć.
+
+24
+00:01:18,221 --> 00:01:20,674
+Publikacja chronionego raportu wymaga
+akceptacji
+
+25
+00:01:20,694 --> 00:01:23,705
+dokładnej treści i dozwolonego odbiorcy.
+
+26
+00:01:24,502 --> 00:01:27,176
+Operatorzy zarządzają podpisanym katalogiem
+kontroli.
+
+27
+00:01:27,486 --> 00:01:30,485
+Zmień profil, dostosuj próg lub opublikuj
+
+28
+00:01:30,505 --> 00:01:34,003
+regułę zagrożenia i sprawdź aktywną
+generację.
+
+29
+00:01:34,557 --> 00:01:36,488
+Strict może blokować dane osobowe.
+
+30
+00:01:36,856 --> 00:01:38,473
+Balanced może je maskować.
+
+31
+00:01:39,027 --> 00:01:41,271
+Porównanie polityk pokazuje,
+
+32
+00:01:41,291 --> 00:01:44,685
+jak nowa wersja zmienia decyzje bez
+powtarzania działań.
+
+33
+00:01:47,700 --> 00:01:49,730
+Tokeny, czas modelu, koszt zewnętrznych
+wywołań.
+
+34
+00:01:49,760 --> 00:01:51,910
+Limit sprawdza się przed akcją, nim pojawi
+się nowy koszt.
+
+35
+00:01:51,940 --> 00:01:54,070
+Gdy zadanie się rozdziela, budżet dalej jest
+wspólny.
+
+36
+00:01:54,100 --> 00:01:56,510
+Każdy widzi swój zakres, a decyzje mają
+powód.
+
+37
+00:01:56,540 --> 00:01:58,550
+Zmieniasz regułę i porównujesz jej skutki.
+
+38
+00:01:58,580 --> 00:02:01,400
+Bez powtarzania działań, bez zgadywania
+różnic.
+
+39
+00:02:05,047 --> 00:02:06,014
+Zmień regułę.
+
+40
+00:02:06,266 --> 00:02:07,593
+Wypróbuj własne dane.
+
+41
+00:02:07,961 --> 00:02:09,497
+Prześledź wynikające z nich działanie.
+
+42
+00:02:09,540 --> 00:02:12,086
+ActionGate daje zespołom kontrolę i dowody,
+
+43
+00:02:12,106 --> 00:02:14,141
+dzięki którym agenci mogą wykonywać
+użyteczną pracę.

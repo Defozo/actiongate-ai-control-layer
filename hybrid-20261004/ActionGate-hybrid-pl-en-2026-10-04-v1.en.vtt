@@ -1,0 +1,193 @@
+WEBVTT
+
+1
+00:00:00.300 --> 00:00:02.480
+ActionGate, check that action.
+
+2
+00:00:04.660 --> 00:00:06.900
+Before the agent takes a step.
+
+3
+00:00:09.180 --> 00:00:11.910
+A supplier document, deadlines and details.
+
+4
+00:00:11.940 --> 00:00:13.930
+An embedded command tries to change our
+rules.
+
+5
+00:00:14.273 --> 00:00:16.913
+ActionGate checks that action before it
+runs.
+
+6
+00:00:17.106 --> 00:00:20.779
+It connects agents to models, APIs and MCP
+services
+
+7
+00:00:20.926 --> 00:00:23.937
+through a gateway that enforces the
+organization's rules.
+
+8
+00:00:24.595 --> 00:00:28.337
+Here is a real supplier review using
+synthetic business data.
+
+9
+00:00:28.995 --> 00:00:31.796
+We start the interactive checks in the
+dashboard.
+
+10
+00:00:32.350 --> 00:00:35.419
+The agent reads its approved document
+through MCP,
+
+11
+00:00:35.531 --> 00:00:38.089
+asks the local business model for a summary,
+
+12
+00:00:38.201 --> 00:00:41.363
+saves protected memory and creates an
+internal report.
+
+13
+00:00:41.916 --> 00:00:44.184
+Open the document operation and you can see
+
+14
+00:00:44.204 --> 00:00:47.667
+the actual connector receipt alongside the
+decision.
+
+15
+00:00:48.128 --> 00:00:50.384
+Now compare three other outcomes.
+
+16
+00:00:50.844 --> 00:00:53.762
+Personal data is redacted before the report
+is saved.
+
+17
+00:00:54.014 --> 00:00:56.142
+An instruction that tries to redirect
+
+18
+00:00:56.162 --> 00:00:58.813
+the workflow is blocked before dispatch.
+
+19
+00:00:59.181 --> 00:01:03.596
+And a request for another tenant's document
+is rejected by access policy.
+
+20
+00:01:04.057 --> 00:01:08.937
+That access boundary remains in force
+independently of the semantic model.
+
+21
+00:01:09.188 --> 00:01:11.421
+The same controls follow the workflow.
+
+22
+00:01:11.882 --> 00:01:15.032
+Reading confidential information restricts
+later actions,
+
+23
+00:01:15.145 --> 00:01:17.563
+including delegated work and memory.
+
+24
+00:01:18.221 --> 00:01:20.674
+Publishing a protected report requires
+approval of
+
+25
+00:01:20.694 --> 00:01:23.705
+its exact content and permitted recipient.
+
+26
+00:01:24.502 --> 00:01:27.176
+Operators manage a signed control catalog.
+
+27
+00:01:27.486 --> 00:01:30.485
+Change the profile, adjust a threshold or
+publish
+
+28
+00:01:30.505 --> 00:01:34.003
+a threat rule, then inspect the active
+generation.
+
+29
+00:01:34.557 --> 00:01:36.488
+Strict can block personal data.
+
+30
+00:01:36.856 --> 00:01:38.473
+Balanced can redact it.
+
+31
+00:01:39.027 --> 00:01:41.271
+Policy comparison shows how a candidate
+
+32
+00:01:41.291 --> 00:01:44.685
+changes decisions without repeating business
+effects.
+
+33
+00:01:47.700 --> 00:01:49.730
+Tokens, model time, external call costs.
+
+34
+00:01:49.760 --> 00:01:51.910
+Limits are checked before actions incur
+costs.
+
+35
+00:01:51.940 --> 00:01:54.070
+Delegated work still shares one budget.
+
+36
+00:01:54.100 --> 00:01:56.510
+Scoped views. A reason for every decision.
+
+37
+00:01:56.540 --> 00:01:58.550
+Change a rule and compare its effects.
+
+38
+00:01:58.580 --> 00:02:01.400
+No repeated actions. No guessing the
+difference.
+
+39
+00:02:05.047 --> 00:02:06.014
+Change a rule.
+
+40
+00:02:06.266 --> 00:02:07.593
+Try your own input.
+
+41
+00:02:07.961 --> 00:02:09.497
+Follow the resulting action.
+
+42
+00:02:09.540 --> 00:02:12.086
+ActionGate gives teams the controls and
+evidence
+
+43
+00:02:12.106 --> 00:02:14.141
+to put useful agents to work.

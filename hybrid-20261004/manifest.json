@@ -1,0 +1,47 @@
+{
+  "project": "ActionGate",
+  "variant": "hybrid",
+  "duration_seconds": 135.9355,
+  "audio_languages": [
+    "pl",
+    "en"
+  ],
+  "burned_caption_language": "pl",
+  "files": [
+    {
+      "name": "ActionGate-hybrid-pl-en-2026-10-04-v1-poster.png",
+      "size_bytes": 219212,
+      "sha256": "6e198989a5ba49291973afc83e77b828028c274a3cc0e41c9ea87c12ca362e41"
+    },
+    {
+      "name": "ActionGate-hybrid-pl-en-2026-10-04-v1.en.srt",
+      "size_bytes": 3552,
+      "sha256": "ad9e8e089bde943f755c2d616918122bc8583c6a1f1fa36455344f0c9df36f5f"
+    },
+    {
+      "name": "ActionGate-hybrid-pl-en-2026-10-04-v1.en.vtt",
+      "size_bytes": 3562,
+      "sha256": "b9723616cb675ca0e617af97111e72cb2d8cf9732e8dc844d00a8f020cecaa1a"
+    },
+    {
+      "name": "ActionGate-hybrid-pl-en-2026-10-04-v1.mp4",
+      "size_bytes": 7740427,
+      "sha256": "664938d30bf3624ddc94836584bc3959115fabb86f4a8b899a9aa485da386880"
+    },
+    {
+      "name": "ActionGate-hybrid-pl-en-2026-10-04-v1.pl.srt",
+      "size_bytes": 3631,
+      "sha256": "29a852dff8a443e409adbe8ba2ee1e4e4429381cbea4e2f13e0e6003edca91e4"
+    },
+    {
+      "name": "ActionGate-hybrid-pl-en-2026-10-04-v1.pl.vtt",
+      "size_bytes": 3641,
+      "sha256": "40aa08fde7af5516d0069c9cc3d937780f27739dbbcfd43c5c4708587e41748e"
+    },
+    {
+      "name": "README.txt",
+      "size_bytes": 738,
+      "sha256": "09368c17d078dfd760ab50324d658a251ac163bbdeae207cafb46c9a01b0dce1"
+    }
+  ]
+}
