@@ -1,0 +1,907 @@
+{
+  "status": "passed",
+  "scope": "Targeted UX-01 and A11Y-01 runtime delivery and observed public workflows. Historical broad UX audit remains partial.",
+  "recorded_at": "2026-10-04T08:43:03.036560+00:00",
+  "source_commit": "65501aacde1399309e2f352a5bd2099f59f1f851",
+  "checkpoint_commit": "6a9cee041e8814f4259ea21e19ca487528d130c5",
+  "url": "https://743b-83-10-76-158.ngrok-free.app",
+  "availability_until": "2026-10-04T15:00:00Z",
+  "future_uptime_guaranteed": false,
+  "deployment": {
+    "checks": {
+      "frozen95_unchanged": true,
+      "signed_generations_models_policy_unchanged": true,
+      "recorded_protected_configuration_subset_unchanged": true,
+      "seven_current_only_cpu_policy_sources_match_checkpoint": true,
+      "other_observed_containers_unchanged": true,
+      "reviewed_ui_sources_unchanged": true,
+      "actiongate-gpu-0b92f97d-gateway-a-1_ready_image": true,
+      "actiongate-gpu-0b92f97d-gateway-a-1_same_protected_configuration": true,
+      "actiongate-gpu-0b92f97d-gateway-a-1_same_backend_reviewed_ui_compatible_assets": true,
+      "actiongate-gpu-0b92f97d-gateway-b-1_ready_image": true,
+      "actiongate-gpu-0b92f97d-gateway-b-1_same_protected_configuration": true,
+      "actiongate-gpu-0b92f97d-gateway-b-1_same_backend_reviewed_ui_compatible_assets": true,
+      "actiongate-gateway-a-1_ready_image": true,
+      "actiongate-gateway-a-1_same_protected_configuration": true,
+      "actiongate-gateway-a-1_same_backend_reviewed_ui_compatible_assets": true,
+      "actiongate-gateway-b-1_ready_image": true,
+      "actiongate-gateway-b-1_same_protected_configuration": true,
+      "actiongate-gateway-b-1_same_backend_reviewed_ui_compatible_assets": true
+    },
+    "checks_passed": 18,
+    "checks_total": 18,
+    "image_tag": "actiongate-gateway:ui-0.1.3",
+    "image_id": "sha256:d38e794820b87f64ac159643e6e2eec61eaf2b1ddb369259dbe0322a6bd5433d",
+    "strategy": "Each project rolled A with old index and both asset sets, then B final and A final. Existing proxy, routing and security configuration retained. No additional persistent service.",
+    "steps": [
+      {
+        "project": "actiongate-gpu-0b92f97d",
+        "stage": "compatible-a",
+        "service": "gateway-a",
+        "started_at": "2026-10-04T08:32:02.548055+00:00",
+        "before_id": "8f390d8062e0c774d4714f87a36b81cd268ef59486c32d07bf901146acd2f774",
+        "after_id": "170b232ee01082e07c5efd0500a9262e81ec0a39fbbb4d99823fc5e8abc3b027",
+        "finished_at": "2026-10-04T08:32:44.434279+00:00"
+      },
+      {
+        "project": "actiongate-gpu-0b92f97d",
+        "stage": "final-b",
+        "service": "gateway-b",
+        "started_at": "2026-10-04T08:32:52.248105+00:00",
+        "before_id": "2ce89722dee9c109d02aaaf8325dc51c598ef4f3d1ed0d3917fede6e054fc264",
+        "after_id": "09e640c897351b8faa378a40ef02b3e66f64a7c6476e32f7540d34f81b86bfb5",
+        "finished_at": "2026-10-04T08:33:33.795035+00:00"
+      },
+      {
+        "project": "actiongate-gpu-0b92f97d",
+        "stage": "final-a",
+        "service": "gateway-a",
+        "before_id": "170b232ee01082e07c5efd0500a9262e81ec0a39fbbb4d99823fc5e8abc3b027",
+        "after_id": "67706334bf12cbbe8ffc5501f0e8abd99764b43f297b3c7b42f4fa6b9097e087",
+        "container_started_at": "2026-10-04T08:34:10.049654486Z",
+        "healthy_observed_at": "2026-10-04T08:37:09.081214+00:00",
+        "recovered_after_transport_pause": true,
+        "note": "Own rollout helper was paused during a public TLS transport failure, then terminated after the new A container was independently observed healthy. No tunnel or proxy change."
+      },
+      {
+        "project": "actiongate",
+        "stage": "compatible-a",
+        "service": "gateway-a",
+        "started_at": "2026-10-04T08:37:10.961944+00:00",
+        "before_id": "05d4704bd7a5df2784c93ffd4302ac94dcf263bd99b58c215adcdcce86aa62ad",
+        "after_id": "539a27b791bb7db0607f6ecd3d743e32865788e5db8b5314ed07895128cfda05",
+        "finished_at": "2026-10-04T08:37:52.788996+00:00"
+      },
+      {
+        "project": "actiongate",
+        "stage": "final-b",
+        "service": "gateway-b",
+        "started_at": "2026-10-04T08:38:00.659452+00:00",
+        "before_id": "a5bbdfd9411ae2f35ec3909c440f5ee5b8536c155089766537734bd688ff794e",
+        "after_id": "7de5dd144b85620353b975ad0f86f71ffe783d6fd803b7edd34c72107fe2659f",
+        "finished_at": "2026-10-04T08:38:42.429429+00:00"
+      },
+      {
+        "project": "actiongate",
+        "stage": "final-a",
+        "service": "gateway-a",
+        "started_at": "2026-10-04T08:38:50.263356+00:00",
+        "before_id": "539a27b791bb7db0607f6ecd3d743e32865788e5db8b5314ed07895128cfda05",
+        "after_id": "19de7b1facfd6da51ee3fa39df840f06442a799fcf3c6e864ecb8af15d4c9431",
+        "finished_at": "2026-10-04T08:39:32.212355+00:00"
+      }
+    ],
+    "gateways": {
+      "actiongate-gateway-a-1": {
+        "before_id": "05d4704bd7a5df2784c93ffd4302ac94dcf263bd99b58c215adcdcce86aa62ad",
+        "after_id": "19de7b1facfd6da51ee3fa39df840f06442a799fcf3c6e864ecb8af15d4c9431",
+        "healthy": true,
+        "ui_inputs_sha256": "24a3ef538a542927811159e4517b75c4ee84c168dd53cf06a5a87e2b40125b0c",
+        "backend_sources_match": true
+      },
+      "actiongate-gateway-b-1": {
+        "before_id": "a5bbdfd9411ae2f35ec3909c440f5ee5b8536c155089766537734bd688ff794e",
+        "after_id": "7de5dd144b85620353b975ad0f86f71ffe783d6fd803b7edd34c72107fe2659f",
+        "healthy": true,
+        "ui_inputs_sha256": "24a3ef538a542927811159e4517b75c4ee84c168dd53cf06a5a87e2b40125b0c",
+        "backend_sources_match": true
+      },
+      "actiongate-gpu-0b92f97d-gateway-a-1": {
+        "before_id": "8f390d8062e0c774d4714f87a36b81cd268ef59486c32d07bf901146acd2f774",
+        "after_id": "67706334bf12cbbe8ffc5501f0e8abd99764b43f297b3c7b42f4fa6b9097e087",
+        "healthy": true,
+        "ui_inputs_sha256": "24a3ef538a542927811159e4517b75c4ee84c168dd53cf06a5a87e2b40125b0c",
+        "backend_sources_match": true
+      },
+      "actiongate-gpu-0b92f97d-gateway-b-1": {
+        "before_id": "2ce89722dee9c109d02aaaf8325dc51c598ef4f3d1ed0d3917fede6e054fc264",
+        "after_id": "09e640c897351b8faa378a40ef02b3e66f64a7c6476e32f7540d34f81b86bfb5",
+        "healthy": true,
+        "ui_inputs_sha256": "24a3ef538a542927811159e4517b75c4ee84c168dd53cf06a5a87e2b40125b0c",
+        "backend_sources_match": true
+      }
+    },
+    "reviewed_ui_inputs": {
+      "ui/index.html": "5e483891d9830c0693227f553ef76c09c5c238728f7de9e834607f4ed4042320",
+      "ui/package-lock.json": "c10d7299cacbcebcd9b52f25affb0684cfc0e546a861fcae2a9b4ad6ec3cfca0",
+      "ui/package.json": "56d6150588964f1cf69814efb5da40d87126f623504c02c448ee32244e6b6381",
+      "ui/public/favicon.svg": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+      "ui/src/api.ts": "dfe3b9099b2ee8d5695077ae9eed4a0e8820676f6c637090ed95f81c3738413e",
+      "ui/src/App.tsx": "4f71bc1d48cde7c437f98ce93b1cdc8f586199f74f6022c46267250db5d1ca40",
+      "ui/src/Budgets.tsx": "dd05d1a436bc94fa436e73b9d1639a6eb2f059c22f98c5275f8e914c6a59f872",
+      "ui/src/components.tsx": "136b109533f6238cf94c997992642a3d2863304c62c45e3d06d26b05fb49f736",
+      "ui/src/Investigate.tsx": "6717e2b79f35b95c4032eef6d2ea2369e5bd014acbd82fe3970148a6441b0eab",
+      "ui/src/main.tsx": "456f14158eef1f5e666848411f9c4cddea0b0e99816abaa523e60bfcfe40847c",
+      "ui/src/Overview.tsx": "08cfe53817fb9da560c057131d04ef4e936db9a7747fb11fe5a9b58e20528201",
+      "ui/src/Policies.tsx": "0891cea0922204351656bf89f1a9802a98c4df2b1d9d7d9c20f5ed06a8323f51",
+      "ui/src/styles.css": "5d4ddf698edd9212ea6cab5ec9dc553d7344271e0a5fc5ead6e7dbd37ed62465",
+      "ui/src/TestLab.tsx": "1e03f1dc850f8c27ba8c99ca2ea508a38563b3bb367177e2b8154c61de88c2fb",
+      "ui/tsconfig.json": "b18edd473ae10946e62b2f02fc2c1931950408337f9f75086ba31b7671417dcb",
+      "ui/vite.config.ts": "8bddcb7d68f1a1eb45b0b66501863a82d9c6cfb5e29a7cd64807479b7106c39c"
+    },
+    "reviewed_outputs": {
+      "favicon.svg": "7a2eb766d84ad0a1c89b0dbdae52c40ef14c13be4d5f3976437179b6efc75db9",
+      "index.html": "2270870fca0e1d95087f148bf5dd6dfea7fc576510f814c9adeeb7723ab2fe1f",
+      "assets/arrow-right-D4bsLQ3Q.js": "929db22023b5746fe8723b83b30ba59917c91446779ae566dd2e655bdad275db",
+      "assets/Budgets-kXp3-Z7u.js": "5113a2329df2dec7466636ea4418d18df9ff15bd406994de4498f2f0f732346a",
+      "assets/charts-C8gSP2RW.js": "0d0db8ee236816a65dd864bd0b3e60380b3a7c8c51d01b85c22565e7cdebf275",
+      "assets/clock-3-CXdnBJFA.js": "a621410c3548612de7142df4774dab9c2bb11ee2911dc89b7d2899fb377d47f4",
+      "assets/index-CN2Ql8fF.css": "90d7141751b6e6b364378cf85244af675f6e9d702877e130a6688d8f99b5d2d4",
+      "assets/index-wKzZY021.js": "58ac433abde07e2b53df9b09aa3f7c50b8e3a5ac92edbfea7b1b3706f5bf03c7",
+      "assets/Investigate-BuQ2mF_I.js": "f51afba22bde9350b01519b5c98bb579e0325a0cf91013dd157e4ff879f0db86",
+      "assets/Overview-4lE2tV_o.js": "d922c0b5106ed1b773cf5e0a1abd7d39585d059d4e41a8abbbadc615813ac590",
+      "assets/play-C6wwNCol.js": "acc5b973a30789ad2273f067cbfd05d11203412005216ae2750535b26865f053",
+      "assets/Policies-mV4k-byH.js": "3a370d2ec7e6fb081d6ef285810a9b29dc8e1dcf13e9993e87662e8cc87458c3",
+      "assets/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+      "assets/shield-alert-B7hpDaZd.js": "002b9d2fb154f24fd872c7f944a372c219d1bb69666bb6fa0ceeca329d191b5c",
+      "assets/TestLab-CDfEOdJS.js": "3ee563e685ae764bc8938fcbc02b328c7fc60b9220a570e59cf478fc3d99c2c7"
+    },
+    "legacy_assets_preserved": {
+      "assets/arrow-right-DTpYTYCQ.js": "f29b6a3e264c8f47bed1c2dd3957aeb56093dd2bfea1c4e6892c900c1309b4f9",
+      "assets/Budgets-D24BZHIX.js": "43a0cfc3e369067931ca2c522b487b5d1c2ff34f85d6c8bb0a2fbea14db11b65",
+      "assets/clock-3-Cdt3Iwfu.js": "2273bcdba17a836d27edc02e6f8fa4b3c05b3dfc82cfbeef570b4ed8b1b540f9",
+      "assets/index-BEjWxx_g.css": "75dc84d86c6f35fd23c506ddae9bda4aedef8965b5d10b970fb5549644258ec1",
+      "assets/index-B_Kq2-GE.js": "62c3dbf73b94bb9a8220be1d96b7acf70c505888ade4e9e4d5e204222d9cd84a",
+      "assets/Investigate-DqP-MlHW.js": "a5f55508b717fbda9eb0c13bfee9d78aa5d1bfe159b8395a14badb6c13b14d16",
+      "assets/Overview-DyyNA5OP.js": "45548bc57154df66086a2c7c4bccc62e4869105cfa15eb5f51c4b4bc7e6e53a6",
+      "assets/play-Cnrc_YWv.js": "7573595d04aa5e05935acca479de44837ff620a76116e02042cfce4415e14386",
+      "assets/Policies-CemQr-Vb.js": "ffaee63394661f9958f8a28944f61a67e09084b6bbce75c3375c6a859dca2bf7",
+      "assets/shield-alert-BlxBlTGq.js": "a167f3908bdcb52aad4c9462a000ccd97651209cfeb7b0181f30890a33ca00d2",
+      "assets/TestLab-DaCCkdOi.js": "678c7edb5dcc81cb069cb5f49905316679048d7d010767f40620503fc0f4a504"
+    },
+    "frozen_source_count": 95,
+    "frozen95_unchanged": true,
+    "frozen_source_hashes": {
+      "backend/actiongate/__init__.py": "561e904567d004fbc8719f59350ae6e5c5aee131404e6580c9ba70dfe79b5740",
+      "backend/actiongate/app.py": "c21fb30c4dc6032cef90b9204934a663ba2a9390e400fe9492d7a3136d2f2740",
+      "backend/actiongate/audit_integrity.py": "e593d10eda162cc7415728b7fb030002fbf5ae047265d0579f9b6cb742fbc7e0",
+      "backend/actiongate/broker.py": "b9d5dacc69bd79cd449e78eca257dd32a9d87ae7d85e2128fe94b0f64b4eb77e",
+      "backend/actiongate/cloud.py": "5e6d67b55fd5fe8ef0e61f91c4c009a19ebba127bbbd5372aaab3371c1cd8e95",
+      "backend/actiongate/contracts.py": "2e40eddde525ae7204da7a952293d334829050b61ce91609aebc4c6dad561eaa",
+      "backend/actiongate/controls/__init__.py": "6d7ff0ba9328353298dc07cd827b721f1bd6aa42b246400f8dce1639b25f3369",
+      "backend/actiongate/controls/artifacts.py": "02cb4ca7bed74d3c3c973b1575f586cc013e2f3725e1189de57b744eb248aa45",
+      "backend/actiongate/controls/dlp.py": "ccec5cf3e6c0a7a87a25a43988716540b01c5d6cb893b8d25520042c1b22995e",
+      "backend/actiongate/controls/model_artifacts.py": "15fd0659f2b42bd1b0b2ae8cf384f0bca1c6c17f9243fe9ed7cc5c60b0f85d82",
+      "backend/actiongate/controls/opa.py": "0c0dce801057e0deb66f629109ac90021779c841f68745fc2098b5b920218861",
+      "backend/actiongate/controls/plane.py": "807a21c5833c1313a55b1908203517fa17c7124ceb697962933cfd519f502b07",
+      "backend/actiongate/controls/registry.py": "2af18afc9fc25b2382cd6ee34cadf665c4e0bedc94ffdbbe1b88540c870f335a",
+      "backend/actiongate/controls/schema.py": "0165abd15672d93dc1bf48285b5797d4a80267c037639e21ae05db39c90b62aa",
+      "backend/actiongate/controls/signed.py": "c6a833129af831a4684fafaae77993ec67d1de01bd4bfbe0672da49275a11a21",
+      "backend/actiongate/db.py": "d210a52f2e5c9d7828216991df834815e6caacce166a5106d1afca5f4ed69ad5",
+      "backend/actiongate/demo_tools.py": "e1df80e9cf92d4e231dc40c945a1f9fd86ee66c41a3af4b6c5b8ceb362fa712c",
+      "backend/actiongate/ledger.py": "70b013ae1ff99ec70a2bd14ddaf0031c2f441f0074293cc746c9e900cae55fd4",
+      "backend/actiongate/maintenance.py": "ef12cc621562e247d55f8482b3fc8afea231a64954a5d05eb83b664435531cae",
+      "backend/actiongate/mcp_gateway.py": "082e7737b37f1a745230d052a187ee979779a45f3c699b2bacdd4f131034b7ac",
+      "backend/actiongate/mcp_stdio.py": "f7ffa19b5a90344123f381ba250c8f9f5cd42a7f1bc7cb6cbfb4613e442bb79e",
+      "backend/actiongate/mcp_upstream.py": "9e0e18371c4afa9e04aff91033939211cf5898f0c1be193472fd124a4083770b",
+      "backend/actiongate/migrate.py": "d7f6d1afd432f25f76fd6fa3858e40386f3a2724c0356b3f43fd55e051f29a3d",
+      "backend/actiongate/policies.py": "34fde547bfc5c2659ccb774e68c0df17f03eca77b8357ee7e0b9209551d152f7",
+      "backend/actiongate/publisher.py": "817d01273f7b55361fc22be3f0a1a4e23cbd90ec5511c58e8b7739a7c1a40282",
+      "backend/actiongate/recovery.py": "97614fa21e4cc5c15818ff143a04d9ed8310713d4c366f45204c184689d72abe",
+      "backend/actiongate/replay.py": "5db6d6ad2f94d732c5f91dd6cd289dbf794a8b505b3c323c925e188e51185d70",
+      "backend/actiongate/runtime.py": "32e3a5a4065455815ab190b76d3df0b9589c5b4f37bf3e005566bd438198868c",
+      "backend/actiongate/scenarios.py": "d766385d355830372d34dc226565213bd57dfe1449ba59fe0d95b71e85de98d7",
+      "backend/actiongate/security.py": "5dbec71036a6a2a056246a98ec6499c51e51f655ef1cc7748304f4ff2672accf",
+      "backend/actiongate/seed.py": "931e82a1f4020336f651a281e8d15a10aa05851a9ef8e7d8980f50fb438c9495",
+      "backend/actiongate/semantic.py": "0e71fa69e130d2c0767f994ac500ca8262e412cc42b73b1258d0c53bf7a1a3e1",
+      "backend/actiongate/semantic_cache.py": "857cdbf3f5813265f4d0290540169ab400d53997fd247809a29872006a851d40",
+      "backend/actiongate/settings.py": "81cf8930e5f9ab29049e36a17e0abc48ee2bcda367fa1082e5bfa4714ed9626c",
+      "backend/actiongate/telemetry.py": "a845ad7f694942a113a64ea1d0486e0c0be835c511187d8839cdd01d5161ec4e",
+      "backend/actiongate/test_jobs.py": "da19bcdf791a789580a2e132b7af64b8b410daa934f91401f4433c22a0f9d6df",
+      "deploy/agent_probe.py": "f4c7f750cf22897f89dc6d17cb49e6e89a9ea4c3f05050f57155f11e9d9a674e",
+      "scripts/acceptance_report.py": "12a4c2c4d5e919824dca4a70fb20063dc58473d9af598b8d62ff6cf66287d362",
+      "scripts/benchmark.ps1": "77d8d99c2dac9fa5b4791e18b94f4a255d37d0e626018a7ce3dcc6e2e8516def",
+      "scripts/benchmark.py": "b5eb1e8da9aae3d3eb43a57833a7e7e307a689ba2ef274593d21c856611c423c",
+      "scripts/benchmark.sh": "065953ced20bb201f25976b37276fb7163e497c9d93e0b9cfa6b74dd0cd1d43c",
+      "scripts/check_release.py": "a20d2c65081b8a53ef11b6f8b868baf20320a2bc73bdb2450eeb44fdebd6ff05",
+      "scripts/clean_install.py": "658b5ed0f9a608a902e25b23270f21d05c0a6669c2b86f1f60a6d90d67988f1e",
+      "scripts/coverage_report.py": "501b714b17859f7d9195f080ea6afe4eaffd0d950628eed62671c331fb0b77c8",
+      "scripts/deployed_source.py": "4db61e48981e02ecb07dc1b83e2734a40e91e629af922999a4c4ffec7708d74f",
+      "scripts/gpu_concurrency_probe.py": "4a4d4570abf659a11397907941dc260abec455f81e23936bc17c2967ab3978e1",
+      "scripts/gpu_inventory.py": "a3f45ac9b89e63d1ced917d82b72488cedae4cec897543c41eba3263fa7f3a0a",
+      "scripts/gpu_preflight.py": "535f45f669903d7a2ba454d456b33128ddfe4952b1477f8bee3e40d28b4f7d1c",
+      "scripts/isolation.py": "9e3f3ac2c6f066e703c9e1c312eb7fff0e5302705218a241fd734f511dddbb71",
+      "scripts/preflight.py": "457a7a2a01dd1d7d2e3c36d3639148dc1622eaddedfecd10cf5824dfd01242fb",
+      "scripts/preflight_container.py": "1fd8c37f1dc61c0b349745cee8bf9adbfa39fa5adb8ec16329068d7fc026c114",
+      "scripts/release.py": "4b149906fb61390679a390bdbe6974e829a4c835726188068060fe1f16975b09",
+      "scripts/runtime_bootstrap.py": "6ef671e8a4f007b2fd7695ddfb0b0197d2297ae7812d63d19985c59891e94214",
+      "scripts/runtime_configuration.py": "87db96210348cab46c80b0e75825dbfe7b9549034181c3476b9d2befd66e62a2",
+      "scripts/runtime_configuration_probe.py": "20a8482aee6f9e4a64456ac34aae3aed3c25b8808e44df83bc4aa4d89c5a02fa",
+      "scripts/runtime_evidence.py": "f3096f0a97c14ca5559e1be2fc4f041c57c101d1ca95f41823e131b768452568",
+      "scripts/runtime_hardware.py": "2991192ba4959c3fb8eac8c904e60d4ea0dc3033a5ce108d7c79225104e8d9d2",
+      "scripts/scan_release_secrets.py": "28abdda92cfdc3d22bb0b2b2a03ed6b22536e2002c63b14e62e9ef2707ef2134",
+      "scripts/sse_reconnect_probe.cjs": "9e0b8bd95d918fb5796685337bec2ed650ffd4cfb320e9891eae9057249f772c",
+      "scripts/verify.ps1": "71064a15dcb0265312e450b5b16a7b8b61878bd14a2ea7490d3b4750db32cca1",
+      "scripts/verify.sh": "b53b5a1c8fc8eca35796242ed91adfc048259d109c0ff3fe7544ec13200e3b17",
+      "scripts/verify_clients.py": "74f8a4596ca6c2060187e00d79cb0ce4309a42f8d4ee70834bd399afc332569b",
+      "scripts/verify_container.py": "328568ca3937276b84d943dedb6f78c129a55e16a04c5814bee9afaa0f035d17",
+      "scripts/verify_dashboard_events.cjs": "3843d9835b4939da6f392b6bb08f75df34e815a3e4862042ba3c36efb8dad7bb",
+      "scripts/verify_live_browser.cjs": "42ebb6e6a8e7ca4e9094b132b591c60051bf6a26d7d18ba11538b61bb00c7979",
+      "scripts/verify_policy_replay.py": "feea9bcf8fd2d4009745bd84bdf9d2104a62382ea1f0d281e71f15477fbe76c5",
+      "scripts/verify_ui_workflow.cjs": "cc4392a33d11b01345bfc8dec8ca3d6f98351773e8d597b8a37fb681a293e461",
+      "tests/conftest.py": "254833596347eefeae43ee445e1a9a2c1d812422becfc9f6b77dc2976793620c",
+      "tests/control_registry.json": "6df438b1da958ceed680ceaa90ed089c984339f25f488cb13df4e18913b913e7",
+      "tests/test_acceptance_report.py": "fa719cb84e54cf016d6c76b001fd19af377948dfee5eedca7da64ad07fe17fd5",
+      "tests/test_api.py": "1bc02d69da70fdf344478833f101c7ccaec0d6a7b9400060f3184087c2e91c2d",
+      "tests/test_audit_integrity.py": "80e9ba2c91353389c2bd3bc6d955ac8d9953b03350b75424b08745690f526972",
+      "tests/test_bootstrap_artifacts.py": "b167490ece6b0d93b5c2c94bda8bfcd27502db4c0ba442b7b6d9afa07be34ad3",
+      "tests/test_boundary_fuzz.py": "cdd369059d18404a614ae6339931897f0983cbe335afb6a767dc57566dda4ded",
+      "tests/test_broker.py": "235e9712bbdae72787b4c9598b15df5983dd986a77399870af38ec88a9a84293",
+      "tests/test_cloud.py": "16dd32b9dc7a649085bcc83f9c09846e0642b842770b709ef4e358d1b309782c",
+      "tests/test_controls.py": "e6ce99383b52b2ec74fd8d9bf4770380dbc67f2f8537a6e5fb20c75f817e58ce",
+      "tests/test_failure_recovery.py": "659c742aa3ec96aa1baa72536bd06c540bd893827ceaaeace093c65f8e7acc3e",
+      "tests/test_interactive_lab.py": "5565da4b7d17e29a1c0d1da1315f6f5bee48fe9da767358f57a6e43d7d793ba4",
+      "tests/test_job_recovery.py": "910702050100b02a7b4ce79a665fadd2db2ae6e9b3a134071b0c097186a0e014",
+      "tests/test_ledger.py": "bd94dcd549ca9ff7441e450fa961d1cde4a1df4e291bbeba9b3412e441a5708f",
+      "tests/test_ledger_stateful.py": "b15c4f3468b41efbdbd3ba6717c8c8e73c6f6e47977270a3019f39da36894697",
+      "tests/test_local.py": "dc3eafb2636c768532f7ca70d448e7819b6cef51936c58ffaccca3c903756978",
+      "tests/test_mcp_gateway_contract.py": "46640e0b0933ea5bacd5f1bbcbcc59fa064d9c1329399b7e63af83a53297bb12",
+      "tests/test_model_artifacts.py": "601d10c9282230ced6b31c33965801fd0bdb39ae8815c3d46f3d6c0295659baa",
+      "tests/test_policy_cache.py": "76ddafe57e8a94b353a9f663e574c5c9e0d995c11fd23166fe028a16029d6e1d",
+      "tests/test_publication.py": "0d6e052bd72b0cbc99f494ec6c2f1cd59c30a48c42d2adeac2fbc871080421d9",
+      "tests/test_recovery.py": "1dd10606fcf4531b0cc6bbb5d84d2e20b6502fbbf3b38632ae2072042962f98e",
+      "tests/test_release.py": "6d78c781036bbf39845c13988b354fe394d623de6488e2651c33dc16ccdffaf7",
+      "tests/test_replay.py": "2bb59473dc553ec05111a007f2e64fa058e81e0ac0f547fe78cc7c34fc6bb44f",
+      "tests/test_runtime_contract.py": "f252788457c79ea32a803e7527a588f4d2ff8a81733390ab0851de633fa4d15f",
+      "tests/test_semantic_cache.py": "232666848adcfee518e35e4249196f6b474fcdf1c6c78a8e383aa63af01b3432",
+      "tests/test_semantic_evidence.py": "502b813450e9e282aca8baeb465610dfc8dc712f2be7fc6b6280b4279bfe7c94",
+      "tests/test_telemetry.py": "e9492d01c4e6aa0a132085eff3a283632d54eb016b80ac6ec7a614308093d776",
+      "tests/test_verify_entrypoint.py": "4e09857085ebabf956d60c4216c9bcf669e545d3cb1cf09e0d996c58c01be22d"
+    },
+    "recorded_protected_configuration_files_unchanged": 141,
+    "seven_current_only_cpu_policy_source_checks": {
+      "policy/cloud.yaml": {
+        "current_sha256": "760e753aa7b67a5c905d89c0724b88ba67d5f38eba850b53d81d9f7311877618",
+        "checkpoint_sha256": "760e753aa7b67a5c905d89c0724b88ba67d5f38eba850b53d81d9f7311877618"
+      },
+      "policy/control.rego": {
+        "current_sha256": "092fdaab5707781a0398de75bf94eb7458d2ba12465f93b3bc4d94bf1f399bc8",
+        "checkpoint_sha256": "092fdaab5707781a0398de75bf94eb7458d2ba12465f93b3bc4d94bf1f399bc8"
+      },
+      "policy/control.yaml": {
+        "current_sha256": "193c6fbcd470b3c83142450ffd5705ce77ffbec35c1eb5cd3b9cb63654839af0",
+        "checkpoint_sha256": "193c6fbcd470b3c83142450ffd5705ce77ffbec35c1eb5cd3b9cb63654839af0"
+      },
+      "policy/model-registry.json": {
+        "current_sha256": "755288852412973b02b610019695a6194438b7249eb4fc64d22217f5e3b95640",
+        "checkpoint_sha256": "755288852412973b02b610019695a6194438b7249eb4fc64d22217f5e3b95640"
+      },
+      "policy/prices.json": {
+        "current_sha256": "0a763b7ea8046bd9f755c91bf4fa7d09efa69ca1b36ab2263853bd429eb41ace",
+        "checkpoint_sha256": "0a763b7ea8046bd9f755c91bf4fa7d09efa69ca1b36ab2263853bd429eb41ace"
+      },
+      "policy/schema.json": {
+        "current_sha256": "39f78d00ffbf75e540b52874003eb90053489e5b04bdaed554665f119ddc7ede",
+        "checkpoint_sha256": "39f78d00ffbf75e540b52874003eb90053489e5b04bdaed554665f119ddc7ede"
+      },
+      "policy/tool-registry.json": {
+        "current_sha256": "ca0c8be9f91895367b4edc12591a7aaada85327e9f0bdb3e6fe10c7912a28b6f",
+        "checkpoint_sha256": "ca0c8be9f91895367b4edc12591a7aaada85327e9f0bdb3e6fe10c7912a28b6f"
+      }
+    },
+    "current_only_scope": "These seven files were not successfully read through the original Docker Desktop source representation. Their current bytes match the recorded checkpoint Git blobs; no historical live-file observation is invented.",
+    "all_other_original_container_ids_and_canonical_metadata_unchanged": true,
+    "other_observed_containers": 157,
+    "mount_comparison": "All recorded named fields including Mode and Propagation sorted by Destination. Only documented Docker Desktop /run/desktop/mnt/host/<drive>/ mapping and Windows slash/drive casing normalized. Original observations preserved.",
+    "generations": {
+      "actiongate": 36,
+      "actiongate-gpu-0b92f97d": 15
+    },
+    "configuration_models_policy_guard_unchanged": true,
+    "proxy_tunnel_monitor_modified": false
+  },
+  "deployment_observations": {
+    "samples": 127,
+    "sampled_from": "2026-10-04T08:32:01.694939+00:00",
+    "sampled_until": "2026-10-04T08:39:43.254411+00:00",
+    "unexpected_sample_rows": 57,
+    "route_results": {
+      "/": {
+        "200": 76,
+        "URLError": 51
+      },
+      "/public-api/health": {
+        "200": 70,
+        "502": 5,
+        "URLError": 52
+      },
+      "/operator": {
+        "401": 75,
+        "URLError": 52
+      }
+    },
+    "http502_health_samples": 5,
+    "transport_error_samples": 52,
+    "transport_error_first": "2026-10-04T08:32:58.202103+00:00",
+    "transport_error_last": "2026-10-04T08:33:57.147066+00:00",
+    "transport_note": "Python recorded URL errors and an independent fresh Chromium saw ERR_CONNECTION_CLOSED before HTTP. Local readiness and the existing tunnel remained available. Root independently observed recovery without changing the tunnel/proxy. Cause unproven.",
+    "controlled_pause": "Only this task own rollout helper was suspended and then terminated after final GPU A was observed healthy. Existing availability monitor continued. CPU continuation used six-second intervals. Original raw logs and the earlier failed verifier observations were retained privately.",
+    "verifier_corrections": "Initial verifier compared mount list order and Docker Desktop path spellings literally; also counted newly accessible CPU policy files as a set mismatch. Final verifier compares every named mount field after documented path mapping and reports the seven files as current-only against checkpoint blobs. One early ready check preceded the last CPU step settling.",
+    "browser_harness_corrections": "An immediate synchronous pending visibility assertion raced React rendering. Final browser waits for the actual live status. Mobile screenshots were repeated after the sidebar transition settled. Earlier observations/screenshots were preserved privately.",
+    "last_sample": {
+      "at": "2026-10-04T08:39:43.254411+00:00",
+      "/": {
+        "status": 200,
+        "ms": 109,
+        "sha256": "ae62eaeeb84a7537f6ddb0ae7276a61b25181db12657debaa19b6527ca4a665c"
+      },
+      "/public-api/health": {
+        "status": 200,
+        "ms": 170,
+        "sha256": "218df865946eed0eef48e3e91d8fb29b800bb0812c3f1e173507001d106a4b95",
+        "body": {
+          "status": "ready",
+          "generation": 15,
+          "checks": {
+            "database": "ready",
+            "policy": "ready",
+            "classifier": "ready",
+            "opa": "ready",
+            "guard": "ready",
+            "business": "ready"
+          }
+        }
+      },
+      "/operator": {
+        "status": 401,
+        "ms": 108,
+        "sha256": "9371176869a945e2958e43b349397210a1b72b83f11c67e02e0be1f950254ef2"
+      }
+    }
+  },
+  "public_served_assets": {
+    "status": "passed",
+    "checked_at": "2026-10-04T08:38:04.819Z",
+    "url": "https://743b-83-10-76-158.ngrok-free.app",
+    "scope": "Actual authenticated public operator document, current built assets and retained legacy chunks",
+    "files": [
+      {
+        "path": "index.html",
+        "route": "/operator",
+        "status": 200,
+        "sha256": "2270870fca0e1d95087f148bf5dd6dfea7fc576510f814c9adeeb7723ab2fe1f",
+        "expected_sha256": "2270870fca0e1d95087f148bf5dd6dfea7fc576510f814c9adeeb7723ab2fe1f"
+      },
+      {
+        "path": "assets/arrow-right-DTpYTYCQ.js",
+        "route": "/assets/arrow-right-DTpYTYCQ.js",
+        "status": 200,
+        "sha256": "f29b6a3e264c8f47bed1c2dd3957aeb56093dd2bfea1c4e6892c900c1309b4f9",
+        "expected_sha256": "f29b6a3e264c8f47bed1c2dd3957aeb56093dd2bfea1c4e6892c900c1309b4f9"
+      },
+      {
+        "path": "assets/Budgets-D24BZHIX.js",
+        "route": "/assets/Budgets-D24BZHIX.js",
+        "status": 200,
+        "sha256": "43a0cfc3e369067931ca2c522b487b5d1c2ff34f85d6c8bb0a2fbea14db11b65",
+        "expected_sha256": "43a0cfc3e369067931ca2c522b487b5d1c2ff34f85d6c8bb0a2fbea14db11b65"
+      },
+      {
+        "path": "assets/charts-C8gSP2RW.js",
+        "route": "/assets/charts-C8gSP2RW.js",
+        "status": 200,
+        "sha256": "0d0db8ee236816a65dd864bd0b3e60380b3a7c8c51d01b85c22565e7cdebf275",
+        "expected_sha256": "0d0db8ee236816a65dd864bd0b3e60380b3a7c8c51d01b85c22565e7cdebf275"
+      },
+      {
+        "path": "assets/clock-3-Cdt3Iwfu.js",
+        "route": "/assets/clock-3-Cdt3Iwfu.js",
+        "status": 200,
+        "sha256": "2273bcdba17a836d27edc02e6f8fa4b3c05b3dfc82cfbeef570b4ed8b1b540f9",
+        "expected_sha256": "2273bcdba17a836d27edc02e6f8fa4b3c05b3dfc82cfbeef570b4ed8b1b540f9"
+      },
+      {
+        "path": "assets/index-BEjWxx_g.css",
+        "route": "/assets/index-BEjWxx_g.css",
+        "status": 200,
+        "sha256": "75dc84d86c6f35fd23c506ddae9bda4aedef8965b5d10b970fb5549644258ec1",
+        "expected_sha256": "75dc84d86c6f35fd23c506ddae9bda4aedef8965b5d10b970fb5549644258ec1"
+      },
+      {
+        "path": "assets/index-B_Kq2-GE.js",
+        "route": "/assets/index-B_Kq2-GE.js",
+        "status": 200,
+        "sha256": "62c3dbf73b94bb9a8220be1d96b7acf70c505888ade4e9e4d5e204222d9cd84a",
+        "expected_sha256": "62c3dbf73b94bb9a8220be1d96b7acf70c505888ade4e9e4d5e204222d9cd84a"
+      },
+      {
+        "path": "assets/Investigate-DqP-MlHW.js",
+        "route": "/assets/Investigate-DqP-MlHW.js",
+        "status": 200,
+        "sha256": "a5f55508b717fbda9eb0c13bfee9d78aa5d1bfe159b8395a14badb6c13b14d16",
+        "expected_sha256": "a5f55508b717fbda9eb0c13bfee9d78aa5d1bfe159b8395a14badb6c13b14d16"
+      },
+      {
+        "path": "assets/Overview-DyyNA5OP.js",
+        "route": "/assets/Overview-DyyNA5OP.js",
+        "status": 200,
+        "sha256": "45548bc57154df66086a2c7c4bccc62e4869105cfa15eb5f51c4b4bc7e6e53a6",
+        "expected_sha256": "45548bc57154df66086a2c7c4bccc62e4869105cfa15eb5f51c4b4bc7e6e53a6"
+      },
+      {
+        "path": "assets/play-Cnrc_YWv.js",
+        "route": "/assets/play-Cnrc_YWv.js",
+        "status": 200,
+        "sha256": "7573595d04aa5e05935acca479de44837ff620a76116e02042cfce4415e14386",
+        "expected_sha256": "7573595d04aa5e05935acca479de44837ff620a76116e02042cfce4415e14386"
+      },
+      {
+        "path": "assets/Policies-CemQr-Vb.js",
+        "route": "/assets/Policies-CemQr-Vb.js",
+        "status": 200,
+        "sha256": "ffaee63394661f9958f8a28944f61a67e09084b6bbce75c3375c6a859dca2bf7",
+        "expected_sha256": "ffaee63394661f9958f8a28944f61a67e09084b6bbce75c3375c6a859dca2bf7"
+      },
+      {
+        "path": "assets/rolldown-runtime-hePW80VL.js",
+        "route": "/assets/rolldown-runtime-hePW80VL.js",
+        "status": 200,
+        "sha256": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+        "expected_sha256": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021"
+      },
+      {
+        "path": "assets/shield-alert-BlxBlTGq.js",
+        "route": "/assets/shield-alert-BlxBlTGq.js",
+        "status": 200,
+        "sha256": "a167f3908bdcb52aad4c9462a000ccd97651209cfeb7b0181f30890a33ca00d2",
+        "expected_sha256": "a167f3908bdcb52aad4c9462a000ccd97651209cfeb7b0181f30890a33ca00d2"
+      },
+      {
+        "path": "assets/TestLab-DaCCkdOi.js",
+        "route": "/assets/TestLab-DaCCkdOi.js",
+        "status": 200,
+        "sha256": "678c7edb5dcc81cb069cb5f49905316679048d7d010767f40620503fc0f4a504",
+        "expected_sha256": "678c7edb5dcc81cb069cb5f49905316679048d7d010767f40620503fc0f4a504"
+      },
+      {
+        "path": "assets/arrow-right-D4bsLQ3Q.js",
+        "route": "/assets/arrow-right-D4bsLQ3Q.js",
+        "status": 200,
+        "sha256": "929db22023b5746fe8723b83b30ba59917c91446779ae566dd2e655bdad275db",
+        "expected_sha256": "929db22023b5746fe8723b83b30ba59917c91446779ae566dd2e655bdad275db"
+      },
+      {
+        "path": "assets/Budgets-kXp3-Z7u.js",
+        "route": "/assets/Budgets-kXp3-Z7u.js",
+        "status": 200,
+        "sha256": "5113a2329df2dec7466636ea4418d18df9ff15bd406994de4498f2f0f732346a",
+        "expected_sha256": "5113a2329df2dec7466636ea4418d18df9ff15bd406994de4498f2f0f732346a"
+      },
+      {
+        "path": "assets/clock-3-CXdnBJFA.js",
+        "route": "/assets/clock-3-CXdnBJFA.js",
+        "status": 200,
+        "sha256": "a621410c3548612de7142df4774dab9c2bb11ee2911dc89b7d2899fb377d47f4",
+        "expected_sha256": "a621410c3548612de7142df4774dab9c2bb11ee2911dc89b7d2899fb377d47f4"
+      },
+      {
+        "path": "assets/index-CN2Ql8fF.css",
+        "route": "/assets/index-CN2Ql8fF.css",
+        "status": 200,
+        "sha256": "90d7141751b6e6b364378cf85244af675f6e9d702877e130a6688d8f99b5d2d4",
+        "expected_sha256": "90d7141751b6e6b364378cf85244af675f6e9d702877e130a6688d8f99b5d2d4"
+      },
+      {
+        "path": "assets/index-wKzZY021.js",
+        "route": "/assets/index-wKzZY021.js",
+        "status": 200,
+        "sha256": "58ac433abde07e2b53df9b09aa3f7c50b8e3a5ac92edbfea7b1b3706f5bf03c7",
+        "expected_sha256": "58ac433abde07e2b53df9b09aa3f7c50b8e3a5ac92edbfea7b1b3706f5bf03c7"
+      },
+      {
+        "path": "assets/Investigate-BuQ2mF_I.js",
+        "route": "/assets/Investigate-BuQ2mF_I.js",
+        "status": 200,
+        "sha256": "f51afba22bde9350b01519b5c98bb579e0325a0cf91013dd157e4ff879f0db86",
+        "expected_sha256": "f51afba22bde9350b01519b5c98bb579e0325a0cf91013dd157e4ff879f0db86"
+      },
+      {
+        "path": "assets/Overview-4lE2tV_o.js",
+        "route": "/assets/Overview-4lE2tV_o.js",
+        "status": 200,
+        "sha256": "d922c0b5106ed1b773cf5e0a1abd7d39585d059d4e41a8abbbadc615813ac590",
+        "expected_sha256": "d922c0b5106ed1b773cf5e0a1abd7d39585d059d4e41a8abbbadc615813ac590"
+      },
+      {
+        "path": "assets/play-C6wwNCol.js",
+        "route": "/assets/play-C6wwNCol.js",
+        "status": 200,
+        "sha256": "acc5b973a30789ad2273f067cbfd05d11203412005216ae2750535b26865f053",
+        "expected_sha256": "acc5b973a30789ad2273f067cbfd05d11203412005216ae2750535b26865f053"
+      },
+      {
+        "path": "assets/Policies-mV4k-byH.js",
+        "route": "/assets/Policies-mV4k-byH.js",
+        "status": 200,
+        "sha256": "3a370d2ec7e6fb081d6ef285810a9b29dc8e1dcf13e9993e87662e8cc87458c3",
+        "expected_sha256": "3a370d2ec7e6fb081d6ef285810a9b29dc8e1dcf13e9993e87662e8cc87458c3"
+      },
+      {
+        "path": "assets/shield-alert-B7hpDaZd.js",
+        "route": "/assets/shield-alert-B7hpDaZd.js",
+        "status": 200,
+        "sha256": "002b9d2fb154f24fd872c7f944a372c219d1bb69666bb6fa0ceeca329d191b5c",
+        "expected_sha256": "002b9d2fb154f24fd872c7f944a372c219d1bb69666bb6fa0ceeca329d191b5c"
+      },
+      {
+        "path": "assets/TestLab-CDfEOdJS.js",
+        "route": "/assets/TestLab-CDfEOdJS.js",
+        "status": 200,
+        "sha256": "3ee563e685ae764bc8938fcbc02b328c7fc60b9220a570e59cf478fc3d99c2c7",
+        "expected_sha256": "3ee563e685ae764bc8938fcbc02b328c7fc60b9220a570e59cf478fc3d99c2c7"
+      }
+    ]
+  },
+  "final_public_readback": {
+    "/": {
+      "status": 200,
+      "sha256": "ae62eaeeb84a7537f6ddb0ae7276a61b25181db12657debaa19b6527ca4a665c",
+      "bytes": 2589
+    },
+    "/public-demo.css": {
+      "status": 200,
+      "sha256": "81d4d9304ee91b9c1849550c2f3aac2a56d298661a454fd303b5eed4e66fdf06",
+      "bytes": 1790
+    },
+    "/public-demo.js": {
+      "status": 200,
+      "sha256": "600997c7b7bdc726ffffbb82e0d4b90668e4d7469143b8d99d72ed16e9a1c244",
+      "bytes": 2825
+    },
+    "/public-api/health": {
+      "status": 200,
+      "sha256": "218df865946eed0eef48e3e91d8fb29b800bb0812c3f1e173507001d106a4b95",
+      "bytes": 151,
+      "body": {
+        "status": "ready",
+        "generation": 15,
+        "checks": {
+          "database": "ready",
+          "policy": "ready",
+          "classifier": "ready",
+          "opa": "ready",
+          "guard": "ready",
+          "business": "ready"
+        }
+      }
+    },
+    "/operator": {
+      "status": 401,
+      "sha256": "9371176869a945e2958e43b349397210a1b72b83f11c67e02e0be1f950254ef2",
+      "bytes": 172
+    },
+    "/api/session": {
+      "status": 401,
+      "sha256": "9371176869a945e2958e43b349397210a1b72b83f11c67e02e0be1f950254ef2",
+      "bytes": 172
+    },
+    "/public-api/admin": {
+      "status": 404,
+      "sha256": "55f7d9e99b8e2d4e0e193b2f0275501e6d9c1ebd29cadbea6a0da48a8587e3e0",
+      "bytes": 146
+    }
+  },
+  "operator_browser": {
+    "report": "artifacts/targeted-ui-fixes-20261004/runtime-browser/operator.json",
+    "checks_passed": 34,
+    "checks_total": 34,
+    "finished_at": "2026-10-04T08:38:45.274Z",
+    "operations": [
+      {
+        "sample": "original-audit-input",
+        "operation_id": "e8f6f403-bf26-4170-9286-950c7b0a48dc",
+        "run_id": "213aa5e3-c358-4b64-a0d2-88cdb945d922",
+        "status": "completed",
+        "stage": "release",
+        "result_is_null": false,
+        "input_verdict": "benign",
+        "input_text": "Input assessment\n\nThis assessment covers the submitted input.\n\nVerdict\nbenign\nRisk level\n0\nComplete\ntrue\nModel\nsha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd\nInspected input after controls\nSynthetic UX audit: summarize a fictional delivery of ten blue boxes.",
+        "output_text": "Output control\n\nThe operation reached result release.\n\nOutput verdict and risk were not recorded separately.\n\nReleased result\n{\n  \"id\": \"09ebeba1-123a-41e1-8e22-ff8e6bb99847\",\n  \"key\": \"report-e8f6f403-bf26-4170-9286-950c7b0a48dc\",\n  \"label\": \"CONFIDENTIAL\",\n  \"saved\": true\n}",
+        "elapsed_ms": 3196
+      },
+      {
+        "sample": "input-injection",
+        "operation_id": "6782ad70-6fe0-4616-b376-0079c6e477cb",
+        "run_id": "a97db963-edb7-4715-b84a-6c592b8ee259",
+        "status": "blocked",
+        "stage": "semantic",
+        "result_is_null": true,
+        "input_verdict": "suspicious",
+        "input_text": "Input assessment\n\nThis assessment covers the submitted input.\n\nVerdict\nsuspicious\nRisk level\n2\nComplete\ntrue\nModel\nsha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "output_text": "Output control\n\nOutput control was not reached.\n\nOutput verdict and risk were not recorded separately.\n\nNo released result is available.",
+        "elapsed_ms": 1126
+      }
+    ],
+    "contrast": [
+      {
+        "tenant": "synthetic_test_tenant",
+        "width": 1440,
+        "descriptions": [
+          {
+            "text": "A historical report is shown with its original timestamp.",
+            "color": "rgb(145, 162, 151)",
+            "background": "rgb(25, 28, 30)",
+            "ratio": 6.376657869014905
+          }
+        ]
+      },
+      {
+        "tenant": "synthetic_test_tenant",
+        "width": 390,
+        "descriptions": [
+          {
+            "text": "A historical report is shown with its original timestamp.",
+            "color": "rgb(145, 162, 151)",
+            "background": "rgb(25, 28, 30)",
+            "ratio": 6.376657869014905
+          }
+        ]
+      },
+      {
+        "tenant": "globex",
+        "width": 1440,
+        "descriptions": [
+          {
+            "text": "Run a suite to create an evidence report. No test has passed by default.",
+            "color": "rgb(145, 162, 151)",
+            "background": "rgb(25, 28, 30)",
+            "ratio": 6.376657869014905
+          },
+          {
+            "text": "A historical report is shown with its original timestamp.",
+            "color": "rgb(145, 162, 151)",
+            "background": "rgb(25, 28, 30)",
+            "ratio": 6.376657869014905
+          }
+        ]
+      },
+      {
+        "tenant": "globex",
+        "width": 390,
+        "descriptions": [
+          {
+            "text": "Run a suite to create an evidence report. No test has passed by default.",
+            "color": "rgb(145, 162, 151)",
+            "background": "rgb(25, 28, 30)",
+            "ratio": 6.376657869014905
+          },
+          {
+            "text": "A historical report is shown with its original timestamp.",
+            "color": "rgb(145, 162, 151)",
+            "background": "rgb(25, 28, 30)",
+            "ratio": 6.376657869014905
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "anonymous_browser": {
+    "report": "artifacts/targeted-ui-fixes-20261004/public-visitor/browser-verification.json",
+    "checks_passed": 28,
+    "checks_total": 28,
+    "finished_at": "2026-10-04T08:37:34.790Z",
+    "fresh_anonymous_context": true,
+    "workflows": [
+      {
+        "scenario": "legal",
+        "http_status": 200,
+        "seconds": 17.7,
+        "status": "completed",
+        "run_id": "d748766d-aa03-477f-910e-7dd5412e4d9f",
+        "operations": [
+          {
+            "id": "b549bd3f-80c4-4537-8ff0-694d9a7dd636",
+            "tool": "documents.read",
+            "status": "completed",
+            "decision": "allow",
+            "tenant": "synthetic_test_tenant",
+            "rule_ids": [],
+            "policy_generation": 15
+          },
+          {
+            "id": "e0a8a6fa-3b8f-4765-aca0-57abd298fcdc",
+            "tool": "models.chat",
+            "status": "completed",
+            "decision": "allow",
+            "tenant": "synthetic_test_tenant",
+            "rule_ids": [],
+            "policy_generation": 15
+          },
+          {
+            "id": "4746ec2e-0a4e-4d96-9e6b-89f847cf9462",
+            "tool": "memory.write",
+            "status": "completed",
+            "decision": "allow",
+            "tenant": "synthetic_test_tenant",
+            "rule_ids": [],
+            "policy_generation": 15
+          },
+          {
+            "id": "978f3c9b-f156-4912-901f-d7dcdfb9f790",
+            "tool": "reports.save",
+            "status": "completed",
+            "decision": "allow",
+            "tenant": "synthetic_test_tenant",
+            "rule_ids": [],
+            "policy_generation": 15
+          }
+        ]
+      },
+      {
+        "scenario": "cross_tenant",
+        "http_status": 200,
+        "seconds": 0.3,
+        "status": "blocked",
+        "run_id": "9255dae3-21ee-4d9d-b167-95815cfc3019",
+        "operations": [
+          {
+            "id": "eec067fa-6e8a-490d-93a4-15c69bc36e45",
+            "tool": "documents.read",
+            "status": "blocked",
+            "decision": "block",
+            "tenant": "synthetic_test_tenant",
+            "rule_ids": [
+              "acl.document"
+            ],
+            "policy_generation": 15
+          }
+        ]
+      },
+      {
+        "scenario": "injection",
+        "http_status": 200,
+        "seconds": 1.3,
+        "status": "blocked",
+        "run_id": "6255cd86-bcc2-4c9a-95d3-6689044cdcf8",
+        "operations": [
+          {
+            "id": "69cd7628-928e-4701-b708-2107e08f629c",
+            "tool": "reports.save",
+            "status": "blocked",
+            "decision": "block",
+            "tenant": "synthetic_test_tenant",
+            "rule_ids": [
+              "semantic.review",
+              "semantic.risk"
+            ],
+            "policy_generation": 15
+          }
+        ]
+      },
+      {
+        "scenario": "pii",
+        "http_status": 200,
+        "seconds": 2.9,
+        "status": "completed",
+        "run_id": "df417586-8992-410c-a0a8-31599bdaf9e4",
+        "operations": [
+          {
+            "id": "78ad1c47-d507-4844-8e93-39f6a842ace6",
+            "tool": "reports.save",
+            "status": "completed",
+            "decision": "redact",
+            "tenant": "synthetic_test_tenant",
+            "rule_ids": [
+              "pii.email.presidio"
+            ],
+            "policy_generation": 15
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "visual_review": {
+    "reviewed": true,
+    "scope": "Actual public operator desktop and mobile screenshots: completed input, blocked input without released result, and both empty descriptions in existing Globex workspace. New headings and text are legible and correctly scoped; final mobile sidebar is closed. Guest screenshots retain existing visitor interface.",
+    "screenshots": {
+      "artifacts/targeted-ui-fixes-20261004/public-visitor/cross_tenant-result.png": {
+        "sha256": "b2659b312f9b4b28c573274cdb063b11331600304671c524e70512c16da75589",
+        "width": 1440,
+        "height": 1489
+      },
+      "artifacts/targeted-ui-fixes-20261004/public-visitor/desktop.png": {
+        "sha256": "c4eae5660b589d146b5d3dee1bbfda1888147ee12b9359d3d845521b39a2fd8a",
+        "width": 1440,
+        "height": 1429
+      },
+      "artifacts/targeted-ui-fixes-20261004/public-visitor/injection-result.png": {
+        "sha256": "81fefaca4e1eccfa134c60e137de20b28c499aed2ac81f170aee4fc720f094fb",
+        "width": 1440,
+        "height": 1489
+      },
+      "artifacts/targeted-ui-fixes-20261004/public-visitor/legal-result.png": {
+        "sha256": "267d32074a3c133e9e2e2737d02cc858b5c3476d4a4359e8782590ad950b2656",
+        "width": 1440,
+        "height": 1619
+      },
+      "artifacts/targeted-ui-fixes-20261004/public-visitor/mobile.png": {
+        "sha256": "86dcb5b857fd874457a9f9d725d438b23faa25daf45b514444b90e562fc79cba",
+        "width": 390,
+        "height": 2179
+      },
+      "artifacts/targeted-ui-fixes-20261004/public-visitor/pii-result.png": {
+        "sha256": "2a45bb4b9fa220fae87e63395c63780dff05d3009d942faffc777bc362005226",
+        "width": 1440,
+        "height": 1489
+      },
+      "artifacts/targeted-ui-fixes-20261004/runtime-browser/empty-states-globex-1440.png": {
+        "sha256": "6527e8334f62737f4c62286965351a22cbc103e7cee8fe29449a94ea372c64a4",
+        "width": 1440,
+        "height": 1542
+      },
+      "artifacts/targeted-ui-fixes-20261004/runtime-browser/empty-states-globex-390.png": {
+        "sha256": "b367bf6efadddb91f235d963b5c6d3d27df0a14788a39024ed2c74411361f906",
+        "width": 390,
+        "height": 2541
+      },
+      "artifacts/targeted-ui-fixes-20261004/runtime-browser/empty-states-synthetic_test_tenant-1440.png": {
+        "sha256": "29e1ea3cdef50c1d827216de7f6995e763e1d66469e5fbbf6d74acc4f55b0d2f",
+        "width": 1440,
+        "height": 2179
+      },
+      "artifacts/targeted-ui-fixes-20261004/runtime-browser/empty-states-synthetic_test_tenant-390.png": {
+        "sha256": "cf0dd87cd61890bb79800c7a0e4ff0aab4a335963df782c3fe14f44f8fda0637",
+        "width": 390,
+        "height": 3551
+      },
+      "artifacts/targeted-ui-fixes-20261004/runtime-browser/input-injection-desktop.png": {
+        "sha256": "ec3b8c2de96ba72b5b090dbb1323915bd9555d25d53d13c56a8d71a5891b660f",
+        "width": 1440,
+        "height": 2179
+      },
+      "artifacts/targeted-ui-fixes-20261004/runtime-browser/input-injection-mobile.png": {
+        "sha256": "cf0dd87cd61890bb79800c7a0e4ff0aab4a335963df782c3fe14f44f8fda0637",
+        "width": 390,
+        "height": 3551
+      },
+      "artifacts/targeted-ui-fixes-20261004/runtime-browser/original-audit-input-desktop.png": {
+        "sha256": "0501ce507e1e45c90bd7a1f23006e2f337af7258dada803697a58b76a01dd4a0",
+        "width": 1440,
+        "height": 2214
+      },
+      "artifacts/targeted-ui-fixes-20261004/runtime-browser/original-audit-input-mobile.png": {
+        "sha256": "1592f8f778a4779c6727ce93c78eca54cb89abde42683dc323f1c803a8ff71eb",
+        "width": 390,
+        "height": 3565
+      }
+    }
+  },
+  "evidence_files": {
+    "artifacts/targeted-ui-fixes-20261004/runtime-browser/operator.json": "b0152d48e14a977ac064a9ae64a81b09933c25130b803312b08b07d7a3b5996c",
+    "artifacts/targeted-ui-fixes-20261004/public-visitor/browser-verification.json": "0597d8042f21aca45166c56eb90a74aeb8a3a1f247542ae7f5ea2ad9bbc9c00f"
+  },
+  "remaining_limits": [
+    "Targeted real browser review only; historical UX audit remains partial. No claim of all-state WCAG or screen-reader/200 percent zoom verification.",
+    "Original output_blocked state did not recur in these live model judgments; exact rendering and null-result behavior are covered by recorded deterministic UI fixtures separately.",
+    "Five health HTTP502 samples occurred during gateway rolling replacement. The separate public TLS transport interruption is recorded; no continuous-uptime claim is made.",
+    "Observed workflows and availability apply to their timestamps, not the entire future window."
+  ],
+  "handoff": {
+    "git_index_and_publication_modified": false,
+    "hacktribe_modified": false,
+    "movies_or_audio_modified": false,
+    "affected_film_ui": "Existing recordings showing the Test Lab inspection result now have an older presentation of the input assessment, output control, released-result absence and rule explanations. Empty Verification history/evidence descriptions now use #91a297. Exact media/timecode ownership stays with the existing film author; no media was generated here."
+  }
+}

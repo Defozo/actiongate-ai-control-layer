@@ -1,0 +1,166 @@
+{
+  "status": "passed",
+  "started_at": "2026-10-04T08:38:34.543Z",
+  "url": "https://743b-83-10-76-158.ngrok-free.app",
+  "scope": "Targeted live operator rendering and anonymous boundary verification; fresh contexts; no mocks or policy changes",
+  "checks": {
+    "anonymous_boundary_/": true,
+    "anonymous_boundary_/public-api/health": true,
+    "anonymous_boundary_/operator": true,
+    "anonymous_boundary_/api/session": true,
+    "anonymous_boundary_/public-api/admin": true,
+    "unauthenticated_admin_session_denied": true,
+    "private_operator_document": true,
+    "unchanged_generation15": true,
+    "balanced_profile": true,
+    "original-audit-input_response_ok": true,
+    "original-audit-input_input_scope": true,
+    "original-audit-input_input_verdict_bound_to_api": true,
+    "original-audit-input_no_mislabelled_inspected_output": true,
+    "original-audit-input_released_result_matches_api": true,
+    "original-audit-input_persisted_operation": true,
+    "original-audit-input_mobile_no_overflow": true,
+    "input-injection_response_ok": true,
+    "input-injection_input_scope": true,
+    "input-injection_input_verdict_bound_to_api": true,
+    "input-injection_no_mislabelled_inspected_output": true,
+    "input-injection_null_result_absence": true,
+    "input-injection_no_fallback_output": true,
+    "input-injection_before_output_label": true,
+    "input-injection_persisted_operation": true,
+    "input-injection_mobile_no_overflow": true,
+    "policy_unchanged": true,
+    "contrast_synthetic_test_tenant_1440_A historical": true,
+    "contrast_synthetic_test_tenant_390_A historical": true,
+    "contrast_globex_1440_Run a suite ": true,
+    "contrast_globex_1440_A historical": true,
+    "contrast_globex_390_Run a suite ": true,
+    "contrast_globex_390_A historical": true,
+    "actual_empty_state_seen": true,
+    "no_browser_errors": true
+  },
+  "operations": [
+    {
+      "sample": "original-audit-input",
+      "operation_id": "e8f6f403-bf26-4170-9286-950c7b0a48dc",
+      "run_id": "213aa5e3-c358-4b64-a0d2-88cdb945d922",
+      "status": "completed",
+      "stage": "release",
+      "result_is_null": false,
+      "input_verdict": "benign",
+      "input_text": "Input assessment\n\nThis assessment covers the submitted input.\n\nVerdict\nbenign\nRisk level\n0\nComplete\ntrue\nModel\nsha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd\nInspected input after controls\nSynthetic UX audit: summarize a fictional delivery of ten blue boxes.",
+      "output_text": "Output control\n\nThe operation reached result release.\n\nOutput verdict and risk were not recorded separately.\n\nReleased result\n{\n  \"id\": \"09ebeba1-123a-41e1-8e22-ff8e6bb99847\",\n  \"key\": \"report-e8f6f403-bf26-4170-9286-950c7b0a48dc\",\n  \"label\": \"CONFIDENTIAL\",\n  \"saved\": true\n}",
+      "elapsed_ms": 3196
+    },
+    {
+      "sample": "input-injection",
+      "operation_id": "6782ad70-6fe0-4616-b376-0079c6e477cb",
+      "run_id": "a97db963-edb7-4715-b84a-6c592b8ee259",
+      "status": "blocked",
+      "stage": "semantic",
+      "result_is_null": true,
+      "input_verdict": "suspicious",
+      "input_text": "Input assessment\n\nThis assessment covers the submitted input.\n\nVerdict\nsuspicious\nRisk level\n2\nComplete\ntrue\nModel\nsha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+      "output_text": "Output control\n\nOutput control was not reached.\n\nOutput verdict and risk were not recorded separately.\n\nNo released result is available.",
+      "elapsed_ms": 1126
+    }
+  ],
+  "errors": [],
+  "contrast": [
+    {
+      "tenant": "synthetic_test_tenant",
+      "width": 1440,
+      "descriptions": [
+        {
+          "text": "A historical report is shown with its original timestamp.",
+          "color": "rgb(145, 162, 151)",
+          "background": "rgb(25, 28, 30)",
+          "ratio": 6.376657869014905
+        }
+      ]
+    },
+    {
+      "tenant": "synthetic_test_tenant",
+      "width": 390,
+      "descriptions": [
+        {
+          "text": "A historical report is shown with its original timestamp.",
+          "color": "rgb(145, 162, 151)",
+          "background": "rgb(25, 28, 30)",
+          "ratio": 6.376657869014905
+        }
+      ]
+    },
+    {
+      "tenant": "globex",
+      "width": 1440,
+      "descriptions": [
+        {
+          "text": "Run a suite to create an evidence report. No test has passed by default.",
+          "color": "rgb(145, 162, 151)",
+          "background": "rgb(25, 28, 30)",
+          "ratio": 6.376657869014905
+        },
+        {
+          "text": "A historical report is shown with its original timestamp.",
+          "color": "rgb(145, 162, 151)",
+          "background": "rgb(25, 28, 30)",
+          "ratio": 6.376657869014905
+        }
+      ]
+    },
+    {
+      "tenant": "globex",
+      "width": 390,
+      "descriptions": [
+        {
+          "text": "Run a suite to create an evidence report. No test has passed by default.",
+          "color": "rgb(145, 162, 151)",
+          "background": "rgb(25, 28, 30)",
+          "ratio": 6.376657869014905
+        },
+        {
+          "text": "A historical report is shown with its original timestamp.",
+          "color": "rgb(145, 162, 151)",
+          "background": "rgb(25, 28, 30)",
+          "ratio": 6.376657869014905
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    "original-audit-input-desktop.png",
+    "original-audit-input-mobile.png",
+    "input-injection-desktop.png",
+    "input-injection-mobile.png",
+    "empty-states-synthetic_test_tenant-1440.png",
+    "empty-states-synthetic_test_tenant-390.png",
+    "empty-states-globex-1440.png",
+    "empty-states-globex-390.png"
+  ],
+  "policy_before": {
+    "generation": 15,
+    "digest": "0d9132ca2b3d1a383b198f6d7b7206f9b426166cdc6475bea0cfe51388fac84a",
+    "profile": "balanced"
+  },
+  "observed_progress": [
+    {
+      "sample": "original-audit-input",
+      "status": "Inspecting input. Waiting for the control result."
+    },
+    {
+      "sample": "input-injection",
+      "status": "Inspection finished. The result is shown below."
+    }
+  ],
+  "policy_after": {
+    "generation": 15,
+    "digest": "0d9132ca2b3d1a383b198f6d7b7206f9b426166cdc6475bea0cfe51388fac84a",
+    "profile": "balanced"
+  },
+  "limits": [
+    "Targeted real browser review only; historical UX audit remains partial. No claim of all-state WCAG or screen-reader/200 percent zoom verification.",
+    "Original output_blocked state did not recur in these live model judgments; exact rendering and null-result behavior are covered by recorded deterministic UI fixtures separately."
+  ],
+  "finished_at": "2026-10-04T08:38:45.274Z"
+}
