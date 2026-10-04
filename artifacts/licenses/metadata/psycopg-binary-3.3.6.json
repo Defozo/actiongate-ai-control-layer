@@ -1,0 +1,5 @@
+{
+  "license": "LGPL-3.0-only",
+  "evidence": "installed locked distribution metadata",
+  "source": "https://pypi.org/pypi/psycopg-binary/3.3.6/json"
+}

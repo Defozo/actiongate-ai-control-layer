@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "model": "qwen3.5:4b",
+  "digest": "sha256:2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+  "format": "GGUF",
+  "family": "Qwen3.5",
+  "quantization": "Q4_K_M",
+  "license": "Apache-2.0",
+  "source": "https://ollama.com/library/qwen3.5:4b",
+  "tokenizer_source": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+  "tokenizer_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+  "context_tokens": 8192,
+  "max_input_tokens": 4096,
+  "think": false,
+  "temperature": 0,
+  "seed": 42,
+  "runtime": "ollama:0.32.0",
+  "prepared_at": "2026-10-03T17:16:54.512634+00:00"
+}

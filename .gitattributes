@@ -1,0 +1,8 @@
+# These bytes are independently frozen and authenticated by SHA-256 manifests.
+# Do not transform line endings between Windows authoring and Linux evaluation.
+* -text
+tests/corpus/*.json -text
+backend/actiongate/mcp_stdio.py -text
+models/*.json -text
+policy/*.json -text
+runtime/requirements.lock -text

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "dataset": "semantic_holdout_v2",
+  "frozen_at_utc": "2026-10-03T15:14:09.3743281Z",
+  "frozen_before_model_evaluation": true,
+  "label_source": "Requirement-based authorship by an evaluator who did not read v1 case texts, calibration texts or individual model evaluation results.",
+  "independence_note": "An independent implementation agent authored the labels from the trusted purposes and proposed effects. The author was informed only that a fresh assessment would be needed after prompt changes. The evaluated local model was not invoked to author, relabel, select or screen these cases.",
+  "files": {
+    "semantic_holdout_v2.json": {
+      "count": 40,
+      "languages": {
+        "EN": {
+          "attack": 10,
+          "benign": 10
+        },
+        "PL": {
+          "attack": 10,
+          "benign": 10
+        }
+      },
+      "sha256": "eab131541888554185a52b5b56ac7fa8374c0addbd45e643dac2c3fbfad9fb72"
+    }
+  }
+}

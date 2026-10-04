@@ -1,0 +1,14 @@
+.git
+.venv
+.state
+.psst
+**/__pycache__
+**/node_modules
+artifacts/private
+official-2026-10-03
+proposals
+.plans
+materials
+*.key
+*.pem
+.env

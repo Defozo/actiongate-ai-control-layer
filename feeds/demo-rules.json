@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "revision": 1,
+  "publisher": "approved-threat-feed",
+  "issued_at": "2026-10-03T00:00:00Z",
+  "expires_at": "2026-10-04T00:00:00Z",
+  "rules": [
+    {"id":"demo.exfiltration.marker","scope":"text","selector":"text","operator":"re2","value":"ACTIONGATE_EXFILTRATE_TO_PUBLIC","action":"block","source":"urn:actiongate:synthetic-fixture"},
+    {"id":"CVE-2024-34359.runtime","scope":"artifact","selector":"version","operator":"version_range","value":">=0.2.30,<=0.2.71","action":"block","source":"https://github.com/abetlen/llama-cpp-python/security/advisories/GHSA-56xg-wfcc-g829","package":"llama-cpp-python"},
+    {"id":"CVE-2025-68664.legacy","scope":"artifact","selector":"version","operator":"version_range","value":"<0.3.81","action":"block","source":"https://github.com/langchain-ai/langchain/security/advisories/GHSA-c67j-w6g6-q2cm","package":"langchain-core"},
+    {"id":"CVE-2025-68664.current","scope":"artifact","selector":"version","operator":"version_range","value":">=1.0.0,<1.2.5","action":"block","source":"https://github.com/langchain-ai/langchain/security/advisories/GHSA-c67j-w6g6-q2cm","package":"langchain-core"}
+  ]
+}

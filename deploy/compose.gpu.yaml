@@ -1,0 +1,26 @@
+# Optional profile. Run scripts/gpu_preflight.py before making GPU claims.
+# The guard and business processes share the physical GPU; their process groups,
+# queues and watchdogs remain independent. There is no hardware VRAM partition.
+services:
+  guard-worker:
+    image: actiongate-worker-gpu:0.1.0
+    build:
+      target: worker-gpu
+    gpus: all
+    environment:
+      MODEL_GPU_LAYERS: '-1'
+      MODEL_THREADS: '2'
+      OLLAMA_LLM_LIBRARY: cuda_v12
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+  business-worker:
+    image: actiongate-worker-gpu:0.1.0
+    build:
+      target: worker-gpu
+    gpus: all
+    environment:
+      MODEL_GPU_LAYERS: '-1'
+      MODEL_THREADS: '2'
+      OLLAMA_LLM_LIBRARY: cuda_v12
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility

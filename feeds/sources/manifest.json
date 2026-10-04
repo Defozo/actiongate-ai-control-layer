@@ -1,0 +1,45 @@
+[
+  {
+    "advisory": "GHSA-c67j-w6g6-q2cm",
+    "url": "https://api.github.com/advisories/GHSA-c67j-w6g6-q2cm",
+    "retrieved_at": "2026-10-03T12:11:01.424335+00:00",
+    "sha256": "f5bbd2b2aed51ddcd815d69fb29745d451c9771f879c7fedef526a5ae662ccc7",
+    "vulnerabilities": [
+      {
+        "package": {
+          "ecosystem": "pip",
+          "name": "langchain-core"
+        },
+        "vulnerable_version_range": ">= 1.0.0, < 1.2.5",
+        "first_patched_version": "1.2.5",
+        "vulnerable_functions": []
+      },
+      {
+        "package": {
+          "ecosystem": "pip",
+          "name": "langchain-core"
+        },
+        "vulnerable_version_range": "< 0.3.81",
+        "first_patched_version": "0.3.81",
+        "vulnerable_functions": []
+      }
+    ]
+  },
+  {
+    "advisory": "GHSA-56xg-wfcc-g829",
+    "url": "https://api.github.com/advisories/GHSA-56xg-wfcc-g829",
+    "retrieved_at": "2026-10-03T12:11:01.878577+00:00",
+    "sha256": "7f237461546c8d83931b543e088f87031dc50d954b865809733b9a1aae6d2fa5",
+    "vulnerabilities": [
+      {
+        "package": {
+          "ecosystem": "pip",
+          "name": "llama-cpp-python"
+        },
+        "vulnerable_version_range": ">= 0.2.30, <= 0.2.71",
+        "first_patched_version": "0.2.72",
+        "vulnerable_functions": []
+      }
+    ]
+  }
+]

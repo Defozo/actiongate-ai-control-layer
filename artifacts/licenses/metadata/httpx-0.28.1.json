@@ -1,0 +1,5 @@
+{
+  "license": "BSD (see preserved license)",
+  "evidence": "installed locked distribution metadata",
+  "source": "https://pypi.org/pypi/httpx/0.28.1/json"
+}

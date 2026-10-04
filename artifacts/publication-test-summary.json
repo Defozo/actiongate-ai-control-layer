@@ -1,0 +1,49 @@
+{
+  "recorded_at": "2026-10-04T00:12:37.639722+00:00",
+  "scope": "Historical source-workspace reports; not a fresh acceptance run of this publication snapshot",
+  "reports": {
+    "contract.json": {
+      "suite": "contract",
+      "status": "passed",
+      "created_at": "2026-10-03T19:24:06.390231+00:00",
+      "total": 347,
+      "passed": 347,
+      "failed": 0,
+      "skipped": 0,
+      "duration_seconds": 172.73,
+      "source_stable_during_run": true,
+      "original_report_sha256": "9ca433a45fe2485e8db7998e38c7635765b1c06d5925af54c948f57662c8ba7d"
+    },
+    "all-local.json": {
+      "suite": "all-local",
+      "status": "failed",
+      "created_at": "2026-10-03T23:23:35.242745+00:00",
+      "total": 253,
+      "passed": 252,
+      "failed": 1,
+      "skipped": 0,
+      "duration_seconds": 2362.95,
+      "source_stable_during_run": true,
+      "original_report_sha256": "276de38351fd5f5f382325e6258824f51b6241b8e123a771f69d922e39e7e5d5"
+    }
+  },
+  "snapshot_publication_checks": {
+    "checked_at": "2026-10-04T00:16:35.538283+00:00",
+    "npm_ci": "passed",
+    "dashboard_production_build": "passed",
+    "uv_lock_check": "passed",
+    "python_syntax_files": 121,
+    "python_syntax_errors": 0,
+    "pytest": {
+      "passed": 50,
+      "failed": 0,
+      "duration_seconds": 36.43,
+      "files": [
+        "tests/test_release.py",
+        "tests/test_model_artifacts.py",
+        "tests/test_runtime_contract.py"
+      ],
+      "mode": "offline controlled fixtures; no full inference or paid provider run"
+    }
+  }
+}

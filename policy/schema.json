@@ -1,0 +1,986 @@
+{
+  "$defs": {
+    "AuditConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "raw_payloads": {
+          "const": false,
+          "default": false,
+          "description": "Audit metadata never contains raw operation content or credentials.",
+          "title": "Raw Payloads",
+          "type": "boolean"
+        },
+        "retention_days": {
+          "default": 7,
+          "description": "Protected operation and audit retention policy in days.",
+          "maximum": 3650,
+          "minimum": 1,
+          "title": "Retention Days",
+          "type": "integer"
+        },
+        "required_before_dispatch_and_release": {
+          "const": true,
+          "default": true,
+          "description": "Persist mandatory security evidence before either boundary.",
+          "title": "Required Before Dispatch And Release",
+          "type": "boolean"
+        }
+      },
+      "title": "AuditConfig",
+      "type": "object"
+    },
+    "BudgetsConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "currency": {
+          "const": "USD",
+          "default": "USD",
+          "description": "Commercial accounting currency; amounts are integer micro-USD.",
+          "title": "Currency",
+          "type": "string"
+        },
+        "period_timezone": {
+          "const": "UTC",
+          "default": "UTC",
+          "description": "Database-clock budget period timezone.",
+          "title": "Period Timezone",
+          "type": "string"
+        },
+        "tenant_daily_usd_micros": {
+          "default": 5000000,
+          "description": "Daily tenant monetary ceiling, including reservations.",
+          "maximum": 2000000000,
+          "minimum": 0,
+          "title": "Tenant Daily Usd Micros",
+          "type": "integer"
+        },
+        "run_usd_micros": {
+          "default": 250000,
+          "description": "Shared run-tree monetary ceiling.",
+          "maximum": 2000000000,
+          "minimum": 0,
+          "title": "Run Usd Micros",
+          "type": "integer"
+        },
+        "run_total_tokens": {
+          "default": 120000,
+          "description": "Shared run-tree token ceiling including guard work.",
+          "maximum": 2000000000,
+          "minimum": 1,
+          "title": "Run Total Tokens",
+          "type": "integer"
+        },
+        "guard_subbudget_tokens": {
+          "default": 96000,
+          "description": "Protection token ceiling inside total run tokens.",
+          "maximum": 2000000000,
+          "minimum": 1,
+          "title": "Guard Subbudget Tokens",
+          "type": "integer"
+        },
+        "request_input_tokens": {
+          "default": 4096,
+          "description": "Maximum complete serialized business request tokens.",
+          "maximum": 2000000000,
+          "minimum": 1,
+          "title": "Request Input Tokens",
+          "type": "integer"
+        },
+        "request_output_tokens": {
+          "default": 1024,
+          "description": "Maximum business output tokens reserved before dispatch.",
+          "maximum": 2000000000,
+          "minimum": 1,
+          "title": "Request Output Tokens",
+          "type": "integer"
+        },
+        "max_steps": {
+          "default": 12,
+          "description": "Maximum actions and, separately, maximum delegated runs in the shared workflow tree.",
+          "maximum": 2000000000,
+          "minimum": 1,
+          "title": "Max Steps",
+          "type": "integer"
+        },
+        "max_tool_calls": {
+          "default": 8,
+          "description": "Maximum dispatched tool calls in the shared tree.",
+          "maximum": 2000000000,
+          "minimum": 1,
+          "title": "Max Tool Calls",
+          "type": "integer"
+        },
+        "max_retries": {
+          "default": 1,
+          "description": "Maximum separately reserved retries.",
+          "maximum": 10,
+          "minimum": 0,
+          "title": "Max Retries",
+          "type": "integer"
+        },
+        "max_delegation_depth": {
+          "default": 2,
+          "description": "Maximum nested delegation depth.",
+          "maximum": 10,
+          "minimum": 0,
+          "title": "Max Delegation Depth",
+          "type": "integer"
+        },
+        "run_deadline_seconds": {
+          "default": 900,
+          "description": "Maximum elapsed run lifetime measured against database time.",
+          "maximum": 2000000000,
+          "minimum": 1,
+          "title": "Run Deadline Seconds",
+          "type": "integer"
+        },
+        "reserve_output_inspection": {
+          "const": true,
+          "default": true,
+          "description": "Output protection resources are reserved before upstream execution.",
+          "title": "Reserve Output Inspection",
+          "type": "boolean"
+        },
+        "unknown_usage": {
+          "const": "retain_reservation",
+          "default": "retain_reservation",
+          "description": "Unknown upstream cost remains committed until reconciliation.",
+          "title": "Unknown Usage",
+          "type": "string"
+        }
+      },
+      "title": "BudgetsConfig",
+      "type": "object"
+    },
+    "ControlsConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "authentication": {
+          "$ref": "#/$defs/InvariantToggle",
+          "description": "Verified identity enforcement."
+        },
+        "tenant_isolation": {
+          "$ref": "#/$defs/InvariantToggle",
+          "description": "Tenant boundary enforcement."
+        },
+        "secrets": {
+          "$ref": "#/$defs/SecretControl",
+          "description": "Credential signature detection."
+        },
+        "pii": {
+          "$ref": "#/$defs/PIIControl",
+          "description": "Presidio and checksum PII recognition."
+        },
+        "semantic": {
+          "$ref": "#/$defs/Toggle",
+          "description": "Local AI content screening."
+        },
+        "historical_attacks": {
+          "$ref": "#/$defs/Toggle",
+          "description": "Historical exploit and approved feed controls."
+        }
+      },
+      "title": "ControlsConfig",
+      "type": "object"
+    },
+    "FeedConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "source_ref": {
+          "default": "approved-threat-feed",
+          "description": "Trusted publisher logical ID, never a rule-supplied URL.",
+          "title": "Source Ref",
+          "type": "string"
+        },
+        "signature_required": {
+          "const": true,
+          "default": true,
+          "description": "Ed25519 verification is mandatory.",
+          "title": "Signature Required",
+          "type": "boolean"
+        },
+        "reject_rollback": {
+          "const": true,
+          "default": true,
+          "description": "Revision must increase against the durable accepted counter.",
+          "title": "Reject Rollback",
+          "type": "boolean"
+        },
+        "max_age_hours": {
+          "default": 24,
+          "description": "Maximum lifetime and age of a signed feed.",
+          "maximum": 168,
+          "minimum": 1,
+          "title": "Max Age Hours",
+          "type": "integer"
+        }
+      },
+      "title": "FeedConfig",
+      "type": "object"
+    },
+    "FlowConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "levels": {
+          "default": [
+            "PUBLIC",
+            "INTERNAL",
+            "CONFIDENTIAL",
+            "RESTRICTED"
+          ],
+          "description": "Immutable confidentiality ordering.",
+          "items": {
+            "enum": [
+              "PUBLIC",
+              "INTERNAL",
+              "CONFIDENTIAL",
+              "RESTRICTED"
+            ],
+            "type": "string"
+          },
+          "title": "Levels",
+          "type": "array"
+        },
+        "unknown_source": {
+          "const": "CONFIDENTIAL",
+          "default": "CONFIDENTIAL",
+          "description": "Default classification for arbitrary user or model text.",
+          "title": "Unknown Source",
+          "type": "string"
+        },
+        "track_untrusted_origins": {
+          "const": true,
+          "default": true,
+          "description": "Persist source provenance independently of confidentiality.",
+          "title": "Track Untrusted Origins",
+          "type": "boolean"
+        },
+        "propagate_run_and_delegation": {
+          "const": true,
+          "default": true,
+          "description": "All contexts in a delegation tree inherit restrictions.",
+          "title": "Propagate Run And Delegation",
+          "type": "boolean"
+        },
+        "label_override_by_agent": {
+          "const": false,
+          "default": false,
+          "description": "Agents cannot downgrade labels.",
+          "title": "Label Override By Agent",
+          "type": "boolean"
+        },
+        "sinks": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Sink"
+          },
+          "description": "Logical recipient allowlist and clearance.",
+          "title": "Sinks",
+          "type": "object"
+        },
+        "public_release_function": {
+          "const": "supplier_public_view_v1",
+          "default": "supplier_public_view_v1",
+          "description": "Trusted projection copies approved authoritative public fields only.",
+          "title": "Public Release Function",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sinks"
+      ],
+      "title": "FlowConfig",
+      "type": "object"
+    },
+    "IdentityConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "tenant_source": {
+          "const": "verified_identity",
+          "default": "verified_identity",
+          "description": "Tenant originates from a verified token.",
+          "title": "Tenant Source",
+          "type": "string"
+        },
+        "grants_source": {
+          "const": "trusted_application",
+          "default": "trusted_application",
+          "description": "Only trusted application identities issue grants.",
+          "title": "Grants Source",
+          "type": "string"
+        },
+        "delegation": {
+          "const": "intersect_parent_grant",
+          "default": "intersect_parent_grant",
+          "description": "Delegation only narrows the parent grant.",
+          "title": "Delegation",
+          "type": "string"
+        }
+      },
+      "title": "IdentityConfig",
+      "type": "object"
+    },
+    "InvariantToggle": {
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "const": true,
+          "default": true,
+          "description": "Mandatory platform identity invariant.",
+          "title": "Enabled",
+          "type": "boolean"
+        }
+      },
+      "title": "InvariantToggle",
+      "type": "object"
+    },
+    "LocalResourcesConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "business_slots": {
+          "default": 1,
+          "description": "Maximum independent supervised business process groups.",
+          "maximum": 32,
+          "minimum": 1,
+          "title": "Business Slots",
+          "type": "integer"
+        },
+        "guard_slots": {
+          "default": 1,
+          "description": "Maximum independent supervised guard process groups.",
+          "maximum": 32,
+          "minimum": 1,
+          "title": "Guard Slots",
+          "type": "integer"
+        },
+        "max_waiting_jobs": {
+          "default": 8,
+          "description": "Bounded work queue capacity including output reservations.",
+          "maximum": 1000,
+          "minimum": 0,
+          "title": "Max Waiting Jobs",
+          "type": "integer"
+        },
+        "queue_wait_seconds": {
+          "default": 10,
+          "description": "Maximum waiting time before new work is rejected.",
+          "maximum": 2000000000,
+          "minimum": 1,
+          "title": "Queue Wait Seconds",
+          "type": "integer"
+        },
+        "business_call_deadline_seconds": {
+          "default": 60,
+          "description": "Business worker inference deadline.",
+          "maximum": 2000000000,
+          "minimum": 1,
+          "title": "Business Call Deadline Seconds",
+          "type": "integer"
+        },
+        "run_slot_seconds": {
+          "default": 600,
+          "description": "Run-tree inference slot-seconds ceiling.",
+          "maximum": 2000000000,
+          "minimum": 1,
+          "title": "Run Slot Seconds",
+          "type": "integer"
+        },
+        "guard_subbudget_slot_seconds": {
+          "default": 480,
+          "description": "Protection slot-seconds ceiling inside the run total.",
+          "maximum": 2000000000,
+          "minimum": 1,
+          "title": "Guard Subbudget Slot Seconds",
+          "type": "integer"
+        },
+        "require_confirmed_stop": {
+          "const": true,
+          "default": true,
+          "description": "Timeout cannot free an inference slot before process stop confirmation.",
+          "title": "Require Confirmed Stop",
+          "type": "boolean"
+        }
+      },
+      "title": "LocalResourcesConfig",
+      "type": "object"
+    },
+    "ModelsConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "default": {
+          "type": "string",
+          "default": "local-business",
+          "description": "Logical business model ID from the registry.",
+          "title": "Default"
+        },
+        "registry": {
+          "default": "model-registry.json",
+          "description": "Relative approved registry filename.",
+          "title": "Registry",
+          "type": "string"
+        },
+        "allowed": {
+          "default": [
+            "local-business"
+          ],
+          "description": "Models available to agent requests.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Allowed",
+          "type": "array"
+        },
+        "cloud_enabled": {
+          "default": false,
+          "description": "Explicit opt-in for approved commercial adapters.",
+          "title": "Cloud Enabled",
+          "type": "boolean"
+        }
+      },
+      "title": "ModelsConfig",
+      "type": "object"
+    },
+    "PIIControl": {
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "default": true,
+          "description": "Enable this configurable content control.",
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "entities": {
+          "default": [
+            "EMAIL",
+            "PHONE",
+            "PESEL",
+            "IBAN"
+          ],
+          "description": "Enabled PII recognizers; PESEL and IBAN require checksums.",
+          "items": {
+            "enum": [
+              "EMAIL",
+              "PHONE",
+              "PESEL",
+              "IBAN"
+            ],
+            "type": "string"
+          },
+          "title": "Entities",
+          "type": "array"
+        }
+      },
+      "title": "PIIControl",
+      "type": "object"
+    },
+    "PerformanceConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "control_cache_enabled": {
+          "default": true,
+          "description": "Reuse up to 32 verified immutable control snapshots and compiled registries per replica; feed freshness and authority are checked for every operation. No model responses or user content are cached.",
+          "title": "Control Cache Enabled",
+          "type": "boolean"
+        },
+        "semantic_cache_enabled": {
+          "default": true,
+          "description": "Reuse complete guard judgments within the same tenant, exact content, trusted purpose/effect, restrictions and signed generation. Per-process cache: TTL 120 seconds, at most 512 entries / 8 MiB serialized. No unknown results or authorization decisions; hits incur zero new inference usage.",
+          "title": "Semantic Cache Enabled",
+          "type": "boolean"
+        }
+      },
+      "title": "PerformanceConfig",
+      "type": "object"
+    },
+    "Profile": {
+      "additionalProperties": false,
+      "properties": {
+        "pii_action": {
+          "default": "redact",
+          "description": "PII action; secrets always use their own control.",
+          "enum": [
+            "block",
+            "redact"
+          ],
+          "title": "Pii Action",
+          "type": "string"
+        },
+        "semantic_block_level": {
+          "default": 2,
+          "description": "Minimum operational risk level blocked by the semantic control.",
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Semantic Block Level",
+          "type": "integer"
+        },
+        "semantic_review_level": {
+          "anyOf": [
+            {
+              "maximum": 3,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": 1,
+          "description": "Minimum risk requiring approval, or null to disable review.",
+          "title": "Semantic Review Level"
+        },
+        "semantic_unknown": {
+          "const": "block",
+          "default": "block",
+          "description": "Required semantic failures always block.",
+          "title": "Semantic Unknown",
+          "type": "string"
+        },
+        "restrict_to": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Tenant restriction for the observe profile.",
+          "title": "Restrict To"
+        },
+        "effects": {
+          "anyOf": [
+            {
+              "const": "test_sinks_only",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Observe profile effects must be synthetic demo sinks.",
+          "title": "Effects"
+        },
+        "advisory_controls": {
+          "description": "Content controls recorded without enforcement in the restricted observe sandbox.",
+          "items": {
+            "enum": [
+              "pii",
+              "semantic"
+            ],
+            "type": "string"
+          },
+          "title": "Advisory Controls",
+          "type": "array"
+        },
+        "enforce_identity_labels_budgets": {
+          "const": true,
+          "default": true,
+          "description": "Platform invariants cannot be disabled by a profile.",
+          "title": "Enforce Identity Labels Budgets",
+          "type": "boolean"
+        }
+      },
+      "title": "Profile",
+      "type": "object"
+    },
+    "Profiles": {
+      "additionalProperties": false,
+      "properties": {
+        "strict": {
+          "$ref": "#/$defs/Profile",
+          "description": "Strict content screening settings."
+        },
+        "balanced": {
+          "$ref": "#/$defs/Profile",
+          "description": "Balanced content screening settings."
+        },
+        "observe": {
+          "$ref": "#/$defs/Profile",
+          "description": "Synthetic tenant advisory settings."
+        }
+      },
+      "required": [
+        "strict",
+        "balanced",
+        "observe"
+      ],
+      "title": "Profiles",
+      "type": "object"
+    },
+    "SecretControl": {
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "default": true,
+          "description": "Enable this configurable content control.",
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "action": {
+          "const": "block",
+          "default": "block",
+          "description": "Detected credentials cannot be redacted into an executable operation.",
+          "title": "Action",
+          "type": "string"
+        }
+      },
+      "title": "SecretControl",
+      "type": "object"
+    },
+    "SemanticConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "model_ref": {
+          "default": "local-guard",
+          "description": "Dedicated local guard model registry reference.",
+          "title": "Model Ref",
+          "type": "string"
+        },
+        "prompt_version": {
+          "default": "actiongate-guard-v2.8",
+          "description": "Pinned trusted guard instructions, long-context goal-action review and evidence validation. Earlier versions remain readable in historical signatures but cannot be activated by this deployment.",
+          "enum": [
+            "actiongate-guard-v2.8",
+            "actiongate-guard-v2.7",
+            "actiongate-guard-v2.6",
+            "actiongate-guard-v2.5",
+            "actiongate-guard-v2.4",
+            "actiongate-guard-v2.3",
+            "actiongate-guard-v2.2",
+            "actiongate-guard-v2.1",
+            "actiongate-guard-v2",
+            "actiongate-guard-v1",
+            "guard-v1"
+          ],
+          "title": "Prompt Version",
+          "type": "string"
+        },
+        "required_on": {
+          "default": [
+            "untrusted_input",
+            "proposed_action",
+            "tool_output",
+            "memory_write",
+            "model_output"
+          ],
+          "description": "Pipeline boundaries requiring guard inference.",
+          "items": {
+            "enum": [
+              "untrusted_input",
+              "proposed_action",
+              "tool_output",
+              "memory_write",
+              "model_output"
+            ],
+            "type": "string"
+          },
+          "title": "Required On",
+          "type": "array"
+        },
+        "risk_scale": {
+          "default": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "description": "Operational levels; never probabilities.",
+          "items": {
+            "type": "integer"
+          },
+          "title": "Risk Scale",
+          "type": "array"
+        },
+        "context_tokens": {
+          "default": 8192,
+          "description": "Maximum complete serialized guard context.",
+          "maximum": 2000000000,
+          "minimum": 1,
+          "title": "Context Tokens",
+          "type": "integer"
+        },
+        "max_input_tokens_per_call": {
+          "default": 4096,
+          "description": "Maximum guard input, including instructions and JSON schema.",
+          "maximum": 2000000000,
+          "minimum": 1,
+          "title": "Max Input Tokens Per Call",
+          "type": "integer"
+        },
+        "max_output_tokens": {
+          "default": 256,
+          "description": "Reserved upper bound for guard generation.",
+          "maximum": 2000000000,
+          "minimum": 1,
+          "title": "Max Output Tokens",
+          "type": "integer"
+        },
+        "window_tokens": {
+          "default": 2048,
+          "description": "Content tokens per overlapping scan window.",
+          "maximum": 2000000000,
+          "minimum": 1,
+          "title": "Window Tokens",
+          "type": "integer"
+        },
+        "overlap_tokens": {
+          "default": 256,
+          "description": "Shared content tokens between adjacent windows.",
+          "maximum": 2000000000,
+          "minimum": 0,
+          "title": "Overlap Tokens",
+          "type": "integer"
+        },
+        "max_windows": {
+          "default": 8,
+          "description": "Upper bound on billed windows per scan.",
+          "maximum": 128,
+          "minimum": 1,
+          "title": "Max Windows",
+          "type": "integer"
+        },
+        "deadline_seconds": {
+          "default": 30,
+          "description": "Guard process deadline, followed by confirmed stop.",
+          "maximum": 3600,
+          "minimum": 1,
+          "title": "Deadline Seconds",
+          "type": "integer"
+        },
+        "incomplete_scan": {
+          "const": "block",
+          "default": "block",
+          "description": "Missing windows cannot be treated as benign.",
+          "title": "Incomplete Scan",
+          "type": "string"
+        }
+      },
+      "title": "SemanticConfig",
+      "type": "object"
+    },
+    "Sink": {
+      "additionalProperties": false,
+      "properties": {
+        "max_label": {
+          "description": "Highest confidentiality accepted by this recipient.",
+          "enum": [
+            "PUBLIC",
+            "INTERNAL",
+            "CONFIDENTIAL",
+            "RESTRICTED"
+          ],
+          "title": "Max Label",
+          "type": "string"
+        },
+        "same_tenant": {
+          "default": false,
+          "description": "Require recipient tenant to match the run tenant.",
+          "title": "Same Tenant",
+          "type": "boolean"
+        },
+        "compartments": {
+          "description": "Compartments the recipient is authorized to receive.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Compartments",
+          "type": "array"
+        }
+      },
+      "required": [
+        "max_label"
+      ],
+      "title": "Sink",
+      "type": "object"
+    },
+    "Toggle": {
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "default": true,
+          "description": "Enable this configurable content control.",
+          "title": "Enabled",
+          "type": "boolean"
+        }
+      },
+      "title": "Toggle",
+      "type": "object"
+    },
+    "ToolsConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "registry": {
+          "default": "tool-registry.json",
+          "description": "Relative approved tool registry filename.",
+          "title": "Registry",
+          "type": "string"
+        },
+        "allowed": {
+          "description": "Allowed logical tool IDs; each still requires a workflow grant.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Allowed",
+          "type": "array"
+        },
+        "require_approval": {
+          "default": [
+            "reports.publish_demo"
+          ],
+          "description": "Allowed tools requiring exact-payload human approval.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Require Approval",
+          "type": "array"
+        },
+        "grant_ttl_seconds": {
+          "default": 30,
+          "description": "Lifetime of an unconsumed execution grant.",
+          "maximum": 300,
+          "minimum": 1,
+          "title": "Grant Ttl Seconds",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "allowed"
+      ],
+      "title": "ToolsConfig",
+      "type": "object"
+    },
+    "TransportConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "max_request_bytes": {
+          "default": 262144,
+          "description": "Maximum encoded HTTP body size.",
+          "maximum": 4194304,
+          "minimum": 1024,
+          "title": "Max Request Bytes",
+          "type": "integer"
+        },
+        "max_response_bytes": {
+          "default": 65536,
+          "description": "Maximum buffered complete upstream response.",
+          "maximum": 4194304,
+          "minimum": 1024,
+          "title": "Max Response Bytes",
+          "type": "integer"
+        },
+        "output_release": {
+          "const": "after_full_inspection",
+          "default": "after_full_inspection",
+          "description": "No output bytes are streamed before final inspection.",
+          "title": "Output Release",
+          "type": "string"
+        }
+      },
+      "title": "TransportConfig",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "description": "Supported policy schema revision.",
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "policy_id": {
+      "default": "actiongate-demo",
+      "description": "Stable logical policy ID.",
+      "pattern": "^[a-z][a-z0-9-]{1,63}$",
+      "title": "Policy Id",
+      "type": "string"
+    },
+    "revision": {
+      "default": 1,
+      "description": "Monotonically increasing policy revision.",
+      "maximum": 2000000000,
+      "minimum": 1,
+      "title": "Revision",
+      "type": "integer"
+    },
+    "default_decision": {
+      "const": "block",
+      "default": "block",
+      "description": "Unrecognized operations are denied.",
+      "title": "Default Decision",
+      "type": "string"
+    },
+    "active_profile": {
+      "default": "balanced",
+      "description": "Active profile from the same signed configuration.",
+      "enum": [
+        "strict",
+        "balanced",
+        "observe"
+      ],
+      "title": "Active Profile",
+      "type": "string"
+    },
+    "profiles": {
+      "$ref": "#/$defs/Profiles",
+      "description": "All named profile definitions."
+    },
+    "identity": {
+      "$ref": "#/$defs/IdentityConfig",
+      "description": "Immutable identity and grant provenance."
+    },
+    "flow": {
+      "$ref": "#/$defs/FlowConfig",
+      "description": "Recipient clearance and data restriction propagation."
+    },
+    "models": {
+      "$ref": "#/$defs/ModelsConfig",
+      "description": "Approved business model references."
+    },
+    "semantic": {
+      "$ref": "#/$defs/SemanticConfig",
+      "description": "Guard inference bounds and classification contract."
+    },
+    "controls": {
+      "$ref": "#/$defs/ControlsConfig",
+      "description": "Configurable content controls and invariant controls."
+    },
+    "tools": {
+      "$ref": "#/$defs/ToolsConfig",
+      "description": "Approved actions and exact-effect approval requirements."
+    },
+    "budgets": {
+      "$ref": "#/$defs/BudgetsConfig",
+      "description": "Durable shared financial and token ceilings."
+    },
+    "local_resources": {
+      "$ref": "#/$defs/LocalResourcesConfig",
+      "description": "Local resource and worker ceilings."
+    },
+    "transport": {
+      "$ref": "#/$defs/TransportConfig",
+      "description": "Bounded request and buffered publication settings."
+    },
+    "feed": {
+      "$ref": "#/$defs/FeedConfig",
+      "description": "Approved external rule feed requirements."
+    },
+    "audit": {
+      "$ref": "#/$defs/AuditConfig",
+      "description": "Evidence persistence and retention controls."
+    },
+    "performance": {
+      "$ref": "#/$defs/PerformanceConfig",
+      "description": "Bounded caching of immutable control artifacts and complete context-bound semantic judgments."
+    }
+  },
+  "required": [
+    "profiles",
+    "flow",
+    "tools"
+  ],
+  "title": "PolicyConfig",
+  "type": "object"
+}

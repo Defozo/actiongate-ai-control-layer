@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "provider": "groq",
+  "model": "openai/gpt-oss-20b",
+  "api_host": "api.groq.com",
+  "api_path": "/openai/v1/chat/completions",
+  "context_tokens": 131072,
+  "max_completion_tokens": 65536,
+  "reservation_input_method": "full_provider_context_upper_bound",
+  "reservation_output_method": "max_completion_tokens_including_hidden_reasoning",
+  "include_reasoning": false,
+  "reasoning_effort": "low",
+  "automatic_retries": false,
+  "redirects": false,
+  "built_in_tools": false,
+  "supported_tools": "client_function_schemas_only",
+  "price_file": "policy/prices.json",
+  "sources": ["https://console.groq.com/docs/model/openai/gpt-oss-20b", "https://console.groq.com/docs/openai", "https://console.groq.com/docs/reasoning"]
+}

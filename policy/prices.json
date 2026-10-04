@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "revision": "groq-gpt-oss-20b-2026-10-03",
+  "provider": "groq",
+  "model": "openai/gpt-oss-20b",
+  "currency": "USD",
+  "unit": "per_1000000_tokens",
+  "input_usd_micros_per_million": 75000,
+  "output_usd_micros_per_million": 300000,
+  "context_tokens": 131072,
+  "max_completion_tokens": 65536,
+  "output_includes_reasoning": true,
+  "additional_fees": "none_for_text_and_local_function_calls",
+  "source": "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+  "verified_at": "2026-10-03T00:00:00Z",
+  "valid_until": "2026-10-10T00:00:00Z"
+}

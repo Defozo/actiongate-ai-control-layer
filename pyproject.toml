@@ -1,0 +1,37 @@
+[project]
+name = "actiongate"
+version = "0.1.0"
+description = "A local, auditable control layer for agent actions"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.34,<1",
+  "pydantic>=2.10,<3",
+  "httpx>=0.28,<1",
+  "sqlalchemy>=2.0.38,<3",
+  "psycopg[binary]>=3.2,<4",
+  "alembic>=1.14,<2",
+  "PyJWT>=2.10,<3",
+  "cryptography>=44,<47",
+  "PyYAML>=6.0.2,<7",
+  "mcp>=1.10,<2",
+  "prometheus-client>=0.21,<1",
+  "opentelemetry-api>=1.30,<2",
+  "opentelemetry-sdk>=1.30,<2",
+  "tokenizers>=0.21,<1",
+  "packaging>=24",
+  "jsonschema>=4.23,<5",
+  "presidio-analyzer>=2.2.364",
+  "google-re2>=1.1.20251105",
+]
+[dependency-groups]
+dev = ["pytest>=8.3,<9", "pytest-asyncio>=0.25,<2", "hypothesis>=6.125,<7", "ruff>=0.11,<1", "pip-licenses>=5,<6", "locust>=2.33,<3"]
+[tool.pytest.ini_options]
+pythonpath = ["backend"]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "-ra"
+markers = ["local: requires real local model services", "integration: requires PostgreSQL and OPA", "live_provider: requires approved commercial provider"]
+[tool.ruff]
+line-length = 110
+target-version = "py312"

@@ -1,0 +1,374 @@
+[
+  {
+    "name": "documents.read",
+    "version": 1,
+    "description": "Read an authorized supplier document from this workflow tenant.",
+    "input_schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id"
+      ],
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "pattern": "^[a-zA-Z0-9_-]+$"
+        }
+      }
+    },
+    "resource_type": "document",
+    "recipient": "agent",
+    "connector_identity": "actiongate-broker",
+    "effect": "read",
+    "redact_fields": [],
+    "idempotency": "read_only"
+  },
+  {
+    "name": "memory.read",
+    "version": 1,
+    "description": "Read a labeled tenant memory entry within the same workflow purpose.",
+    "input_schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key"
+      ],
+      "properties": {
+        "key": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[a-zA-Z0-9_.-]+$"
+        }
+      }
+    },
+    "resource_type": "memory",
+    "recipient": "agent",
+    "connector_identity": "actiongate-broker",
+    "effect": "read",
+    "redact_fields": [],
+    "idempotency": "read_only"
+  },
+  {
+    "name": "memory.write",
+    "version": 1,
+    "description": "Store a note with the monotonic restrictions of the complete workflow context.",
+    "input_schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "content"
+      ],
+      "properties": {
+        "key": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[a-zA-Z0-9_.-]+$"
+        },
+        "content": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536
+        }
+      }
+    },
+    "resource_type": "memory",
+    "recipient": "local_model",
+    "connector_identity": "actiongate-broker",
+    "effect": "write",
+    "redact_fields": [
+      "/content"
+    ],
+    "idempotency": "ledger_id"
+  },
+  {
+    "name": "reports.save",
+    "version": 1,
+    "description": "Save a controlled report for an internal analyst of this tenant.",
+    "input_schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "content": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536
+        }
+      }
+    },
+    "resource_type": "report",
+    "recipient": "internal_report",
+    "connector_identity": "actiongate-broker",
+    "effect": "write",
+    "redact_fields": [
+      "/content",
+      "/title"
+    ],
+    "idempotency": "ledger_id"
+  },
+  {
+    "name": "reports.publish_demo",
+    "version": 1,
+    "description": "Publish exact approved content to one of the two controlled demonstration recipients.",
+    "input_schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content",
+        "recipient"
+      ],
+      "properties": {
+        "content": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536
+        },
+        "recipient": {
+          "enum": [
+            "internal_demo_sink",
+            "public_demo_sink"
+          ]
+        }
+      }
+    },
+    "resource_type": "report",
+    "recipient": "dynamic",
+    "connector_identity": "actiongate-demo-sink",
+    "effect": "publish",
+    "redact_fields": [
+      "/content"
+    ],
+    "idempotency": "ledger_id"
+  },
+  {
+    "name": "calculator.evaluate",
+    "version": 1,
+    "description": "Evaluate bounded decimal arithmetic with parentheses and + - * / only.",
+    "input_schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "expression"
+      ],
+      "properties": {
+        "expression": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[0-9.()+*/ \\t\\r\\n-]+$"
+        }
+      }
+    },
+    "resource_type": "calculation",
+    "recipient": "agent",
+    "connector_identity": "actiongate-broker",
+    "effect": "compute",
+    "redact_fields": [],
+    "idempotency": "read_only"
+  },
+  {
+    "name": "supplier_public_view_v1",
+    "version": 1,
+    "description": "Copy approved public registry fields in a trusted step planned before confidential retrieval.",
+    "input_schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_ids"
+      ],
+      "properties": {
+        "document_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-zA-Z0-9_-]+$"
+          }
+        }
+      }
+    },
+    "resource_type": "public_projection",
+    "recipient": "public_demo_sink",
+    "connector_identity": "actiongate-broker",
+    "effect": "publish",
+    "redact_fields": [],
+    "idempotency": "ledger_id"
+  },
+  {
+    "name": "models.chat",
+    "version": 3,
+    "description": "Run an approved business model after full-context inspection and resource reservation.",
+    "input_schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model",
+        "messages"
+      ],
+      "properties": {
+        "model": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "messages": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "role"
+            ],
+            "allOf": [
+              {
+                "if": {"properties": {"role": {"const": "assistant"}}},
+                "then": {"anyOf": [
+                  {"required": ["content"], "properties": {"content": {"type": "string"}}},
+                  {"required": ["tool_calls"], "properties": {"tool_calls": {"minItems": 1}}}
+                ]},
+                "else": {"required": ["content"], "properties": {"content": {"type": "string"}}, "not": {"required": ["tool_calls"]}}
+              },
+              {
+                "if": {"properties": {"role": {"const": "tool"}}},
+                "then": {"required": ["tool_call_id"]},
+                "else": {"not": {"required": ["tool_call_id"]}}
+              }
+            ],
+            "properties": {
+              "role": {
+                "enum": [
+                  "system",
+                  "user",
+                  "assistant",
+                  "tool"
+                ]
+              },
+              "content": {
+                "type": ["string", "null"],
+                "maxLength": 65536
+              },
+              "name": {"type": "string", "minLength": 1, "maxLength": 100, "pattern": "^[a-zA-Z0-9_.-]+$"},
+              "tool_call_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              },
+              "tool_calls": {
+                "type": "array",
+                "maxItems": 8,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "type",
+                    "function"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "type": {
+                      "const": "function"
+                    },
+                    "function": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "name",
+                        "arguments"
+                      ],
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 100
+                        },
+                        "arguments": {
+                          "type": "string",
+                          "maxLength": 65536
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "max_tokens": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8192
+        },
+        "tool_choice": {
+          "type": "string",
+          "enum": ["auto", "none"],
+          "description": "auto offers approved schemas; none suppresses schemas upstream and forbids returned calls."
+        },
+        "tools": {
+          "type": "array",
+          "maxItems": 16,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "function"
+            ],
+            "properties": {
+              "type": {
+                "const": "function"
+              },
+              "function": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "name",
+                  "description",
+                  "parameters"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "parameters": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "resource_type": "model",
+    "recipient": "dynamic",
+    "connector_identity": "actiongate-model",
+    "effect": "model",
+    "redact_fields": [],
+    "idempotency": "none"
+  }
+]

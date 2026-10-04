@@ -1,0 +1,5 @@
+{
+  "license": "BSD-3-Clause",
+  "evidence": "exact-version PyPI publisher metadata",
+  "source": "https://pypi.org/pypi/uvicorn/0.42.0/json"
+}

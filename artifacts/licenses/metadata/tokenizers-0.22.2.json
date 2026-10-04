@@ -1,0 +1,5 @@
+{
+  "license": "Apache-2.0",
+  "evidence": "exact-version PyPI publisher metadata",
+  "source": "https://pypi.org/pypi/tokenizers/0.22.2/json"
+}

@@ -1,0 +1,71 @@
+{
+  "task_id": "bf75555c-f0f9-4ae6-838b-726de0ad7b16",
+  "name": "AI Control Layer",
+  "source_url": "https://hackyeah.pl/tasks-prizes",
+  "collected_at": "2026-10-03T09:53:57.766219+00:00",
+  "links": [
+    {
+      "url": "https://mudnibfuppwadjkynscc.supabase.co/storage/v1/object/public/task-files/6f0f5e2e-246f-4078-a3f7-1aad9152e9f0/files/61290006-9e3e-4582-b381-2cd6f313ecf5.pdf",
+      "label": "Rules"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1oGwpQ5sD-x5I9ERwCQJvz-gfbHJ5aGYG/view?usp=drivesdk",
+      "label": "CRIETRIA AI Control Layer"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1n8Crzx4HjyQFZFudeF5QnEcpY2OZt4LP/view?usp=drivesdk",
+      "label": "RULES AI Control Layer.pdf"
+    }
+  ],
+  "files": [
+    {
+      "url": "https://mudnibfuppwadjkynscc.supabase.co/storage/v1/object/public/task-files/6f0f5e2e-246f-4078-a3f7-1aad9152e9f0/files/61290006-9e3e-4582-b381-2cd6f313ecf5.pdf",
+      "final_url": "https://mudnibfuppwadjkynscc.supabase.co/storage/v1/object/public/task-files/6f0f5e2e-246f-4078-a3f7-1aad9152e9f0/files/61290006-9e3e-4582-b381-2cd6f313ecf5.pdf",
+      "file": "materials\\31a3fb1537ac1d02.pdf",
+      "sha256": "31a3fb1537ac1d02d3f4c8e22989b2a377d82c1f7ff2df749f461de695784924",
+      "bytes": 72646,
+      "validated_at": "2026-10-03T09:53:57.465562+00:00",
+      "validation": {
+        "pages": 3,
+        "text_characters": 3801,
+        "scanned": false
+      },
+      "text_file": "materials\\31a3fb1537ac1d02.pdf.txt"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1oGwpQ5sD-x5I9ERwCQJvz-gfbHJ5aGYG/view?usp=drivesdk",
+      "final_url": "https://drive.google.com/file/d/1oGwpQ5sD-x5I9ERwCQJvz-gfbHJ5aGYG/view?usp=drivesdk",
+      "file": "materials\\786a9bb4a858f98d.pdf",
+      "sha256": "786a9bb4a858f98dd178085dc27ad5fb81d599a523d9318901ef2a0ff6aaf11c",
+      "bytes": 85247,
+      "validated_at": "2026-10-03T09:53:57.660020+00:00",
+      "validation": {
+        "pages": 4,
+        "text_characters": 9458,
+        "scanned": false
+      },
+      "text_file": "materials\\786a9bb4a858f98d.pdf.txt"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1n8Crzx4HjyQFZFudeF5QnEcpY2OZt4LP/view?usp=drivesdk",
+      "final_url": "https://drive.google.com/file/d/1n8Crzx4HjyQFZFudeF5QnEcpY2OZt4LP/view?usp=drivesdk",
+      "file": "materials\\31a3fb1537ac1d02.pdf",
+      "sha256": "31a3fb1537ac1d02d3f4c8e22989b2a377d82c1f7ff2df749f461de695784924",
+      "bytes": 72646,
+      "validated_at": "2026-10-03T09:53:57.745158+00:00",
+      "validation": {
+        "pages": 3,
+        "text_characters": 3801,
+        "scanned": false
+      },
+      "text_file": "materials\\31a3fb1537ac1d02.pdf.txt"
+    }
+  ],
+  "complete": true,
+  "publication": {
+    "kind": "material_links",
+    "urls": [
+      "https://drive.google.com/file/d/1oGwpQ5sD-x5I9ERwCQJvz-gfbHJ5aGYG/view?usp=drivesdk"
+    ]
+  }
+}

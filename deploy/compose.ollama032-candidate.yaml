@@ -1,0 +1,12 @@
+# Isolated release candidate only, applied after the optional GPU override.
+services:
+  guard-worker:
+    image: actiongate-worker-ollama032-gpu:0.1.0
+    build:
+      dockerfile: runtime/Dockerfile.ollama032
+      target: worker-gpu
+  business-worker:
+    image: actiongate-worker-ollama032-gpu:0.1.0
+    build:
+      dockerfile: runtime/Dockerfile.ollama032
+      target: worker-gpu

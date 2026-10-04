@@ -1,0 +1,38 @@
+[
+  {
+    "id": "local-business",
+    "version": 1,
+    "provider": "ollama",
+    "model": "actiongate-qwen3:4b",
+    "purpose": "business",
+    "recipient": "local_model",
+    "context_tokens": 8192,
+    "manifest": "models/model-manifest.json",
+    "pricing_ref": null,
+    "enabled": true
+  },
+  {
+    "id": "local-guard",
+    "version": 1,
+    "provider": "ollama",
+    "model": "actiongate-qwen3:4b",
+    "purpose": "guard",
+    "recipient": "local_model",
+    "context_tokens": 8192,
+    "manifest": "models/model-manifest.json",
+    "pricing_ref": null,
+    "enabled": true
+  },
+  {
+    "id": "cloud-business",
+    "version": 1,
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "purpose": "business",
+    "recipient": "cloud_model",
+    "context_tokens": 131072,
+    "manifest": "models/cloud-model-manifest.json",
+    "pricing_ref": "groq-gpt-oss-20b-2026-10-03",
+    "enabled": true
+  }
+]

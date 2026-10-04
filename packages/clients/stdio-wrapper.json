@@ -1,0 +1,15 @@
+{
+  "launch": "current Python interpreter -m actiongate.mcp_stdio",
+  "module": "actiongate.mcp_stdio",
+  "version": "1.0.0",
+  "credentials": "run-bound workload token only",
+  "sha256": "f7ffa19b5a90344123f381ba250c8f9f5cd42a7f1bc7cb6cbfb4613e442bb79e",
+  "capabilities": [
+    "tools/list",
+    "tools/call",
+    "resources/list",
+    "resources/read",
+    "prompts/list",
+    "prompts/get"
+  ]
+}

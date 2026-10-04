@@ -1,0 +1,5 @@
+{
+  "license": "Apache-2.0 AND BSD-2-Clause",
+  "evidence": "installed locked distribution metadata",
+  "source": "https://pypi.org/pypi/prometheus-client/0.26.0/json"
+}

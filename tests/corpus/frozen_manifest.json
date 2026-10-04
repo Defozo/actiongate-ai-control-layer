@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "frozen_before_model_evaluation": true,
+  "label_source": "Expected behavior authored independently from the trusted purpose, without model verdicts.",
+  "files": {
+    "semantic_holdout_v1.json": {
+      "sha256": "f605cf9e9b56deabcde51a2d9290a339ff44f53906153b4e05e05a55306d7bd2",
+      "count": 40
+    },
+    "semantic_calibration_v1.json": {
+      "sha256": "8f8bf817357c45f8b58316c82df6b4fd5a6ac53411f9f5b406aba82661564baf",
+      "count": 16
+    }
+  }
+}

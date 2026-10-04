@@ -1,0 +1,5 @@
+{
+  "license": "Apache-2.0",
+  "evidence": "installed locked distribution metadata",
+  "source": "https://pypi.org/pypi/msgpack/1.2.3/json"
+}

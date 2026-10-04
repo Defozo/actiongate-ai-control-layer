@@ -1,0 +1,50 @@
+events { worker_connections 256; }
+http {
+    server_tokens off;
+    access_log off;
+    error_log /dev/stderr warn;
+    client_max_body_size 256k;
+    resolver 127.0.0.11 valid=5s ipv6=off;
+    map $http_origin $origin_allowed {
+        default 0;
+        "" 1;
+        "__PUBLIC_ORIGIN__" 1;
+    }
+    map "$request_method:$http_origin" $missing_mutation_origin {
+        default 0;
+        ~^(POST|PUT|PATCH|DELETE):$ 1;
+    }
+    limit_req_zone $binary_remote_addr zone=jury_requests:1m rate=20r/s;
+    limit_conn_zone $binary_remote_addr zone=jury_connections:1m;
+    server {
+        listen 8080;
+        server_name __PUBLIC_HOST__;
+        auth_basic "ActionGate jury demo";
+        auth_basic_user_file /etc/nginx/jury.htpasswd;
+        if ($host != "__PUBLIC_HOST__") { return 421; }
+        if ($origin_allowed = 0) { return 403; }
+        if ($missing_mutation_origin = 1) { return 403; }
+        location / {
+            limit_req zone=jury_requests burst=60 nodelay;
+            limit_req_status 429;
+            limit_conn jury_connections 24;
+            set $demo_edge "edge:8080";
+            proxy_pass http://$demo_edge;
+            proxy_http_version 1.1;
+            # The jury gateway authenticates the operator before forwarding to
+            # the isolated demo's local operator edge. Upstream bearer tokens
+            # are never created or supplied by this proxy.
+            proxy_set_header Host 127.0.0.1;
+            proxy_set_header Origin "__LOCAL_ORIGIN__";
+            proxy_set_header Authorization "";
+            proxy_set_header Connection "";
+            proxy_set_header X-Forwarded-Proto https;
+            proxy_buffering off;
+            proxy_request_buffering on;
+            proxy_read_timeout 1900s;
+            proxy_send_timeout 1900s;
+            proxy_next_upstream off;
+            proxy_cookie_flags actiongate_session secure httponly samesite=strict;
+        }
+    }
+}
