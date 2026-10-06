@@ -2,22 +2,46 @@
 
 **AI Control Layer** by **DEFOZO SOFTWARE HOUSE**. Sole team member: **Michał Kiełtyka**.
 
-ActionGate governs the actions an agent can take: identity, purpose, data access,
-recipient, exact arguments, approval and resource allowance. A local semantic
-guard detects attempts to redirect the workflow. Deterministic authorization,
-data labels and the shared ledger remain independent of that model's verdict.
+ActionGate gives application teams one place to control what an AI agent may
+read, spend and publish. It checks each governed action against the agent's
+identity, business purpose, data permissions, recipient and available budget
+before dispatch. Operators can trace the decision through execution and settlement.
 
-The demonstrator reviews synthetic supplier documents. A legitimate review can
-read its granted documents, use a local model, persist memory and save an internal
-report. Confidential publication to a controlled internal sink requires approval
-of the exact payload. A separate trusted public projection copies approved fields
-from the authoritative supplier registry before confidential work begins.
+For a supplier review, this means an agent can read its assigned documents,
+summarize them locally and save an internal report. Publishing confidential
+content to an allowed internal recipient requires approval of that exact content.
+Changing the payload or active policy requires a new valid authorization.
 
-[Try the public live demo](https://743b-83-10-76-158.ngrok-free.app/) with
-four fixed examples on synthetic data, then
-[watch the demonstration and open the presentation](https://defozo.github.io/actiongate-ai-control-layer/).
-The full operator dashboard at `/operator` requires separate access from Michał
-Kiełtyka. The [jury runbook](docs/jury-runbook.md) covers editable operator scenarios.
+## Controls that follow the work
+
+| Operational need | What ActionGate provides |
+| --- | --- |
+| Review a sensitive action before it happens | Approval bound to the exact arguments, tool version and policy generation, checked again before dispatch |
+| Keep delegated agents within the same allowance | Shared root-workflow limits for tokens, local inference occupancy and monetary commitments, reserved in PostgreSQL transactions |
+| Keep confidential context protected across steps | Workflow labels that carry through model calls, memory and delegated work, with checks on permitted destinations |
+| Investigate a timeout or disputed action | Linked decisions, execution grants, effect records and settlements; unresolved usage stays visible and reserved until reconciled |
+| Try a policy change before activating it | Signed control generations and comparison on synthetic cases without executing business effects |
+
+A local semantic guard adds input and output inspection. Grants, confidentiality
+rules and resource accounting remain independent of its verdict. This combines
+semantic detection with explicit authorization boundaries; it does not guarantee
+recognition of every prompt injection. Enforcement depends on routing governed
+actions through the gateway and isolating direct credentials and network access.
+
+## Explore a supplier review
+
+The demonstrator uses synthetic documents and controlled report sinks. Follow a
+permitted review, inspect an exact-payload approval, then examine how the gateway
+handles an unauthorized document or destination. A separate trusted public
+projection copies approved fields from the supplier registry before confidential
+work begins.
+
+[Explore the project](https://hackyeah-2026-projekty.defozo.chatgpt.site/#ai-control-layer),
+[watch the demonstration and open the presentation](https://defozo.github.io/actiongate-ai-control-layer/),
+or [run the synthetic examples locally](#run-locally).
+The visitor interface offers four fixed synthetic examples when its backend is
+running. The full operator dashboard at `/operator` requires separate access from
+Michał Kiełtyka. The [operator runbook](docs/jury-runbook.md) covers editable scenarios.
 The [downloadable release](https://github.com/Defozo/actiongate-ai-control-layer/releases/latest)
 contains the source distribution and recorded verification evidence. Its manifest
 identifies the tested base release and later public-entry and documentation changes.
@@ -55,7 +79,7 @@ On Linux, install Chromium system libraries with
 `(cd ui && npx playwright install --with-deps chromium)` during preparation.
 Open **http://127.0.0.1:8080** and choose an Acme demo identity. The loopback demo
 issuer intentionally permits role selection. Keep direct edge access on loopback.
-The hosted demo exposes only fixed visitor examples without an account. Its full
+The hosted visitor configuration exposes only fixed examples without an account. Its full
 operator interface has a separate authenticated HTTPS gateway; selectable demo
 roles do not represent enterprise identities. See [public access](demo/public/visitor.md).
 `ACTIONGATE_PORT` selects an alternative loopback port when 8080 is occupied.
@@ -87,21 +111,16 @@ changing an SDK URL alone does not isolate an otherwise unrestricted agent.
 
 ## Evidence and scope
 
-`contract` checks deterministic invariants with explicitly controlled model
-upstreams. `all-local` adds actual local inference and end-to-end acceptance.
-`live-provider` separately verifies the commercial connector and is reported as
-not run when a provider key is absent. Missing required dependencies fail local
-acceptance rather than becoming successful skips. Dated reports under `artifacts/`
-are the source of measured results. Contract tests and
-a complete release use different verification scopes; see the [verification guide](docs/acceptance.md).
+`contract` checks deterministic invariants with controlled model upstreams.
+`all-local` adds actual local inference and end-to-end acceptance, while
+`live-provider` covers the optional commercial connector. The
+[verification guide](docs/acceptance.md) links dated reports and explains each
+suite's prerequisites, measured results and release scope.
 
-Semantic evaluation separates [16 calibration cases, a 40-case v1 regression set,
-and a newly frozen 40-case v2 holdout](tests/corpus/). Each 40-case set has ten
-benign and ten attack examples in each of English and Polish. Once v1 outcomes
-informed a guard revision, that set became regression evidence rather than an
-independent estimate for the revised guard. The v2 manifest records its freeze.
-The authored expected labels do not come from the model under evaluation. Targets
-in the implementation plan are not achieved measurements.
+The [evaluation corpus](tests/corpus/) and [verification guide](docs/acceptance.md)
+separate calibration, regression and frozen holdout evidence. Recorded results
+describe the evaluated inputs and deployment; use the [benchmark](docs/benchmark.md)
+and [threat model](docs/threat-model.md) to assess a proposed integration.
 
 Read [architecture](docs/architecture.md), [configuration](docs/configuration.md),
 [threat model and limitations](docs/threat-model.md), [operations](docs/operations.md),

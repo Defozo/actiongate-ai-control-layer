@@ -29,10 +29,12 @@ agents share the original allowance. Each operation links its decision to the
 recorded effect and settlement, giving security teams a traceable audit
 and management a clear view of resource use.
 
-HTTP, a Chat Completions interface and MCP support existing agent clients. The
-package includes Python and TypeScript examples, automated positive and negative
-tests, reproducible Compose setup and an independent evaluation runbook. Judges
-can change a rule, try their own input and inspect the resulting action.
+HTTP, a supported Chat Completions subset and MCP connect agent clients to the
+same controls. The package includes Python and TypeScript examples, automated
+positive and negative tests, a reproducible Compose setup and an evaluation
+runbook. Authorized operators can change a rule, try their own input and inspect
+the resulting action. Public visitors can explore fixed synthetic examples;
+the editable operator dashboard requires separate authenticated access.
 
 ## Presentation and demonstration
 

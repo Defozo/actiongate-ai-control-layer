@@ -16,11 +16,29 @@ sinks. It demonstrates the integration; it does not send real payments or email.
 - An operator dashboard for investigation, signed policy/feed changes, resource
   accounts, test jobs and role-scoped JSONL/CSV exports.
 
-This lets an application team centralize action authorization and resource
-accounting instead of implementing a different policy in every agent client.
-Security operators can inspect why an action was allowed or stopped and verify
-its recorded effect. Cost and capacity owners can distinguish spending,
-reservations and unresolved usage.
+Application teams can apply the same controls to HTTP, Chat Completions and
+MCP clients. Security operators can inspect the policy behind an action, the
+approval it used and its recorded effect. Cost and capacity owners can distinguish
+completed spending from reservations and unresolved usage across delegated work.
+
+## From an approval to an accountable action
+
+An approval binds the tenant, actor, tool, tool version and exact arguments.
+Before dispatch, the broker checks the active policy generation, workflow labels,
+expiry and revocation state again. It consumes a one-time execution grant and
+records the resulting effect. A changed recipient or payload cannot reuse the
+original approval.
+
+The shared PostgreSQL ledger reserves tokens, local inference occupancy and
+monetary commitments across the tenant, user and root workflow. Delegation keeps
+the root allowance. If usage is unknown after dispatch, the reservation remains
+open for reconciliation. Operators therefore see both available capacity and
+commitments that have not yet been resolved.
+
+Signed policy and feed generations provide a recorded version for each decision.
+Policy comparison runs synthetic calibration cases against the active and
+candidate configuration without executing business effects. It reports when a
+semantic runtime change requires separate verification.
 
 ## Integration and ownership
 

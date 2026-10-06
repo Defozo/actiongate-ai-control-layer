@@ -77,3 +77,23 @@ The quality sample contains ten attacks and ten benign cases per language. Unkno
 Paid-provider evidence is optional and records its own generation. Earlier paid smoke results do not establish that a later guard prompt was tested against the provider. Full-load capacity rejections remain visible separately from completed-request latency. Model cold/warm is separate from the combined compiled-control and semantic-judgment cache variant; the runtime does not provide a model KV-cache toggle. Quality and repeat evaluation explicitly bypass the semantic cache. Real safe policy replay has separate recorded budgets and no repeated business effects; its calibration cases are not additional holdout observations.
 
 Submission attribution is read from `TEAM.json`: DEFOZO SOFTWARE HOUSE, Michał Kiełtyka.
+
+## Suite prerequisites and result states
+
+`contract` checks deterministic invariants with controlled model upstreams.
+`all-local` adds actual local inference and end-to-end acceptance.
+`live-provider` separately verifies the commercial connector and is reported as
+not run when a provider key is absent. Missing required dependencies fail local
+acceptance rather than becoming successful skips. Contract-only results and
+complete release verification have different scopes. Dated reports under
+`artifacts/` provide the measured results for each run.
+
+## Corpus interpretation
+
+Semantic evaluation separates 16 calibration cases, a 40-case v1 regression set
+and a frozen 40-case v2 holdout under `tests/corpus/`. Each 40-case set has ten
+benign and ten attack examples in each of English and Polish. Once v1 outcomes
+informed a guard revision, v1 became regression evidence rather than an independent
+estimate for the revised guard. The v2 manifest records its freeze. Expected
+labels were authored independently of the model under evaluation. Targets in the
+original implementation plan are not achieved measurements.
